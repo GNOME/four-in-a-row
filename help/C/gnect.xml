@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+        "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"
+[
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "2.0">
+  <!ENTITY manrevision "2.0">
+  <!ENTITY date "April 2002">
+  <!ENTITY app "<application>Gnect</application>">
+  <!ENTITY appname "Gnect">
+  <!ENTITY version "2.0">
+  <!-- ENTITY mdash "-" -->
+  <!-- ENTITY hellip "..." -->
+]>
+
+
+<!-- ===== DOCUMENT HEADER ===== -->
+
+<article id="index" lang="en">
+<!-- please do not change the id -->
+<!-- translators, change lang to the appropriate code -->
+  <articleinfo>
+    <title>&app; Manual V&manrevision;</title>
+    <copyright>
+      <year>2001-2002</year>
+      <holder>Timothy Musson</holder>
+    </copyright>
+
+    <!-- translators: uncomment this:
+
+    <copyright>
+     <year>2000</year>
+     <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+
+    -->
+
+    <!--
+    <publisher>
+      <publishername></publishername>
+    </publisher>
+    -->
+
+    &legal;
+
+    <authorgroup>
+      <author>
+        <firstname>Timothy</firstname>
+        <surname>Musson</surname>
+        <affiliation>
+          <!-- <orgname></orgname> -->
+          <address><email>trmusson@ihug.co.nz</email></address>
+        </affiliation>
+      </author>
+
+<!-- This is appropriate place for other contributors: translators,
+      maintainers,  etc. Commented out by default.
+
+      <othercredit role="translator">
+        <firstname>Latin</firstname> 
+        <surname>Translator 1</surname> 
+        <affiliation> 
+          <orgname>Latin Translation Team</orgname> 
+          <address> <email>translator@gnome.org</email> </address> 
+        </affiliation>
+        <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+      <revision>
+        <revnumber>&appname; Manual V&manrevision;</revnumber>
+        <date>&date;</date>
+        <revdescription>
+          <para role="author">Timothy Musson
+            <email>trmusson@ihug.co.nz</email>
+          </para>
+          <para role="publisher"></para>
+        </revdescription>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>This manual describes version &appversion; of &appname;.
+    </releaseinfo>
+
+    <legalnotice>
+      <title>Feedback</title>
+      <para>To report a bug or make a suggestion regarding the &app;
+        application or this manual, follow the directions in the
+        <ulink url="ghelp:gnome-feedback"
+               type="help">GNOME Feedback Page</ulink>.
+      </para>
+    </legalnotice>
+  </articleinfo>
+
+
+  <!-- ============= Document Body ============================= -->
+
+  <!-- ============= Introduction ============================== -->
+
+
+  <sect1 id="intro">
+
+    <title>Introduction</title>
+
+    <para>
+      &app; is a four-in-a-row game for the Gnome Project.
+      The object of the game is to build a line of four of your counters while
+      trying to stop your opponent (human or computer) building a line of his
+      or her own. A line can be horizontal, vertical or diagonal.
+    </para>
+
+    <para>
+      To run &app;, select
+      <guimenuitem>&appname;</guimenuitem> from the
+      <guisubmenu>Games</guisubmenu> submenu of the
+      <guimenu>Main Menu</guimenu>, or type
+      <command>gnect</command> on the command line.
+    </para>
+
+    <para>
+      &app; is included in the <filename>GNOME-games</filename> package, which
+      is part of the GNOME desktop environment. This document describes
+      version &version; of &app;.
+    </para>
+
+  </sect1>
+
+
+  <!-- ============= Usage ===================================== -->
+
+
+  <sect1 id="usage">
+
+    <title>Basic Usage</title>
+
+    <!-- ===== How to play ===== -->
+
+    <sect2 id="playing">
+
+      <title>Playing &appname;</title>
+
+      <para>
+        Once you've started &app;, select
+        <guimenuitem>New game</guimenuitem> from the
+        <guimenu>Game</guimenu> menu to begin playing.
+      </para>
+
+      <para>
+        The <interface>game board</interface> consists of seven columns and
+        six rows. Above it, a special row indicates the current player.
+        To make a move, select a column using your pointing device or
+        keyboard. Your marble will drop into the topmost empty row of that
+        column.
+      </para>
+      <para>
+        The game's won when one of the two players manages to line up four
+        of his or her marbles horizontally, vertically or diagonally. If the
+        board fills up without a win, the game ends in a draw.
+      </para>
+
+    </sect2>
+
+    <!-- ===== Menus ===== -->
+
+    <sect2 id="menubar">
+
+      <title>Menus</title>
+
+      <para>
+        The menu bar, located above the <interface>game board</interface>,
+        contains the following menus:
+      </para>
+
+      <variablelist>
+
+        <!-- ===== Game ===== -->
+
+        <varlistentry>
+          <term><guimenu>Game</guimenu></term>
+          <listitem>
+            <para>
+              This menu contains five items:
+              <itemizedlist>
+                <listitem>
+                  <para>
+                    <menuchoice>
+                      <shortcut><keysym>Ctrl-N</keysym></shortcut>
+                      <guimenuitem>New game</guimenuitem>
+                    </menuchoice>
+                    &mdash;
+                    This resets the board and starts a new game.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <menuchoice>
+                      <shortcut><keysym>Ctrl-Z</keysym></shortcut>
+                      <guimenuitem>Undo move</guimenuitem>
+                    </menuchoice>
+                    &mdash;
+                    If you're playing against a friend, this will undo one
+                    move. If you're playing against the computer, this will
+                    undo the computer's last move and then yours.
+                    Repeating this will return the board to its initial
+                    state.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <menuchoice>
+                      <guimenuitem>Hint</guimenuitem>
+                    </menuchoice>
+                    &mdash;
+                    This'll give you the computer's best suggestion for your
+                    move.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <menuchoice>
+                      <guimenuitem>Scores&hellip;</guimenuitem>
+                    </menuchoice>
+                    &mdash;
+                    This opens a small window containing a tally of wins and draws
+                    for the current playing session. The scores will be reset to
+                    zero if Player Selection is changed in Preferences.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <menuchoice>
+                      <shortcut><keysym>Ctrl-Q</keysym></shortcut>
+                      <guimenuitem>Exit</guimenuitem>
+                    </menuchoice>
+                    &mdash;
+                    This quits the game.
+                  </para>
+                </listitem>
+
+              </itemizedlist>
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <!-- ===== Settings ===== -->
+
+        <varlistentry>
+          <term><guimenu>Settings</guimenu></term>
+          <listitem>
+            <para>
+              This menu contains four items:
+              <itemizedlist>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Show toolbar</guimenuitem>
+                    &mdash;
+                    This toggle switches the toolbar on and off.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Enable sound</guimenuitem>
+                    &mdash;
+                    This toggle switches the game's sound effects on and off.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Draw grid</guimenuitem>
+                    &mdash;
+                    This toggles the display of grid lines over the game
+                    board. Themes that specifically disable grids will
+                    not be affected.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Preferences&hellip;</guimenuitem>
+                    &mdash;
+                    This opens the <interface>Preferences Dialog</interface>,
+                    allowing you to configure the game.
+                  </para>
+                </listitem>
+
+              </itemizedlist>
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <!-- ===== Help ===== -->
+
+        <varlistentry>
+          <term><guimenu>Help</guimenu></term>
+          <listitem>
+            <para>
+              This menu contains:
+              <itemizedlist>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>&appname; Manual</guimenuitem>
+                    &mdash;
+                    Opens your help browser and shows this manual.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Playing &appname;</guimenuitem>
+                    &mdash;
+                    Shows the section of the manual describing how to play.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Creating New Themes</guimenuitem>
+                    &mdash;
+                    Shows the section explaining how to make your own themes
+                    for &app;.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Known Bugs</guimenuitem>
+                    &mdash;
+                    Shows the section listing the program's known bugs.
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>Authors and Bug Reporting</guimenuitem>
+                    &mdash;
+                    Shows author email addresses and information on submitting
+                    bug reports.           
+                  </para>
+                </listitem>
+
+                <listitem>
+                  <para>
+                    <guimenuitem>About</guimenuitem>
+                    &mdash;
+                    Opens the <interface>About Dialog</interface>, showing
+                    basic information about &app; such as its version
+                    number and the names of its authors.
+                  </para>
+                </listitem>
+
+              </itemizedlist>
+            </para>
+          </listitem>
+        </varlistentry>
+
+      </variablelist>
+
+    </sect2>
+
+    <!-- ===== Preferences ===== -->
+
+    <sect2 id="prefsdialog">
+
+      <title>Preferences</title>
+
+      <para>
+        To change the game's settings, select
+        <guimenuitem>Preferences&hellip;</guimenuitem> from the
+        <guimenu>Settings</guimenu> menu. This opens the
+        <interface>Preferences Dialog</interface>.
+      </para>
+
+      <para>
+        Configuration options in the <guilabel>Player Selection</guilabel>
+        tab are:
+
+        <variablelist>
+
+          <varlistentry>
+            <term>
+              <guilabel>Player 1</guilabel> and
+              <guilabel>Player 2</guilabel>
+            </term>
+            <listitem>
+              <para>
+                These two columns tell &app; who's playing. To play against
+                a friend, select Human for both Player 1 and Player 2.
+              </para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>
+              <guilabel>Who starts?</guilabel>
+            </term>
+            <listitem>
+              <para>
+                This column lets you choose who moves first when a new game
+                begins. By default, players take turns to start.
+              </para>
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+      </para>
+
+      <para>
+        Options in the <guilabel>Appearance and Behaviour</guilabel> tab are:
+
+        <variablelist>
+
+          <varlistentry>
+            <term><guilabel>Theme selection</guilabel></term>
+            <listitem>
+              <para>
+                The theme menu lists available themes and lets
+                you choose your favourite.
+              </para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term><guilabel>Keyboard control</guilabel></term>
+            <listitem>
+              <para>
+                Use these entry boxes to configure keyboard play.
+                Select the box belonging to an action, then press the key
+                you'd like to perform that action.
+              </para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term><guilabel>Animation</guilabel></term>
+            <listitem>
+              <para>
+                Here you can toggle all animation on or off, or just the
+                animatated wipe effects when clearing the game board.
+              </para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term><guilabel>Sound type</guilabel></term>
+            <listitem>
+              <para>
+                &app; can make sounds when certain events occur.
+                If you choose the Speaker beep option, &app; will beep when a
+                game ends or if you make an illegal move.
+                If you choose the GNOME sound option, &app; will play the audio
+                files you specify using the
+                <application>GNOME Control Center</application>.
+                To disable &app;'s sound completely, use the sound toggle in
+                the <guimenu>Settings</guimenu> menu.
+              </para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term><guilabel>If stopping an unfinished game:
+                Ask me first</guilabel></term>
+            <listitem>
+              <para>
+                If this option is checked, &app; will ask you before quitting
+                or starting a new game while there's a still game in progress.
+              </para>
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+      </para>
+
+      <!--
+      <para>
+        To check your changes without closing the
+        <interface>Preferences Dialog</interface>, use the
+        <guibutton>Apply</guibutton> button. Once you've made all
+        the changes you want, select <guibutton>OK</guibutton>.
+      </para>
+      -->
+
+    </sect2>
+  </sect1>
+
+
+  <!-- ===== Custom Themes ===================================== -->
+
+
+  <sect1 id="custom">
+
+    <title>Creating New Themes</title>
+
+    <para>
+      This section's included in case you'd like to make your own themes for
+      &app;. It assumes you're familiar with basic text editing, graphics
+      software and the command line.
+    </para>
+
+    <sect2 id="images">
+
+      <title>Images</title>
+
+      <para>
+        &app;'s tile sets contain six tiles of equal size, lined up
+        horizontally. From left to right:
+      </para>
+
+      <orderedlist>
+        <listitem>
+          <para>Player One's marble as it appears on the game board</para>
+        </listitem>
+        <listitem>
+          <para>Player Two's marble as it appears on the game board</para>
+        </listitem>
+        <listitem>
+          <para>The game board's background</para>
+        </listitem>
+        <listitem>
+          <para>The top row's background</para>
+        </listitem>
+        <listitem>
+          <para>Player One's marble as it appears on the top row</para>
+        </listitem>
+        <listitem>
+          <para>Player Two's marble as it appears on the top row</para>
+        </listitem>
+      </orderedlist>
+
+      <figure id="shot1">
+        <title>An example tile set</title>
+        <screenshot>
+          <screeninfo>This image shows the six tiles in a tile set</screeninfo>
+          <graphic format="PNG" fileref="figures/tileset" srccredit="TRM"></graphic>
+        </screenshot>
+      </figure>
+
+      <para>
+        Tiles three and four will be repeated over the game board and
+        top row unless a full window background image is specified in the
+        theme file.
+      </para>
+
+      <tip>
+        <title>TIP</title>
+        <para>
+          PNG format is recommended for tile sets. The first, second, fifth
+          and sixth tiles should contain some transparency if you want the
+          background to show through. The third and fourth tiles should be
+          solid, with no transparency, even if you'll be using a full
+          window background image with your theme.
+        </para>
+      </tip>
+
+      <tip>
+        <title>TIP</title>
+        <para>
+          Tiles can be square or rectangular, and any size you like. Most
+          of the tile sets that come with &app; use square tiles measuring
+          either 40 by 40 pixels ("small") or 50 by 50 ("large").
+        </para>
+      </tip>
+
+      <para>
+        For a full window background image, there's a bit more work to do.
+        Let's say your tiles measure 50 by 50 pixels each. The game's display
+        measures 7 by 7 tiles, including the top row, so the ideal background
+        image for your tile set measures 350 by 350 pixels.
+      </para>
+
+      <tip>
+        <title>TIP</title>
+        <para>
+          &app; will automatically scale the background image if it doesn't
+          match the tile set. This means you can make "large" and "small"
+          versions of your theme, both using the same background image,
+          just by having a large and a small version of your tile set.
+        </para>
+      </tip>
+
+      <para>
+        So, you now have a tile set and perhaps a background image to
+        go with it. The next step is to write a theme file.
+      </para>
+
+    </sect2>
+
+
+    <sect2 id="themefiles">
+
+      <title>Theme Files</title>
+
+      <para>
+        Here's an example theme file, showing all the keywords &app;
+        understands. Lines starting with a hash (#) are comments; they'll
+        be ignored. Note that values containing spaces must be quoted.
+      </para>
+
+
+<programlisting>
+#
+# buttons_50x50.gnect (an example theme file)
+#
+
+# This theme's title (required)
+Title = "Button Shop (large)"
+
+# Tileset filename (required)
+Tileset = tileset_50x50_buttonshop.png
+
+# Full-window background image (optional)
+Background = bg_buttonshop.jpg
+
+# Description of Player One's marble (required)
+Player1 = Green
+
+# Description of Player Two's marble (required)
+Player2 = Yellow
+
+# Grid colour (optional, defaults to "#525F6C")
+GridRGB = "#FFFFFF"
+
+# Disable the grid for this theme (optional)
+NoGrid
+
+# Details (optional)
+Tooltip = "Artwork credits or whatever you like"
+</programlisting>
+
+      <para>
+        Legal values for the <literal>Player1</literal> and
+        <literal>Player2</literal> keywords are as follows:
+
+        <!--
+             Translators, please don't translate this list. Gnect
+             needs these to be in English - it'll translate them
+             using gettext.
+        -->
+        <literal>Light</literal>,
+        <literal>Dark</literal>,
+        <literal>Black</literal>,
+        <literal>White</literal>,
+        <literal>Grey</literal>,
+        <literal>Yellow</literal>,
+        <literal>Red</literal>,
+        <literal>Blue</literal>,
+        <literal>Green</literal>,
+        <literal>Orange</literal>,
+        <literal>Purple</literal>,
+        <literal>Pink</literal>,
+        <literal>Violet</literal>,
+        <literal>Brown</literal>.
+      </para>
+
+    </sect2>
+
+    <sect2 id="directories">
+
+      <title>Putting It Together</title>
+
+      <para>
+        The last step is to put your image(s) and theme file where &app; can
+        find them. You could put them in Gnect's install directory (which will
+        depend on your particular system), but your home directory's probably
+        a better idea.
+      </para>
+
+      <para>
+        Make a <filename class="directory">~/.gnect</filename> directory,
+        a <filename class="directory">~/.gnect/pixmaps</filename> directory
+        and a <filename class="directory">~/.gnect/themes</filename>
+        directory. Those names are important, as &app; won't look
+        anywhere else.
+      </para>
+
+      <para>
+        Copy your image(s) into the pixmaps directory and your theme file
+        into the themes directory. Make sure the theme file has
+        <filename>.gnect</filename> as the suffix.
+      </para>
+
+      <para>
+        If you start &app; from the command line, it'll give you clues about
+        about any problems it has with your new theme. If it has none, you'll
+        find your new theme listed the
+        <interface>Preferences Dialog</interface>.
+      </para>
+
+      <para>Have fun!</para>
+
+    </sect2>
+
+
+  </sect1>
+
+
+  <!-- ===== Bugs ============================================== -->
+
+
+  <sect1 id="bugs">
+
+    <title>Known Bugs and Limitations</title>
+
+    <para>
+      Navigation of the <interface>Preferences Dialog</interface> can
+      be difficult due to the entry boxes grabbing keyboard focus.
+    </para>
+
+    <para>
+      Occasionally a marble-dropping animation doesn't look as smooth
+      as it should.
+    </para>
+
+  </sect1>
+
+
+  <!-- ===== Authors =========================================== -->
+
+
+  <sect1 id="authors">
+
+    <title>Authors</title>
+
+    <para>
+      &app; was written by Timothy Musson (<email>trmusson@ihug.co.nz</email>)
+      and David Neary (<email>bolsh@gimp.org</email>). Various others
+      have taken the time to help in many ways since &app; was started.
+      The excellent Velena Engine was written by Giuliano Bertoletti, who
+      grants permission to include his code along with &app; under the GPL.
+    </para>
+
+    <para>
+      Please send all comments, suggestions, and bug reports to the
+      <ulink url="http://bugzilla.gnome.org"
+             type="http">GNOME bug tracking database</ulink>.
+
+      You can also use <application>Bug Report Tool</application>
+      (<command>bug-buddy</command>), available in the
+      <guisubmenu>Utilities</guisubmenu> submenu of
+      <guimenu>Main Menu</guimenu>, for submitting bug reports.
+    </para>
+
+    <para>
+      This manual was written by Timothy Musson.
+      Please send all comments and suggestions regarding this manual to the
+      <ulink type="http" url="http://developer.gnome.org/projects/gdp">GNOME
+        Documentation Project</ulink> by sending an email to
+      <email>docs@gnome.org</email>. You can also add your comments online
+      by using the <ulink type="http"
+        url="http://www.gnome.org/gdp/doctable/">GNOME Documentation Status
+        Table</ulink>.
+    </para>
+
+
+<!-- For translations: uncomment this:
+
+  <para>
+    Latin translation was done by ME
+    (<email>MYNAME@MYADDRESS</email>). Please send all comments and
+    suggestions regarding this translation to SOMEWHERE.
+  </para>
+
+-->
+
+  </sect1>
+
+
+  <!-- ============= License =================================== -->
+
+
+  <sect1 id="license">
+
+    <title>License</title>
+
+    <para>
+      This program is free software; you can redistribute it and/or
+      modify it under the terms of the <citetitle>GNU General Public
+      License</citetitle> as published by the Free Software Foundation;
+      either version 2 of the License, or (at your option) any later
+      version.
+    </para>
+
+    <para>
+      This program is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      <citetitle>GNU General Public License</citetitle> for more details.
+    </para>
+
+    <para>
+      A copy of the <citetitle>GNU General Public License</citetitle> is
+      included as an appendix to the <citetitle>GNOME Users
+      Guide</citetitle>.  You may also obtain a copy of the
+      <citetitle>GNU General Public License</citetitle> from the Free
+      Software Foundation by visiting
+      <ulink url="http://www.fsf.org" type="http">their Web site</ulink> or
+      by writing to
+      <address>
+        Free Software Foundation, Inc.
+        <street>59 Temple Place</street> - Suite 330
+        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>
+        <country>USA</country>
+      </address>
+    </para>
+
+  </sect1>
+
+</article>

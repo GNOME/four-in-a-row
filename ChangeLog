@@ -1,6 +1,12 @@
 
 2002-04-19  Tim Musson <trmusson@ihug.co.nz>
 
+	* help/C/gnect.sgml: removed
+	* help/C/gnect.xml & legal.xml: new files
+	* help/C/Makefile.am & gnect-C.omf: updated for the new manual.
+
+2002-04-19  Tim Musson <trmusson@ihug.co.nz>
+
 	* dialog.c:
 	  - Removed needless test for About dialog logo.
 	  - Velena's homepage missing in action - removed URL from About.

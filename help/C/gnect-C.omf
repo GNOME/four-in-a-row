@@ -7,8 +7,8 @@
     <subject>
       <category>GNOME|Games</category>
     </subject>
-    <format mime="text/sgml"/>
-    <identifier url="gnect.sgml"/>
+    <format mime="text/xml"/>
+    <identifier url="gnect.xml"/>
     <language code="C"/>
   </resource>
 </omf>
