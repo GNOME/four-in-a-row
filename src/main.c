@@ -81,7 +81,8 @@ typedef enum {
 	ANIM_NONE,
 	ANIM_MOVE,
 	ANIM_DROP,
-	ANIM_BLINK
+	ANIM_BLINK,
+	ANIM_HINT
 } AnimID;
 
 AnimID anim;
@@ -94,6 +95,8 @@ gboolean blink_on;
 
 
 static void process_move (gint c);
+static void process_move2 (gint c);
+static void process_move3 (gint c);
 
 
 static void
@@ -262,13 +265,14 @@ draw_line (gint r1, gint c1, gint r2, gint c2, gint tile)
 
 
 static gboolean
-on_animate (gpointer data)
+on_animate (gint c)
 {
 	if (anim == ANIM_NONE) return FALSE;
 
 	switch (anim) {
 	case ANIM_NONE:
 		break;
+	case ANIM_HINT:
 	case ANIM_MOVE:
 		if (column < column_moveto) {
 			move (column + 1);
@@ -277,8 +281,13 @@ on_animate (gpointer data)
 			move (column - 1);
 		}
 		else {
-			anim = ANIM_NONE;
 			timeout = 0;
+			if (anim == ANIM_MOVE) {
+				anim = ANIM_NONE;
+				process_move2 (c);
+			} else {
+				anim = ANIM_NONE;
+			}
 			return FALSE;
 		}
 		break;
@@ -289,6 +298,7 @@ on_animate (gpointer data)
 		else {
 			anim = ANIM_NONE;
 			timeout = 0;
+			process_move3 (c);
 			return FALSE;
 		}
 		break;
@@ -319,7 +329,8 @@ blink_tile (gint r, gint c, gint t, gint n)
 	blink_n = n;
 	blink_on = FALSE;
 	anim = ANIM_BLINK;
-	timeout = gtk_timeout_add (SPEED_BLINK, on_animate, NULL);
+	timeout = gtk_timeout_add (SPEED_BLINK, 
+				   (GSourceFunc) on_animate, NULL);
 }
 
 
@@ -649,20 +660,20 @@ on_game_hint (GtkMenuItem *m, gpointer data)
 	column_moveto = c;
 	if (p.do_animate) {
 		while (timeout) gtk_main_iteration ();
-		anim = ANIM_MOVE;
-		timeout = gtk_timeout_add (SPEED_MOVE, on_animate, NULL);
-		while (timeout) gtk_main_iteration ();
+		anim = ANIM_HINT;
+		timeout = gtk_timeout_add (SPEED_MOVE, 
+					   (GSourceFunc) on_animate, NULL);
 	}
 	else {
 		move_cursor (column_moveto);
 	}
+
 	blink_tile (0, c, gboard[0][c], 6);
 
 	s = g_strdup_printf (_("Hint: Column %d"), c + 1);
 	set_status (STATUS_FLASH, s);
 	g_free (s);
 
-	while (timeout) gtk_main_iteration ();
 	hint_set_sensitive (TRUE);
 	undo_set_sensitive (moves > 0);
 }
@@ -971,7 +982,8 @@ blink_winner (gint n)
 		anim = ANIM_BLINK;
 		blink_on = FALSE;
 		blink_n = n;
-		timeout = gtk_timeout_add (SPEED_BLINK, on_animate, NULL);
+		timeout = gtk_timeout_add (SPEED_BLINK, 
+					   (GSourceFunc) on_animate, NULL);
 		while (timeout) gtk_main_iteration ();
 	}
 
@@ -979,7 +991,8 @@ blink_winner (gint n)
 		anim = ANIM_BLINK;
 		blink_on = FALSE;
 		blink_n = n;
-		timeout = gtk_timeout_add (SPEED_BLINK, on_animate, NULL);
+		timeout = gtk_timeout_add (SPEED_BLINK, 
+					   (GSourceFunc) on_animate, NULL);
 		while (timeout) gtk_main_iteration ();
 	}
 
@@ -987,7 +1000,8 @@ blink_winner (gint n)
 		anim = ANIM_BLINK;
 		blink_on = FALSE;
 		blink_n = n;
-		timeout = gtk_timeout_add (SPEED_BLINK, on_animate, NULL);
+		timeout = gtk_timeout_add (SPEED_BLINK, 
+					   (GSourceFunc) on_animate, NULL);
 		while (timeout) gtk_main_iteration ();
 	}
 
@@ -995,7 +1009,8 @@ blink_winner (gint n)
 		anim = ANIM_BLINK;
 		blink_on = FALSE;
 		blink_n = n;
-		timeout = gtk_timeout_add (SPEED_BLINK, on_animate, NULL);
+		timeout = gtk_timeout_add (SPEED_BLINK, 
+					   (GSourceFunc) on_animate, NULL);
 		while (timeout) gtk_main_iteration ();
 	}
 }
@@ -1031,69 +1046,84 @@ check_game_state (void)
 	}
 }
 
-
+static gint next_move (gint c)
+{
+	process_move (c);
+	return FALSE;
+}
 
 static void
 process_move (gint c)
 {
-	gint r;
-
 	if (timeout) return;
 
 	if (!p.do_animate) {
 		move_cursor (c);
 		column_moveto = c;
+		process_move2 (c);
 	}
 	else {
 		column_moveto = c;
 		anim = ANIM_MOVE;
-		timeout = gtk_timeout_add (SPEED_MOVE, on_animate, NULL);
-		while (timeout) gtk_main_iteration ();
+		timeout = gtk_timeout_add (SPEED_MOVE, 
+					   (GSourceFunc) on_animate, 
+					   GINT_TO_POINTER (c));
 	}
+}
+
+static void
+process_move2 (gint c)
+{
+	gint r;
 
 	r = first_empty_row (c);
 	if (r > 0) {
 
 		if (!p.do_animate) {
 			drop_marble (r, c);
+			process_move3 (c);
 		}
 		else {
 			row = 0;
 			row_dropto = r;
 			anim = ANIM_DROP;
-			timeout = gtk_timeout_add (SPEED_DROP, on_animate, NULL);
-			while (timeout) gtk_main_iteration ();
+			timeout = gtk_timeout_add (SPEED_DROP, 
+						   (GSourceFunc) on_animate, 
+						   GINT_TO_POINTER (c));
 		}
-
-		play_sound (SOUND_DROP);
-
-		vstr[++moves] = '1' + c;
-		vstr[moves + 1] = '0';
-
-		check_game_state ();
-
-		if (gameover) {
-			score[winner]++;
-			scorebox_update ();
-			prompt_player ();
-		}
-		else {
-			swap_player ();
-			if (!is_player_human ()) {
-				if (player == PLAYER1) {
-					vstr[0] = vlevel[p.level[PLAYER1]];
-				}
-				else {
-					vstr[0] = vlevel[p.level[PLAYER2]];
-				}
-				c = playgame (vstr, vboard) - 1;
-				if (c < 0) gameover = TRUE;
-				process_move (c);
-			}
-		}
-	}
-	else {
+	} else {
 		play_sound (SOUND_COLUMN_FULL);
+	}
+}
+
+static void
+process_move3 (gint c)
+{
+	play_sound (SOUND_DROP);
+
+	vstr[++moves] = '1' + c;
+	vstr[moves + 1] = '0';
+
+	check_game_state ();
+
+	if (gameover) {
+		score[winner]++;
+		scorebox_update ();
+		prompt_player ();
+	} else {
+		swap_player ();
+		if (!is_player_human ()) {
+			if (player == PLAYER1) {
+				vstr[0] = vlevel[p.level[PLAYER1]];
+			} else {
+				vstr[0] = vlevel[p.level[PLAYER2]];
+			}
+			c = playgame (vstr, vboard) - 1;
+			if (c < 0) gameover = TRUE;
+			gtk_timeout_add (SPEED_DROP, 
+					 (GSourceFunc) next_move,
+					 GINT_TO_POINTER (c));
+		}
 	}
 }
 
