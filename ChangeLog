@@ -1,3 +1,20 @@
+2002-04-16  Tim Musson <trmusson@ihug.co.nz>
+
+	* data/clean_40x40_nightfall.gnect:
+	  - Theme's grid colour changed to the new format.
+	* dialog.c:
+	  - Scorebox icon now uses gtk_image_new_from_file.
+	  - Added gtk_window_set_transient_for About dialog.
+	  - Support for translator credits in About dialog.
+	  - Updated dates and email addresses.
+	* gui.c:
+	  - Removed old inclusion of gnome-window-icon.h
+	  - Geometry parsing now done by gtk_window_parse_geometry.
+	* dialog.c, dialog.h, gui.c, gui.h, gnect.c, gnect.h,
+	  main.c, main.h, gfx.c, gfx.h, sound.c, sound.h, prefs.c,
+	  prefs.h, theme.c, theme.h, brain.c, brain.h:
+	  - Code formatting tweaked to better match Gnome's style.
+
 2002-04-16  Bastien Nocera  <hadess@hadess.net>
 
 	* data/Makefile.am:

@@ -1,8 +1,8 @@
 gfx.c:
-  * occasionally a counter-drop animation doesn't look smooth.
-    Haven't yet figured out what causes this.
+    * Occasionally a counter-drop animation doesn't look smooth.
+      Haven't yet figured out what causes this.
 
 prefs.c:
-  * the keyboard control entries are silly - typing certain keys
-    (eg. TAB and the cursor keys) changes the focus.
+    * The keyboard control entries in the prefs dialog grab focus,
+      making keyboard-only navigation of the dialog difficult.
 
