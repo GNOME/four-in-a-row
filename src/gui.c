@@ -561,7 +561,7 @@ gui_create (void)
 
         DEBUG_PRINT (1, "gui_create\n");
 
-        app = gnome_app_new (APPNAME, "Gnect");
+        app = gnome_app_new (APPNAME, "Four-in-a-row");
         gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
         gtk_window_set_wmclass (GTK_WINDOW (app), APPNAME, "main");
 

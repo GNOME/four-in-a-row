@@ -1,3 +1,12 @@
+2003-07-10  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/prefs.c (prefs_dialog_create): 
+	* src/gui.c (gui_create): Changed the title to match the menu item.
+
+2003-07-09  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* data/gnect.desktop.in:  Update name to fit HIG (bug 116916).
+
 2003-06-22  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/gui.c: 

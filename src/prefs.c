@@ -791,7 +791,7 @@ prefs_dialog_create (void)
 
         DEBUG_PRINT (1, "prefs_dialog_create\n");
 
-        dlg_prefs = gtk_dialog_new_with_buttons (_("Gnect Preferences"),
+        dlg_prefs = gtk_dialog_new_with_buttons (_("Four-in-a-row Preferences"),
                                                  GTK_WINDOW (app),
                                                  GTK_DIALOG_DESTROY_WITH_PARENT,
                                                  /* GTK_STOCK_HELP, GTK_RESPONSE_HELP, */
