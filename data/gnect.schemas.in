@@ -3,6 +3,7 @@
   <schemalist>
       <schema>
       <key>/schemas/apps/gnect/player1</key>
+      <applyto>/apps/gnect/player1</applyto>
       <owner>gnect</owner>
       <type>int</type>
       <default>0</default>
@@ -14,6 +15,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/player2</key>
+      <applyto>/apps/gnect/player2</applyto>
       <owner>gnect</owner>
       <type>int</type>
       <default>2</default>
@@ -25,6 +27,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/startmode</key>
+      <applyto>/apps/gnect/startmode</applyto>
       <owner>gnect</owner>
       <type>int</type>
       <default>2</default>
@@ -36,6 +39,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/theme</key>
+      <applyto>/apps/gnect/theme</applyto>
       <owner>gnect</owner>
       <type>string</type>
       <default>default.gnect</default>
@@ -47,6 +51,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/grid</key>
+      <applyto>/apps/gnect/grid</applyto>
       <owner>gnect</owner>
       <type>bool</type>
       <default>TRUE</default>
@@ -58,6 +63,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/animate</key>
+      <applyto>/apps/gnect/animate</applyto>
       <owner>gnect</owner>
       <type>bool</type>
       <default>TRUE</default>
@@ -69,6 +75,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/sound</key>
+      <applyto>/apps/gnect/sound</applyto>
       <owner>gnect</owner>
       <type>bool</type>
       <default>TRUE</default>
@@ -80,6 +87,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/soundmode</key>
+      <applyto>/apps/gnect/soundmode</applyto>
       <owner>gnect</owner>
       <type>int</type>
       <default>1</default>
@@ -91,6 +99,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/keyleft</key>
+      <applyto>/apps/gnect/keyleft</applyto>
       <owner>gnect</owner>
       <type>int</type>
       <default>106</default>
@@ -102,6 +111,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/keyright</key>
+      <applyto>/apps/gnect/keyright</applyto>
       <owner>gnect</owner>
       <type>int</type>
       <default>108</default>
@@ -113,6 +123,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/keydrop</key>
+      <applyto>/apps/gnect/keydrop</applyto>
       <owner>gnect</owner>
       <type>int</type>
       <default>107</default>
@@ -124,6 +135,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/verify</key>
+      <applyto>/apps/gnect/verify</applyto>
       <owner>gnect</owner>
       <type>bool</type>
       <default>TRUE</default>
@@ -135,6 +147,7 @@
 
       <schema>
       <key>/schemas/apps/gnect/toolbar</key>
+      <applyto>/apps/gnect/toolbar</applyto>
       <owner>gnect</owner>
       <type>bool</type>
       <default>FALSE</default>

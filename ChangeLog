@@ -1,3 +1,7 @@
+2003-02-24  Jeremy Katz  <katzj@redhat.com>
+
+	* data/gnect.schemas.in: add applyto to schemas (closes #106903)
+
 2002-12-17  Ross Burton  <ross@burtonini.com>
 
 	* data/Makefile.am (schema_in_files): Fix the GConf schema path.
