@@ -21,7 +21,7 @@ EXTRA_DIST = $(velena_DATA)     \
              $(soundlist_DATA)  \
              $(schema_in_files)
 
-CLEANFILES = $(schema_DATA)
+DISTCLEANFILES = $(schema_DATA)
 
 install-data-local:
 if GCONF_SCHEMAS_INSTALL
