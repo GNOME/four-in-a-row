@@ -1,5 +1,17 @@
 2002-04-21  Tim Musson <trmusson@ihug.co.nz>
 
+	* src/main.c: gnome_program_init replaces gnome_init_with_popt_table.
+	* src/prefs.c: Added Help, OK and Apply buttons to prefs dialog.
+
+	* src/main.c:
+	* src/gnect.c:
+	* src/prefs.h:
+	* src/prefs.c: Converted to gconf.
+	* data/Makefile.am:
+	* data/gnect.schemas: new file
+
+2002-04-21  Tim Musson <trmusson@ihug.co.nz>
+
 	* pixmaps/Makefile.am:
 	* pixmaps/gnect-about.png: removed
 	* src/main.h: Gnect's desktop icon is now used in the About dialog,

@@ -86,17 +86,15 @@ main (int argc, char *argv[])
         bindtextdomain (PACKAGE, GNOMELOCALEDIR);
         textdomain (PACKAGE);
 
-        if (gnome_init_with_popt_table (APPNAME, VERSION, argc, argv, opts, 0, NULL)) {
-                ERROR_PRINT("gnome_init_with_popt_table failed\n");
-                exit (1);
-        }
+        gnome_program_init (APPNAME, VERSION,
+                            LIBGNOMEUI_MODULE,
+                            argc, argv,
+                            GNOME_PARAM_POPT_TABLE, opts,
+                            NULL);
 
-        /*
-        gnome_program_init (APPNAME, VERSION, LIBGNOMEUI_MODULE,
-                            argc, argv, GNOME_PARAM_POPT_TABLE, NULL, NULL);
-        */
 
-        prefs_get ();
+        /* init gconf, read prefs */
+        prefs_init (argc, argv);
 
 
         /* read all theme files and assign theme_current */
@@ -104,7 +102,6 @@ main (int argc, char *argv[])
                 g_printerr (_("%s: no themes available\n"), APPNAME);
                 gnect_cleanup (1);
         }
-
 
         anim.id = 0;
 

@@ -45,7 +45,7 @@ gnect_cleanup (gint exit_code)
         gfx_free ();
         theme_free_all ();
         veleng_free (gnect.veleng_board);
-        g_free (prefs.fname_theme);
+        prefs_free ();
 
         DEBUG_PRINT(1, "exit(%d)\n", exit_code);
         gtk_exit (exit_code);

@@ -6,6 +6,9 @@ Gamesdir       = $(datadir)/applications
 Games_DATA     = $(Games_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
+schemadir      = $(sysconfdir)/gconf/schemas
+schema_DATA    = gnect.schemas
+
 soundlistdir   = $(sysconfdir)/sound/events
 soundlist_DATA = gnect.soundlist
 
@@ -30,5 +33,6 @@ theme_DATA     = default.gnect               \
 EXTRA_DIST = $(theme_DATA)      \
              $(velena_DATA)     \
              $(Games_DATA)      \
-             $(soundlist_DATA)
+             $(soundlist_DATA)  \
+             $(schema_DATA)
 

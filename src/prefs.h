@@ -51,6 +51,8 @@ struct _Prefs {
 };
 
 
+void prefs_init(gint argc, gchar **argv);
+void prefs_free(void);
 void prefs_get(void);
 void prefs_save(void);
 void prefs_dialog(void);
