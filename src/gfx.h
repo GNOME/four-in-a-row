@@ -9,4 +9,5 @@ void     gfx_draw_tile (gint r, gint c, gboolean refresh);
 void     gfx_draw_all (gboolean refresh);
 void     gfx_draw_grid (void);
 gint     gfx_get_column (gint xpos);
+extern GdkGC     *gc;
 

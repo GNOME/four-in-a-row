@@ -37,7 +37,6 @@ extern Theme      theme[];
 extern gint       gboard[7][7];
 extern GtkWidget *app;
 extern GtkWidget *drawarea;
-extern GdkGC     *gc;
 
 static gint       width, height;
 static gint       tilew, tileh;

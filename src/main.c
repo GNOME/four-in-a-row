@@ -47,7 +47,6 @@ GtkWidget *app;
 GtkWidget *drawarea;
 GtkWidget *appbar;
 GtkWidget *scorebox = NULL;
-GdkGC     *gc;
 
 GtkWidget *label_name[3];
 GtkWidget *label_score[3];
