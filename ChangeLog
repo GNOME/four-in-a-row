@@ -1,5 +1,10 @@
 2004-03-15  Callum McKenzie  <callum@physics.otago.ac.nz>
 
+	* data/gnect.schemas.in: Changed the default key bindings 
+	to use the arrow keys.
+
+2004-03-15  Callum McKenzie  <callum@physics.otago.ac.nz>
+
 	* src/gfx.c:
 	* src/gfx.h:
 	
