@@ -461,7 +461,7 @@ prefsbox_open (void)
 	gtk_container_add (GTK_CONTAINER(frame), vbox2);
 
 	controls_list = games_controls_list_new ();
-	games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list), KEY_MOVE_LEFT, KEY_MOVE_RIGHT, KEY_MOVE_DROP);
+	games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list), KEY_MOVE_LEFT, KEY_MOVE_RIGHT, KEY_MOVE_DROP, NULL);
 
 	gtk_box_pack_start (GTK_BOX(vbox2), controls_list, FALSE, FALSE, 0);
 
