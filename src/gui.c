@@ -7,6 +7,7 @@
 
 #include "config.h" /* for NLS, config.h before gnome-i18n.h */
 
+#include <gconf/gconf-client.h>
 #include <gnome.h>
 
 #include "main.h"
@@ -25,6 +26,7 @@ extern Theme     *theme_current;
 extern GdkPixmap *pixmap_display;
 extern gint      tile_width;
 extern Anim      anim;
+extern GConfClient *gnect_gconf_client;
 
 GtkWidget *app;
 GtkWidget *draw_area;
@@ -85,8 +87,8 @@ GnomeUIInfo toolbar[] = {
         GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Start a new game"), cb_gui_game_new, GTK_STOCK_NEW),
         GNOMEUIINFO_ITEM_STOCK(N_("Undo"), N_("Undo the last move"), cb_gui_game_undo, GTK_STOCK_UNDO),
         GNOMEUIINFO_ITEM_STOCK(N_("Hint"), N_("Get a hint for your next move"), cb_gui_game_hint, GTK_STOCK_HELP),
-        GNOMEUIINFO_ITEM_STOCK(N_("Scores"), N_("View the scores"), cb_gui_game_scores, GNOME_STOCK_SCORES), 
-        GNOMEUIINFO_ITEM_STOCK(N_("Quit"), N_("Exit the program"), cb_gui_quit_verify, GTK_STOCK_QUIT),
+        /* GNOMEUIINFO_ITEM_STOCK(N_("Scores"), N_("View the scores"), cb_gui_game_scores, GNOME_STOCK_SCORES), */
+        /* GNOMEUIINFO_ITEM_STOCK(N_("Quit"), N_("Exit the program"), cb_gui_quit_verify, GTK_STOCK_QUIT), */
         GNOMEUIINFO_END
 };
 
@@ -244,15 +246,38 @@ cb_gui_settings_toolbar (GtkWidget *widget, gpointer data)
 
 
         toolbar_gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
+        /* prefs.do_toolbar = (GTK_CHECK_MENU_ITEM(settings_menu[0].widget))->active; */
 
-        if ( (prefs.do_toolbar = (GTK_CHECK_MENU_ITEM(settings_menu[0].widget))->active) ) {
+        prefs.do_toolbar = GTK_CHECK_MENU_ITEM(widget)->active;
+        if (prefs.do_toolbar) {
                 gtk_widget_show (GTK_WIDGET(toolbar_gdi));
         }
         else {
                 gtk_widget_hide (GTK_WIDGET(toolbar_gdi));
                 gtk_widget_queue_resize (app);
         }
-        prefs.changed = TRUE;
+        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/toolbar", prefs.do_toolbar, NULL);
+}
+
+
+
+static void
+cb_gui_gconf_toolbar (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        BonoboDockItem *toolbar_gdi;
+
+
+        toolbar_gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
+        prefs.do_toolbar = gconf_client_get_bool (gnect_gconf_client, "/apps/gnect/toolbar", NULL);
+        gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(settings_menu[ID_MENU_SETTINGS_TOOLBAR].widget),
+                                        prefs.do_toolbar);
+        if (prefs.do_toolbar) {
+                gtk_widget_show (GTK_WIDGET(toolbar_gdi));
+        }
+        else {
+                gtk_widget_hide (GTK_WIDGET(toolbar_gdi));
+                gtk_widget_queue_resize (app);
+        }
 }
 
 
@@ -261,7 +286,21 @@ static void
 cb_gui_settings_sound (GtkWidget *widget, gpointer data)
 {
         prefs.do_sound = GTK_CHECK_MENU_ITEM(widget)->active;
-        prefs.changed = TRUE;
+        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/sound", prefs.do_sound, NULL);
+}
+
+
+
+static void
+cb_gui_gconf_sound (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        BonoboDockItem *toolbar_gdi;
+
+
+        toolbar_gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
+        prefs.do_sound = gconf_client_get_bool (gnect_gconf_client, "/apps/gnect/sound", NULL);
+        gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(settings_menu[ID_MENU_SETTINGS_SOUND].widget),
+                                        prefs.do_sound);
 }
 
 
@@ -271,7 +310,22 @@ cb_gui_settings_grid (GtkWidget *widget, gpointer data)
 {
         prefs.do_grids = GTK_CHECK_MENU_ITEM(widget)->active;
         gfx_toggle_grid (theme_current, prefs.do_grids);
-        prefs.changed = TRUE;
+        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/grid", prefs.do_grids, NULL);
+}
+
+
+
+
+static void
+cb_gui_gconf_grid (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        BonoboDockItem *toolbar_gdi;
+
+
+        toolbar_gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
+        prefs.do_grids = gconf_client_get_bool (gnect_gconf_client, "/apps/gnect/grid", NULL);
+        gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(settings_menu[ID_MENU_SETTINGS_GRID].widget),
+                                        prefs.do_grids);
 }
 
 
@@ -623,6 +677,13 @@ gui_open (const gchar *geom_str)
         g_signal_connect (GTK_OBJECT(app), "key_press_event", GTK_SIGNAL_FUNC(cb_gui_key_press), NULL);
 
         if (geom_str) gtk_window_parse_geometry (GTK_WINDOW(app), geom_str);
+
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/toolbar",
+                                 cb_gui_gconf_toolbar, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/sound",
+                                 cb_gui_gconf_sound, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/grid",
+                                 cb_gui_gconf_grid, NULL, NULL, NULL);
 
         gtk_widget_show_all (app);
 

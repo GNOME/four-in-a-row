@@ -1,3 +1,8 @@
+2002-07-04  Tim Musson <trmusson@ihug.co.nz>
+
+	* src/prefs.c, src/gui.c: Prefs/gconf instant-apply.
+	* src/gui.c: Removed "Exit" and "Scores" buttons from toolbar (HIG).
+
 2002-02-09  Juan Pablo Mendoza <jpablo@gnome.org>
 
 	* src/connect4.c: Find files at the correct directory.

@@ -40,26 +40,35 @@ extern Theme     *theme_current;
 GConfClient *gnect_gconf_client = NULL;
 Prefs  prefs;
 
-static Prefs  prefs_tmp;
 static GtkWidget *label_player_selection1;
 static GtkWidget *label_player_selection2;
 static GtkWidget *dlg_prefs = NULL;
-static GtkWidget *checkbutton_animate;
-static GtkWidget *checkbutton_verify;
-static GtkWidget *entry_key_left;
-static GtkWidget *entry_key_right;
-static GtkWidget *entry_key_drop;
-static GtkWidget *optionmenu_theme;
-static GtkWidget *optionmenu_theme_menu;
+static GtkWidget *checkbutton_animate = NULL;
+static GtkWidget *checkbutton_verify = NULL;
+static GtkWidget *entry_key_left = NULL;
+static GtkWidget *entry_key_right = NULL;
+static GtkWidget *entry_key_drop = NULL;
+static GtkWidget *optionmenu_theme = NULL;
+static GtkWidget *optionmenu_theme_menu = NULL;
 static GtkWidget *radio_player1[5];
 static GtkWidget *radio_player2[5];
 static GtkWidget *radio_start[3];
 static GtkWidget *radio_sound[2];
+static gboolean   kill_game_kludge = FALSE;
 
 
-static void cb_prefs_dialog_apply(GtkWidget *widget, gpointer *data);
 static void prefs_dialog_reset(void);
-
+static void prefs_dialog_update_player_selection_labels (void);
+static void cb_prefs_gconf_player1_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_player2_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_who_starts_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_key_left_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_key_right_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_key_drop_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_animate_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_sound_mode_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_verify_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
 
 
 static void
@@ -69,20 +78,16 @@ cb_prefs_response (GtkWidget *pref_dialog, int response_id, gpointer data)
 
         switch (response_id) {
         case GTK_RESPONSE_ACCEPT :
-                cb_prefs_dialog_apply (pref_dialog, (gpointer)-1);
-                gtk_widget_destroy (dlg_prefs);
-                dlg_prefs = NULL;
+                gtk_widget_hide (dlg_prefs);
                 break;
+
 #if 0
+                /*
+                 * FIXME: main.c: GnomeProgram *gnome_program from gnome_program_init (...)
+                 * Check HIG - does prefs need a help button?
+                 */
         case GTK_RESPONSE_HELP :
-                fname_help = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_HELP, "usage.html", FALSE, NULL);
-                if (fname_help) {
-                        gchar *url_help;
-                        url_help = g_strconcat ("file:", fname_help, "#prefsdialog", NULL);
-                        gnome_help_display_uri (url_help, NULL);
-                        g_free (url_help);
-                        g_free (fname_help);
-                }
+                gnome_help_display_desktop (gnome_program, APPNAME, APPNAME, "prefsdialog", &error);
                 break;
 #endif
         }
@@ -94,22 +99,22 @@ cb_prefs_response (GtkWidget *pref_dialog, int response_id, gpointer data)
 static void
 prefs_check (void)
 {
-        /* sanity check important values got from prefs file */
+        /* sanity check important values */
         if (prefs.start_mode < 0 || prefs.start_mode > 2) {
                 prefs.start_mode = DEFAULT_START_MODE;
-                prefs.changed = TRUE;
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/startmode", prefs.start_mode, NULL);
         }
         if (prefs.player1 < 0 || prefs.player1 > 4) {
                 prefs.player1 = DEFAULT_PLAYER_1;
-                prefs.changed = TRUE;
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player1", prefs.player1, NULL);
         }
         if (prefs.player2 < 0 || prefs.player2 > 4) {
                 prefs.player2 = DEFAULT_PLAYER_2;
-                prefs.changed = TRUE;
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player2", prefs.player2, NULL);
         }
         if (prefs.sound_mode < 1 || prefs.sound_mode > 2) {
                 prefs.sound_mode = DEFAULT_SOUND_MODE;
-                prefs.changed = TRUE;
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/soundmode", prefs.sound_mode, NULL);
         }
 }
 
@@ -228,8 +233,6 @@ prefs_get (void)
 {
         DEBUG_PRINT(1, "prefs_get\n");
 
-        prefs.changed = FALSE;
-
         prefs.player1 = gnect_gconf_get_int ("/apps/gnect/player1", DEFAULT_PLAYER_1);
         prefs.player2 = gnect_gconf_get_int ("/apps/gnect/player2", DEFAULT_PLAYER_2);
         prefs.start_mode = gnect_gconf_get_int ("/apps/gnect/startmode", DEFAULT_START_MODE);
@@ -256,47 +259,7 @@ prefs_get (void)
 void
 prefs_save (void)
 {
-        if (!prefs.changed) return;
-
-        DEBUG_PRINT(1, "prefs_save\n");
-
-        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player1",   prefs.player1, NULL);
-        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player2",   prefs.player2, NULL);
-        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/startmode", prefs.start_mode, NULL);
-        gconf_client_set_string (gnect_gconf_client, "/apps/gnect/theme",  prefs.fname_theme, NULL);
-        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/grid",     prefs.do_grids, NULL);
-        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/animate",  prefs.do_animate, NULL);
-        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/sound",    prefs.do_sound, NULL);
-        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/soundmode", prefs.sound_mode, NULL);
-        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keyleft",   prefs.key[KEY_LEFT], NULL);
-        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keyright",  prefs.key[KEY_RIGHT], NULL);
-        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keydrop",   prefs.key[KEY_DROP], NULL);
-        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/verify",   prefs.do_verify, NULL);
-        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/toolbar",  prefs.do_toolbar, NULL);
-}
-
-
-
-static void
-cb_prefs_gconf_changed (GConfClient *tmp_client, guint cnx_id,
-                        GConfEntry *tmp_entry, gpointer tmp_data)
-{
-        /* FIXME: This'll end a game in progress without asking,
-         * if it works at all. Untested.
-         */
-
-        DEBUG_PRINT(1, "cb_prefs_gconf_changed: FIXME\n");
-#if 0
-        g_free (prefs.fname_theme);
-        prefs_get ();
-
-        if (dlg_prefs) prefs_dialog_reset ();
-        gnect_reset (FALSE);
-        gnect_reset_display ();
-        gnect_reset_scores ();
-        gui_set_status_prompt_new_game (STATUS_MSG_SET);
-        theme_load (theme_get_ptr_from_fname (prefs.fname_theme));
-#endif
+        /* FIXME: prefs_save() is no longer used - remove from here, prefs.h and gnect.c */
 }
 
 
@@ -304,14 +267,46 @@ cb_prefs_gconf_changed (GConfClient *tmp_client, guint cnx_id,
 void
 prefs_init (gint argc, gchar **argv)
 {
+        gint i;
+
+
+        for (i = 0; i < 4; i++) {
+                radio_player1[i] = NULL;
+                radio_player2[i] = NULL;
+        }
+        for (i = 0; i < 3; i++) radio_start[i] = NULL;
+        for (i = 0; i < 2; i++) radio_sound[i] = NULL;
+
         gconf_init (argc, argv, NULL);
         gnect_gconf_client = gconf_client_get_default ();
         gconf_client_add_dir (gnect_gconf_client, "/apps/gnect",
                               GCONF_CLIENT_PRELOAD_NONE, NULL);
-        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect",
-                                cb_prefs_gconf_changed, NULL, NULL, NULL);
 
         prefs_get ();
+
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/player1",
+                                 cb_prefs_gconf_player1_changed, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/player2",
+                                 cb_prefs_gconf_player2_changed, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/startmode",
+                                 cb_prefs_gconf_who_starts_changed, NULL, NULL, NULL);
+
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/theme",
+                                 cb_prefs_gconf_theme_changed, NULL, NULL, NULL);
+
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/keyleft",
+                                 cb_prefs_gconf_key_left_changed, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/keyright",
+                                 cb_prefs_gconf_key_right_changed, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/keydrop",
+                                 cb_prefs_gconf_key_drop_changed, NULL, NULL, NULL);
+
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/animate",
+                                 cb_prefs_gconf_animate_changed, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/soundmode",
+                                 cb_prefs_gconf_sound_mode_changed, NULL, NULL, NULL);
+        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/verify",
+                                 cb_prefs_gconf_verify_changed, NULL, NULL, NULL);
 }
 
   
@@ -345,189 +340,48 @@ prefs_dialog_update_player_selection_labels (void)
 
 
 
-static void
-prefs_dialog_reset(void)
+static gboolean
+prefs_verify_kill_game ()
 {
-        /*
-         * Make sure the dialog reflects current prefs settings.
-         * Copy them in case user changes something then cancels.
-         */
-
-        DEBUG_PRINT(1, "prefs_dialog_reset\n");
+        gint response;
+        GtkWidget *dialog;
 
 
-        /* copy prefs */
+       	dialog = gtk_message_dialog_new (GTK_WINDOW (dlg_prefs),
+                                         GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                         GTK_MESSAGE_QUESTION,
+                                         GTK_BUTTONS_OK_CANCEL,
+                                         _("Applying this change to Player Selection\nwill end the current game"));
 
-        prefs_tmp.player1        = prefs.player1;
-        prefs_tmp.player2        = prefs.player2;
-        prefs_tmp.start_mode     = prefs.start_mode;
-        prefs_tmp.key[KEY_LEFT]  = prefs.key[KEY_LEFT];
-        prefs_tmp.key[KEY_RIGHT] = prefs.key[KEY_RIGHT];
-        prefs_tmp.key[KEY_DROP]  = prefs.key[KEY_DROP];
-        prefs_tmp.do_animate     = prefs.do_animate;
-        prefs_tmp.sound_mode     = prefs.sound_mode;
+       	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_YES);
 
-        g_free (prefs_tmp.fname_theme);
-        prefs_tmp.fname_theme   = g_strdup (prefs.fname_theme);
-
-        prefs_tmp.descr_player1 = prefs.descr_player1;
-        prefs_tmp.descr_player2 = prefs.descr_player2;
-
-
-        /* update dialog display */
-
-        prefs_dialog_update_player_selection_labels ();
-
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player1[prefs.player1]), TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player2[prefs.player2]), TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_start[prefs.start_mode]), TRUE);
-
-        gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), theme_current->id);
-
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_animate), prefs.do_animate);
-
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_sound[prefs.sound_mode - 1]), TRUE);
-
-        gtk_entry_set_text (GTK_ENTRY(entry_key_left), gdk_keyval_name (prefs.key[KEY_LEFT]));
-        gtk_entry_set_text (GTK_ENTRY(entry_key_right), gdk_keyval_name (prefs.key[KEY_RIGHT]));
-        gtk_entry_set_text (GTK_ENTRY(entry_key_drop), gdk_keyval_name (prefs.key[KEY_DROP]));
-
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_verify), prefs.do_verify);
-
-
-        /* flag as untouched */
-
-        prefs_tmp.changed = FALSE;
+       	response = gtk_dialog_run (GTK_DIALOG (dialog));
+		
+       	gtk_widget_destroy (dialog);
+       	
+       	return response == GTK_RESPONSE_OK;
 }
 
 
 
 static void
-prefs_dialog_apply (gboolean kills_game)
+cb_prefs_gconf_player1_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
 {
-        Theme *theme;
+        gint player1_tmp;
 
 
-        DEBUG_PRINT(1, "prefs_dialog_apply\n");
-
-        prefs.player1        = prefs_tmp.player1;
-        prefs.player2        = prefs_tmp.player2;
-        prefs.key[KEY_LEFT]  = prefs_tmp.key[KEY_LEFT];
-        prefs.key[KEY_RIGHT] = prefs_tmp.key[KEY_RIGHT];
-        prefs.key[KEY_DROP]  = prefs_tmp.key[KEY_DROP];
-        prefs.start_mode     = prefs_tmp.start_mode;
-        prefs.sound_mode     = prefs_tmp.sound_mode;
-        prefs.do_animate     = prefs_tmp.do_animate;
-        prefs.do_verify      = prefs_tmp.do_verify;
-
-        if (kills_game) {
-
-                gnect_reset (FALSE);
-                gnect_reset_display ();
-                gnect_reset_scores ();
-
-                gui_set_status_prompt_new_game (STATUS_MSG_SET);
-        }
-
-
-        if (strcmp (prefs_tmp.fname_theme, prefs.fname_theme)) {
-
-                /* theme selection has changed */
-
-                theme = theme_get_ptr_from_fname (prefs_tmp.fname_theme);
-
-                if (!theme || !theme_load (theme)) {
-
-                        gnome_app_warning (GNOME_APP(app), _("Error loading theme"));
-
+        player1_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/player1", NULL);
+        if (player1_tmp != prefs.player1) {
+                prefs.player1 = player1_tmp;
+                prefs_check ();
+                if (radio_player1[0] != NULL) {
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player1[prefs.player1]), TRUE);
+                        gnect_reset (FALSE);
+                        gnect_reset_display ();
+                        gnect_reset_scores ();
+                        gui_set_status_prompt_new_game (STATUS_MSG_SET);
                 }
-                else {
-
-                        g_free (prefs.fname_theme);
-                        prefs.fname_theme = g_strdup (theme->fname);
-
-
-                        /* redraw player descriptions wherever they might be visible */
-
-                        prefs_dialog_update_player_selection_labels ();
-
-                        dialog_score_update ();
-
-                        if (!kills_game) {
-
-                                /* update status bar prompt */
-
-                                if (!gnect.over) {
-                                        gui_set_status_prompt (gnect.current_player);
-                                }
-                                else if (gnect.winner != -1) {
-                                        gui_set_status_winner (gnect.winner, FALSE);
-                                }
-
-                        }
-
-                }
-
         }
-
-
-        /* flag prefs dialog as unchanged */
-
-        prefs_tmp.changed = FALSE;
-
-
-        /* flag to save prefs on exit */
-
-        prefs.changed = TRUE;
-}
-
-
-
-static void
-cb_prefs_verify_apply_kills_game (gint cancel, gpointer *data)
-{
-        if (!cancel) prefs_dialog_apply (TRUE);
-}
-
-
-
-static void
-cb_prefs_dialog_apply (GtkWidget *widget, gpointer *data)
-{
-        gboolean kills_game;
-
-
-        if ((gint)data != -1 || !prefs_tmp.changed) return;
-
-
-        DEBUG_PRINT(1, "cb_prefs_dialog_apply\n");
-
-
-        /* changing player selection resets the game - make sure that's okay */
-
-        kills_game = (prefs_tmp.player1 != prefs.player1 || prefs_tmp.player2 != prefs.player2);
-
-        if (kills_game && !gnect.over && prefs_tmp.do_verify) {
-
-                gnome_app_ok_cancel_modal (GNOME_APP(app),
-                                           _("Applying this change to Player Selection\nwill end the current game"),
-                                           (GnomeReplyCallback)cb_prefs_verify_apply_kills_game,
-                                           NULL);
-        }
-        else {
-
-                prefs_dialog_apply (kills_game);
-
-        }
-}
-
-
-
-static void
-cb_prefs_dialog_animate_select (GtkWidget *widget, gpointer *data)
-{
-        prefs_tmp.do_animate = GTK_TOGGLE_BUTTON(widget)->active;
-        prefs_tmp.changed = TRUE;
 }
 
 
@@ -535,8 +389,44 @@ cb_prefs_dialog_animate_select (GtkWidget *widget, gpointer *data)
 static void
 cb_prefs_dialog_player1_select (GtkWidget *widget, gpointer *data)
 {
-        if ( (prefs_tmp.player1 = (gint)data) != prefs.player1 ) {
-                prefs_tmp.changed = TRUE;
+        if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(radio_player1[(gint)data]))) return;
+        if (!gnect.over && prefs.do_verify) {
+                if (kill_game_kludge) return;
+                if (!prefs_verify_kill_game ()) {
+                        kill_game_kludge = TRUE;
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player1[prefs.player1]), TRUE);
+                        kill_game_kludge = FALSE;
+                        return;
+                }
+        }
+        prefs.player1 = (gint)data;
+        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player1", prefs.player1, NULL);
+
+        gnect_reset (FALSE);
+        gnect_reset_display ();
+        gnect_reset_scores ();
+        gui_set_status_prompt_new_game (STATUS_MSG_SET);
+}
+
+
+
+static void
+cb_prefs_gconf_player2_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gint player2_tmp;
+
+
+        player2_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/player2", NULL);
+        if (player2_tmp != prefs.player2) {
+                prefs.player2 = player2_tmp;
+                prefs_check ();
+                if (radio_player2[0] != NULL) {
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player2[prefs.player2]), TRUE);
+                        gnect_reset (FALSE);
+                        gnect_reset_display ();
+                        gnect_reset_scores ();
+                        gui_set_status_prompt_new_game (STATUS_MSG_SET);
+                }
         }
 }
 
@@ -545,8 +435,40 @@ cb_prefs_dialog_player1_select (GtkWidget *widget, gpointer *data)
 static void
 cb_prefs_dialog_player2_select (GtkWidget *widget, gpointer *data)
 {
-        if ( (prefs_tmp.player2 = (gint)data) != prefs.player2 ) {
-                prefs_tmp.changed = TRUE;
+        if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(radio_player2[(gint)data]))) return;
+        if (!gnect.over && prefs.do_verify) {
+                if (kill_game_kludge) return;
+                if (!prefs_verify_kill_game ()) {
+                        kill_game_kludge = TRUE;
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player2[prefs.player2]), TRUE);
+                        kill_game_kludge = FALSE;
+                        return;
+                }
+        }
+        prefs.player2 = (gint)data;
+        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player2", prefs.player2, NULL);
+
+        gnect_reset (FALSE);
+        gnect_reset_display ();
+        gnect_reset_scores ();
+        gui_set_status_prompt_new_game (STATUS_MSG_SET);
+}
+
+
+
+static void
+cb_prefs_gconf_who_starts_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gint start_mode_tmp;
+
+
+        start_mode_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/startmode", NULL);
+        if (start_mode_tmp != prefs.start_mode) {
+                prefs.start_mode = start_mode_tmp;
+                prefs_check ();
+                if (radio_start[0] != NULL) {
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_start[prefs.start_mode]), TRUE);
+                }
         }
 }
 
@@ -555,8 +477,51 @@ cb_prefs_dialog_player2_select (GtkWidget *widget, gpointer *data)
 static void
 cb_prefs_dialog_who_starts_select (GtkWidget *widget, gpointer *data)
 {
-        if ( (prefs_tmp.start_mode = (gint)data) != prefs.start_mode ) {
-                prefs_tmp.changed = TRUE;
+        prefs.start_mode = (gint)data;
+        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/startmode", prefs.start_mode, NULL);
+}
+
+
+
+static void
+cb_prefs_gconf_animate_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gboolean animate_tmp;
+
+
+        animate_tmp = gconf_client_get_bool (gnect_gconf_client, "/apps/gnect/animate", NULL);
+        if (animate_tmp != prefs.do_animate) {
+                prefs.do_animate = animate_tmp;
+                if (checkbutton_animate != NULL) {
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_animate), prefs.do_animate);
+                }
+        }
+}
+
+
+
+static void
+cb_prefs_dialog_animate_select (GtkWidget *widget, gpointer *data)
+{
+        prefs.do_animate = GTK_TOGGLE_BUTTON(widget)->active;
+        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/animate",  prefs.do_animate, NULL);
+}
+
+
+
+static void
+cb_prefs_gconf_sound_mode_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gint sound_mode_tmp;
+
+
+        sound_mode_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/soundmode", NULL);
+        if (sound_mode_tmp != prefs.sound_mode) {
+                prefs.sound_mode = sound_mode_tmp;
+                prefs_check ();
+                if (radio_sound[0] != NULL) {
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_sound[prefs.sound_mode - 1]), TRUE);
+                }
         }
 }
 
@@ -565,8 +530,61 @@ cb_prefs_dialog_who_starts_select (GtkWidget *widget, gpointer *data)
 static void
 cb_prefs_dialog_sound_select (GtkWidget *widget, gpointer *data)
 {
-        if ( (prefs_tmp.sound_mode = (gint)data) != prefs.sound_mode ) {
-                prefs_tmp.changed = TRUE;
+        prefs.sound_mode = (gint)data;
+        gconf_client_set_int (gnect_gconf_client, "/apps/gnect/soundmode", prefs.sound_mode, NULL);
+}
+
+
+
+static void
+prefs_theme_switched (Theme *theme)
+{
+        /* redraw player descriptions wherever they might be visible */
+
+        prefs_dialog_update_player_selection_labels ();
+
+        dialog_score_update ();
+
+        /* update status bar prompt */
+
+        if (!gnect.over) {
+                gui_set_status_prompt (gnect.current_player);
+        }
+        else if (gnect.winner != -1) {
+                gui_set_status_winner (gnect.winner, FALSE);
+        }
+
+        prefs.fname_theme = theme->fname;
+        prefs.descr_player1 = theme->descr_player1;
+        prefs.descr_player2 = theme->descr_player2;
+        gconf_client_set_string (gnect_gconf_client, "/apps/gnect/theme", prefs.fname_theme, NULL);
+}
+
+
+
+static void
+cb_prefs_gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{ 
+        Theme *theme;
+        gchar *fname_tmp;
+
+
+        fname_tmp = gconf_client_get_string (gnect_gconf_client, "/apps/gnect/theme", NULL);
+        if (strcmp (fname_tmp, theme_current->fname) != 0) {
+
+                theme = theme_get_ptr_from_fname (fname_tmp);
+                if (theme != NULL && theme_load (theme)) {
+
+                        prefs_theme_switched (theme);
+
+                        if (optionmenu_theme != NULL) {
+                                gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), theme_current->id);
+                        }
+                }
+                else {
+                        gconf_client_set_string (gnect_gconf_client, "/apps/gnect/theme",
+                                                 theme_current->fname, NULL);
+                }
         }
 }
 
@@ -580,13 +598,69 @@ cb_prefs_dialog_theme_select (GtkWidget *widget, gpointer *data)
 
         if (strcmp (theme->fname, prefs.fname_theme) != 0) {
 
-                prefs_tmp.fname_theme = theme->fname;
+                if (!theme_load (theme)) {
 
-                prefs_tmp.descr_player1 = theme->descr_player1;
-                prefs_tmp.descr_player2 = theme->descr_player2;
+                        gnome_app_warning (GNOME_APP(app), _("Error loading theme"));
 
-                prefs_tmp.changed = TRUE;
+                }
+                else {
 
+                        prefs_theme_switched (theme);
+                        gconf_client_set_string (gnect_gconf_client, "/apps/gnect/theme",
+                                                 theme_current->fname, NULL);
+
+                }
+        }
+}
+
+
+
+static void
+cb_prefs_gconf_key_left_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gint key_tmp;
+
+
+        key_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/keyleft", NULL);
+        if (key_tmp != prefs.key[KEY_LEFT]) {
+                prefs.key[KEY_LEFT] = key_tmp;
+                if (entry_key_left != NULL) {
+                        gtk_entry_set_text (GTK_ENTRY(entry_key_left), gdk_keyval_name (prefs.key[KEY_LEFT]));
+                }
+        }
+}
+
+
+
+static void
+cb_prefs_gconf_key_right_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gint key_tmp;
+
+
+        key_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/keyright", NULL);
+        if (key_tmp != prefs.key[KEY_RIGHT]) {
+                prefs.key[KEY_RIGHT] = key_tmp;
+                if (entry_key_right != NULL) {
+                        gtk_entry_set_text (GTK_ENTRY(entry_key_right), gdk_keyval_name (prefs.key[KEY_RIGHT]));
+                }
+        }
+}
+
+
+
+static void
+cb_prefs_gconf_key_drop_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gint key_tmp;
+
+
+        key_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/keydrop", NULL);
+        if (key_tmp != prefs.key[KEY_DROP]) {
+                prefs.key[KEY_DROP] = key_tmp;
+                if (entry_key_drop != NULL) {
+                        gtk_entry_set_text (GTK_ENTRY(entry_key_drop), gdk_keyval_name (prefs.key[KEY_DROP]));
+                }
         }
 }
 
@@ -598,15 +672,35 @@ cb_prefs_dialog_key_select (GtkWidget *widget, GdkEventKey *data)
         gtk_entry_set_text (GTK_ENTRY(widget), gdk_keyval_name (data->keyval));
 
         if (widget == entry_key_left) {
-                prefs_tmp.key[KEY_LEFT] = data->keyval;
+                prefs.key[KEY_LEFT] = data->keyval;
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keyleft", prefs.key[KEY_LEFT], NULL);
         }
         else if (widget == entry_key_right) {
-                prefs_tmp.key[KEY_RIGHT] = data->keyval;
+                prefs.key[KEY_RIGHT] = data->keyval;
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keyright", prefs.key[KEY_RIGHT], NULL);
         }
         else {
-                prefs_tmp.key[KEY_DROP] = data->keyval;
+                prefs.key[KEY_DROP] = data->keyval;
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keydrop", prefs.key[KEY_DROP], NULL);
         }
-        prefs_tmp.changed = TRUE;
+}
+
+
+
+static void
+cb_prefs_gconf_verify_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+        gboolean verify_tmp;
+
+
+        verify_tmp = gconf_client_get_bool (gnect_gconf_client, "/apps/gnect/verify", NULL);
+        if (verify_tmp != prefs.do_verify) {
+                prefs.do_verify = verify_tmp;
+                if (checkbutton_verify != NULL) {
+                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_verify),
+                                                      prefs.do_verify);
+                }
+        }
 }
 
 
@@ -614,8 +708,8 @@ cb_prefs_dialog_key_select (GtkWidget *widget, GdkEventKey *data)
 static void
 cb_prefs_dialog_verify_select (GtkWidget *widget, gpointer *data)
 {
-        prefs_tmp.do_verify = GTK_TOGGLE_BUTTON(widget)->active;
-        prefs_tmp.changed = TRUE;
+        prefs.do_verify = GTK_TOGGLE_BUTTON(widget)->active;
+        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/verify", prefs.do_verify, NULL);
 }
 
 
@@ -721,7 +815,7 @@ prefs_dialog_create (void)
 
         dlg_prefs = gtk_dialog_new_with_buttons (_("Gnect Preferences"),
                                                  GTK_WINDOW (app),
-                                                 /* GTK_DIALOG_MODAL | */ GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                 GTK_DIALOG_DESTROY_WITH_PARENT,
                                                  /* GTK_STOCK_HELP, GTK_RESPONSE_HELP, */
                                                  GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
                                                  NULL);
@@ -832,7 +926,7 @@ prefs_dialog_create (void)
 
         vbox1 = gtk_vbox_new (FALSE, 0);
         gtk_widget_show (vbox1);
-        gtk_box_pack_start (GTK_BOX(hbox1), vbox1, FALSE, FALSE, 5);
+        gtk_box_pack_start (GTK_BOX(hbox1), vbox1, TRUE, TRUE, 5);
         gtk_container_set_border_width (GTK_CONTAINER(vbox1), 5);
 
         label = gtk_label_new (_("Theme selection:"));
@@ -890,20 +984,23 @@ prefs_dialog_create (void)
         entry_key_left = gtk_entry_new ();
         gtk_widget_show (entry_key_left);
         gtk_table_attach (GTK_TABLE(table), entry_key_left, 1, 2, 0, 1,
-                          (GtkAttachOptions)(0),
+                          (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
+        gtk_entry_set_width_chars (GTK_ENTRY (entry_key_left), 8);
 
         entry_key_right = gtk_entry_new ();
         gtk_widget_show (entry_key_right);
         gtk_table_attach (GTK_TABLE(table), entry_key_right, 1, 2, 1, 2,
-                          (GtkAttachOptions)(0),
+                          (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
+        gtk_entry_set_width_chars (GTK_ENTRY (entry_key_right), 8);
 
         entry_key_drop = gtk_entry_new ();
         gtk_widget_show (entry_key_drop);
         gtk_table_attach (GTK_TABLE(table), entry_key_drop, 1, 2, 2, 3,
-                          (GtkAttachOptions)(0),
+                          (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
+        gtk_entry_set_width_chars (GTK_ENTRY (entry_key_drop), 8);
 
         sep = gtk_vseparator_new ();
         gtk_widget_show (sep);
@@ -971,6 +1068,29 @@ prefs_dialog_create (void)
         gtk_misc_set_padding (GTK_MISC(label), 10, 0);
 
 
+        /* fill in values */
+
+        prefs_dialog_update_player_selection_labels ();
+
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player1[prefs.player1]), TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player2[prefs.player2]), TRUE);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_start[prefs.start_mode]), TRUE);
+
+        gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), theme_current->id);
+
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_animate), prefs.do_animate);
+
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_sound[prefs.sound_mode - 1]), TRUE);
+
+        gtk_entry_set_text (GTK_ENTRY(entry_key_left), gdk_keyval_name (prefs.key[KEY_LEFT]));
+        gtk_entry_set_text (GTK_ENTRY(entry_key_right), gdk_keyval_name (prefs.key[KEY_RIGHT]));
+        gtk_entry_set_text (GTK_ENTRY(entry_key_drop), gdk_keyval_name (prefs.key[KEY_DROP]));
+
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_verify), prefs.do_verify);
+
+
+
+        /* signals */
 
         g_signal_connect (dlg_prefs, "response", G_CALLBACK(cb_prefs_response), &dlg_prefs);
         for (i = 0; i < 5; i++) {
@@ -988,10 +1108,6 @@ prefs_dialog_create (void)
         g_signal_connect (GTK_OBJECT(entry_key_drop), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
         g_signal_connect (GTK_OBJECT(checkbutton_verify), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_verify_select), NULL);
 
-
-        /* fill with current prefs settings */
-        prefs_dialog_reset ();
-
 }
 
 
@@ -1008,12 +1124,8 @@ prefs_dialog (void)
         }
         else {
 
-                /* make sure it's visible */
-                prefs_dialog_reset ();
+                /* unhide */
                 gtk_widget_show (dlg_prefs);
-                gdk_window_show (dlg_prefs->window);
-                gdk_window_raise (dlg_prefs->window);
 
         }
 }
-
