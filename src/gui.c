@@ -308,20 +308,20 @@ gui_get_mouse_col(gint x)
 
 
 
-static void
+static gint
 cb_gui_key_press (GtkWidget *widget, GdkEventKey* event, gpointer data)
 {
 
         /* ignore if computer's busy */
         if (anim.id || gnect_is_player_computer (gnect.current_player)) {
-                return;
+                return FALSE;
         }
 
         /* ignore if not an assigned key */
         if (event->keyval != prefs.key[KEY_LEFT] &&
                 event->keyval != prefs.key[KEY_RIGHT] &&
                 event->keyval != prefs.key[KEY_DROP]) {
-                return;
+                return FALSE;
         }
 
         /* complain if no game in progress */
@@ -331,7 +331,7 @@ cb_gui_key_press (GtkWidget *widget, GdkEventKey* event, gpointer data)
                         gfx_blink_winner (1);
                 }
                 gui_set_status_prompt_new_game (STATUS_MSG_FLASH);
-                return;
+                return TRUE;
         }
 
         /* okay */
@@ -344,6 +344,7 @@ cb_gui_key_press (GtkWidget *widget, GdkEventKey* event, gpointer data)
         else if (event->keyval == prefs.key[KEY_DROP]) {
                 gnect_process_move (gnect.cursor_col);
         }
+        return TRUE;
 }
 
 

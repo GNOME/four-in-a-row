@@ -1,3 +1,14 @@
+2002-04-20  Tim Musson <trmusson@ihug.co.nz>
+
+	* src/gui.c: cb_gui_key_press now has a return value, fixing a bug
+	    discovered by Dave in which menus couldn't be opened using the
+	    keyboard.
+
+2002-04-20  Tim Musson <trmusson@ihug.co.nz>
+
+	* help/C/Makefile.am:
+	* help/C/gnect.xml:
+	* help/C/figures/mainwindow.png: Main Window figure added.
 
 2002-04-19  Dave Neary <bolsh@gimp.org>
 
