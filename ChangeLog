@@ -1,3 +1,14 @@
+2002-04-24  Zbigniew Chyla  <cyba@gnome.pl>
+
+	* data/gnect.soundlist.in: New file, based od gnect.soundlist.
+
+	* data/gnect.soundlist: Removed, will be generated automatically.
+
+	* data/Makefile.am:
+	Add rules to generate gnect.soundlist from gnect.soundlist.in.
+
+	* data/.cvsignore: Added gnect.soundlist.
+
 2002-04-24  Abel Cheung  <maddog@linux.org.hk>
 
 	* src/main.c: *textdomain*() use GETTEXT_PACKAGE and UTF-8.
