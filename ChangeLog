@@ -1,3 +1,14 @@
+2004-05-17  Dan Winship  <danw@novell.com>
+
+	* src/adjmtrx.c,
+	* src/bintree.c,
+	* src/connect4.c,
+	* src/evaluate.c,
+	* src/heurist.c,
+	* src/ia_main.c,
+	* src/pbsolver.c: Remove #include <malloc.h>. (Welcome to the
+	90s!)
+
 2004-03-15  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* data/gnect.schemas.in: Changed the default key bindings 

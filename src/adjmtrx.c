@@ -24,7 +24,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <malloc.h>
 
 #include "connect4.h"
 #include "con4vals.h"
