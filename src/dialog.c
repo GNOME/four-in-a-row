@@ -170,8 +170,8 @@ dialog_score_create (void)
                           G_CALLBACK (gtk_widget_destroyed), &dlg_score);
 
         vbox = GTK_DIALOG (dlg_score)->vbox;
-
         vbox2 = gtk_vbox_new (FALSE, 0);
+        gtk_container_set_border_width (GTK_CONTAINER (vbox2), 12);
         gtk_box_pack_start (GTK_BOX (vbox), vbox2, TRUE, TRUE, 0);
 
         frame = gtk_hbox_new (FALSE, 0);
@@ -181,6 +181,7 @@ dialog_score_create (void)
         gtk_box_pack_start (GTK_BOX (vbox2), table, TRUE, TRUE, 0);
         gtk_container_set_border_width (GTK_CONTAINER (table), 5);
         gtk_table_set_col_spacings (GTK_TABLE (table), 10);
+        gtk_table_set_row_spacings (GTK_TABLE (table), 6);
 
 
         /* player one */

@@ -1,5 +1,11 @@
 2003-06-18  William Jon McCann  <mccann@jhu.edu>
 
+	* src/prefs.c (prefs_dialog_create): 
+	* src/dialog.c (dialog_score_create): Tweaked spacing.
+
+	* src/gnect.c (gnect_cleanup): Only call gtk_main_quit if we are in
+	a main loop.
+
 	* src/heurist.c: 
 	* src/playgame.c: 
 	* src/evaluate.c: 
@@ -11,7 +17,7 @@
 	* src/prefs.c: 
 	* src/gfx.c: 
 	* src/gui.c: 
-	* src/gnect.c: 
+
 	* src/dialog.c: Fixed compiler warnings.
 
 2003-06-16  William Jon McCann  <mccann@jhu.edu>

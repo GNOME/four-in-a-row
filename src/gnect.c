@@ -63,7 +63,8 @@ gnect_cleanup (gint exit_code)
         prefs_free ();
 
         DEBUG_PRINT (1, "exit(%d)\n", exit_code);
-        gtk_main_quit ();
+        if (gtk_main_level () > 0)
+                gtk_main_quit ();
         exit (exit_code);
 }
 

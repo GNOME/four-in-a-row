@@ -933,7 +933,7 @@ prefs_dialog_create (void)
         table = gtk_table_new (3, 2, FALSE);
         gtk_box_pack_start (GTK_BOX(vbox1), table, FALSE, FALSE, 0);
         gtk_container_set_border_width (GTK_CONTAINER(table), 5);
-        gtk_table_set_row_spacings (GTK_TABLE (table), 0);
+        gtk_table_set_row_spacings (GTK_TABLE (table), 6);
         gtk_table_set_col_spacings (GTK_TABLE (table), 12);
   
         button_move[KEY_LEFT] = gtk_button_new_with_label (_("Move left"));
