@@ -493,7 +493,7 @@ gui_set_status_prompt (gint player)
 void
 gui_set_status_prompt_new_game (gint mode)
 {
-        gui_set_status (_(" \"Game->New game\" to begin"), mode);
+        gui_set_status (_("Select \"New game\" from the \"Game\" menu to begin."), mode);
 }
 
 

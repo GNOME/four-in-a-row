@@ -1,3 +1,11 @@
+2003-06-15  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/gui.c (gui_set_status_prompt_new_game): Reworded the message
+	to get rid of the awkward "->" thing.
+
+	* data/gnect.schemas.in: Change the default keys to be the arrow
+	keys.
+
 2003-06-13  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/prefs.c: 

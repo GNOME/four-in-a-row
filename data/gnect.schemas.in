@@ -102,7 +102,7 @@
       <applyto>/apps/gnect/keyleft</applyto>
       <owner>gnect</owner>
       <type>int</type>
-      <default>106</default>
+      <default>65361</default>
       <locale name="C">
         <short>Move left</short>
         <long>Key press to move left.</long>
@@ -114,7 +114,7 @@
       <applyto>/apps/gnect/keyright</applyto>
       <owner>gnect</owner>
       <type>int</type>
-      <default>108</default>
+      <default>65363</default>
       <locale name="C">
         <short>Move right</short>
         <long>Key press to move right.</long>
@@ -126,7 +126,7 @@
       <applyto>/apps/gnect/keydrop</applyto>
       <owner>gnect</owner>
       <type>int</type>
-      <default>107</default>
+      <default>65364</default>
       <locale name="C">
         <short>Drop marble</short>
         <long>Key press to drop a marble.</long>
