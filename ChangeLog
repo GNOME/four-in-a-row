@@ -1,4 +1,10 @@
-2003-06-016  Tim Musson  <trmusson@ihug.co.nz>
+2003-06-16  William Jon McCann  <mccann@jhu.edu>
+
+	* src/gnect.c (gnect_get_random_num): Use glib random functions.
+
+	* src/prefs.c: Fix to remove compiler warnings.
+
+2003-06-16  Tim Musson  <trmusson@ihug.co.nz>
  
         * src/prefs.h:
 	* src/prefs.c: Added "grab" buttons to keyboard control options

@@ -1,3 +1,5 @@
+/* -*- mode:C; indent-tabs-mode:nil; tab-width:8; c-basic-offset:8; -*- */
+
 /*
  * gnect prefs.c
  *
@@ -8,6 +10,7 @@
 #include "config.h"
 #include <gconf/gconf-client.h>
 #include <games-gconf.h>
+#include <games-frame.h>
 #include "main.h"
 #include "gnect.h"
 #include "prefs.h"
@@ -300,8 +303,8 @@ prefs_dialog_update_player_selection_labels (void)
 
                 label_player1 = g_strdup_printf (_("Player 1 : %s"), prefs.descr_player1);
                 label_player2 = g_strdup_printf (_("Player 2 : %s"), prefs.descr_player2);
-                games_frame_set_label (GTK_FRAME (frame_player_selection1), label_player1);
-                games_frame_set_label (GTK_FRAME (frame_player_selection2), label_player2);
+                games_frame_set_label (GAMES_FRAME (frame_player_selection1), label_player1);
+                games_frame_set_label (GAMES_FRAME (frame_player_selection2), label_player2);
 
                 g_free (label_player1);
                 g_free (label_player2);

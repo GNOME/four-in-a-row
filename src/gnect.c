@@ -1,3 +1,5 @@
+/* -*- mode:C; indent-tabs-mode:nil; tab-width:8; c-basic-offset:8; -*- */
+
 /*
  * gnect gnect.c
  *
@@ -58,14 +60,14 @@ gnect_srand (guint seed)
 {
         /*
          * Seed the random number generator.
-         * If seed is 0, use system time.
          */
 
-        if (seed == 0) seed = (guint)time(NULL);
-        srand (seed);
+        if (seed != 0) {
+                g_random_set_seed (seed);
 
-        if (debugging & 4) {
-                g_printerr ("\n" APPNAME ": random number seed=%d\n\n", seed);
+                if (debugging & 4) {
+                        g_printerr ("\n" APPNAME ": random number seed=%d\n\n", seed);
+                }
         }
 }
 
@@ -78,7 +80,7 @@ gnect_get_random_num (gint n)
          * Return a random integer in the range 1..n
          */
 
-        return (rand()%n) + 1;
+        return (gint) g_random_int_range (1, n + 1);
 }
 
 

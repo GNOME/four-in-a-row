@@ -1,3 +1,5 @@
+/* -*- mode:C; indent-tabs-mode:nil; tab-width:8; c-basic-offset:8; -*- */
+
 /*
  * gnect main.c
  *
@@ -34,7 +36,7 @@ extern Gnect  gnect;
 extern Anim   anim;
 extern Theme  *theme_current;
 
-gint   seed;
+gint   seed = 0;
 gint   debugging; /* 1=flow | 2=themes | 4=srand | 8=velena */
 gchar  *geom_str;
 gchar  *fname_theme;
