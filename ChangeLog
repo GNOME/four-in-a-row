@@ -1,3 +1,9 @@
+2005-03-23  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/prefs.c: 	
+	* src/main.c: Patches from Dennis Cranston
+	<dennis_cranston@yahoo.com> to make the game more HIG compliant.
+
 2005-02-17  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/gfx.h:

@@ -377,25 +377,30 @@ prefsbox_open (void)
 	                                        GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
 	                                        NULL);
 	gtk_dialog_set_has_separator (GTK_DIALOG(prefsbox), FALSE);
+	gtk_container_set_border_width (GTK_CONTAINER(prefsbox), 5);
+	gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(prefsbox)->vbox), 2);
+
 	g_signal_connect (G_OBJECT(prefsbox), "destroy",
 	                  G_CALLBACK(gtk_widget_destroyed), &prefsbox);
 
 	notebook = gtk_notebook_new ();
+	gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);
 	gtk_box_pack_start (GTK_BOX(GTK_DIALOG(prefsbox)->vbox), notebook,
 	                    TRUE, TRUE, 0);
 
 
 	/* game tab */
 
-	vbox1 = gtk_vbox_new (FALSE, 0);
-	label = gtk_label_new_with_mnemonic (_("_Game"));
+	vbox1 = gtk_vbox_new (FALSE, 18);
+	gtk_container_set_border_width (GTK_CONTAINER (vbox1), 12);
+	label = gtk_label_new (_("Game"));
 	gtk_notebook_append_page (GTK_NOTEBOOK(notebook), vbox1, label);
 
-	hbox = gtk_hbox_new (FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (vbox1), hbox, TRUE, TRUE, 0);
+	hbox = gtk_hbox_new (FALSE, 18);
+	gtk_box_pack_start (GTK_BOX (vbox1), hbox, FALSE, FALSE, 0);
 
 	frame_player1 = games_frame_new (NULL);
-	gtk_box_pack_start (GTK_BOX(hbox), frame_player1, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX(hbox), frame_player1, FALSE, FALSE, 0);
 
 	vbox2 = gtk_vbox_new (FALSE, 0);
 	gtk_container_add (GTK_CONTAINER(frame_player1), vbox2);
@@ -408,7 +413,7 @@ prefsbox_open (void)
 	}
 
 	frame_player2 = games_frame_new (NULL);
-	gtk_box_pack_start (GTK_BOX(hbox), frame_player2, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX(hbox), frame_player2, FALSE, FALSE, 0);
 
 	vbox2 = gtk_vbox_new (FALSE, 0);
 	gtk_container_add (GTK_CONTAINER(frame_player2), vbox2);
@@ -421,16 +426,16 @@ prefsbox_open (void)
 	}
 
 	frame = games_frame_new (_("Appearance"));
-	gtk_box_pack_start (GTK_BOX(vbox1), frame, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX(vbox1), frame, FALSE, FALSE, 0);
 
-	vbox2 = gtk_vbox_new (FALSE, 0);
+	vbox2 = gtk_vbox_new (FALSE, 6);
 	gtk_container_add (GTK_CONTAINER(frame), vbox2);
 
-	hbox = gtk_hbox_new (FALSE, 0);
-	gtk_box_pack_start (GTK_BOX(vbox2), hbox, FALSE, FALSE, 0);
+	hbox = gtk_hbox_new (FALSE, 12);
+	gtk_box_pack_start (GTK_BOX(vbox2), hbox, TRUE, TRUE, 0);
 
 	label = gtk_label_new_with_mnemonic (_("_Theme:"));
-	gtk_box_pack_start (GTK_BOX(hbox), label, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX(hbox), label, FALSE, FALSE, 0);
 	gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
 
 	combobox_theme = gtk_combo_box_new_text ();
@@ -444,7 +449,7 @@ prefsbox_open (void)
 	gtk_label_set_mnemonic_widget (GTK_LABEL(label), combobox_theme);
 
 	checkbutton_animate = gtk_check_button_new_with_mnemonic (_("Enable _animation"));
-	gtk_box_pack_start (GTK_BOX(vbox2), checkbutton_animate, FALSE, FALSE, 6);
+	gtk_box_pack_start (GTK_BOX(vbox2), checkbutton_animate, FALSE, FALSE, 0);
 
 
 	/* keyboard tab */
@@ -452,8 +457,9 @@ prefsbox_open (void)
 	vbox1 = gtk_vbox_new (FALSE, 0);
 	label = gtk_label_new_with_mnemonic (_("Controls"));
 	gtk_notebook_append_page (GTK_NOTEBOOK(notebook), vbox1, label);
+	gtk_container_set_border_width (GTK_CONTAINER (vbox1), 12);
 
-	frame = games_frame_new (_("Keyboard controls"));
+	frame = games_frame_new (_("Keyboard Controls"));
 	gtk_container_add (GTK_CONTAINER(vbox1), frame);
 
 	vbox2 = gtk_vbox_new (FALSE, 6);
@@ -462,7 +468,7 @@ prefsbox_open (void)
 	controls_list = games_controls_list_new ();
 	games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list), KEY_MOVE_LEFT, KEY_MOVE_RIGHT, KEY_MOVE_DROP, NULL);
 
-	gtk_box_pack_start (GTK_BOX(vbox2), controls_list, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX(vbox2), controls_list, TRUE, TRUE, 0);
 
 	/* fill in initial values */
 

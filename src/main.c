@@ -687,12 +687,12 @@ scorebox_update (void)
 
 	if (get_n_human_players () == 1) {
 		if (p.level[PLAYER1] == LEVEL_HUMAN) {
-			gtk_label_set_text (GTK_LABEL(label_name[PLAYER1]), _("You"));
-			gtk_label_set_text (GTK_LABEL(label_name[PLAYER2]), _("Me"));
+			gtk_label_set_text (GTK_LABEL(label_name[PLAYER1]), _("You:"));
+			gtk_label_set_text (GTK_LABEL(label_name[PLAYER2]), _("Me:"));
 		}
 		else {
-			gtk_label_set_text (GTK_LABEL(label_name[PLAYER1]), _("Me"));
-			gtk_label_set_text (GTK_LABEL(label_name[PLAYER2]), _("You"));
+			gtk_label_set_text (GTK_LABEL(label_name[PLAYER1]), _("Me:"));
+			gtk_label_set_text (GTK_LABEL(label_name[PLAYER2]), _("You:"));
 		}
 	}
 	else {
@@ -745,24 +745,28 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 	                                        GTK_RESPONSE_CLOSE,
 	                                        NULL);
 
+	gtk_dialog_set_has_separator (GTK_DIALOG (scorebox), FALSE);
+	gtk_window_set_resizable (GTK_WINDOW (scorebox), FALSE);
+	gtk_container_set_border_width (GTK_CONTAINER (scorebox), 5);
+	gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (scorebox)->vbox), 2);
+
 	g_signal_connect (GTK_OBJECT(scorebox), "destroy",
 	                  GTK_SIGNAL_FUNC(gtk_widget_destroyed), &scorebox);
 
-	vbox = gtk_vbox_new (FALSE, 0);
-	gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
+	vbox = gtk_vbox_new (FALSE, 6);
+	gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
 	gtk_box_pack_start (GTK_BOX(GTK_DIALOG(scorebox)->vbox), vbox, TRUE, TRUE, 0);
 
 	if (fname_icon != NULL) {
 		GtkWidget *icon = gtk_image_new_from_file (fname_icon);
 		if (icon != NULL) {
-			gtk_box_pack_start (GTK_BOX(vbox), icon, FALSE, FALSE, 6);
+			gtk_box_pack_start (GTK_BOX(vbox), icon, FALSE, FALSE, 0);
 		}
 	}
 
 	table = gtk_table_new (3, 2, FALSE);
 	gtk_box_pack_start (GTK_BOX(vbox), table, TRUE, TRUE, 0);
-	gtk_container_set_border_width (GTK_CONTAINER(table), 5);
-	gtk_table_set_col_spacings (GTK_TABLE(table), 10);
+	gtk_table_set_col_spacings (GTK_TABLE(table), 12);
 	gtk_table_set_col_spacings (GTK_TABLE(table), 6);
 
 	label_name[PLAYER1] = gtk_label_new (NULL);
@@ -773,7 +777,7 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 	label_score[PLAYER1] = gtk_label_new (NULL);
 	gtk_table_attach (GTK_TABLE(table), label_score[PLAYER1], 1, 2, 0, 1,
 	                  (GtkAttachOptions)(GTK_EXPAND | GTK_FILL), (GtkAttachOptions)0, 0, 0);
-	gtk_misc_set_alignment (GTK_MISC(label_score[PLAYER1]), 0, 0.5);
+	gtk_misc_set_alignment (GTK_MISC(label_score[PLAYER1]), 1, 0.5);
 
 	label_name[PLAYER2] = gtk_label_new (NULL);
 	gtk_table_attach (GTK_TABLE(table), label_name[PLAYER2], 0, 1, 1, 2,
@@ -783,9 +787,9 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 	label_score[PLAYER2] = gtk_label_new (NULL);
 	gtk_table_attach (GTK_TABLE(table), label_score[PLAYER2], 1, 2, 1, 2,
 	                  (GtkAttachOptions)(GTK_EXPAND | GTK_FILL), (GtkAttachOptions)0, 0, 0);
-	gtk_misc_set_alignment (GTK_MISC(label_score[PLAYER2]), 0, 0.5);
+	gtk_misc_set_alignment (GTK_MISC(label_score[PLAYER2]), 1, 0.5);
 
-	label_name[NOBODY] = gtk_label_new (_("Drawn"));
+	label_name[NOBODY] = gtk_label_new (_("Drawn:"));
 	gtk_table_attach (GTK_TABLE(table), label_name[NOBODY], 0, 1, 2, 3,
 	                  (GtkAttachOptions)(GTK_FILL), (GtkAttachOptions)0, 0, 0);
 	gtk_misc_set_alignment (GTK_MISC(label_name[NOBODY]), 0, 0.5);
@@ -793,7 +797,7 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 	label_score[NOBODY] = gtk_label_new (NULL);
 	gtk_table_attach (GTK_TABLE(table), label_score[NOBODY], 1, 2, 2, 3,
 	                  (GtkAttachOptions)(GTK_EXPAND | GTK_FILL), (GtkAttachOptions)0, 0, 0);
-	gtk_misc_set_alignment (GTK_MISC(label_score[NOBODY]), 0, 0.5);
+	gtk_misc_set_alignment (GTK_MISC(label_score[NOBODY]), 1, 0.5);
 
 	g_signal_connect (GTK_DIALOG(scorebox), "response",
 	                  GTK_SIGNAL_FUNC(on_dialog_close), NULL);
