@@ -803,7 +803,7 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 static void
 on_help_about (GtkMenuItem *m, gpointer data)
 {
-	const gchar *authors[] = {"Gnect:",
+	const gchar *authors[] = {"Four-in-a-row:",
 	                          "  Tim Musson <trmusson@ihug.co.nz>",
 	                          "  David Neary <bolsh@gimp.org>",
 	                          "\nVelena Engine V1.07:",
@@ -823,7 +823,7 @@ on_help_about (GtkMenuItem *m, gpointer data)
 	}
 
 	icon = gdk_pixbuf_new_from_file (fname_icon, NULL);
-	aboutbox = gnome_about_new ("Gnect",
+	aboutbox = gnome_about_new ("Four-in-a-row",
 	                            VERSION,
 	                            "(c) 1999-2004, Tim Musson and David Neary",
 	                            _("\"Four in a row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
