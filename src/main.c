@@ -821,7 +821,7 @@ on_help_about (GtkMenuItem *m, gpointer data)
 	icon = gdk_pixbuf_new_from_file (fname_icon, NULL);
 	aboutbox = gnome_about_new ("Gnect",
 	                            VERSION,
-	                            "(c) 1999-2002, The Authors",
+	                            "(c) 1999-2004, Tim Musson and David Neary",
 	                            _("\"Four in a row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
 	                            authors,
 	                            documents,

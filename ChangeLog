@@ -1,3 +1,7 @@
+2004-03-07  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/main.c (on_help_about): Fix up the copyright notice.
+
 2004-03-03  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/figures/mainwindow.png:
