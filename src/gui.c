@@ -140,7 +140,7 @@ cb_gui_quit_verify (GtkWidget *widget, gpointer data)
                                         GTK_STOCK_CANCEL, GTK_RESPONSE_REJECT,
                                         GTK_STOCK_QUIT, GTK_RESPONSE_ACCEPT,
                                         NULL);
-
+                gtk_dialog_set_has_separator (GTK_DIALOG (quitverify), FALSE);
                 g_signal_connect (GTK_OBJECT(quitverify), "response", 
                                   G_CALLBACK(cb_gui_quit_test), NULL);
                 gtk_widget_show(quitverify);
@@ -178,7 +178,7 @@ cb_gui_game_new (GtkWidget *widget, gpointer data)
                               GTK_MESSAGE_QUESTION,
                               GTK_BUTTONS_YES_NO,
                               _("Are you sure you want to start a new game?"));
-
+                gtk_dialog_set_has_separator (GTK_DIALOG (newverify), FALSE);
                 g_signal_connect (GTK_OBJECT(newverify), "response", 
                                   G_CALLBACK(cb_gui_game_new_test), NULL);
                 gtk_widget_show (newverify);

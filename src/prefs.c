@@ -358,7 +358,7 @@ prefs_verify_kill_game ()
                                          _("Applying this change to Player Selection\nwill end the current game"));
 
        	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_YES);
-
+        gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
        	response = gtk_dialog_run (GTK_DIALOG (dialog));
 		
        	gtk_widget_destroy (dialog);
@@ -823,7 +823,7 @@ prefs_dialog_create (void)
                                                  /* GTK_STOCK_HELP, GTK_RESPONSE_HELP, */
                                                  GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
                                                  NULL);
-
+        gtk_dialog_set_has_separator (GTK_DIALOG (dlg_prefs), FALSE);
         g_signal_connect (GTK_OBJECT(dlg_prefs), "destroy",
                           GTK_SIGNAL_FUNC(gtk_widget_destroyed), &dlg_prefs);
 

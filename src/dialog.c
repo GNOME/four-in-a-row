@@ -150,7 +150,7 @@ dialog_score_create (void)
                                                  GTK_STOCK_CLOSE, 
                                                  GTK_RESPONSE_CLOSE,
                                                  NULL);
-
+        gtk_dialog_set_has_separator (GTK_DIALOG (dlg_score), FALSE);
         g_signal_connect (GTK_OBJECT(dlg_score), "destroy",
                           GTK_SIGNAL_FUNC(gtk_widget_destroyed), &dlg_score);
 
