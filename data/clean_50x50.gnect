@@ -2,5 +2,5 @@ Title   = "Clean (large)"
 Tileset = tileset_50x50_clean.png
 Player1 = Red
 Player2 = Yellow
-GridRGB = RGB:33/33/66
+GridRGB = "#333366"
 
