@@ -1,3 +1,13 @@
+2002-11-18  Jeremy Browne  <jeremy@synonymous.ca>
+
+	* src/gui.c:  Changes to quit / new game dialogs for consistency with
+	other parts of gnome-games package. (Bug #97321)
+
+2002-11-18  Jeremy Browne  <jeremy@synonymous.ca>
+
+	* src/gui.c:  Changes to quit / new game dialogs for consistency with
+	other parts of gnome-games package. (Bug #97321)
+
 2002-11-11  Ross Burton  <ross@burtonini.com>
 
 	* pixmaps/gnect-icon.png: New icon contributed by Timothy Musson.

@@ -108,18 +108,11 @@ GnomeUIInfo toolbar[] = {
 #define ID_TOOLBAR_UNDO           1
 #define ID_TOOLBAR_HINT           2
 
-enum
-{ 
-        GUI_RESPONSE_CONTINUE,
-        GUI_RESPONSE_FINISH
-};
-
-
 
 static void
 cb_gui_quit_test (GtkWidget *widget, int response_id, gpointer data)
 {
-        if (response_id == GUI_RESPONSE_FINISH) {
+        if (response_id == GTK_RESPONSE_ACCEPT) {
                 gtk_main_quit ();
         }
         else {
@@ -138,19 +131,16 @@ cb_gui_quit_verify (GtkWidget *widget, gpointer data)
         if (prefs.do_verify && !gnect.over) {
 
                 quitverify = gtk_message_dialog_new (GTK_WINDOW(app),
-                                                     GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                     GTK_MESSAGE_QUESTION,
-                                                     GTK_BUTTONS_NONE,
-                                                     _("Exit gnect and end the current game?"));
+                              GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                              GTK_MESSAGE_QUESTION,
+                              GTK_BUTTONS_NONE,
+                              _("Are you sure you want to quit Gnect?"));
 
                 gtk_dialog_add_buttons (GTK_DIALOG(quitverify),
-                                        "Continue",
-                                        GUI_RESPONSE_CONTINUE,
-                                        "End game & Quit",
-                                        GUI_RESPONSE_FINISH,
+                                        GTK_STOCK_CANCEL, GTK_RESPONSE_REJECT,
+                                        GTK_STOCK_QUIT, GTK_RESPONSE_ACCEPT,
                                         NULL);
 
-                gtk_window_set_position (GTK_WINDOW(quitverify), GTK_WIN_POS_MOUSE);
                 g_signal_connect (GTK_OBJECT(quitverify), "response", 
                                   G_CALLBACK(cb_gui_quit_test), NULL);
                 gtk_widget_show(quitverify);
@@ -165,7 +155,7 @@ cb_gui_quit_verify (GtkWidget *widget, gpointer data)
 static void
 cb_gui_game_new_test (GtkWidget *widget, gint response_id, gpointer data)
 {
-        if (response_id == GUI_RESPONSE_FINISH) {
+        if (response_id == GTK_RESPONSE_YES) {
                 gnect_reset (TRUE);
         }
         gtk_widget_destroy (widget);
@@ -184,19 +174,11 @@ cb_gui_game_new (GtkWidget *widget, gpointer data)
         if (prefs.do_verify && !gnect.over) {
 
                 newverify = gtk_message_dialog_new (GTK_WINDOW(app),
-                                                    GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                    GTK_MESSAGE_QUESTION,
-                                                    GTK_BUTTONS_NONE,
-                                                    _("End the current game?"));
+                              GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                              GTK_MESSAGE_QUESTION,
+                              GTK_BUTTONS_YES_NO,
+                              _("Are you sure you want to start a new game?"));
 
-                gtk_dialog_add_buttons (GTK_DIALOG(newverify),
-                                        "Continue",
-                                        GUI_RESPONSE_CONTINUE,
-                                        "End game",
-                                        GUI_RESPONSE_FINISH,
-                                        NULL);
-
-                gtk_window_set_position (GTK_WINDOW(newverify), GTK_WIN_POS_MOUSE);
                 g_signal_connect (GTK_OBJECT(newverify), "response", 
                                   G_CALLBACK(cb_gui_game_new_test), NULL);
                 gtk_widget_show (newverify);
