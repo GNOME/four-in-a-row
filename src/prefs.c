@@ -322,8 +322,8 @@ static void
 on_grab_key (GtkWidget *w, gpointer data)
 {
 	entries_set_sensitive (FALSE);
-	gtk_widget_set_sensitive (entry_move[(gint)data], TRUE);
-	gtk_widget_grab_focus (entry_move[(gint)data]);
+	gtk_widget_set_sensitive (entry_move[GPOINTER_TO_INT(data)], TRUE);
+	gtk_widget_grab_focus (entry_move[GPOINTER_TO_INT(data)]);
 }
 
 
@@ -332,8 +332,9 @@ static void
 on_select_player1 (GtkWidget *w, gpointer data)
 {
 	if (!GTK_TOGGLE_BUTTON(w)->active) return;
-	p.level[PLAYER1] = (gint)data;
-	gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER1, (gint)data, NULL);
+	p.level[PLAYER1] = GPOINTER_TO_INT(data);
+	gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER1, 
+                              GPOINTER_TO_INT(data), NULL);
 	scorebox_reset ();
 	game_reset (FALSE);
 }
@@ -344,8 +345,9 @@ static void
 on_select_player2 (GtkWidget *w, gpointer data)
 {
 	if (!GTK_TOGGLE_BUTTON(w)->active) return;
-	p.level[PLAYER2] = (gint)data;
-	gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER2, (gint)data, NULL);
+	p.level[PLAYER2] = GPOINTER_TO_INT(data);
+	gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER2, 
+                              GPOINTER_TO_INT(data), NULL);
 	scorebox_reset ();
 	game_reset (FALSE);
 }
@@ -570,13 +572,13 @@ prefsbox_open (void)
 	g_signal_connect (prefsbox, "response", G_CALLBACK(on_dialog_close), &prefsbox);
 	
 	for (i = 0; i < 4; i++) {
-		g_signal_connect (G_OBJECT(radio1[i]), "toggled", G_CALLBACK(on_select_player1), (gpointer)i);
-		g_signal_connect (G_OBJECT(radio2[i]), "toggled", G_CALLBACK(on_select_player2), (gpointer)i);
+		g_signal_connect (G_OBJECT(radio1[i]), "toggled", G_CALLBACK(on_select_player1), GINT_TO_POINTER(i));
+		g_signal_connect (G_OBJECT(radio2[i]), "toggled", G_CALLBACK(on_select_player2), GINT_TO_POINTER(i));
 	}
 	for (i = 0; i < 3; i++) {
 		gtk_entry_set_text (GTK_ENTRY(entry_move[i]), gdk_keyval_name (p.keypress[i]));
 		gtk_editable_set_editable (GTK_EDITABLE(entry_move[i]), FALSE);
-		g_signal_connect (G_OBJECT(button_move[i]), "clicked", G_CALLBACK(on_grab_key), (gpointer)i);
+		g_signal_connect (G_OBJECT(button_move[i]), "clicked", G_CALLBACK(on_grab_key), GINT_TO_POINTER(i));
 		g_signal_connect (G_OBJECT(entry_move[i]), "key_press_event", G_CALLBACK(on_select_key), NULL);
 	}
 
