@@ -1,3 +1,8 @@
+2003-04-06  Ross Burton  <ross@burtonini.com>
+
+	* src/main.h: Fixes for Sun. Thanks to Rick Burridge, closing
+	#109989.
+
 2003-03-07  Ross Burton  <ross@burtonini.com>
 
 	* src/Makefile.am: Link to the shared games library.
