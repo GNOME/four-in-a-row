@@ -3,12 +3,12 @@
         "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"
 [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "2.6">
-  <!ENTITY manrevision "2.6">
-  <!ENTITY date "April 2002">
-  <!ENTITY app "<application>Gnect</application>">
-  <!ENTITY appname "Gnect">
-  <!ENTITY version "2.6">
+  <!ENTITY appversion "2.8">
+  <!ENTITY manrevision "2.8">
+  <!ENTITY date "September 2004">
+  <!ENTITY app "<application>Four-in-a-row</application>">
+  <!ENTITY appname "Four-in-a-row">
+  <!ENTITY version "2.8">
   <!ENTITY mdash "-">
   <!ENTITY hellip "...">
 ]>
@@ -269,7 +269,7 @@
           <term><guimenu>Settings</guimenu></term>
           <listitem>
             <para>
-              This menu contains four items:
+              This menu contains three items:
               <itemizedlist>
 
                 <listitem>
@@ -285,16 +285,6 @@
                     <guimenuitem>Enable sound</guimenuitem>
                     &mdash;
                     This toggle switches the game's sound effects on and off.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Draw grid</guimenuitem>
-                    &mdash;
-                    This toggles the display of grid lines over the game
-                    board. Themes that specifically disable grids will
-                    not be affected.
                   </para>
                 </listitem>
 
@@ -407,8 +397,8 @@
       </para>
       <para>
           Finally there is a <guilabel>Controls</guilabel> tab to
-          change the keyboard controls. To change a control, click the
-          appropriate button and then type the new key.
+          change the keyboard controls. To change a control, double click the
+          appropriate entry and then press the new key.
       </para>
 
     </sect2>
@@ -523,7 +513,7 @@
 
       <para>
         The last step is to put your image(s) where &app; can
-        find them. You could put them in Gnect's install directory (which will
+        find them. You could put them in Four-in-a-row's install directory (which will
         depend on your particular system), but your home directory's probably
         a better idea.
       </para>
