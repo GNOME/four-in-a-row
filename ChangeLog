@@ -1,3 +1,7 @@
+2003-06-08  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/gui.c: UI consistency (see bug #114447).
+
 2003-06-05  William Jon McCann  <mccann@jhu.edu>
 
 	* data/Makefile.am (install-data-local): Only install schemas

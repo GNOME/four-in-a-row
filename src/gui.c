@@ -61,7 +61,7 @@ GnomeUIInfo game_menu[] = {
         GNOMEUIINFO_END
 };
 GnomeUIInfo settings_menu[] = {
-        GNOMEUIINFO_TOGGLEITEM_DATA(N_("Show _tool bar"), N_("Show or hide the toolbar"), cb_gui_settings_toolbar, NULL, NULL),
+        GNOMEUIINFO_TOGGLEITEM_DATA(N_("_Toolbar"), N_("Show or hide the toolbar"), cb_gui_settings_toolbar, NULL, NULL),
         GNOMEUIINFO_TOGGLEITEM_DATA(N_("Enable _sound"), N_("Enable or disable sound"), cb_gui_settings_sound, NULL, NULL),
         GNOMEUIINFO_TOGGLEITEM_DATA(N_("Draw _grid"), N_("Show or hide the grid"), cb_gui_settings_grid, NULL, NULL),
         GNOMEUIINFO_SEPARATOR,
