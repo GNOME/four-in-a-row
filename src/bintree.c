@@ -25,6 +25,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include <glib.h> /* Added for bin_compare() */
+
 #include "connect4.h"
 #include "con4vals.h"
 #include "rules.h"
@@ -47,12 +49,12 @@ struct node *fast_check_node (struct bintree *root,struct node *node,short depth
 
 short bin_compare(unsigned char *c1,unsigned char *c2)
 {
-  unsigned long *p1,*p2;
+  guint32 *p1,*p2;
   short flag=0,x;
 
 
-  p1=(unsigned long *)c1;
-  p2=(unsigned long *)c2;
+  p1=(guint32 *)c1;
+  p2=(guint32 *)c2;
 
   for(x=0;x<12 && flag==0;x++)
 	{
