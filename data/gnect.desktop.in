@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Icon=gnect-icon.png
-_Name=Gnect
-_Comment=Four-in-a-row game
+_Name=Four-in-a-row
+_Comment=Compete to make lines of the same color
 Exec=gnect
 Terminal=false
 Type=Application
