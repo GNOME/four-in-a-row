@@ -288,7 +288,7 @@ gnect_computer_move (void)
 
         /* Velena Engine */
 
-        gui_set_status (_(" Thinking..."), STATUS_MSG_SET);
+        gui_set_status (_("Thinking..."), STATUS_MSG_SET);
 
         gnect.veleng_str[0] = gnect_get_veleng_level_ch (player);
 
@@ -530,7 +530,7 @@ gnect_process_move (gint col)
 
                 /* full column, complain */
                 sound_event (SOUND_CANT_MOVE);
-                gui_set_status (_(" Sorry, full column"), STATUS_MSG_FLASH);
+                gui_set_status (_("Sorry, full column"), STATUS_MSG_FLASH);
 
         }
 
@@ -547,11 +547,11 @@ gnect_hint (void)
                 gchar level_ch = gnect.veleng_str[0];
                 gint row, col;
 
-                gui_set_status (_(" Thinking..."), STATUS_MSG_FLASH);
+                gui_set_status (_("Thinking..."), STATUS_MSG_FLASH);
 
                 gnect.veleng_str[0] = gnect_get_veleng_level_ch (PLAYER_VELENA_STRONG);
                 col = playgame (gnect.veleng_str, gnect.veleng_board);
-                hint_str = g_strdup_printf (_(" Hint: Column %d"), col);
+                hint_str = g_strdup_printf (_("Hint: Column %d"), col);
 
                 gnect.veleng_str[0] = level_ch;
 
