@@ -35,6 +35,7 @@ gnect_SOURCES = main.h     \
 
 INCLUDES = -I.. \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+	-DDATADIR=\""$(datadir)"\"		   \
     	-DGNECT_DATA_DIR=\""$(datadir)/"\" \
 	$(GNOME_GAMES_CFLAGS) \
 	-DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \

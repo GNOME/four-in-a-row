@@ -91,7 +91,7 @@ main (int argc, char *argv[])
                             LIBGNOMEUI_MODULE,
                             argc, argv,
                             GNOME_PARAM_POPT_TABLE, opts,
-                            NULL);
+                            GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
 
 
         /* init gconf, read prefs */
