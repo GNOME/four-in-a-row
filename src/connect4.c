@@ -365,7 +365,7 @@ struct board *veleng_init(void)
 	 */
 
 
-	initTitle();
+	/* initTitle(); Moved this to the About dialog */
 	
 	fight(NO);
 

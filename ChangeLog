@@ -1,4 +1,11 @@
 
+2002-04-19  Dave Neary <bolsh@gimp.org>
+
+	* src/dialog.c
+	* src/connect4.c: Moved Giuliano's copyright message to
+	  the About dialog - it really shouldn't be dumped to
+	  stdout.
+
 2002-04-19  Tim Musson <trmusson@ihug.co.nz>
 
 	* help/C/gnect.sgml: removed

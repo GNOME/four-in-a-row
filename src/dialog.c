@@ -38,8 +38,11 @@ dialog_about (void)
         const gchar *authors[] = {"Gnect:",
                                   "  Tim Musson <trmusson@ihug.co.nz>",
                                   "  David Neary <bolsh@gimp.org>",
-                                  "\nVelena Engine:",
-                                  "  Giuliano Bertoletti",
+                                  "\nVelena Engine V1.07; revision Apr 18 2002:",
+                                  "  AI engine written by Giuliano Bertoletti",
+                                  "  Based on the knowledged approach of Victor Allis",
+                                  "  Copyright (C) 1996-97 ",
+                                  "  Giuliano Bertoletti and GBE 32241 Software PR.",
                                   NULL};
         const gchar *documents[] = { NULL };
         const gchar *translator = _("translator");
