@@ -1,3 +1,9 @@
+2004-10-04  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/main.c: Rework the window size saving code. Now saves the
+	window size rather than the board size and doesn't reference the
+	default gconf client unnecessarily.
+
 2004-09-24  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* data/gnect.schemas.in:

@@ -1090,19 +1090,21 @@ process_move (gint c)
 }
 
 
+static gint
+on_window_resize (GtkWidget *w, GdkEventConfigure *e, gpointer data)
+{
+	gconf_client_set_int (conf_client, "/apps/gnect/window_width", 
+			      e->width, NULL);
+	gconf_client_set_int (conf_client, "/apps/gnect/window_height", 
+			      e->height, NULL);
+
+	return FALSE;
+}
 
 static gint
 on_drawarea_resize (GtkWidget *w, GdkEventConfigure *e, gpointer data)
 {
-	GConfClient *client;
-
 	gfx_resize (w);
-
-	client = gconf_client_get_default ();
-	gconf_client_set_int (client, "/apps/gnect/window_width", e->width, 
-			      NULL);
-	gconf_client_set_int (client, "/apps/gnect/window_height", e->height, 
-			      NULL);
 
 	return TRUE;
 }
@@ -1225,11 +1227,11 @@ create_app (void)
 	GtkWidget *bonobodock;
 	GtkWidget *gridframe;
 	gint width, height;
-	GConfClient *client;
 
-	client = gconf_client_get_default ();
-	width = gconf_client_get_int (client, "/apps/gnect/window_width", NULL);
-	height = gconf_client_get_int (client, "/apps/gnect/window_height", NULL);
+	width = gconf_client_get_int (conf_client, "/apps/gnect/window_width", 
+				      NULL);
+	height = gconf_client_get_int (conf_client, 
+				       "/apps/gnect/window_height", NULL);
 	if (height < 200)
 		height = 390;
 	if (width < 200)
@@ -1241,6 +1243,8 @@ create_app (void)
 
 	g_signal_connect (G_OBJECT(app), "delete_event",
 	                  G_CALLBACK(on_delete_event), NULL);
+	g_signal_connect (G_OBJECT(app), "configure_event",
+	                  G_CALLBACK(on_window_resize), NULL);
 
 	fname_icon = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,
 	                                        ("gnect-icon.png"), TRUE, NULL);
