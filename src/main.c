@@ -1318,7 +1318,7 @@ create_app (void)
 	scorebox_update (); /* update visible player descriptions */
 	prompt_player ();
 
-	set_status (STATUS_FLASH, _("Welcome to Gnect!"));
+	set_status (STATUS_FLASH, _("Welcome to Four-in-a-row!"));
 
 	return TRUE;
 }
