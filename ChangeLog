@@ -1,3 +1,7 @@
+2002-11-11  Ross Burton  <ross@burtonini.com>
+
+	* pixmaps/gnect-icon.png: New icon contributed by Timothy Musson.
+
 2002-10-08  Tim Musson <trmusson@ihug.co.nz>
 
 	* src/gui.c: (cb_gui_quit_verify): fixed crash when closing main
