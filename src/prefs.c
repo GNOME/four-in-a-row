@@ -797,8 +797,8 @@ prefs_dialog_create (void)
                                                  GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
                                                  NULL);
         gtk_dialog_set_has_separator (GTK_DIALOG (dlg_prefs), FALSE);
-        g_signal_connect (GTK_OBJECT(dlg_prefs), "destroy",
-                          GTK_SIGNAL_FUNC(gtk_widget_destroyed), &dlg_prefs);
+        g_signal_connect (G_OBJECT(dlg_prefs), "destroy",
+                          G_CALLBACK (gtk_widget_destroyed), &dlg_prefs);
 
         action_area = gtk_notebook_new ();
         gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg_prefs)->vbox), action_area,
@@ -883,8 +883,8 @@ prefs_dialog_create (void)
 
         optionmenu_theme = gtk_combo_box_new_text ();
         gtk_box_pack_start (GTK_BOX (hbox1), optionmenu_theme, FALSE, FALSE, 0);
-        g_signal_connect (GTK_OBJECT(optionmenu_theme), "changed",
-                          GTK_SIGNAL_FUNC(cb_prefs_dialog_theme_select), NULL);
+        g_signal_connect (G_OBJECT(optionmenu_theme), "changed",
+                          G_CALLBACK (cb_prefs_dialog_theme_select), NULL);
         
         prefs_dialog_fill_theme_menu ();
 
@@ -1000,31 +1000,31 @@ prefs_dialog_create (void)
 
         g_signal_connect (dlg_prefs, "response", G_CALLBACK(gtk_widget_hide), NULL);
         for (i = 0; i < 5; i++) {
-                g_signal_connect (GTK_OBJECT(radio_player1[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_player1_select),(gpointer)i);
-                g_signal_connect (GTK_OBJECT(radio_player2[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_player2_select),(gpointer)i);
+                g_signal_connect (G_OBJECT(radio_player1[i]), "toggled", G_CALLBACK (cb_prefs_dialog_player1_select),(gpointer)i);
+                g_signal_connect (G_OBJECT(radio_player2[i]), "toggled", G_CALLBACK (cb_prefs_dialog_player2_select),(gpointer)i);
         }
         for (i = 0; i < 3; i++) {
-                g_signal_connect (GTK_OBJECT(radio_start[i]), "toggled",
-                                  GTK_SIGNAL_FUNC(cb_prefs_dialog_who_starts_select),
+                g_signal_connect (G_OBJECT(radio_start[i]), "toggled",
+                                  G_CALLBACK (cb_prefs_dialog_who_starts_select),
                                   (gpointer)i);
                 gtk_entry_set_text (GTK_ENTRY(entry_move[i]),
                                     gdk_keyval_name (prefs.key[i]));
                 gtk_editable_set_editable (GTK_EDITABLE(entry_move[i]), FALSE);
-                g_signal_connect (GTK_OBJECT(button_move[i]),
+                g_signal_connect (G_OBJECT(button_move[i]),
                                   "clicked",
-                                  GTK_SIGNAL_FUNC(cb_button_move_clicked),
+                                  G_CALLBACK (cb_button_move_clicked),
                                   (gpointer)i);
-                g_signal_connect (GTK_OBJECT(entry_move[i]),
+                g_signal_connect (G_OBJECT(entry_move[i]),
                                   "key_press_event",
-                                  GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select),
+                                  G_CALLBACK (cb_prefs_dialog_key_select),
                                   NULL);
         }
-        g_signal_connect (GTK_OBJECT(radio_sound[0]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_BEEP);
-        g_signal_connect (GTK_OBJECT(radio_sound[1]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_PLAY);
-        g_signal_connect (GTK_OBJECT(checkbutton_animate), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_animate_select), NULL);
-        g_signal_connect (GTK_OBJECT(entry_move[KEY_LEFT]), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
-        g_signal_connect (GTK_OBJECT(entry_move[KEY_RIGHT]), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
-        g_signal_connect (GTK_OBJECT(entry_move[KEY_DROP]), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
+        g_signal_connect (G_OBJECT(radio_sound[0]), "toggled", G_CALLBACK (cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_BEEP);
+        g_signal_connect (G_OBJECT(radio_sound[1]), "toggled", G_CALLBACK (cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_PLAY);
+        g_signal_connect (G_OBJECT(checkbutton_animate), "toggled", G_CALLBACK (cb_prefs_dialog_animate_select), NULL);
+        g_signal_connect (G_OBJECT(entry_move[KEY_LEFT]), "key_press_event", G_CALLBACK (cb_prefs_dialog_key_select), NULL);
+        g_signal_connect (G_OBJECT(entry_move[KEY_RIGHT]), "key_press_event", G_CALLBACK (cb_prefs_dialog_key_select), NULL);
+        g_signal_connect (G_OBJECT(entry_move[KEY_DROP]), "key_press_event", G_CALLBACK (cb_prefs_dialog_key_select), NULL);
         
         gtk_widget_show_all (dlg_prefs);
 }
