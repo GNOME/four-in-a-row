@@ -43,9 +43,8 @@ static GtkWidget *frame_player_selection1;
 static GtkWidget *frame_player_selection2;
 static GtkWidget *dlg_prefs = NULL;
 static GtkWidget *checkbutton_animate = NULL;
-static GtkWidget *entry_key_left = NULL;
-static GtkWidget *entry_key_right = NULL;
-static GtkWidget *entry_key_drop = NULL;
+static GtkWidget *button_move[3];
+static GtkWidget *entry_move[3];
 static GtkWidget *optionmenu_theme = NULL;
 static GtkWidget *optionmenu_theme_menu = NULL;
 static GtkWidget *radio_player1[5];
@@ -244,7 +243,7 @@ prefs_init (gint argc, gchar **argv)
                 radio_player1[i] = NULL;
                 radio_player2[i] = NULL;
         }
-        for (i = 0; i < 3; i++) radio_start[i] = NULL;
+        for (i = 0; i < 3; i++) {radio_start[i] = NULL; entry_move[i] = NULL;}
         for (i = 0; i < 2; i++) radio_sound[i] = NULL;
 
         gconf_init (argc, argv, NULL);
@@ -578,8 +577,8 @@ cb_prefs_gconf_key_left_changed (GConfClient *client, guint cnxn_id, GConfEntry 
         key_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/keyleft", NULL);
         if (key_tmp != prefs.key[KEY_LEFT]) {
                 prefs.key[KEY_LEFT] = key_tmp;
-                if (entry_key_left != NULL) {
-                        gtk_entry_set_text (GTK_ENTRY(entry_key_left), gdk_keyval_name (prefs.key[KEY_LEFT]));
+                if (entry_move[KEY_LEFT] != NULL) {
+                        gtk_entry_set_text (GTK_ENTRY(entry_move[KEY_LEFT]), gdk_keyval_name (prefs.key[KEY_LEFT]));
                 }
         }
 }
@@ -595,8 +594,8 @@ cb_prefs_gconf_key_right_changed (GConfClient *client, guint cnxn_id, GConfEntry
         key_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/keyright", NULL);
         if (key_tmp != prefs.key[KEY_RIGHT]) {
                 prefs.key[KEY_RIGHT] = key_tmp;
-                if (entry_key_right != NULL) {
-                        gtk_entry_set_text (GTK_ENTRY(entry_key_right), gdk_keyval_name (prefs.key[KEY_RIGHT]));
+                if (entry_move[KEY_RIGHT] != NULL) {
+                        gtk_entry_set_text (GTK_ENTRY(entry_move[KEY_RIGHT]), gdk_keyval_name (prefs.key[KEY_RIGHT]));
                 }
         }
 }
@@ -612,8 +611,8 @@ cb_prefs_gconf_key_drop_changed (GConfClient *client, guint cnxn_id, GConfEntry 
         key_tmp = gconf_client_get_int (gnect_gconf_client, "/apps/gnect/keydrop", NULL);
         if (key_tmp != prefs.key[KEY_DROP]) {
                 prefs.key[KEY_DROP] = key_tmp;
-                if (entry_key_drop != NULL) {
-                        gtk_entry_set_text (GTK_ENTRY(entry_key_drop), gdk_keyval_name (prefs.key[KEY_DROP]));
+                if (entry_move[KEY_DROP] != NULL) {
+                        gtk_entry_set_text (GTK_ENTRY(entry_move[KEY_DROP]), gdk_keyval_name (prefs.key[KEY_DROP]));
                 }
         }
 }
@@ -621,22 +620,51 @@ cb_prefs_gconf_key_drop_changed (GConfClient *client, guint cnxn_id, GConfEntry 
 
 
 static void
+keyboard_entries_set_sensitive (gboolean sensitive)
+{
+        gint i;
+
+        for (i = 0; i < 3; i++) {
+                gtk_widget_set_sensitive (entry_move[i], sensitive);
+        }
+}
+
+
+
+static void
+cb_button_move_clicked (GtkWidget *button, gpointer key_select)
+{
+        keyboard_entries_set_sensitive (FALSE);
+        gtk_widget_set_sensitive (entry_move[(gint)key_select], TRUE);
+        gtk_widget_grab_focus (entry_move[(gint)key_select]);
+}
+
+
+
+static void
 cb_prefs_dialog_key_select (GtkWidget *widget, GdkEventKey *data)
 {
+        gint key_select;
+
         gtk_entry_set_text (GTK_ENTRY(widget), gdk_keyval_name (data->keyval));
 
-        if (widget == entry_key_left) {
+        if (widget == entry_move[KEY_LEFT]) {
+                key_select = KEY_LEFT;
                 prefs.key[KEY_LEFT] = data->keyval;
                 gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keyleft", prefs.key[KEY_LEFT], NULL);
         }
-        else if (widget == entry_key_right) {
+        else if (widget == entry_move[KEY_RIGHT]) {
+                key_select = KEY_RIGHT;
                 prefs.key[KEY_RIGHT] = data->keyval;
                 gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keyright", prefs.key[KEY_RIGHT], NULL);
         }
         else {
+                key_select = KEY_DROP;
                 prefs.key[KEY_DROP] = data->keyval;
                 gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keydrop", prefs.key[KEY_DROP], NULL);
         }
+        gtk_widget_set_sensitive (widget, FALSE);
+        gtk_widget_grab_focus (button_move[key_select]);
 }
 
 static void
@@ -755,7 +783,7 @@ prefs_dialog_create (void)
         vbox1 = gtk_vbox_new (FALSE, 0);
         gtk_container_set_border_width (GTK_CONTAINER (vbox1), 10);
 
-        label = gtk_label_new (_("Player Selection"));
+        label = gtk_label_new_with_mnemonic (_("_Player Selection"));
 	gtk_notebook_append_page (GTK_NOTEBOOK (action_area), vbox1, label);
 
         table = gtk_table_new (2, 2, FALSE);
@@ -880,45 +908,49 @@ prefs_dialog_create (void)
         table = gtk_table_new (3, 2, FALSE);
         gtk_box_pack_start (GTK_BOX(vbox1), table, FALSE, FALSE, 0);
         gtk_container_set_border_width (GTK_CONTAINER(table), 5);
-
-        label = gtk_label_new (_("Move left"));
-        gtk_table_attach (GTK_TABLE(table), label, 0, 1, 0, 1,
-                          (GtkAttachOptions)(GTK_FILL),
-                          (GtkAttachOptions)(0), 0, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 0, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label), 10, 0);
-
-        label = gtk_label_new (_("Move right"));
-        gtk_table_attach (GTK_TABLE(table), label, 0, 1, 1, 2,
-                          (GtkAttachOptions)(GTK_FILL),
-                          (GtkAttachOptions)(0), 0, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 0, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label), 10, 0);
-
-        label = gtk_label_new (_("Drop counter"));
-        gtk_table_attach (GTK_TABLE(table), label, 0, 1, 2, 3,
-                          (GtkAttachOptions)(GTK_FILL),
-                          (GtkAttachOptions)(0), 0, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 0, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label), 10, 0);
-
-        entry_key_left = gtk_entry_new ();
-        gtk_table_attach (GTK_TABLE(table), entry_key_left, 1, 2, 0, 1,
+        gtk_table_set_row_spacings (GTK_TABLE (table), 0);
+        gtk_table_set_col_spacings (GTK_TABLE (table), 12);
+  
+        button_move[KEY_LEFT] = gtk_button_new_with_label (_("Move left"));
+        gtk_widget_show (button_move[KEY_LEFT]);
+        gtk_table_attach (GTK_TABLE(table), button_move[KEY_LEFT], 0, 1, 0, 1,
                           (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
-        gtk_entry_set_width_chars (GTK_ENTRY (entry_key_left), 8);
-
-        entry_key_right = gtk_entry_new ();
-        gtk_table_attach (GTK_TABLE(table), entry_key_right, 1, 2, 1, 2,
+  
+        button_move[KEY_RIGHT] = gtk_button_new_with_label (_("Move right"));
+        gtk_widget_show (button_move[KEY_RIGHT]);
+        gtk_table_attach (GTK_TABLE(table), button_move[KEY_RIGHT], 0, 1, 1, 2
+,
                           (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
-        gtk_entry_set_width_chars (GTK_ENTRY (entry_key_right), 8);
-
-        entry_key_drop = gtk_entry_new ();
-        gtk_table_attach (GTK_TABLE(table), entry_key_drop, 1, 2, 2, 3,
+  
+        button_move[KEY_DROP] = gtk_button_new_with_label (_("Drop counter"));
+        gtk_widget_show (button_move[KEY_DROP]);
+        gtk_table_attach (GTK_TABLE(table), button_move[KEY_DROP], 0, 1, 2, 3,
                           (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
-        gtk_entry_set_width_chars (GTK_ENTRY (entry_key_drop), 8);
+        entry_move[KEY_LEFT] = gtk_entry_new ();
+        gtk_widget_show (entry_move[KEY_LEFT]);
+        gtk_table_attach (GTK_TABLE(table), entry_move[KEY_LEFT], 1, 2, 0, 1,
+                          (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
+                          (GtkAttachOptions)(0), 0, 0);
+        gtk_entry_set_width_chars (GTK_ENTRY (entry_move[KEY_LEFT]), 8);
+        
+        entry_move[KEY_RIGHT] = gtk_entry_new ();
+        gtk_widget_show (entry_move[KEY_RIGHT]);
+        gtk_table_attach (GTK_TABLE(table), entry_move[KEY_RIGHT], 1, 2, 1, 2,
+                          (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
+                          (GtkAttachOptions)(0), 0, 0);
+        gtk_entry_set_width_chars (GTK_ENTRY (entry_move[KEY_RIGHT]), 8);
+        
+        entry_move[KEY_DROP] = gtk_entry_new ();
+        gtk_widget_show (entry_move[KEY_DROP]);
+        gtk_table_attach (GTK_TABLE(table), entry_move[KEY_DROP], 1, 2, 2, 3,
+                          (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
+                          (GtkAttachOptions)(0), 0, 0);
+        gtk_entry_set_width_chars (GTK_ENTRY (entry_move[KEY_DROP]), 8);
+        
+        gtk_label_set_mnemonic_widget (GTK_LABEL(label), optionmenu_theme);
 
 
         /* fill in values */
@@ -934,11 +966,13 @@ prefs_dialog_create (void)
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_animate), prefs.do_animate);
 
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_sound[prefs.sound_mode - 1]), TRUE);
+        
+        gtk_entry_set_text (GTK_ENTRY(entry_move[KEY_LEFT]), gdk_keyval_name (prefs.key[KEY_LEFT]));
+        gtk_entry_set_text (GTK_ENTRY(entry_move[KEY_RIGHT]), gdk_keyval_name (prefs.key[KEY_RIGHT]));
+        gtk_entry_set_text (GTK_ENTRY(entry_move[KEY_DROP]), gdk_keyval_name (prefs.key[KEY_DROP]));
 
-        gtk_entry_set_text (GTK_ENTRY(entry_key_left), gdk_keyval_name (prefs.key[KEY_LEFT]));
-        gtk_entry_set_text (GTK_ENTRY(entry_key_right), gdk_keyval_name (prefs.key[KEY_RIGHT]));
-        gtk_entry_set_text (GTK_ENTRY(entry_key_drop), gdk_keyval_name (prefs.key[KEY_DROP]));
-
+        keyboard_entries_set_sensitive (FALSE);
+        
         /* signals */
 
         g_signal_connect (dlg_prefs, "response", G_CALLBACK(gtk_widget_hide), NULL);
@@ -947,14 +981,27 @@ prefs_dialog_create (void)
                 g_signal_connect (GTK_OBJECT(radio_player2[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_player2_select),(gpointer)i);
         }
         for (i = 0; i < 3; i++) {
-                g_signal_connect (GTK_OBJECT(radio_start[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_who_starts_select),(gpointer)i);
+                g_signal_connect (GTK_OBJECT(radio_start[i]), "toggled",
+                                  GTK_SIGNAL_FUNC(cb_prefs_dialog_who_starts_select),
+                                  (gpointer)i);
+                gtk_entry_set_text (GTK_ENTRY(entry_move[i]),
+                                    gdk_keyval_name (prefs.key[i]));
+                gtk_editable_set_editable (GTK_EDITABLE(entry_move[i]), FALSE);
+                g_signal_connect (GTK_OBJECT(button_move[i]),
+                                  "clicked",
+                                  GTK_SIGNAL_FUNC(cb_button_move_clicked),
+                                  (gpointer)i);
+                g_signal_connect (GTK_OBJECT(entry_move[i]),
+                                  "key_press_event",
+                                  GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select),
+                                  NULL);
         }
         g_signal_connect (GTK_OBJECT(radio_sound[0]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_BEEP);
         g_signal_connect (GTK_OBJECT(radio_sound[1]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_PLAY);
         g_signal_connect (GTK_OBJECT(checkbutton_animate), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_animate_select), NULL);
-        g_signal_connect (GTK_OBJECT(entry_key_left), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
-        g_signal_connect (GTK_OBJECT(entry_key_right), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
-        g_signal_connect (GTK_OBJECT(entry_key_drop), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
+        g_signal_connect (GTK_OBJECT(entry_move[KEY_LEFT]), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
+        g_signal_connect (GTK_OBJECT(entry_move[KEY_RIGHT]), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
+        g_signal_connect (GTK_OBJECT(entry_move[KEY_DROP]), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
         
         gtk_widget_show_all (dlg_prefs);
 }

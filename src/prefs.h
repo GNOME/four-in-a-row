@@ -23,9 +23,11 @@
 #define SOUND_MODE_BEEP         1
 #define SOUND_MODE_PLAY         2
 
-#define KEY_LEFT                0
-#define KEY_RIGHT               1
-#define KEY_DROP                2
+typedef enum {
+        KEY_LEFT = 0,
+        KEY_RIGHT,
+        KEY_DROP
+} KeyID;
 
 
 

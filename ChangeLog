@@ -1,3 +1,10 @@
+2003-06-016  Tim Musson  <trmusson@ihug.co.nz>
+ 
+        * src/prefs.h:
+	* src/prefs.c: Added "grab" buttons to keyboard control options
+        (fixes gnect part of #97327)
+ 
+
 2003-06-15  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/gui.c (gui_set_status_prompt_new_game): Reworded the message
