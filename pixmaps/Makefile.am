@@ -14,8 +14,7 @@ pixmap_DATA = \
 	tileset_40x40_glassy.png \
 	tileset_48x32_emulator.png \
 	bg_grotty.jpg \
-	bg_nightfall.jpg \
-	gnect-about.png
+	bg_nightfall.jpg
 
 
 icondir   = $(datadir)/pixmaps

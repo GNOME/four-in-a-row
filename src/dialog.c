@@ -38,7 +38,7 @@ dialog_about (void)
         const gchar *authors[] = {"Gnect:",
                                   "  Tim Musson <trmusson@ihug.co.nz>",
                                   "  David Neary <bolsh@gimp.org>",
-                                  "\nVelena Engine V1.07; revision Apr 18 2002:",
+                                  "\nVelena Engine V1.07:",
                                   "  AI engine written by Giuliano Bertoletti",
                                   "  Based on the knowledged approach of Victor Allis",
                                   "  Copyright (C) 1996-97 ",
@@ -58,10 +58,10 @@ dialog_about (void)
 
         logo = gdk_pixbuf_new_from_file (FNAME_GNECT_LOGO, NULL);
 
-        dlg_about = gnome_about_new (APPNAME,
+        dlg_about = gnome_about_new ("Gnect",
                                      VERSION,
                                      "(c) 1999-2002, The Authors",
-                                     _("\"Four in a row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine.\n\nhttp://homepages.ihug.co.nz/~trmusson/gnect.html"),
+                                     _("\"Four in a row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
                                      authors,
                                      documents,
                                      strcmp (translator, "translator") != 0 ? translator : NULL,

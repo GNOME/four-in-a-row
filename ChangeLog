@@ -1,3 +1,11 @@
+2002-04-21  Tim Musson <trmusson@ihug.co.nz>
+
+	* pixmaps/Makefile.am:
+	* pixmaps/gnect-about.png: removed
+	* src/main.h: Gnect's desktop icon is now used in the About dialog,
+	  consistent with gnome-games.
+	* src/dialog.c: Removed Gnect's URL (it's now just in the help docs).
+
 2002-04-20  Tim Musson <trmusson@ihug.co.nz>
 
 	* src/gui.c: cb_gui_key_press now has a return value, fixing a bug

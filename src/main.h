@@ -34,7 +34,7 @@
 #define PACKAGE_THEME_DIR       GNECT_DATA_DIR  APPNAME  G_DIR_SEPARATOR_S
 
 #define FNAME_GNECT_ICON        BASE_PIXMAP_DIR    "gnect-icon.png"
-#define FNAME_GNECT_LOGO        PACKAGE_PIXMAP_DIR "gnect-about.png"
+#define FNAME_GNECT_LOGO        FNAME_GNECT_ICON /* PACKAGE_PIXMAP_DIR "gnect-about.png" */
 
 #define GNECT_ICON_WIDTH        48
 #define GNECT_ICON_HEIGHT       48
