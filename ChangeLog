@@ -1,6 +1,6 @@
-2002-12-16  Ross Burton  <ross@burtonini.com>
+2002-12-17  Ross Burton  <ross@burtonini.com>
 
-	* src/prefs.c: Added a GConf sanity check.
+	* data/Makefile.am (schema_in_files): Fix the GConf schema path.
 
 2002-11-29  Ross Burton  <ross@burtonini.com>
 
