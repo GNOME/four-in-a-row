@@ -34,14 +34,16 @@ gnect_SOURCES = main.h     \
                 rules.h
 
 INCLUDES = -I.. \
+	-I$(top_srcdir)/libgames-support                \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\"		   \
-    	-DGNECT_DATA_DIR=\""$(datadir)/"\" \
+	-DGNECT_DATA_DIR=\""$(datadir)/"\" \
 	$(GNOME_GAMES_CFLAGS) \
 	-DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
 	-DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED
 
 gnect_LDADD = \
+	../../libgames-support/libgames-support.la         \
 	$(GNOME_GAMES_LIBS)     \
 	$(INTLLIBS)
 

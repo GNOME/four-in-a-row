@@ -1,3 +1,9 @@
+2003-03-07  Ross Burton  <ross@burtonini.com>
+
+	* src/Makefile.am: Link to the shared games library.
+
+	* src/prefs.c (prefs_init): Use the shared sanity check.
+
 2003-02-24  Jeremy Katz  <katzj@redhat.com>
 
 	* data/gnect.schemas.in: add applyto to schemas (closes #106903)
