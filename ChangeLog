@@ -3,7 +3,7 @@
 	* src/prefs.c (prefs_dialog): 
 	* src/dialog.c (dialog_score):
 	* src/dialog.c (dialog_about): Use gtk_window_present for the
-	dialogs. Fixes bug #113892. Thanks Steve.
+	dialogs. Fixes bug #113892. Thanks to Steve Chaplin.
 
 2003-04-06  Ross Burton  <ross@burtonini.com>
 
