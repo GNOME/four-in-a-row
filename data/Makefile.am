@@ -7,7 +7,9 @@ Games_DATA     = $(Games_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 schemadir      = $(sysconfdir)/gconf/schemas
-schema_DATA    = gnect.schemas
+schema_in_files = gnect.schemas.in
+schema_DATA = $(schema_in_files:.schemas.in=.schemas)
+@INTLTOOL_SCHEMAS_RULE@
 
 soundlistdir       = $(sysconfdir)/sound/events
 soundlist_in_files = gnect.soundlist.in
