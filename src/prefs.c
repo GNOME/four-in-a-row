@@ -28,7 +28,7 @@
 #define DEFAULT_DO_ANIMATE             TRUE             /* Use animation by default */
 #define DEFAULT_DO_TOOLBAR             FALSE            /* Toolbar disabled */
 #define DEFAULT_DO_SOUND               TRUE             /* Sound enabled */
-#define DEFAULT_DO_VERIFY              TRUE             /* Verification dialogs enabled */
+#define DEFAULT_DO_VERIFY              FALSE            /* Verification dialogs enabled */
 
 
 extern gint      debugging;
@@ -41,11 +41,10 @@ extern Theme     *theme_current;
 GConfClient *gnect_gconf_client = NULL;
 Prefs  prefs;
 
-static GtkWidget *label_player_selection1;
-static GtkWidget *label_player_selection2;
+static GtkWidget *frame_player_selection1;
+static GtkWidget *frame_player_selection2;
 static GtkWidget *dlg_prefs = NULL;
 static GtkWidget *checkbutton_animate = NULL;
-static GtkWidget *checkbutton_verify = NULL;
 static GtkWidget *entry_key_left = NULL;
 static GtkWidget *entry_key_right = NULL;
 static GtkWidget *entry_key_drop = NULL;
@@ -333,8 +332,8 @@ prefs_dialog_update_player_selection_labels (void)
 
                 label_player1 = g_strdup_printf (_("Player 1 : %s"), prefs.descr_player1);
                 label_player2 = g_strdup_printf (_("Player 2 : %s"), prefs.descr_player2);
-                gtk_label_set_text (GTK_LABEL(label_player_selection1), label_player1);
-                gtk_label_set_text (GTK_LABEL(label_player_selection2), label_player2);
+                games_frame_set_label (GTK_FRAME (frame_player_selection1), label_player1);
+                games_frame_set_label (GTK_FRAME (frame_player_selection2), label_player2);
 
                 g_free (label_player1);
                 g_free (label_player2);
@@ -700,22 +699,8 @@ cb_prefs_gconf_verify_changed (GConfClient *client, guint cnxn_id, GConfEntry *e
         verify_tmp = gconf_client_get_bool (gnect_gconf_client, "/apps/gnect/verify", NULL);
         if (verify_tmp != prefs.do_verify) {
                 prefs.do_verify = verify_tmp;
-                if (checkbutton_verify != NULL) {
-                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_verify),
-                                                      prefs.do_verify);
-                }
         }
 }
-
-
-
-static void
-cb_prefs_dialog_verify_select (GtkWidget *widget, gpointer *data)
-{
-        prefs.do_verify = GTK_TOGGLE_BUTTON(widget)->active;
-        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/verify", prefs.do_verify, NULL);
-}
-
 
 
 static void
@@ -805,8 +790,8 @@ prefs_dialog_create (void)
 {
         GtkWidget *action_area;
         GtkWidget *vbox1, *vbox2, *hbox1;
+        GtkWidget *frame;
         GtkWidget *label;
-        GtkWidget *sep;
         GtkWidget *table;
         GSList    *group_player1 = NULL;
         GSList    *group_player2 = NULL;
@@ -815,7 +800,7 @@ prefs_dialog_create (void)
         gint i;
 
 
-        DEBUG_PRINT(1, "prefs_dialog_create\n");
+        DEBUG_PRINT (1, "prefs_dialog_create\n");
 
         dlg_prefs = gtk_dialog_new_with_buttons (_("Gnect Preferences"),
                                                  GTK_WINDOW (app),
@@ -828,141 +813,139 @@ prefs_dialog_create (void)
                           GTK_SIGNAL_FUNC(gtk_widget_destroyed), &dlg_prefs);
 
         action_area = gtk_notebook_new ();
-        gtk_box_pack_start (GTK_BOX(GTK_DIALOG(dlg_prefs)->vbox), action_area, TRUE, TRUE, 0);
-        gtk_widget_show (action_area);
+        gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg_prefs)->vbox), action_area,
+                            TRUE, TRUE, 0);
 
         vbox1 = gtk_vbox_new (FALSE, 0);
-        gtk_widget_show (vbox1);
-        gtk_container_add (GTK_CONTAINER(action_area), vbox1);
-        gtk_container_set_border_width (GTK_CONTAINER(vbox1), 10);
+        gtk_container_set_border_width (GTK_CONTAINER (vbox1), 10);
 
-        hbox1 = gtk_hbox_new (FALSE, 0);
-        gtk_widget_show (hbox1);
-        gtk_box_pack_start (GTK_BOX(vbox1), hbox1, FALSE, FALSE, 0);
+        label = gtk_label_new (_("Player Selection"));
+	gtk_notebook_append_page (GTK_NOTEBOOK (action_area), vbox1, label);
 
+        table = gtk_table_new (2, 2, FALSE);
+        gtk_box_pack_start (GTK_BOX (vbox1), table, FALSE, FALSE, 0);
 
         /* player 1 */
 
-        vbox2 = gtk_vbox_new (FALSE, 0);
-        gtk_widget_show (vbox2);
-        gtk_box_pack_start (GTK_BOX(hbox1), vbox2, FALSE, FALSE, 0);
+        frame_player_selection1 = games_frame_new (NULL);
+        gtk_table_attach_defaults (GTK_TABLE (table), frame_player_selection1, 0, 1, 0, 1);
 
-        label_player_selection1 = gtk_label_new (NULL);
-        gtk_widget_show (label_player_selection1);
-        gtk_box_pack_start (GTK_BOX(vbox2), label_player_selection1, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label_player_selection1), 7.45058e-09, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label_player_selection1), 0, 10);
+        vbox2 = gtk_vbox_new (FALSE, 0);
+        gtk_container_add (GTK_CONTAINER (frame_player_selection1), vbox2);
 
         for (i = 0; i < 5; i++) {
-                radio_player1[i] = gtk_radio_button_new_with_label (group_player1, prefs_dialog_get_player_selection_label (i));
+                radio_player1[i] = gtk_radio_button_new_with_label
+                  (group_player1, prefs_dialog_get_player_selection_label (i));
                 group_player1 = gtk_radio_button_get_group (GTK_RADIO_BUTTON(radio_player1[i]));
-                gtk_widget_show (radio_player1[i]);
-                gtk_box_pack_start (GTK_BOX(vbox2), radio_player1[i], FALSE, FALSE, 0);
-                gtk_container_set_border_width (GTK_CONTAINER(radio_player1[i]), 3);
+                gtk_box_pack_start (GTK_BOX (vbox2), radio_player1[i], FALSE, FALSE, 0);
+                gtk_container_set_border_width (GTK_CONTAINER (radio_player1[i]), 3);
         }
-
-        sep = gtk_vseparator_new ();
-        gtk_widget_show (sep);
-        gtk_box_pack_start (GTK_BOX(hbox1), sep, FALSE, FALSE, 10);
-
 
         /* player 2 */
 
-        vbox2 = gtk_vbox_new (FALSE, 0);
-        gtk_widget_show (vbox2);
-        gtk_box_pack_start (GTK_BOX(hbox1), vbox2, FALSE, FALSE, 0);
+        frame_player_selection2 = games_frame_new (NULL);
+        gtk_table_attach_defaults (GTK_TABLE (table), frame_player_selection2, 1, 2, 0, 1);
 
-        label_player_selection2 = gtk_label_new (NULL);
-        gtk_widget_show (label_player_selection2);
-        gtk_box_pack_start (GTK_BOX(vbox2), label_player_selection2, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label_player_selection2), 7.45058e-09, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label_player_selection2), 0, 10);
+        vbox2 = gtk_vbox_new (FALSE, 0);
+        gtk_container_add (GTK_CONTAINER (frame_player_selection2), vbox2);
 
         for (i = 0; i < 5; i++) {
                 radio_player2[i] = gtk_radio_button_new_with_label (group_player2, prefs_dialog_get_player_selection_label (i));
                 group_player2 = gtk_radio_button_get_group (GTK_RADIO_BUTTON(radio_player2[i]));
-                gtk_widget_show (radio_player2[i]);
                 gtk_box_pack_start (GTK_BOX(vbox2), radio_player2[i], FALSE, FALSE, 0);
                 gtk_container_set_border_width (GTK_CONTAINER(radio_player2[i]), 3);
         }
 
-        sep = gtk_vseparator_new ();
-        gtk_widget_show (sep);
-        gtk_box_pack_start (GTK_BOX(hbox1), sep, FALSE, FALSE, 10);
-
-
         /* who starts? */
 
-        vbox2 = gtk_vbox_new (FALSE, 0);
-        gtk_widget_show (vbox2);
-        gtk_box_pack_start (GTK_BOX(hbox1), vbox2, TRUE, TRUE, 0);
+        frame = games_frame_new (_("Who starts?"));
+        gtk_table_attach_defaults (GTK_TABLE (table), frame, 0, 1, 1, 2);
 
-        label = gtk_label_new (_("Who starts?"));
-        gtk_widget_show (label);
-        gtk_box_pack_start (GTK_BOX(vbox2), label, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label), 0, 10);
+        vbox2 = gtk_vbox_new (FALSE, 0);
+        gtk_container_add (GTK_CONTAINER (frame), vbox2);
 
         for (i = 0; i < 3; i++) {
                 radio_start[i] = gtk_radio_button_new_with_label (group_start, prefs_dialog_get_who_starts_label (i));
-                group_start = gtk_radio_button_get_group (GTK_RADIO_BUTTON(radio_start[i]));
-                gtk_widget_show (radio_start[i]);
-                gtk_box_pack_start (GTK_BOX(vbox2), radio_start[i], FALSE, FALSE, 0);
-                gtk_container_set_border_width (GTK_CONTAINER(radio_start[i]), 3);
+                group_start = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radio_start[i]));
+                gtk_box_pack_start (GTK_BOX (vbox2), radio_start[i], FALSE, FALSE, 0);
+                gtk_container_set_border_width (GTK_CONTAINER (radio_start[i]), 3);
         }
 
-        sep = gtk_hseparator_new ();
-        gtk_widget_show (sep);
-        gtk_box_pack_start (GTK_BOX(vbox1), sep, FALSE, FALSE, 10);
-
-        label = gtk_label_new (_("Player Selection"));
-        gtk_widget_show (label);
-        gtk_notebook_set_tab_label (GTK_NOTEBOOK(action_area), gtk_notebook_get_nth_page (GTK_NOTEBOOK(action_area), 0), label);
-        gtk_misc_set_padding (GTK_MISC(label), 10, 0);
-
-        hbox1 = gtk_hbox_new (FALSE, 0);
-        gtk_widget_show (hbox1);
-        gtk_container_add (GTK_CONTAINER(action_area), hbox1);
-        gtk_container_set_border_width (GTK_CONTAINER(hbox1), 5);
-
-
         /* theme */
+        label = gtk_label_new (_("Appearance and Behaviour"));
+        vbox2 = gtk_vbox_new (FALSE, 0);
+	gtk_notebook_append_page (GTK_NOTEBOOK (action_area), vbox2, label);
+
+        table = gtk_table_new (3, 1, FALSE);
+        gtk_box_pack_start (GTK_BOX (vbox2), table, FALSE, FALSE, 0);
+
+        frame = games_frame_new (_("Theme"));
+        gtk_table_attach_defaults (GTK_TABLE (table), frame, 0, 1, 0, 1);
 
         vbox1 = gtk_vbox_new (FALSE, 0);
-        gtk_widget_show (vbox1);
-        gtk_box_pack_start (GTK_BOX(hbox1), vbox1, TRUE, TRUE, 5);
         gtk_container_set_border_width (GTK_CONTAINER(vbox1), 5);
+        gtk_container_add (GTK_CONTAINER (frame), vbox1);
 
-        label = gtk_label_new (_("Theme selection:"));
-        gtk_widget_show (label);
-        gtk_box_pack_start (GTK_BOX(vbox1), label, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 0, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label), 0, 10);
+	hbox1 = gtk_hbox_new (FALSE, 6);
+        gtk_box_pack_start (GTK_BOX (vbox1), hbox1, FALSE, FALSE, 0);
+
+        label = gtk_label_new (_("Theme Selection:"));
+        gtk_box_pack_start (GTK_BOX (hbox1), label, FALSE, FALSE, 0);
+        gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
 
         optionmenu_theme = gtk_option_menu_new ();
-        gtk_widget_show (optionmenu_theme);
-        gtk_box_pack_start (GTK_BOX(vbox1), optionmenu_theme, FALSE, FALSE, 0);
+        gtk_box_pack_start (GTK_BOX (hbox1), optionmenu_theme, FALSE, FALSE, 0);
 
         optionmenu_theme_menu = gtk_menu_new ();
         prefs_dialog_fill_theme_menu ();
-        gtk_option_menu_set_menu (GTK_OPTION_MENU(optionmenu_theme), optionmenu_theme_menu);
+        gtk_option_menu_set_menu (GTK_OPTION_MENU (optionmenu_theme),
+                                  optionmenu_theme_menu);
+
+        /* animation */
+        frame = games_frame_new (_("Animation"));
+        gtk_table_attach_defaults (GTK_TABLE (table), frame, 0, 1, 1, 2);
+
+        vbox1 = gtk_vbox_new (FALSE, 0);
+        gtk_container_set_border_width (GTK_CONTAINER (vbox1), 5);
+        gtk_container_add (GTK_CONTAINER (frame), vbox1);
+
+        checkbutton_animate = gtk_check_button_new_with_label (_("Enable animation"));
+        gtk_box_pack_start (GTK_BOX(vbox1), checkbutton_animate, FALSE, FALSE, 0);
+
+        /* sound */
+
+        frame = games_frame_new (_("Sound Type"));
+        gtk_table_attach_defaults (GTK_TABLE (table), frame, 0, 1, 2, 3);
+        vbox1 = gtk_vbox_new (FALSE, 0);
+        gtk_container_add (GTK_CONTAINER (frame), vbox1);
+
+        radio_sound[0] = gtk_radio_button_new_with_label (group_sound, _("Speaker beep"));
+        group_sound = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radio_sound[0]));
+        gtk_box_pack_start (GTK_BOX (vbox1), radio_sound[0], FALSE, FALSE, 0);
+
+        radio_sound[1] = gtk_radio_button_new_with_label (group_sound, _("GNOME sound"));
+        group_sound = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radio_sound[1]));
+        gui_set_tooltip (GTK_WIDGET (radio_sound[1]), _("This can be set up using the GNOME Control Center"));
+        gtk_box_pack_start (GTK_BOX (vbox1), radio_sound[1], FALSE, FALSE, 0);
 
 
         /* keyboard */
+        label = gtk_label_new (_("Controls"));
+        vbox2 = gtk_vbox_new (FALSE, 0);
+	gtk_notebook_append_page (GTK_NOTEBOOK (action_area), vbox2, label);
 
-        label = gtk_label_new (_("Keyboard control:"));
-        gtk_widget_show (label);
-        gtk_box_pack_start (GTK_BOX(vbox1), label, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
-        gtk_misc_set_padding (GTK_MISC(label), 0, 10);
+        frame = games_frame_new (_("Keyboard Control"));
+        gtk_box_pack_start (GTK_BOX (vbox2), frame, TRUE, TRUE, 5);
+
+        vbox1 = gtk_vbox_new (FALSE, 0);
+        gtk_container_set_border_width (GTK_CONTAINER(vbox1), 5);
+        gtk_container_add (GTK_CONTAINER (frame), vbox1);
 
         table = gtk_table_new (3, 2, FALSE);
-        gtk_widget_show (table);
         gtk_box_pack_start (GTK_BOX(vbox1), table, FALSE, FALSE, 0);
         gtk_container_set_border_width (GTK_CONTAINER(table), 5);
 
         label = gtk_label_new (_("Move left"));
-        gtk_widget_show (label);
         gtk_table_attach (GTK_TABLE(table), label, 0, 1, 0, 1,
                           (GtkAttachOptions)(GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
@@ -970,7 +953,6 @@ prefs_dialog_create (void)
         gtk_misc_set_padding (GTK_MISC(label), 10, 0);
 
         label = gtk_label_new (_("Move right"));
-        gtk_widget_show (label);
         gtk_table_attach (GTK_TABLE(table), label, 0, 1, 1, 2,
                           (GtkAttachOptions)(GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
@@ -978,7 +960,6 @@ prefs_dialog_create (void)
         gtk_misc_set_padding (GTK_MISC(label), 10, 0);
 
         label = gtk_label_new (_("Drop counter"));
-        gtk_widget_show (label);
         gtk_table_attach (GTK_TABLE(table), label, 0, 1, 2, 3,
                           (GtkAttachOptions)(GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
@@ -986,90 +967,22 @@ prefs_dialog_create (void)
         gtk_misc_set_padding (GTK_MISC(label), 10, 0);
 
         entry_key_left = gtk_entry_new ();
-        gtk_widget_show (entry_key_left);
         gtk_table_attach (GTK_TABLE(table), entry_key_left, 1, 2, 0, 1,
                           (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
         gtk_entry_set_width_chars (GTK_ENTRY (entry_key_left), 8);
 
         entry_key_right = gtk_entry_new ();
-        gtk_widget_show (entry_key_right);
         gtk_table_attach (GTK_TABLE(table), entry_key_right, 1, 2, 1, 2,
                           (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
         gtk_entry_set_width_chars (GTK_ENTRY (entry_key_right), 8);
 
         entry_key_drop = gtk_entry_new ();
-        gtk_widget_show (entry_key_drop);
         gtk_table_attach (GTK_TABLE(table), entry_key_drop, 1, 2, 2, 3,
                           (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
                           (GtkAttachOptions)(0), 0, 0);
         gtk_entry_set_width_chars (GTK_ENTRY (entry_key_drop), 8);
-
-        sep = gtk_vseparator_new ();
-        gtk_widget_show (sep);
-        gtk_box_pack_start (GTK_BOX(hbox1), sep, FALSE, FALSE, 5);
-
-
-        /* animation */
-
-        vbox1 = gtk_vbox_new (FALSE, 0);
-        gtk_widget_show (vbox1);
-        gtk_box_pack_start (GTK_BOX(hbox1), vbox1, TRUE, TRUE, 5);
-        gtk_container_set_border_width (GTK_CONTAINER(vbox1), 5);
-
-        label = gtk_label_new (_("Animation:"));
-        gtk_widget_show (label);
-        gtk_box_pack_start (GTK_BOX(vbox1), label, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
-
-        checkbutton_animate = gtk_check_button_new_with_label (_("Yes please!"));
-        gtk_widget_show (checkbutton_animate);
-        gtk_box_pack_start (GTK_BOX(vbox1), checkbutton_animate, FALSE, FALSE, 0);
-
-        sep = gtk_hseparator_new ();
-        gtk_widget_show (sep);
-        gtk_box_pack_start (GTK_BOX(vbox1), sep, TRUE, FALSE, 5);
-
-
-        /* sound */
-
-        label = gtk_label_new (_("Sound type:"));
-        gtk_widget_show (label);
-        gtk_box_pack_start (GTK_BOX(vbox1), label, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
-
-        radio_sound[0] = gtk_radio_button_new_with_label (group_sound, _("Speaker beep"));
-        group_sound = gtk_radio_button_get_group (GTK_RADIO_BUTTON(radio_sound[0]));
-        gtk_widget_show (radio_sound[0]);
-        gtk_box_pack_start (GTK_BOX(vbox1), radio_sound[0], FALSE, FALSE, 0);
-
-        radio_sound[1] = gtk_radio_button_new_with_label (group_sound, _("GNOME sound"));
-        group_sound = gtk_radio_button_get_group (GTK_RADIO_BUTTON(radio_sound[1]));
-        gtk_widget_show (radio_sound[1]);
-        gui_set_tooltip (GTK_WIDGET(radio_sound[1]), _("This can be set up using the GNOME Control Center"));
-        gtk_box_pack_start (GTK_BOX(vbox1), radio_sound[1], FALSE, FALSE, 0);
-
-        sep = gtk_hseparator_new ();
-        gtk_widget_show (sep);
-        gtk_box_pack_start (GTK_BOX(vbox1), sep, TRUE, FALSE, 5);
-
-
-        /* verify */
-
-        label = gtk_label_new (_("If stopping an unfinished game:"));
-        gtk_widget_show (label);
-        gtk_box_pack_start (GTK_BOX(vbox1), label, FALSE, FALSE, 0);
-        gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
-
-        checkbutton_verify = gtk_check_button_new_with_label (_("Ask me first"));
-        gtk_widget_show (checkbutton_verify);
-        gtk_box_pack_start (GTK_BOX(vbox1), checkbutton_verify, FALSE, FALSE, 0);
-
-        label = gtk_label_new (_("Appearance and Behaviour"));
-        gtk_widget_show (label);
-        gtk_notebook_set_tab_label (GTK_NOTEBOOK(action_area), gtk_notebook_get_nth_page (GTK_NOTEBOOK(action_area), 1), label);
-        gtk_misc_set_padding (GTK_MISC(label), 10, 0);
 
 
         /* fill in values */
@@ -1090,10 +1003,6 @@ prefs_dialog_create (void)
         gtk_entry_set_text (GTK_ENTRY(entry_key_right), gdk_keyval_name (prefs.key[KEY_RIGHT]));
         gtk_entry_set_text (GTK_ENTRY(entry_key_drop), gdk_keyval_name (prefs.key[KEY_DROP]));
 
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_verify), prefs.do_verify);
-
-
-
         /* signals */
 
         g_signal_connect (dlg_prefs, "response", G_CALLBACK(cb_prefs_response), &dlg_prefs);
@@ -1110,8 +1019,8 @@ prefs_dialog_create (void)
         g_signal_connect (GTK_OBJECT(entry_key_left), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
         g_signal_connect (GTK_OBJECT(entry_key_right), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
         g_signal_connect (GTK_OBJECT(entry_key_drop), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
-        g_signal_connect (GTK_OBJECT(checkbutton_verify), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_verify_select), NULL);
-
+        
+        gtk_widget_show_all (dlg_prefs);
 }
 
 

@@ -1,3 +1,8 @@
+2003-06-10  William Jon McCann  <mccann@jhu.edu>
+
+	* src/prefs.c (cb_prefs_gconf_verify_changed): HIG fixes for
+	preferences dialog.
+
 2003-06-09  William Jon McCann  <mccann@jhu.edu>
 
 	* src/dialog.c: 
