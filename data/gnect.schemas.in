@@ -134,18 +134,6 @@
       </schema>
 
       <schema>
-      <key>/schemas/apps/gnect/verify</key>
-      <applyto>/apps/gnect/verify</applyto>
-      <owner>gnect</owner>
-      <type>bool</type>
-      <default>TRUE</default>
-      <locale name="C">
-        <short>Verify</short>
-        <long>Whether or not to ask before quitting an unfinished game.</long>
-      </locale>
-      </schema>
-
-      <schema>
       <key>/schemas/apps/gnect/toolbar</key>
       <applyto>/apps/gnect/toolbar</applyto>
       <owner>gnect</owner>

@@ -44,7 +44,6 @@ struct _Prefs {
 	gboolean   do_animate;
 	gboolean   do_toolbar;
 	gboolean   do_sound;
-	gboolean   do_verify;
 	gboolean   changed;
 };
 

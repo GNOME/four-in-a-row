@@ -28,8 +28,6 @@
 #define DEFAULT_DO_ANIMATE             TRUE             /* Use animation by default */
 #define DEFAULT_DO_TOOLBAR             FALSE            /* Toolbar disabled */
 #define DEFAULT_DO_SOUND               TRUE             /* Sound enabled */
-#define DEFAULT_DO_VERIFY              FALSE            /* Verification dialogs enabled */
-
 
 extern gint      debugging;
 extern Gnect     gnect;
@@ -68,7 +66,6 @@ static void cb_prefs_gconf_key_right_changed (GConfClient *client, guint cnxn_id
 static void cb_prefs_gconf_key_drop_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
 static void cb_prefs_gconf_animate_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
 static void cb_prefs_gconf_sound_mode_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_verify_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
 
 
 static void
@@ -220,7 +217,6 @@ prefs_get (void)
         prefs.key[KEY_LEFT] = gnect_gconf_get_int ("/apps/gnect/keyleft", DEFAULT_KEY_LEFT);
         prefs.key[KEY_RIGHT] = gnect_gconf_get_int ("/apps/gnect/keyright", DEFAULT_KEY_RIGHT);
         prefs.key[KEY_DROP] = gnect_gconf_get_int ("/apps/gnect/keydrop", DEFAULT_KEY_DROP);
-        prefs.do_verify = gnect_gconf_get_bool ("/apps/gnect/verify", DEFAULT_DO_VERIFY);
         prefs.do_toolbar = gnect_gconf_get_bool ("/apps/gnect/toolbar", DEFAULT_DO_TOOLBAR);
 
         prefs.descr_player1 = NULL;
@@ -283,8 +279,6 @@ prefs_init (gint argc, gchar **argv)
                                  cb_prefs_gconf_animate_changed, NULL, NULL, NULL);
         gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/soundmode",
                                  cb_prefs_gconf_sound_mode_changed, NULL, NULL, NULL);
-        gconf_client_notify_add (gnect_gconf_client, "/apps/gnect/verify",
-                                 cb_prefs_gconf_verify_changed, NULL, NULL, NULL);
 }
 
   
@@ -368,15 +362,6 @@ static void
 cb_prefs_dialog_player1_select (GtkWidget *widget, gpointer *data)
 {
         if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(radio_player1[(gint)data]))) return;
-        if (!gnect.over && prefs.do_verify) {
-                if (kill_game_kludge) return;
-                if (!prefs_verify_kill_game ()) {
-                        kill_game_kludge = TRUE;
-                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player1[prefs.player1]), TRUE);
-                        kill_game_kludge = FALSE;
-                        return;
-                }
-        }
         prefs.player1 = (gint)data;
         gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player1", prefs.player1, NULL);
 
@@ -414,15 +399,6 @@ static void
 cb_prefs_dialog_player2_select (GtkWidget *widget, gpointer *data)
 {
         if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(radio_player2[(gint)data]))) return;
-        if (!gnect.over && prefs.do_verify) {
-                if (kill_game_kludge) return;
-                if (!prefs_verify_kill_game ()) {
-                        kill_game_kludge = TRUE;
-                        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player2[prefs.player2]), TRUE);
-                        kill_game_kludge = FALSE;
-                        return;
-                }
-        }
         prefs.player2 = (gint)data;
         gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player2", prefs.player2, NULL);
 
@@ -662,21 +638,6 @@ cb_prefs_dialog_key_select (GtkWidget *widget, GdkEventKey *data)
                 gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keydrop", prefs.key[KEY_DROP], NULL);
         }
 }
-
-
-
-static void
-cb_prefs_gconf_verify_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
-{
-        gboolean verify_tmp;
-
-
-        verify_tmp = gconf_client_get_bool (gnect_gconf_client, "/apps/gnect/verify", NULL);
-        if (verify_tmp != prefs.do_verify) {
-                prefs.do_verify = verify_tmp;
-        }
-}
-
 
 static void
 prefs_dialog_fill_theme_menu (void)
