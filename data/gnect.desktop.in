@@ -1,7 +1,7 @@
 [Desktop Entry]
 Icon=gnect-icon.png
 _Name=Gnect
-_Comment=Gnome four-in-a-row game
+_Comment=Four-in-a-row game
 Exec=gnect
 Terminal=0
 Type=Application
