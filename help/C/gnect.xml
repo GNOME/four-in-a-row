@@ -3,12 +3,12 @@
         "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"
 [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "2.4">
-  <!ENTITY manrevision "2.4">
+  <!ENTITY appversion "2.6">
+  <!ENTITY manrevision "2.6">
   <!ENTITY date "April 2002">
   <!ENTITY app "<application>Gnect</application>">
   <!ENTITY appname "Gnect">
-  <!ENTITY version "2.4">
+  <!ENTITY version "2.6">
   <!ENTITY mdash "-">
   <!ENTITY hellip "...">
 ]>
@@ -364,45 +364,25 @@
       </para>
 
       <para>
-        Configuration options in the <guilabel>Player Selection</guilabel>
+        Configuration options in the <guilabel>Game</guilabel>
         tab are:
 
         <variablelist>
 
           <varlistentry>
             <term>
-              <guilabel>Player 1</guilabel> and
-              <guilabel>Player 2</guilabel>
+              <guilabel>Player One</guilabel> and
+              <guilabel>Player Two</guilabel>
             </term>
             <listitem>
               <para>
-                These two columns tell &app; who's playing. Velena is
-                the name of the algorithm used to make the computer
-                player challenging. To play against a friend, select
-                Human for both Player 1 and Player 2.
+
+                These two columns tell &app; who's playing and, if it is the computer, how hard they play. To play against a friend, select
+                Human for both Player One and Player Two.
+
               </para>
             </listitem>
           </varlistentry>
-
-          <varlistentry>
-            <term>
-              <guilabel>Who starts?</guilabel>
-            </term>
-            <listitem>
-              <para>
-                This column lets you choose who moves first when a new game
-                begins. By default, players take turns to start.
-              </para>
-            </listitem>
-          </varlistentry>
-
-        </variablelist>
-      </para>
-
-      <para>
-        Options in the <guilabel>Appearance and Behaviour</guilabel> tab are:
-
-        <variablelist>
 
           <varlistentry>
             <term><guilabel>Theme</guilabel></term>
@@ -415,7 +395,7 @@
           </varlistentry>
 
           <varlistentry>
-            <term><guilabel>Animation</guilabel></term>
+            <term><guilabel>Enable Animation</guilabel></term>
             <listitem>
               <para>
                 Here you can toggle the game's animation on or off.
@@ -423,22 +403,9 @@
             </listitem>
           </varlistentry>
 
-          <varlistentry>
-            <term><guilabel>Sound type</guilabel></term>
-            <listitem>
-              <para>
-                &app; can make sounds when certain events occur.
-                If you choose the Speaker beep option, &app; will beep when
-                a game ends or if you make an illegal move.
-                If you choose the GNOME sound option, &app; will play the
-                audio files you specify using the
-                <application>GNOME Control Center</application>.
-                To disable &app;'s sound completely, use the sound toggle in
-                the <guimenu>Settings</guimenu> menu.
-              </para>
-            </listitem>
-          </varlistentry>
-
+        </variablelist>
+      </para>
+      <para>
           Finally there is a <guilabel>Controls</guilabel> tab to
           change the keyboard controls. To change a control, click the
           appropriate button and then type the new key.
@@ -523,7 +490,7 @@
         <para>
           Tiles can be square or rectangular, and any size you like. Most
           of the tile sets that come with &app; use square tiles measuring
-          either 40 by 40 pixels ("small") or 50 by 50 ("large").
+          50 pixels by 50 pixels.
         </para>
       </tip>
 
@@ -546,87 +513,18 @@
 
       <para>
         So, you now have a tile set and perhaps a background image to
-        go with it. The next step is to write a theme file.
+        go with it. The next step is to put them in the right place.
       </para>
 
     </sect2>
 
-
-    <sect2 id="themefiles">
-
-      <title>Theme Files</title>
-
-      <para>
-        Here's an example theme file, showing all the keywords &app;
-        understands. Lines starting with a hash (#) are comments; they'll
-        be ignored. Note that values containing spaces must be quoted.
-      </para>
-
-
-<programlisting>
-#
-# buttons_50x50.gnect (an example theme file)
-#
-
-# This theme's title (required)
-Title = "Button Shop (large)"
-
-# Tileset filename (required)
-Tileset = tileset_50x50_buttonshop.png
-
-# Full-window background image (optional)
-Background = bg_buttonshop.jpg
-
-# Description of Player One's marble (required)
-Player1 = Green
-
-# Description of Player Two's marble (required)
-Player2 = Yellow
-
-# Grid colour (optional, defaults to "#525F6C")
-GridRGB = "#FFFFFF"
-
-# Disable the grid for this theme (optional)
-# Useful if your artwork has rows/cols drawn in
-NoGrid
-
-# Details (optional)
-Tooltip = "Artwork credits or whatever you like"
-</programlisting>
-
-      <para>
-        Legal values for the <literal>Player1</literal> and
-        <literal>Player2</literal> keywords are as follows:
-      </para>
-
-      <!--
-           Translators, please don't translate this list:
-      -->
-      <para lang="en">
-        <literal>Light</literal>,
-        <literal>Dark</literal>,
-        <literal>Black</literal>,
-        <literal>White</literal>,
-        <literal>Grey</literal>,
-        <literal>Yellow</literal>,
-        <literal>Red</literal>,
-        <literal>Blue</literal>,
-        <literal>Green</literal>,
-        <literal>Orange</literal>,
-        <literal>Purple</literal>,
-        <literal>Pink</literal>,
-        <literal>Violet</literal>,
-        <literal>Brown</literal>.
-      </para>
-
-    </sect2>
 
     <sect2 id="directories">
 
       <title>Putting It Together</title>
 
       <para>
-        The last step is to put your image(s) and theme file where &app; can
+        The last step is to put your image(s) where &app; can
         find them. You could put them in Gnect's install directory (which will
         depend on your particular system), but your home directory's probably
         a better idea.
@@ -634,16 +532,13 @@ Tooltip = "Artwork credits or whatever you like"
 
       <para>
         Make a <filename class="directory">~/.gnect</filename> directory,
-        a <filename class="directory">~/.gnect/pixmaps</filename> directory
-        and a <filename class="directory">~/.gnect/themes</filename>
+        and a <filename class="directory">~/.gnect/pixmaps</filename>
         directory. Those names are important, as &app; won't look
         anywhere else.
       </para>
 
       <para>
-        Copy your image(s) into the pixmaps directory and your theme file
-        into the themes directory. Make sure the theme file has
-        <filename>.gnect</filename> as the suffix.
+        Copy your image(s) into the pixmaps directory.
       </para>
 
       <para>

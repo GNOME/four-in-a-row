@@ -1,3 +1,9 @@
+2004-03-03  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/C/figures/mainwindow.png:
+	* help/C/gnect.xml: Updated for 2.6 and Tim's rewrite. I hope I 
+	got the theme details right.
+
 2004-02-21  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/ia_main.c (endgame): Avoid a compiler warning.
