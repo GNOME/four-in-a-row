@@ -16,26 +16,7 @@ soundlist_in_files = gnect.soundlist.in
 soundlist_DATA     = $(soundlist_in_files:.soundlist.in=.soundlist)
 @INTLTOOL_SOUNDLIST_RULE@
 
-themedir       = $(datadir)/gnect
-theme_DATA     = default.gnect               \
-                 clean_50x50.gnect           \
-                 clean_40x40.gnect           \
-                 classic_50x50.gnect         \
-                 classic_40x40.gnect         \
-                 catseyes_40x40.gnect        \
-                 glassy_50x50.gnect          \
-                 glassy_40x40.gnect          \
-                 glassy_50x50_grotty.gnect   \
-                 glassy_40x40_grotty.gnect   \
-                 square_50x50.gnect          \
-                 square_40x40.gnect          \
-                 clean_50x50_nightfall.gnect \
-                 clean_40x40_nightfall.gnect \
-                 safari_45x45.gnect          \
-                 emulator_48x32.gnect
-
-EXTRA_DIST = $(theme_DATA)      \
-             $(velena_DATA)     \
+EXTRA_DIST = $(velena_DATA)     \
              $(Games_DATA)      \
              $(soundlist_DATA)  \
              $(schema_in_files)
@@ -44,5 +25,6 @@ CLEANFILES = $(schema_DATA)
 
 install-data-local:
 if GCONF_SCHEMAS_INSTALL
-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/gnect/data/$(schema_DATA)
+    GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/gnect/data/$(schema_DATA)
 endif
+

@@ -1,6 +1,0 @@
-Title   = "Classic (small)"
-Tileset = tileset_40x40_classic.png
-Player1 = Red
-Player2 = Yellow
-NoGrid
-

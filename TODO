@@ -1,8 +1,0 @@
-gfx.c:
-    * Occasionally a counter-drop animation doesn't look smooth.
-      Haven't yet figured out what causes this.
-
-prefs.c:
-    * The keyboard control entries in the prefs dialog grab focus,
-      making keyboard-only navigation of the dialog difficult.
-

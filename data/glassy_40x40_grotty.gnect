@@ -1,7 +1,0 @@
-Title      = "Marbles 3 (small)"
-Tileset    = tileset_40x40_glassy.png
-Background = bg_grotty.jpg
-Player1    = Red
-Player2    = Blue
-GridRGB    = "#525F6C"
-

@@ -1,6 +1,0 @@
-Title      = "Nightfall (large)"
-Tileset    = tileset_50x50_clean.png
-Background = bg_nightfall.jpg
-GridRGB    = "#727F8C"
-Player1    = Red
-Player2    = Yellow

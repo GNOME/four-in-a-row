@@ -1,6 +1,0 @@
-Title   = "The Emulator (small)"
-Tileset = tileset_48x32_emulator.png
-Player1 = Dark
-Player2 = Light
-NoGrid
-

@@ -1,821 +1,294 @@
-/*
- * gnect gfx.c
+/* -*- mode:C; indent-tabs-mode:t; tab-width:8; c-basic-offset:8; -*- */
+
+/* gfx.c
  *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License as
- * published by the Free Software Foundation; either version 2 of the
- * License, or (at your option) any later version.
+ * Four-in-a-row for GNOME
+ * (C) 2000 - 2004
+ * Authors: Timothy Musson <trmusson@ihug.co.nz>
+ *
+ * This game is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2, or (at your option)
+ * any later version.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public
- * License along with this program; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA. 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307
+ * USA
  */
 
-#include <gtk/gtk.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+
 
 #include "config.h"
+#include <gnome.h>
 #include "main.h"
-#include "gfx.h"
-#include "gui.h"
-#include "gnect.h"
+#include "theme.h"
 #include "prefs.h"
+#include "gfx.h"
 
 
-#define DRAW_AREA_WIDTH       (tile_width * N_COLS)
-#define DRAW_AREA_HEIGHT      (tile_height * N_ROWS)
-
-#define ANIM_SPEED_DROP       15
-#define ANIM_SPEED_SUCK       10
-#define ANIM_SPEED_MOVE       15
-#define ANIM_SPEED_WIPE       15
-#define ANIM_SPEED_BLINK      100
-
-
-
-extern gint      debugging;
-extern Gnect     gnect;
-extern Prefs     prefs;
-extern Theme     *theme_current;
-extern GtkWidget *draw_area;
+extern Prefs      p;
+extern Theme      theme[];
+extern gint       gboard[7][7];
 extern GtkWidget *app;
+extern GtkWidget *drawarea;
+extern GdkGC     *gc;
 
-
-static GdkPixbuf *pixbuf_background = NULL; /* original background image, scaled to window size */
-static GdkPixbuf *pixbuf_tileset    = NULL; /* tile set image */
-static GdkPixmap *pixmap_background = NULL; /* image of current background (with or without grid) */
-static GdkPixmap *pixmap_display    = NULL; /* image of current board state */
-
-static gint tile_offset[6];
-
-gint tile_width;
-gint tile_height;
-
-
-Anim anim;
-
-
-enum {
-        ANIM_DROP = 1,
-        ANIM_MOVE_LEFT,
-        ANIM_MOVE_RIGHT,
-        ANIM_SUCK,
-        ANIM_BLINK_WINNER,
-        ANIM_BLINK_COUNTER,
-        ANIM_WIPE_1,
-        ANIM_WIPE_2,
-        ANIM_WIPE_3,
-        ANIM_WIPE_4
-};
-
-
-
-void
-gfx_expose (GdkRectangle *area)
-{
-        gdk_draw_drawable (draw_area->window, draw_area->style->black_gc,
-                           pixmap_display,
-                           area->x, area->y,
-                           area->x, area->y,
-                           area->width, area->height);
-}
+static gint       width, height;
+static gint       tilew, tileh;
+static gint       offset[6];
+static GdkPixbuf *pb_tileset = NULL;
+static GdkPixbuf *pb_bground = NULL;
+static GdkPixmap *pm_display = NULL;
+static GdkPixmap *pm_bground = NULL;
+GdkGC     *gc = NULL;
 
 
 
 void
 gfx_free (void)
 {
-        DEBUG_PRINT(1, "gfx_free\n");
-
-        if (pixbuf_background) {
-                gdk_pixbuf_unref (pixbuf_background);
-                pixbuf_background = NULL;
-        }
-        if (pixbuf_tileset) {
-                gdk_pixbuf_unref (pixbuf_tileset);
-                pixbuf_tileset = NULL;
-        }
-        if (pixmap_background) {
-                g_object_unref (pixmap_background);
-                pixmap_background = NULL;
-        }
-        if (pixmap_display) {
-                g_object_unref (pixmap_display);
-                pixmap_display = NULL;
-        }
-}
-
-
-
-static void
-gfx_draw_tile (gint row, gint col, gint tile_selector, gboolean do_refresh)
-{
-        gint x = col * tile_width;
-        gint y = row * tile_height;
-        gint offset = 0;
-
-
-        switch (tile_selector) {
-
-        case TILE_PLAYER_1 :
-                if (y) offset = tile_offset[TILE_PLAYER_1];
-                else offset = tile_offset[TILE_PLAYER_1_CURSOR];
-                break;
-
-        case TILE_PLAYER_2 :
-                if (y) offset = tile_offset[TILE_PLAYER_2];
-                else offset = tile_offset[TILE_PLAYER_2_CURSOR];
-                break;
-
-        default :
-                break;
-
-        }
-
-
-        /* draw this cell's background */
-
-        gdk_draw_drawable (pixmap_display, draw_area->style->black_gc,
-                           pixmap_background, x, y, x, y,
-                           tile_width, tile_height);
-
-
-        if (tile_selector != TILE_CLEAR) {
-
-                /* draw a player's counter */
-
-                gdk_draw_pixbuf (pixmap_display, NULL,
-                                 pixbuf_tileset, offset, 0, x, y,
-                                 tile_width, tile_height,
-                                 GDK_RGB_DITHER_NORMAL, 0, 0);
-        }
-
-
-        if (do_refresh) {
-
-                /* copy to draw_area */
-
-                gdk_draw_drawable (draw_area->window, draw_area->style->black_gc, pixmap_display,
-                                   x, y, x, y, tile_width, tile_height);
-
-        }
-}
-
-
-
-static void
-gfx_draw_all_tiles (void)
-{
-        gint row, col;
-
-
-        DEBUG_PRINT(1, "gfx_draw_all_tiles\n");
-        for (row = 0; row < N_ROWS; row++) {
-                for (col = 0; col < N_COLS; col++) {
-                        gfx_draw_tile (row, col, TILE_AT(row, col), FALSE);
-                }
-        }
-}
-
-
-
-void
-gfx_redraw (gboolean do_refresh)
-{
-        DEBUG_PRINT (1, "gfx_redraw\n");
-        gfx_draw_all_tiles ();
-        if (do_refresh)
-          gtk_widget_queue_draw (GTK_WIDGET (draw_area));
-}
-
-
-
-static gint
-gfx_timeout_animate (gpointer data)
-{
-        Anim *this_anim = (Anim *)data;
-
-
-        switch (this_anim->action) {
-        case ANIM_DROP :
-        case ANIM_WIPE_3 :
-        case ANIM_WIPE_4 :
-                if (this_anim->row1) 
-                  gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
-                this_anim->row1 = this_anim->row1 + 1;
-                gfx_draw_tile (this_anim->row1, this_anim->col1, this_anim->player, TRUE);
-                break;
-        case ANIM_SUCK :
-        case ANIM_WIPE_1 :
-                gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
-                this_anim->row1 = this_anim->row1 - 1;
-                if (this_anim->row1) {
-                        gfx_draw_tile (this_anim->row1, this_anim->col1, this_anim->player, TRUE);
-                }
-                break;
-        case ANIM_MOVE_LEFT :
-                gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
-                this_anim->col1 = this_anim->col1 - 1;
-                gfx_draw_tile (this_anim->row1, this_anim->col1, this_anim->player, TRUE);
-                break;
-        case ANIM_MOVE_RIGHT :
-                gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
-                this_anim->col1 = this_anim->col1 + 1;
-                gfx_draw_tile (this_anim->row1, this_anim->col1, this_anim->player, TRUE);
-                break;
-        case ANIM_WIPE_2 :
-                gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
-                this_anim->row1 = this_anim->row1 + 1;
-                if (this_anim->row1 < N_ROWS) {
-                        gfx_draw_tile (this_anim->row1, this_anim->col1, this_anim->player, TRUE);
-                }
-                break;
-        case ANIM_BLINK_COUNTER :
-                if (this_anim->row2) {
-                        gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
-                }
-                else {
-                        gfx_draw_tile (this_anim->row1, this_anim->col1, this_anim->player, TRUE);
-                }
-                this_anim->row2 = !this_anim->row2;
-                break;
-        default:
-                break;
-        }
-
-        this_anim->count = this_anim->count - 1;
-
-        if (this_anim->count < 1) {
-                this_anim->id = 0;
-                return FALSE;
-        }
-        return TRUE;
+	if (pb_tileset != NULL) {
+		g_object_unref (pb_tileset);
+		pb_tileset = NULL;
+	}
+	if (pb_bground != NULL) {
+		g_object_unref (pb_bground);
+		pb_bground = NULL;
+	}
+	if (pm_bground != NULL) {
+		g_object_unref (pm_bground);
+		pm_bground = NULL;
+	}
+	if (pm_display != NULL) {
+		g_object_unref (pm_display);
+		pm_display = NULL;
+	}
 }
 
 
 
 gint
-gfx_drop_counter (gint col)
+gfx_get_column (gint xpos)
 {
-        /*
-         * Drop current_player's counter into column col,
-         * returning the row it landed in
-         */
-
-
-        gint row = 1;
-
-
-        while (row < N_ROWS-1 && gnect.board_state[CELL_AT(row + 1, col)] == TILE_CLEAR) {
-                row++;
-        }
-        gnect.board_state[CELL_AT(row, col)] = gnect.current_player;
-
-        if (prefs.do_animate) {
-
-                anim.player = gnect.current_player;
-                anim.action = ANIM_DROP;
-                anim.row1   = 0;
-                anim.col1   = col;
-                anim.row2   = 0;
-                anim.col2   = 0;
-                anim.count  = row;
-                anim.id     = g_timeout_add (ANIM_SPEED_DROP,
-                                             (GSourceFunc) gfx_timeout_animate,
-                                             (gpointer)&anim);
-
-                while (anim.id) gtk_main_iteration ();
-
-        }
-        else {
-
-                gfx_draw_tile (row, col, gnect.current_player, TRUE);
-
-        }
-
-        return row;
+	/* Derive column from pixel position */
+	gint c = xpos / tilew;
+	if (c > 6) c = 6;
+	return c;
 }
 
 
 
 void
-gfx_move_cursor (gint col)
+gfx_draw_tile (gint r, gint c, gboolean refresh)
 {
-        /*
-         * Move current_player's cursor to col
-         */
+	gint x = c * tilew;
+	gint y = r * tileh;
+	gint tile = gboard[r][c];
+	gint os = 0;
+
+	switch (tile) {
+	case TILE_PLAYER1:
+		os = offset[TILE_PLAYER1];
+		if (y == 0) os = offset[TILE_PLAYER1_CURSOR];
+		break;
+	case TILE_PLAYER2:
+		os = offset[TILE_PLAYER2];
+		if (y == 0) os = offset[TILE_PLAYER2_CURSOR];
+		break;
+	default:
+		break;
+	}
+
+	gdk_draw_drawable (pm_display, gc, pm_bground, x, y, x, y, tilew, tileh);
+
+	if (tile != TILE_CLEAR) {
+		gdk_pixbuf_render_to_drawable_alpha (pb_tileset, pm_display,
+		  os, 0, x, y, tilew, tileh, GDK_PIXBUF_ALPHA_BILEVEL, 128,
+		  GDK_RGB_DITHER_NORMAL, 0, 0);
+	}
+
+	if (refresh) {
+		gtk_widget_queue_draw_area (drawarea, x, y, tilew, tileh);
+	}
+}
 
 
-        if (prefs.do_animate && col != gnect.cursor_col) {
+void
+gfx_draw_all (gboolean refresh)
+{
+	gint r, c;
 
-                if (col < gnect.cursor_col) {
-                        anim.action = ANIM_MOVE_LEFT;
-                        anim.count = gnect.cursor_col - col;
-                }
-                else {
-                        anim.action = ANIM_MOVE_RIGHT;
-                        anim.count = col - gnect.cursor_col;
-                }
+	for (r = 0; r < 7; r++) {
+		for (c = 0; c < 7; c++) {
+			gfx_draw_tile (r, c, FALSE);
+		}
+	}
 
-                anim.player = gnect.current_player;
-                anim.row1   = 0;
-                anim.col1   = gnect.cursor_col;
-                anim.row2   = 0;
-                anim.col2   = 0;
-                anim.id     = g_timeout_add (ANIM_SPEED_MOVE,
-                                             (GSourceFunc)gfx_timeout_animate,
-                                             (gpointer)&anim);
-
-                while (anim.id) gtk_main_iteration ();
-
-                gnect.board_state[CELL_AT(0, gnect.cursor_col)] = TILE_CLEAR;
-
-                gnect.cursor_col = col;
-
-                gnect.board_state[CELL_AT(0, gnect.cursor_col)] = gnect.current_player;
-
-        }
-        else {
-
-                gnect.board_state[CELL_AT(0, gnect.cursor_col)] = TILE_CLEAR;
-                gfx_draw_tile(0, gnect.cursor_col, TILE_CLEAR, TRUE);
-
-                gnect.cursor_col = col;
-
-                gnect.board_state[CELL_AT(0, gnect.cursor_col)] = gnect.current_player;
-                gfx_draw_tile (0, gnect.cursor_col, gnect.current_player, TRUE);
-
-        }
+	if (refresh) {
+		gtk_widget_queue_draw_area (drawarea, 0, 0, width, height);
+	}
 }
 
 
 
 void
-gfx_suck_counter (gint col, gboolean is_wipe)
+gfx_expose (GdkRectangle *area)
 {
-        /*
-         * Remove topmost counter from column
-         */
-
-        gint row;
-
-
-        row = gnect_get_top_used_row (col);
-        if (row >= N_COLS) {
-                return;
-        }
-
-        if (prefs.do_animate && row < N_COLS) {
-
-                if (is_wipe) {
-                        anim.action = ANIM_SUCK;
-                }
-                else {
-                        anim.action = ANIM_WIPE_1;
-                }
-
-                anim.player = TILE_AT(row, col);
-                anim.row1   = row;
-                anim.col1   = col;
-                anim.row2   = 0;
-                anim.col2   = 0;
-                anim.count  = row;
-                anim.id     = g_timeout_add (ANIM_SPEED_SUCK,
-                                             (GSourceFunc)gfx_timeout_animate,
-                                             (gpointer)&anim);
-
-                while (anim.id) gtk_main_iteration ();
-
-        }
-        else {
-
-                gfx_draw_tile (row, col, TILE_CLEAR, TRUE);
-
-        }
-
-        gnect.board_state[CELL_AT(row, col)] = TILE_CLEAR;
+	gdk_draw_drawable (drawarea->window, gc, pm_display,
+	                   area->x, area->y, area->x, area->y,
+	                   area->width, area->height);
 }
 
 
 
 void
-gfx_blink_counter (gint n_blinks, gint player, gint row, gint col)
+gfx_draw_grid (void)
 {
-        if (prefs.do_animate) {
+	GdkColormap *cmap;
+	GdkColor color;
+	gint i;
 
-                anim.player = player;
-                anim.action = ANIM_BLINK_COUNTER;
-                anim.row1   = row;
-                anim.col1   = col;
-                anim.row2   = FALSE;
-                anim.col2   = 0;
-                anim.count  = n_blinks * 2;
-                anim.id     = g_timeout_add (ANIM_SPEED_BLINK,
-                                             (GSourceFunc)gfx_timeout_animate,
-                                             (gpointer)&anim);
+	if (theme[p.theme_id].grid_rgb == NULL) return;
 
-                while (anim.id) gtk_main_iteration ();
-        }
+	if (!gdk_color_parse (theme[p.theme_id].grid_rgb, &color)) {
+		gdk_color_parse ("#727F8C", &color);
+	}
+
+	cmap = gtk_widget_get_colormap (drawarea);
+
+	gdk_colormap_alloc_color (cmap, &color, FALSE, TRUE);
+	gdk_gc_set_foreground (gc, &color);
+
+	gdk_gc_set_line_attributes (gc, 0, theme[p.theme_id].grid_style,
+	                            GDK_CAP_BUTT, GDK_JOIN_MITER);
+
+	for (i = tilew; i < width; i = i + tilew) {
+		gdk_draw_line (pm_bground, gc, i, 0, i, height);
+	}
+	for (i = tileh; i < width; i = i + tileh) {
+		gdk_draw_line (pm_bground, gc, 0, i, width, i);
+	}
+	gdk_colormap_free_colors (cmap, &color, 1);
+	g_object_unref (cmap);
 }
 
 
 
 static void
-gfx_draw_line (gint r1, gint c1, gint r2, gint c2, gint tile)
+gfx_load_error (const gchar *fname)
 {
-        gint d_row    = 0;
-        gint d_col    = 0;
-        gboolean done = FALSE;
-
-
-        if (r1 < r2) d_row = 1;
-        else if (r1 > r2) d_row = -1;
-
-        if (c1 < c2) d_col = 1;
-        else if (c1 > c2) d_col = -1;
-
-        while (!done) {
-
-                done = (r1 == r2 && c1 == c2);
-
-                gfx_draw_tile (r1, c1, tile, TRUE);
-
-                if (r1 != r2) r1 += d_row;
-                if (c1 != c2) c1 += d_col;
-
-        }
-}
-
-
-
-static gint
-gfx_timeout_blink_line (gpointer data)
-{
-        Anim *this_anim = (Anim *)data;
-        static gint tile = -1;
-
-
-        if (tile == TILE_CLEAR) {
-                tile = this_anim->player;
-        }
-        else {
-                tile = TILE_CLEAR;
-        }
-
-        gfx_draw_line (this_anim->row1, this_anim->col1, this_anim->row2, this_anim->col2, tile);
-
-        this_anim->count = this_anim->count - 1;
-
-        if (this_anim->count < 1 && tile != TILE_CLEAR) {
-                tile = -1;
-                this_anim->id = 0;
-                return FALSE;
-        }
-        return TRUE;
-}
-
-
-
-static void
-gfx_blink_line (gint n_blinks, gint r1, gint c1, gint r2, gint c2)
-{
-        anim.player = gnect.winner;
-        anim.row1   = r1;
-        anim.col1   = c1;
-        anim.row2   = r2;
-        anim.col2   = c2;
-        anim.count  = n_blinks * 2;
-        anim.id     = g_timeout_add (ANIM_SPEED_BLINK,
-                                     (GSourceFunc)gfx_timeout_blink_line,
-                                     (gpointer)&anim);
-
-        while (anim.id) gtk_main_iteration ();
-}
-
-
-
-void
-gfx_blink_winner (gint n_blinks)
-{
-        /*
-         * Indicate all winning lines by blinking them on and off
-         */
-
-        gint r1, c1, r2, c2;
-
-
-        if (!prefs.do_animate || gnect.winner == -1) return;
-
-        if (gnect_is_line_horizontal (gnect.winner, gnect.row, gnect.col,
-                                      LINE_LENGTH, &r1, &c1, &r2, &c2)) {
-                gfx_blink_line (n_blinks, r1, c1, r2, c2);
-        }
-        if (gnect_is_line_diagonal1 (gnect.winner, gnect.row, gnect.col,
-                                     LINE_LENGTH, &r1, &c1, &r2, &c2)) {
-                gfx_blink_line (n_blinks, r1, c1, r2, c2);
-        }
-        if (gnect_is_line_vertical (gnect.winner, gnect.row, gnect.col,
-                                    LINE_LENGTH, &r1, &c1, &r2, &c2)) {
-                gfx_blink_line (n_blinks, r1, c1, r2, c2);
-        }
-        if (gnect_is_line_diagonal2 (gnect.winner, gnect.row, gnect.col,
-                                     LINE_LENGTH, &r1, &c1, &r2, &c2)) {
-                gfx_blink_line (n_blinks, r1, c1, r2, c2);
-        }
-
-}
-
-
-
-void
-gfx_wipe_board (void)
-{
-        /*
-         * Pick a wipe effect at random to clear the display
-         */
-
-        gint row, col, d;
-
-
-        if (!prefs.do_animate || gnect.veleng_str[2] == '\0') return;
-
-        gui_set_hint_sensitive (FALSE);
-        gui_set_undo_sensitive (FALSE);
-        gui_set_new_sensitive (FALSE);
-
-        col = 0;
-
-        if ( (d = gnect_get_random_num (2)) == 2 ) {
-                d = -1;
-                col = N_COLS - 1;
-        }
-
-        switch (gnect_get_random_num (4)) {
-
-        case 1 :
-                while (gnect_undo_move(TRUE));
-                break;
-
-        case 2 :
-                while (col > -1 && col < N_COLS) {
-
-                        row = gnect_get_top_used_row (col);
-
-                        anim.player = TILE_AT(row, col);
-                        anim.action = ANIM_WIPE_2;
-                        anim.row1   = row;
-                        anim.col1   = col;
-                        anim.row2   = 0;
-                        anim.col2   = 0;
-                        anim.count  = N_ROWS - row;
-                        anim.id     = g_timeout_add (ANIM_SPEED_WIPE,
-                                                     (GSourceFunc)gfx_timeout_animate,
-                                                     (gpointer)&anim);
-
-                        while (anim.id) gtk_main_iteration ();
-
-                        col += d;
-
-                }
-                break;
-
-        case 3 :
-                while (col > -1 && col < N_COLS) {
-
-                        while ( (row = gnect_get_bottom_used_row (col)) ) {
-
-                                anim.player = TILE_AT(row, col);
-                                anim.action = ANIM_WIPE_3;
-                                anim.row1   = row;
-                                anim.col1   = col;
-                                anim.row2   = 0;
-                                anim.col2   = 0;
-                                anim.count  = N_ROWS - row;
-
-                                gnect.board_state[CELL_AT(row, col)] = TILE_CLEAR;
-
-                                anim.id     = g_timeout_add (ANIM_SPEED_WIPE,
-                                                             (GSourceFunc)gfx_timeout_animate,
-                                                             (gpointer)&anim);
-
-                                while (anim.id) gtk_main_iteration ();
-
-                        }
-
-                        col += d;
-
-                }
-                break;
-
-        case 4 :
-                for (d = 0; d < N_COLS * N_COLS; d++) {
-
-                        col = gnect_get_random_num (N_COLS) - 1;
-
-                        while ( (row = gnect_get_bottom_used_row (col)) ) {
-
-                                anim.player = TILE_AT(row, col);
-                                anim.action = ANIM_WIPE_4;
-                                anim.row1   = row;
-                                anim.col1   = col;
-                                anim.row2   = 0;
-                                anim.col2   = 0;
-                                anim.count  = N_ROWS - row;
-
-                                gnect.board_state[CELL_AT(row, col)] = TILE_CLEAR;
-
-                                anim.id     = g_timeout_add (ANIM_SPEED_WIPE,
-                                                             (GSourceFunc)gfx_timeout_animate,
-                                                             (gpointer)&anim);
-
-                                while (anim.id) gtk_main_iteration ();
-
-                        }
-
-                }
-                break;
-
-        default :
-                break;
-
-        }
-
-        gui_set_new_sensitive (TRUE);
-}
-
-
-
-static void
-gfx_draw_grid (Theme *theme)
-{
-        GdkColormap *cmap;
-        GdkGC *gc;
-        GdkColor colour;
-        gint x, y;
-
-
-        if (!prefs.do_grids || !theme->gridRGB) return;
-
-        DEBUG_PRINT(1, "gfx_draw_grid (%s)\n", theme->gridRGB);
-
-        if (!gdk_color_parse (theme->gridRGB, &colour)) {
-                WARNING_PRINT("gfx_draw_grid: bad RGB value (%s)\n", theme->gridRGB);
-                return;
-        }
-
-
-        cmap = gtk_widget_get_colormap (draw_area);
-
-        gc = gdk_gc_new (pixmap_display);
-
-	gdk_colormap_alloc_color (cmap, &colour, FALSE, TRUE);
-        gdk_gc_set_foreground (gc, &colour);
-
-        for (x = tile_width; x < DRAW_AREA_WIDTH; x = x + tile_width) {
-                gdk_draw_line (pixmap_background, gc, x, 0, x, DRAW_AREA_HEIGHT);
-        }
-        for (y = tile_height; y < DRAW_AREA_HEIGHT; y = y + tile_height) {
-                gdk_draw_line (pixmap_background, gc, 0, y, DRAW_AREA_WIDTH, y);
-        }
-
-        g_object_unref (gc);
-}
-
-
-
-void
-gfx_toggle_grid (Theme *theme, gboolean do_grid)
-{
-        if (!theme->gridRGB) return;
-
-        if (do_grid) {
-                gfx_draw_grid (theme);
-        }
-        else {
-                gdk_draw_pixbuf (pixmap_background, NULL,
-                                 pixbuf_background,
-                                 0, 0, 0, 0,
-                                 DRAW_AREA_WIDTH,
-                                 DRAW_AREA_HEIGHT,
-                                 GDK_RGB_DITHER_NORMAL, 0, 0);
-        }
-        gfx_redraw (TRUE);
+	GtkWidget *dialog;
+
+	dialog = gtk_message_dialog_new (GTK_WINDOW(app),
+	                                 GTK_DIALOG_MODAL,
+	                                 GTK_MESSAGE_WARNING,
+	                                 GTK_BUTTONS_CLOSE,
+	                                 _("Unable to load image:\n%s"), fname);
+
+	gtk_dialog_run (GTK_DIALOG(dialog));
+	gtk_widget_destroy (dialog);
 }
 
 
 
 gboolean
-gfx_load (Theme *theme, const gchar *fname_tileset, const gchar *fname_background)
+gfx_load (gint id)
 {
-        GdkPixbuf *pixbuf_tileset_tmp;
-        GdkPixbuf *pixbuf_background_tmp;
-        gint old_width = DRAW_AREA_WIDTH;
-        gint old_height = DRAW_AREA_HEIGHT;
+	GdkPixbuf *pb_tileset_tmp;
+	GdkPixbuf *pb_bground_tmp = NULL;
+	gchar *dname;
+	gchar *fname;
 
+	dname = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,
+	                                   APPNAME, FALSE, NULL);
 
-        DEBUG_PRINT (1, "gfx_load\n\ttile set:   %s\n\tbackground: %s\n",
-                     fname_tileset, fname_background);
+	fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
+	                         theme[id].fname_tileset);
 
-        if ( !(pixbuf_tileset_tmp = gdk_pixbuf_new_from_file (fname_tileset, NULL)) ) {
-                WARNING_PRINT("couldn't load tileset image (%s)\n", fname_tileset);
-                return FALSE;
-        }
+	pb_tileset_tmp = gdk_pixbuf_new_from_file (fname, NULL);
+	if (pb_tileset_tmp == NULL) {
+		gfx_load_error (fname);
+		g_free (dname);
+		g_free (fname);
+		return FALSE;
+	}
+	g_free (fname);
 
-        gfx_free ();
+	if (theme[id].fname_bground != NULL) {
+		fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
+		                         theme[id].fname_bground);
+		pb_bground_tmp = gdk_pixbuf_new_from_file (fname, NULL);
+		if (pb_bground_tmp == NULL) {
+			gfx_load_error (fname);
+			g_object_unref (pb_tileset_tmp);
+			g_free (dname);
+			g_free (fname);
+			return FALSE;
+		}
+		g_free (fname);
+	}
+	g_free (dname);
 
-        pixbuf_tileset = pixbuf_tileset_tmp;
+	gfx_free ();
+	p.theme_id = id;
 
-        tile_width  = gdk_pixbuf_get_width(pixbuf_tileset) / 6;
-        tile_height = gdk_pixbuf_get_height(pixbuf_tileset);
+	pb_tileset = pb_tileset_tmp;
 
-        /* get a pixel offset for each tile in the set */
-        tile_offset[TILE_PLAYER_1]        = 0;
-        tile_offset[TILE_PLAYER_2]        = tile_width;
-        tile_offset[TILE_CLEAR]           = tile_width * 2;
-        tile_offset[TILE_CLEAR_CURSOR]    = tile_width * 3;
-        tile_offset[TILE_PLAYER_1_CURSOR] = tile_width * 4;
-        tile_offset[TILE_PLAYER_2_CURSOR] = tile_width * 5;
+	tilew = gdk_pixbuf_get_width (pb_tileset) / 6;
+	tileh = gdk_pixbuf_get_height (pb_tileset);
 
+	width = tilew * 7;
+	height = tileh * 7;
 
-        if (fname_background) {
+	offset[TILE_PLAYER1]        = 0;
+	offset[TILE_PLAYER2]        = tilew;
+	offset[TILE_CLEAR]          = tilew * 2;
+	offset[TILE_CLEAR_CURSOR]   = tilew * 3;
+	offset[TILE_PLAYER1_CURSOR] = tilew * 4;
+	offset[TILE_PLAYER2_CURSOR] = tilew * 5;
 
-                /* get background image */
+	if (pb_bground_tmp != NULL) {
 
-                if ( !(pixbuf_background_tmp = gdk_pixbuf_new_from_file (fname_background, NULL)) ) {
-                        WARNING_PRINT("couldn't load background image (%s)\n", fname_background);
-                }
-                else {
+		/* a separate background image was supplied */
 
-                        /* scale background to match tile set */
-                        pixbuf_background = gdk_pixbuf_scale_simple (pixbuf_background_tmp,
-                                                                     DRAW_AREA_WIDTH,
-                                                                     DRAW_AREA_HEIGHT,
-                                                                     GDK_INTERP_BILINEAR);
-                        gdk_pixbuf_unref (pixbuf_background_tmp);
+		pb_bground = gdk_pixbuf_scale_simple (pb_bground_tmp, width, height, GDK_INTERP_BILINEAR);
+		gdk_pixbuf_unref (pb_bground_tmp);
+	}
+	else {
 
-                }
+		/* derive the background image from the tile set */
 
-        }
-        if (! pixbuf_background) {
+		gint i, j;
 
-                /* no background image, so build one using the tileset's 3rd
-                 * (TILE_CLEAR) and 4th (TILE_CLEAR_CURSOR) tiles
-                 */
+		pb_bground = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width, height);
+		for (i = 0; i < 7; i++) {
+			gdk_pixbuf_copy_area (pb_tileset, offset[TILE_CLEAR_CURSOR], 0, tilew, tileh, pb_bground, i * tilew, 0);
+			for (j = 1; j < 7; j++) {
+				gdk_pixbuf_copy_area (pb_tileset, offset[TILE_CLEAR], 0, tilew, tileh, pb_bground, i * tilew, j * tileh);
+			}
+		}
+	}
 
-                gint i, j;
+	pm_display = gdk_pixmap_new (app->window, width, height, -1);
+	pm_bground = gdk_pixmap_new (app->window, width, height, -1);
 
-                pixbuf_background = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
-                                                    DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
+	gdk_pixbuf_render_to_drawable (pb_bground, pm_bground, gc, 0, 0, 0, 0,
+	                               width, height, GDK_RGB_DITHER_NORMAL, 0, 0);
 
-                for (i = 0; i < N_COLS; i++) {
-                        gdk_pixbuf_copy_area (pixbuf_tileset,
-                                              tile_offset[TILE_CLEAR_CURSOR], 0,
-                                              tile_width, tile_height,
-                                              pixbuf_background,
-                                              i * tile_width, 0);
-                }
+	gtk_widget_set_size_request (GTK_WIDGET(drawarea), width, height);
 
-                for (i = 0; i < N_COLS; i++) {
-                        for (j = 1; j < N_ROWS; j++) {
+	gfx_draw_grid ();
+	gfx_draw_all (TRUE);
 
-                                gdk_pixbuf_copy_area (pixbuf_tileset,
-                                                      tile_offset[TILE_CLEAR], 0,
-                                                      tile_width, tile_height,
-                                                      pixbuf_background,
-                                                      i * tile_width, j * tile_height);
-                        }
-                }
-        }
+	scorebox_update (); /* update visible player descriptions */
+	prompt_player ();
 
-        pixmap_display = gdk_pixmap_new (app->window, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT, -1);
-        pixmap_background = gdk_pixmap_new (app->window, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT, -1);
-
-        gdk_draw_pixbuf (pixmap_background, NULL, pixbuf_background,
-                         0, 0, 0, 0, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT,
-                         GDK_RGB_DITHER_NORMAL, 0, 0);
-
-        gfx_draw_grid (theme);
-
-        /* update draw_area */
-
-        if (DRAW_AREA_WIDTH != old_width || DRAW_AREA_HEIGHT != old_height) {
-                gtk_widget_hide (draw_area);
-                gtk_widget_set_size_request (GTK_WIDGET (draw_area),
-                                             DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
-        }
-
-        gtk_widget_queue_draw (GTK_WIDGET (draw_area));
-        gfx_redraw (TRUE);
-
-        if (DRAW_AREA_WIDTH != old_width || DRAW_AREA_HEIGHT != old_height) {
-                gtk_widget_show (draw_area);
-        }
-
-        return TRUE;
+	return TRUE;
 }
+

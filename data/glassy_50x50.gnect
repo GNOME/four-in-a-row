@@ -1,6 +1,0 @@
-Title      = "Marbles 2 (large)"
-Tileset    = tileset_50x50_glassy.png
-Player1    = Red
-Player2    = Blue
-GridRGB    = "#525F6C"
-

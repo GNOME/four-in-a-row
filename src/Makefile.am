@@ -2,22 +2,12 @@ bin_PROGRAMS = gnect
 
 gnect_SOURCES = main.h     \
                 main.c     \
-                gnect.h    \
-                gnect.c    \
-                dialog.h   \
-                dialog.c   \
-                gui.h      \
-                gui.c      \
                 gfx.h      \
                 gfx.c      \
                 prefs.h    \
                 prefs.c    \
-                theme.h    \
                 theme.c    \
-                sound.h    \
-                sound.c    \
-                brain.h    \
-                brain.c    \
+                theme.h    \
                 adjmtrx.c  \
                 bintree.c  \
                 con4vals.h \
@@ -36,7 +26,7 @@ gnect_SOURCES = main.h     \
 INCLUDES = -I.. \
 	-I$(top_srcdir)/libgames-support                \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
-	-DDATADIR=\""$(datadir)"\"		   \
+	-DDATADIR=\""$(datadir)"\"         \
 	-DGNECT_DATA_DIR=\""$(datadir)/"\" \
 	$(GNOME_GAMES_CFLAGS)
 

@@ -1,6 +1,0 @@
-Title      = "Marbles 1 (large)"
-Tileset    = tileset_50x50_catseyes.png
-GridRGB    = "#727F8C"
-Player1    = Red
-Player2    = Blue
-

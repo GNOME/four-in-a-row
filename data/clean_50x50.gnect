@@ -1,6 +1,0 @@
-Title   = "Clean (large)"
-Tileset = tileset_50x50_clean.png
-Player1 = Red
-Player2 = Yellow
-GridRGB = "#333366"
-

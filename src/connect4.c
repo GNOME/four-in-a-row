@@ -33,21 +33,20 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#include <gnome.h>
+
 #include "connect4.h"
 #include "pnsearch.h"
 #include "proto.h"
 
 #include "config.h"
 #include "main.h"
-#include "gnect.h"
 
 
 #define BLKSIZE 16384   /* Buffer size for I/O */
 #define PLAYER1 0
 #define PLAYER2 1
 
-
-extern gint debugging;  /* gnect.c */
 
 
 struct board *brd;
@@ -57,8 +56,8 @@ struct board *brd;
 
 void fatal_error(char *str)
 {
-	ERROR_PRINT("Velena Engine: %s\n", str);
-	gnect_cleanup(1);
+	g_printerr ("velena: %s\n", str);
+	exit(1);
 }
 
 
@@ -66,7 +65,7 @@ void fatal_error(char *str)
 int my_random(unsigned short maxval)
 {
 	/* range: 0..maxval-1 */
-	return( gnect_get_random_num(maxval) - 1 );
+	return( get_random_int(maxval) - 1 );
 }
 
 
@@ -117,14 +116,13 @@ static void init_prg(struct board *board)
 	long size,len;
 	FILE *h1;
 	short x;
-        char *tmp = g_strconcat ( "gnect/", WHITE_BOOK, NULL);
-        char *bookdata = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_DATADIR, tmp, FALSE, NULL);
-        g_free(tmp);
+	char *tmp = g_strconcat ( "gnect/", WHITE_BOOK, NULL);
+	char *bookdata = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_DATADIR, tmp, FALSE, NULL);
+	g_free(tmp);
 
-
-	if (!gnect_file_exists(bookdata)) {
-		ERROR_PRINT("required file not found (%s)\n", bookdata);
-		gnect_cleanup(1);
+	if (!g_file_test(bookdata, G_FILE_TEST_EXISTS)) {
+		g_printerr ("velena: required file not found (%s)\n", bookdata);
+		exit(1);
 	}
 
 	brd = board;
@@ -151,8 +149,8 @@ static void init_prg(struct board *board)
 
 	h1=fopen(bookdata, "rb");
 	if(!h1) {
-		ERROR_PRINT("could not open required file (%s)\n", bookdata);
-		gnect_cleanup(1);
+		g_printerr("velena: could not open required file (%s)\n", bookdata);
+		exit(1);
 	}
 
 	size = fileln(h1);
@@ -185,7 +183,7 @@ void initboard(struct board *board)
 {
 	short x, y, i, j, p;
 
-	/* randomize(); */ /* this is done in gnect.c:main */
+	/* randomize(); */ /* see main.c, game_init() */
 
 	for (i = 0; i < 10; i++) {
 		board->instances[i] = 0L;
@@ -401,9 +399,6 @@ struct board *veleng_init(void)
 void veleng_free(struct board *board)
 {
 	int x;
-
-
-	DEBUG_PRINT(1, "veleng_free\n");
 
 	if (board != NULL) {
 

@@ -1,3 +1,55 @@
+2004-01-08  Tim Musson  <trmusson@ihug.co.nz>
+
+	* src/gfx.c:
+	* src/gfx.h:
+	* src/main.c:
+	* src/main.h:
+	* src/prefs.c:
+	* src/prefs.h:
+	* src/theme.c:
+	* src/theme.h: Rewritten (an attempt at spaghetti reduction).
+
+	* src/connect4.h: Added playgame prototype.
+	* src/connect4.c: Tweaks to fatal error treatment.
+
+	* data/gnect.schemas.in: Added theme_id key. Removed theme, startmode,
+	  soundmode and grid keys.
+
+	* src/Makefile.am:
+	* data/Makefile.am:
+	* pixmaps/Makefile.am: Updated for the changes below.
+
+	* src/brain.c:
+	* src/brain.h:
+	* src/dialog.c:
+	* src/dialog.h:
+	* src/gnect.c:
+	* src/gnect.h:
+	* src/gui.c:
+	* src/gui.h:
+	* src/sound.c:
+	* src/sound.h: Removed.
+
+	* data/*gnect: Removed (16 files).
+
+	* pixmaps/bg_toplight.png:
+	* pixmaps/tileset_50x50_hcontrast.png: Added.
+
+	* pixmaps/bg_nightfall.jpg:
+	* pixmaps/tileset_50x50_classic.png:
+	* pixmaps/tileset_50x50_square.png: Improved.
+
+	* pixmaps/tileset_40x40_catseyes.png:
+	* pixmaps/tileset_40x40_clean.png:
+	* pixmaps/tileset_50x50_clean.png:
+	* pixmaps/tileset_40x40_classic.png:
+	* pixmaps/tileset_48x32_emulator.png:
+	* pixmaps/tileset_40x40_glassy.png:
+	* pixmaps/tileset_45x45_safari.png:
+	* pixmaps/tileset_40x40_square.png: Removed.
+
+	* TODO: Removed.
+
 2003-11-19  Callum McKenzie  <callum@localhost.localdomain>
 
 	* data/Makefile.am (CLEANFILES): Clean up after ourselves.
