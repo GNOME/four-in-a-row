@@ -38,5 +38,5 @@ EXTRA_DIST = $(theme_DATA)      \
              $(velena_DATA)     \
              $(Games_DATA)      \
              $(soundlist_DATA)  \
-             $(schema_DATA)
+             $(schema_in_files)
 
