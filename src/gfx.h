@@ -11,5 +11,5 @@ void     gfx_expose (GdkRectangle *area);
 void     gfx_draw_tile (gint r, gint c, gboolean refresh);
 void     gfx_draw_all (void);
 gint     gfx_get_column (gint xpos);
-
+void     gfx_refresh_pixmaps (void);
 

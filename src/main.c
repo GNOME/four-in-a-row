@@ -1303,6 +1303,9 @@ create_app (void)
 	if (!gfx_set_grid_style ())
 		return FALSE;
 
+	gfx_refresh_pixmaps ();
+	gfx_draw_all ();
+
 	if (!p.do_toolbar) {
 		gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
 		gtk_widget_hide (GTK_WIDGET(gdi));

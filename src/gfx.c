@@ -165,7 +165,7 @@ gfx_draw_all (void)
 
 
 
-static void
+void
 gfx_refresh_pixmaps (void)
 {
 	gint i;

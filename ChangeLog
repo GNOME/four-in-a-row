@@ -1,3 +1,10 @@
+2005-02-17  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/gfx.h:
+	* src/gfx.c:	
+	* src/main.c: Explicitly load up the pixmaps and do the first
+	redraw. See bug #167481.
+
 2004-11-21  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* data/Makefile.am:
