@@ -1,7 +1,20 @@
 
 2002-04-19  Dave Neary <bolsh@gimp.org>
 
-	* src/dialog.c
+	* src/adjmtrx.c:
+	* src/bintree.c:
+	* src/connect4.c:
+	* src/evaluate.c:
+	* src/heurist.c:
+	* src/ia_main.c:
+	* src/pbsolver.c:
+	* src/playgame.c:
+	* src/proto.h: Ran these source files through dos2unix to
+	  get rid of CRLF.
+
+2002-04-19  Dave Neary <bolsh@gimp.org>
+
+	* src/dialog.c:
 	* src/connect4.c: Moved Giuliano's copyright message to
 	  the About dialog - it really shouldn't be dumped to
 	  stdout.
