@@ -1,14 +1,30 @@
 <?xml version="1.0" standalone="no"?>
 <omf>
-  <resource>
-    <title>
-      Gnect Manual
-    </title>
-    <subject>
-      <category>GNOME|Games</category>
-    </subject>
-    <format mime="text/xml"/>
-    <identifier url="gnect.xml"/>
-    <language code="C"/>
-  </resource>
-</omf>
+       <resource>
+       <creator>
+    trmusson@ihug.co.nz (Timothy Musson)
+   </creator>
+     <maintainer>
+    chris@wilddev.net (Chris Lyttle)
+   </maintainer>
+     <title>
+     Gnect Manual
+   </title>
+     <date>
+    2002-05-05
+   </date>
+     <version identifier="2.0" date="2002-05-05" description="Updated to full OMF format"/>
+     <subject category="GNOME|Games"/>
+     <description>
+    Gnect is a four-in-a-row game for the GNOME Project. The object of the game is to build a line of four of your marbles while trying to stop your opponent (human or computer) building a line of his or her own. A line can be horizontal, vertical or diagonal.
+   </description>
+     <type>
+     user's guide
+   </type>
+     <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.1.2//EN"/>
+     <identifier url="file://usr/share/gnome/help/gnect/C/gnect.xml"/>
+     <language code="C"/>
+     <relation seriesid="3a0aaacc-6002-11d6-9162-bcb250f35bf0"/>
+     <rights type="GNU FDL" license.version="1.1" holder="Timothy Musson"/>
+     </resource>
+     </omf>
