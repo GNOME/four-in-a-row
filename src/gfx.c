@@ -515,7 +515,7 @@ gfx_wipe_board (void)
         gint row, col, d;
 
 
-        if (!prefs.do_animate || !prefs.do_wipes || gnect.veleng_str[2] == '\0') return;
+        if (!prefs.do_animate || gnect.veleng_str[2] == '\0') return;
 
         gui_set_hint_sensitive (FALSE);
         gui_set_undo_sensitive (FALSE);

@@ -30,7 +30,7 @@
       <default>2</default>
       <locale name="C">
         <short>Who starts</short>
-        <long>Zero is Player One, one is Player Two, two corresponds to players taking turns, three to picking at random.</long>
+        <long>Zero is Player One, one is Player Two and two corresponds to players taking turns.</long>
       </locale>
       </schema>
 
@@ -64,17 +64,6 @@
       <locale name="C">
         <short>Animate</short>
         <long>Whether or not to use animation.</long>
-      </locale>
-      </schema>
-
-      <schema>
-      <key>/schemas/apps/gnect/wipe</key>
-      <owner>gnect</owner>
-      <type>bool</type>
-      <default>TRUE</default>
-      <locale name="C">
-        <short>Wipe effects</short>
-        <long>Whether or not to use animated wipe effects to clear the game board.</long>
       </locale>
       </schema>
 

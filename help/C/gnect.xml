@@ -4,13 +4,13 @@
 [
   <!ENTITY legal SYSTEM "legal.xml">
   <!ENTITY appversion "2.0">
-  <!ENTITY manrevision "2.1">
+  <!ENTITY manrevision "2.2">
   <!ENTITY date "April 2002">
   <!ENTITY app "<application>Gnect</application>">
   <!ENTITY appname "Gnect">
   <!ENTITY version "2.0">
-  <!-- ENTITY mdash "-" -->
-  <!-- ENTITY hellip "..." -->
+  <!ENTITY mdash "-">
+  <!ENTITY hellip "...">
 ]>
 
 
@@ -105,7 +105,7 @@
     <title>Introduction</title>
 
     <para>
-      &app; is a four-in-a-row game for the Gnome Project.
+      &app; is a four-in-a-row game for the GNOME Project.
       The object of the game is to build a line of four of your marbles
       while trying to stop your opponent (human or computer) building a
       line of his or her own. A line can be horizontal, vertical or
@@ -459,8 +459,7 @@
             <term><guilabel>Animation</guilabel></term>
             <listitem>
               <para>
-                Here you can toggle all animation on or off, or just the
-                animatated wipe effects when clearing the game board.
+                Here you can toggle the game's animation on or off.
               </para>
             </listitem>
           </varlistentry>
@@ -495,15 +494,6 @@
 
         </variablelist>
       </para>
-
-      <!--
-      <para>
-        To check your changes without closing the
-        <interface>Preferences Dialog</interface>, use the
-        <guibutton>Apply</guibutton> button. Once you've made all
-        the changes you want, select <guibutton>OK</guibutton>.
-      </para>
-      -->
 
     </sect2>
   </sect1>
@@ -656,10 +646,12 @@ Tooltip = "Artwork credits or whatever you like"
       <para>
         Legal values for the <literal>Player1</literal> and
         <literal>Player2</literal> keywords are as follows:
+      </para>
 
-        <!--
-             Translators, please don't translate this list:
-        -->
+      <!--
+           Translators, please don't translate this list:
+      -->
+      <para lang="en">
         <literal>Light</literal>,
         <literal>Dark</literal>,
         <literal>Black</literal>,

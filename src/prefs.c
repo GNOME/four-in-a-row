@@ -15,17 +15,16 @@
 #include "gfx.h"
 
 
-#define DEFAULT_FNAME_THEME            "default.gnect"  /* If no prefs exist, start with this theme */
-#define DEFAULT_PLAYER_1               0                /* Human */
-#define DEFAULT_PLAYER_2               2                /* Velena Engine, first level */
-#define DEFAULT_KEY_LEFT               106              /* j */
-#define DEFAULT_KEY_RIGHT              108              /* l */
-#define DEFAULT_KEY_DROP               107              /* k */
-#define DEFAULT_START_MODE             2                /* Players take turns at starting */
-#define DEFAULT_SOUND_MODE             1                /* Beep */
+#define DEFAULT_FNAME_THEME            "default.gnect"       /* If no prefs exist, start with this theme */
+#define DEFAULT_PLAYER_1               PLAYER_HUMAN          /* Human */
+#define DEFAULT_PLAYER_2               PLAYER_VELENA_WEAK    /* Velena Engine, first level */
+#define DEFAULT_KEY_LEFT               106                   /* j */
+#define DEFAULT_KEY_RIGHT              108                   /* l */
+#define DEFAULT_KEY_DROP               107                   /* k */
+#define DEFAULT_START_MODE             START_MODE_ALTERNATE  /* Players take turns at starting */
+#define DEFAULT_SOUND_MODE             SOUND_MODE_BEEP       /* Speaker beep */
 #define DEFAULT_DO_GRIDS               TRUE             /* Draw grids on background images by default */
 #define DEFAULT_DO_ANIMATE             TRUE             /* Use animation by default */
-#define DEFAULT_DO_WIPES               TRUE             /* Do animated wipes by default */
 #define DEFAULT_DO_TOOLBAR             FALSE            /* Toolbar disabled */
 #define DEFAULT_DO_SOUND               TRUE             /* Sound enabled */
 #define DEFAULT_DO_VERIFY              TRUE             /* Verification dialogs enabled */
@@ -46,7 +45,6 @@ static GtkWidget *label_player_selection1;
 static GtkWidget *label_player_selection2;
 static GtkWidget *dlg_prefs = NULL;
 static GtkWidget *checkbutton_animate;
-static GtkWidget *checkbutton_wipe;
 static GtkWidget *checkbutton_verify;
 static GtkWidget *entry_key_left;
 static GtkWidget *entry_key_right;
@@ -55,7 +53,7 @@ static GtkWidget *optionmenu_theme;
 static GtkWidget *optionmenu_theme_menu;
 static GtkWidget *radio_player1[5];
 static GtkWidget *radio_player2[5];
-static GtkWidget *radio_start[4];
+static GtkWidget *radio_start[3];
 static GtkWidget *radio_sound[2];
 
 
@@ -97,7 +95,7 @@ static void
 prefs_check (void)
 {
         /* sanity check important values got from prefs file */
-        if (prefs.start_mode < 0 || prefs.start_mode > 3) {
+        if (prefs.start_mode < 0 || prefs.start_mode > 2) {
                 prefs.start_mode = DEFAULT_START_MODE;
                 prefs.changed = TRUE;
         }
@@ -239,7 +237,6 @@ prefs_get (void)
         if (!prefs.fname_theme) prefs.fname_theme = g_strdup (DEFAULT_FNAME_THEME);
         prefs.do_grids = gnect_gconf_get_bool ("/apps/gnect/grid", DEFAULT_DO_GRIDS);
         prefs.do_animate = gnect_gconf_get_bool ("/apps/gnect/animate", DEFAULT_DO_ANIMATE);
-        prefs.do_wipes = gnect_gconf_get_bool ("/apps/gnect/wipe", DEFAULT_DO_WIPES);
         prefs.do_sound = gnect_gconf_get_bool ("/apps/gnect/sound", DEFAULT_DO_SOUND);
         prefs.sound_mode = gnect_gconf_get_int ("/apps/gnect/soundmode", DEFAULT_SOUND_MODE);
         prefs.key[KEY_LEFT] = gnect_gconf_get_int ("/apps/gnect/keyleft", DEFAULT_KEY_LEFT);
@@ -269,7 +266,6 @@ prefs_save (void)
         gconf_client_set_string (gnect_gconf_client, "/apps/gnect/theme",  prefs.fname_theme, NULL);
         gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/grid",     prefs.do_grids, NULL);
         gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/animate",  prefs.do_animate, NULL);
-        gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/wipe",     prefs.do_wipes, NULL);
         gconf_client_set_bool (gnect_gconf_client, "/apps/gnect/sound",    prefs.do_sound, NULL);
         gconf_client_set_int (gnect_gconf_client, "/apps/gnect/soundmode", prefs.sound_mode, NULL);
         gconf_client_set_int (gnect_gconf_client, "/apps/gnect/keyleft",   prefs.key[KEY_LEFT], NULL);
@@ -369,7 +365,6 @@ prefs_dialog_reset(void)
         prefs_tmp.key[KEY_RIGHT] = prefs.key[KEY_RIGHT];
         prefs_tmp.key[KEY_DROP]  = prefs.key[KEY_DROP];
         prefs_tmp.do_animate     = prefs.do_animate;
-        prefs_tmp.do_wipes       = prefs.do_wipes;
         prefs_tmp.sound_mode     = prefs.sound_mode;
 
         g_free (prefs_tmp.fname_theme);
@@ -390,8 +385,6 @@ prefs_dialog_reset(void)
         gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), theme_current->id);
 
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_animate), prefs.do_animate);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_wipe), prefs.do_wipes);
-        gtk_widget_set_sensitive (GTK_WIDGET(checkbutton_wipe), prefs.do_animate);
 
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_sound[prefs.sound_mode - 1]), TRUE);
 
@@ -425,7 +418,6 @@ prefs_dialog_apply (gboolean kills_game)
         prefs.start_mode     = prefs_tmp.start_mode;
         prefs.sound_mode     = prefs_tmp.sound_mode;
         prefs.do_animate     = prefs_tmp.do_animate;
-        prefs.do_wipes       = prefs_tmp.do_wipes;
         prefs.do_verify      = prefs_tmp.do_verify;
 
         if (kills_game) {
@@ -535,16 +527,6 @@ static void
 cb_prefs_dialog_animate_select (GtkWidget *widget, gpointer *data)
 {
         prefs_tmp.do_animate = GTK_TOGGLE_BUTTON(widget)->active;
-        gtk_widget_set_sensitive (GTK_WIDGET(checkbutton_wipe), prefs_tmp.do_animate);
-        prefs_tmp.changed = TRUE;
-}
-
-
-
-static void
-cb_prefs_dialog_wipe_select (GtkWidget *widget, gpointer *data)
-{
-        prefs_tmp.do_wipes = GTK_TOGGLE_BUTTON(widget)->active;
         prefs_tmp.changed = TRUE;
 }
 
@@ -706,16 +688,13 @@ prefs_dialog_get_who_starts_label (gint n)
 {
         switch (n) {
         case 0 :
-                return _("Player 1");
+                return _("Always Player 1");
                 break;
         case 1 :
-                return _("Player 2");
+                return _("Always Player 2");
                 break;
         case 2 :
                 return _("Take turns");
-                break;
-        case 3 :
-                return _("Surprise me");
                 break;
         }
         return "";
@@ -742,7 +721,7 @@ prefs_dialog_create (void)
 
         dlg_prefs = gtk_dialog_new_with_buttons (_("Gnect Preferences"),
                                                  GTK_WINDOW (app),
-                                                 GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                 /* GTK_DIALOG_MODAL | */ GTK_DIALOG_DESTROY_WITH_PARENT,
                                                  /* GTK_STOCK_HELP, GTK_RESPONSE_HELP, */
                                                  GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
                                                  NULL);
@@ -826,7 +805,7 @@ prefs_dialog_create (void)
         gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
         gtk_misc_set_padding (GTK_MISC(label), 0, 10);
 
-        for (i = 0; i < 4; i++) {
+        for (i = 0; i < 3; i++) {
                 radio_start[i] = gtk_radio_button_new_with_label (group_start, prefs_dialog_get_who_starts_label (i));
                 group_start = gtk_radio_button_get_group (GTK_RADIO_BUTTON(radio_start[i]));
                 gtk_widget_show (radio_start[i]);
@@ -947,10 +926,6 @@ prefs_dialog_create (void)
         gtk_widget_show (checkbutton_animate);
         gtk_box_pack_start (GTK_BOX(vbox1), checkbutton_animate, FALSE, FALSE, 0);
 
-        checkbutton_wipe = gtk_check_button_new_with_label (_("Between games, too"));
-        gtk_widget_show (checkbutton_wipe);
-        gtk_box_pack_start (GTK_BOX(vbox1), checkbutton_wipe, FALSE, FALSE, 0);
-
         sep = gtk_hseparator_new ();
         gtk_widget_show (sep);
         gtk_box_pack_start (GTK_BOX(vbox1), sep, TRUE, FALSE, 5);
@@ -1002,13 +977,12 @@ prefs_dialog_create (void)
                 g_signal_connect (GTK_OBJECT(radio_player1[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_player1_select),(gpointer)i);
                 g_signal_connect (GTK_OBJECT(radio_player2[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_player2_select),(gpointer)i);
         }
-        for (i = 0; i < 4; i++) {
+        for (i = 0; i < 3; i++) {
                 g_signal_connect (GTK_OBJECT(radio_start[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_who_starts_select),(gpointer)i);
         }
         g_signal_connect (GTK_OBJECT(radio_sound[0]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_BEEP);
         g_signal_connect (GTK_OBJECT(radio_sound[1]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_sound_select),(gpointer)SOUND_MODE_PLAY);
         g_signal_connect (GTK_OBJECT(checkbutton_animate), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_animate_select), NULL);
-        g_signal_connect (GTK_OBJECT(checkbutton_wipe), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_wipe_select), NULL);
         g_signal_connect (GTK_OBJECT(entry_key_left), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
         g_signal_connect (GTK_OBJECT(entry_key_right), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);
         g_signal_connect (GTK_OBJECT(entry_key_drop), "key_press_event", GTK_SIGNAL_FUNC(cb_prefs_dialog_key_select), NULL);

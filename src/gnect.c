@@ -360,15 +360,6 @@ gnect_reset (gboolean with_display)
                 gnect.current_player = PLAYER_2;
                 break;
 
-        case START_MODE_RANDOM :
-                if (gnect_get_random_num (2) == 1) {
-                        gnect.current_player = PLAYER_1;
-                }
-                else {
-                        gnect.current_player = PLAYER_2;
-                }
-                break;
-
         case START_MODE_ALTERNATE :
                 if (gnect.who_starts == PLAYER_1) {
                         gnect.current_player = PLAYER_2;

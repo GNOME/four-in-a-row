@@ -18,7 +18,6 @@
 #define START_MODE_PLAYER_1     0
 #define START_MODE_PLAYER_2     1
 #define START_MODE_ALTERNATE    2
-#define START_MODE_RANDOM       3
 
 #define SOUND_MODE_NONE         0
 #define SOUND_MODE_BEEP         1
@@ -43,7 +42,6 @@ struct _Prefs {
 	gchar      *descr_player2; /* ditto player2 */
 	gboolean   do_grids;
 	gboolean   do_animate;
-	gboolean   do_wipes;
 	gboolean   do_toolbar;
 	gboolean   do_sound;
 	gboolean   do_verify;

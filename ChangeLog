@@ -1,3 +1,14 @@
+2002-04-24  Tim Musson <trmusson@ihug.co.nz>
+
+	* src/prefs.c:
+	* src/prefs.h:
+	* src/gfx.c:
+	* src/gnect.c:
+	* data/gnect.schemas:
+	* help/C/gnect.xml:
+	  Removed the animated wipe toggle and the random "Who starts"
+	  option. Both were overkill.
+
 2002-04-23  Tim Musson <trmusson@ihug.co.nz>
 
 	* src/prefs.c: Removed Help, OK and Apply from prefs. Didn't read the
