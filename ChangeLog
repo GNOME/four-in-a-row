@@ -1,3 +1,11 @@
+2003-06-22  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/gui.c: 
+	* src/gnect.c: Spaces at beginning/end of strings removed to help
+	i18n.
+	
+	* src/prefs.c: Space before punctuation fixes as per bug #115694.
+
 2003-06-18  William Jon McCann  <mccann@jhu.edu>
 
 	* src/prefs.c (prefs_dialog_create): 

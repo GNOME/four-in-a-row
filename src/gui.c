@@ -424,7 +424,7 @@ gui_set_status_winner (gint winner, gboolean with_sound)
 
         if (winner == DRAWN_GAME) {
 
-                gui_set_status (_(" It's a draw!"), STATUS_MSG_SET);
+                gui_set_status (_("It's a draw!"), STATUS_MSG_SET);
                 if (with_sound) sound_event (SOUND_DRAWN_GAME);
 
         }
@@ -435,11 +435,11 @@ gui_set_status_winner (gint winner, gboolean with_sound)
                         /* Human vs computer: "You win" or "I win" */
 
                         if (gnect_is_player_human (winner)) {
-                        gui_set_status (_(" You win!"), STATUS_MSG_SET);
+                        gui_set_status (_("You win!"), STATUS_MSG_SET);
                                 if (with_sound) sound_event (SOUND_YOU_WIN);
                         }
                         else {
-                                gui_set_status (_(" I win!"), STATUS_MSG_SET);
+                                gui_set_status (_("I win!"), STATUS_MSG_SET);
                                 if (with_sound) sound_event (SOUND_I_WIN);
                         }
 
@@ -450,8 +450,8 @@ gui_set_status_winner (gint winner, gboolean with_sound)
 
                         gchar *str1, *str2;
 
-                        str1 = g_strdup_printf (_(" %s wins!"), prefs.descr_player1);
-                        str2 = g_strdup_printf (_(" %s wins!"), prefs.descr_player2);
+                        str1 = g_strdup_printf (_("%s wins!"), prefs.descr_player1);
+                        str2 = g_strdup_printf (_("%s wins!"), prefs.descr_player2);
 
                         if (gnect.current_player == PLAYER_1) {
                                 gui_set_status (str1, STATUS_MSG_SET);
@@ -480,7 +480,7 @@ gui_set_status_prompt (gint player)
         switch (gnect_get_n_players ()) {
 
         case 1 :
-                gui_set_status (_(" Your move..."), STATUS_MSG_SET);
+                gui_set_status (_("Your move..."), STATUS_MSG_SET);
                 break;
 
         case 2 :
@@ -490,7 +490,7 @@ gui_set_status_prompt (gint player)
                 else {
                         who_str = prefs.descr_player2;
                 }
-                prompt_str = g_strdup_printf (" %s...", who_str);
+                prompt_str = g_strdup_printf ("%s...", who_str);
                 gui_set_status (prompt_str, STATUS_MSG_SET);
                 g_free (prompt_str);
                 break;
@@ -639,6 +639,6 @@ gui_open (const gchar *geom_str)
         gfx_redraw (TRUE);
 
         gui_set_status_prompt_new_game (STATUS_MSG_SET);
-        gui_set_status (_(" Welcome to Gnect!"), STATUS_MSG_FLASH);
+        gui_set_status (_("Welcome to Gnect!"), STATUS_MSG_FLASH);
 }
 

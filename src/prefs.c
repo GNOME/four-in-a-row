@@ -323,8 +323,8 @@ prefs_dialog_update_player_selection_labels (void)
 
                 gchar *label_player1, *label_player2;
 
-                label_player1 = g_strdup_printf (_("Player 1 : %s"), prefs.descr_player1);
-                label_player2 = g_strdup_printf (_("Player 2 : %s"), prefs.descr_player2);
+                label_player1 = g_strdup_printf (_("Player 1: %s"), prefs.descr_player1);
+                label_player2 = g_strdup_printf (_("Player 2: %s"), prefs.descr_player2);
                 games_frame_set_label (GAMES_FRAME (frame_player_selection1), label_player1);
                 games_frame_set_label (GAMES_FRAME (frame_player_selection2), label_player2);
 
