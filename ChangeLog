@@ -1,3 +1,8 @@
+2004-02-11  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/main.c (on_help_about): translator_credits ->
+	translator-credits.
+
 2004-02-09  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* main.c:
