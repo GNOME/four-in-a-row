@@ -1,3 +1,8 @@
+2004-09-15  Callum McKenzie <callum@physics.otago.ac.nz>
+
+	* src/prefs.c: Patch from Paolo Borelli to remove redundant code
+	(bug #152275).
+
 2004-08-27  Richard Hoelscher  <rah@rahga.com>
 
 	* src/bintree.c (bin_compare): Function assumed size of "long"

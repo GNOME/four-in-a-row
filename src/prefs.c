@@ -242,9 +242,6 @@ on_select_theme (GtkComboBox *combo, gpointer data)
 	gint id;
 
 	id = gtk_combo_box_get_active (combo);
-	if (!gfx_load (id)) return;
-	prefsbox_update_player_labels ();
-
 	gconf_client_set_int (conf_client, KEY_THEME_ID, id, NULL);
 }
 
