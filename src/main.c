@@ -468,6 +468,10 @@ play_sound (SoundID id)
 {
 	if (!p.do_sound) return;
 
+	/* This has been disabled until we get appropriate sounds. */
+	/* Fixing this should also involve moving away from the 
+	 * gnome_triggers API. */
+#if 0
 	switch (id) {
 	case SOUND_DROP:
 		gnome_triggers_do (NULL, NULL, APPNAME, "drop", NULL);
@@ -488,6 +492,7 @@ play_sound (SoundID id)
 		gnome_triggers_do (NULL, NULL, APPNAME, "cantmove", NULL);
 		break;
 	}
+#endif
 }
 
 
@@ -1189,9 +1194,11 @@ GnomeUIInfo settings_menu_uiinfo[] =
 	GNOMEUIINFO_TOGGLEITEM(N_("_Toolbar"),
 	                       N_("Show or hide the tool bar"),
 	                       on_settings_toggle_toolbar, NULL),
+#if 0
 	GNOMEUIINFO_TOGGLEITEM(N_("Enable _sound"),
 	                       N_("Enable or disable sound"),
 	                       on_settings_toggle_sound, NULL),
+#endif
 	GNOMEUIINFO_SEPARATOR,
 	GNOMEUIINFO_MENU_PREFERENCES_ITEM(on_settings_preferences, NULL),
 	GNOMEUIINFO_END
