@@ -1,3 +1,9 @@
+2002-10-08  Tim Musson <trmusson@ihug.co.nz>
+
+	* src/gui.c: (cb_gui_quit_verify): fixed crash when closing main
+	window during an animation (#91264). Also added GTK_DIALOG_MODAL
+	to the quit dialog.
+
 2002-07-04  Tim Musson <trmusson@ihug.co.nz>
 
 	* src/prefs.c, src/gui.c: Prefs/gconf instant-apply.

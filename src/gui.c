@@ -138,7 +138,7 @@ cb_gui_quit_verify (GtkWidget *widget, gpointer data)
         if (prefs.do_verify && !gnect.over) {
 
                 quitverify = gtk_message_dialog_new (GTK_WINDOW(app),
-                                                     GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                     GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                                      GTK_MESSAGE_QUESTION,
                                                      GTK_BUTTONS_NONE,
                                                      _("Exit gnect and end the current game?"));
@@ -156,7 +156,7 @@ cb_gui_quit_verify (GtkWidget *widget, gpointer data)
                 gtk_widget_show(quitverify);
         }
         else {
-                gtk_main_quit ();
+                gnect_cleanup (0);
         }
 }
 
