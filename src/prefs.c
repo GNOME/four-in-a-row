@@ -72,14 +72,10 @@ cb_prefs_response (GtkWidget *pref_dialog, int response_id, gpointer data)
         switch (response_id) {
         case GTK_RESPONSE_ACCEPT :
                 cb_prefs_dialog_apply (pref_dialog, (gpointer)-1);
-                gtk_widget_hide (dlg_prefs);
+                gtk_widget_destroy (dlg_prefs);
+                dlg_prefs = NULL;
                 break;
-        case GTK_RESPONSE_APPLY :
-                cb_prefs_dialog_apply (pref_dialog, (gpointer)-1);
-                break;
-        case GTK_RESPONSE_CLOSE :
-                gtk_widget_hide (dlg_prefs);
-                break;
+#if 0
         case GTK_RESPONSE_HELP :
                 fname_help = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_HELP, "usage.html", FALSE, NULL);
                 if (fname_help) {
@@ -90,6 +86,7 @@ cb_prefs_response (GtkWidget *pref_dialog, int response_id, gpointer data)
                         g_free (fname_help);
                 }
                 break;
+#endif
         }
         return;
 }
@@ -293,7 +290,7 @@ cb_prefs_gconf_changed (GConfClient *tmp_client, guint cnx_id,
          */
 
         DEBUG_PRINT(1, "cb_prefs_gconf_changed: FIXME\n");
-
+#if 0
         g_free (prefs.fname_theme);
         prefs_get ();
 
@@ -303,7 +300,7 @@ cb_prefs_gconf_changed (GConfClient *tmp_client, guint cnx_id,
         gnect_reset_scores ();
         gui_set_status_prompt_new_game (STATUS_MSG_SET);
         theme_load (theme_get_ptr_from_fname (prefs.fname_theme));
-
+#endif
 }
 
 
@@ -746,11 +743,12 @@ prefs_dialog_create (void)
         dlg_prefs = gtk_dialog_new_with_buttons (_("Gnect Preferences"),
                                                  GTK_WINDOW (app),
                                                  GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                 GTK_STOCK_HELP, GTK_RESPONSE_HELP,
-                                                 GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
-                                                 GTK_STOCK_APPLY, GTK_RESPONSE_APPLY,
-                                                 GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+                                                 /* GTK_STOCK_HELP, GTK_RESPONSE_HELP, */
+                                                 GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
                                                  NULL);
+
+        g_signal_connect (GTK_OBJECT(dlg_prefs), "destroy",
+                          GTK_SIGNAL_FUNC(gtk_widget_destroyed), &dlg_prefs);
 
         action_area = gtk_notebook_new ();
         gtk_box_pack_start (GTK_BOX(GTK_DIALOG(dlg_prefs)->vbox), action_area, TRUE, TRUE, 0);
@@ -1019,6 +1017,7 @@ prefs_dialog_create (void)
 
         /* fill with current prefs settings */
         prefs_dialog_reset ();
+
 }
 
 

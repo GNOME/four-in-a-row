@@ -1,3 +1,8 @@
+2002-04-23  Tim Musson <trmusson@ihug.co.nz>
+
+	* src/prefs.c: Removed Help, OK and Apply from prefs. Didn't read the
+	  new style guide closely enough. Ouch.
+
 2002-04-21  Tim Musson <trmusson@ihug.co.nz>
 
 	* src/main.c: gnome_program_init replaces gnome_init_with_popt_table.
