@@ -1094,7 +1094,15 @@ process_move (gint c)
 static gint
 on_drawarea_resize (GtkWidget *w, GdkEventConfigure *e, gpointer data)
 {
+	GConfClient *client;
+
 	gfx_resize (w);
+
+	client = gconf_client_get_default ();
+	gconf_client_set_int (client, "/apps/gnect/window_width", e->width, 
+			      NULL);
+	gconf_client_set_int (client, "/apps/gnect/window_height", e->height, 
+			      NULL);
 
 	return TRUE;
 }
@@ -1216,9 +1224,20 @@ create_app (void)
 	BonoboDockItem *gdi;
 	GtkWidget *bonobodock;
 	GtkWidget *gridframe;
+	gint width, height;
+	GConfClient *client;
+
+	client = gconf_client_get_default ();
+	width = gconf_client_get_int (client, "/apps/gnect/window_width", NULL);
+	height = gconf_client_get_int (client, "/apps/gnect/window_height", NULL);
+	if (height < 200)
+		height = 390;
+	if (width < 200)
+		width = 350;
 
 	app = gnome_app_new (APPNAME, _("Four-in-a-row"));
-	gtk_window_set_default_size (GTK_WINDOW (app), 350, 390);
+	gtk_window_set_default_size (GTK_WINDOW (app), 200, 200);
+	gtk_window_resize (GTK_WINDOW (app), width, height);
 
 	g_signal_connect (G_OBJECT(app), "delete_event",
 	                  G_CALLBACK(on_delete_event), NULL);

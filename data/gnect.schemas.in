@@ -2,6 +2,30 @@
 
   <schemalist>
       <schema>
+      <key>/schemas/apps/gnect/window_width</key>
+      <applyto>/apps/gnect/window_width</applyto>
+      <owner>gnect</owner>
+      <type>int</type>
+      <default>350</default>
+      <locale name="C">
+        <short>Width of the main window</short>
+        <long>The width of the main window, in pixels, at start-up.</long>
+      </locale>   
+      </schema>
+
+      <schema>
+      <key>/schemas/apps/gnect/window_height</key>
+      <applyto>/apps/gnect/window_height</applyto>
+      <owner>gnect</owner>
+      <type>int</type>
+      <default>390</default>
+      <locale name="C">
+        <short>Height of the main window</short>
+        <long>The height of the main window, in pixels, at start-up.</long>
+      </locale>   
+      </schema>
+
+      <schema>
       <key>/schemas/apps/gnect/player1</key>
       <applyto>/apps/gnect/player1</applyto>
       <owner>gnect</owner>
