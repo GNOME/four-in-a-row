@@ -18,6 +18,18 @@
 
 #define APPNAME                 "gnect"
 
+#ifdef G_HAVE_ISO_VARARGS
+#ifdef GNECT_DEBUG
+#define DEBUG_PRINT(level, ...)  if (debugging & level) g_printerr(APPNAME ": " __VA_ARGS__)
+#else
+#define DEBUG_PRINT(level, ...)
+#endif
+
+#define ERROR_PRINT(...)    g_printerr(APPNAME ": error: " __VA_ARGS__)
+#define WARNING_PRINT(...)  g_printerr(APPNAME ": warning: " __VA_ARGS__)
+
+#elif defined(G_HAVE_GNUC_VARARGS)
+
 #ifdef GNECT_DEBUG
 #define DEBUG_PRINT(level, args...)  if (debugging & level) g_printerr(APPNAME ": " args)
 #else
@@ -30,9 +42,9 @@ static inline void DEBUG_PRINT(...) { }
 #endif
 #endif
 
-
 #define ERROR_PRINT	g_error
 #define WARNING_PRINT	g_warning
+#endif
 
 #define BASE_PIXMAP_DIR         GNECT_DATA_DIR "pixmaps" G_DIR_SEPARATOR_S
 #define PACKAGE_PIXMAP_DIR      BASE_PIXMAP_DIR APPNAME  G_DIR_SEPARATOR_S
