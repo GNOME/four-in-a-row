@@ -1,4 +1,4 @@
-figs = figures/tileset.png
+figs = figures/tileset.png figures/mainwindow.png
 docname = gnect
 lang = C
 omffile = gnect-C.omf

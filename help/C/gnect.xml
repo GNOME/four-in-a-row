@@ -4,7 +4,7 @@
 [
   <!ENTITY legal SYSTEM "legal.xml">
   <!ENTITY appversion "2.0">
-  <!ENTITY manrevision "2.0">
+  <!ENTITY manrevision "2.1">
   <!ENTITY date "April 2002">
   <!ENTITY app "<application>Gnect</application>">
   <!ENTITY appname "Gnect">
@@ -20,7 +20,7 @@
 <!-- please do not change the id -->
 <!-- translators, change lang to the appropriate code -->
   <articleinfo>
-    <title>&app; Manual V&manrevision;</title>
+    <title>&appname; Manual V&manrevision;</title>
     <copyright>
       <year>2001-2002</year>
       <holder>Timothy Musson</holder>
@@ -86,7 +86,7 @@
 
     <legalnotice>
       <title>Feedback</title>
-      <para>To report a bug or make a suggestion regarding the &app;
+      <para>To report a bug or make a suggestion regarding the &appname;
         application or this manual, follow the directions in the
         <ulink url="ghelp:gnome-feedback"
                type="help">GNOME Feedback Page</ulink>.
@@ -106,9 +106,10 @@
 
     <para>
       &app; is a four-in-a-row game for the Gnome Project.
-      The object of the game is to build a line of four of your counters while
-      trying to stop your opponent (human or computer) building a line of his
-      or her own. A line can be horizontal, vertical or diagonal.
+      The object of the game is to build a line of four of your marbles
+      while trying to stop your opponent (human or computer) building a
+      line of his or her own. A line can be horizontal, vertical or
+      diagonal.
     </para>
 
     <para>
@@ -120,8 +121,8 @@
     </para>
 
     <para>
-      &app; is included in the <filename>GNOME-games</filename> package, which
-      is part of the GNOME desktop environment. This document describes
+      &app; is included in the <filename>GNOME-games</filename> package,
+      which is part of the GNOME desktop environment. This document describes
       version &version; of &app;.
     </para>
 
@@ -154,6 +155,20 @@
         keyboard. Your marble will drop into the topmost empty row of that
         column.
       </para>
+
+      <!-- Figure -->
+      <mediaobject id="mainwindow-fig">
+        <imageobject>
+          <imagedata fileref="figures/mainwindow"
+                     format="PNG"
+                     srccredit="trm"/>
+        </imageobject>
+        <textobject>
+          <phrase>&appname;'s Main Window</phrase>
+        </textobject>
+        <caption><para>&appname;'s Main Window</para></caption>
+      </mediaobject>
+
       <para>
         The game's won when one of the two players manages to line up four
         of his or her marbles horizontally, vertically or diagonally. If the
@@ -259,9 +274,9 @@
 
                 <listitem>
                   <para>
-                    <guimenuitem>Show toolbar</guimenuitem>
+                    <guimenuitem>Show tool bar</guimenuitem>
                     &mdash;
-                    This toggle switches the toolbar on and off.
+                    This toggle switches the tool bar on and off.
                   </para>
                 </listitem>
 
@@ -343,8 +358,8 @@
                   <para>
                     <guimenuitem>Authors and Bug Reporting</guimenuitem>
                     &mdash;
-                    Shows author email addresses and information on submitting
-                    bug reports.           
+                    Shows author email addresses and information on
+                    submitting bug reports.           
                   </para>
                 </listitem>
 
@@ -455,10 +470,10 @@
             <listitem>
               <para>
                 &app; can make sounds when certain events occur.
-                If you choose the Speaker beep option, &app; will beep when a
-                game ends or if you make an illegal move.
-                If you choose the GNOME sound option, &app; will play the audio
-                files you specify using the
+                If you choose the Speaker beep option, &app; will beep when
+                a game ends or if you make an illegal move.
+                If you choose the GNOME sound option, &app; will play the
+                audio files you specify using the
                 <application>GNOME Control Center</application>.
                 To disable &app;'s sound completely, use the sound toggle in
                 the <guimenu>Settings</guimenu> menu.
@@ -471,8 +486,9 @@
                 Ask me first</guilabel></term>
             <listitem>
               <para>
-                If this option is checked, &app; will ask you before quitting
-                or starting a new game while there's a still game in progress.
+                If this option is checked, &app; will ask you before
+                quitting or starting a new game while there's still a
+                game in progress.
               </para>
             </listitem>
           </varlistentry>
@@ -630,6 +646,7 @@ Player2 = Yellow
 GridRGB = "#FFFFFF"
 
 # Disable the grid for this theme (optional)
+# Useful if your artwork has rows/cols drawn in
 NoGrid
 
 # Details (optional)
@@ -641,9 +658,7 @@ Tooltip = "Artwork credits or whatever you like"
         <literal>Player2</literal> keywords are as follows:
 
         <!--
-             Translators, please don't translate this list. Gnect
-             needs these to be in English - it'll translate them
-             using gettext.
+             Translators, please don't translate this list:
         -->
         <literal>Light</literal>,
         <literal>Dark</literal>,
@@ -733,9 +748,14 @@ Tooltip = "Artwork credits or whatever you like"
     <para>
       &app; was written by Timothy Musson (<email>trmusson@ihug.co.nz</email>)
       and David Neary (<email>bolsh@gimp.org</email>). Various others
-      have taken the time to help in many ways since &app; was started.
-      The excellent Velena Engine was written by Giuliano Bertoletti, who
-      grants permission to include his code along with &app; under the GPL.
+      have taken the time to help in many ways since work on &app; began.
+    </para>
+    <para>
+      The <ulink type="http"
+        url="http://www.ce.unipr.it/~gbe/velena.html">Velena Engine</ulink>,
+      &app;'s main computer player, was written by Giuliano Bertoletti.
+      We're grateful to him for allowing us to include his work, without
+      which &app; wouldn't be nearly as worthwhile.
     </para>
 
     <para>
