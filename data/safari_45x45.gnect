@@ -1,0 +1,6 @@
+Title      = "Safari (medium)"
+Tileset    = tileset_45x45_safari.png
+Player1    = Red
+Player2    = White
+GridRGB    = "#906030"
+

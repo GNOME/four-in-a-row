@@ -1,0 +1,6 @@
+Title   = "Classic (large)"
+Tileset = tileset_50x50_classic.png
+Player1 = Red
+Player2 = Yellow
+NoGrid
+

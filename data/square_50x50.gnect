@@ -1,0 +1,6 @@
+Title      = "Square 1 (large)"
+Tileset    = tileset_50x50_square.png
+Player1    = Red
+Player2    = Blue
+GridRGB    = "#525F6C"
+

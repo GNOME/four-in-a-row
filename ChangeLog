@@ -1,0 +1,19 @@
+2001-04-04  Dave Neary <bolsh@gimp.org>
+
+	* Finished port of gnect to the GNOME 2.0 API. It even
+	  compiles and runs properly with DISABLE_DEPRECATED set.
+	  Main changes are:
+	  - Uses of GnomePropertyBox replaced by GtkDialog
+	  - Themes use #RRGGBB instead of the old format
+          - Signals are handled quite differently -
+            g_signal_connect() replaces gtk_signal_connect, and
+	    the "response" signal is used for most dialogs.
+          I also fixed the bit that needed white_ob.cn4 to be in
+	  /usr/share/gnect. It now goes (correctly) into
+	  ${prefix}/share/gnect and gets found there.
+
+2001-12-21  Tim Musson <trmusson@ihug.co.nz>
+
+    * Misc. changes to gnect-1.4.2 (mostly just removing the original
+      configure/build stuff) for addition to gnome-games 1.4.0.3.
+

@@ -1,0 +1,6 @@
+Title      = "Marbles 2 (small)"
+Tileset    = tileset_40x40_glassy.png
+Player1    = Red
+Player2    = Blue
+GridRGB    = "#525F6C"
+

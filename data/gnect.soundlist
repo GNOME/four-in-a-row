@@ -1,0 +1,27 @@
+[__section_info__]
+description=Gnect
+
+[iwin]
+file=
+description=I win!
+
+[youwin]
+file=
+description=You win!
+
+[playerwin]
+file=
+description=Player wins!
+
+[draw]
+file=
+description=Drawn game!
+
+[drop]
+file=
+description=A counter drops
+
+[cantmove]
+file=
+description=Sorry, full column
+
