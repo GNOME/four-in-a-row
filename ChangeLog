@@ -1,3 +1,9 @@
+2003-10-11  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/gui.c (gui_create): Only respond to one of the "delete" and
+	"destroy" signals. Calling gtk_main_quit multiple times can be
+	amusing. This may be the cause of 124329.
+
 2003-07-30  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/gnect.xml: Updated documentation for 2.4.

@@ -567,8 +567,6 @@ gui_create (void)
 
         g_signal_connect (G_OBJECT (app), "delete_event",
                           G_CALLBACK (cb_gui_quit), NULL);
-        g_signal_connect (G_OBJECT (app), "destroy",
-                          G_CALLBACK (cb_gui_quit), NULL);
 
         gnome_window_icon_set_default_from_file (FNAME_GNECT_ICON);
         gnome_window_icon_set_from_default (GTK_WINDOW(app));
