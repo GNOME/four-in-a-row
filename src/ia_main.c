@@ -462,7 +462,7 @@ short endgame(struct board *board)
   short answer=NOTHING;
   short i,j;
 
-
+  j = 0;
   for(i=0;i<GROUPS && answer==NOTHING;i++)
 	{
 	  if(*board->groups[i][0]!=EMPTY &&

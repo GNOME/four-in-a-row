@@ -1,3 +1,7 @@
+2004-02-21  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/ia_main.c (endgame): Avoid a compiler warning.
+
 2004-02-11  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/main.c (on_help_about): translator_credits ->
