@@ -88,8 +88,8 @@ Theme theme[] = {
 	}
 };
 
+gint n_themes = G_N_ELEMENTS(theme);
 
-gint n_themes = sizeof(theme) / sizeof(theme[0]);
 
 
 const gchar*

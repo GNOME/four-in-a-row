@@ -57,8 +57,7 @@ static GtkWidget *frame_player1;
 static GtkWidget *frame_player2;
 static GtkWidget *radio1[4];
 static GtkWidget *radio2[4];
-static GtkWidget *optionmenu_theme;
-static GtkWidget *optionmenu_theme_menu;
+static GtkWidget *combobox_theme;
 static GtkWidget *checkbutton_animate;
 static GtkWidget *button_move[3];
 static GtkWidget *entry_move[3];
@@ -238,7 +237,7 @@ gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpoi
 		if (!gfx_load (val)) return;
 		p.theme_id = val;
 		if (prefsbox == NULL) return;
-		gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), p.theme_id);
+		gtk_combo_box_set_active (GTK_COMBO_BOX(combobox_theme), p.theme_id);
 		prefsbox_update_player_labels ();
 	}
 }
@@ -246,11 +245,15 @@ gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpoi
 
 
 static void
-on_select_theme (GtkWidget *w, gpointer data)
+on_select_theme (GtkComboBox *combo, gpointer data)
 {
-	if (!gfx_load ((gint)data)) return;
+	gint id;
+
+	id = gtk_combo_box_get_active (combo);
+	if (!gfx_load (id)) return;
 	prefsbox_update_player_labels ();
-	gconf_client_set_int (conf_client, KEY_THEME_ID, (gint)data, NULL);
+
+	gconf_client_set_int (conf_client, KEY_THEME_ID, id, NULL);
 }
 
 
@@ -393,21 +396,6 @@ prefs_init (gint argc, gchar **argv)
 
 
 
-static void
-fill_theme_menu (void)
-{
-	GtkWidget *w;
-	gint i;
-
-	for (i = 0; i < n_themes; i++) {
-		w = gtk_menu_item_new_with_label ( _(theme_get_title (i)));
-		gtk_menu_shell_append (GTK_MENU_SHELL(optionmenu_theme_menu), w);
-		g_signal_connect (GTK_OBJECT(w), "activate", GTK_SIGNAL_FUNC(on_select_theme), (gpointer)i);
-	}
-}
-
-
-
 static const gchar*
 get_player_radio (LevelID id)
 {
@@ -450,8 +438,8 @@ prefsbox_open (void)
 	                                        GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
 	                                        NULL);
 	gtk_dialog_set_has_separator (GTK_DIALOG(prefsbox), FALSE);
-	g_signal_connect (GTK_OBJECT(prefsbox), "destroy",
-	                  GTK_SIGNAL_FUNC(gtk_widget_destroyed), &prefsbox);
+	g_signal_connect (G_OBJECT(prefsbox), "destroy",
+	                  G_CALLBACK(gtk_widget_destroyed), &prefsbox);
 
 	notebook = gtk_notebook_new ();
 	gtk_box_pack_start (GTK_BOX(GTK_DIALOG(prefsbox)->vbox), notebook,
@@ -506,15 +494,16 @@ prefsbox_open (void)
 	gtk_box_pack_start (GTK_BOX(hbox), label, TRUE, TRUE, 0);
 	gtk_misc_set_alignment (GTK_MISC(label), 7.45058e-09, 0.5);
 
-	optionmenu_theme = gtk_option_menu_new ();
-	gtk_box_pack_start (GTK_BOX(hbox), optionmenu_theme, TRUE, TRUE, 0);
+	combobox_theme = gtk_combo_box_new_text ();
+	for (i = 0; i < n_themes; i++) {
+		gtk_combo_box_append_text (GTK_COMBO_BOX (combobox_theme),
+					   _(theme_get_title (i)));
+	}
 
-	optionmenu_theme_menu = gtk_menu_new ();
-	fill_theme_menu ();
-	gtk_option_menu_set_menu (GTK_OPTION_MENU(optionmenu_theme), optionmenu_theme_menu);
+	gtk_box_pack_start (GTK_BOX(hbox), combobox_theme, TRUE, TRUE, 0);
 
-	gtk_label_set_mnemonic_widget (GTK_LABEL(label), optionmenu_theme);
-	
+	gtk_label_set_mnemonic_widget (GTK_LABEL(label), combobox_theme);
+
 	checkbutton_animate = gtk_check_button_new_with_mnemonic (_("Enable _animation"));
 	gtk_box_pack_start (GTK_BOX(vbox2), checkbutton_animate, FALSE, FALSE, 6);
 
@@ -570,7 +559,7 @@ prefsbox_open (void)
 	prefsbox_update_player_labels ();
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio1[p.level[PLAYER1]]), TRUE);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio2[p.level[PLAYER2]]), TRUE);
-	gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), p.theme_id);
+	gtk_combo_box_set_active (GTK_COMBO_BOX(combobox_theme), p.theme_id);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_animate), p.do_animate);
 
 	entries_set_sensitive (FALSE);
@@ -581,17 +570,19 @@ prefsbox_open (void)
 	g_signal_connect (prefsbox, "response", G_CALLBACK(on_dialog_close), &prefsbox);
 	
 	for (i = 0; i < 4; i++) {
-		g_signal_connect (GTK_OBJECT(radio1[i]), "toggled", GTK_SIGNAL_FUNC(on_select_player1), (gpointer)i);
-		g_signal_connect (GTK_OBJECT(radio2[i]), "toggled", GTK_SIGNAL_FUNC(on_select_player2), (gpointer)i);
+		g_signal_connect (G_OBJECT(radio1[i]), "toggled", G_CALLBACK(on_select_player1), (gpointer)i);
+		g_signal_connect (G_OBJECT(radio2[i]), "toggled", G_CALLBACK(on_select_player2), (gpointer)i);
 	}
 	for (i = 0; i < 3; i++) {
 		gtk_entry_set_text (GTK_ENTRY(entry_move[i]), gdk_keyval_name (p.keypress[i]));
 		gtk_editable_set_editable (GTK_EDITABLE(entry_move[i]), FALSE);
-		g_signal_connect (GTK_OBJECT(button_move[i]), "clicked", GTK_SIGNAL_FUNC(on_grab_key), (gpointer)i);
-		g_signal_connect (GTK_OBJECT(entry_move[i]), "key_press_event", GTK_SIGNAL_FUNC(on_select_key), NULL);
+		g_signal_connect (G_OBJECT(button_move[i]), "clicked", G_CALLBACK(on_grab_key), (gpointer)i);
+		g_signal_connect (G_OBJECT(entry_move[i]), "key_press_event", G_CALLBACK(on_select_key), NULL);
 	}
 
-	g_signal_connect (GTK_OBJECT(checkbutton_animate), "toggled", GTK_SIGNAL_FUNC(on_toggle_animate), NULL);
+	g_signal_connect (G_OBJECT (combobox_theme), "changed", G_CALLBACK (on_select_theme), NULL);
+
+	g_signal_connect (G_OBJECT(checkbutton_animate), "toggled", G_CALLBACK(on_toggle_animate), NULL);
 
 	gtk_widget_show_all (prefsbox);
 }

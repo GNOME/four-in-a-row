@@ -42,8 +42,6 @@
 
 extern GConfClient *conf_client;
 extern Prefs p;
-extern Theme theme[];
-extern gint n_themes;
 
 GtkWidget *app;
 GtkWidget *drawarea;

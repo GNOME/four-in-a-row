@@ -1,3 +1,10 @@
+2004-02-09  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* main.c:
+	* prefs.c:	
+	* theme.c: Patch from Paolo Borelli to remove code deprecated in
+	glib/gtk+ 2.4.
+
 2004-01-13  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* data/Makefile.am: spaces->tab, fixing gnect schemas install
