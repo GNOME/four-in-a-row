@@ -152,6 +152,9 @@ dialog_score_create (void)
                                                  GTK_RESPONSE_CLOSE,
                                                  NULL);
 
+        g_signal_connect (GTK_OBJECT(dlg_score), "destroy",
+                          GTK_SIGNAL_FUNC(gtk_widget_destroyed), &dlg_score);
+
         vbox = GTK_DIALOG (dlg_score)->vbox;
         gtk_object_set_data (GTK_OBJECT (dlg_score), "vbox", vbox);
         gtk_widget_show (vbox);
