@@ -1,3 +1,7 @@
+2002-12-16  Ross Burton  <ross@burtonini.com>
+
+	* src/prefs.c: Added a GConf sanity check.
+
 2002-11-29  Ross Burton  <ross@burtonini.com>
 
 	* data/Makefile.am (EXTRA_DIST): Put the source of the schemas in
