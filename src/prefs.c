@@ -29,6 +29,7 @@
 #include <gconf/gconf-client.h>
 #include <games-gconf.h>
 #include <games-frame.h>
+#include <games-controls.h>
 #include "main.h"
 #include "theme.h"
 #include "prefs.h"
@@ -37,9 +38,9 @@
 #define DEFAULT_LEVEL_PLAYER1  LEVEL_HUMAN
 #define DEFAULT_LEVEL_PLAYER2  LEVEL_WEAK
 #define DEFAULT_THEME_ID       0
-#define DEFAULT_KEY_LEFT       106
-#define DEFAULT_KEY_RIGHT      108
-#define DEFAULT_KEY_DROP       107
+#define DEFAULT_KEY_LEFT       65361
+#define DEFAULT_KEY_RIGHT      65363
+#define DEFAULT_KEY_DROP       65364
 #define DEFAULT_DO_TOOLBAR     FALSE
 #define DEFAULT_DO_SOUND       TRUE
 #define DEFAULT_DO_ANIMATE     TRUE
@@ -59,9 +60,6 @@ static GtkWidget *radio1[4];
 static GtkWidget *radio2[4];
 static GtkWidget *combobox_theme;
 static GtkWidget *checkbutton_animate;
-static GtkWidget *button_move[3];
-static GtkWidget *entry_move[3];
-
 
 
 static gint
@@ -201,8 +199,6 @@ static void
 gconf_keyleft_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
 {
 	p.keypress[MOVE_LEFT] = gconf_client_get_int (conf_client, KEY_MOVE_LEFT, NULL);
-	if (prefsbox == NULL) return;
-	gtk_entry_set_text (GTK_ENTRY(entry_move[MOVE_LEFT]), gdk_keyval_name (p.keypress[MOVE_LEFT]));
 }
 
 
@@ -211,8 +207,6 @@ static void
 gconf_keyright_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
 {
 	p.keypress[MOVE_RIGHT] = gconf_client_get_int (conf_client, KEY_MOVE_RIGHT, NULL);
-	if (prefsbox == NULL) return;
-	gtk_entry_set_text (GTK_ENTRY(entry_move[MOVE_RIGHT]), gdk_keyval_name (p.keypress[MOVE_RIGHT]));
 }
 
 
@@ -221,8 +215,6 @@ static void
 gconf_keydrop_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
 {
 	p.keypress[MOVE_DROP] = gconf_client_get_int (conf_client, KEY_MOVE_DROP, NULL);
-	if (prefsbox == NULL) return;
-	gtk_entry_set_text (GTK_ENTRY(entry_move[MOVE_DROP]), gdk_keyval_name (p.keypress[MOVE_DROP]));
 }
 
 
@@ -266,36 +258,6 @@ on_toggle_animate (GtkToggleButton *t, gpointer data)
 }
 
 
-
-static void
-on_select_key (GtkWidget *w, GdkEventKey *data)
-{
-	const gchar *gconfstr;
-	gint k;
-
-	gtk_entry_set_text (GTK_ENTRY(w), gdk_keyval_name (data->keyval));
-
-	if (w == entry_move[MOVE_LEFT]) {
-		k = MOVE_LEFT;
-		gconfstr = KEY_MOVE_LEFT;
-	}
-	else if (w == entry_move[MOVE_RIGHT]) {
-		k = MOVE_RIGHT;
-		gconfstr = KEY_MOVE_RIGHT;
-	}
-	else {
-		k = MOVE_DROP;
-		gconfstr = KEY_MOVE_DROP;
-	}
-
-	gconf_client_set_int (conf_client, gconfstr, data->keyval, NULL);
-	p.keypress[k] = data->keyval;
-	gtk_widget_set_sensitive (w, FALSE);
-	gtk_widget_grab_focus (button_move[k]);
-}
-
-
-
 void
 prefsbox_players_set_sensitive (gboolean sensitive)
 {
@@ -303,29 +265,6 @@ prefsbox_players_set_sensitive (gboolean sensitive)
 	gtk_widget_set_sensitive (frame_player1, sensitive);
 	gtk_widget_set_sensitive (frame_player2, sensitive);
 }
-
-
-
-static void
-entries_set_sensitive (gboolean sensitive)
-{
-	gint i;
-
-	for (i = 0; i < 3; i++) {
-		gtk_widget_set_sensitive (entry_move[i], sensitive);
-	}
-}
-
-
-
-static void
-on_grab_key (GtkWidget *w, gpointer data)
-{
-	entries_set_sensitive (FALSE);
-	gtk_widget_set_sensitive (entry_move[GPOINTER_TO_INT(data)], TRUE);
-	gtk_widget_grab_focus (entry_move[GPOINTER_TO_INT(data)]);
-}
-
 
 
 static void
@@ -423,13 +362,12 @@ prefsbox_open (void)
 	GtkWidget *frame;
 	GtkWidget *hbox;
 	GtkWidget *vbox1, *vbox2;
-	GtkWidget *table, *label;
+	GtkWidget *controls_list;
+	GtkWidget *label;
 	GSList *group;
 	gint i;
 
-
 	if (prefsbox != NULL) {
-		entries_set_sensitive (FALSE);
 		gtk_window_present (GTK_WINDOW(prefsbox));
 		return;
 	}
@@ -516,45 +454,16 @@ prefsbox_open (void)
 	label = gtk_label_new_with_mnemonic (_("Controls"));
 	gtk_notebook_append_page (GTK_NOTEBOOK(notebook), vbox1, label);
 
-	frame = games_frame_new (_("Keyboard control"));
+	frame = games_frame_new (_("Keyboard controls"));
 	gtk_container_add (GTK_CONTAINER(vbox1), frame);
 
 	vbox2 = gtk_vbox_new (FALSE, 6);
 	gtk_container_add (GTK_CONTAINER(frame), vbox2);
 
-	table = gtk_table_new (3, 2, FALSE);
-	gtk_box_pack_start (GTK_BOX(vbox2), table, FALSE, FALSE, 0);
+	controls_list = games_controls_list_new ();
+	games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list), KEY_MOVE_LEFT, KEY_MOVE_RIGHT, KEY_MOVE_DROP);
 
-	button_move[0] = gtk_button_new_with_mnemonic (_("Move _Left"));
-	gtk_table_attach (GTK_TABLE(table), button_move[0], 0, 1, 0, 1,
-	                  (GtkAttachOptions)(GTK_FILL),
-	                  (GtkAttachOptions)(0), 0, 0);
-
-	button_move[1] = gtk_button_new_with_mnemonic (_("Move _Right"));
-	gtk_table_attach (GTK_TABLE(table), button_move[1], 0, 1, 1, 2,
-	                  (GtkAttachOptions)(GTK_FILL),
-	                  (GtkAttachOptions)(0), 0, 0);
-
-	button_move[2] = gtk_button_new_with_mnemonic (_("_Drop"));
-	gtk_table_attach (GTK_TABLE(table), button_move[2], 0, 1, 2, 3,
-	                  (GtkAttachOptions)(GTK_FILL),
-	                  (GtkAttachOptions)(0), 0, 0);
-
-	entry_move[0] = gtk_entry_new ();
-	gtk_table_attach (GTK_TABLE(table), entry_move[0], 1, 2, 0, 1,
-	                  (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
-	                  (GtkAttachOptions)(0), 0, 0);
-
-	entry_move[1] = gtk_entry_new ();
-	gtk_table_attach (GTK_TABLE(table), entry_move[1], 1, 2, 1, 2,
-	                  (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
-	                  (GtkAttachOptions)(0), 0, 0);
-
-	entry_move[2] = gtk_entry_new ();
-	gtk_table_attach (GTK_TABLE(table), entry_move[2], 1, 2, 2, 3,
-	                  (GtkAttachOptions)(GTK_EXPAND | GTK_FILL),
-	                  (GtkAttachOptions)(0), 0, 0);
-
+	gtk_box_pack_start (GTK_BOX(vbox2), controls_list, FALSE, FALSE, 0);
 
 	/* fill in initial values */
 
@@ -564,9 +473,6 @@ prefsbox_open (void)
 	gtk_combo_box_set_active (GTK_COMBO_BOX(combobox_theme), p.theme_id);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_animate), p.do_animate);
 
-	entries_set_sensitive (FALSE);
-
-
 	/* connect signals */
 
 	g_signal_connect (prefsbox, "response", G_CALLBACK(on_dialog_close), &prefsbox);
@@ -574,12 +480,6 @@ prefsbox_open (void)
 	for (i = 0; i < 4; i++) {
 		g_signal_connect (G_OBJECT(radio1[i]), "toggled", G_CALLBACK(on_select_player1), GINT_TO_POINTER(i));
 		g_signal_connect (G_OBJECT(radio2[i]), "toggled", G_CALLBACK(on_select_player2), GINT_TO_POINTER(i));
-	}
-	for (i = 0; i < 3; i++) {
-		gtk_entry_set_text (GTK_ENTRY(entry_move[i]), gdk_keyval_name (p.keypress[i]));
-		gtk_editable_set_editable (GTK_EDITABLE(entry_move[i]), FALSE);
-		g_signal_connect (G_OBJECT(button_move[i]), "clicked", G_CALLBACK(on_grab_key), GINT_TO_POINTER(i));
-		g_signal_connect (G_OBJECT(entry_move[i]), "key_press_event", G_CALLBACK(on_select_key), NULL);
 	}
 
 	g_signal_connect (G_OBJECT (combobox_theme), "changed", G_CALLBACK (on_select_theme), NULL);
