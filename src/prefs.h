@@ -1,5 +1,4 @@
-/* -*-mode:c; c-style:k&r; c-basic-offset:4; -*-
- *
+/*
  * gnect prefs.h
  *
  */

@@ -1,23 +1,5 @@
-/* -*-mode:c; c-style:k&r; c-basic-offset:4; -*-
- *
+/*
  * gnect gnect.c
- *
- * Tim Musson
- * <trmusson@ihug.co.nz>
- *
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * http://www.gnu.org/copyleft/gpl.html
- *
  *
  */
 
@@ -52,207 +34,227 @@ short playgame(char *input_str, struct board *board); /* playgame.c */
 
 
 
-void gnect_cleanup(gint exit_code)
+void
+gnect_cleanup (gint exit_code)
 {
 	DEBUG_PRINT(1, "gnect_cleanup\n");
 
-	if (anim.id) gtk_timeout_remove(anim.id);
+	if (anim.id) gtk_timeout_remove (anim.id);
 
-	prefs_save();
-	gfx_free();
-	theme_free_all();
-	veleng_free(gnect.veleng_board);
-	g_free(prefs.fname_theme);
-
+	prefs_save ();
+	gfx_free ();
+	theme_free_all ();
+	veleng_free (gnect.veleng_board);
+	g_free (prefs.fname_theme);
 
 	DEBUG_PRINT(1, "exit(%d)\n", exit_code);
-	gtk_exit(exit_code);
+	gtk_exit (exit_code);
 }
 
 
 
-void gnect_srand(guint seed)
+void
+gnect_srand (guint seed)
 {
-	if (!seed) {
-		seed = (guint)time(NULL);
-		srand(seed);
-	}
-	else {
-		srand(seed);
-	}
+	/*
+	 * Seed the random number generator.
+	 * If seed is 0, use system time.
+	 */
 
-	if (debugging & 4) g_printerr("\n" APPNAME ": random number seed=%d\n\n", seed);
+	if (seed == 0) seed = (guint)time(NULL);
+	srand (seed);
+
+	if (debugging & 4) {
+		g_printerr ("\n" APPNAME ": random number seed=%d\n\n", seed);
+	}
 }
 
 
 
-gint gnect_get_random_num(gint n)
+gint
+gnect_get_random_num (gint n)
 {
-	/* return a random integer in the range 1..n */
-	return( (rand()%n) + 1 );
+	/*
+	 * Return a random integer in the range 1..n
+	 */
+
+	return (rand()%n) + 1;
 }
 
 
 
-gchar *gnect_fname_expand(gchar *fname)
+gchar *
+gnect_fname_expand (gchar *fname)
 {
 	gchar *str = NULL;
 
 
 	if (fname && fname[0] == '~') {
-		str = g_strdup_printf("%s%s", g_getenv("HOME"), &fname[1]);
-		g_free(fname);
-		return(str);
+		str = g_strdup_printf ("%s%s", g_getenv ("HOME"), &fname[1]);
+		g_free (fname);
+		return str;
 	}
-	return(fname);
+	return fname;
 }
 
 
 
-gboolean gnect_file_exists(const gchar *fname)
+gboolean
+gnect_file_exists (const gchar *fname)
 {
-	return( g_file_test(fname, G_FILE_TEST_EXISTS 
-                            /* | G_FILE_TEST_IS_REGULAR */
-            ) );
+	return g_file_test (fname, G_FILE_TEST_EXISTS);
+	/* | G_FILE_TEST_IS_REGULAR */
 }
 
 
 
-static gchar gnect_get_veleng_level_ch(gint player)
+static gchar
+gnect_get_veleng_level_ch (gint player)
 {
 	/* assumes player is PLAYER_VELENA_WEAK/MEDIUM/STRONG */
 
-	switch(player) {
+	switch (player) {
 
 	case PLAYER_VELENA_WEAK :
-		return('a');
+		return 'a';
 
 	case PLAYER_VELENA_MEDIUM :
-		return('b');
+		return 'b';
 
 	}
-	return('c');
+	return 'c';
 }
 
 
 
-gint gnect_get_cell(gint row, gint col)
+gint
+gnect_get_cell (gint row, gint col)
 {
-	return( col + N_ROWS * row );
+	return col + N_ROWS * row;
 }
 
 
 
-gboolean gnect_is_full_column(gint col)
+gboolean
+gnect_is_full_column (gint col)
 {
-	return( TILE_AT(1, col) != TILE_CLEAR );
+	return TILE_AT(1, col) != TILE_CLEAR;
 }
 
 
 
-gboolean gnect_is_full_board(void)
+gboolean
+gnect_is_full_board (void)
 {
 	gint col;
 
 
 	for (col = 0; col < N_COLS; col++) {
-		if (!gnect_is_full_column(col)) {
-			return(FALSE);
+		if (!gnect_is_full_column (col)) {
+			return FALSE;
 		}
 	}
-	return(TRUE);
+	return TRUE;
 }
 
 
 
-gint gnect_get_top_used_row(gint col)
+gint
+gnect_get_top_used_row (gint col)
 {
 	gint row = 1;
 
 
-	while(row < N_ROWS && TILE_AT(row, col) == TILE_CLEAR) {
+	while (row < N_ROWS && TILE_AT(row, col) == TILE_CLEAR) {
 		row++;
 	}
-	return(row);
+	return row;
 }
 
 
 
-gint gnect_get_bottom_used_row(gint col)
+gint
+gnect_get_bottom_used_row (gint col)
 {
 	/* used by gfx_wipe() to wipe from the bottom up */
 
 	gint row = N_ROWS - 1;
 
 
-	while(row && TILE_AT(row, col) == TILE_CLEAR) {
+	while (row && TILE_AT(row, col) == TILE_CLEAR) {
 		row--;
 	}
-	return(row);
+	return row;
 }
 
 
 
-gint gnect_whois_player(gint player)
+gint
+gnect_whois_player (gint player)
 {
 	/* given PLAYER_1 or PLAYER_2, return PLAYER_HUMAN,
 	 * PLAYER_GNECT, PLAYER_VELENA_WEAK, PLAYER_VELENA_MEDIUM
 	 * or PLAYER_VELENA_STRONG
 	 */
 
-	switch(player) {
+	switch (player) {
 
 	case PLAYER_1 :
-		return(prefs.player1);
+		return prefs.player1;
 
 	case PLAYER_2 :
-		return(prefs.player2);
+		return prefs.player2;
 
 	}
 
+	/* won't get this far */
 	DEBUG_PRINT(1, "gnect_whois_player(%d)\n", player);
-	gnect_cleanup(1);
-	return(0);
+	return 0;
 }
 
 
 
-gboolean gnect_is_player_human(gint player)
+gboolean
+gnect_is_player_human (gint player)
 {
-	return(gnect_whois_player(player) == PLAYER_HUMAN);
+	return gnect_whois_player(player) == PLAYER_HUMAN;
 }
 
 
 
-gboolean gnect_is_player_computer(gint player)
+gboolean
+gnect_is_player_computer (gint player)
 {
-	return(gnect_whois_player(player) != PLAYER_HUMAN);
+	return gnect_whois_player(player) != PLAYER_HUMAN;
 }
 
 
 
-static void gnect_switch_players(void)
+static void
+gnect_switch_players (void)
 {
 	if (gnect.current_player == PLAYER_1) gnect.current_player = PLAYER_2;
 	else gnect.current_player = PLAYER_1;
 
-	gfx_move_cursor(gnect.cursor_col);
+	gfx_move_cursor (gnect.cursor_col);
 }
 
 
 
-gint gnect_get_n_players(void)
+gint
+gnect_get_n_players (void)
 {
-	/* how many humans are playing? (0, 1 or 2) */
+	/* How many humans are playing? (0, 1 or 2) */
 
-	if (prefs.player1 == PLAYER_HUMAN && prefs.player2 == PLAYER_HUMAN) return(2);
-	if (prefs.player1 != PLAYER_HUMAN && prefs.player2 != PLAYER_HUMAN) return(0);
-	return(1);
+	if (prefs.player1 == PLAYER_HUMAN && prefs.player2 == PLAYER_HUMAN) return 2;
+	if (prefs.player1 != PLAYER_HUMAN && prefs.player2 != PLAYER_HUMAN) return 0;
+	return 1;
 }
 
 
 
-static gint gnect_computer_move(void)
+static gint
+gnect_computer_move (void)
 {
 	/* assumes gnect.current_player is PLAYER_GNECT or
 	 * PLAYER_VELENA_WEAK/MEDIUM/STRONG
@@ -261,49 +263,52 @@ static gint gnect_computer_move(void)
 	gint player;
 
 
-	player = gnect_whois_player(gnect.current_player);
+	player = gnect_whois_player (gnect.current_player);
 
 
 	/* Non-Velena Engine */
 
-	if (player == PLAYER_GNECT) return(brain_get_computer_move());
+	if (player == PLAYER_GNECT) return brain_get_computer_move();
 
 
 	/* Velena Engine */
 
-	gui_set_status(_(" Thinking..."), STATUS_MSG_SET);
+	gui_set_status (_(" Thinking..."), STATUS_MSG_SET);
 
-	gnect.veleng_str[0] = gnect_get_veleng_level_ch(player);
+	gnect.veleng_str[0] = gnect_get_veleng_level_ch (player);
 
-	return( playgame(gnect.veleng_str, gnect.veleng_board) - 1 );
+	return playgame (gnect.veleng_str, gnect.veleng_board) - 1;
 }
 
 
 
-void gnect_reset_scores(void)
+void
+gnect_reset_scores (void)
 {
 	gnect.score[0] = 0;
 	gnect.score[1] = 0;
 	gnect.score[2] = 0;
 
-	dialog_score_update();
+	dialog_score_update ();
 }
 
 
 
-void gnect_reset_display(void)
+void
+gnect_reset_display (void)
 {
 	DEBUG_PRINT(1, "gnect_reset_display\n");
 
-	gui_set_status(NULL, STATUS_MSG_CLEAR);
-	gfx_redraw(TRUE);
-	gui_update_hint_sensitivity();
-	gui_update_undo_sensitivity();
+	gui_set_status (NULL, STATUS_MSG_CLEAR);
+	gfx_redraw (TRUE);
+	gui_update_hint_sensitivity ();
+	gui_update_undo_sensitivity ();
 }
 
 
 
-static void gnect_reset_board(void)
+static void
+gnect_reset_board (void)
 {
 	gint i;
 
@@ -311,7 +316,7 @@ static void gnect_reset_board(void)
 	DEBUG_PRINT(1, "gnect_reset_board\n");
 
 	/* Gnect's board representation */
-	for(i = 0; i < N_ROWS * N_COLS; i++) {
+	for (i = 0; i < N_ROWS * N_COLS; i++) {
 		gnect.board_state[i] = TILE_CLEAR;
 	}
 
@@ -319,23 +324,24 @@ static void gnect_reset_board(void)
 	for (i = 0; i < MAX_LEN_VELENG_STR; i++) {
 		gnect.veleng_str[i] = '\0';
 	}
-	sprintf(gnect.veleng_str, "%c0", gnect_get_veleng_level_ch(PLAYER_VELENA_STRONG));
+	sprintf (gnect.veleng_str, "%c0", gnect_get_veleng_level_ch (PLAYER_VELENA_STRONG));
 }
 
 
 
-void gnect_reset(gboolean with_display)
+void
+gnect_reset (gboolean with_display)
 {
 	DEBUG_PRINT(1, "gnect_reset\n");
 
 	gnect.over = TRUE;
 
 	if (source_id != 0) {
-		g_source_remove(source_id);
+		g_source_remove (source_id);
 		source_id = 0;
 	}
 	if (anim.id) {
-		gtk_timeout_remove(anim.id);
+		gtk_timeout_remove (anim.id);
 		anim.id = 0;
 	}
 
@@ -345,7 +351,7 @@ void gnect_reset(gboolean with_display)
 
 	/* who starts? */
 
-	switch(prefs.start_mode) {
+	switch (prefs.start_mode) {
 
 	case START_MODE_PLAYER_1 :
 		gnect.current_player = PLAYER_1;
@@ -356,7 +362,7 @@ void gnect_reset(gboolean with_display)
 		break;
 
 	case START_MODE_RANDOM :
-		if (gnect_get_random_num(2) == 1) {
+		if (gnect_get_random_num (2) == 1) {
 			gnect.current_player = PLAYER_1;
 		}
 		else {
@@ -381,7 +387,7 @@ void gnect_reset(gboolean with_display)
 
 	gnect.who_starts = gnect.current_player;
 
-	gnect_reset_board();
+	gnect_reset_board ();
 
 	if (with_display) {
 
@@ -389,16 +395,16 @@ void gnect_reset(gboolean with_display)
 
 		/* reset the display */
 
-		gnect_reset_display();
-		gfx_move_cursor(gnect.cursor_col);
+		gnect_reset_display ();
+		gfx_move_cursor (gnect.cursor_col);
 
 		/* and start a new game */
 
-		if (gnect_is_player_computer(gnect.current_player)) {
-			gnect_process_move(gnect_computer_move());
+		if (gnect_is_player_computer (gnect.current_player)) {
+			gnect_process_move (gnect_computer_move ());
 		}
 		else {
-			gui_set_status_prompt(gnect.current_player);
+			gui_set_status_prompt (gnect.current_player);
 		}
 
 	}
@@ -406,29 +412,33 @@ void gnect_reset(gboolean with_display)
 
 
 
-static gint gnect_check_computer_move(gpointer data)
+static gint
+gnect_check_computer_move (gpointer data)
 {
-	/* Function to hook computer move calculations into the idle loop (Dave, 2001.01.18) */
+	/* Function to hook computer move calculations
+	 * into the idle loop (Dave, 2001.01.18)
+	 */
 
 
 	gint col;
 
 
-	if (anim.id) return(TRUE);
+	if (anim.id) return TRUE;
 
-	col = gnect_computer_move();
+	col = gnect_computer_move ();
 
 	/* in case reset while thinking */
-	if (gnect.over) return(FALSE);
+	if (gnect.over) return FALSE;
 
-	gnect_process_move(col);
+	gnect_process_move (col);
 
-	return(FALSE);
+	return FALSE;
 }
 
 
 
-static void gnect_game_over(gint winner, gint row, gint col)
+static void
+gnect_game_over (gint winner, gint row, gint col)
 {
 	gnect.over   = TRUE;
 	gnect.row    = row;
@@ -437,74 +447,75 @@ static void gnect_game_over(gint winner, gint row, gint col)
 	gnect.score[winner]++;
 
 
-	dialog_score_update();
-	gui_set_status_winner(winner, TRUE);
+	dialog_score_update ();
+	gui_set_status_winner (winner, TRUE);
 
-	if (winner != DRAWN_GAME) gfx_blink_winner(4);
+	if (winner != DRAWN_GAME) gfx_blink_winner (4);
 }
 
 
 
-void gnect_process_move(gint col)
+void
+gnect_process_move (gint col)
 {
 	gint row;
 	gint len_veleng_str;
 
 
-	gui_set_status(NULL, STATUS_MSG_CLEAR);
+	gui_set_status (NULL, STATUS_MSG_CLEAR);
 
-	gfx_move_cursor(col);
+	gfx_move_cursor (col);
 	if (gnect.over) return; /* in case reset while moving */
 
 	/* if the column's not full... */
-	if (!gnect_is_full_column(col)) {
+	if (!gnect_is_full_column (col)) {
 
 		/* add this move to the Velena Engine string */
-		len_veleng_str = strlen(gnect.veleng_str);
+		len_veleng_str = strlen (gnect.veleng_str);
 		gnect.veleng_str[len_veleng_str - 1] = '1' + col;
 		gnect.veleng_str[len_veleng_str] = '0';
 
 		DEBUG_PRINT(8, "veleng_str: %s\n", gnect.veleng_str);
 
 		/* drop counter */
-		row = gfx_drop_counter(col);
+		row = gfx_drop_counter (col);
 		if (gnect.over) return; /* in reset while dropping */
 
-		sound_event(SOUND_DROP_COUNTER);
-		if (gnect_get_n_players() && strlen(gnect.veleng_str) == 3) {
-			gui_set_undo_sensitive(TRUE);
+		sound_event (SOUND_DROP_COUNTER);
+		if (gnect_get_n_players () && strlen (gnect.veleng_str) == 3) {
+			gui_set_undo_sensitive (TRUE);
 		}
 
 		/* check for a win */
-		if (gnect_is_line(gnect.current_player, row, col, LINE_LENGTH)) {
+		if (gnect_is_line (gnect.current_player, row, col, LINE_LENGTH)) {
 
-			gui_set_hint_sensitive(FALSE);
-			gnect_game_over(gnect.current_player, row, col);
+			gui_set_hint_sensitive (FALSE);
+			gnect_game_over (gnect.current_player, row, col);
 
 		}
 		else {
 
 			/* check for a draw */
-			if (gnect_is_full_board()) {
+			if (gnect_is_full_board ()) {
 
-				gui_set_hint_sensitive(FALSE);
-				gnect_game_over(DRAWN_GAME, row, col);
+				gui_set_hint_sensitive (FALSE);
+				gnect_game_over (DRAWN_GAME, row, col);
 
 			}
 			else {
 
 				/* if nothing interesting happened, it's the next player's turn */
-				gnect_switch_players();
+				gnect_switch_players ();
 
 				/* Add computer move to idle loop. (Dave) */
-				if (!gnect.over && gnect_is_player_computer(gnect.current_player)) {
+				if (!gnect.over && gnect_is_player_computer (gnect.current_player)) {
 				    if (source_id !=0) {
-						g_source_remove(source_id);
+						g_source_remove (source_id);
 				    }
-				    source_id = g_idle_add(gnect_check_computer_move, NULL);
+				    source_id = g_idle_add (gnect_check_computer_move, NULL);
 				}
 				else if (!gnect.over) {
-					gui_set_status_prompt(gnect.current_player);
+					gui_set_status_prompt (gnect.current_player);
 				}
 
 			}
@@ -513,8 +524,8 @@ void gnect_process_move(gint col)
 	else {
 
 		/* full column, complain */
-		sound_event(SOUND_CANT_MOVE);
-		gui_set_status(_(" Sorry, full column"), STATUS_MSG_FLASH);
+		sound_event (SOUND_CANT_MOVE);
+		gui_set_status (_(" Sorry, full column"), STATUS_MSG_FLASH);
 
 	}
 
@@ -522,38 +533,40 @@ void gnect_process_move(gint col)
 
 
 
-void gnect_hint(void)
+void
+gnect_hint (void)
 {
-	if (!gnect_is_player_computer(gnect.current_player)) {
+	if (!gnect_is_player_computer (gnect.current_player)) {
 
 		gchar *hint_str;
 		gchar level_ch = gnect.veleng_str[0];
 		gint row, col;
 
-		gui_set_status(_(" Thinking..."), STATUS_MSG_FLASH);
+		gui_set_status (_(" Thinking..."), STATUS_MSG_FLASH);
 
-		gnect.veleng_str[0] = gnect_get_veleng_level_ch(PLAYER_VELENA_STRONG);
-		col = playgame(gnect.veleng_str, gnect.veleng_board);
-		hint_str = g_strdup_printf(_(" Hint: Column %d"), col);
+		gnect.veleng_str[0] = gnect_get_veleng_level_ch (PLAYER_VELENA_STRONG);
+		col = playgame (gnect.veleng_str, gnect.veleng_board);
+		hint_str = g_strdup_printf (_(" Hint: Column %d"), col);
 
 		gnect.veleng_str[0] = level_ch;
 
-		gui_set_status(hint_str, STATUS_MSG_FLASH);
-		g_free(hint_str);
+		gui_set_status (hint_str, STATUS_MSG_FLASH);
+		g_free (hint_str);
 
 		if (prefs.do_animate) {
-			gfx_move_cursor(col - 1);
-			row = gnect_get_top_used_row(col - 1) - 1;
-			gfx_blink_counter(4, gnect.current_player, row, col - 1);
+			gfx_move_cursor (col - 1);
+			row = gnect_get_top_used_row (col - 1) - 1;
+			gfx_blink_counter (4, gnect.current_player, row, col - 1);
 		}
 	}
 }
 
 
 
-static gint gnect_undo_veleng_str(void)
+static gint
+gnect_undo_veleng_str (void)
 {
-	gint undo = strlen(gnect.veleng_str);
+	gint undo = strlen (gnect.veleng_str);
 	gint col = -1;
 
 
@@ -567,26 +580,27 @@ static gint gnect_undo_veleng_str(void)
 		undo--;
 
 	}
-	return(col);
+	return col;
 }
 
 
 
-gboolean gnect_undo_move(gboolean is_wipe)
+gboolean
+gnect_undo_move (gboolean is_wipe)
 {
 	gint col;
 
 
-	col = gnect_undo_veleng_str();
+	col = gnect_undo_veleng_str ();
 	if (col == -1) {
-		return(FALSE);
+		return FALSE;
 	}
 
-	gui_set_status(NULL, STATUS_MSG_CLEAR);
+	gui_set_status (NULL, STATUS_MSG_CLEAR);
 
 	if (!gnect.over) {
-		gnect_switch_players();
-		gui_set_status_prompt(gnect.current_player);
+		gnect_switch_players ();
+		gui_set_status_prompt (gnect.current_player);
 	}
 	else if (!is_wipe) {
 		if (gnect.score[gnect.winner]) {
@@ -594,92 +608,101 @@ gboolean gnect_undo_move(gboolean is_wipe)
 		}
 		gnect.over = FALSE;
 		gnect.winner = -1;
-		dialog_score_update();
-		gui_set_status_prompt(gnect.current_player);
+		dialog_score_update ();
+		gui_set_status_prompt (gnect.current_player);
 	}
 	
-	gfx_move_cursor(col);
-	gfx_suck_counter(col, is_wipe);
+	gfx_move_cursor (col);
+	gfx_suck_counter (col, is_wipe);
 
 	DEBUG_PRINT(8, "veleng_str: %s\n", gnect.veleng_str);
 
-	if (gnect_get_n_players() == 1 && gnect_is_player_computer(gnect.current_player)) {
-		gnect_switch_players();
-		col = gnect_undo_veleng_str();
+	if (gnect_get_n_players () == 1
+		&& gnect_is_player_computer (gnect.current_player)) {
+
+		gnect_switch_players ();
+		col = gnect_undo_veleng_str ();
 		if (col != -1) {
-			gfx_move_cursor(col);
-			gfx_suck_counter(col, is_wipe);
+			gfx_move_cursor (col);
+			gfx_suck_counter (col, is_wipe);
 			DEBUG_PRINT(8, "veleng_str: %s\n", gnect.veleng_str);
 		}
 
 	}
 
-	return(gnect.veleng_str[2] != '\0');
+	return gnect.veleng_str[2] != '\0';
 }
 
 
 
-gboolean gnect_is_line(gint counter, gint row, gint col, gint len)
+gboolean
+gnect_is_line (gint counter, gint row, gint col, gint len)
 {
-	/* Return TRUE if there's a line of counter based on row, col */
+	/*
+	 * Return TRUE if there's a line of counter based on row, col
+	 */
 
 
 	gint r1, r2, c1, c2;
 
-	return( gnect_is_line_horizontal(counter, row, col, len, &r1, &c1, &r2, &c2) ||
-			gnect_is_line_vertical(counter, row,col, len, &r1, &c1, &r2, &c2) ||
-			gnect_is_line_diagonal1(counter, row, col, len, &r1, &c1, &r2, &c2) ||
-			gnect_is_line_diagonal2(counter, row, col, len, &r1, &c1, &r2, &c2) );
+	return gnect_is_line_horizontal(counter, row, col, len, &r1, &c1, &r2, &c2) ||
+		gnect_is_line_vertical(counter, row,col, len, &r1, &c1, &r2, &c2) ||
+		gnect_is_line_diagonal1(counter, row, col, len, &r1, &c1, &r2, &c2) ||
+		gnect_is_line_diagonal2(counter, row, col, len, &r1, &c1, &r2, &c2);
 }
 
 
 
-gboolean gnect_is_line_horizontal(gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
+gboolean
+gnect_is_line_horizontal (gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
 {
 	*r1 = *r2 = row;
 	*c1 = *c2 = col;
-	while(*c1 > 0 && TILE_AT(row, *c1 - 1) == counter) *c1 = *c1 - 1;
-	while(*c2 < N_COLS - 1 && TILE_AT(row, *c2 + 1) == counter) *c2 = *c2 + 1;
-	if (*c2 - *c1 >= len - 1) return(TRUE);
-	return(FALSE);
+	while (*c1 > 0 && TILE_AT(row, *c1 - 1) == counter) *c1 = *c1 - 1;
+	while (*c2 < N_COLS - 1 && TILE_AT(row, *c2 + 1) == counter) *c2 = *c2 + 1;
+	if (*c2 - *c1 >= len - 1) return TRUE;
+	return FALSE;
 }
 
 
 
-gboolean gnect_is_line_vertical(gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
+gboolean
+gnect_is_line_vertical (gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
 {
 	*r1 = *r2 = row;
 	*c1 = *c2 = col;
-	while(*r1 > 1 && TILE_AT(*r1 - 1, col) == counter) *r1 = *r1 - 1;
-	while(*r2 < N_ROWS - 1 && TILE_AT(*r2 + 1, col) == counter) *r2 = *r2 + 1;
-	if (*r2 - *r1 >= len - 1) return(TRUE);
-	return(FALSE);
+	while (*r1 > 1 && TILE_AT(*r1 - 1, col) == counter) *r1 = *r1 - 1;
+	while (*r2 < N_ROWS - 1 && TILE_AT(*r2 + 1, col) == counter) *r2 = *r2 + 1;
+	if (*r2 - *r1 >= len - 1) return TRUE;
+	return FALSE;
 }
 
 
 
-gboolean gnect_is_line_diagonal1(gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
+gboolean
+gnect_is_line_diagonal1 (gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
 {
 	/* upper left to lower right */
 
 	*r1 = *r2 = row;
 	*c1 = *c2 = col;
-	while(*c1 > 0 && *r1 > 1 && TILE_AT(*r1 - 1, *c1 - 1) == counter) {*r1 = *r1 - 1; *c1 = *c1 - 1;}
-	while(*c2 < N_COLS - 1 && *r2 < N_ROWS - 1 && TILE_AT(*r2 + 1, *c2 + 1) == counter) {*r2 = *r2 + 1; *c2 = *c2 + 1;}
-	if (*r2 - *r1 >= len - 1) return(TRUE);
-	return(FALSE);
+	while (*c1 > 0 && *r1 > 1 && TILE_AT(*r1 - 1, *c1 - 1) == counter) {*r1 = *r1 - 1; *c1 = *c1 - 1;}
+	while (*c2 < N_COLS - 1 && *r2 < N_ROWS - 1 && TILE_AT(*r2 + 1, *c2 + 1) == counter) {*r2 = *r2 + 1; *c2 = *c2 + 1;}
+	if (*r2 - *r1 >= len - 1) return TRUE;
+	return FALSE;
 }
 
 
 
-gboolean gnect_is_line_diagonal2(gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
+gboolean
+gnect_is_line_diagonal2 (gint counter, gint row, gint col, gint len, gint *r1, gint *c1, gint *r2, gint *c2)
 {
 	/* upper right to lower left */
 
 	*r1 = *r2 = row;
 	*c1 = *c2 = col;
-	while(*c1 < N_COLS - 1 && *r1 > 1 && TILE_AT(*r1 - 1, *c1 + 1) == counter) {*r1 = *r1 - 1; *c1 = *c1 + 1;}
-	while(*c2 > 0 && *r2 < N_ROWS - 1 && TILE_AT(*r2 + 1, *c2 - 1) == counter) {*r2 = *r2 + 1; *c2 = *c2 - 1;}
-	if (*r2 - *r1 >= len - 1) return(TRUE);
-	return(FALSE);
+	while (*c1 < N_COLS - 1 && *r1 > 1 && TILE_AT(*r1 - 1, *c1 + 1) == counter) {*r1 = *r1 - 1; *c1 = *c1 + 1;}
+	while (*c2 > 0 && *r2 < N_ROWS - 1 && TILE_AT(*r2 + 1, *c2 - 1) == counter) {*r2 = *r2 + 1; *c2 = *c2 - 1;}
+	if (*r2 - *r1 >= len - 1) return TRUE;
+	return FALSE;
 }

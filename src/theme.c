@@ -1,23 +1,5 @@
-/* -*-mode:c; c-style:k&r; c-basic-offset:4; -*-
- *
+/*
  * gnect theme.c
- *
- * Tim Musson
- * <trmusson@ihug.co.nz>
- *
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * http://www.gnu.org/copyleft/gpl.html
- *
  *
  */
 
@@ -76,7 +58,7 @@ static Theme     *theme_file_read(const gchar *pathname_data, const gchar *filen
 
 
 
-
+/* player descriptions allowed in theme files: */
 static gchar *descr[] = {
 	"Light",
 	"Dark",
@@ -125,18 +107,18 @@ typedef enum {
 
 
 static const struct {
-   gchar *name;
-   guint  token;
+	gchar *name;
+	guint  token;
 }
 symbols[] = {
-   { THEME_KEYWORD_TITLE,      THEME_TOKEN_TITLE },
-   { THEME_KEYWORD_TILE_SET,   THEME_TOKEN_TILE_SET },
-   { THEME_KEYWORD_PLAYER_1,   THEME_TOKEN_PLAYER_1 },
-   { THEME_KEYWORD_PLAYER_2,   THEME_TOKEN_PLAYER_2 },
-   { THEME_KEYWORD_BACKGROUND, THEME_TOKEN_BACKGROUND },
-   { THEME_KEYWORD_GRID_RGB,   THEME_TOKEN_GRID_RGB },
-   { THEME_KEYWORD_TOOLTIP,    THEME_TOKEN_TOOLTIP },
-   { THEME_KEYWORD_NO_GRID,    THEME_TOKEN_NO_GRID }
+	{ THEME_KEYWORD_TITLE,      THEME_TOKEN_TITLE },
+	{ THEME_KEYWORD_TILE_SET,   THEME_TOKEN_TILE_SET },
+	{ THEME_KEYWORD_PLAYER_1,   THEME_TOKEN_PLAYER_1 },
+	{ THEME_KEYWORD_PLAYER_2,   THEME_TOKEN_PLAYER_2 },
+	{ THEME_KEYWORD_BACKGROUND, THEME_TOKEN_BACKGROUND },
+	{ THEME_KEYWORD_GRID_RGB,   THEME_TOKEN_GRID_RGB },
+	{ THEME_KEYWORD_TOOLTIP,    THEME_TOKEN_TOOLTIP },
+	{ THEME_KEYWORD_NO_GRID,    THEME_TOKEN_NO_GRID }
 };
 
 
@@ -146,14 +128,15 @@ static const guint n_symbols = sizeof (symbols) / sizeof (symbols[0]);
 
 
 
-gboolean theme_init(const gchar *fname_theme)
+gboolean
+theme_init (const gchar *fname_theme)
 {
-	/* build a list of available themes,
+	/*
+	 * Build a list of available themes,
 	 * try to set theme_current to the theme specified by fname_theme
 	 * (if fname_theme isn't NULL) or prefs.fname_theme,
-	 * return TRUE if at least one theme is available
-	 */
-
+	 * return TRUE if at least one theme is available.
+     */ 
 
 	Theme         *theme = NULL;
 	gchar         *dname;
@@ -167,16 +150,17 @@ gboolean theme_init(const gchar *fname_theme)
 	theme_base = NULL;
 	themes     = NULL;
 
-	dname = g_strdup(PACKAGE_THEME_DIR);
+	dname = g_strdup (PACKAGE_THEME_DIR);
 
 	/* look for themes in PACKAGE_THEME_DIR (reading=2)
 	 * and USER_THEME_DIR (reading=1)
 	 */
 
 	reading = 2;
-	while(reading) {
 
-		dir = opendir(dname);
+	while (reading) {
+
+		dir = opendir (dname);
 		if (!dir) {
 
 			if (reading == 2) WARNING_PRINT("opendir failed (%s)\n", dname);
@@ -184,32 +168,32 @@ gboolean theme_init(const gchar *fname_theme)
 		}
 		else {
 
-			while ((e = readdir(dir)) != NULL) {
+			while ((e = readdir (dir)) != NULL) {
 
-				gchar *fname = g_strdup(e->d_name);
+				gchar *fname = g_strdup (e->d_name);
 
-				if (strstr(e->d_name, ".gnect")) {
-					if ((theme = theme_file_read(dname, fname))) {
+				if (strstr (e->d_name, ".gnect")) {
+					if ((theme = theme_file_read (dname, fname))) {
 						/* theme okay */
-						theme_add(theme);
+						theme_add (theme);
 					}
 				}
 
-				g_free(fname);
+				g_free (fname);
 
 			}
 
-			closedir(dir);
+			closedir (dir);
 
 		}
 
-		g_free(dname);
+		g_free (dname);
 
 		reading--;
 
 		if (reading) {
 			/* check for extra themes in home directory */
-			dname = gnect_fname_expand(g_strdup(USER_THEME_DIR));
+			dname = gnect_fname_expand (g_strdup (USER_THEME_DIR));
 		}
 
 	}
@@ -218,51 +202,53 @@ gboolean theme_init(const gchar *fname_theme)
 
 	if (theme_base) {
 
-		theme_base = theme_first();
-		theme_create_IDs();
+		theme_base = theme_first ();
+		theme_create_IDs ();
 
 		if (fname_theme) {
-			if ( !(theme_current = theme_get_ptr_from_fname(fname_theme)) ) {
+			if ( !(theme_current = theme_get_ptr_from_fname (fname_theme)) ) {
 				WARNING_PRINT("theme not available (%s)\n", fname_theme);
 			}
 		}
-		if ( !theme_current && !(theme_current = theme_get_ptr_from_fname(prefs.fname_theme)) ) {
+		if ( !theme_current && !(theme_current = theme_get_ptr_from_fname (prefs.fname_theme)) ) {
 			WARNING_PRINT("theme not available (%s)\n", prefs.fname_theme);
 			theme_current = theme_base;
 		}
 
-		return(TRUE);
+		return TRUE;
 
 	}
-	return(FALSE);
+	return FALSE;
 }
 
 
 
-static void theme_free(Theme *theme)
+static void
+theme_free (Theme *theme)
 {
 	Theme *next;
 
 
 	DEBUG_PRINT(1, "theme_free\n");
+
 	if (theme) {
 
-		while(theme->prev) theme = theme->prev; /* don't use theme_base here */
+		while (theme->prev) theme = theme->prev; /* don't use theme_base here */
 
-		while(theme) {
+		while (theme) {
 
 			DEBUG_PRINT(2, "  %d\t%s\n", theme->id, theme->title);
-			g_free(theme->title);
-			g_free(theme->fname);
-			g_free(theme->fname_tileset);
-			g_free(theme->fname_background);
-			g_free(theme->descr_player1);
-			g_free(theme->descr_player2);
-			g_free(theme->gridRGB);
-			g_free(theme->tooltip);
+			g_free (theme->title);
+			g_free (theme->fname);
+			g_free (theme->fname_tileset);
+			g_free (theme->fname_background);
+			g_free (theme->descr_player1);
+			g_free (theme->descr_player2);
+			g_free (theme->gridRGB);
+			g_free (theme->tooltip);
 
 			next = theme->next;
-			g_free(theme);
+			g_free (theme);
 			theme = next;
 		}
 
@@ -271,36 +257,39 @@ static void theme_free(Theme *theme)
 
 
 
-void theme_free_all(void)
+void
+theme_free_all (void)
 {
-	theme_free(theme_base);
+	theme_free (theme_base);
 }
 
 
 
-static Theme *theme_first(void)
+static Theme *
+theme_first (void)
 {
 	Theme *theme = theme_base;
 
 
 	if (theme) {
-		while(theme->prev) {
+		while (theme->prev) {
 			theme = theme->prev;
 		}
 	}
-	return(theme);
+	return (theme);
 }
 
 
 
-static void theme_create_IDs(void)
+static void
+theme_create_IDs (void)
 {
 	Theme *theme = theme_base;
 	gint theme_id = 0;
 
 
 	DEBUG_PRINT(1, "theme_create_IDs\n");
-	while(theme) {
+	while (theme) {
 		DEBUG_PRINT(2, "\t%d\t%s\n", theme_id, theme->title);
 		theme->id = theme_id;
 		theme_id++;
@@ -310,9 +299,12 @@ static void theme_create_IDs(void)
 
 
 
-static void theme_add(Theme *new_theme)
+static void
+theme_add (Theme *new_theme)
 {
-	/* insert new_theme alphabetically, according to title */
+	/*
+	 * Insert new_theme alphabetically, according to title
+	 */
 
 
 	if (!themes) {
@@ -324,10 +316,10 @@ static void theme_add(Theme *new_theme)
 		gboolean end_of_list = FALSE;
 		gboolean add_before  = FALSE;
 
+		themes = theme_first ();
 
-		themes = theme_first();
-		while(!end_of_list) {
-			if ((add_before = strcasecmp(new_theme->title, themes->title) <= 0)) {
+		while (!end_of_list) {
+			if ((add_before = strcasecmp (new_theme->title, themes->title) <= 0)) {
 				break;
 			}
 			if (!(end_of_list = (themes->next == NULL))) {
@@ -351,36 +343,39 @@ static void theme_add(Theme *new_theme)
 
 
 
-Theme *theme_get_ptr_from_fname(const gchar *fname)
+Theme *
+theme_get_ptr_from_fname (const gchar *fname)
 {
 	Theme *theme = theme_base;
 
 
 	if (fname) {
-		while(theme) {
-			if (strcmp(fname, theme->fname) == 0) return(theme);
+		while (theme) {
+			if (strcmp (fname, theme->fname) == 0) return theme;
 			theme = theme->next;
 		}
 	}
-	return(NULL);
+	return NULL;
 }
 
 
 
-static gint theme_get_player_description_id(const gchar *str)
+static gint
+theme_get_player_description_id (const gchar *str)
 {
 	gint i;
 
 
 	for (i = 0; i < N_PLAYER_DESCRIPTIONS; i++) {
-		if (!strcasecmp(str, descr[i])) return(i);
+		if (!strcasecmp (str, descr[i])) return i;
 	}
-	return(-1);
+	return -1;
 }
 
 
 
-static gboolean theme_translate_player_description(Theme *theme, gint player, gchar *str)
+static gboolean
+theme_translate_player_description (Theme *theme, gint player, gchar *str)
 {
 	/* I don't think I understand gettext_noop(), so here's this... */
 
@@ -388,83 +383,84 @@ static gboolean theme_translate_player_description(Theme *theme, gint player, gc
 	gint id;
 
 
-	id = theme_get_player_description_id(str);
+	id = theme_get_player_description_id (str);
 
-	switch(id) {
+	switch (id) {
 	case DESCR_LIGHT :
-		descr_str = g_strdup(_("Light"));
+		descr_str = g_strdup (_("Light"));
 		break;
 	case DESCR_DARK :
-		descr_str = g_strdup(_("Dark"));
+		descr_str = g_strdup (_("Dark"));
 		break;
 	case DESCR_BLACK :
-		descr_str = g_strdup(_("Black"));
+		descr_str = g_strdup (_("Black"));
 		break;
 	case DESCR_WHITE :
-		descr_str = g_strdup(_("White"));
+		descr_str = g_strdup (_("White"));
 		break;
 	case DESCR_GREY :
-		descr_str = g_strdup(_("Grey"));
+		descr_str = g_strdup (_("Grey"));
 		break;
 	case DESCR_YELLOW :
-		descr_str = g_strdup(_("Yellow"));
+		descr_str = g_strdup (_("Yellow"));
 		break;
 	case DESCR_RED :
-		descr_str = g_strdup(_("Red"));
+		descr_str = g_strdup (_("Red"));
 		break;
 	case DESCR_BLUE :
-		descr_str = g_strdup(_("Blue"));
+		descr_str = g_strdup (_("Blue"));
 		break;
 	case DESCR_GREEN :
-		descr_str = g_strdup(_("Green"));
+		descr_str = g_strdup (_("Green"));
 		break;
 	case DESCR_ORANGE :
-		descr_str = g_strdup(_("Orange"));
+		descr_str = g_strdup (_("Orange"));
 		break;
 	case DESCR_PURPLE :
-		descr_str = g_strdup(_("Purple"));
+		descr_str = g_strdup (_("Purple"));
 		break;
 	case DESCR_PINK :
-		descr_str = g_strdup(_("Pink"));
+		descr_str = g_strdup (_("Pink"));
 		break;
 	case DESCR_VIOLET :
-		descr_str = g_strdup(_("Violet"));
+		descr_str = g_strdup (_("Violet"));
 		break;
 	case DESCR_BROWN :
-		descr_str = g_strdup(_("Brown"));
+		descr_str = g_strdup (_("Brown"));
 		break;
 	default :
-		return(FALSE);
+		return FALSE;
 		break;
 	}
 
 	if (player == PLAYER_1) {
-		g_free(theme->descr_player1);
+		g_free (theme->descr_player1);
 		theme->descr_player1 = descr_str;
 	}
 	else {
-		g_free(theme->descr_player2);
+		g_free (theme->descr_player2);
 		theme->descr_player2 = descr_str;
 	}
 
-	return(TRUE);
+	return TRUE;
 }
 
 
 
-static guint theme_file_parse_symbols(GScanner *scanner, Theme *new_theme)
+static guint
+theme_file_parse_symbols (GScanner *scanner, Theme *new_theme)
 {
 	guint symbol;
 
 
-	g_scanner_get_next_token(scanner);
+	g_scanner_get_next_token (scanner);
 	symbol = scanner->token;
 	if (scanner->token == G_TOKEN_EQUAL_SIGN) {
-		g_scanner_get_next_token(scanner);
-		return(G_TOKEN_NONE);
+		g_scanner_get_next_token (scanner);
+		return G_TOKEN_NONE;
 	}
 	else if (symbol < THEME_TOKEN_FIRST || symbol > THEME_TOKEN_LAST) {
-		return(G_TOKEN_SYMBOL);
+		return G_TOKEN_SYMBOL;
 	}
 
 
@@ -474,14 +470,14 @@ static guint theme_file_parse_symbols(GScanner *scanner, Theme *new_theme)
 
 		/* ...all other keywords do */
 
-		g_scanner_get_next_token(scanner);
+		g_scanner_get_next_token (scanner);
 		if (scanner->token != G_TOKEN_EQUAL_SIGN) {
-			return(G_TOKEN_EQUAL_SIGN);
+			return G_TOKEN_EQUAL_SIGN;
 		}
 
-		g_scanner_get_next_token(scanner);
+		g_scanner_get_next_token (scanner);
 		if (scanner->token != G_TOKEN_STRING) {
-			return(G_TOKEN_STRING);
+			return G_TOKEN_STRING;
 		}
 
 	}
@@ -489,58 +485,59 @@ static guint theme_file_parse_symbols(GScanner *scanner, Theme *new_theme)
 
 	switch (symbol) {
 	case THEME_TOKEN_TITLE :
-		g_free(new_theme->title); /* free'd in case of duplicate entries */
-		new_theme->title = g_strstrip(g_strdup(scanner->value.v_string));
+		g_free (new_theme->title); /* free'd in case of duplicate entries */
+		new_theme->title = g_strstrip (g_strdup(scanner->value.v_string));
 		break;
 	case THEME_TOKEN_TILE_SET :
-		g_free(new_theme->fname_tileset);
-		new_theme->fname_tileset = g_strstrip(g_strdup(scanner->value.v_string));
+		g_free (new_theme->fname_tileset);
+		new_theme->fname_tileset = g_strstrip (g_strdup(scanner->value.v_string));
 		break;
 	case THEME_TOKEN_PLAYER_1 :
-		if (!theme_translate_player_description(new_theme, PLAYER_1, g_strstrip(g_strdup(scanner->value.v_string)))) {
+		if (!theme_translate_player_description (new_theme, PLAYER_1, g_strstrip (g_strdup (scanner->value.v_string)))) {
 			WARNING_PRINT("illegal value for Player1 in theme file\n");
 		}
 		break;
 	case THEME_TOKEN_PLAYER_2 :
-		if (!theme_translate_player_description(new_theme, PLAYER_2, g_strstrip(g_strdup(scanner->value.v_string)))) {
+		if (!theme_translate_player_description (new_theme, PLAYER_2, g_strstrip (g_strdup (scanner->value.v_string)))) {
 			WARNING_PRINT("illegal value for Player1 in theme file\n");
 		}
 		break;
 	case THEME_TOKEN_BACKGROUND :
-		g_free(new_theme->fname_background);
-		new_theme->fname_background = g_strstrip(g_strdup(scanner->value.v_string));
+		g_free (new_theme->fname_background);
+		new_theme->fname_background = g_strstrip (g_strdup(scanner->value.v_string));
 		break;
 	case THEME_TOKEN_GRID_RGB :
-		g_free(new_theme->gridRGB);
-		new_theme->gridRGB = g_strstrip(g_strdup(scanner->value.v_string));
+		g_free (new_theme->gridRGB);
+		new_theme->gridRGB = g_strstrip (g_strdup (scanner->value.v_string));
 		break;
 	case THEME_TOKEN_TOOLTIP :
-		g_free(new_theme->tooltip);
-		new_theme->tooltip = g_strstrip(g_strdup(scanner->value.v_string));
+		g_free (new_theme->tooltip);
+		new_theme->tooltip = g_strstrip (g_strdup (scanner->value.v_string));
 		break;
 	case THEME_TOKEN_NO_GRID :
-		g_free(new_theme->gridRGB);
+		g_free (new_theme->gridRGB);
 		new_theme->gridRGB = NULL;
 		break;
 	default:
 		break;
 	}
 
-   return(G_TOKEN_NONE);
+	return G_TOKEN_NONE;
 }
 
 
 
-static gboolean theme_file_parse(const gchar *fname, Theme *new_theme)
+static gboolean
+theme_file_parse (const gchar *fname, Theme *new_theme)
 {
 	GScanner *scanner;
 	guint i, expected;
 	gint fd;
 
 
-	if ( (fd = open(fname, O_RDONLY)) < 0 ) return(FALSE);
+	if ( (fd = open (fname, O_RDONLY)) < 0 ) return FALSE;
 
-	scanner = g_scanner_new(NULL);
+	scanner = g_scanner_new (NULL);
 
 	scanner->config->cset_identifier_nth   = (G_CSET_a_2_z G_CSET_A_2_Z "~/&()-_+:.%#0123456789");
 	scanner->config->cset_identifier_first = (G_CSET_a_2_z G_CSET_A_2_Z "~/&()-_+:.%0123456789");
@@ -553,50 +550,52 @@ static gboolean theme_file_parse(const gchar *fname, Theme *new_theme)
 	scanner->input_name = fname;
 
 	for (i = 0; i < n_symbols; i++) {
-		g_scanner_scope_add_symbol(scanner, 0, symbols[i].name, 
-                                           GINT_TO_POINTER(symbols[i].token));
+		g_scanner_scope_add_symbol (scanner, 0, symbols[i].name, 
+									GINT_TO_POINTER(symbols[i].token));
 	}
 
-	g_scanner_input_file(scanner, fd);
+	g_scanner_input_file (scanner, fd);
 
 	do {
 
-		expected = theme_file_parse_symbols(scanner, new_theme);
+		expected = theme_file_parse_symbols (scanner, new_theme);
 
 		if (expected == G_TOKEN_SYMBOL) {
-			g_scanner_unexp_token(scanner, expected, NULL, "symbol", NULL, NULL, FALSE);
+			g_scanner_unexp_token (scanner, expected, NULL, "symbol", NULL, NULL, FALSE);
 		}
 		else if (expected == G_TOKEN_STRING) {
-			g_scanner_unexp_token(scanner, expected, NULL, "string", NULL, NULL, FALSE);
+			g_scanner_unexp_token (scanner, expected, NULL, "string", NULL, NULL, FALSE);
 		}
 		else if (expected == G_TOKEN_EQUAL_SIGN) {
-			g_scanner_unexp_token(scanner, expected, NULL, "=", NULL, NULL, FALSE);
+			g_scanner_unexp_token (scanner, expected, NULL, "=", NULL, NULL, FALSE);
 		}
-		g_scanner_peek_next_token(scanner);
+		g_scanner_peek_next_token (scanner);
 
 	} while (scanner->next_token != G_TOKEN_EOF && scanner->next_token != G_TOKEN_ERROR);
 
 
 	if (expected != G_TOKEN_NONE) {
-		g_scanner_unexp_token(scanner, expected, NULL, "symbol", NULL, NULL, TRUE);
+		g_scanner_unexp_token (scanner, expected, NULL, "symbol", NULL, NULL, TRUE);
 	}
 
 
-	g_scanner_destroy(scanner);
-	close(fd);
+	g_scanner_destroy (scanner);
+	close (fd);
 
-	return(TRUE);
+	return TRUE;
 }
 
 
 
-static Theme *theme_file_read(const gchar *pathname_data, const gchar *filename)
+static Theme *
+theme_file_read (const gchar *pathname_data, const gchar *filename)
 {
-	/* create a new empty theme,
+    /*
+	 * Create a new empty theme,
 	 *   build a complete file name,
 	 *   call theme_file_parse to fill in the new theme,
 	 *   check the values obtained,
-	 *   return the new theme if all okay, else NULL
+	 *   return the new theme if all okay, otherwise NULL.
 	 */
 
 	Theme     *theme;
@@ -606,45 +605,44 @@ static Theme *theme_file_read(const gchar *pathname_data, const gchar *filename)
 	gboolean  tileset_exists = TRUE, background_exists = TRUE;
 
 
-
 	/* allocate a new, NULL-filled theme info structure */
-	theme = g_new0(Theme, 1);
-	theme->gridRGB = g_strdup(DEFAULT_GRID_COLOUR);
-	theme->is_user_theme = (strcasecmp(pathname_data, user_data_dir) == 0);
+	theme = g_new0 (Theme, 1);
+	theme->gridRGB = g_strdup (DEFAULT_GRID_COLOUR);
+	theme->is_user_theme = (strcasecmp (pathname_data, user_data_dir) == 0);
 
 
 	/* get the new theme's full filename */
-	fname = g_strdup_printf("%s/%s", pathname_data, filename);
+	fname = g_strdup_printf ("%s/%s", pathname_data, filename);
 
 
 	/* open and parse the file, filling in the new theme */
-	if (!theme_file_parse(fname, theme)) {
+	if (!theme_file_parse (fname, theme)) {
 		WARNING_PRINT("theme_file_read failed (%s)\n", fname);
-		g_free(fname);
-		g_free(user_data_dir);
-		g_free(user_pixmap_dir);
-		theme_free(theme);
-		return(NULL);
+		g_free (fname);
+		g_free (user_data_dir);
+		g_free (user_pixmap_dir);
+		theme_free (theme);
+		return NULL;
 	}
 
 
 	/* make sure the specified tile set exists */
 	if (theme->fname_tileset && theme->fname_tileset[0] != '\0') {
 		if (theme->is_user_theme) {
-			fname = g_strdup_printf("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_tileset);
-			tileset_exists = gnect_file_exists(fname);
+			fname = g_strdup_printf ("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_tileset);
+			tileset_exists = gnect_file_exists (fname);
 			if (!tileset_exists) {
 				/* not in user dir - try installed pixmap dir */
-				g_free(fname);
-				fname = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
-				tileset_exists = gnect_file_exists(fname);
+				g_free (fname);
+				fname = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
+				tileset_exists = gnect_file_exists (fname);
 			}
 		}
 		else {
-			fname = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
-			tileset_exists = gnect_file_exists(fname);
+			fname = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
+			tileset_exists = gnect_file_exists (fname);
 		}
-		g_free(fname);
+		g_free (fname);
 	}
 
 
@@ -652,31 +650,31 @@ static Theme *theme_file_read(const gchar *pathname_data, const gchar *filename)
 	if (tileset_exists) {
 		if (theme->fname_background && theme->fname_background[0] != '\0') {
 			if (theme->is_user_theme) {
-				fname = g_strdup_printf("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_background);
-				background_exists = gnect_file_exists(fname);
+				fname = g_strdup_printf ("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_background);
+				background_exists = gnect_file_exists (fname);
 				if (!background_exists) {
 					/* not in user dir - try installed pixmap dir */
-					g_free(fname);
-					fname = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
-					background_exists = gnect_file_exists(fname);
+					g_free (fname);
+					fname = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
+					background_exists = gnect_file_exists (fname);
 				}
 			}
 			else {
-				fname = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
-				background_exists = gnect_file_exists(fname);
+				fname = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
+				background_exists = gnect_file_exists (fname);
 			}
-			g_free(fname);
+			g_free (fname);
 		}
 		if (!background_exists) {
 			/* complain, but continue anyway, if we can't get the background image */
 			WARNING_PRINT("background image (%s) for theme (%s) does not exist\n", theme->fname_background, filename);
-			g_free(theme->fname_background);
+			g_free (theme->fname_background);
 			theme->fname_background = NULL;
 		}
 	}
 
-	g_free(user_data_dir);
-	g_free(user_pixmap_dir);
+	g_free (user_data_dir);
+	g_free (user_pixmap_dir);
 
 
 	/* check that required items were found  */
@@ -694,22 +692,25 @@ static Theme *theme_file_read(const gchar *pathname_data, const gchar *filename)
 		}
 
 		/* required items missing - toss this theme */
-		theme_free(theme);
+		theme_free (theme);
 
-		return(NULL);
+		return NULL;
 	}
 
 	/* all okay */
-	theme->fname = g_strdup(filename);
+	theme->fname = g_strdup (filename);
 
-	return(theme);
+	return theme;
 }
 
 
 
-gboolean theme_load(Theme* theme)
+gboolean
+theme_load (Theme* theme)
 {
-	/* Get image filenames then switch to the new theme */
+	/*
+	 * Get image filenames then switch to the new theme
+	 */
 
 	gchar     *user_pixmap_dir;
 	gchar     *fname_tileset;
@@ -720,45 +721,45 @@ gboolean theme_load(Theme* theme)
 	if (!theme) {
 		/* should never happen */
 		ERROR_PRINT("theme_load(NULL)\n");
-		return(FALSE);
+		return FALSE;
 	}
 
 	DEBUG_PRINT(1, "theme_load (%s)\n", theme->fname);
 
 	if (theme->is_user_theme) {
 
-		user_pixmap_dir = gnect_fname_expand(g_strdup(USER_PIXMAP_DIR));
-		fname_tileset = g_strdup_printf("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_tileset);
-		if (!gnect_file_exists(fname_tileset)) {
-			g_free(fname_tileset);
-			fname_tileset = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
+		user_pixmap_dir = gnect_fname_expand (g_strdup (USER_PIXMAP_DIR));
+		fname_tileset = g_strdup_printf ("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_tileset);
+		if (!gnect_file_exists (fname_tileset)) {
+			g_free (fname_tileset);
+			fname_tileset = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
 		}
 
 		if (theme->fname_background) {
 
-			fname_background = g_strdup_printf("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_background);
-			if (!gnect_file_exists(fname_background)) {
-				g_free(fname_background);
-				fname_background = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
+			fname_background = g_strdup_printf ("%s%s%s", user_pixmap_dir, G_DIR_SEPARATOR_S, theme->fname_background);
+			if (!gnect_file_exists (fname_background)) {
+				g_free (fname_background);
+				fname_background = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
 			}
 
 		}
-		g_free(user_pixmap_dir);
+		g_free (user_pixmap_dir);
 
 	}
 	else {
 
-		fname_tileset = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
-		if (!gnect_file_exists(fname_tileset)) {
-			g_free(fname_tileset);
-			return(FALSE);
+		fname_tileset = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_tileset);
+		if (!gnect_file_exists (fname_tileset)) {
+			g_free (fname_tileset);
+			return FALSE;
 		}
 
 		if (theme->fname_background) {
 
-			fname_background = g_strdup_printf("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
-			if (!gnect_file_exists(fname_background)) {
-				g_free(fname_background);
+			fname_background = g_strdup_printf ("%s%s", PACKAGE_PIXMAP_DIR, theme->fname_background);
+			if (!gnect_file_exists (fname_background)) {
+				g_free (fname_background);
 				fname_background = NULL;
 			}
 
@@ -772,9 +773,9 @@ gboolean theme_load(Theme* theme)
 		theme_current = theme;
 	}
 
-	g_free(fname_tileset);
-	g_free(fname_background);
+	g_free (fname_tileset);
+	g_free (fname_background);
 
 
-	return(okay);
+	return okay;
 }
