@@ -1,3 +1,8 @@
+2004-01-13  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* data/Makefile.am: spaces->tab, fixing gnect schemas install
+	(thanks Joe).
+
 2004-01-08  Tim Musson  <trmusson@ihug.co.nz>
 
 	* src/gfx.c:
