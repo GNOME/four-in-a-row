@@ -1,3 +1,15 @@
+2005-04-05  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/main.c: Break up process_move for two reasons:
+	a) So we aren't explicitly using running the GTK main loop.
+	b) So that process_move is no longer recursive.
+	See bug #172597 for details about why this is bad.
+	This fix is a very quick and dirty fix. It doesn't actually 
+	improve the structure of the code at all. It merely makes it 
+	seem to behave correctly. The changes necessary to on_game_hint
+	are even worse and probably don't set the hint menu item 
+	sensitivity correctly, although that won't matter.
+	
 2005-04-04  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/prefs.c:
