@@ -1,3 +1,19 @@
+2005-04-04  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/prefs.c:
+	* src/main.h:
+	* src/main.c: When the program starts, and after each setting of 
+	the player levels, set the starting player to player 1 (red). 
+	Only alternate after that. Originally the started was random and
+	then alternated.
+	
+	* src/prefs.c:
+	* src/prefs.h:
+	* src/main.c: Auto start the game. Inserted on_game_new
+	just before gtk_main. Removed the unused args from on_game_new.
+	Start a new game when the player changes. Don't desensitize the 
+	difficulty setting options during game play.
+
 2005-03-28  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/main.c (create_app): Gnect -> Four in a row for the welcome

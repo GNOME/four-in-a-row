@@ -44,6 +44,7 @@ typedef enum {
 	LEVEL_STRONG
 } LevelID;
 
+extern PlayerID  who_starts;
 
 void game_reset (gboolean start);
 void prompt_player (void);

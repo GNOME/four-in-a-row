@@ -257,15 +257,6 @@ on_toggle_animate (GtkToggleButton *t, gpointer data)
 }
 
 
-void
-prefsbox_players_set_sensitive (gboolean sensitive)
-{
-	if (prefsbox == NULL) return;
-	gtk_widget_set_sensitive (frame_player1, sensitive);
-	gtk_widget_set_sensitive (frame_player2, sensitive);
-}
-
-
 static void
 on_select_player1 (GtkWidget *w, gpointer data)
 {
@@ -274,7 +265,8 @@ on_select_player1 (GtkWidget *w, gpointer data)
 	gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER1, 
                               GPOINTER_TO_INT(data), NULL);
 	scorebox_reset ();
-	game_reset (FALSE);
+	who_starts = PLAYER2; /* This gets reversed in game_reset. */
+	game_reset (TRUE);
 }
 
 
@@ -287,7 +279,8 @@ on_select_player2 (GtkWidget *w, gpointer data)
 	gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER2, 
                               GPOINTER_TO_INT(data), NULL);
 	scorebox_reset ();
-	game_reset (FALSE);
+	who_starts = PLAYER2; /* This gets reversed in game_reset. */
+	game_reset (TRUE);
 }
 
 

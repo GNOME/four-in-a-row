@@ -27,5 +27,4 @@ struct _Prefs {
 
 void prefs_init (gint argc, gchar **argv);
 void prefsbox_open (void);
-void prefsbox_players_set_sensitive (gboolean sensitive);
 

@@ -357,7 +357,6 @@ set_status (StatusID id, const gchar *s)
 static void
 newgame_set_sensitive (gboolean sensitive)
 {
-	prefsbox_players_set_sensitive (gameover);
 	gtk_widget_set_sensitive (game_menu_uiinfo[0].widget, sensitive);
 	gtk_widget_set_sensitive (toolbar[0].widget, sensitive);
 }
@@ -407,7 +406,7 @@ game_init (void)
 	score[PLAYER2]  = 0;
 	score[NOBODY]   = 0;
 
-	who_starts = (get_random_int (2) == 1) ? PLAYER1 : PLAYER2;
+	who_starts = PLAYER2; /* This gets reversed immediately. */
 
 	clear_board ();
 }
@@ -569,7 +568,7 @@ prompt_player (void)
 
 
 static void
-on_game_new (GtkMenuItem *m, gpointer data)
+on_game_new (void)
 {
 	stop_anim ();
 	game_reset (TRUE);
@@ -1342,8 +1341,10 @@ main (int argc, char *argv[])
 	if (!gfx_load_pixmaps ())
 		return 0;
 
-	if (create_app ())
+	if (create_app ()) {
+		on_game_new ();
 		gtk_main ();
+	}
 
 
 	game_free ();
