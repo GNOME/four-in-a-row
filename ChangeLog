@@ -1,3 +1,7 @@
+2004-07-08  Paolo Borelli  <pborelli@katamail.com>
+
+	* gfx.c: harmless thinko in grid drawing.
+
 2004-06-05  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* prefs.c: Use Paolo Borelli's new key control selection code.

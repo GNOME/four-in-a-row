@@ -170,7 +170,7 @@ gfx_draw_grid (void)
 	for (i = tilew; i < width; i = i + tilew) {
 		gdk_draw_line (pm_bground, gc, i, 0, i, height);
 	}
-	for (i = tileh; i < width; i = i + tileh) {
+	for (i = tileh; i < height; i = i + tileh) {
 		gdk_draw_line (pm_bground, gc, 0, i, width, i);
 	}
 	gdk_colormap_free_colors (cmap, &color, 1);
