@@ -3,12 +3,12 @@
         "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"
 [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "2.0">
-  <!ENTITY manrevision "2.2">
+  <!ENTITY appversion "2.4">
+  <!ENTITY manrevision "2.4">
   <!ENTITY date "April 2002">
   <!ENTITY app "<application>Gnect</application>">
   <!ENTITY appname "Gnect">
-  <!ENTITY version "2.0">
+  <!ENTITY version "2.4">
   <!ENTITY mdash "-">
   <!ENTITY hellip "...">
 ]>
@@ -274,7 +274,7 @@
 
                 <listitem>
                   <para>
-                    <guimenuitem>Show tool bar</guimenuitem>
+                    <guimenuitem>Toolbar</guimenuitem>
                     &mdash;
                     This toggle switches the tool bar on and off.
                   </para>
@@ -318,48 +318,16 @@
           <term><guimenu>Help</guimenu></term>
           <listitem>
             <para>
-              This menu contains:
+             This menu contains:
               <itemizedlist>
 
                 <listitem>
                   <para>
-                    <guimenuitem>&appname; Manual</guimenuitem>
-                    &mdash;
-                    Opens your help browser and shows this manual.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Playing &appname;</guimenuitem>
-                    &mdash;
-                    Shows the section of the manual describing how to play.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Creating New Themes</guimenuitem>
-                    &mdash;
-                    Shows the section explaining how to make your own themes
-                    for &app;.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Known Bugs</guimenuitem>
-                    &mdash;
-                    Shows the section listing the program's known bugs.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Authors and Bug Reporting</guimenuitem>
-                    &mdash;
-                    Shows author email addresses and information on
-                    submitting bug reports.           
+                    <menuchoice>
+                      <shortcut><keysym>F1</keysym></shortcut>
+                      <guimenuitem>Contents</guimenuitem>&mdash;
+                      Opens your help browser and shows this manual.
+                    </menuchoice>
                   </para>
                 </listitem>
 
@@ -408,8 +376,10 @@
             </term>
             <listitem>
               <para>
-                These two columns tell &app; who's playing. To play against
-                a friend, select Human for both Player 1 and Player 2.
+                These two columns tell &app; who's playing. Velena is
+                the name of the algorithm used to make the computer
+                player challenging. To play against a friend, select
+                Human for both Player 1 and Player 2.
               </para>
             </listitem>
           </varlistentry>
@@ -435,22 +405,11 @@
         <variablelist>
 
           <varlistentry>
-            <term><guilabel>Theme selection</guilabel></term>
+            <term><guilabel>Theme</guilabel></term>
             <listitem>
               <para>
                 The theme menu lists available themes and lets
                 you choose your favourite.
-              </para>
-            </listitem>
-          </varlistentry>
-
-          <varlistentry>
-            <term><guilabel>Keyboard control</guilabel></term>
-            <listitem>
-              <para>
-                Use these entry boxes to configure keyboard play.
-                Select the box belonging to an action, then press the key
-                you'd like to perform that action.
               </para>
             </listitem>
           </varlistentry>
@@ -480,17 +439,9 @@
             </listitem>
           </varlistentry>
 
-          <varlistentry>
-            <term><guilabel>If stopping an unfinished game:
-                Ask me first</guilabel></term>
-            <listitem>
-              <para>
-                If this option is checked, &app; will ask you before
-                quitting or starting a new game while there's still a
-                game in progress.
-              </para>
-            </listitem>
-          </varlistentry>
+          Finally there is a <guilabel>Controls</guilabel> tab to
+          change the keyboard controls. To change a control, click the
+          appropriate button and then type the new key.
 
         </variablelist>
       </para>
@@ -546,7 +497,7 @@
         <title>An example tile set</title>
         <screenshot>
           <screeninfo>This image shows the six tiles in a tile set</screeninfo>
-          <graphic format="PNG" fileref="figures/tileset" srccredit="TRM"></graphic>
+          <graphic format="PNG" fileref="figures/tileset.png" srccredit="TRM"></graphic>
         </screenshot>
       </figure>
 
@@ -716,11 +667,6 @@ Tooltip = "Artwork credits or whatever you like"
   <sect1 id="bugs">
 
     <title>Known Bugs and Limitations</title>
-
-    <para>
-      Navigation of the <interface>Preferences Dialog</interface> can
-      be difficult due to the entry boxes grabbing keyboard focus.
-    </para>
 
     <para>
       Occasionally a marble-dropping animation doesn't look as smooth

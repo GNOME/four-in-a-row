@@ -1,3 +1,7 @@
+2003-07-30  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/C/gnect.xml: Updated documentation for 2.4.
+
 2003-07-10  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/prefs.c (prefs_dialog_create): 
