@@ -1,5 +1,7 @@
 2003-06-13  Callum McKenzie  <callum@physics.otago.ac.nz>
 
+	* src/gui.c: Removed the "are you sure" questions.
+
 	* src/prefs.c: Removed dead code from the preferences response
 	callback (actually deleted the entire function and made the
 	callback gtk_widget_hide).

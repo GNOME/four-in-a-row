@@ -35,7 +35,7 @@ static GtkWidget *app_bar;
 
 
 
-static void cb_gui_quit_verify(GtkWidget *widget, gpointer data);
+static void cb_gui_quit(GtkWidget *widget, gpointer data);
 static void cb_gui_game_new(GtkWidget *widget, gpointer data);
 static void cb_gui_game_undo(GtkWidget *widget, gpointer data);
 static void cb_gui_game_hint(GtkWidget *widget, gpointer data);
@@ -57,7 +57,7 @@ GnomeUIInfo game_menu[] = {
         GNOMEUIINFO_MENU_HINT_ITEM(cb_gui_game_hint, NULL),
         GNOMEUIINFO_SEPARATOR,
         GNOMEUIINFO_MENU_SCORES_ITEM(cb_gui_game_scores, NULL),
-        GNOMEUIINFO_MENU_QUIT_ITEM(cb_gui_quit_verify, NULL),
+        GNOMEUIINFO_MENU_QUIT_ITEM(cb_gui_quit, NULL),
         GNOMEUIINFO_END
 };
 GnomeUIInfo settings_menu[] = {
@@ -87,8 +87,6 @@ GnomeUIInfo toolbar[] = {
         GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Start a new game"), cb_gui_game_new, GTK_STOCK_NEW),
         GNOMEUIINFO_ITEM_STOCK(N_("Undo"), N_("Undo the last move"), cb_gui_game_undo, GTK_STOCK_UNDO),
         GNOMEUIINFO_ITEM_STOCK(N_("Hint"), N_("Get a hint for your next move"), cb_gui_game_hint, GTK_STOCK_HELP),
-        /* GNOMEUIINFO_ITEM_STOCK(N_("Scores"), N_("View the scores"), cb_gui_game_scores, GNOME_STOCK_SCORES), */
-        /* GNOMEUIINFO_ITEM_STOCK(N_("Quit"), N_("Exit the program"), cb_gui_quit_verify, GTK_STOCK_QUIT), */
         GNOMEUIINFO_END
 };
 
@@ -110,44 +108,9 @@ GnomeUIInfo toolbar[] = {
 
 
 static void
-cb_gui_quit_test (GtkWidget *widget, int response_id, gpointer data)
+cb_gui_quit (GtkWidget *widget, gpointer data)
 {
-        if (response_id == GTK_RESPONSE_ACCEPT) {
-                gtk_main_quit ();
-        }
-        else {
-                gtk_widget_destroy (widget);
-        }
-}
-
-
-
-static void
-cb_gui_quit_verify (GtkWidget *widget, gpointer data)
-{
-        GtkWidget *quitverify;
-
-
-        if (prefs.do_verify && !gnect.over) {
-
-                quitverify = gtk_message_dialog_new (GTK_WINDOW(app),
-                              GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                              GTK_MESSAGE_QUESTION,
-                              GTK_BUTTONS_NONE,
-                              _("Are you sure you want to quit Gnect?"));
-
-                gtk_dialog_add_buttons (GTK_DIALOG(quitverify),
-                                        GTK_STOCK_CANCEL, GTK_RESPONSE_REJECT,
-                                        GTK_STOCK_QUIT, GTK_RESPONSE_ACCEPT,
-                                        NULL);
-                gtk_dialog_set_has_separator (GTK_DIALOG (quitverify), FALSE);
-                g_signal_connect (GTK_OBJECT(quitverify), "response", 
-                                  G_CALLBACK(cb_gui_quit_test), NULL);
-                gtk_widget_show(quitverify);
-        }
-        else {
-                gnect_cleanup (0);
-        }
+  gtk_main_quit ();
 }
 
 
@@ -166,27 +129,8 @@ cb_gui_game_new_test (GtkWidget *widget, gint response_id, gpointer data)
 static void
 cb_gui_game_new (GtkWidget *widget, gpointer data)
 {
-        GtkWidget *newverify;
-
-
-        while (anim.id) gtk_main_iteration ();
-
-        if (prefs.do_verify && !gnect.over) {
-
-                newverify = gtk_message_dialog_new (GTK_WINDOW(app),
-                              GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                              GTK_MESSAGE_QUESTION,
-                              GTK_BUTTONS_YES_NO,
-                              _("Are you sure you want to start a new game?"));
-                gtk_dialog_set_has_separator (GTK_DIALOG (newverify), FALSE);
-                g_signal_connect (GTK_OBJECT(newverify), "response", 
-                                  G_CALLBACK(cb_gui_game_new_test), NULL);
-                gtk_widget_show (newverify);
-        }
-        else {
-                gfx_wipe_board ();
-                gnect_reset (TRUE);
-        }
+        gfx_wipe_board ();
+        gnect_reset (TRUE);
 }
 
 
@@ -609,8 +553,8 @@ gui_create (void)
         gtk_window_set_policy (GTK_WINDOW(app), FALSE, FALSE, TRUE);
         gtk_window_set_wmclass (GTK_WINDOW(app), APPNAME, "main");
 
-        g_signal_connect (GTK_OBJECT(app), "delete_event", GTK_SIGNAL_FUNC(cb_gui_quit_verify), NULL);
-        g_signal_connect (GTK_OBJECT(app), "destroy", GTK_SIGNAL_FUNC(cb_gui_quit_verify), NULL);
+        g_signal_connect (GTK_OBJECT(app), "delete_event", GTK_SIGNAL_FUNC(cb_gui_quit), NULL);
+        g_signal_connect (GTK_OBJECT(app), "destroy", GTK_SIGNAL_FUNC(cb_gui_quit), NULL);
 
         gnome_window_icon_set_default_from_file (FNAME_GNECT_ICON);
         gnome_window_icon_set_from_default (GTK_WINDOW(app));
