@@ -1,8 +1,9 @@
 [Desktop Entry]
+Encoding=UTF-8
 Icon=gnect-icon.png
 _Name=Gnect
 _Comment=Four-in-a-row game
 Exec=gnect
-Terminal=0
+Terminal=false
 Type=Application
-Categories=Application;Game;
+Categories=GNOME;Application;Game;PuzzleGame;
