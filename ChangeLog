@@ -1,3 +1,8 @@
+2002-04-24  Abel Cheung  <maddog@linux.org.hk>
+
+	* src/main.c: *textdomain*() use GETTEXT_PACKAGE and UTF-8.
+	* src/dialog.c: Trivial translator credit name change.
+
 2002-04-24  Tim Musson <trmusson@ihug.co.nz>
 
 	* src/dialog.c: If the score box was destroyed by the window manager,

@@ -45,7 +45,7 @@ dialog_about (void)
                                   "  Giuliano Bertoletti and GBE 32241 Software PR.",
                                   NULL};
         const gchar *documents[] = { NULL };
-        const gchar *translator = _("translator");
+        const gchar *translator = _("translator_credits");
         static GtkWidget *dlg_about;
         GdkPixbuf *logo;
 
@@ -64,7 +64,7 @@ dialog_about (void)
                                      _("\"Four in a row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
                                      authors,
                                      documents,
-                                     strcmp (translator, "translator") != 0 ? translator : NULL,
+                                     strcmp (translator, "translator_credits") != 0 ? translator : NULL,
                                      logo);
 
         gtk_window_set_transient_for (GTK_WINDOW (dlg_about), GTK_WINDOW(app));
