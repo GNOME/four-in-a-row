@@ -41,37 +41,37 @@ gchar  *fname_theme;
 
 
 static const struct poptOption opts[] = {
-	{
-		"geometry",  '\0',
-		POPT_ARG_STRING,
-		&geom_str, 0,
-		N_("Initial window placement (size is ignored)"),
-		N_("GEOMETRY")
-	},
-	{
-		"seed", 's',
-		POPT_ARG_INT,
-		&seed, 0,
-		N_("Random number seed"),
-		N_("SEED")
-	},
-	{
-		"theme", 't',
-		POPT_ARG_STRING,
-		&fname_theme, 0,
-		N_("Initial theme file (excluding path)"),
-		N_("FILENAME")
-	},
-	{
-		"debugging", 'd',
-		POPT_ARG_INT,
-		&debugging, 0,
-		N_("Debugging level (if N is 4, shows the random number seed used)"),
-		"N"
-	},
-	{
-		NULL, '\0', 0, NULL, 0
-	}
+        {
+                "geometry",  '\0',
+                POPT_ARG_STRING,
+                &geom_str, 0,
+                N_("Initial window placement"),
+                N_("GEOMETRY")
+        },
+        {
+                "seed", 's',
+                POPT_ARG_INT,
+                &seed, 0,
+                N_("Random number seed"),
+                N_("SEED")
+        },
+        {
+                "theme", 't',
+                POPT_ARG_STRING,
+                &fname_theme, 0,
+                N_("Initial theme file (excluding path)"),
+                N_("FILENAME")
+        },
+        {
+                "debugging", 'd',
+                POPT_ARG_INT,
+                &debugging, 0,
+                N_("Debugging level (4 for random seed)"),
+                "N"
+        },
+        {
+                NULL, '\0', 0, NULL, 0
+        }
 };
 
 
@@ -80,51 +80,52 @@ static const struct poptOption opts[] = {
 int
 main (int argc, char *argv[])
 {
-	struct board *veleng_init ();
+        struct board *veleng_init ();
 
 
-	bindtextdomain (PACKAGE, GNOMELOCALEDIR);
-	textdomain (PACKAGE);
+        bindtextdomain (PACKAGE, GNOMELOCALEDIR);
+        textdomain (PACKAGE);
 
-	if (gnome_init_with_popt_table (APPNAME, VERSION, argc, argv, opts, 0, NULL)) {
-		ERROR_PRINT("gnome_init_with_popt_table failed\n");
-		exit (1);
-	}
+        if (gnome_init_with_popt_table (APPNAME, VERSION, argc, argv, opts, 0, NULL)) {
+                ERROR_PRINT("gnome_init_with_popt_table failed\n");
+                exit (1);
+        }
 
-	/*
-    gnome_program_init (APPNAME, VERSION, LIBGNOMEUI_MODULE,
-						argc, argv, GNOME_PARAM_POPT_TABLE, NULL, NULL);
-	*/
+        /*
+        gnome_program_init (APPNAME, VERSION, LIBGNOMEUI_MODULE,
+                            argc, argv, GNOME_PARAM_POPT_TABLE, NULL, NULL);
+        */
 
-	prefs_get ();
-
-
-	/* read all theme files and assign theme_current */
-	if (!theme_init (fname_theme)) {
-		g_printerr (_("%s: no themes available\n"), APPNAME);
-		gnect_cleanup (1);
-	}
+        prefs_get ();
 
 
-	anim.id = 0;
-
-	gnect_srand (seed);
-
-	gnect.veleng_board = veleng_init ();
-
-	gnect.who_starts = gnect_get_random_num (2) - 1;
-	gnect_reset (FALSE); /* reset, no graphics */
-
-	gui_create ();
-
-	theme_load (theme_current);
-
-	gui_open (geom_str);
+        /* read all theme files and assign theme_current */
+        if (!theme_init (fname_theme)) {
+                g_printerr (_("%s: no themes available\n"), APPNAME);
+                gnect_cleanup (1);
+        }
 
 
-	gtk_main ();
+        anim.id = 0;
+
+        gnect_srand (seed);
+
+        gnect.veleng_board = veleng_init ();
+
+        gnect.who_starts = gnect_get_random_num (2) - 1;
+        gnect_reset (FALSE); /* reset, no graphics */
+
+        gui_create ();
+
+        theme_load (theme_current);
+
+        gui_open (geom_str);
 
 
-	gnect_cleanup (0);
-	return 0;
+        gtk_main ();
+
+
+        gnect_cleanup (0);
+        return 0;
 }
+

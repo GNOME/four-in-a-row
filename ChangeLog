@@ -1,3 +1,16 @@
+
+2002-04-19  Tim Musson <trmusson@ihug.co.nz>
+
+	* dialog.c:
+	  - Removed needless test for About dialog logo.
+	  - Velena's homepage missing in action - removed URL from About.
+	    Was: http://www.ce.unipr.it/~gbe/velena.html
+	* data/gnect.desktop.in: Changed wording in Comment field.
+	* data/clean_50x50.gnect: Grid colour to new format.
+	* dialog.c, gui.c, gnect.c, main.c, main.h, gfx.c, sound.c,
+	  prefs.c, theme.c, brain.c:
+	  - Fixed my botched indentation.
+
 2002-04-16  Tim Musson <trmusson@ihug.co.nz>
 
 	* data/clean_40x40_nightfall.gnect:
@@ -42,6 +55,6 @@
 
 2001-12-21  Tim Musson <trmusson@ihug.co.nz>
 
-    * Misc. changes to gnect-1.4.2 (mostly just removing the original
-      configure/build stuff) for addition to gnome-games 1.4.0.3.
+	* Misc. changes to gnect-1.4.2 (mostly just removing the original
+	  configure/build stuff) for addition to gnome-games.
 
