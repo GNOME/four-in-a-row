@@ -55,7 +55,7 @@ GnomeUIInfo game_menu[] = {
         GNOMEUIINFO_MENU_HINT_ITEM(cb_gui_game_hint, NULL),
         GNOMEUIINFO_SEPARATOR,
         GNOMEUIINFO_MENU_SCORES_ITEM(cb_gui_game_scores, NULL),
-        GNOMEUIINFO_MENU_EXIT_ITEM(cb_gui_quit_verify, NULL),
+        GNOMEUIINFO_MENU_QUIT_ITEM(cb_gui_quit_verify, NULL),
         GNOMEUIINFO_END
 };
 GnomeUIInfo settings_menu[] = {
