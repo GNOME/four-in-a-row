@@ -226,9 +226,11 @@ gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpoi
 
 	val = sane_theme_id (gconf_client_get_int (conf_client, KEY_THEME_ID, NULL));
 	if (val != p.theme_id) {
-		if (!gfx_load (val)) return;
 		p.theme_id = val;
-		if (prefsbox == NULL) return;
+		if (!gfx_change_theme ())
+			return;
+		if (prefsbox == NULL)
+			return;
 		gtk_combo_box_set_active (GTK_COMBO_BOX(combobox_theme), p.theme_id);
 		prefsbox_update_player_labels ();
 	}

@@ -27,6 +27,7 @@
 #include "config.h"
 #include <gnome.h>
 #include <gconf/gconf-client.h>
+#include "games-gridframe.h"
 #include "connect4.h"
 #include "main.h"
 #include "theme.h"
@@ -203,8 +204,10 @@ move_cursor (gint c)
 
 	column = c;
 
-	if (player == PLAYER1) gboard[0][c] = TILE_PLAYER1;
-	else gboard[0][c] = TILE_PLAYER2;
+	if (player == PLAYER1)
+		gboard[0][c] = TILE_PLAYER1;
+	else
+		gboard[0][c] = TILE_PLAYER2;
 
 	gfx_draw_tile (0, c, TRUE);
 
@@ -222,8 +225,10 @@ move (gint c)
 
 	column = c;
 
-	if (player == PLAYER1) gboard[0][c] = TILE_PLAYER1;
-	else gboard[0][c] = TILE_PLAYER2;
+	if (player == PLAYER1)
+		gboard[0][c] = TILE_PLAYER1;
+	else
+		gboard[0][c] = TILE_PLAYER2;
 
 	gfx_draw_tile (0, c, TRUE);
 }
@@ -428,7 +433,7 @@ game_reset (gboolean start)
 
 	clear_board ();
 	set_status (STATUS_CLEAR, NULL);
-	gfx_draw_all (TRUE);
+	gfx_draw_all ();
 
 	if (start) {
 		move_cursor (column);
@@ -1086,6 +1091,26 @@ process_move (gint c)
 
 
 
+static gint
+on_drawarea_resize (GtkWidget *w, GdkEventConfigure *e, gpointer data)
+{
+	gfx_resize (w);
+
+	return TRUE;
+}
+
+
+
+static gboolean
+on_drawarea_expose (GtkWidget *w, GdkEventExpose *e, gpointer data)
+{
+	gfx_expose (&e->area);
+
+	return FALSE;
+}
+
+
+
 static gboolean
 on_key_press (GtkWidget* w, GdkEventKey* e, gpointer data)
 {
@@ -1118,30 +1143,21 @@ on_key_press (GtkWidget* w, GdkEventKey* e, gpointer data)
 
 
 
-static void
-on_drawarea_event (GtkWidget *w, const GdkEvent *e)
+static gboolean
+on_button_press (GtkWidget *w, GdkEventButton *e, gpointer data)
 {
-	GdkEventExpose *expose;
 	gint x, y;
 
-	switch (e->type) {
-	case GDK_EXPOSE:
-		expose = (GdkEventExpose*)e;
-		gfx_expose (&expose->area);
-		break;
-	case GDK_BUTTON_PRESS:
-		if (gameover && !timeout) {
-			blink_winner (2);
-			set_status (STATUS_FLASH, _("Select \"New game\" from the \"Game\" menu to begin."));
-		}
-		else if (is_player_human () && !timeout) {
-			gtk_widget_get_pointer (w, &x, &y);
-			process_move (gfx_get_column (x));
-		}
-		return;
-	default:
-		break;
+	if (gameover && !timeout) {
+		blink_winner (2);
+		set_status (STATUS_FLASH, _("Select \"New game\" from the \"Game\" menu to begin."));
 	}
+	else if (is_player_human () && !timeout) {
+		gtk_widget_get_pointer (w, &x, &y);
+		process_move (gfx_get_column (x));
+	}
+
+	return TRUE;
 }
 
 
@@ -1199,10 +1215,10 @@ create_app (void)
 {
 	BonoboDockItem *gdi;
 	GtkWidget *bonobodock;
+	GtkWidget *gridframe;
 
 	app = gnome_app_new (APPNAME, _("Four-in-a-row"));
-	gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
-	gtk_window_set_wmclass (GTK_WINDOW (app), APPNAME, "main");
+	gtk_window_set_default_size (GTK_WINDOW (app), 350, 390);
 
 	g_signal_connect (G_OBJECT(app), "delete_event",
 	                  G_CALLBACK(on_delete_event), NULL);
@@ -1220,13 +1236,25 @@ create_app (void)
 	gnome_app_create_menus (GNOME_APP(app), menubar_uiinfo);
 	gnome_app_create_toolbar (GNOME_APP(app), toolbar);
 
+	gridframe = games_grid_frame_new (7, 7);
+	gnome_app_set_contents (GNOME_APP (app), gridframe);
+
 	drawarea = gtk_drawing_area_new ();
-	gtk_widget_set_size_request (drawarea, 350, 350);
-	gnome_app_set_contents (GNOME_APP (app), drawarea);
+
+	/* set a min size to avoid pathological behavior of gtk when scaling down */
+	gtk_widget_set_size_request (drawarea, 200, 200);
+
+	gtk_container_add (GTK_CONTAINER (gridframe), drawarea);
 
 	gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK);
-	g_signal_connect (GTK_OBJECT(drawarea), "event", GTK_SIGNAL_FUNC(on_drawarea_event), NULL);
-	g_signal_connect (GTK_OBJECT(app), "key_press_event", GTK_SIGNAL_FUNC(on_key_press), NULL);
+	g_signal_connect (G_OBJECT(drawarea), "configure_event",
+			  G_CALLBACK (on_drawarea_resize), NULL);
+	g_signal_connect (G_OBJECT(drawarea), "expose_event",
+	                  G_CALLBACK(on_drawarea_expose), NULL);
+	g_signal_connect (G_OBJECT(drawarea), "button_press_event",
+	                  G_CALLBACK(on_button_press), NULL);
+	g_signal_connect (G_OBJECT(app), "key_press_event",
+	                  G_CALLBACK(on_key_press), NULL);
 
 	appbar = gnome_appbar_new (FALSE, TRUE, GNOME_PREFERENCES_NEVER);
 	gnome_app_set_statusbar (GNOME_APP(app), appbar);
@@ -1241,23 +1269,17 @@ create_app (void)
 	undo_set_sensitive (FALSE);
 
 	gtk_widget_show_all (app);
-	gc = gdk_gc_new (drawarea->window);
+
+	if (!gfx_set_grid_style ())
+		return FALSE;
 
 	if (!p.do_toolbar) {
 		gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
 		gtk_widget_hide (GTK_WIDGET(gdi));
 	}
 
-	if (!gfx_load (p.theme_id)) {
-		if (p.theme_id != 0) {
-			if (!gfx_load (0)) {
-				return FALSE;
-			}
-		}
-		else {
-			return FALSE;
-		}
-	}
+	scorebox_update (); /* update visible player descriptions */
+	prompt_player ();
 
 	set_status (STATUS_FLASH, _("Welcome to Gnect!"));
 
@@ -1279,9 +1301,13 @@ main (int argc, char *argv[])
 	prefs_init (argc, argv);
 	game_init ();
 
-	if (create_app ()) {
+	/* init gfx */
+	if (!gfx_load_pixmaps ())
+		return 0;
+
+	if (create_app ())
 		gtk_main ();
-	}
+
 
 	game_free ();
 

@@ -38,20 +38,39 @@ extern gint       gboard[7][7];
 extern GtkWidget *app;
 extern GtkWidget *drawarea;
 
-static gint       width, height;
-static gint       tilew, tileh;
+static gint       boardsize = 0;
+static gint       tilesize = 0;
 static gint       offset[6];
+
+/* unscaled pixbufs */
+static GdkPixbuf *pb_tileset_raw = NULL;
+static GdkPixbuf *pb_bground_raw = NULL;
+
+/* scaled pixbufs */
 static GdkPixbuf *pb_tileset = NULL;
 static GdkPixbuf *pb_bground = NULL;
-static GdkPixmap *pm_display = NULL;
+
+/* background pixmap, we draw the grid on it */
 static GdkPixmap *pm_bground = NULL;
-GdkGC     *gc = NULL;
+
+/* the buffer we draw in */
+static GdkPixmap *pm_display = NULL;
+
+static GdkGC *gc = NULL;
 
 
 
 void
 gfx_free (void)
 {
+	if (pb_tileset_raw != NULL) {
+		g_object_unref (pb_tileset_raw);
+		pb_tileset = NULL;
+	}
+	if (pb_bground_raw != NULL) {
+		g_object_unref (pb_bground_raw);
+		pb_bground = NULL;
+	}
 	if (pb_tileset != NULL) {
 		g_object_unref (pb_tileset);
 		pb_tileset = NULL;
@@ -76,8 +95,12 @@ gint
 gfx_get_column (gint xpos)
 {
 	/* Derive column from pixel position */
-	gint c = xpos / tilew;
-	if (c > 6) c = 6;
+	gint c = xpos / tilesize;
+	if (c > 6)
+		c = 6;
+	if (c < 0)
+		c = 0;
+
 	return c;
 }
 
@@ -86,40 +109,48 @@ gfx_get_column (gint xpos)
 void
 gfx_draw_tile (gint r, gint c, gboolean refresh)
 {
-	gint x = c * tilew;
-	gint y = r * tileh;
+	gint x = c * tilesize;
+	gint y = r * tilesize;
 	gint tile = gboard[r][c];
 	gint os = 0;
 
+	g_return_if_fail (gc != NULL);
+
 	switch (tile) {
 	case TILE_PLAYER1:
-		os = offset[TILE_PLAYER1];
-		if (y == 0) os = offset[TILE_PLAYER1_CURSOR];
+		if (r == 0)
+			os = offset[TILE_PLAYER1_CURSOR];
+		else
+			os = offset[TILE_PLAYER1];
 		break;
 	case TILE_PLAYER2:
-		os = offset[TILE_PLAYER2];
-		if (y == 0) os = offset[TILE_PLAYER2_CURSOR];
+		if (r == 0)
+			os = offset[TILE_PLAYER2_CURSOR];
+		else
+			os = offset[TILE_PLAYER2];
 		break;
 	default:
 		break;
 	}
 
-	gdk_draw_drawable (pm_display, gc, pm_bground, x, y, x, y, tilew, tileh);
+	gdk_draw_drawable (pm_display, gc, pm_bground, x, y, x, y, tilesize, tilesize);
 
 	if (tile != TILE_CLEAR) {
 		gdk_pixbuf_render_to_drawable_alpha (pb_tileset, pm_display,
-		  os, 0, x, y, tilew, tileh, GDK_PIXBUF_ALPHA_BILEVEL, 128,
-		  GDK_RGB_DITHER_NORMAL, 0, 0);
+						     os, 0, x, y, tilesize, tilesize,
+						     GDK_PIXBUF_ALPHA_BILEVEL, 128,
+						     GDK_RGB_DITHER_NORMAL, 0, 0);
 	}
 
 	if (refresh) {
-		gtk_widget_queue_draw_area (drawarea, x, y, tilew, tileh);
+		gtk_widget_queue_draw_area (drawarea, x, y, tilesize, tilesize);
 	}
 }
 
 
+
 void
-gfx_draw_all (gboolean refresh)
+gfx_draw_all (void)
 {
 	gint r, c;
 
@@ -129,8 +160,78 @@ gfx_draw_all (gboolean refresh)
 		}
 	}
 
-	if (refresh) {
-		gtk_widget_queue_draw_area (drawarea, 0, 0, width, height);
+	gtk_widget_queue_draw_area (drawarea, 0, 0, boardsize, boardsize);
+}
+
+
+
+static void
+gfx_refresh_pixmaps (void)
+{
+	gint i;
+
+	g_return_if_fail (gc != NULL);
+
+	/* scale the pixbufs */
+	if (pb_tileset)
+		g_object_unref (pb_tileset);
+	if (pb_bground)
+		g_object_unref (pb_bground);
+
+	pb_tileset = gdk_pixbuf_scale_simple (pb_tileset_raw,
+	                                      tilesize * 6, tilesize,
+					      GDK_INTERP_BILINEAR);
+	pb_bground = gdk_pixbuf_scale_simple (pb_bground_raw,
+	                                      boardsize, boardsize,
+	                                      GDK_INTERP_BILINEAR);
+
+	/* draw the background */
+	gdk_draw_pixbuf (pm_bground, gc, pb_bground,
+			 0, 0, 0, 0, -1, -1,
+			 GDK_RGB_DITHER_NORMAL, 0, 0);
+
+	/* draw the grid on the background pixmap */
+	for (i = 1; i < 7; i++) {
+		gdk_draw_line (pm_bground, gc, i * tilesize, 0, i* tilesize, boardsize);
+		gdk_draw_line (pm_bground, gc, 0, i * tilesize, boardsize, i * tilesize);
+	}
+}
+
+
+
+void
+gfx_resize (GtkWidget *w)
+{
+	int width, height;
+
+	width = w->allocation.width;
+	height = w->allocation.height;
+
+	boardsize = MIN (width, height);
+	tilesize = boardsize / 7;
+
+	offset[TILE_PLAYER1]        = 0;
+	offset[TILE_PLAYER2]        = tilesize;
+	offset[TILE_CLEAR]          = tilesize * 2;
+	offset[TILE_CLEAR_CURSOR]   = tilesize * 3;
+	offset[TILE_PLAYER1_CURSOR] = tilesize * 4;
+	offset[TILE_PLAYER2_CURSOR] = tilesize * 5;
+
+	/* create the buffer and background pixmap of the proper size */
+	if (pm_display != NULL)
+		g_object_unref (pm_display);
+	if (pm_bground != NULL)
+		g_object_unref (pm_bground);
+
+	pm_display = gdk_pixmap_new (w->window, boardsize, boardsize, -1);
+	pm_bground = gdk_pixmap_new (w->window, boardsize, boardsize, -1);
+
+	/* the first time the configure signal is emitted, the drawarea
+	 * is not shown yet so we do not have the gc.
+	 */
+	if (gc) {
+		gfx_refresh_pixmaps ();
+		gfx_draw_all ();
 	}
 }
 
@@ -139,42 +240,12 @@ gfx_draw_all (gboolean refresh)
 void
 gfx_expose (GdkRectangle *area)
 {
-	gdk_draw_drawable (drawarea->window, gc, pm_display,
-	                   area->x, area->y, area->x, area->y,
-	                   area->width, area->height);
-}
-
-
-
-void
-gfx_draw_grid (void)
-{
-	GdkColormap *cmap;
-	GdkColor color;
-	gint i;
-
-	if (theme[p.theme_id].grid_rgb == NULL) return;
-
-	if (!gdk_color_parse (theme[p.theme_id].grid_rgb, &color)) {
-		gdk_color_parse ("#727F8C", &color);
-	}
-
-	cmap = gtk_widget_get_colormap (drawarea);
-
-	gdk_colormap_alloc_color (cmap, &color, FALSE, TRUE);
-	gdk_gc_set_foreground (gc, &color);
-
-	gdk_gc_set_line_attributes (gc, 0, theme[p.theme_id].grid_style,
-	                            GDK_CAP_BUTT, GDK_JOIN_MITER);
-
-	for (i = tilew; i < width; i = i + tilew) {
-		gdk_draw_line (pm_bground, gc, i, 0, i, height);
-	}
-	for (i = tileh; i < height; i = i + tileh) {
-		gdk_draw_line (pm_bground, gc, 0, i, width, i);
-	}
-	gdk_colormap_free_colors (cmap, &color, 1);
-	g_object_unref (cmap);
+	gdk_draw_pixmap (drawarea->window,
+			 gc,
+			 pm_display,
+			 area->x, area->y,
+			 area->x, area->y,
+			 area->width, area->height);
 }
 
 
@@ -197,31 +268,49 @@ gfx_load_error (const gchar *fname)
 
 
 gboolean
-gfx_load (gint id)
+gfx_load_pixmaps (void)
 {
-	GdkPixbuf *pb_tileset_tmp;
-	GdkPixbuf *pb_bground_tmp = NULL;
 	gchar *dname;
 	gchar *fname;
+	GdkPixbuf *pb_tileset_tmp;
+	GdkPixbuf *pb_bground_tmp = NULL;
 
 	dname = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,
 	                                   APPNAME, FALSE, NULL);
 
-	fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
-	                         theme[id].fname_tileset);
-
-	pb_tileset_tmp = gdk_pixbuf_new_from_file (fname, NULL);
-	if (pb_tileset_tmp == NULL) {
-		gfx_load_error (fname);
-		g_free (dname);
-		g_free (fname);
-		return FALSE;
-	}
-	g_free (fname);
-
-	if (theme[id].fname_bground != NULL) {
+	/* Try the theme pixmaps, fallback to the default and then give up */
+	while (TRUE)
+	{
 		fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
-		                         theme[id].fname_bground);
+	        	                 theme[p.theme_id].fname_tileset);
+
+		pb_tileset_tmp = gdk_pixbuf_new_from_file (fname, NULL);
+		if (pb_tileset_tmp == NULL) {
+			if (p.theme_id != 0) {
+				p.theme_id = 0;
+				g_free (fname);
+				continue;
+			}
+			else {
+				gfx_load_error (fname);
+				g_free (dname);
+				g_free (fname);
+				return FALSE;
+			}
+		}
+
+		g_free (fname);
+		break;
+	}
+
+	if (pb_tileset_raw)
+		g_object_unref (pb_tileset_raw);
+
+	pb_tileset_raw = pb_tileset_tmp;
+
+	if (theme[p.theme_id].fname_bground != NULL) {
+		fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
+		                         theme[p.theme_id].fname_bground);
 		pb_bground_tmp = gdk_pixbuf_new_from_file (fname, NULL);
 		if (pb_bground_tmp == NULL) {
 			gfx_load_error (fname);
@@ -232,61 +321,90 @@ gfx_load (gint id)
 		}
 		g_free (fname);
 	}
+
 	g_free (dname);
 
-	gfx_free ();
-	p.theme_id = id;
+	if (pb_bground_raw)
+		g_object_unref (pb_bground_raw);
 
-	pb_tileset = pb_tileset_tmp;
-
-	tilew = gdk_pixbuf_get_width (pb_tileset) / 6;
-	tileh = gdk_pixbuf_get_height (pb_tileset);
-
-	width = tilew * 7;
-	height = tileh * 7;
-
-	offset[TILE_PLAYER1]        = 0;
-	offset[TILE_PLAYER2]        = tilew;
-	offset[TILE_CLEAR]          = tilew * 2;
-	offset[TILE_CLEAR_CURSOR]   = tilew * 3;
-	offset[TILE_PLAYER1_CURSOR] = tilew * 4;
-	offset[TILE_PLAYER2_CURSOR] = tilew * 5;
-
+	/* If a separate background image wasn't supplied,
+	 * derive the background image from the tile set
+	 */
 	if (pb_bground_tmp != NULL) {
-
-		/* a separate background image was supplied */
-
-		pb_bground = gdk_pixbuf_scale_simple (pb_bground_tmp, width, height, GDK_INTERP_BILINEAR);
-		gdk_pixbuf_unref (pb_bground_tmp);
+		pb_bground_raw = pb_bground_tmp;
 	}
 	else {
-
-		/* derive the background image from the tile set */
-
+		gint tilesize_raw;
 		gint i, j;
 
-		pb_bground = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width, height);
+		tilesize_raw = gdk_pixbuf_get_height (pb_tileset_raw);
+
+		pb_bground_raw = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
+		                                 tilesize_raw * 7, tilesize_raw * 7);
 		for (i = 0; i < 7; i++) {
-			gdk_pixbuf_copy_area (pb_tileset, offset[TILE_CLEAR_CURSOR], 0, tilew, tileh, pb_bground, i * tilew, 0);
+			gdk_pixbuf_copy_area (pb_tileset_raw,
+					      tilesize_raw * 3, 0,
+					      tilesize_raw, tilesize_raw,
+					      pb_bground_raw, i * tilesize_raw, 0);
 			for (j = 1; j < 7; j++) {
-				gdk_pixbuf_copy_area (pb_tileset, offset[TILE_CLEAR], 0, tilew, tileh, pb_bground, i * tilew, j * tileh);
+				gdk_pixbuf_copy_area (pb_tileset_raw,
+						      tilesize_raw * 2, 0,
+						      tilesize_raw, tilesize_raw,
+						      pb_bground_raw,
+						      i * tilesize_raw, j * tilesize_raw);
 			}
 		}
 	}
 
-	pm_display = gdk_pixmap_new (app->window, width, height, -1);
-	pm_bground = gdk_pixmap_new (app->window, width, height, -1);
+	return TRUE;
+}
 
-	gdk_pixbuf_render_to_drawable (pb_bground, pm_bground, gc, 0, 0, 0, 0,
-	                               width, height, GDK_RGB_DITHER_NORMAL, 0, 0);
 
-	gtk_widget_set_size_request (GTK_WIDGET(drawarea), width, height);
 
-	gfx_draw_grid ();
-	gfx_draw_all (TRUE);
+gboolean
+gfx_set_grid_style (void)
+{
+	GdkColormap *cmap;
+	GdkColor color;
 
-	scorebox_update (); /* update visible player descriptions */
-	prompt_player ();
+	g_return_val_if_fail (drawarea != NULL, FALSE);
+
+	if (!gc)
+		gc = gdk_gc_new (drawarea->window);
+
+	if (theme[p.theme_id].grid_rgb == NULL)
+		return FALSE;
+
+	if (!gdk_color_parse (theme[p.theme_id].grid_rgb, &color))
+		gdk_color_parse ("#727F8C", &color);
+
+	cmap = gtk_widget_get_colormap (drawarea);
+	gdk_colormap_alloc_color (cmap, &color, FALSE, TRUE);
+
+	gdk_gc_set_foreground (gc, &color);
+
+	gdk_colormap_free_colors (cmap, &color, 1);
+	g_object_unref (cmap);
+
+	gdk_gc_set_line_attributes (gc, 0, theme[p.theme_id].grid_style,
+	                            GDK_CAP_BUTT, GDK_JOIN_MITER);
+
+	return TRUE;
+}
+
+
+
+gboolean
+gfx_change_theme (void)
+{
+	if (!gfx_load_pixmaps ())
+		return FALSE;
+
+	if (!gfx_set_grid_style ())
+		return FALSE;
+
+	gfx_refresh_pixmaps ();
+	gfx_draw_all ();
 
 	return TRUE;
 }
