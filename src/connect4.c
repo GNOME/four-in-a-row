@@ -118,7 +118,7 @@ void init_prg(struct board *board)
 	FILE *h1;
 	short x;
         char *tmp = g_strconcat ( "gnect/", WHITE_BOOK, NULL);
-        char *bookdata = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_DATADIR, tmp, FALSE, NULL);
+        char *bookdata = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_DATADIR, tmp, FALSE, NULL);
         g_free(tmp);
 
 
