@@ -54,7 +54,7 @@ gnect_cleanup (gint exit_code)
         DEBUG_PRINT (1, "gnect_cleanup\n");
 
         if (anim.id) 
-                gtk_timeout_remove (anim.id);
+                g_source_remove (anim.id);
 
         prefs_save ();
         gfx_free ();
@@ -356,7 +356,7 @@ gnect_reset (gboolean with_display)
                 source_id = 0;
         }
         if (anim.id) {
-                gtk_timeout_remove (anim.id);
+                g_source_remove (anim.id);
                 anim.id = 0;
         }
 

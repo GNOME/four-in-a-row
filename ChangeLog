@@ -1,3 +1,10 @@
+2003-10-29  Callum McKenzie  <callum@localhost.localdomain>
+
+	* src/Makefile.am: Removed *_DISABLE_DEPRECATED.
+
+	* src/gnect.c (gnect_cleanup): More gtk_timeout_remove ->
+	g_source_remove transformations.
+
 2003-10-27  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/prefs.c: A patch from Steve Chaplin to replace deprecated
