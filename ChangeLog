@@ -1,3 +1,9 @@
+2003-06-13  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/prefs.c: Removed dead code from the preferences response
+	callback (actually deleted the entire function and made the
+	callback gtk_widget_hide).
+
 2003-06-10  William Jon McCann  <mccann@jhu.edu>
 
 	* src/prefs.c (cb_prefs_gconf_verify_changed): HIG fixes for

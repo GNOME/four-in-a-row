@@ -72,31 +72,6 @@ static void cb_prefs_gconf_verify_changed (GConfClient *client, guint cnxn_id, G
 
 
 static void
-cb_prefs_response (GtkWidget *pref_dialog, int response_id, gpointer data)
-{
-        gchar *fname_help;
-
-        switch (response_id) {
-        case GTK_RESPONSE_ACCEPT :
-                gtk_widget_hide (dlg_prefs);
-                break;
-
-#if 0
-                /*
-                 * FIXME: main.c: GnomeProgram *gnome_program from gnome_program_init (...)
-                 * Check HIG - does prefs need a help button?
-                 */
-        case GTK_RESPONSE_HELP :
-                gnome_help_display_desktop (gnome_program, APPNAME, APPNAME, "prefsdialog", &error);
-                break;
-#endif
-        }
-        return;
-}
-
-
-
-static void
 prefs_check (void)
 {
         /* sanity check important values */
@@ -1005,7 +980,7 @@ prefs_dialog_create (void)
 
         /* signals */
 
-        g_signal_connect (dlg_prefs, "response", G_CALLBACK(cb_prefs_response), &dlg_prefs);
+        g_signal_connect (dlg_prefs, "response", G_CALLBACK(gtk_widget_hide), NULL);
         for (i = 0; i < 5; i++) {
                 g_signal_connect (GTK_OBJECT(radio_player1[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_player1_select),(gpointer)i);
                 g_signal_connect (GTK_OBJECT(radio_player2[i]), "toggled", GTK_SIGNAL_FUNC(cb_prefs_dialog_player2_select),(gpointer)i);
