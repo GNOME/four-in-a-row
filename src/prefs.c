@@ -61,7 +61,6 @@ static GtkWidget *checkbutton_animate = NULL;
 static GtkWidget *button_move[3];
 static GtkWidget *entry_move[3];
 static GtkWidget *optionmenu_theme = NULL;
-static GtkWidget *optionmenu_theme_menu = NULL;
 static GtkWidget *radio_player1[5];
 static GtkWidget *radio_player2[5];
 static GtkWidget *radio_start[3];
@@ -556,7 +555,8 @@ cb_prefs_gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *en
                         prefs_theme_switched (theme);
 
                         if (optionmenu_theme != NULL) {
-                                gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), theme_current->id);
+                                gtk_combo_box_set_active (GTK_COMBO_BOX (optionmenu_theme),
+                                                          theme_current->id);
                         }
                 }
                 else {
@@ -571,9 +571,17 @@ cb_prefs_gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *en
 static void
 cb_prefs_dialog_theme_select (GtkWidget *widget, gpointer *data)
 {
-        Theme *theme = (Theme*)data;
+        Theme *theme;
+        int n;
+        
+        n = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
+        
+        theme = theme_base;
+        while (n-- && theme_base->next)
+                theme = theme->next;
 
-
+        g_return_if_fail (theme);
+                
         if (strcmp (theme->fname, prefs.fname_theme) != 0) {
 
                 if (!theme_load (theme)) {
@@ -703,22 +711,13 @@ prefs_dialog_fill_theme_menu (void)
 
 
         while (theme) {
-
-                GtkWidget *item;
-
                 gchar *title = theme->title;
 
-                item = gtk_menu_item_new_with_label (title);
-
-                if (theme->tooltip) gui_set_tooltip (GTK_WIDGET(item), theme->tooltip);
-
-                gtk_widget_show (item);
-                gtk_menu_shell_append (GTK_MENU_SHELL (optionmenu_theme_menu), item);
-                g_signal_connect (GTK_OBJECT(item), "activate", GTK_SIGNAL_FUNC(cb_prefs_dialog_theme_select), theme);
+                gtk_combo_box_append_text (GTK_COMBO_BOX (optionmenu_theme), title);
 
                 /* select current theme */
                 if (strcmp (prefs.fname_theme, theme->fname) == 0) {
-                        gtk_menu_set_active (GTK_MENU (optionmenu_theme_menu), itemno);
+                        gtk_combo_box_set_active (GTK_COMBO_BOX (optionmenu_theme), itemno);
                 }
 
                 itemno++;
@@ -882,13 +881,12 @@ prefs_dialog_create (void)
         gtk_box_pack_start (GTK_BOX (hbox1), label, FALSE, FALSE, 0);
         gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
 
-        optionmenu_theme = gtk_option_menu_new ();
+        optionmenu_theme = gtk_combo_box_new_text ();
         gtk_box_pack_start (GTK_BOX (hbox1), optionmenu_theme, FALSE, FALSE, 0);
-
-        optionmenu_theme_menu = gtk_menu_new ();
+        g_signal_connect (GTK_OBJECT(optionmenu_theme), "changed",
+                          GTK_SIGNAL_FUNC(cb_prefs_dialog_theme_select), NULL);
+        
         prefs_dialog_fill_theme_menu ();
-        gtk_option_menu_set_menu (GTK_OPTION_MENU (optionmenu_theme),
-                                  optionmenu_theme_menu);
 
         /* animation */
         frame = games_frame_new (_("Animation"));
@@ -986,7 +984,7 @@ prefs_dialog_create (void)
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_player2[prefs.player2]), TRUE);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio_start[prefs.start_mode]), TRUE);
 
-        gtk_option_menu_set_history (GTK_OPTION_MENU(optionmenu_theme), theme_current->id);
+        gtk_combo_box_set_active (GTK_COMBO_BOX(optionmenu_theme), theme_current->id);
 
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(checkbutton_animate), prefs.do_animate);
 
