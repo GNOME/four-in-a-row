@@ -28,6 +28,10 @@
 #include "proto.h"
 
 
+/* FIXME: These should probably go into a header file or be defined as static */
+short parse_input_string (char *str, struct board *board);
+short playgame (char *input_str, struct board *board);
+
 
 
 short parse_input_string(char *str,struct board *board)

@@ -1,16 +1,31 @@
+/* -*- mode:C; indent-tabs-mode:nil; tab-width:8; c-basic-offset:8; -*- */
+
 /*
  * gnect dialog.c
  *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA. 
  */
 
-
-
 #include "config.h"
+#include <string.h>
+
 #include "main.h"
 #include "dialog.h"
 #include "gnect.h"
 #include "prefs.h"
-
 
 
 extern gint      debugging;
@@ -66,12 +81,14 @@ dialog_about (void)
                                      strcmp (translator, "translator_credits") != 0 ? translator : NULL,
                                      logo);
 
-        gtk_window_set_transient_for (GTK_WINDOW (dlg_about), GTK_WINDOW(app));
+        gtk_window_set_transient_for (GTK_WINDOW (dlg_about),
+                                      GTK_WINDOW (app));
 
-        if (logo) g_object_unref (logo); 
+        if (logo) 
+                g_object_unref (logo); 
 
-        g_signal_connect (dlg_about, "destroy", 
-                          GTK_SIGNAL_FUNC (gtk_widget_destroyed), &dlg_about);
+        g_signal_connect (G_OBJECT (dlg_about), "destroy", 
+                          G_CALLBACK (gtk_widget_destroyed), &dlg_about);
 
         gtk_widget_show (dlg_about);
 }
@@ -141,33 +158,26 @@ dialog_score_create (void)
          */
 
         GtkWidget *table, *vbox, *vbox2, *frame, *label, *icon;
-        GError *errors;
 
-
-        dlg_score = gtk_dialog_new_with_buttons (_("Scores"),
+        dlg_score = gtk_dialog_new_with_buttons (_("Gnect Scores"),
                                                  GTK_WINDOW (app),
                                                  GTK_DIALOG_DESTROY_WITH_PARENT,
                                                  GTK_STOCK_CLOSE, 
                                                  GTK_RESPONSE_CLOSE,
                                                  NULL);
         gtk_dialog_set_has_separator (GTK_DIALOG (dlg_score), FALSE);
-        g_signal_connect (GTK_OBJECT(dlg_score), "destroy",
-                          GTK_SIGNAL_FUNC(gtk_widget_destroyed), &dlg_score);
+        g_signal_connect (G_OBJECT (dlg_score), "destroy",
+                          G_CALLBACK (gtk_widget_destroyed), &dlg_score);
 
         vbox = GTK_DIALOG (dlg_score)->vbox;
-        gtk_object_set_data (GTK_OBJECT (dlg_score), "vbox", vbox);
-        gtk_widget_show (vbox);
 
         vbox2 = gtk_vbox_new (FALSE, 0);
-        gtk_widget_show (vbox2);
         gtk_box_pack_start (GTK_BOX (vbox), vbox2, TRUE, TRUE, 0);
 
-        frame = gtk_frame_new (NULL);
-        gtk_widget_show (frame);
+        frame = gtk_hbox_new (FALSE, 0);
         gtk_box_pack_start (GTK_BOX (vbox2), frame, FALSE, FALSE, 0);
 
         table = gtk_table_new (3, 2, FALSE);
-        gtk_widget_show (table);
         gtk_box_pack_start (GTK_BOX (vbox2), table, TRUE, TRUE, 0);
         gtk_container_set_border_width (GTK_CONTAINER (table), 5);
         gtk_table_set_col_spacings (GTK_TABLE (table), 10);
@@ -176,13 +186,11 @@ dialog_score_create (void)
         /* player one */
 
         label_descr1 = gtk_label_new (NULL);
-        gtk_widget_show (label_descr1);
         gtk_table_attach (GTK_TABLE (table), label_descr1, 0, 1, 0, 1,
                           (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
         gtk_misc_set_alignment (GTK_MISC (label_descr1), 0, 0.5);
 
         label_score1 = gtk_label_new (NULL);
-        gtk_widget_show (label_score1);
         gtk_table_attach (GTK_TABLE (table), label_score1, 1, 2, 0, 1,
                           (GtkAttachOptions) (GTK_EXPAND | GTK_FILL), (GtkAttachOptions) (0), 0, 0);
         gtk_misc_set_alignment (GTK_MISC (label_score1), 1, 0.5);
@@ -191,13 +199,11 @@ dialog_score_create (void)
         /* player two */
 
         label_descr2 = gtk_label_new (NULL);
-        gtk_widget_show (label_descr2);
         gtk_table_attach (GTK_TABLE (table), label_descr2, 0, 1, 1, 2,
                           (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
         gtk_misc_set_alignment (GTK_MISC (label_descr2), 0, 0.5);
 
         label_score2 = gtk_label_new (NULL);
-        gtk_widget_show (label_score2);
         gtk_table_attach (GTK_TABLE (table), label_score2, 1, 2, 1, 2,
                           (GtkAttachOptions) (GTK_EXPAND | GTK_FILL), (GtkAttachOptions) (0), 0, 0);
         gtk_misc_set_alignment (GTK_MISC (label_score2), 1, 0.5);
@@ -206,34 +212,29 @@ dialog_score_create (void)
         /* drawn games */
 
         label = gtk_label_new (_("Drawn"));
-        gtk_widget_show (label);
         gtk_table_attach (GTK_TABLE (table), label, 0, 1, 2, 3,
                           (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) (0), 0, 0);
         gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
 
         label_score_drawn = gtk_label_new (NULL);
-        gtk_widget_show (label_score_drawn);
         gtk_table_attach (GTK_TABLE (table), label_score_drawn, 1, 2, 2, 3,
                           (GtkAttachOptions) (GTK_EXPAND | GTK_FILL), (GtkAttachOptions) (0), 0, 0);
         gtk_misc_set_alignment (GTK_MISC (label_score_drawn), 1, 0.5);
 
 
         /* scorebox icon */
-
         icon = gtk_image_new_from_file (FNAME_GNECT_ICON);
-        gtk_widget_show (icon);
-        gtk_container_add (GTK_CONTAINER(frame), icon);
+        gtk_container_add (GTK_CONTAINER (frame), icon);
 
 
         /* set label text */
-
         dialog_score_update ();
 
+        gtk_widget_show_all (dlg_score);
 
         /* connect close button */
-
-        g_signal_connect (GTK_DIALOG (dlg_score), "response", 
-                          GTK_SIGNAL_FUNC (cb_dialog_score_hide), NULL);
+        g_signal_connect (G_OBJECT (dlg_score), "response", 
+                          G_CALLBACK (cb_dialog_score_hide), NULL);
 }
 
 

@@ -121,9 +121,7 @@ main (int argc, char *argv[])
 
         gui_open (geom_str);
 
-
         gtk_main ();
-
 
         gnect_cleanup (0);
         return 0;

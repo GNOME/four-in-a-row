@@ -184,5 +184,7 @@ struct board {
   short debug;
 };
 
+struct board *veleng_init (void);
+void veleng_free (struct board *board);
 
 #endif

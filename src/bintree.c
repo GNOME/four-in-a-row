@@ -38,7 +38,12 @@
 struct bintree *tree_pool;
 short tpp,semaphore;
 
-
+/* FIXME: These should probably go into a header file or be defined as static */
+short bin_compare (unsigned char *c1,unsigned char *c2);
+struct bintree *fast_init_bin_tree (struct node *node);
+void fast_free_bin_tree (struct bintree *tree);
+struct bintree *fast_set_node (struct bintree *root, struct node *node, short depth);
+struct node *fast_check_node (struct bintree *root,struct node *node,short depth);
 
 
 short bin_compare(unsigned char *c1,unsigned char *c2)

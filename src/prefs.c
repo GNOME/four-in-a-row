@@ -3,11 +3,24 @@
 /*
  * gnect prefs.c
  *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA. 
  */
 
-
-
 #include "config.h"
+#include <string.h>
 #include <gconf/gconf-client.h>
 #include <games-gconf.h>
 #include <games-frame.h>
@@ -17,7 +30,6 @@
 #include "gui.h"
 #include "dialog.h"
 #include "gfx.h"
-
 
 #define DEFAULT_FNAME_THEME            "default.gnect"       /* If no prefs exist, start with this theme */
 #define DEFAULT_PLAYER_1               PLAYER_HUMAN          /* Human */
@@ -54,20 +66,26 @@ static GtkWidget *radio_player1[5];
 static GtkWidget *radio_player2[5];
 static GtkWidget *radio_start[3];
 static GtkWidget *radio_sound[2];
-static gboolean   kill_game_kludge = FALSE;
 
-
-static void prefs_dialog_reset(void);
 static void prefs_dialog_update_player_selection_labels (void);
-static void cb_prefs_gconf_player1_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_player2_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_who_starts_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_theme_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_key_left_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_key_right_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_key_drop_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_animate_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
-static void cb_prefs_gconf_sound_mode_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_player1_changed (GConfClient *client, guint cnxn_id,
+                                            GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_player2_changed (GConfClient *client, guint cnxn_id,
+                                            GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_who_starts_changed (GConfClient *client, guint cnxn_id,
+                                               GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_theme_changed (GConfClient *client, guint cnxn_id,
+                                          GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_key_left_changed (GConfClient *client, guint cnxn_id,
+                                             GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_key_right_changed (GConfClient *client, guint cnxn_id,
+                                              GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_key_drop_changed (GConfClient *client, guint cnxn_id,
+                                             GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_animate_changed (GConfClient *client, guint cnxn_id,
+                                            GConfEntry *entry, gpointer user_data);
+static void cb_prefs_gconf_sound_mode_changed (GConfClient *client, guint cnxn_id,
+                                               GConfEntry *entry, gpointer user_data);
 
 
 static void
@@ -76,19 +94,23 @@ prefs_check (void)
         /* sanity check important values */
         if (prefs.start_mode < 0 || prefs.start_mode > 2) {
                 prefs.start_mode = DEFAULT_START_MODE;
-                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/startmode", prefs.start_mode, NULL);
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/startmode",
+                                      prefs.start_mode, NULL);
         }
         if (prefs.player1 < 0 || prefs.player1 > 4) {
                 prefs.player1 = DEFAULT_PLAYER_1;
-                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player1", prefs.player1, NULL);
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player1",
+                                      prefs.player1, NULL);
         }
         if (prefs.player2 < 0 || prefs.player2 > 4) {
                 prefs.player2 = DEFAULT_PLAYER_2;
-                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player2", prefs.player2, NULL);
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/player2",
+                                      prefs.player2, NULL);
         }
         if (prefs.sound_mode < 1 || prefs.sound_mode > 2) {
                 prefs.sound_mode = DEFAULT_SOUND_MODE;
-                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/soundmode", prefs.sound_mode, NULL);
+                gconf_client_set_int (gnect_gconf_client, "/apps/gnect/soundmode",
+                                      prefs.sound_mode, NULL);
         }
 }
 
@@ -199,7 +221,7 @@ gnect_gconf_get_string (gchar *key)
         }
         return retval;
 }
-                                                                                                                                                                                                            
+
 
 
 void
@@ -313,7 +335,7 @@ prefs_dialog_update_player_selection_labels (void)
 }
 
 
-
+#if 0
 static gboolean
 prefs_verify_kill_game ()
 {
@@ -335,7 +357,7 @@ prefs_verify_kill_game ()
        	
        	return response == GTK_RESPONSE_OK;
 }
-
+#endif
 
 
 static void

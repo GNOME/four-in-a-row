@@ -1,9 +1,21 @@
 /*
  * gnect gfx.c
  *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA. 
  */
-
-
 
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
@@ -90,18 +102,18 @@ gfx_free (void)
                 pixbuf_tileset = NULL;
         }
         if (pixmap_background) {
-                gdk_drawable_unref (pixmap_background);
+                g_object_unref (pixmap_background);
                 pixmap_background = NULL;
         }
         if (pixmap_display) {
-                gdk_drawable_unref (pixmap_display);
+                g_object_unref (pixmap_display);
                 pixmap_display = NULL;
         }
 }
 
 
 
-void
+static void
 gfx_draw_tile (gint row, gint col, gint tile_selector, gboolean do_refresh)
 {
         gint x = col * tile_width;
@@ -176,9 +188,10 @@ gfx_draw_all_tiles (void)
 void
 gfx_redraw (gboolean do_refresh)
 {
-        DEBUG_PRINT(1, "gfx_redraw\n");
+        DEBUG_PRINT (1, "gfx_redraw\n");
         gfx_draw_all_tiles ();
-        if (do_refresh) gtk_widget_draw (draw_area, NULL);
+        if (do_refresh)
+          gtk_widget_queue_draw (GTK_WIDGET (draw_area));
 }
 
 
@@ -193,7 +206,8 @@ gfx_timeout_animate (gpointer data)
         case ANIM_DROP :
         case ANIM_WIPE_3 :
         case ANIM_WIPE_4 :
-                if (this_anim->row1) gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
+                if (this_anim->row1) 
+                  gfx_draw_tile (this_anim->row1, this_anim->col1, TILE_CLEAR, TRUE);
                 this_anim->row1 = this_anim->row1 + 1;
                 gfx_draw_tile (this_anim->row1, this_anim->col1, this_anim->player, TRUE);
                 break;
@@ -272,7 +286,9 @@ gfx_drop_counter (gint col)
                 anim.row2   = 0;
                 anim.col2   = 0;
                 anim.count  = row;
-                anim.id     = gtk_timeout_add (ANIM_SPEED_DROP, (GtkFunction)gfx_timeout_animate, (gpointer)&anim);
+                anim.id     = gtk_timeout_add (ANIM_SPEED_DROP,
+                                               (GtkFunction)gfx_timeout_animate,
+                                               (gpointer)&anim);
 
                 while (anim.id) gtk_main_iteration ();
 
@@ -312,7 +328,9 @@ gfx_move_cursor (gint col)
                 anim.col1   = gnect.cursor_col;
                 anim.row2   = 0;
                 anim.col2   = 0;
-                anim.id     = gtk_timeout_add (ANIM_SPEED_MOVE, (GtkFunction)gfx_timeout_animate, (gpointer)&anim);
+                anim.id     = gtk_timeout_add (ANIM_SPEED_MOVE,
+                                               (GtkFunction)gfx_timeout_animate,
+                                               (gpointer)&anim);
 
                 while (anim.id) gtk_main_iteration ();
 
@@ -368,7 +386,9 @@ gfx_suck_counter (gint col, gboolean is_wipe)
                 anim.row2   = 0;
                 anim.col2   = 0;
                 anim.count  = row;
-                anim.id     = gtk_timeout_add (ANIM_SPEED_SUCK, (GtkFunction)gfx_timeout_animate, (gpointer)&anim);
+                anim.id     = gtk_timeout_add (ANIM_SPEED_SUCK,
+                                               (GtkFunction)gfx_timeout_animate,
+                                               (gpointer)&anim);
 
                 while (anim.id) gtk_main_iteration ();
 
@@ -396,7 +416,9 @@ gfx_blink_counter (gint n_blinks, gint player, gint row, gint col)
                 anim.row2   = FALSE;
                 anim.col2   = 0;
                 anim.count  = n_blinks * 2;
-                anim.id     = gtk_timeout_add (ANIM_SPEED_BLINK, (GtkFunction)gfx_timeout_animate, (gpointer)&anim);
+                anim.id     = gtk_timeout_add (ANIM_SPEED_BLINK,
+                                               (GtkFunction)gfx_timeout_animate,
+                                               (gpointer)&anim);
 
                 while (anim.id) gtk_main_iteration ();
         }
@@ -469,7 +491,9 @@ gfx_blink_line (gint n_blinks, gint r1, gint c1, gint r2, gint c2)
         anim.row2   = r2;
         anim.col2   = c2;
         anim.count  = n_blinks * 2;
-        anim.id     = gtk_timeout_add (ANIM_SPEED_BLINK, (GtkFunction)gfx_timeout_blink_line, (gpointer)&anim);
+        anim.id     = gtk_timeout_add (ANIM_SPEED_BLINK,
+                                       (GtkFunction)gfx_timeout_blink_line,
+                                       (gpointer)&anim);
 
         while (anim.id) gtk_main_iteration ();
 }
@@ -488,16 +512,20 @@ gfx_blink_winner (gint n_blinks)
 
         if (!prefs.do_animate || gnect.winner == -1) return;
 
-        if (gnect_is_line_horizontal (gnect.winner, gnect.row, gnect.col, LINE_LENGTH, &r1, &c1, &r2, &c2)) {
+        if (gnect_is_line_horizontal (gnect.winner, gnect.row, gnect.col,
+                                      LINE_LENGTH, &r1, &c1, &r2, &c2)) {
                 gfx_blink_line (n_blinks, r1, c1, r2, c2);
         }
-        if (gnect_is_line_diagonal1 (gnect.winner, gnect.row, gnect.col, LINE_LENGTH, &r1, &c1, &r2, &c2)) {
+        if (gnect_is_line_diagonal1 (gnect.winner, gnect.row, gnect.col,
+                                     LINE_LENGTH, &r1, &c1, &r2, &c2)) {
                 gfx_blink_line (n_blinks, r1, c1, r2, c2);
         }
-        if (gnect_is_line_vertical (gnect.winner, gnect.row, gnect.col, LINE_LENGTH, &r1, &c1, &r2, &c2)) {
+        if (gnect_is_line_vertical (gnect.winner, gnect.row, gnect.col,
+                                    LINE_LENGTH, &r1, &c1, &r2, &c2)) {
                 gfx_blink_line (n_blinks, r1, c1, r2, c2);
         }
-        if (gnect_is_line_diagonal2 (gnect.winner, gnect.row, gnect.col, LINE_LENGTH, &r1, &c1, &r2, &c2)) {
+        if (gnect_is_line_diagonal2 (gnect.winner, gnect.row, gnect.col,
+                                     LINE_LENGTH, &r1, &c1, &r2, &c2)) {
                 gfx_blink_line (n_blinks, r1, c1, r2, c2);
         }
 
@@ -546,7 +574,9 @@ gfx_wipe_board (void)
                         anim.row2   = 0;
                         anim.col2   = 0;
                         anim.count  = N_ROWS - row;
-                        anim.id     = gtk_timeout_add (ANIM_SPEED_WIPE, (GtkFunction)gfx_timeout_animate, (gpointer)&anim);
+                        anim.id     = gtk_timeout_add (ANIM_SPEED_WIPE,
+                                                       (GtkFunction)gfx_timeout_animate,
+                                                       (gpointer)&anim);
 
                         while (anim.id) gtk_main_iteration ();
 
@@ -570,7 +600,9 @@ gfx_wipe_board (void)
 
                                 gnect.board_state[CELL_AT(row, col)] = TILE_CLEAR;
 
-                                anim.id     = gtk_timeout_add (ANIM_SPEED_WIPE, (GtkFunction)gfx_timeout_animate, (gpointer)&anim);
+                                anim.id     = gtk_timeout_add (ANIM_SPEED_WIPE,
+                                                               (GtkFunction)gfx_timeout_animate,
+                                                               (gpointer)&anim);
 
                                 while (anim.id) gtk_main_iteration ();
 
@@ -598,7 +630,9 @@ gfx_wipe_board (void)
 
                                 gnect.board_state[CELL_AT(row, col)] = TILE_CLEAR;
 
-                                anim.id     = gtk_timeout_add (ANIM_SPEED_WIPE, (GtkFunction)gfx_timeout_animate, (gpointer)&anim);
+                                anim.id     = gtk_timeout_add (ANIM_SPEED_WIPE,
+                                                               (GtkFunction)gfx_timeout_animate,
+                                                               (gpointer)&anim);
 
                                 while (anim.id) gtk_main_iteration ();
 
@@ -640,7 +674,7 @@ gfx_draw_grid (Theme *theme)
 
         gc = gdk_gc_new (pixmap_display);
 
-        gdk_color_alloc (cmap, &colour);
+	gdk_colormap_alloc_color (cmap, &colour, FALSE, TRUE);
         gdk_gc_set_foreground (gc, &colour);
 
         for (x = tile_width; x < DRAW_AREA_WIDTH; x = x + tile_width) {
@@ -650,7 +684,7 @@ gfx_draw_grid (Theme *theme)
                 gdk_draw_line (pixmap_background, gc, 0, y, DRAW_AREA_WIDTH, y);
         }
 
-        gdk_gc_unref (gc);
+        g_object_unref (gc);
 }
 
 
@@ -683,7 +717,8 @@ gfx_load (Theme *theme, const gchar *fname_tileset, const gchar *fname_backgroun
         gint old_height = DRAW_AREA_HEIGHT;
 
 
-        DEBUG_PRINT(1, "gfx_load\n\ttile set:   %s\n\tbackground: %s\n", fname_tileset, fname_background);
+        DEBUG_PRINT (1, "gfx_load\n\ttile set:   %s\n\tbackground: %s\n",
+                     fname_tileset, fname_background);
 
         if ( !(pixbuf_tileset_tmp = gdk_pixbuf_new_from_file (fname_tileset, NULL)) ) {
                 WARNING_PRINT("couldn't load tileset image (%s)\n", fname_tileset);
@@ -717,14 +752,15 @@ gfx_load (Theme *theme, const gchar *fname_tileset, const gchar *fname_backgroun
 
                         /* scale background to match tile set */
                         pixbuf_background = gdk_pixbuf_scale_simple (pixbuf_background_tmp,
-                                                                     DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT,
+                                                                     DRAW_AREA_WIDTH,
+                                                                     DRAW_AREA_HEIGHT,
                                                                      GDK_INTERP_BILINEAR);
                         gdk_pixbuf_unref (pixbuf_background_tmp);
 
                 }
 
         }
-        if (!pixbuf_background) {
+        if (! pixbuf_background) {
 
                 /* no background image, so build one using the tileset's 3rd
                  * (TILE_CLEAR) and 4th (TILE_CLEAR_CURSOR) tiles
@@ -732,7 +768,8 @@ gfx_load (Theme *theme, const gchar *fname_tileset, const gchar *fname_backgroun
 
                 gint i, j;
 
-                pixbuf_background = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
+                pixbuf_background = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
+                                                    DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
 
                 for (i = 0; i < N_COLS; i++) {
                         gdk_pixbuf_copy_area (pixbuf_tileset,
@@ -764,16 +801,15 @@ gfx_load (Theme *theme, const gchar *fname_tileset, const gchar *fname_backgroun
 
         gfx_draw_grid (theme);
 
-
-
         /* update draw_area */
 
         if (DRAW_AREA_WIDTH != old_width || DRAW_AREA_HEIGHT != old_height) {
                 gtk_widget_hide (draw_area);
-                gtk_widget_set_usize (GTK_WIDGET(draw_area), DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
+                gtk_widget_set_size_request (GTK_WIDGET (draw_area),
+                                             DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
         }
 
-        gtk_widget_draw (draw_area, NULL);
+        gtk_widget_queue_draw (GTK_WIDGET (draw_area));
         gfx_redraw (TRUE);
 
         if (DRAW_AREA_WIDTH != old_width || DRAW_AREA_HEIGHT != old_height) {
@@ -782,4 +818,3 @@ gfx_load (Theme *theme, const gchar *fname_tileset, const gchar *fname_backgroun
 
         return TRUE;
 }
-

@@ -35,6 +35,23 @@
 #include "heurist.h"
 
 
+/* FIXME: These should probably go into a header file or be defined as static */
+void fight (char t);
+short whatfight (void);
+void her_generate_all_children (struct node *node);
+void her_free_whole_tree (struct bintree *tree);
+short her_evaluate (struct node *node);
+short her_resources_available (long maxnodes);
+struct node *her_select_most_proving_node (struct node *node, struct info *info);
+void her_set_pdv_according_to_children (struct node *node);
+void her_set_proof_and_disproof_numbers (struct node *node);
+void her_develop_node (struct node *node);
+void her_update_ancestors (struct node *node);
+void her_pn_search (struct node *root, long maxnodes, struct info *info);
+short heuristic_search (struct node *mynode, long maxnodenum);
+short heuristic_play_best (struct board *board, long maxnodenum);
+
+
 extern short nodeseq[];
 struct board *auxboard;
 

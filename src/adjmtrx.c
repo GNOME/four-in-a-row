@@ -78,7 +78,7 @@ void free_matrix(char **matrix,struct board *board)
 
 
 
-short overlap(struct board *board,short p1,short p2)
+static short overlap(struct board *board,short p1,short p2)
 {
   short x;
   short temp[(BOARDX+1)*(BOARDY+2)];
@@ -97,7 +97,7 @@ short overlap(struct board *board,short p1,short p2)
 
 
 
-short claimeven_below(struct board *board,short p1,short p2)
+static short claimeven_below(struct board *board,short p1,short p2)
 {
   short x,y,name,q1,q2;
   short q1x,q2x,q1y,q2y,solcheck;
@@ -192,7 +192,7 @@ short claimeven_below(struct board *board,short p1,short p2)
 
 
 
-short column_wdoe(struct board *board,short p1,short p2)
+static short column_wdoe(struct board *board,short p1,short p2)
 {
   char debug[80];
   short joinmtrx[(BOARDX+1)*(BOARDY+2)];
@@ -235,7 +235,7 @@ short column_wdoe(struct board *board,short p1,short p2)
 
 
 
-short comp_rules(struct board *board,short p1,short p2)
+static short comp_rules(struct board *board,short p1,short p2)
 {
   short way,c1,c2;
 

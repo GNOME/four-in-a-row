@@ -1,3 +1,19 @@
+2003-06-18  William Jon McCann  <mccann@jhu.edu>
+
+	* src/heurist.c: 
+	* src/playgame.c: 
+	* src/evaluate.c: 
+	* src/ia_main.c: 
+	* src/bintree.c: 
+	* src/connect4.c: 
+	* src/connect4.h: 
+	* src/adjmtrx.c: 
+	* src/prefs.c: 
+	* src/gfx.c: 
+	* src/gui.c: 
+	* src/gnect.c: 
+	* src/dialog.c: Fixed compiler warnings.
+
 2003-06-16  William Jon McCann  <mccann@jhu.edu>
 
 	* src/gnect.c (gnect_get_random_num): Use glib random functions.

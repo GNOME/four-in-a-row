@@ -34,9 +34,42 @@
 #include "pnsearch.h"
 #include "proto.h"
 
-
-
 #define BLSTRSIZE 14
+
+/* FIXME: These should probably go into a header file or be defined as static */
+void collapse_position (unsigned char *mypos, unsigned char *blk);
+short get_black_best_move (struct board *board);
+void reverse_board (struct board *board);
+short pentas (struct board *board, short x, short y, short side);
+short check_pentas (struct board *board, short side);
+short gen_odd_threat (struct board *board, short x, short side);
+short check_double (struct board *board, short group, short pos, short side);
+short groupeval (struct board *board);
+short connected (struct board *board, short move);
+short opponent_connected (struct board *board, short move);
+short makemove (struct board *board, short move);
+short undomove (struct board *board, short move);
+int get_game_result (struct board *board);
+short endgame (struct board *board);
+short try_to_win (struct board *board);
+short fast_try_to_win (struct board *board);
+short avoid_tricks (struct board *board, short side);
+short play_tricks (struct board *board, short side);
+short save_position (struct board *board);
+short explore_tree (struct board *board, short side, short depth);
+short look_ahed (struct board *board);
+short defending_function (struct board *board);
+short heuristic_defend_best (struct board *board);
+short mybincmp (unsigned char *p1, unsigned char *p2, short len);
+short check_book (struct board *board, unsigned char *cmparray, short side);
+short get_lower (short *bb, unsigned char *tp);
+short use_opening_book (struct board *board, short side);
+short check_presence (struct board *board, short side);
+short avoid_immediate_loss (struct board *board);
+short ia_compute_move (struct board *board);
+short get_last_move (struct board *board);
+
+
 
 short maxdepth;
 

@@ -1,10 +1,21 @@
 /*
  * gnect brain.c
  *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA. 
  */
-
-
-
 
 /* Welcome to Gnect's original brain - the first it ever had, and
  * pretty embarassing. It's still here because it happens to make
@@ -15,6 +26,7 @@
 
 
 #include "config.h"
+#include <string.h>
 #include "main.h"
 #include "gnect.h"
 #include "brain.h"
@@ -42,21 +54,20 @@ extern Prefs prefs;
 #define BRAIN_CHOICE_FULL_COLUMN    0 /* least incentive to drop counter    */
 
 
-static void     brain_pass_1(void);
-static void     brain_pass_2(void);
-static void     brain_pass_3(void);
-static void     brain_pass_4(void);
-static gboolean brain_row_compare(gint row, gint col, const gchar *rowstr, const gchar *belowstr);
-static gboolean brain_block_compare(gint row, gint col, const gchar *str1, const gchar *str2, const gchar *str3, const gchar *str4);
-static gint     brain_test_drop(gint counter, gint col, gint len);
-static gint     brain_has_multi_choice(gint val);
-static gint     brain_col_is_trap(gint counter, gint col, gint len);
-static gint     brain_best_choice(void);
+static void     brain_pass_1 (void);
+static void     brain_pass_2 (void);
+static void     brain_pass_3 (void);
+static void     brain_pass_4 (void);
+static gboolean brain_row_compare (gint row, gint col, const gchar *rowstr, const gchar *belowstr);
+static gboolean brain_block_compare (gint row, gint col, const gchar *str1, const gchar *str2,
+                                     const gchar *str3, const gchar *str4);
+static gint     brain_test_drop (gint counter, gint col, gint len);
+static gint     brain_has_multi_choice (gint val);
+static gint     brain_col_is_trap (gint counter, gint col, gint len);
+static gint     brain_best_choice (void);
 
 
 static gint me, opponent, choice[N_COLS + 1];
-
-
 
 
 gint

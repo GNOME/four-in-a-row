@@ -87,7 +87,7 @@ long fileln(FILE *f)
 
 
 
-short check_solution_groups(struct board *board)
+static short check_solution_groups(struct board *board)
 {
 	short x, y, z, q, c, answer = YES;
 
@@ -112,7 +112,7 @@ short check_solution_groups(struct board *board)
  * the opening book.
  */
 
-void init_prg(struct board *board)
+static void init_prg(struct board *board)
 {
 	long size,len;
 	FILE *h1;
@@ -341,8 +341,8 @@ void initboard(struct board *board)
 }
 
 
-
-void initTitle(void)
+#if 0
+static void initTitle(void)
 {
 	g_print("\nVelena Engine %s; revision %s\n", SEARCH_ENGINE_VERSION, __DATE__);
 	g_print("\nAI engine written by Giuliano Bertoletti\n");
@@ -351,7 +351,7 @@ void initTitle(void)
 	g_print("and GBE 32241 Software PR.\n");
 	g_print("All rights reserved.\n\n");
 }
-
+#endif
 
 
 struct board *veleng_init(void)

@@ -62,6 +62,18 @@ struct up_solution {
 };
 
 
+/* FIXME: These should probably go into a header file or be defined as static */
+void find_most_difficult_problem (struct problem_list *pblist, short *minsol,
+                                  short *solpnt, struct board *board);
+void build_problem_list (struct problem_list *pblist, struct board *board);
+void remove_problem_list (struct problem_list *pblist);
+void remove_solutions (struct up_solution *update, struct problem_list *pblist,
+                       struct board *board, char **matrix, short psol);
+void restore_solutions (struct up_solution *update,
+                        struct problem_list *pblist, struct board *board);
+short solve_problem_list (struct problem_list *pblist, struct board *board, char **matrix);
+short problem_solver (struct board *board, char **matrix, short debug, FILE *h1);
+
 
 
 void find_most_difficult_problem(struct problem_list *pblist,short *minsol,short *solpnt,struct board *board)

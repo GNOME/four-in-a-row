@@ -47,6 +47,39 @@ struct threat_combo {
   short gp1,gp2;
 };
 
+/* FIXME: These should probably go into a header file or be defined as static */
+short odd_threat (struct board *board, short x);
+void wipe_above (struct board *board, short sq);
+void wipe_odd (struct board *board, short sq);
+short wiped_group (struct board *board, short group);
+short check_threat (struct board *board, short px, short i, short side);
+short check_men (struct board *board, short group, short side);
+short check_even_below (struct board *board, short square, short side);
+short count_odd_threats (struct board *board, short *threats);
+void both_groups (struct board *board, short q1, short q2);
+short recurse_groups (struct board *board, short cols, short *cl, short gp);
+void both_many_groups (struct board *board, short cols, short *cl);
+void solve_columns (struct board *board, short cl, short *cols);
+void check_claim (struct board *board, short *cl);
+void generate_all_other_before_instances (struct board *board, short cols, short *cl, short j);
+void check_double_threat (struct board *board, short x, short y,
+                          struct threat_combo *tch, short *pnt);
+short threat_combo (struct board *board, struct threat_combo *tc);
+void wipe_many_groups (struct board *board, short cols, short *cl);
+void handle_even_above_odd (struct board *board, struct threat_combo *tc);
+void handle_odd_above_even (struct board *board, struct threat_combo *tc);
+void claimeven (struct board *board);
+void baseinverse (struct board *board);
+void vertical (struct board *board);
+void aftereven (struct board *board);
+void lowinverse (struct board *board);
+void highinverse (struct board *board);
+void baseclaim (struct board *board);
+void before (struct board *board);
+short threat_group (struct board *board, short group, short who);
+short evaluate_black (struct board *board);
+short evaluate_white (struct board *board);
+short evaluation_function (struct board *board);
 
 
 char **allocate_matrix(struct board *board);
