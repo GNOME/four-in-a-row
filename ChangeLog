@@ -1,3 +1,10 @@
+2002-04-16  Bastien Nocera  <hadess@hadess.net>
+
+	* data/Makefile.am:
+	* data/gnect.desktop:
+	* data/gnect.desktop.in: make gnect a proper gnome2 app wrt desktop
+	file
+
 2001-04-07  Dave Neary <bolsh@gimp.org>
 	
 	* Ooops! Missed the pixmap directory.

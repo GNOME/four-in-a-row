@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Gnect
-Comment=A four in a row game for GNOME
-Exec=gnect
-Terminal=0
-Type=Game
-Icon=gnect-icon.png

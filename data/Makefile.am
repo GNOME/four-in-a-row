@@ -1,8 +1,10 @@
 velenadir      = $(datadir)/gnect
 velena_DATA    = white_ob.cn4
 
-Gamesdir       = $(datadir)/gnome/apps/Games
-Games_DATA     = gnect.desktop
+Games_in_files = gnect.desktop.in
+Gamesdir       = $(datadir)/applications
+Games_DATA     = $(Games_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
 soundlistdir   = $(sysconfdir)/sound/events
 soundlist_DATA = gnect.soundlist
@@ -24,7 +26,6 @@ theme_DATA     = default.gnect               \
                  clean_40x40_nightfall.gnect \
                  safari_45x45.gnect          \
                  emulator_48x32.gnect
-
 
 EXTRA_DIST = $(theme_DATA)      \
              $(velena_DATA)     \
