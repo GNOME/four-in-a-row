@@ -41,7 +41,7 @@ dialog_about (void)
                                   "\nVelena Engine V1.07:",
                                   "  AI engine written by Giuliano Bertoletti",
                                   "  Based on the knowledged approach of Victor Allis",
-                                  "  Copyright (C) 1996-97 ",
+                                  "  Copyright (C) 1996-97, 03 ",
                                   "  Giuliano Bertoletti and GBE 32241 Software PR.",
                                   NULL};
         const gchar *documents[] = { NULL };
@@ -51,8 +51,7 @@ dialog_about (void)
 
 
         if (dlg_about != NULL) {
-                gdk_window_show(dlg_about->window);
-                gdk_window_raise(dlg_about->window);
+                gtk_window_present (GTK_WINDOW (dlg_about));
                 return;
         }
 
@@ -247,16 +246,14 @@ dialog_score (void)
                 /* build and show it */
 
                 dialog_score_create ();
-                gtk_widget_show (dlg_score);
+                gtk_window_present (GTK_WINDOW (dlg_score));
 
         }
         else {
 
                 /* already built - make sure it's visible */
 
-                gtk_widget_show (dlg_score);
-                gdk_window_show (dlg_score->window);
-                gdk_window_raise (dlg_score->window);
+                gtk_window_present (GTK_WINDOW (dlg_score));
 
         }
 }

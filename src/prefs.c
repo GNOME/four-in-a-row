@@ -1123,13 +1123,13 @@ prefs_dialog (void)
 
                 /* build and show it */
                 prefs_dialog_create ();
-                gtk_widget_show (dlg_prefs);
+                gtk_window_present (GTK_WINDOW (dlg_prefs));
 
         }
         else {
 
-                /* unhide */
-                gtk_widget_show (dlg_prefs);
+                /* unhide */ 
+                gtk_window_present (GTK_WINDOW (dlg_prefs));
 
         }
 }
