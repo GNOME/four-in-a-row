@@ -9,8 +9,10 @@ Games_DATA     = $(Games_in_files:.desktop.in=.desktop)
 schemadir      = $(sysconfdir)/gconf/schemas
 schema_DATA    = gnect.schemas
 
-soundlistdir   = $(sysconfdir)/sound/events
-soundlist_DATA = gnect.soundlist
+soundlistdir       = $(sysconfdir)/sound/events
+soundlist_in_files = gnect.soundlist.in
+soundlist_DATA     = $(soundlist_in_files:.soundlist.in=.soundlist)
+@INTLTOOL_SOUNDLIST_RULE@
 
 themedir       = $(datadir)/gnect
 theme_DATA     = default.gnect               \
