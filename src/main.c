@@ -822,7 +822,7 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 static void
 on_help_about (GtkMenuItem *m, gpointer data)
 {
-	const gchar *authors[] = {"Four-in-a-row:",
+	const gchar *authors[] = {"Four-in-a-Row:",
 	                          "  Tim Musson <trmusson@ihug.co.nz>",
 	                          "  David Neary <bolsh@gimp.org>",
 	                          "\nVelena Engine V1.07:",
@@ -831,29 +831,15 @@ on_help_about (GtkMenuItem *m, gpointer data)
 	                          "  Copyright (C) 1996-97 ",
 	                          "  Giuliano Bertoletti and GBE 32241 Software PR.",
 	                          NULL};
-	const gchar *documents[] = {NULL};
-	const gchar *translator  = _("translator-credits");
-	static GtkWidget *aboutbox;
-	GdkPixbuf *icon;
 
-	if (aboutbox != NULL) {
-		gtk_window_present (GTK_WINDOW(aboutbox));
-		return;
-	}
-
-	icon = gdk_pixbuf_new_from_file (fname_icon, NULL);
-	aboutbox = gnome_about_new ("Four-in-a-row",
-	                            VERSION,
-	                            "(c) 1999-2004, Tim Musson and David Neary",
-	                            _("\"Four in a row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
-	                            authors,
-	                            documents,
-	                            strcmp (translator, "translator-credits") != 0 ? translator : NULL,
-	                            icon);
-	gtk_window_set_transient_for (GTK_WINDOW(aboutbox), GTK_WINDOW(app));
-	if (icon != NULL) g_object_unref (icon);
-	g_signal_connect (aboutbox, "destroy", GTK_SIGNAL_FUNC(gtk_widget_destroyed), &aboutbox);
-	gtk_widget_show (aboutbox);
+	gtk_show_about_dialog (GTK_WINDOW (app),
+			       "name", _("Four-in-a-Row"),
+			       "version", VERSION,
+			       "copyright", "Copyright \xc2\xa9 1999-2005, Tim Musson and David Neary",
+	                       "comments", _("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
+			       "authors", authors,
+			       "translator_credits", _("translator-credits"),
+			       NULL);
 }
 
 
@@ -1277,7 +1263,7 @@ create_app (void)
 	if (width < 200)
 		width = 350;
 
-	app = gnome_app_new (APPNAME, _("Four-in-a-row"));
+	app = gnome_app_new (APPNAME, _("Four-in-a-Row"));
 	gtk_window_set_default_size (GTK_WINDOW (app), 200, 200);
 	gtk_window_resize (GTK_WINDOW (app), width, height);
 
@@ -1347,7 +1333,7 @@ create_app (void)
 	scorebox_update (); /* update visible player descriptions */
 	prompt_player ();
 
-	set_status (STATUS_FLASH, _("Welcome to Four-in-a-row!"));
+	set_status (STATUS_FLASH, _("Welcome to Four-in-a-Row!"));
 
 	return TRUE;
 }
