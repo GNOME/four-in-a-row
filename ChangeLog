@@ -1,3 +1,8 @@
+2005-06-14  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/theme.c: At Alan Horkan's suggestion, change Marbles and
+	More Marbles to better names.
+
 2005-04-14  Richard Hoelscher  <rah@rahga.com>
 
 	* src/main.c (on_help_about): Use GtkAboutDialog.

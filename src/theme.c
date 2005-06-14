@@ -55,7 +55,7 @@ Theme theme[] = {
 		N_("Light"), N_("Dark")
 	},
 	{
-		N_("Marbles"),
+		N_("Cream Marbles"),
 		"tileset_50x50_catseyes.png",
 		"bg_toplight.png",
 		"#727F8C",
@@ -63,7 +63,7 @@ Theme theme[] = {
 		N_("Red"), N_("Blue")
 	},
 	{
-		N_("More Marbles"),
+		N_("Glass Marbles"),
 		"tileset_50x50_glassy.png",
 		"bg_grotty.jpg",
 		"#727F8C",
