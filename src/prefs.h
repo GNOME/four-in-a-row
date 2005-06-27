@@ -9,14 +9,12 @@
 #define KEY_MOVE_LEFT          KEY_DIR "/keyleft"
 #define KEY_MOVE_RIGHT         KEY_DIR "/keyright"
 #define KEY_MOVE_DROP          KEY_DIR "/keydrop"
-#define KEY_DO_TOOLBAR         KEY_DIR "/toolbar"
 #define KEY_DO_SOUND           KEY_DIR "/sound"
 #define KEY_DO_ANIMATE         KEY_DIR "/animate"
 
 
 typedef struct _Prefs Prefs;
 struct _Prefs {
-	gboolean do_toolbar;
 	gboolean do_sound;
 	gboolean do_animate;
 	gint     theme_id;

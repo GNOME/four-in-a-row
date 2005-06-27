@@ -51,6 +51,5 @@ void prompt_player (void);
 void on_dialog_close (GtkWidget *w, int response_id, gpointer data);
 void scorebox_update (void);
 void scorebox_reset (void);
-void toolbar_changed (void);
 gint get_random_int (gint n);
 

@@ -41,7 +41,6 @@
 #define DEFAULT_KEY_LEFT       65361
 #define DEFAULT_KEY_RIGHT      65363
 #define DEFAULT_KEY_DROP       65364
-#define DEFAULT_DO_TOOLBAR     FALSE
 #define DEFAULT_DO_SOUND       TRUE
 #define DEFAULT_DO_ANIMATE     TRUE
 
@@ -177,20 +176,13 @@ gconf_animate_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gp
 
 
 static void
-gconf_toolbar_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
-{
-	p.do_toolbar = gconf_client_get_bool (conf_client, KEY_DO_TOOLBAR, NULL);
-	toolbar_changed ();
-	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(settings_menu_uiinfo[0].widget), p.do_toolbar);
-}
-
-
-
-static void
 gconf_sound_changed (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
 {
 	p.do_sound = gconf_client_get_bool (conf_client, KEY_DO_SOUND, NULL);
+#if 0
+/* FIXME: This refers to the old sound menu item. Fix after sounds work. */
 	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(settings_menu_uiinfo[1].widget), p.do_sound);
+#endif
 }
 
 
@@ -297,7 +289,6 @@ prefs_init (gint argc, gchar **argv)
 #endif
 	gconf_client_add_dir (conf_client, KEY_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
 
-	p.do_toolbar = gnect_gconf_get_bool (KEY_DO_TOOLBAR, DEFAULT_DO_TOOLBAR);
 	p.do_sound   = gnect_gconf_get_bool (KEY_DO_SOUND, DEFAULT_DO_SOUND);
 	p.do_animate = gnect_gconf_get_bool (KEY_DO_ANIMATE, DEFAULT_DO_ANIMATE);
 	p.level[PLAYER1] = gnect_gconf_get_int (KEY_LEVEL_PLAYER1, DEFAULT_LEVEL_PLAYER1);
@@ -307,8 +298,6 @@ prefs_init (gint argc, gchar **argv)
 	p.keypress[MOVE_DROP]  = gnect_gconf_get_int (KEY_MOVE_DROP, DEFAULT_KEY_DROP);
 	p.theme_id = gnect_gconf_get_int (KEY_THEME_ID, DEFAULT_THEME_ID);
 
-	gconf_client_notify_add (conf_client, KEY_DO_TOOLBAR,
-	                         gconf_toolbar_changed, NULL, NULL, NULL);
 	gconf_client_notify_add (conf_client, KEY_DO_SOUND,
 	                         gconf_sound_changed, NULL, NULL, NULL);
 	gconf_client_notify_add (conf_client, KEY_DO_ANIMATE,

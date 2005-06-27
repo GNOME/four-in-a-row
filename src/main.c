@@ -27,7 +27,10 @@
 #include "config.h"
 #include <gnome.h>
 #include <gconf/gconf-client.h>
-#include "games-gridframe.h"
+
+#include <games-stock.h>
+#include <games-gridframe.h>
+
 #include "connect4.h"
 #include "main.h"
 #include "theme.h"
@@ -46,17 +49,11 @@ extern Prefs p;
 
 GtkWidget *app;
 GtkWidget *drawarea;
-GtkWidget *appbar;
+GtkWidget *statusbar;
 GtkWidget *scorebox = NULL;
 
 GtkWidget *label_name[3];
 GtkWidget *label_score[3];
-
-GnomeUIInfo game_menu_uiinfo[];
-GnomeUIInfo settings_menu_uiinfo[];
-GnomeUIInfo help_menu_uiinfo[];
-GnomeUIInfo menubar_uiinfo[];
-GnomeUIInfo toolbar[];
 
 gchar     *fname_icon = NULL;
 
@@ -346,51 +343,19 @@ swap_player (void)
 
 
 static void
-set_status (StatusID id, const gchar *s)
+set_status_message (const gchar *message)
 {
-	switch (id) {
-	case STATUS_CLEAR:
-		gnome_appbar_clear_stack (GNOME_APPBAR(appbar));
-		gnome_appbar_refresh (GNOME_APPBAR(appbar));
-		return;
-	case STATUS_FLASH:
-		gnome_app_flash (GNOME_APP(app), s);
-		return;
-	case STATUS_SET:
-		gnome_appbar_pop (GNOME_APPBAR(appbar));
-		gnome_appbar_push (GNOME_APPBAR(appbar), s);
-		break;
-	}
+	guint context_id;
+	context_id = gtk_statusbar_get_context_id (GTK_STATUSBAR (statusbar), "message");
+	gtk_statusbar_pop (GTK_STATUSBAR (statusbar), context_id);
+	if (message) 
+		gtk_statusbar_push (GTK_STATUSBAR (statusbar), context_id, message);
 }
 
 
-
-static void
-newgame_set_sensitive (gboolean sensitive)
-{
-	gtk_widget_set_sensitive (game_menu_uiinfo[0].widget, sensitive);
-	gtk_widget_set_sensitive (toolbar[0].widget, sensitive);
-}
-
-
-
-static void
-undo_set_sensitive (gboolean sensitive)
-{
-	gtk_widget_set_sensitive (game_menu_uiinfo[2].widget, sensitive);
-	gtk_widget_set_sensitive (toolbar[1].widget, sensitive);
-}
-
-
-
-static void
-hint_set_sensitive (gboolean sensitive)
-{
-	gtk_widget_set_sensitive (game_menu_uiinfo[3].widget, sensitive);
-	gtk_widget_set_sensitive (toolbar[2].widget, sensitive);
-}
-
-
+GtkAction *new_game_action;
+GtkAction *undo_action;
+GtkAction *hint_action;
 
 static void
 stop_anim (void)
@@ -428,8 +393,8 @@ void
 game_reset (gboolean start)
 {
 	stop_anim ();
-	undo_set_sensitive (FALSE);
-	hint_set_sensitive (FALSE);
+	gtk_action_set_sensitive (undo_action, FALSE);
+	gtk_action_set_sensitive (hint_action, FALSE);
 
 	who_starts = (who_starts == PLAYER1) ? PLAYER2 : PLAYER1;
 	player = who_starts;
@@ -442,7 +407,7 @@ game_reset (gboolean start)
 	row_dropto    = 0;
 
 	clear_board ();
-	set_status (STATUS_CLEAR, NULL);
+	set_status_message (NULL);
 	gfx_draw_all ();
 
 	if (start) {
@@ -526,27 +491,27 @@ prompt_player (void)
 	const gchar *who;
 	gchar *str;
 
-	newgame_set_sensitive (human || gameover);
-	hint_set_sensitive (human && !gameover);
+	gtk_action_set_sensitive (new_game_action, (human || gameover));
+	gtk_action_set_sensitive (hint_action, (human || gameover));
 
 	switch (players) {
 	case 0:
-		undo_set_sensitive (FALSE);
+		gtk_action_set_sensitive (undo_action, FALSE);
 		break;
 	case 1:
-		undo_set_sensitive ((human && moves > 1) || (!human && gameover));
+		gtk_action_set_sensitive (undo_action, (human && moves > 1) || (!human && gameover));
 		break;
 	case 2:
-		undo_set_sensitive (moves > 0);
+		gtk_action_set_sensitive (undo_action, (moves > 0));
 		break;
 	}
 
 	if (gameover && winner == NOBODY) {
 		if (score[NOBODY] == 0) {
-			set_status (STATUS_CLEAR, NULL);
+			set_status_message ("");
 		}
 		else {
-			set_status (STATUS_SET, _("It's a draw!"));
+			set_status_message (_("It's a draw!"));
 		}
 		return;
 	}
@@ -554,12 +519,12 @@ prompt_player (void)
 	switch (players) {
 	case 1:
 		if (human) {
-			if (gameover) set_status (STATUS_SET, _("You win!"));
-			else set_status (STATUS_SET, _("Your move..."));
+			if (gameover) set_status_message (_("You win!"));
+			else set_status_message (_("Your move..."));
 		}
 		else {
-			if (gameover) set_status (STATUS_SET, _("I win!"));
-			else set_status (STATUS_SET, _("Thinking..."));
+			if (gameover) set_status_message (_("I win!"));
+			else set_status_message (_("Thinking..."));
 		}
 		break;
 	case 2:
@@ -570,7 +535,7 @@ prompt_player (void)
 		if (gameover) str = g_strdup_printf (_("%s wins!"), who);
 		else str = g_strdup_printf (_("%s..."), who);
 
-		set_status (STATUS_SET, str);
+		set_status_message (str);
 		g_free (str);
 		break;
 	}
@@ -649,10 +614,10 @@ on_game_hint (GtkMenuItem *m, gpointer data)
 	if (timeout) return;
 	if (gameover) return;
 
-	hint_set_sensitive (FALSE);
-	undo_set_sensitive (FALSE);
+	gtk_action_set_sensitive (hint_action, FALSE);
+	gtk_action_set_sensitive (undo_action, FALSE);
 
-	set_status (STATUS_FLASH, _("Thinking..."));
+	set_status_message (_("Thinking..."));
 
 	vstr[0] = vlevel[LEVEL_STRONG];
 	c = playgame (vstr, vboard) - 1;
@@ -671,11 +636,11 @@ on_game_hint (GtkMenuItem *m, gpointer data)
 	blink_tile (0, c, gboard[0][c], 6);
 
 	s = g_strdup_printf (_("Hint: Column %d"), c + 1);
-	set_status (STATUS_FLASH, s);
+	set_status_message (s);
 	g_free (s);
 
-	hint_set_sensitive (TRUE);
-	undo_set_sensitive (moves > 0);
+	gtk_action_set_sensitive (hint_action, TRUE);
+	gtk_action_set_sensitive (undo_action, (moves > 0));
 }
 
 
@@ -843,41 +808,14 @@ on_help_about (GtkMenuItem *m, gpointer data)
 }
 
 
-
-void
-toolbar_changed (void)
-{
-	BonoboDockItem *gdi;
-
-	gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
-	if (p.do_toolbar) {
-		gtk_widget_show (GTK_WIDGET(gdi));
-	}
-	else {
-		gtk_widget_hide (GTK_WIDGET(gdi));
-		gtk_widget_queue_resize (app);
-	}
-}
-
-
-
-static void
-on_settings_toggle_toolbar (GtkMenuItem *m, gpointer user_data)
-{
-	p.do_toolbar = GTK_CHECK_MENU_ITEM(m)->active;
-	toolbar_changed ();
-	gconf_client_set_bool (conf_client, KEY_DO_TOOLBAR, p.do_toolbar, NULL);
-}
-
-
-
+#if 0
 static void
 on_settings_toggle_sound (GtkMenuItem *m, gpointer user_data)
 {
 	p.do_sound = GTK_CHECK_MENU_ITEM(m)->active;
 	gconf_client_set_bool (conf_client, KEY_DO_SOUND, p.do_sound, NULL);
 }
-
+#endif
 
 
 
@@ -1157,7 +1095,6 @@ on_key_press (GtkWidget* w, GdkEventKey* e, gpointer data)
 
 	if (gameover) {
 		blink_winner (2);
-		set_status (STATUS_FLASH, _("Select \"New game\" from the \"Game\" menu to begin."));
 		return TRUE;
 	}
 
@@ -1184,7 +1121,6 @@ on_button_press (GtkWidget *w, GdkEventButton *e, gpointer data)
 
 	if (gameover && !timeout) {
 		blink_winner (2);
-		set_status (STATUS_FLASH, _("Select \"New game\" from the \"Game\" menu to begin."));
 	}
 	else if (is_player_human () && !timeout) {
 		gtk_widget_get_pointer (w, &x, &y);
@@ -1195,65 +1131,75 @@ on_button_press (GtkWidget *w, GdkEventButton *e, gpointer data)
 }
 
 
-
-GnomeUIInfo game_menu_uiinfo[] =
-{
-	GNOMEUIINFO_MENU_NEW_GAME_ITEM(on_game_new, NULL),
-	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_MENU_UNDO_ITEM(on_game_undo, NULL),
-	GNOMEUIINFO_MENU_HINT_ITEM(on_game_hint, NULL),
-	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_MENU_SCORES_ITEM(on_game_scores, NULL),
-	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_MENU_EXIT_ITEM(on_game_exit, NULL),
-	GNOMEUIINFO_END
-};
-GnomeUIInfo settings_menu_uiinfo[] =
-{
-	GNOMEUIINFO_TOGGLEITEM(N_("_Toolbar"),
-	                       N_("Show or hide the tool bar"),
-	                       on_settings_toggle_toolbar, NULL),
-#if 0
-	GNOMEUIINFO_TOGGLEITEM(N_("Enable _sound"),
-	                       N_("Enable or disable sound"),
-	                       on_settings_toggle_sound, NULL),
-#endif
-	GNOMEUIINFO_SEPARATOR,
-	GNOMEUIINFO_MENU_PREFERENCES_ITEM(on_settings_preferences, NULL),
-	GNOMEUIINFO_END
-};
-GnomeUIInfo help_menu_uiinfo[] =
-{
-	GNOMEUIINFO_HELP(APPNAME),
-	GNOMEUIINFO_MENU_ABOUT_ITEM(on_help_about, NULL),
-	GNOMEUIINFO_END
-};
-GnomeUIInfo menubar_uiinfo[] =
-{
-	GNOMEUIINFO_MENU_GAME_TREE (game_menu_uiinfo),
-	GNOMEUIINFO_MENU_SETTINGS_TREE (settings_menu_uiinfo),
-	GNOMEUIINFO_MENU_HELP_TREE (help_menu_uiinfo),
-	GNOMEUIINFO_END
-};
-GnomeUIInfo toolbar[] = {
-	{GNOME_APP_UI_ITEM, N_("New"), N_("New game"), on_game_new,
-	 NULL, N_("Start a new game"),
-	 GNOME_APP_PIXMAP_STOCK, GTK_STOCK_NEW, 0, 0, NULL},
-	GNOMEUIINFO_ITEM_STOCK(N_("Undo"), N_("Undo the last move"), on_game_undo, GTK_STOCK_UNDO),
-	GNOMEUIINFO_ITEM_STOCK(N_("Hint"), N_("Get a hint for your next move"), on_game_hint, GTK_STOCK_HELP),
-	GNOMEUIINFO_END
+const GtkActionEntry action_entry[] = {
+  { "GameMenu", NULL, N_("_Game") },
+  { "SettingsMenu", NULL, N_("_Settings") },
+  { "HelpMenu", NULL, N_("_Help") },
+  { "NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, NULL, G_CALLBACK (on_game_new) },
+  { "UndoMove", GAMES_STOCK_UNDO_MOVE, NULL, NULL, NULL, G_CALLBACK (on_game_undo) },
+  { "Hint", GAMES_STOCK_HINT, NULL, NULL, NULL, G_CALLBACK (on_game_hint) },
+  { "Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL, G_CALLBACK (on_game_scores) },
+  { "Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (on_game_exit) },
+  { "Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK (on_settings_preferences) },
+  { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (on_help_about) },
+  { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (on_help_about) }
 };
 
+const char *ui_description =
+"<ui>"
+"  <menubar name='MainMenu'>"
+"    <menu action='GameMenu'>"
+"      <menuitem action='NewGame'/>"
+"      <separator/>"
+"      <menuitem action='UndoMove'/>"
+"      <menuitem action='Hint'/>"
+"      <separator/>"
+"      <menuitem action='Scores'/>"
+"      <separator/>"
+"      <menuitem action='Quit'/>"
+"    </menu>"
+"    <menu action='SettingsMenu'>"
+"      <menuitem action='Preferences'/>"
+"    </menu>"
+"    <menu action='HelpMenu'>"
+"      <menuitem action='Contents'/>"
+"      <menuitem action='About'/>"
+"    </menu>"
+"  </menubar>"
+"</ui>";
+
+
+
+static void
+create_game_menus (GtkUIManager *ui_manager)
+{
+  GtkActionGroup *action_group;
+  games_stock_init ();
+
+  action_group = gtk_action_group_new ("actions");
+
+  gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
+  gtk_action_group_add_actions (action_group, action_entry, G_N_ELEMENTS (action_entry), app);
+
+  gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
+  gtk_ui_manager_add_ui_from_string (ui_manager, ui_description, -1, NULL);
+
+  new_game_action = gtk_action_group_get_action (action_group, "NewGame");
+  hint_action = gtk_action_group_get_action (action_group, "Hint");
+  undo_action = gtk_action_group_get_action (action_group, "UndoMove");
+}
 
 
 static gboolean
 create_app (void)
 {
-	BonoboDockItem *gdi;
-	GtkWidget *bonobodock;
+	GtkWidget *menubar;
 	GtkWidget *gridframe;
+	GtkWidget *vbox;
+	GtkUIManager *ui_manager;
+	
 	gint width, height;
-
+	
 	width = gconf_client_get_int (conf_client, "/apps/gnect/window_width", 
 				      NULL);
 	height = gconf_client_get_int (conf_client, 
@@ -1279,14 +1225,22 @@ create_app (void)
 		gnome_window_icon_set_from_default (GTK_WINDOW(app));
 	}
 
-	bonobodock = GNOME_APP(app)->dock;
-	gtk_widget_show (bonobodock);
+	statusbar = gtk_statusbar_new();
+	ui_manager = gtk_ui_manager_new();
 
-	gnome_app_create_menus (GNOME_APP(app), menubar_uiinfo);
-	gnome_app_create_toolbar (GNOME_APP(app), toolbar);
+	gtk_statusbar_set_has_resize_grip (GTK_STATUSBAR (statusbar), FALSE);
+	games_stock_prepare_for_statusbar_tooltips (ui_manager, statusbar);
+	create_game_menus (ui_manager);
+	menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
 
+	vbox = gtk_vbox_new (FALSE, 0);
 	gridframe = games_grid_frame_new (7, 7);
-	gnome_app_set_contents (GNOME_APP (app), gridframe);
+
+	gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
+
+	gnome_app_set_contents (GNOME_APP (app), vbox);
 
 	drawarea = gtk_drawing_area_new ();
 
@@ -1305,17 +1259,8 @@ create_app (void)
 	g_signal_connect (G_OBJECT(app), "key_press_event",
 	                  G_CALLBACK(on_key_press), NULL);
 
-	appbar = gnome_appbar_new (FALSE, TRUE, GNOME_PREFERENCES_NEVER);
-	gnome_app_set_statusbar (GNOME_APP(app), appbar);
-
-	gnome_app_install_menu_hints (GNOME_APP(app), menubar_uiinfo);
-
-	if (p.do_toolbar) {
-		gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(settings_menu_uiinfo[0].widget), TRUE);
-	}
-
-	hint_set_sensitive (FALSE);
-	undo_set_sensitive (FALSE);
+	gtk_action_set_sensitive (hint_action, FALSE);
+	gtk_action_set_sensitive (undo_action, FALSE);
 
 	gtk_widget_show_all (app);
 
@@ -1325,15 +1270,8 @@ create_app (void)
 	gfx_refresh_pixmaps ();
 	gfx_draw_all ();
 
-	if (!p.do_toolbar) {
-		gdi = gnome_app_get_dock_item_by_name (GNOME_APP(app), GNOME_APP_TOOLBAR_NAME);
-		gtk_widget_hide (GTK_WIDGET(gdi));
-	}
-
 	scorebox_update (); /* update visible player descriptions */
 	prompt_player ();
-
-	set_status (STATUS_FLASH, _("Welcome to Four-in-a-Row!"));
 
 	return TRUE;
 }
