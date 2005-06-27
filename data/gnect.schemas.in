@@ -120,18 +120,6 @@
         <long>Key press to drop a marble.</long>
       </locale>
       </schema>
-
-      <schema>
-      <key>/schemas/apps/gnect/toolbar</key>
-      <applyto>/apps/gnect/toolbar</applyto>
-      <owner>gnect</owner>
-      <type>bool</type>
-      <default>FALSE</default>
-      <locale name="C">
-        <short>Show tool bar</short>
-        <long>Whether or not to show the tool bar.</long>
-      </locale>
-      </schema>
   </schemalist>
 
 </gconfschemafile>

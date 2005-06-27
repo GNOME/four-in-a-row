@@ -3,6 +3,7 @@
 	* src/main.[ch]: Remove the Toolbar, switch from libgnomeui menus to 
 	gtkaction menus, and replace the GnomeAppBar with a GtkStatusBar
 	* src/prefs.[ch]: Remove Toolbar toggle support.
+	* data/gnect.schemas.in: Schema file too...
 
 2005-06-14  Callum McKenzie  <callum@physics.otago.ac.nz>
 
