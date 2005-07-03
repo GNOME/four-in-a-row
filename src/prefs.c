@@ -258,7 +258,7 @@ on_select_player1 (GtkWidget *w, gpointer data)
                               GPOINTER_TO_INT(data), NULL);
 	scorebox_reset ();
 	who_starts = PLAYER2; /* This gets reversed in game_reset. */
-	game_reset (TRUE);
+	game_reset ();
 }
 
 
@@ -272,7 +272,7 @@ on_select_player2 (GtkWidget *w, gpointer data)
                               GPOINTER_TO_INT(data), NULL);
 	scorebox_reset ();
 	who_starts = PLAYER2; /* This gets reversed in game_reset. */
-	game_reset (TRUE);
+	game_reset ();
 }
 
 

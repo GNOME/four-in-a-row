@@ -46,7 +46,7 @@ typedef enum {
 
 extern PlayerID  who_starts;
 
-void game_reset (gboolean start);
+void game_reset (void);
 void prompt_player (void);
 void on_dialog_close (GtkWidget *w, int response_id, gpointer data);
 void scorebox_update (void);

@@ -390,7 +390,7 @@ game_init (void)
 
 
 void
-game_reset (gboolean start)
+game_reset (void)
 {
 	stop_anim ();
 	gtk_action_set_sensitive (undo_action, FALSE);
@@ -410,19 +410,17 @@ game_reset (gboolean start)
 	set_status_message (NULL);
 	gfx_draw_all ();
 
-	if (start) {
-		move_cursor (column);
-		gameover = FALSE;
-		prompt_player ();
-		if (!is_player_human ()) {
-			if (player == PLAYER1) {
-				vstr[0] = vlevel[p.level[PLAYER1]];
-			}
-			else {
-				vstr[0] = vlevel[p.level[PLAYER2]];
-			}
-			process_move (playgame (vstr, vboard) - 1);
+	move_cursor (column);
+	gameover = FALSE;
+	prompt_player ();
+	if (!is_player_human ()) {
+		if (player == PLAYER1) {
+			vstr[0] = vlevel[p.level[PLAYER1]];
 		}
+		else {
+			vstr[0] = vlevel[p.level[PLAYER2]];
+		}
+		process_move (playgame (vstr, vboard) - 1);
 	}
 }
 
@@ -469,18 +467,6 @@ play_sound (SoundID id)
 	}
 #endif
 }
-
-
-
-static gboolean
-on_delete_event (GtkWidget *w, GdkEventAny *a, gpointer data)
-{
-	stop_anim ();
-	gtk_main_quit ();
-	exit (0);
-	return FALSE;
-}
-
 
 
 void
@@ -547,17 +533,16 @@ static void
 on_game_new (void)
 {
 	stop_anim ();
-	game_reset (TRUE);
+	game_reset ();
 }
 
 
 
 static void
-on_game_exit (GtkMenuItem *m, gpointer data)
+on_game_exit (GObject *object, gpointer data)
 {
 	stop_anim ();
 	gtk_main_quit ();
-	exit (0);
 }
 
 
@@ -785,7 +770,7 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 
 
 static void
-on_help_about (GtkMenuItem *m, gpointer data)
+on_help_about (GtkAction *action, gpointer data)
 {
 	const gchar *authors[] = {"Four-in-a-Row:",
 	                          "  Tim Musson <trmusson@ihug.co.nz>",
@@ -808,6 +793,13 @@ on_help_about (GtkMenuItem *m, gpointer data)
 }
 
 
+static void
+on_help_contents (GtkAction *action, gpointer data)
+{
+	gnome_help_display ("gnect.xml", NULL, NULL);
+}
+
+
 #if 0
 static void
 on_settings_toggle_sound (GtkMenuItem *m, gpointer user_data)
@@ -820,7 +812,7 @@ on_settings_toggle_sound (GtkMenuItem *m, gpointer user_data)
 
 
 static void
-on_settings_preferences (GtkMenuItem *m, gpointer user_data)
+on_settings_preferences (GtkAction *action, gpointer user_data)
 {
 	prefsbox_open ();
 }
@@ -1131,7 +1123,7 @@ on_button_press (GtkWidget *w, GdkEventButton *e, gpointer data)
 }
 
 
-const GtkActionEntry action_entry[] = {
+static const GtkActionEntry action_entry[] = {
   { "GameMenu", NULL, N_("_Game") },
   { "SettingsMenu", NULL, N_("_Settings") },
   { "HelpMenu", NULL, N_("_Help") },
@@ -1141,11 +1133,11 @@ const GtkActionEntry action_entry[] = {
   { "Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL, G_CALLBACK (on_game_scores) },
   { "Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (on_game_exit) },
   { "Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK (on_settings_preferences) },
-  { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (on_help_about) },
+  { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (on_help_contents) },
   { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (on_help_about) }
 };
 
-const char *ui_description =
+static const char *ui_description =
 "<ui>"
 "  <menubar name='MainMenu'>"
 "    <menu action='GameMenu'>"
@@ -1214,7 +1206,7 @@ create_app (void)
 	gtk_window_resize (GTK_WINDOW (app), width, height);
 
 	g_signal_connect (G_OBJECT(app), "delete_event",
-	                  G_CALLBACK(on_delete_event), NULL);
+	                  G_CALLBACK(on_game_exit), NULL);
 	g_signal_connect (G_OBJECT(app), "configure_event",
 	                  G_CALLBACK(on_window_resize), NULL);
 
@@ -1296,7 +1288,7 @@ main (int argc, char *argv[])
 		return 0;
 
 	if (create_app ()) {
-		on_game_new ();
+		game_reset ();
 		gtk_main ();
 	}
 

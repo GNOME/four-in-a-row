@@ -1,3 +1,11 @@
+2005-06-28  Richard Hoelscher  <rah@rahga.com>
+
+	* src/prefs.c
+	* src/main.[ch]: Removed on_delete_event, on_game_exit makes it 
+	redundant. Updated callbacks to mention GtkAction rather than 
+	widgets. Fixed the callback for help.
+	(game_reset): It never gets passed FALSE these days, cleaned up.
+
 2005-06-27  Richard Hoelscher  <rah@rahga.com>
 
 	* src/main.[ch]: Remove the Toolbar, switch from libgnomeui menus to 
