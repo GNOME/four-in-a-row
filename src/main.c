@@ -538,11 +538,12 @@ on_game_new (void)
 
 
 
-static void
+static gboolean
 on_game_exit (GObject *object, gpointer data)
 {
 	stop_anim ();
 	gtk_main_quit ();
+	return TRUE;
 }
 
 
