@@ -1177,6 +1177,9 @@ create_game_menus (GtkUIManager *ui_manager)
   gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
   gtk_ui_manager_add_ui_from_string (ui_manager, ui_description, -1, NULL);
 
+  gtk_window_add_accel_group (GTK_WINDOW (app), 
+			      gtk_ui_manager_get_accel_group (ui_manager));
+
   new_game_action = gtk_action_group_get_action (action_group, "NewGame");
   hint_action = gtk_action_group_get_action (action_group, "Hint");
   undo_action = gtk_action_group_get_action (action_group, "UndoMove");
