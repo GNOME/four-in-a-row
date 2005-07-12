@@ -1,3 +1,7 @@
+2005-07-11  Richard Hoelscher  <rah@rahga.com>
+
+	* src/main.c: Make ui_description readonly.
+
 2005-07-11  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* src/main.c: Hook up the accelerators so we have key bindings
