@@ -780,7 +780,10 @@ on_help_about (GtkAction *action, gpointer data)
 	                          "  AI engine written by Giuliano Bertoletti",
 	                          "  Based on the knowledged approach of Victor Allis",
 	                          "  Copyright (C) 1996-97 ",
-	                          "  Giuliano Bertoletti and GBE 32241 Software PR.",
+	                          "  Giuliano Bertoletti and GBE 32241 Software PR.\n",
+				  "Graphics:",
+				  "  Alan Horkan",
+				  "  Tim Musson",
 	                          NULL};
 
 	gtk_show_about_dialog (GTK_WINDOW (app),
