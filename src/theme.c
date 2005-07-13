@@ -40,7 +40,7 @@ extern Prefs p;
 Theme theme[] = {
 	{
 		N_("Classic"),
-		"tileset_50x50_classic.png",
+		"tileset_50x50_sunspot.svg",
 		NULL,
 		"#9999CC",
 		DEFAULT_GRID_STYLE,
@@ -48,8 +48,16 @@ Theme theme[] = {
 	},
 	{
 		N_("High Contrast"),
-		"tileset_50x50_hcontrast.png",
-		"bg_toplight.png",
+		"tileset_50x50_hcontrast.svg",
+		NULL,
+		"#000000",
+		DEFAULT_GRID_STYLE,
+		N_("Light"), N_("Dark")
+	},
+	{
+		N_("High Contrast Inverse"),
+		"tileset_50x50_hcinverse.svg",
+		NULL,
 		"#FFFFFF",
 		DEFAULT_GRID_STYLE,
 		N_("Light"), N_("Dark")

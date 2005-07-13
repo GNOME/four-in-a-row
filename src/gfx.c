@@ -57,7 +57,7 @@ static GdkPixmap *pm_bground = NULL;
 static GdkPixmap *pm_display = NULL;
 
 static GdkGC *gc = NULL;
-
+static GdkGC *solidgc = NULL;
 
 
 void
@@ -195,6 +195,8 @@ gfx_refresh_pixmaps (void)
 		gdk_draw_line (pm_bground, gc, i * tilesize, 0, i* tilesize, boardsize);
 		gdk_draw_line (pm_bground, gc, 0, i * tilesize, boardsize, i * tilesize);
 	}
+	/* Mark the top off with a solid line. */
+	gdk_draw_line (pm_bground, solidgc, 0, tilesize, boardsize, tilesize);
 }
 
 
@@ -369,8 +371,10 @@ gfx_set_grid_style (void)
 
 	g_return_val_if_fail (drawarea != NULL, FALSE);
 
-	if (!gc)
+	if (!gc) {
 		gc = gdk_gc_new (drawarea->window);
+		solidgc = gdk_gc_new (drawarea->window);
+	}
 
 	if (theme[p.theme_id].grid_rgb == NULL)
 		return FALSE;
@@ -389,6 +393,11 @@ gfx_set_grid_style (void)
 	gdk_gc_set_line_attributes (gc, 0, theme[p.theme_id].grid_style,
 	                            GDK_CAP_BUTT, GDK_JOIN_MITER);
 
+	gdk_gc_copy (solidgc, gc);
+	gdk_gc_set_line_attributes (solidgc, 0, GDK_LINE_SOLID,
+	                            GDK_CAP_BUTT, GDK_JOIN_MITER);	
+	
+	
 	return TRUE;
 }
 

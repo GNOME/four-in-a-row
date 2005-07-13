@@ -1,3 +1,17 @@
+2005-07-13  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* src/gfx.c: Draw a solid line between the top line and the
+	playing area. This helps with high-contrast themes where we don't
+	want to make the top line a different colour.
+
+	* src/theme.c: 
+	* pixmaps/Makefile.am:
+	* pixmaps/*.svg: Replace the classic theme with an SVG version
+	from Alan Horkan. Also replace the high contrast theme with an SVG
+	version and add a high-contrast inverse theme. Both are also from
+	Alan but with modification by me to make them more like the GNOME
+	high contrast and high contrast inverse themes.
+
 2005-07-11  Richard Hoelscher  <rah@rahga.com>
 
 	* src/main.c: Make ui_description readonly.
