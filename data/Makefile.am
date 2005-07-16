@@ -19,12 +19,12 @@ schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 ## soundlist_DATA     = $(soundlist_in_files:.soundlist.in=.soundlist)
 ## @INTLTOOL_SOUNDLIST_RULE@
 
-EXTRA_DIST = $(velena_DATA)     \
-             $(Games_DATA)      \
+EXTRA_DIST = $(velena_DATA)      \
+             $(Games_in_files)   \
              $(schema_in_files)
 ##             $(soundlist_DATA)  \
 
-DISTCLEANFILES = $(schema_DATA)
+DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
 
 install-data-local:
 if GCONF_SCHEMAS_INSTALL
