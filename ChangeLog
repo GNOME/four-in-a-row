@@ -1,3 +1,10 @@
+2005-07-29  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/C/figures/*:
+	* help/C/gnect.xml: Bump the version number. Remove the faked
+	mdash and hellips entities since yelp supports them just
+	fine. Update the screenshots.
+
 2005-07-16  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* data/Makefile.am (EXTRA_DIST): Use Games_in_files rather than

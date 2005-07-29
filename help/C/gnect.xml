@@ -3,14 +3,12 @@
         "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"
 [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "2.8">
+  <!ENTITY appversion "2.12">
   <!ENTITY manrevision "2.8">
   <!ENTITY date "September 2004">
   <!ENTITY app "<application>Four-in-a-row</application>">
   <!ENTITY appname "Four-in-a-row">
   <!ENTITY version "2.8">
-  <!ENTITY mdash "-">
-  <!ENTITY hellip "...">
 ]>
 
 
