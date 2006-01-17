@@ -1297,6 +1297,7 @@ main (int argc, char *argv[])
 	if (create_app ()) {
 		game_reset ();
 		gtk_main ();
+		gnome_accelerators_sync();
 	}
 
 
