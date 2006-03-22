@@ -1,3 +1,9 @@
+2006-03-22  Callum McKenzie  <callum@spooky-possum.org>
+
+	* help/C/gnect.xml: Remove the doctable link, it was broken
+	*and* being used inappropriately. Replaced with the 
+	ghelp:gnome-feedback link. Bug #335263.
+
 2005-07-29  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/figures/*:
