@@ -1,5 +1,7 @@
 2006-03-22  Callum McKenzie  <callum@spooky-possum.org>
 
+	* src/theme.c: Fix the nightfall theme. Bug #335340.
+
 	* help/C/gnect.xml: Remove the doctable link, it was broken
 	*and* being used inappropriately. Replaced with the 
 	ghelp:gnome-feedback link. Bug #335263.

@@ -80,7 +80,7 @@ Theme theme[] = {
 	},
 	{
 		N_("Nightfall"),
-		"tileset_50x50_classic.png",
+		"tileset_50x50_glassy.png",
 		"bg_nightfall.jpg",
 		"#727F8C",
 		DEFAULT_GRID_STYLE,
