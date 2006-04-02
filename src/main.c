@@ -55,8 +55,6 @@ GtkWidget *scorebox = NULL;
 GtkWidget *label_name[3];
 GtkWidget *label_score[3];
 
-gchar     *fname_icon = NULL;
-
 PlayerID  player;
 PlayerID  winner;
 PlayerID  who_starts;
@@ -431,7 +429,6 @@ game_free (void)
 {
 	veleng_free (vboard);
 	gfx_free ();
-	g_free (fname_icon);
 }
 
 
@@ -692,7 +689,7 @@ scorebox_reset (void)
 static void
 on_game_scores (GtkMenuItem *m, gpointer data)
 {
-	GtkWidget *table, *vbox;
+	GtkWidget *table, *vbox, *icon;
 
 	if (scorebox != NULL) {
 		gtk_window_present (GTK_WINDOW(scorebox));
@@ -718,12 +715,8 @@ on_game_scores (GtkMenuItem *m, gpointer data)
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
 	gtk_box_pack_start (GTK_BOX(GTK_DIALOG(scorebox)->vbox), vbox, TRUE, TRUE, 0);
 
-	if (fname_icon != NULL) {
-		GtkWidget *icon = gtk_image_new_from_file (fname_icon);
-		if (icon != NULL) {
-			gtk_box_pack_start (GTK_BOX(vbox), icon, FALSE, FALSE, 0);
-		}
-	}
+	icon = gtk_image_new_from_icon_name ("gnome-four-in-a-row", 48);
+	gtk_box_pack_start (GTK_BOX(vbox), icon, FALSE, FALSE, 0);
 
 	table = gtk_table_new (3, 2, FALSE);
 	gtk_box_pack_start (GTK_BOX(vbox), table, TRUE, TRUE, 0);
@@ -793,6 +786,7 @@ on_help_about (GtkAction *action, gpointer data)
 	                       "comments", _("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
 			       "authors", authors,
 			       "translator_credits", _("translator-credits"),
+			       "logo-icon-name", "gnome-four-in-a-row",
 			       NULL);
 }
 
@@ -1217,12 +1211,7 @@ create_app (void)
 	g_signal_connect (G_OBJECT(app), "configure_event",
 	                  G_CALLBACK(on_window_resize), NULL);
 
-	fname_icon = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,
-	                                        ("gnect-icon.png"), TRUE, NULL);
-	if (fname_icon != NULL) {
-		gnome_window_icon_set_default_from_file (fname_icon); 
-		gnome_window_icon_set_from_default (GTK_WINDOW(app));
-	}
+	gtk_window_set_default_icon_name ("gnome-four-in-a-row");
 
 	statusbar = gtk_statusbar_new();
 	ui_manager = gtk_ui_manager_new();

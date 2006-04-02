@@ -11,8 +11,5 @@ pixmap_DATA = \
     bg_nightfall.jpg \
     bg_toplight.png
 
-icondir   = $(datadir)/pixmaps
-icon_DATA = gnect-icon.png
-
 EXTRA_DIST = $(pixmap_DATA) $(icon_DATA)
 
