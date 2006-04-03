@@ -11,5 +11,5 @@ pixmap_DATA = \
     bg_nightfall.jpg \
     bg_toplight.png
 
-EXTRA_DIST = $(pixmap_DATA) $(icon_DATA)
+EXTRA_DIST = $(pixmap_DATA)
 

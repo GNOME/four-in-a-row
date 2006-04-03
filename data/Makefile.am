@@ -24,7 +24,8 @@ icon_DATA = gnome-four-in-a-row.png
 
 EXTRA_DIST = $(velena_DATA)      \
              $(Games_in_files)   \
-             $(schema_in_files)
+             $(schema_in_files)  \
+             $(icon_DATA)
 ##             $(soundlist_DATA)  \
 
 DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
