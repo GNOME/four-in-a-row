@@ -1269,12 +1269,14 @@ create_app (void)
 int
 main (int argc, char *argv[])
 {
+	GnomeProgram *program;
+
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	gnome_program_init (APPNAME, VERSION, LIBGNOMEUI_MODULE,
-	                    argc, argv, GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
+	program = gnome_program_init (APPNAME, VERSION, LIBGNOMEUI_MODULE,
+	                              argc, argv, GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
 
 	prefs_init (argc, argv);
 	game_init ();
@@ -1291,6 +1293,8 @@ main (int argc, char *argv[])
 
 
 	game_free ();
+
+	g_object_unref (program);
 
 	return 0;
 }
