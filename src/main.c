@@ -769,24 +769,34 @@ on_help_about (GtkAction *action, gpointer data)
 	const gchar *authors[] = {"Four-in-a-Row:",
 	                          "  Tim Musson <trmusson@ihug.co.nz>",
 	                          "  David Neary <bolsh@gimp.org>",
-	                          "\nVelena Engine V1.07:",
+	                          "",
+	                          "Velena Engine V1.07:",
 	                          "  AI engine written by Giuliano Bertoletti",
 	                          "  Based on the knowledged approach of Victor Allis",
 	                          "  Copyright (C) 1996-97 ",
-	                          "  Giuliano Bertoletti and GBE 32241 Software PR.\n",
-				  "Graphics:",
-				  "  Alan Horkan",
-				  "  Tim Musson",
+	                          "  Giuliano Bertoletti and GBE 32241 Software PR.",
 	                          NULL};
+
+	const gchar *artists[] = {"Alan Horkan",
+				  "Tim Musson",
+				  NULL};
+
+	const gchar *documenters[] = {"Timothy Musson",
+				  NULL};
 
 	gtk_show_about_dialog (GTK_WINDOW (app),
 			       "name", _("Four-in-a-Row"),
 			       "version", VERSION,
-			       "copyright", "Copyright \xc2\xa9 1999-2005, Tim Musson and David Neary",
+			       "copyright", "Copyright \xc2\xa9 1999-2006, Tim Musson and David Neary",
+			       "license", "GPL 2+",
 	                       "comments", _("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
 			       "authors", authors,
+			       "documenters", documenters,
+			       "artists", artists,
 			       "translator_credits", _("translator-credits"),
 			       "logo-icon-name", "gnome-four-in-a-row",
+			       "website", "http://www.gnome.org/projects/gnome-games/",
+			       "wrap-license", TRUE,
 			       NULL);
 }
 
