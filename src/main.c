@@ -1256,6 +1256,8 @@ create_app (void)
 	                  G_CALLBACK(on_button_press), NULL);
 	g_signal_connect (G_OBJECT(app), "key_press_event",
 	                  G_CALLBACK(on_key_press), NULL);
+	/* We do our own double-buffering. */
+	gtk_widget_set_double_buffered(GTK_WIDGET (drawarea), FALSE);
 
 	gtk_action_set_sensitive (hint_action, FALSE);
 	gtk_action_set_sensitive (undo_action, FALSE);
