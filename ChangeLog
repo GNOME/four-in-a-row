@@ -1,3 +1,7 @@
+2006-06-21  Andreas Røsdal  <andrearo@stud.ntnu.no>
+
+	* src/main.c: Add fullscreen mode. 
+
 2006-04-29  Callum McKenzie  <callum@spooky-possum.org>
 
 	* src/main.c (create_app): Disable double-buffering since we do
