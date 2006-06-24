@@ -1,3 +1,13 @@
+2006-06-24  Richard Hoelscher  <rah@rahga.com>
+
+	* Makefile.am:
+	* data/white_ob.cn4: Deleted.
+	* data/white_ob.cn4.gz: Added. Gzip'd version of file above.
+	* src/connect4.[ch]: Read opening book in from gzipped file,
+	saving about 640KB. While the opening book format could have
+	been compressed more, as one out of every four bits is unused
+	and there's are repeating 0's, the savings wouldn't be great.
+
 2006-06-21  Andreas Røsdal  <andrearo@stud.ntnu.no>
 
 	* src/main.c: Add fullscreen mode. 

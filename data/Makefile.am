@@ -1,5 +1,5 @@
 velenadir      = $(datadir)/gnect
-velena_DATA    = white_ob.cn4
+velena_DATA    = white_ob.cn4.gz
 
 Games_in_files = gnect.desktop.in
 Gamesdir       = $(datadir)/applications

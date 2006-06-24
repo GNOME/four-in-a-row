@@ -32,6 +32,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#include <zlib.h>
 #include <gnome.h>
 
 #include "connect4.h"
@@ -41,8 +42,6 @@
 #include "config.h"
 #include "main.h"
 
-
-#define BLKSIZE 16384   /* Buffer size for I/O */
 #define PLAYER1 0
 #define PLAYER2 1
 
@@ -65,22 +64,6 @@ int my_random(unsigned short maxval)
 {
 	/* range: 0..maxval-1 */
 	return( get_random_int(maxval) - 1 );
-}
-
-
-
-long fileln(FILE *f)
-{
-	long int save_pos, file_size;
-
-	save_pos = ftell(f);
-	if(save_pos == -1)
-		return -1L;
-	fseek(f,0L,SEEK_END);
-	file_size = ftell(f);
-	fseek(f, save_pos,SEEK_SET);
-
-	return file_size;
 }
 
 
@@ -112,7 +95,8 @@ static short check_solution_groups(struct board *board)
 
 static void init_prg(struct board *board)
 {
-	long size,len;
+	uLong crc = crc32(0L, Z_NULL, 0);
+	long ob_size,len;
 	FILE *h1;
 	short x;
 	char *tmp = g_strconcat ( "gnect/", WHITE_BOOK, NULL);
@@ -146,33 +130,34 @@ static void init_prg(struct board *board)
 	board->oracle_guesses = 0;
 
 
-	h1=fopen(bookdata, "rb");
+	h1=gzopen(bookdata, "rb");
 	if(!h1) {
 		g_printerr("velena: could not open required file (%s)\n", bookdata);
 		exit(1);
 	}
+	
+	ob_size=OPENINGBOOK_LENGTH;
+	
+	board->wbposit = ob_size/14;
 
-	size = fileln(h1);
-	if (size%14 != 0) {
-		fatal_error("White opening book is corrupted");
-	}
-
-	board->wbposit = size/14;
-
-	board->white_book = (unsigned char *)malloc(size);
+	board->white_book = (unsigned char *)malloc(ob_size);
 	if(!board->white_book) {
 		fatal_error("Not enough memory to allocate opening book");
 	}
 
 	len = 0;               /* We read all the position from disk */
-	while(size > 0) {      /* each position takes 14 bytes of storage */
-		fread(&board->white_book[len], 1, 14, h1);
+	while(!gzeof(h1) && (len < ob_size)) {  
+		/* each position takes 14 bytes of storage */
+		gzread(h1,&board->white_book[len], 14);
+		crc = crc32(crc, &board->white_book[len], 14);
 		len += 14;
-		size -= 14;
 	}
 
-	fclose(h1);
+	if (crc != OPENINGBOOK_CRC) {
+		fatal_error("Opening book is corrupt");
+	}
 
+	gzclose(h1);
 	board->bbposit=0;
 }
 
@@ -338,18 +323,6 @@ void initboard(struct board *board)
 }
 
 
-#if 0
-static void initTitle(void)
-{
-	g_print("\nVelena Engine %s; revision %s\n", SEARCH_ENGINE_VERSION, __DATE__);
-	g_print("\nAI engine written by Giuliano Bertoletti\n");
-	g_print("Based on the knowledged approach of Victor Allis\n");
-	g_print("Copyright (C) 1996-97 Giuliano Bertoletti ");
-	g_print("and GBE 32241 Software PR.\n");
-	g_print("All rights reserved.\n\n");
-}
-#endif
-
 
 struct board *veleng_init(void)
 {
@@ -362,8 +335,6 @@ struct board *veleng_init(void)
 	 */
 
 
-	/* initTitle(); Moved this to the About dialog */
-	
 	fight(NO);
 
 	brd = NULL;

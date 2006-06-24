@@ -25,7 +25,10 @@
 #define _CONNECT4_H_ 1
 
 
-#define WHITE_BOOK "white_ob.cn4"
+#define WHITE_BOOK "white_ob.cn4.gz"
+#define OPENINGBOOK_LENGTH 846986
+#define OPENINGBOOK_CRC 0x82131150
+
 
 #ifndef TRUE
 #define TRUE  1
