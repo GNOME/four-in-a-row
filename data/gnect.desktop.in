@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Icon=gnome-four-in-a-row
 _Name=Four-in-a-Row
-_Comment=Compete to make lines of the same color
+_Comment=Make lines of the same color to win
 Exec=gnect
 Terminal=false
 Type=Application
