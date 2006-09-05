@@ -22,7 +22,10 @@ icon_DATA = gnome-four-in-a-row.png
 ## soundlist_DATA     = $(soundlist_in_files:.soundlist.in=.soundlist)
 ## @INTLTOOL_SOUNDLIST_RULE@
 
-EXTRA_DIST = $(velena_DATA)      \
+EXTRA_DIST = gnect-client.dsc.in \
+	     gnect-server.dsc.in \
+             gnect.room          \
+	     $(velena_DATA)      \
              $(Games_in_files)   \
              $(schema_in_files)  \
              $(icon_DATA)
@@ -34,4 +37,21 @@ install-data-local:
 if GCONF_SCHEMAS_INSTALL
 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/gnect/data/$(schema_DATA)
 endif
+if GGZ_CLIENT
+	$(GGZ_CONFIG) -D --install --modfile=gnect-client.dsc --force
+endif
+uninstall-local:
+if GGZ_CLIENT
+	-$(GGZ_CONFIG) -D --remove --modfile=gnect-client.dsc
+endif
+
+
+if GGZ_SERVER
+ggzroom_DATA = gnect.room
+ggzroomdir = ${prefix}/etc/ggzd/rooms/
+
+ggzgame_DATA = gnect-server.dsc
+ggzgamedir = ${prefix}/etc/ggzd/games/
+endif
+
 

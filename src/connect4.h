@@ -190,5 +190,6 @@ struct board {
 struct board *veleng_init (void);
 void veleng_free (struct board *board);
 short playgame (char *input_str, struct board *board);
+int get_random_int (int n);
 
 #endif

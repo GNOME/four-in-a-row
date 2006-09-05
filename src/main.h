@@ -10,6 +10,11 @@
 #define TILE_PLAYER1_CURSOR    4
 #define TILE_PLAYER2_CURSOR    5
 
+#define SIZE_VSTR      53
+
+#define MAIN_PAGE           	0
+#define NETWORK_PAGE           	1
+
 typedef enum {
 	MOVE_LEFT,
 	MOVE_RIGHT,
@@ -45,11 +50,17 @@ typedef enum {
 } LevelID;
 
 extern PlayerID  who_starts;
+extern GtkWidget *app;
+extern GtkWidget *notebook;
+
+gboolean player_active;
+gboolean ggz_network_mode;
 
 void game_reset (void);
+void process_move (int move);
 void prompt_player (void);
 void on_dialog_close (GtkWidget *w, int response_id, gpointer data);
 void scorebox_update (void);
 void scorebox_reset (void);
-gint get_random_int (gint n);
+void set_status_message (const gchar *message);
 

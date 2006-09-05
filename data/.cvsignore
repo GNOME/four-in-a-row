@@ -3,3 +3,5 @@ Makefile.in
 gnect.desktop
 gnect.soundlist
 gnect.schemas
+gnect-client.dsc
+gnect-server.dsc

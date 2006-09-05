@@ -58,6 +58,12 @@ void fatal_error(char *str)
 	exit(1);
 }
 
+int
+get_random_int (int n)
+{
+	/* Return a random integer in the range 1..n */
+	return (int) g_random_int_range (1, n + 1);
+}
 
 
 int my_random(unsigned short maxval)

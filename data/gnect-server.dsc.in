@@ -1,0 +1,19 @@
+[GameInfo]
+Author = The GNOME Project 
+Description = Place four tiles in a row.
+Homepage = http://www.gnome.org/projects/gnome-games/ 
+Name = Gnect
+Version = @VERSION@ 
+
+[LaunchInfo]
+ExecutablePath = @prefix@/bin/gnectd 
+# Set ExecutableArgs in the room file
+
+[Protocol]
+Engine = Gnect
+Version = 1
+
+[TableOptions]
+AllowLeave = 1
+BotsAllowed = 1
+PlayersAllowed = 2

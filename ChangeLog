@@ -1,3 +1,25 @@
+2006-09-05  Andreas Røsdal  <andrearo@stud.ntnu.no>
+
+	* data/connectx.protocol:
+	* data/gnect-client.dsc.in:
+	* data/gnect-server.dsc.in:
+	* data/gnect.room:
+	* data/.cvsignore
+	* data/Makefile.am
+	* src/connectx_client.c:
+	* src/connectx_client.h:
+	* src/ggz-network.c:
+	* src/ggz-network.h:
+	* src/server.c:
+	* src/server.h:
+	* src/.cvsignore:
+	* src/Makefile.am:
+	* src/connect4.c:
+	* src/connect4.h:
+	* src/main.c:
+	* src/main.h: GGZ Network Support
+
+
 2006-06-24  Richard Hoelscher  <rah@rahga.com>
 
 	* Makefile.am:

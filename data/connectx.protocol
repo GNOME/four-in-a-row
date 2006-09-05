@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<ggzcomm engine="connectx" version="2">
+	<definitions>
+		<def name="msgseat" value="0"/>
+		<def name="msgplayers" value="1"/>
+		<def name="msgmove" value="2"/>
+		<def name="msggameover" value="3"/>
+		<def name="reqmove" value="4"/>
+		<def name="rspmove" value="5"/>
+		<def name="sndsync" value="6"/>
+		<def name="msgoptions" value="7"/>
+		<def name="reqoptions" value="8"/>
+		<def name="msgchat" value="9"/>
+		<def name="rspchat" value="10"/>
+		<def name="sndmove" value="0"/>
+		<def name="reqsync" value="1"/>
+		<def name="sndoptions" value="2"/>
+		<def name="reqnewgame" value="3"/>
+	</definitions>
+	<client>
+		<event name="sndoptions">
+			<data name="boardheight2" type="byte"/>
+			<data name="boardwidth2" type="byte"/>
+			<data name="connectlength2" type="byte"/>
+		</event>
+		<event name="sndmove">
+			<data name="column3" type="int"/>
+		</event>
+		<event name="reqsync"/>
+	</client>
+	<server>
+		<event name="msgseat">
+			<data name="num" type="int"/>
+		</event>
+		<event name="msgplayers">
+			<sequence count="2">
+				<data name="seat" type="int"/>
+				<eval>
+					<condition name="seat" result="ggz:seat_open" type="unequal"/>
+					<data name="name" type="string"/>
+				</eval>
+			</sequence>
+		</event>
+		<event name="reqmove"/>
+		<event name="rspmove">
+			<data name="status" type="byte"/>
+			<data name="column" type="int"/>
+		</event>
+		<event name="msgmove">
+			<data name="column2" type="int"/>
+		</event>
+		<event name="sndsync">
+			<data name="boardheight3" type="byte"/>
+			<data name="boardwidth3" type="byte"/>
+			<data name="connectlength3" type="byte"/>
+			<data name="turn" type="byte"/>
+			<!--<sequence count="boardwidth3">
+				<sequence count="boardheight3">
+					<data name="board" type="byte"/>
+				</sequence>
+			</sequence>  -->
+		</event>
+		<!--
+		<event name="msgchat">
+		</event>
+		<event name="rspchat">
+		</event>
+		-->
+		<event name="msggameover">
+			<data name="winner" type="byte"/>
+		</event>
+		<event name="reqoptions">
+			<data name="minboardwidth" type="byte"/>
+			<data name="maxboardwidth" type="byte"/>
+			<data name="minboardheight" type="byte"/>
+			<data name="maxboardheight" type="byte"/>
+			<data name="minconnectlength" type="byte"/>
+			<data name="maxconnectlength" type="byte"/>
+		</event>
+		<event name="msgoptions">
+			<data name="boardwidth" type="byte"/>
+			<data name="boardheight" type="byte"/>
+			<data name="connectlength" type="byte"/>
+		</event>
+	</server>
+	<protocol>
+		<link client="reqsync" server="sndsync"/>
+		<link server="reqmove" client="sndmove"/>
+		<link client="sndmove" server="rspmove"/>
+		<!--
+		<link server="reqoptions" client="sndoptions"/>
+		-->
+	</protocol>
+</ggzcomm>
+

@@ -28,8 +28,8 @@
 #include <gnome.h>
 #include <gconf/gconf-client.h>
 
-#include <games-stock.h>
 #include <games-gridframe.h>
+#include <games-stock.h>
 
 #include "connect4.h"
 #include "main.h"
@@ -37,8 +37,14 @@
 #include "prefs.h"
 #include "gfx.h"
 
+#ifdef GGZ_CLIENT
+#include <games-dlg-chat.h>
+#include <games-dlg-players.h>
+#include "connectx_client.h"
+#include "ggz-network.h"
+#include <ggz-embed.h>
+#endif
 
-#define SIZE_VSTR      53
 
 #define SPEED_MOVE     25
 #define SPEED_DROP     20
@@ -48,9 +54,11 @@ extern GConfClient *conf_client;
 extern Prefs p;
 
 GtkWidget *app;
+GtkWidget *notebook;
 GtkWidget *drawarea;
 GtkWidget *statusbar;
 GtkWidget *scorebox = NULL;
+GtkWidget *chat = NULL;
 
 GtkWidget *label_name[3];
 GtkWidget *label_score[3];
@@ -59,6 +67,7 @@ PlayerID  player;
 PlayerID  winner;
 PlayerID  who_starts;
 gboolean  gameover;
+gboolean player_active;
 gint      moves;
 gint      score[3];
 gint      column;
@@ -89,7 +98,7 @@ gint blink_n;
 gboolean blink_on;
 
 
-static void process_move (gint c);
+static void game_process_move (gint c);
 static void process_move2 (gint c);
 static void process_move3 (gint c);
 
@@ -123,20 +132,11 @@ first_empty_row (gint c)
 	return r - 1;
 }
 
-
-
-gint
-get_random_int (gint n)
-{
-	/* Return a random integer in the range 1..n */
-	return (gint) g_random_int_range (1, n + 1);
-}
-
-
-
 static gint
 get_n_human_players (void)
 {
+	if (ggz_network_mode) return 2;	/* FIXME */
+
 	if (p.level[PLAYER1] != LEVEL_HUMAN && p.level[PLAYER2] != LEVEL_HUMAN) {
 		return 0;
 	}
@@ -151,6 +151,8 @@ get_n_human_players (void)
 static gboolean
 is_player_human (void)
 {
+	if (ggz_network_mode) return TRUE;	/* FIXME */
+
 	if (player == PLAYER1) {
 		return p.level[PLAYER1] == LEVEL_HUMAN;
 	}
@@ -340,7 +342,7 @@ swap_player (void)
 
 
 
-static void
+void
 set_status_message (const gchar *message)
 {
 	guint context_id;
@@ -352,6 +354,9 @@ set_status_message (const gchar *message)
 
 
 GtkAction *new_game_action;
+GtkAction *new_network_action;
+GtkAction *leave_network_action;
+GtkAction *player_list_action;
 GtkAction *undo_action;
 GtkAction *hint_action;
 GtkAction *fullscreen_action;
@@ -403,6 +408,7 @@ game_init (void)
 
 	anim            = ANIM_NONE;
 	gameover        = TRUE;
+	player_active	= FALSE;
 	player          = PLAYER1;
 	winner          = NOBODY;
 	score[PLAYER1]  = 0;
@@ -427,6 +433,7 @@ game_reset (void)
 	player = who_starts;
 
 	gameover      = TRUE;
+	player_active = FALSE;
 	winner        = NOBODY;
 	column        = 3;
 	column_moveto = 3;
@@ -447,7 +454,7 @@ game_reset (void)
 		else {
 			vstr[0] = vlevel[p.level[PLAYER2]];
 		}
-		process_move (playgame (vstr, vboard) - 1);
+		game_process_move (playgame (vstr, vboard) - 1);
 	}
 }
 
@@ -500,8 +507,23 @@ prompt_player (void)
 {
 	gint players = get_n_human_players ();
 	gint human = is_player_human ();
-	const gchar *who;
-	gchar *str;
+	const gchar *who = NULL;
+	gchar *str = NULL;
+
+	#ifdef GGZ_CLIENT
+	if (ggz_network_mode) {
+		gtk_widget_show (chat);
+	} else {
+		gtk_widget_hide (chat);
+	}
+	#endif
+
+	gtk_action_set_visible (new_game_action, !ggz_network_mode); 
+	gtk_action_set_visible (hint_action, !ggz_network_mode); 
+	gtk_action_set_visible (undo_action, !ggz_network_mode); 
+	gtk_action_set_visible (new_network_action, !ggz_network_mode); 
+	gtk_action_set_visible (player_list_action, ggz_network_mode); 
+	gtk_action_set_visible (leave_network_action, ggz_network_mode); 
 
 	gtk_action_set_sensitive (new_game_action, (human || gameover));
 	gtk_action_set_sensitive (hint_action, (human || gameover));
@@ -511,7 +533,7 @@ prompt_player (void)
 		gtk_action_set_sensitive (undo_action, FALSE);
 		break;
 	case 1:
-		gtk_action_set_sensitive (undo_action, (human && moves > 1) || (!human && gameover));
+		gtk_action_set_sensitive (undo_action, ((human && moves > 1) || (!human && gameover)));
 		break;
 	case 2:
 		gtk_action_set_sensitive (undo_action, (moves > 0));
@@ -528,11 +550,16 @@ prompt_player (void)
 		return;
 	}
 
+/*	if (ggz_network_mode) {
+		network_update_status ();
+		return;
+	}*/
+
 	switch (players) {
 	case 1:
 		if (human) {
 			if (gameover) set_status_message (_("You win!"));
-			else set_status_message (_("Your move..."));
+			else set_status_message (_("It is your move."));
 		}
 		else {
 			if (gameover) set_status_message (_("I win!"));
@@ -541,11 +568,31 @@ prompt_player (void)
 		break;
 	case 2:
 	case 0:
-		if (player == PLAYER1) who = _(theme_get_player(PLAYER1));
-		else who = _(theme_get_player(PLAYER2));
+		if (ggz_network_mode) {
+			#ifdef GGZ_CLIENT
+			who = variables.name[(variables.num + 1) % 2 ];
+			if (!who) return;
+			#endif
+		} else {
+			if (player == PLAYER1) who = _(theme_get_player(PLAYER1));
+			else who = _(theme_get_player(PLAYER2));
+		}
 
-		if (gameover) str = g_strdup_printf (_("%s wins!"), who);
-		else str = g_strdup_printf (_("%s..."), who);
+		if (gameover) {
+			if (ggz_network_mode) {
+			        #ifdef GGZ_CLIENT
+				str = g_strdup_printf (_("%s wins!"), 
+					variables.name[(int)variables.winner]);
+				#endif
+			} else {
+				str = g_strdup_printf (_("%s wins!"), who);
+			}
+		} else if (player_active && ggz_network_mode) {
+			set_status_message (_("It is your move."));
+			return;
+		} else {
+			str = g_strdup_printf (_("Waiting for %s to move."), who);
+		}
 
 		set_status_message (str);
 		g_free (str);
@@ -562,17 +609,33 @@ on_game_new (void)
 	game_reset ();
 }
 
-
+static gboolean
+on_network_leave (GObject *object, gpointer data)
+{
+	#ifdef GGZ_CLIENT
+	ggz_embed_leave_table();
+	gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), 
+					NETWORK_PAGE);
+	#endif
+	return TRUE;
+}
 
 static gboolean
 on_game_exit (GObject *object, gpointer data)
 {
+
 	stop_anim ();
 	gtk_main_quit ();
 	return TRUE;
 }
 
-
+static void
+on_player_list (void)
+{
+	#ifdef GGZ_CLIENT
+	create_or_raise_dlg_players (GTK_WINDOW (app));
+	#endif
+}
 
 static void
 on_game_undo (GtkMenuItem *m, gpointer data)
@@ -1006,9 +1069,29 @@ static gint next_move (gint c)
 }
 
 static void
+game_process_move (gint c)
+{
+
+	if (ggz_network_mode) {
+		#ifdef GGZ_CLIENT
+		network_send_move (c);
+		#endif
+		return;
+	} else {
+		process_move (c);
+	}
+}
+
+void
 process_move (gint c)
 {
-	if (timeout) return;
+	if (timeout) {
+		gtk_timeout_add (SPEED_DROP, 
+				 (GSourceFunc) next_move,
+				 GINT_TO_POINTER (c));
+		return;
+
+	}
 
 	if (!p.do_animate) {
 		move_cursor (c);
@@ -1115,7 +1198,7 @@ on_drawarea_expose (GtkWidget *w, GdkEventExpose *e, gpointer data)
 static gboolean
 on_key_press (GtkWidget* w, GdkEventKey* e, gpointer data)
 {
-	if (timeout ||
+	if ((!player_active && ggz_network_mode) || timeout ||
 	    (e->keyval != p.keypress[MOVE_LEFT] &&
 	     e->keyval != p.keypress[MOVE_RIGHT] &&
 	     e->keyval != p.keypress[MOVE_DROP])) {
@@ -1136,7 +1219,7 @@ on_key_press (GtkWidget* w, GdkEventKey* e, gpointer data)
 		move_cursor (column_moveto);
 	}
 	else if (e->keyval == p.keypress[MOVE_DROP]) {
-		process_move (column);
+		game_process_move (column);
 	}
 	return TRUE;
 }
@@ -1147,13 +1230,16 @@ static gboolean
 on_button_press (GtkWidget *w, GdkEventButton *e, gpointer data)
 {
 	gint x, y;
+	if (!player_active && ggz_network_mode) {
+		return FALSE;
+	}
 
 	if (gameover && !timeout) {
 		blink_winner (2);
 	}
 	else if (is_player_human () && !timeout) {
 		gtk_widget_get_pointer (w, &x, &y);
-		process_move (gfx_get_column (x));
+		game_process_move (gfx_get_column (x));
 	}
 
 	return TRUE;
@@ -1166,6 +1252,13 @@ static const GtkActionEntry action_entry[] = {
   { "SettingsMenu", NULL, N_("_Settings") },
   { "HelpMenu", NULL, N_("_Help") },
   { "NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, NULL, G_CALLBACK (on_game_new) },
+#ifdef GGZ_CLIENT
+  { "NewNetworkGame", GAMES_STOCK_NETWORK_GAME, NULL, NULL, NULL, G_CALLBACK (on_network_game) },
+#else
+  { "NewNetworkGame", GAMES_STOCK_NETWORK_GAME, NULL, NULL, NULL, NULL },
+#endif
+  { "LeaveNetworkGame", GAMES_STOCK_NETWORK_LEAVE, NULL, NULL, NULL, G_CALLBACK (on_network_leave) },
+  { "PlayerList", GAMES_STOCK_PLAYER_LIST, NULL, NULL, NULL, G_CALLBACK (on_player_list) },
   { "UndoMove", GAMES_STOCK_UNDO_MOVE, NULL, NULL, NULL, G_CALLBACK (on_game_undo) },
   { "Hint", GAMES_STOCK_HINT, NULL, NULL, NULL, G_CALLBACK (on_game_hint) },
   { "Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL, G_CALLBACK (on_game_scores) },
@@ -1182,12 +1275,15 @@ static const char ui_description[] =
 "  <menubar name='MainMenu'>"
 "    <menu action='GameMenu'>"
 "      <menuitem action='NewGame'/>"
+"      <menuitem action='NewNetworkGame'/>"
+"      <menuitem action='PlayerList'/>"
 "      <separator/>"
 "      <menuitem action='UndoMove'/>"
 "      <menuitem action='Hint'/>"
 "      <separator/>"
 "      <menuitem action='Scores'/>"
 "      <separator/>"
+"      <menuitem action='LeaveNetworkGame'/>"
 "      <menuitem action='Quit'/>"
 "    </menu>"
 "    <menu action='ViewMenu'>"
@@ -1224,6 +1320,15 @@ create_game_menus (GtkUIManager *ui_manager)
 			      gtk_ui_manager_get_accel_group (ui_manager));
 
   new_game_action = gtk_action_group_get_action (action_group, "NewGame");
+  new_network_action = gtk_action_group_get_action (action_group, 
+						    "NewNetworkGame");
+  #ifndef GGZ_CLIENT
+  gtk_action_set_sensitive (new_network_action, FALSE);
+  #endif
+
+  player_list_action = gtk_action_group_get_action (action_group, "PlayerList");
+  leave_network_action = gtk_action_group_get_action (action_group, 
+						      "LeaveNetworkGame");
   hint_action = gtk_action_group_get_action (action_group, "Hint");
   undo_action = gtk_action_group_get_action (action_group, "UndoMove");
   fullscreen_action = gtk_action_group_get_action (action_group, "Fullscreen");
@@ -1239,6 +1344,7 @@ create_app (void)
 	GtkWidget *menubar;
 	GtkWidget *gridframe;
 	GtkWidget *vbox;
+	GtkWidget *vpaned;
 	GtkUIManager *ui_manager;
 	
 	gint width, height;
@@ -1256,6 +1362,9 @@ create_app (void)
 	gtk_window_set_default_size (GTK_WINDOW (app), 200, 200);
 	gtk_window_resize (GTK_WINDOW (app), width, height);
 
+	notebook = gtk_notebook_new ();
+	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
+
 	g_signal_connect (G_OBJECT(app), "delete_event",
 	                  G_CALLBACK(on_game_exit), NULL);
 	g_signal_connect (G_OBJECT(app), "configure_event",
@@ -1271,14 +1380,24 @@ create_app (void)
 	create_game_menus (ui_manager);
 	menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
 
+	vpaned = gtk_vpaned_new ();
+
 	vbox = gtk_vbox_new (FALSE, 0);
 	gridframe = games_grid_frame_new (7, 7);
 
+
+	gtk_paned_pack1 (GTK_PANED (vpaned), gridframe, TRUE, FALSE);
 	gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
+	#ifdef GGZ_CLIENT
+	chat = create_chat_widget();
+	gtk_paned_pack2 (GTK_PANED (vpaned), chat, FALSE, TRUE);
+	#endif
+	gtk_box_pack_start (GTK_BOX (vbox), vpaned, TRUE, TRUE, 0);
 	gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
-	gnome_app_set_contents (GNOME_APP (app), vbox);
+	gnome_app_set_contents (GNOME_APP (app), notebook);
+	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, NULL);
+	gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), MAIN_PAGE);
 
 	drawarea = gtk_drawing_area_new ();
 
@@ -1306,6 +1425,9 @@ create_app (void)
 	gtk_action_set_sensitive (undo_action, FALSE);
 
 	gtk_widget_show_all (app);
+	#ifdef GGZ_CLIENT
+	gtk_widget_hide (chat);
+	#endif
 
         set_fullscreen_actions (FALSE);
 
@@ -1342,6 +1464,10 @@ main (int argc, char *argv[])
 	if (!gfx_load_pixmaps ())
 		return 0;
 
+	#ifdef GGZ_CLIENT
+	network_init ();
+	#endif
+
 	if (create_app ()) {
 		game_reset ();
 		gtk_main ();
@@ -1355,4 +1481,3 @@ main (int argc, char *argv[])
 
 	return 0;
 }
-
