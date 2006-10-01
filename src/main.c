@@ -875,12 +875,13 @@ on_help_about (GtkAction *action, gpointer data)
 
 	const gchar *documenters[] = {"Timothy Musson",
 				  NULL};
+	gchar *license = games_get_license (_("Four-in-a-Row"));
 
 	gtk_show_about_dialog (GTK_WINDOW (app),
 			       "name", _("Four-in-a-Row"),
 			       "version", VERSION,
 			       "copyright", "Copyright \xc2\xa9 1999-2006, Tim Musson and David Neary",
-			       "license", "GPL 2+",
+			       "license", license,
 	                       "comments", _("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
 			       "authors", authors,
 			       "documenters", documenters,
@@ -890,6 +891,7 @@ on_help_about (GtkAction *action, gpointer data)
 			       "website", "http://www.gnome.org/projects/gnome-games/",
 			       "wrap-license", TRUE,
 			       NULL);
+	g_free (license);
 }
 
 
