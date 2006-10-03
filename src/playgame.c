@@ -34,64 +34,69 @@ short playgame (char *input_str, struct board *board);
 
 
 
-short parse_input_string(char *str,struct board *board)
+short
+parse_input_string (char *str, struct board *board)
 {
-  short cnt=0,move;
+  short cnt = 0, move;
   char *p;
 
-  p=str;
+  p = str;
 
   board->cpu = 3;
 
-  switch(*p)
-	{
-	case 'a':
-	  board->white_lev = 1;
-	  board->black_lev = 1;
-	  break;
+  switch (*p) {
+  case 'a':
+    board->white_lev = 1;
+    board->black_lev = 1;
+    break;
 
-	case 'b':
-	  board->white_lev = 2;
-	  board->black_lev = 2;
-	  break;
+  case 'b':
+    board->white_lev = 2;
+    board->black_lev = 2;
+    break;
 
-	case 'c':
-	  board->white_lev = 3;
-	  board->black_lev = 3;
-	  break;
+  case 'c':
+    board->white_lev = 3;
+    board->black_lev = 3;
+    break;
 
-	default:
-	  return -1;
-	}
+  default:
+    return -1;
+  }
 
   p++;
 
-  while(p[cnt]!='0')
-	{
-	  move=(short)(p[cnt]-'1');
-	  if(move<0 || move>6) return -1;
-	  if(board->stack[move]<BOARDY) makemove(board,move);
-	  else return -2;
+  while (p[cnt] != '0') {
+    move = (short) (p[cnt] - '1');
+    if (move < 0 || move > 6)
+      return -1;
+    if (board->stack[move] < BOARDY)
+      makemove (board, move);
+    else
+      return -2;
 
-	  if(cnt>=42 || endgame(board)!=0) return -2;
-	  cnt++;
-	}
+    if (cnt >= 42 || endgame (board) != 0)
+      return -2;
+    cnt++;
+  }
 
   return 1;
 }
 
 
 
-short playgame(char *input_str,struct board *board)
+short
+playgame (char *input_str, struct board *board)
 {
   int flag;
 
-  board->oracle[0]=0;
-  board->oracle[1]=0;
+  board->oracle[0] = 0;
+  board->oracle[1] = 0;
 
-  initboard(board);
-  flag=parse_input_string(input_str,board);
-  if(flag<=0) return flag;
+  initboard (board);
+  flag = parse_input_string (input_str, board);
+  if (flag <= 0)
+    return flag;
 
-  return ia_compute_move(board)+1;
+  return ia_compute_move (board) + 1;
 }

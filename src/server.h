@@ -21,21 +21,21 @@
 #define GGZSTATISTICS
 
 /* GGZdMod callbacks */
-void game_handle_ggz_state(GGZdMod * ggz,
-			   GGZdModEvent event, const void *data);
-void game_handle_ggz_seat(GGZdMod * ggz, GGZdModEvent event,
-			  const void *data);
+void game_handle_ggz_state (GGZdMod * ggz,
+			    GGZdModEvent event, const void *data);
+void game_handle_ggz_seat (GGZdMod * ggz, GGZdModEvent event,
+			   const void *data);
 //static void game_handle_ggz_leave(GGZdMod *ggz, GGZdModEvent event, const void *data);
 #ifdef GGZSPECTATORS
-void game_handle_ggz_spectator_join(GGZdMod * ggz,
-				    GGZdModEvent event, const void *data);
-void game_handle_ggz_spectator_leave(GGZdMod * ggz,
+void game_handle_ggz_spectator_join (GGZdMod * ggz,
 				     GGZdModEvent event, const void *data);
-void game_handle_ggz_spectator(GGZdMod * ggz,
-			       GGZdModEvent event, const void *data);
+void game_handle_ggz_spectator_leave (GGZdMod * ggz,
+				      GGZdModEvent event, const void *data);
+void game_handle_ggz_spectator (GGZdMod * ggz,
+				GGZdModEvent event, const void *data);
 #endif
-void game_handle_ggz_player(GGZdMod * ggz, GGZdModEvent event,
-			    const void *data);
+void game_handle_ggz_player (GGZdMod * ggz, GGZdModEvent event,
+			     const void *data);
 
 
 /* ConnectX game events */
@@ -58,4 +58,4 @@ void game_handle_ggz_player(GGZdMod * ggz, GGZdModEvent event,
 #define MIN_CONNECTLENGTH	3
 
 
-void game_init(GGZdMod * ggz);
+void game_init (GGZdMod * ggz);

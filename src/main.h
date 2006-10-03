@@ -16,40 +16,40 @@
 #define NETWORK_PAGE           	1
 
 typedef enum {
-	MOVE_LEFT,
-	MOVE_RIGHT,
-	MOVE_DROP
+  MOVE_LEFT,
+  MOVE_RIGHT,
+  MOVE_DROP
 } MoveID;
 
 typedef enum {
-	STATUS_CLEAR,
-	STATUS_FLASH,
-	STATUS_SET
+  STATUS_CLEAR,
+  STATUS_FLASH,
+  STATUS_SET
 } StatusID;
 
 typedef enum {
-	SOUND_DROP,
-	SOUND_I_WIN,
-	SOUND_YOU_WIN,
-	SOUND_PLAYER_WIN,
-	SOUND_DRAWN_GAME,
-	SOUND_COLUMN_FULL
+  SOUND_DROP,
+  SOUND_I_WIN,
+  SOUND_YOU_WIN,
+  SOUND_PLAYER_WIN,
+  SOUND_DRAWN_GAME,
+  SOUND_COLUMN_FULL
 } SoundID;
 
 typedef enum {
-	PLAYER1,
-	PLAYER2,
-	NOBODY
+  PLAYER1,
+  PLAYER2,
+  NOBODY
 } PlayerID;
 
 typedef enum {
-	LEVEL_HUMAN,
-	LEVEL_WEAK,
-	LEVEL_MEDIUM,
-	LEVEL_STRONG
+  LEVEL_HUMAN,
+  LEVEL_WEAK,
+  LEVEL_MEDIUM,
+  LEVEL_STRONG
 } LevelID;
 
-extern PlayerID  who_starts;
+extern PlayerID who_starts;
 extern GtkWidget *app;
 extern GtkWidget *notebook;
 
@@ -59,8 +59,7 @@ gboolean ggz_network_mode;
 void game_reset (void);
 void process_move (int move);
 void prompt_player (void);
-void on_dialog_close (GtkWidget *w, int response_id, gpointer data);
+void on_dialog_close (GtkWidget * w, int response_id, gpointer data);
 void scorebox_update (void);
 void scorebox_reset (void);
-void set_status_message (const gchar *message);
-
+void set_status_message (const gchar * message);

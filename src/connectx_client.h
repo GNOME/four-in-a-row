@@ -67,18 +67,18 @@ struct variables_t {
 };
 struct variables_t variables;
 
-void ggzcomm_network_main(void);
+void ggzcomm_network_main (void);
 
-void ggzcomm_sndoptions(void);
-void ggzcomm_sndmove(void);
-void ggzcomm_reqsync(void);
+void ggzcomm_sndoptions (void);
+void ggzcomm_sndmove (void);
+void ggzcomm_reqsync (void);
 
 typedef void (*notifier_func_type) (int opcode);
 typedef void (*error_func_type) (void);
 
-void ggzcomm_set_fd(int usefd);
-int ggzcomm_get_fd(void);
-void ggzcomm_set_notifier_callback(notifier_func_type f);
-void ggzcomm_set_error_callback(error_func_type f);
+void ggzcomm_set_fd (int usefd);
+int ggzcomm_get_fd (void);
+void ggzcomm_set_notifier_callback (notifier_func_type f);
+void ggzcomm_set_error_callback (error_func_type f);
 
 #endif

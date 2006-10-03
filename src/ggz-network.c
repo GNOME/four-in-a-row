@@ -43,29 +43,29 @@
 
 
 static gboolean
-handle_ggzmod(GIOChannel * channel, GIOCondition cond, gpointer data)
+handle_ggzmod (GIOChannel * channel, GIOCondition cond, gpointer data)
 {
   GGZMod *mod;
   int ret;
 
   mod = data;
-  ret = ggzmod_dispatch(mod);
+  ret = ggzmod_dispatch (mod);
   return (ret >= 0);
 }
 
 
 static gboolean
-handle_game_server(GIOChannel * channel, GIOCondition cond, gpointer data)
+handle_game_server (GIOChannel * channel, GIOCondition cond, gpointer data)
 {
   GGZMod *mod;
   int gamefd;
 
   mod = data;
 
-  if (ggzmod_get_state(mod) != GGZMOD_STATE_DONE) {
-    gamefd = ggzmod_get_server_fd(mod);
-    ggzcomm_set_fd(gamefd);
-    ggzcomm_network_main();
+  if (ggzmod_get_state (mod) != GGZMOD_STATE_DONE) {
+    gamefd = ggzmod_get_server_fd (mod);
+    ggzcomm_set_fd (gamefd);
+    ggzcomm_network_main ();
     return TRUE;
   } else {
     /* The game is over. */
@@ -76,24 +76,26 @@ handle_game_server(GIOChannel * channel, GIOCondition cond, gpointer data)
 
 
 static void
-handle_ggzmod_server(GGZMod * mod, GGZModEvent e, const void *data)
+handle_ggzmod_server (GGZMod * mod, GGZModEvent e, const void *data)
 {
   GIOChannel *channel;
   int gamefd;
 
-  gamefd = ggzmod_get_server_fd(mod);
-  ggzmod_set_state(mod, GGZMOD_STATE_PLAYING);
-  channel = g_io_channel_unix_new(gamefd);
-  g_io_add_watch(channel, G_IO_IN, handle_game_server, mod);
+  gamefd = ggzmod_get_server_fd (mod);
+  ggzmod_set_state (mod, GGZMOD_STATE_PLAYING);
+  channel = g_io_channel_unix_new (gamefd);
+  g_io_add_watch (channel, G_IO_IN, handle_game_server, mod);
 }
 
-static gboolean on_game_exit(GObject * object, gpointer data)
+static gboolean
+on_game_exit (GObject * object, gpointer data)
 {
-  gtk_main_quit();
+  gtk_main_quit ();
   return TRUE;
 }
 
-static void network_error_cb(void)
+static void
+network_error_cb (void)
 {
   /* make game exit, but inform user before */
 
@@ -106,26 +108,27 @@ static void network_error_cb(void)
   ggz_network_mode = FALSE;
 
 
-  dialog = gtk_message_dialog_new(GTK_WINDOW(app),
-				  0,
-				  GTK_MESSAGE_ERROR,
-				  GTK_BUTTONS_OK,
-				  _("A network error has occured."));
-  g_signal_connect(dialog, "response", G_CALLBACK(on_game_exit), NULL);
+  dialog = gtk_message_dialog_new (GTK_WINDOW (app),
+				   0,
+				   GTK_MESSAGE_ERROR,
+				   GTK_BUTTONS_OK,
+				   _("A network error has occured."));
+  g_signal_connect (dialog, "response", G_CALLBACK (on_game_exit), NULL);
   /* FIXME:  Invoke bug-buddy...    */
-  gtk_window_present(GTK_WINDOW(dialog));
+  gtk_window_present (GTK_WINDOW (dialog));
 }
 
-static void network_message_cb(int opcode)
+static void
+network_message_cb (int opcode)
 {
   /* message and associated data arrived safely */
 
   switch (opcode) {
   case msgseat:
     if (variables.num == 0) {
-      set_status_message(_("Waiting for an opponent to join the game."));
+      set_status_message (_("Waiting for an opponent to join the game."));
     } else {
-      prompt_player();
+      prompt_player ();
     }
 
     break;
@@ -134,17 +137,17 @@ static void network_message_cb(int opcode)
     break;
   case reqmove:
     player_active = TRUE;
-    prompt_player();
+    prompt_player ();
     break;
   case rspmove:
     if (!variables.status) {
-      process_move(variables.column);
+      process_move (variables.column);
       player_active = FALSE;
     }
 
     break;
   case msgmove:
-    process_move(variables.column2);
+    process_move (variables.column2);
     break;
   case sndsync:
     /* Not implemented yet. */
@@ -156,47 +159,48 @@ static void network_message_cb(int opcode)
     variables.boardheight2 = BOARDY;
     variables.boardwidth2 = BOARDX;
     variables.connectlength2 = TILES;
-    ggzcomm_sndoptions();
+    ggzcomm_sndoptions ();
     break;
   case msgoptions:
     /* Not supported yet. */
     break;
 
   default:
-    printf("Unknown opcode.\n");
+    printf ("Unknown opcode.\n");
     break;
   }
 
 }
 
 
-void network_init(void)
+void
+network_init (void)
 {
   GGZMod *mod;
   GIOChannel *channel;
   int ret, ggzmodfd;
 
-  if (!ggzmod_is_ggz_mode())
+  if (!ggzmod_is_ggz_mode ())
     return;
 
-  mod = ggzmod_new(GGZMOD_GAME);
-  ggzmod_set_handler(mod, GGZMOD_EVENT_SERVER, handle_ggzmod_server);
+  mod = ggzmod_new (GGZMOD_GAME);
+  ggzmod_set_handler (mod, GGZMOD_EVENT_SERVER, handle_ggzmod_server);
 
-  ret = ggzmod_connect(mod);
+  ret = ggzmod_connect (mod);
   if (ret != 0) {
     /* Error: GGZ core client error (e.g. faked GGZMODE env variable) */
     return;
   }
 
-  ggzmodfd = ggzmod_get_fd(mod);
-  channel = g_io_channel_unix_new(ggzmodfd);
-  g_io_add_watch(channel, G_IO_IN, handle_ggzmod, mod);
+  ggzmodfd = ggzmod_get_fd (mod);
+  channel = g_io_channel_unix_new (ggzmodfd);
+  g_io_add_watch (channel, G_IO_IN, handle_ggzmod, mod);
 
-  ggzcomm_set_notifier_callback(network_message_cb);
-  ggzcomm_set_error_callback(network_error_cb);
+  ggzcomm_set_notifier_callback (network_message_cb);
+  ggzcomm_set_error_callback (network_error_cb);
 
-  init_chat(mod);
-  init_player_list(mod);
+  init_chat (mod);
+  init_player_list (mod);
 
   ggz_network_mode = TRUE;
 
@@ -204,10 +208,11 @@ void network_init(void)
 
 
 /*  Send column number to server. */
-void network_send_move(int column)
+void
+network_send_move (int column)
 {
   variables.column3 = column;
-  ggzcomm_sndmove();
+  ggzcomm_sndmove ();
 }
 
 
@@ -217,7 +222,8 @@ void network_send_move(int column)
   established (or lost) to the GGZ server.  The server parameter gives
   the server (or NULL).
 ****************************************************************************/
-static void ggz_connected(GGZServer * server)
+static void
+ggz_connected (GGZServer * server)
 {
   /* Nothing useful to do... */
 }
@@ -227,54 +233,57 @@ static void ggz_connected(GGZServer * server)
   means we now have a connection to a gnect server so handling can be given
   back to the regular gnect code.
 ****************************************************************************/
-static void ggz_game_launched(void)
+static void
+ggz_game_launched (void)
 {
   gchar *str = NULL;
 
-  network_init();
-  game_reset();
-  gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), MAIN_PAGE);
+  network_init ();
+  game_reset ();
+  gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), MAIN_PAGE);
 
-  str = g_strdup_printf(_("Welcome to a network game of %s."),
-			NETWORK_ENGINE);
-  add_chat_text(str);
-  g_free(str);
+  str = g_strdup_printf (_("Welcome to a network game of %s."),
+			 NETWORK_ENGINE);
+  add_chat_text (str);
+  g_free (str);
 
 }
 
 /****************************************************************************
   Callback function that's invoked when GGZ is exited.
 ****************************************************************************/
-static void ggz_closed(void)
+static void
+ggz_closed (void)
 {
-  gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), MAIN_PAGE);
+  gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), MAIN_PAGE);
   ggz_network_mode = FALSE;
-  game_reset();
-  prompt_player();
+  game_reset ();
+  prompt_player ();
 }
 
-void on_network_game(void)
+void
+on_network_game (void)
 {
   GtkWidget *ggzbox;
 
 
   if (ggz_network_mode) {
-    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), NETWORK_PAGE);
+    gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), NETWORK_PAGE);
     return;
   }
 
-  game_reset();
+  game_reset ();
   ggz_network_mode = TRUE;
-  prompt_player();
+  prompt_player ();
 
-  ggz_gtk_initialize(FALSE,
-		     ggz_connected, ggz_game_launched, ggz_closed,
-		     NETWORK_ENGINE, NETWORK_VERSION, "GNOME GGZ");
+  ggz_gtk_initialize (FALSE,
+		      ggz_connected, ggz_game_launched, ggz_closed,
+		      NETWORK_ENGINE, NETWORK_VERSION, "GNOME GGZ");
 
-  ggz_embed_ensure_server("GNOME GGZ", "gnome.ggzgamingzone.org",
-     			  5688, _("Player")); 
+  ggz_embed_ensure_server ("GNOME GGZ", "gnome.ggzgamingzone.org",
+			   5688, _("Player"));
 
-  ggzbox = ggz_gtk_create_main_area(app);
-  gtk_notebook_append_page(GTK_NOTEBOOK(notebook), ggzbox, NULL);
-  gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), NETWORK_PAGE);
+  ggzbox = ggz_gtk_create_main_area (app);
+  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), ggzbox, NULL);
+  gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), NETWORK_PAGE);
 }

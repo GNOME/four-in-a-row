@@ -38,80 +38,80 @@ extern Prefs p;
 
 
 Theme theme[] = {
-	{
-		N_("Classic"),
-		"tileset_50x50_sunspot.svg",
-		NULL,
-		"#9999CC",
-		DEFAULT_GRID_STYLE,
-		N_("Red"), N_("Yellow")
-	},
-	{
-		N_("High Contrast"),
-		"tileset_50x50_hcontrast.svg",
-		NULL,
-		"#000000",
-		DEFAULT_GRID_STYLE,
-		N_("Light"), N_("Dark")
-	},
-	{
-		N_("High Contrast Inverse"),
-		"tileset_50x50_hcinverse.svg",
-		NULL,
-		"#FFFFFF",
-		DEFAULT_GRID_STYLE,
-		N_("Light"), N_("Dark")
-	},
-	{
-		N_("Cream Marbles"),
-		"tileset_50x50_catseyes.png",
-		"bg_toplight.png",
-		"#727F8C",
-		DEFAULT_GRID_STYLE,
-		N_("Red"), N_("Blue")
-	},
-	{
-		N_("Glass Marbles"),
-		"tileset_50x50_glassy.png",
-		"bg_grotty.jpg",
-		"#727F8C",
-		DEFAULT_GRID_STYLE,
-		N_("Red"), N_("Blue")
-	},
-	{
-		N_("Nightfall"),
-		"tileset_50x50_glassy.png",
-		"bg_nightfall.jpg",
-		"#727F8C",
-		DEFAULT_GRID_STYLE,
-		N_("Red"), N_("Yellow")
-	},
-	{
-		N_("Blocks"),
-		"tileset_50x50_square.png",
-		NULL,
-		"#666666",
-		DEFAULT_GRID_STYLE,
-		N_("Orange"), N_("Blue")
-	}
+  {
+   N_("Classic"),
+   "tileset_50x50_sunspot.svg",
+   NULL,
+   "#9999CC",
+   DEFAULT_GRID_STYLE,
+   N_("Red"), N_("Yellow")
+   },
+  {
+   N_("High Contrast"),
+   "tileset_50x50_hcontrast.svg",
+   NULL,
+   "#000000",
+   DEFAULT_GRID_STYLE,
+   N_("Light"), N_("Dark")
+   },
+  {
+   N_("High Contrast Inverse"),
+   "tileset_50x50_hcinverse.svg",
+   NULL,
+   "#FFFFFF",
+   DEFAULT_GRID_STYLE,
+   N_("Light"), N_("Dark")
+   },
+  {
+   N_("Cream Marbles"),
+   "tileset_50x50_catseyes.png",
+   "bg_toplight.png",
+   "#727F8C",
+   DEFAULT_GRID_STYLE,
+   N_("Red"), N_("Blue")
+   },
+  {
+   N_("Glass Marbles"),
+   "tileset_50x50_glassy.png",
+   "bg_grotty.jpg",
+   "#727F8C",
+   DEFAULT_GRID_STYLE,
+   N_("Red"), N_("Blue")
+   },
+  {
+   N_("Nightfall"),
+   "tileset_50x50_glassy.png",
+   "bg_nightfall.jpg",
+   "#727F8C",
+   DEFAULT_GRID_STYLE,
+   N_("Red"), N_("Yellow")
+   },
+  {
+   N_("Blocks"),
+   "tileset_50x50_square.png",
+   NULL,
+   "#666666",
+   DEFAULT_GRID_STYLE,
+   N_("Orange"), N_("Blue")
+   }
 };
 
-gint n_themes = G_N_ELEMENTS(theme);
+gint n_themes = G_N_ELEMENTS (theme);
 
 
 
-const gchar*
+const gchar *
 theme_get_player (PlayerID who)
 {
-	if (who == PLAYER1) return theme[p.theme_id].player1;
-	return theme[p.theme_id].player2;
-}
-                                                                                
-                                                                                
-                                                                                
-const gchar*
-theme_get_title (gint id)
-{
-	return theme[id].title;
+  if (who == PLAYER1)
+    return theme[p.theme_id].player1;
+  return theme[p.theme_id].player2;
 }
 
+
+
+const gchar *
+theme_get_title (gint id)
+{
+  return theme[id].title;
+}

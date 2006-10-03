@@ -43,7 +43,7 @@
 
 struct bintree {
   struct bintree *parent;
-  struct bintree *lson,*rson;
+  struct bintree *lson, *rson;
   struct node *node;
 };
 
@@ -51,16 +51,16 @@ struct bintree {
 struct node {
   struct node *parent[7];
   struct node *child[7];
-  unsigned char square[(BOARDX+1)*(BOARDY+2)];
-  unsigned char stack[BOARDX+1],turn,symmetric[7];
-  long proof,disproof;
-  short value,expanded,type,evaluated,direct;
+  unsigned char square[(BOARDX + 1) * (BOARDY + 2)];
+  unsigned char stack[BOARDX + 1], turn, symmetric[7];
+  long proof, disproof;
+  short value, expanded, type, evaluated, direct;
 };
 
 
 struct dbtree {
   struct dbtree *parent;
-  struct dbtree *lson,*rson;
+  struct dbtree *lson, *rson;
   unsigned char cpos[12];
   short stacked;
   short value;
@@ -68,22 +68,22 @@ struct dbtree {
 
 
 struct small_tree {
-  struct small_tree *parent,*lson,*rson;
+  struct small_tree *parent, *lson, *rson;
   unsigned char buffer[14];
 };
 
 
 struct parameters {
-  time_t start,end;
+  time_t start, end;
   long maxnodes;
-  long nodes,pr,ds,nodes_added;
+  long nodes, pr, ds, nodes_added;
 };
 
 
 
-struct bintree *init_bin_tree(struct node *);
-struct node *check_node(struct bintree *,struct node *,short);
-struct dbtree *init_dbase(unsigned char *,short);
+struct bintree *init_bin_tree (struct node *);
+struct node *check_node (struct bintree *, struct node *, short);
+struct dbtree *init_dbase (unsigned char *, short);
 
-struct bintree *fast_init_bin_tree(struct node *);
-struct node *fast_check_node(struct bintree *,struct node *,short);
+struct bintree *fast_init_bin_tree (struct node *);
+struct node *fast_check_node (struct bintree *, struct node *, short);

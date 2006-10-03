@@ -137,7 +137,7 @@ struct solution {
   short valid;
   short solname;
   short solpoint[2];
-  short sqinv[2*TILES];
+  short sqinv[2 * TILES];
   short sqinvnumb;
   short solgroups[GROUPS];
   short solgroupsnumb;
@@ -146,29 +146,29 @@ struct solution {
 
 struct intgp {
   short tgroups[GROUPS];
-  short j,k;
+  short j, k;
   short mygroups[GROUPS];
 };
 
 
 struct board {
-  short square[(BOARDX+1)*(BOARDY+2)];
-  short wipesq[(BOARDX+1)*(BOARDY+2)];
+  short square[(BOARDX + 1) * (BOARDY + 2)];
+  short wipesq[(BOARDX + 1) * (BOARDY + 2)];
   short usablegroup[GROUPS];
-  short sqused[(BOARDX+1)*(BOARDY+2)];
-  short stack[BOARDX+1];
+  short sqused[(BOARDX + 1) * (BOARDY + 2)];
+  short stack[BOARDX + 1];
   short *groups[GROUPS][TILES];
   short xplace[GROUPS][TILES];
   short yplace[GROUPS][TILES];
   short turn;
-  short moves[MAXMEN],choices[MAXMEN],mlist[MAXMEN];
+  short moves[MAXMEN], choices[MAXMEN], mlist[MAXMEN];
   short filled;
 
   struct intgp intgp;
   struct solution *solution[ALLOC_SOLUTIONS];
   short sp;
-  short problem_solved,solused;
-  short oracle[2],oracle_guesses,lastguess,bestguess;
+  short problem_solved, solused;
+  short oracle[2], oracle_guesses, lastguess, bestguess;
   long nodes_visited;
   short maxtreedepth;
 
@@ -176,14 +176,14 @@ struct board {
 
   unsigned long instances[10];
 
-  short wins[2],draws,lastwin;
+  short wins[2], draws, lastwin;
   struct solvable_groups *solvable_groups;
 
-  unsigned char *white_book,*black_book;
-  long wbposit,bbposit;
+  unsigned char *white_book, *black_book;
+  long wbposit, bbposit;
   long lastob;
-  short autotest,cpu,white_lev,black_lev;
-  short videotype,usegraphics,enablegr;
+  short autotest, cpu, white_lev, black_lev;
+  short videotype, usegraphics, enablegr;
   short debug;
 };
 

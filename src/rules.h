@@ -22,4 +22,3 @@
 #define BASECLAIM       7
 #define BEFORE          8
 #define SPECIALBEFORE   9
-
