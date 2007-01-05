@@ -112,7 +112,7 @@ network_error_cb (void)
 				   0,
 				   GTK_MESSAGE_ERROR,
 				   GTK_BUTTONS_OK,
-				   _("A network error has occured."));
+				   _("A network error has occurred."));
   g_signal_connect (dialog, "response", G_CALLBACK (on_game_exit), NULL);
   /* FIXME:  Invoke bug-buddy...    */
   gtk_window_present (GTK_WINDOW (dialog));
