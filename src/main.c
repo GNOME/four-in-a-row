@@ -914,7 +914,7 @@ on_help_about (GtkAction * action, gpointer data)
 			 "name", _("Four-in-a-Row"),
 			 "version", VERSION,
 			 "copyright",
-			 "Copyright \xc2\xa9 1999-2006, Tim Musson and David Neary",
+			 "Copyright \xc2\xa9 1999-2007, Tim Musson and David Neary",
 			 "license", license, "comments",
 			 _
 			 ("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
