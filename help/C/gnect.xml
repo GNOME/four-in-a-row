@@ -18,7 +18,7 @@
 <!-- please do not change the id -->
 <!-- translators, change lang to the appropriate code -->
   <articleinfo>
-    <title>&appname; Manual V&manrevision;</title>
+    <title>&appname; Manual</title>
     <copyright>
       <year>2001-2002</year>
       <holder>Timothy Musson</holder>
@@ -33,11 +33,9 @@
 
     -->
 
-    <!--
-    <publisher>
-      <publishername></publishername>
-    </publisher>
-    -->
+    <publisher role="maintainer"> 
+      <publishername> GNOME Documentation Project </publishername> 
+    </publisher> 
 
     &legal;
 
@@ -313,9 +311,9 @@
                   <para>
                     <menuchoice>
                       <shortcut><keysym>F1</keysym></shortcut>
-                      <guimenuitem>Contents</guimenuitem>&mdash;
+                      <guimenuitem>Contents</guimenuitem>
+                    </menuchoice>&mdash;
                       Opens your help browser and shows this manual.
-                    </menuchoice>
                   </para>
                 </listitem>
 
