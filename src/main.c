@@ -411,12 +411,13 @@ fullscreen_cb (GtkAction * action)
 }
 
 /* Just in case something else takes us to/from fullscreen. */
-static void
+static gboolean
 window_state_cb (GtkWidget * widget, GdkEventWindowState * event)
 {
   if (event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
     set_fullscreen_actions (event->new_window_state &
 			    GDK_WINDOW_STATE_FULLSCREEN);
+  return FALSE;
 }
 
 static void
@@ -1223,7 +1224,7 @@ process_move3 (gint c)
 }
 
 
-static gint
+static gboolean
 on_window_resize (GtkWidget * w, GdkEventConfigure * e, gpointer data)
 {
   gconf_client_set_int (conf_client, "/apps/gnect/window_width",
