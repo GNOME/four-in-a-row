@@ -139,17 +139,15 @@
       <title>Playing &appname;</title>
 
       <para>
-        Once you've started &app;, select
-        <guimenuitem>New game</guimenuitem> from the
-        <guimenu>Game</guimenu> menu to begin playing.
+        To start a new game of &appname; choose <menuchoice><guimenu>Game</guimenu><guimenuitem>New Game</guimenuitem></menuchoice>.
       </para>
 
       <para>
         The <interface>game board</interface> consists of seven columns and
-        six rows. Above it, a special row indicates the current player.
-        To make a move, select a column using your pointing device or
-        keyboard. Your marble will drop into the topmost empty row of that
-        column.
+        six rows. Above it, a special row indicates the current player and the marble about to be played. Each move consists of dropping a marble in one of the columns. The marble lands on the topmost empty row of the chosen column.
+      </para>
+        
+      <para>To make a move, click on a column with the mouse. To play with the keyboard, move the marble in the top row with the left and right arrow keys, and drop it in place with the  down arrow key. Your marble will drop into the topmost empty row of that column.
       </para>
 
       <!-- Figure -->
@@ -166,175 +164,49 @@
       </mediaobject>
 
       <para>
-        The game's won when one of the two players manages to line up four
+        The game is won when one of the two players manages to line up four
         of his or her marbles horizontally, vertically or diagonally. If the
         board fills up without a win, the game ends in a draw.
       </para>
 
     </sect2>
-
-    <!-- ===== Menus ===== -->
-
-    <sect2 id="menubar">
-
-      <title>Menus</title>
-
-      <para>
-        The menu bar, located above the <interface>game board</interface>,
-        contains the following menus:
-      </para>
-
-      <variablelist>
-
-        <!-- ===== Game ===== -->
-
-        <varlistentry>
-          <term><guimenu>Game</guimenu></term>
-          <listitem>
-            <para>
-              This menu contains five items:
-              <itemizedlist>
-                <listitem>
-                  <para>
-                    <menuchoice>
-                      <shortcut><keysym>Ctrl-N</keysym></shortcut>
-                      <guimenuitem>New game</guimenuitem>
-                    </menuchoice>
-                    &mdash;
-                    This resets the board and starts a new game.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <menuchoice>
-                      <shortcut><keysym>Ctrl-Z</keysym></shortcut>
+    
+    <!-- ===== Commands ===== -->  
+    
+    <sect2 id="commands">
+      <title>Commands</title>
+      <anchor id="menubar"/><!-- id for removed section -->
+      
+      <para>To take back a move, choose <menuchoice>
+                      <shortcut><keycombo>
+                      <keysym>Ctrl</keysym><keycap>Z</keycap>
+                      </keycombo></shortcut>
                       <guimenuitem>Undo move</guimenuitem>
-                    </menuchoice>
-                    &mdash;
-                    If you're playing against a friend, this will undo one
-                    move. If you're playing against the computer, this will
-                    undo the computer's last move and then yours.
-                    Repeating this will return the board to its initial
-                    state.
-                  </para>
-                </listitem>
+                    </menuchoice>.
+            If you're playing against a friend, this will undo one
+            move. If you're playing against the computer, this will
+            undo the computer's last move and then yours.
+            Repeating this will return the board to its initial
+            state.
+      </para>
+      <para>Choose <menuchoice>
+                      <shortcut><keycombo>
+                      <keysym>Ctrl</keysym><keycap>H</keycap>
+                      </keycombo></shortcut>
+        <guimenuitem>Hint</guimenuitem>
+      </menuchoice> to get a suggestion from the computer for your next move.
+      This is shown in the status bar.</para>
+      
+      <para>
+        Choose <menuchoice>
+          <guimenuitem>Scores</guimenuitem>
+        </menuchoice> to show a tally of wins and draws
+        for the current playing session. The scores will be reset to
+        zero if Player Selection is changed in Preferences.
+      </para>      
 
-                <listitem>
-                  <para>
-                    <menuchoice>
-                      <guimenuitem>Hint</guimenuitem>
-                    </menuchoice>
-                    &mdash;
-                    This'll give you the computer's best suggestion for your
-                    move.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <menuchoice>
-                      <guimenuitem>Scores&hellip;</guimenuitem>
-                    </menuchoice>
-                    &mdash;
-                    This opens a small window containing a tally of wins and draws
-                    for the current playing session. The scores will be reset to
-                    zero if Player Selection is changed in Preferences.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <menuchoice>
-                      <shortcut><keysym>Ctrl-Q</keysym></shortcut>
-                      <guimenuitem>Exit</guimenuitem>
-                    </menuchoice>
-                    &mdash;
-                    This quits the game.
-                  </para>
-                </listitem>
-
-              </itemizedlist>
-            </para>
-          </listitem>
-        </varlistentry>
-
-        <!-- ===== Settings ===== -->
-
-        <varlistentry>
-          <term><guimenu>Settings</guimenu></term>
-          <listitem>
-            <para>
-              This menu contains three items:
-              <itemizedlist>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Toolbar</guimenuitem>
-                    &mdash;
-                    This toggle switches the tool bar on and off.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Enable sound</guimenuitem>
-                    &mdash;
-                    This toggle switches the game's sound effects on and off.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>Preferences&hellip;</guimenuitem>
-                    &mdash;
-                    This opens the <interface>Preferences Dialog</interface>,
-                    allowing you to configure the game.
-                  </para>
-                </listitem>
-
-              </itemizedlist>
-            </para>
-          </listitem>
-        </varlistentry>
-
-        <!-- ===== Help ===== -->
-
-        <varlistentry>
-          <term><guimenu>Help</guimenu></term>
-          <listitem>
-            <para>
-             This menu contains:
-              <itemizedlist>
-
-                <listitem>
-                  <para>
-                    <menuchoice>
-                      <shortcut><keysym>F1</keysym></shortcut>
-                      <guimenuitem>Contents</guimenuitem>
-                    </menuchoice>&mdash;
-                      Opens your help browser and shows this manual.
-                  </para>
-                </listitem>
-
-                <listitem>
-                  <para>
-                    <guimenuitem>About</guimenuitem>
-                    &mdash;
-                    Opens the <interface>About Dialog</interface>, showing
-                    basic information about &app; such as its version
-                    number and the names of its authors.
-                  </para>
-                </listitem>
-
-              </itemizedlist>
-            </para>
-          </listitem>
-        </varlistentry>
-
-      </variablelist>
-
-    </sect2>
+      
+    </sect2>  
 
     <!-- ===== Preferences ===== -->
 
@@ -344,7 +216,7 @@
 
       <para>
         To change the game's settings, select
-        <guimenuitem>Preferences&hellip;</guimenuitem> from the
+        <guimenuitem>Preferences</guimenuitem> from the
         <guimenu>Settings</guimenu> menu. This opens the
         <interface>Preferences Dialog</interface>.
       </para>

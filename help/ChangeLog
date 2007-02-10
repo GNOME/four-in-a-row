@@ -1,3 +1,9 @@
+2007-02-10  Joachim Noreiko  <jnoreiko@yahoo.com>
+
+  * C/gnect.xml: removed mostly pointless Menus section; 
+      replaced with short section describing useful commands. 
+      This removes XML entities, fixing #404020      
+
 2007-02-04  Joachim Noreiko  <jnoreiko@yahoo.com>
 
   * C/gnect.xml: fixed validation errors. #404020 (though problems with entities remain)
