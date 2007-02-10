@@ -19,6 +19,13 @@
 <!-- translators, change lang to the appropriate code -->
   <articleinfo>
     <title>&appname; Manual</title>
+    <abstract role="description">
+      <para>
+        Build a line of four of your marbles while trying to stop your opponent from
+        doing the same. Play against another person or the computer.
+      </para>
+    </abstract>
+
     <copyright>
       <year>2001-2002</year>
       <holder>Timothy Musson</holder>
