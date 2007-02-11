@@ -284,8 +284,6 @@ on_network_game (void)
   pwent = getpwuid(getuid());
   ggz_embed_ensure_server ("GGZ Gaming Zone", "gnome.ggzgamingzone.org",
 			   5688, pwent->pw_name);
-  ggz_embed_ensure_server ("GNOME GGZ", "games.gnome.org",
-			   5688, pwent->pw_name);
 
   ggzbox = ggz_gtk_create_main_area (app);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), ggzbox, NULL);
