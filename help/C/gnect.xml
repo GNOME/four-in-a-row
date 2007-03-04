@@ -160,7 +160,7 @@
       <!-- Figure -->
       <mediaobject id="mainwindow-fig">
         <imageobject>
-          <imagedata fileref="figures/mainwindow"
+          <imagedata fileref="figures/mainwindow.png"
                      format="PNG"
                      srccredit="trm"/>
         </imageobject>
