@@ -1,3 +1,8 @@
+2007-04-21  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
+
+	* Makefile.am: Added es to DOC_LINGUAS.
+	* es/es.po: Added Spanish translation.
+
 2007-03-21  Claude Paroz  <claude@2xlibre.net>
 
 	* Makefile.am: Added fr to DOC_LINGUAS.
