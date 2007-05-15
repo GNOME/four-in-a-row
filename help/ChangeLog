@@ -1,3 +1,8 @@
+2007-05-15  Andreas Røsdal  <andreasr@gnome.org>
+
+	* C/gnect.xml: Removed the repetition of the word "about" in help file.
+	Patch from Jason McFarlane in Bug #429630.
+
 2007-05-13  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
 	* es/es.po: Updated Spanish translation

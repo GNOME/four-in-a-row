@@ -413,7 +413,7 @@
 
       <para>
         If you start &app; from the command line, it'll give you clues about
-        about any problems it has with your new theme. If it has none, you'll
+        any problems it has with your new theme. If it has none, you'll
         find your new theme listed the
         <interface>Preferences Dialog</interface>.
       </para>
