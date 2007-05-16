@@ -832,7 +832,7 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (scorebox)->vbox), vbox, TRUE, TRUE,
 		      0);
 
-  icon = gtk_image_new_from_icon_name ("gnome-four-in-a-row", 48);
+  icon = gtk_image_new_from_icon_name ("gnome-gnect", 48);
   gtk_box_pack_start (GTK_BOX (vbox), icon, FALSE, FALSE, 0);
 
   table = gtk_table_new (3, 2, FALSE);
@@ -921,9 +921,9 @@ on_help_about (GtkAction * action, gpointer data)
 			 ("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
 			 "authors", authors, "documenters", documenters,
 			 "artists", artists, "translator_credits",
-			 _("translator-credits"), "logo-icon-name",
-			 "gnome-four-in-a-row", "website",
-			 "http://www.gnome.org/projects/gnome-games/",
+			 _("translator-credits"),
+			 "logo-icon-name", "gnome-gnect",
+			 "website", "http://www.gnome.org/projects/gnome-games/",
 			 "wrap-license", TRUE, NULL);
   g_free (license);
 }
@@ -1437,7 +1437,7 @@ create_app (void)
   g_signal_connect (G_OBJECT (app), "configure_event",
 		    G_CALLBACK (on_window_resize), NULL);
 
-  gtk_window_set_default_icon_name ("gnome-four-in-a-row");
+  gtk_window_set_default_icon_name ("gnome-gnect");
 
   statusbar = gtk_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();

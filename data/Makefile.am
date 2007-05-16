@@ -11,9 +11,6 @@ schema_in_files = gnect.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
 
-icondir   = $(datadir)/icons/hicolor/48x48/apps/
-icon_DATA = gnome-four-in-a-row.png
-
 ## Removed until sounds are fixed up. We probably won't be using the
 ## sound list again.
 ##
@@ -27,8 +24,7 @@ EXTRA_DIST = gnect-client.dsc.in \
              gnect.room          \
 	     $(velena_DATA)      \
              $(Games_in_files)   \
-             $(schema_in_files)  \
-             $(icon_DATA)
+             $(schema_in_files)
 ##             $(soundlist_DATA)  \
 
 DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
