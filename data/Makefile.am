@@ -11,21 +11,12 @@ schema_in_files = gnect.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
 
-## Removed until sounds are fixed up. We probably won't be using the
-## sound list again.
-##
-## soundlistdir       = $(sysconfdir)/sound/events
-## soundlist_in_files = gnect.soundlist.in
-## soundlist_DATA     = $(soundlist_in_files:.soundlist.in=.soundlist)
-## @INTLTOOL_SOUNDLIST_RULE@
-
 EXTRA_DIST = gnect-client.dsc.in \
 	     gnect-server.dsc.in \
              gnect.room          \
 	     $(velena_DATA)      \
              $(Games_in_files)   \
              $(schema_in_files)
-##             $(soundlist_DATA)  \
 
 DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
 

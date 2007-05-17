@@ -30,6 +30,7 @@
 
 #include <games-gridframe.h>
 #include <games-stock.h>
+#include <games-sound.h>
 
 #include "connect4.h"
 #include "main.h"
@@ -491,34 +492,29 @@ game_free (void)
 static void
 play_sound (SoundID id)
 {
-  if (!p.do_sound)
-    return;
+ /* if (!p.do_sound)
+    return;*/
 
-  /* This has been disabled until we get appropriate sounds. */
-  /* Fixing this should also involve moving away from the 
-   * gnome_triggers API. */
-#if 0
   switch (id) {
   case SOUND_DROP:
-    gnome_triggers_do (NULL, NULL, APPNAME, "drop", NULL);
+    games_sound_play ("slide");
     break;
   case SOUND_I_WIN:
-    gnome_triggers_do (NULL, NULL, APPNAME, "iwin", NULL);
+    games_sound_play ("reverse");
     break;
   case SOUND_YOU_WIN:
-    gnome_triggers_do (NULL, NULL, APPNAME, "youwin", NULL);
+    games_sound_play ("bonus");
     break;
   case SOUND_PLAYER_WIN:
-    gnome_triggers_do (NULL, NULL, APPNAME, "playerwin", NULL);
+    games_sound_play ("bonus");
     break;
   case SOUND_DRAWN_GAME:
-    gnome_triggers_do (NULL, NULL, APPNAME, "draw", NULL);
+    games_sound_play ("reverse");
     break;
   case SOUND_COLUMN_FULL:
-    gnome_triggers_do (NULL, NULL, APPNAME, "cantmove", NULL);
+    games_sound_play ("bad");
     break;
   }
-#endif
 }
 
 
