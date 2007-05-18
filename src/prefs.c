@@ -30,6 +30,7 @@
 #include <games-gconf.h>
 #include <games-frame.h>
 #include <games-controls.h>
+#include <games-sound.h>
 #include "main.h"
 #include "theme.h"
 #include "prefs.h"
@@ -59,6 +60,7 @@ static GtkWidget *radio1[4];
 static GtkWidget *radio2[4];
 static GtkWidget *combobox_theme;
 static GtkWidget *checkbutton_animate;
+static GtkWidget *checkbutton_sound;
 
 
 static gint
@@ -187,12 +189,9 @@ gconf_sound_changed (GConfClient * client, guint cnxn_id, GConfEntry * entry,
 		     gpointer user_data)
 {
   p.do_sound = gconf_client_get_bool (conf_client, KEY_DO_SOUND, NULL);
-#if 0
-/* FIXME: This refers to the old sound menu item. Fix after sounds work. */
-  gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM
-				  (settings_menu_uiinfo[1].widget),
-				  p.do_sound);
-#endif
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_sound),
+				p.do_sound);
+  games_sound_enable (p.do_sound);
 }
 
 
@@ -264,6 +263,13 @@ on_toggle_animate (GtkToggleButton * t, gpointer data)
 {
   p.do_animate = t->active;
   gconf_client_set_bool (conf_client, KEY_DO_ANIMATE, t->active, NULL);
+}
+
+static void
+on_toggle_sound (GtkToggleButton * t, gpointer data)
+{
+  p.do_sound = t->active;
+  gconf_client_set_bool (conf_client, KEY_DO_SOUND, t->active, NULL);
 }
 
 
@@ -436,7 +442,7 @@ prefsbox_open (void)
   frame = games_frame_new (_("Appearance"));
   gtk_box_pack_start (GTK_BOX (vbox1), frame, FALSE, FALSE, 0);
 
-  vbox2 = gtk_vbox_new (FALSE, 6);
+  vbox2 = gtk_vbox_new (FALSE, 7);
   gtk_container_add (GTK_CONTAINER (frame), vbox2);
 
   hbox = gtk_hbox_new (FALSE, 12);
@@ -460,6 +466,9 @@ prefsbox_open (void)
     gtk_check_button_new_with_mnemonic (_("Enable _animation"));
   gtk_box_pack_start (GTK_BOX (vbox2), checkbutton_animate, FALSE, FALSE, 0);
 
+  checkbutton_sound =
+    gtk_check_button_new_with_mnemonic (_("E_nable sounds"));
+  gtk_box_pack_start (GTK_BOX (vbox2), checkbutton_sound, FALSE, FALSE, 0);
 
   /* keyboard tab */
 
@@ -491,6 +500,8 @@ prefsbox_open (void)
   gtk_combo_box_set_active (GTK_COMBO_BOX (combobox_theme), p.theme_id);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_animate),
 				p.do_animate);
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_sound),
+				p.do_sound);
 
   /* connect signals */
 
@@ -509,6 +520,9 @@ prefsbox_open (void)
 
   g_signal_connect (G_OBJECT (checkbutton_animate), "toggled",
 		    G_CALLBACK (on_toggle_animate), NULL);
+
+  g_signal_connect (G_OBJECT (checkbutton_sound), "toggled",
+		    G_CALLBACK (on_toggle_sound), NULL);
 
   gtk_widget_show_all (prefsbox);
 }
