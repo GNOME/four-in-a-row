@@ -346,6 +346,7 @@ prefs_init (gint argc, gchar ** argv)
   p.level[PLAYER1] = sane_player_level (p.level[PLAYER1]);
   p.level[PLAYER2] = sane_player_level (p.level[PLAYER2]);
   p.theme_id = sane_theme_id (p.theme_id);
+  games_sound_enable (p.do_sound);
 }
 
 
