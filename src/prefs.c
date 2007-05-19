@@ -304,9 +304,8 @@ on_select_player2 (GtkWidget * w, gpointer data)
 
 
 void
-prefs_init (gint argc, gchar ** argv)
+prefs_init (void)
 {
-  gconf_init (argc, argv, NULL);
   conf_client = gconf_client_get_default ();
 #if 0
   if (!games_gconf_sanity_check_string (conf_client, "/apps/gnect/theme")) {

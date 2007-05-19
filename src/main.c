@@ -1512,16 +1512,23 @@ int
 main (int argc, char *argv[])
 {
   GnomeProgram *program;
+  GOptionContext *context;
 
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
+  g_thread_init (NULL);
+  context = g_option_context_new (NULL);
+  g_option_context_add_group (context, games_sound_get_option_group ());
+
   program = gnome_program_init (APPNAME, VERSION, LIBGNOMEUI_MODULE,
-				argc, argv, GNOME_PARAM_APP_DATADIR, DATADIR,
+				argc, argv,
+                                GNOME_PARAM_GOPTION_CONTEXT, context,
+                                GNOME_PARAM_APP_DATADIR, DATADIR,
 				NULL);
 
-  prefs_init (argc, argv);
+  prefs_init ();
   game_init ();
 
   /* init gfx */

@@ -23,5 +23,5 @@ struct _Prefs {
 };
 
 
-void prefs_init (gint argc, gchar ** argv);
+void prefs_init (void);
 void prefsbox_open (void);
