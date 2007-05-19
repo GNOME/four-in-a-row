@@ -279,7 +279,7 @@ on_network_game (void)
 
   ggz_gtk_initialize (FALSE,
 		      ggz_connected, ggz_game_launched, ggz_closed,
-		      NETWORK_ENGINE, NETWORK_VERSION, "gnect.xml"
+		      NETWORK_ENGINE, NETWORK_VERSION, "gnect.xml",
 		      "GGZ Gaming Zone");
 
   pwent = getpwuid(getuid());
