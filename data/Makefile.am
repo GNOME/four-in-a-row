@@ -1,9 +1,9 @@
 velenadir      = $(datadir)/gnect
 velena_DATA    = white_ob.cn4.gz
 
-Games_in_files = gnect.desktop.in
+Games_in_files = gnect.desktop.in.in
 Gamesdir       = $(datadir)/applications
-Games_DATA     = $(Games_in_files:.desktop.in=.desktop)
+Games_DATA     = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 schemadir   = @GCONF_SCHEMA_FILE_DIR@
@@ -15,7 +15,6 @@ EXTRA_DIST = gnect-client.dsc.in \
 	     gnect-server.dsc.in \
              gnect.room          \
 	     $(velena_DATA)      \
-             $(Games_in_files)   \
              $(schema_in_files)
 
 DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
@@ -40,5 +39,3 @@ ggzroomdir = ${prefix}/etc/ggzd/rooms/
 ggzgame_DATA = gnect-server.dsc
 ggzgamedir = ${prefix}/etc/ggzd/games/
 endif
-
-
