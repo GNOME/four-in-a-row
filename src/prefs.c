@@ -307,11 +307,7 @@ void
 prefs_init (void)
 {
   conf_client = gconf_client_get_default ();
-#if 0
-  if (!games_gconf_sanity_check_string (conf_client, "/apps/gnect/theme")) {
-    exit (1);
-  }
-#endif
+
   gconf_client_add_dir (conf_client, KEY_DIR, GCONF_CLIENT_PRELOAD_NONE,
 			NULL);
 
