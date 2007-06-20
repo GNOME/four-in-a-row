@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD.es\n"
-"POT-Creation-Date: 2007-05-13 03:41+0100\n"
-"PO-Revision-Date: 2007-05-13 19:26+0200\n"
+"POT-Creation-Date: 2007-05-20 03:47+0100\n"
+"PO-Revision-Date: 2007-06-20 10:48+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,8 +24,8 @@ msgstr "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnect.xml:54(None)
-msgid "@@image: 'figures/connect.png'; md5=3e775cc08810150553778fd32cf5513d"
-msgstr "@@image: 'figures/connect.png'; md5=3e775cc08810150553778fd32cf5513d"
+msgid "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
+msgstr "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -250,7 +250,9 @@ msgstr ""
 msgid ""
 "Four-in-a-row also features <link linkend=\"network-games\">multiplayer</"
 "link> support with two human players in hotseat or network mode."
-msgstr "Cuatro en raya también soporta <link linkend=\"network-games\">multijugador</link> con dos jugadores humanos en el mismo equipo o en modo red."
+msgstr ""
+"Cuatro en raya también soporta <link linkend=\"network-games\">multijugador</"
+"link> con dos jugadores humanos en el mismo equipo o en modo red."
 
 #: C/gnect.xml:147(title)
 msgid "Basic Usage"
@@ -580,8 +582,8 @@ msgstr "Copie sus imágenes en el directorio pixmaps."
 #: C/gnect.xml:414(para)
 msgid ""
 "If you start <application>Four-in-a-row</application> from the command line, "
-"it'll give you clues about about any problems it has with your new theme. If "
-"it has none, you'll find your new theme listed the <interface>Preferences "
+"it'll give you clues about any problems it has with your new theme. If it "
+"has none, you'll find your new theme listed the <interface>Preferences "
 "Dialog</interface>."
 msgstr ""
 "Si inicia <application>Cuatro en raya</application> desde la línea de "
@@ -606,24 +608,29 @@ msgid ""
 "of servers to connect to, see the <ulink type=\"http\" url=\"http://www."
 "gnome.org/projects/gnome-games/\">gnome-games website</ulink>."
 msgstr ""
+"Cuatro en raya soporta juegos en red multijugador, proporcionados por <ulink type=\"http\" url=\"http://www.ggzgamingzone.org\">GGZ Gaming Zone</ulink>. Al conectar Cuatro en raya a un servidor en internet, puede desafiar otros jugadores en juegos multijugador. Para obtener noticias, actualizaciones y una lista de los servidores a los que conectar, vea la <ulink type=\"http\" url=\"http://www."
+"gnome.org/projects/gnome-games/\">página web de juegos GNOME</ulink>."
 
 #: C/gnect.xml:18(para)
 msgid ""
 "To start the multiplayer game of Four-in-a-row, select "
 "<menuchoice><guimenu>Game</guimenu><guimenuitem>Network Game</guimenuitem></"
 "menuchoice> on the Four-in-a-row menu."
-msgstr "Para iniciar una nueva partida multijugador de Cuatro en raya seleccione <menuchoice><guimenu>Juego</guimenu><guimenuitem>Juego en red</guimenuitem></menuchoice> del menú de Cuatro en raya."
+msgstr ""
+"Para iniciar una nueva partida multijugador de Cuatro en raya seleccione "
+"<menuchoice><guimenu>Juego</guimenu><guimenuitem>Juego en red</guimenuitem></"
+"menuchoice> del menú de Cuatro en raya."
 
 #: C/gnect.xml:24(title)
 msgid "Connecting to a Four-in-a-row network server"
-msgstr ""
+msgstr "Conectar Cuatro en raya con un servidor de red"
 
 #: C/gnect.xml:25(para)
 msgid ""
 "The Four-in-a-row connection dialog is shown initially when starting a new "
 "network game. This dialog allows you to select a server to connect to, and "
 "the username that you will have while connected to that server."
-msgstr ""
+msgstr "El diálogo de conexión de Cuatro en raya se muestra inicialmente al comenzar un nuevo juego en red. Éste diálogo le permite seleccionar un servidor al que conectarse y el nombre de usuario que tendrá mientras esté conectado a ese servidor."
 
 #: C/gnect.xml:31(para)
 msgid ""
@@ -631,7 +638,7 @@ msgid ""
 "normal registered account. Guest accounts allows you to anonymously login, "
 "while a normal login account allows you to reserve your own username which "
 "is protected by the password that you choose."
-msgstr ""
+msgstr "Es posible conectarse a un servidor tanto con una cuenta de invitado como con una cuenta normal registrada. Las cuentas de invitado le permiten registrarse anónimamente, mientras que una cuenta normal le permite reservar su propio nombre de usuario que está protegido por la contraseña que elija."
 
 #: C/gnect.xml:38(para)
 msgid ""
@@ -642,21 +649,21 @@ msgid ""
 "your account, you can connect by selecting the <guimenuitem>Normal Login</"
 "guimenuitem> option, and enter the username and password that you have "
 "chosen."
-msgstr ""
+msgstr "Debería seleccionar la opción <guimenuitem>Inicio de sesión como invitado</guimenuitem> si quiere iniciar una sesión anónima. Si quiere crear una nueva cuenta, entonces seleccione la opción <guimenuitem>Inicio de sesión por primera vez</guimenuitem>, con el nombre de usuario, contraseña y correo electrónico que quiera. Si ya ha creado una cuenta, puede conectarse con ella seleccionando la opción <guimenuitem>Inicio de sesión normal</guimenuitem> e introduciendo el nombre de usuario y contraseña que eligió."
 
 #: C/gnect.xml:46(para)
 msgid ""
 "To connect to a server, click on the <guimenuitem>Connect</guimenuitem> "
 "button."
-msgstr ""
+msgstr "Para conectar a un servidor, pulse en el botón <guimenuitem>Conectar</guimenuitem>."
 
 #: C/gnect.xml:50(title) C/gnect.xml:57(phrase)
 msgid "The Four-in-a-row network connection dialog."
-msgstr ""
+msgstr "El diálogo de conexión en red de Cuatro en raya"
 
 #: C/gnect.xml:65(title)
 msgid "Joining a game room"
-msgstr ""
+msgstr "Unirse a una sala de juego"
 
 #: C/gnect.xml:66(para)
 msgid ""
@@ -668,13 +675,13 @@ msgid ""
 "double-click on an existing game table to join it. The list of game tables "
 "on the right shows you the number of available seats, which means the number "
 "of players that can join the game table."
-msgstr ""
+msgstr "Una vez que se haya conectado a un servidor, elija a qué sala de juego quiere unirse. Para jugar una partida multijugador de Cuatro en raya, seleccione la sala Cuatro en raya. Si quiere hospedar su propia partida, entonces pulse el botón Lanzar. Esto creará un nuevo tablero donde otros jugadores pueden participar en la partida contra usted. Si ya hay algún otro juego iniciado, puede pulsar con el ratón dos veces sobre un tablero para unirse a él. La lista de tableros de juegos a la derecha le muestra el número de asientos disponibles, que significa el número de jugadores que pueden unirse al tablero."
 
 #: C/gnect.xml:73(title) C/gnect.xml:80(phrase)
 msgid ""
 "This Four-in-a-row network dialog allows you to join a game room to find "
 "other players."
-msgstr ""
+msgstr "El diálogo de Cuatro en raya le permite unirse a una sala de juego y encontrar otros jugadores."
 
 #: C/gnect.xml:85(para)
 msgid ""
@@ -682,17 +689,17 @@ msgid ""
 "displayed which allows you to customize the game, such as set the minimum "
 "number of players for the game. Once the total number of seats have been "
 "taken, then no more players are allowed to join that game table."
-msgstr ""
+msgstr "Cuando cree una nueva tablero para partidas de Cuatro en raya, se mostrará un diálogo de preferencias que le permite personalizar el juego, tales como el mínimo número de jugadores para la partida. Una vez que todos los asientos se han ocupado, entonces no se permitirá a más jugadores que se unan a ese tablero."
 
 #: C/gnect.xml:90(para)
 msgid ""
 "It is possible to chat with other players in network games. Ask for advice "
 "or help playing the games, but please be polite against other players."
-msgstr ""
+msgstr "Es posible chatear con otros jugadores en los juegos en red. Pregunte por un consejo o ayuda mientras juega las partidas, pero sea educado con los otros jugadores."
 
 #: C/gnect.xml:97(title)
 msgid "Waiting for other players to join the game"
-msgstr ""
+msgstr "Esperar a que otros jugadores se unan al juego"
 
 #: C/gnect.xml:98(para)
 msgid ""
@@ -701,7 +708,7 @@ msgid ""
 "guimenuitem> menu item allows you to see a list of the players who have "
 "joined the game. The game will begin immediately when the total number of "
 "players in the the game have been reached."
-msgstr ""
+msgstr "Una vez que se ha unido satisfactoriamente a una partida, tiene que esperar hasta que se unan suficientes jugadores. El elemento del menú <guimenuitem>Lista de jugadores</guimenuitem> le permite ver la lista de los jugadores que se han unido a la partida. El juego comenzará inmediatamente cuando se alcance el número de jugadores necesario."
 
 #: C/gnect.xml:107(title)
 msgid "Playing multiplayer Four-in-a-row games"
@@ -713,14 +720,14 @@ msgid ""
 "Four-in-a-row games, except that you are now playing against human players. "
 "This means that other strategies might possibly be better than when playing "
 "against AI players."
-msgstr ""
+msgstr "Las partidas multijugador en Cuatro en raya tienen más o menos las mimas reglas que una partida normal de Cuatro en raya, salvo que ahora juega contra jugadores humanos. Esto significa que posiblemente otras estrategias sean mejores que las usadas contra los jugadores IA."
 
 #: C/gnect.xml:113(para)
 msgid ""
 "Once a player has won, the game ends and you can return to the initial "
 "network game screen. Then you can play yet another game of addictive Four-in-"
 "a-row multiplayer!"
-msgstr ""
+msgstr "Una vez que un jugador ha ganado, el juego termina y puede volver a la pantalla iniciar de juego en red. Entonces puede jugar otra adictiva partida de Cuatro en raya."
 
 #: C/gnect.xml:443(title)
 msgid "Known Bugs and Limitations"
