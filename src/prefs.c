@@ -65,16 +65,7 @@ static GtkWidget *checkbutton_sound;
 static gint
 gnect_conf_get_int (gchar * key, gint default_int)
 {
-  gint value;
-  GError *error = NULL;
-
-  value = games_conf_get_integer (NULL, key, &error);
-  if (error) {
-    g_error_free (error);
-    value = default_int;
-  }
-
-  return value;
+  return games_conf_get_integer_with_default (NULL, key, default_int);
 }
 
 static gboolean
