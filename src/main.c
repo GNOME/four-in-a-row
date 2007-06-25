@@ -1396,7 +1396,7 @@ create_app (void)
 
   app = gnome_app_new (APPNAME, _("Four-in-a-Row"));
   gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  games_conf_add_window (GTK_WINDOW (app));
+  games_conf_add_window (GTK_WINDOW (app), NULL);
 
   notebook = gtk_notebook_new ();
   gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
