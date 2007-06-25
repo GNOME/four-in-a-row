@@ -27,7 +27,6 @@
 
 #include "config.h"
 #include <gnome.h>
-#include <gconf/gconf-client.h>
 #include <pwd.h>
 
 #include <ggzmod.h>

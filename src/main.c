@@ -26,11 +26,11 @@
 
 #include "config.h"
 #include <gnome.h>
-#include <gconf/gconf-client.h>
 
 #include <games-gridframe.h>
 #include <games-stock.h>
 #include <games-sound.h>
+#include <games-conf.h>
 
 #include "connect4.h"
 #include "main.h"
@@ -51,7 +51,9 @@
 #define SPEED_DROP     20
 #define SPEED_BLINK    150
 
-extern GConfClient *conf_client;
+#define DEFAULT_WIDTH 350
+#define DEFAULT_HEIGHT 390
+
 extern Prefs p;
 
 GtkWidget *app;
@@ -937,7 +939,7 @@ static void
 on_settings_toggle_sound (GtkMenuItem * m, gpointer user_data)
 {
   p.do_sound = GTK_CHECK_MENU_ITEM (m)->active;
-  gconf_client_set_bool (conf_client, KEY_DO_SOUND, p.do_sound, NULL);
+  games_conf_set_boolean (NULL, KEY_DO_SOUND, p.do_sound);
 }
 #endif
 
@@ -1219,18 +1221,6 @@ process_move3 (gint c)
   }
 }
 
-
-static gboolean
-on_window_resize (GtkWidget * w, GdkEventConfigure * e, gpointer data)
-{
-  gconf_client_set_int (conf_client, "/apps/gnect/window_width",
-			e->width, NULL);
-  gconf_client_set_int (conf_client, "/apps/gnect/window_height",
-			e->height, NULL);
-
-  return FALSE;
-}
-
 static gint
 on_drawarea_resize (GtkWidget * w, GdkEventConfigure * e, gpointer data)
 {
@@ -1239,8 +1229,6 @@ on_drawarea_resize (GtkWidget * w, GdkEventConfigure * e, gpointer data)
   return TRUE;
 }
 
-
-
 static gboolean
 on_drawarea_expose (GtkWidget * w, GdkEventExpose * e, gpointer data)
 {
@@ -1248,8 +1236,6 @@ on_drawarea_expose (GtkWidget * w, GdkEventExpose * e, gpointer data)
 
   return FALSE;
 }
-
-
 
 static gboolean
 on_key_press (GtkWidget * w, GdkEventKey * e, gpointer data)
@@ -1278,8 +1264,6 @@ on_key_press (GtkWidget * w, GdkEventKey * e, gpointer data)
   return TRUE;
 }
 
-
-
 static gboolean
 on_button_press (GtkWidget * w, GdkEventButton * e, gpointer data)
 {
@@ -1297,7 +1281,6 @@ on_button_press (GtkWidget * w, GdkEventButton * e, gpointer data)
 
   return TRUE;
 }
-
 
 static const GtkActionEntry action_entry[] = {
   {"GameMenu", NULL, N_("_Game")},
@@ -1398,6 +1381,7 @@ create_game_menus (GtkUIManager * ui_manager)
   leave_fullscreen_action =
     gtk_action_group_get_action (action_group, "LeaveFullscreen");
 
+  set_fullscreen_actions (FALSE);
 }
 
 
@@ -1410,28 +1394,15 @@ create_app (void)
   GtkWidget *vpaned;
   GtkUIManager *ui_manager;
 
-  gint width, height;
-
-  width = gconf_client_get_int (conf_client, "/apps/gnect/window_width",
-				NULL);
-  height = gconf_client_get_int (conf_client,
-				 "/apps/gnect/window_height", NULL);
-  if (height < 200)
-    height = 390;
-  if (width < 200)
-    width = 350;
-
   app = gnome_app_new (APPNAME, _("Four-in-a-Row"));
-  gtk_window_set_default_size (GTK_WINDOW (app), 200, 200);
-  gtk_window_resize (GTK_WINDOW (app), width, height);
+  gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
+  games_conf_add_window (GTK_WINDOW (app));
 
   notebook = gtk_notebook_new ();
   gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
 
   g_signal_connect (G_OBJECT (app), "delete_event",
 		    G_CALLBACK (on_game_exit), NULL);
-  g_signal_connect (G_OBJECT (app), "configure_event",
-		    G_CALLBACK (on_window_resize), NULL);
 
   gtk_window_set_default_icon_name ("gnome-gnect");
 
@@ -1492,8 +1463,6 @@ create_app (void)
   gtk_widget_hide (chat);
 #endif
 
-  set_fullscreen_actions (FALSE);
-
   if (!gfx_set_grid_style ())
     return FALSE;
 
@@ -1528,12 +1497,14 @@ main (int argc, char *argv[])
                                 GNOME_PARAM_APP_DATADIR, DATADIR,
 				NULL);
 
+  games_conf_initialise ("Gnect");
+
   prefs_init ();
   game_init ();
 
   /* init gfx */
   if (!gfx_load_pixmaps ())
-    return 0;
+    goto loser;
 
 #ifdef GGZ_CLIENT
   network_init ();
@@ -1542,11 +1513,12 @@ main (int argc, char *argv[])
   if (create_app ()) {
     game_reset ();
     gtk_main ();
-    gnome_accelerators_sync ();
   }
 
-
   game_free ();
+
+loser:
+  games_conf_shutdown ();
 
   g_object_unref (program);
 

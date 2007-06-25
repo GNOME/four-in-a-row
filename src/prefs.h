@@ -1,17 +1,14 @@
 /* prefs.h */
 
+#define KEY_LEVEL_PLAYER1      "player1"
+#define KEY_LEVEL_PLAYER2      "player2"
+#define KEY_THEME_ID           "theme_id"
+#define KEY_DO_SOUND           "sound"
+#define KEY_DO_ANIMATE         "animate"
 
-
-#define KEY_DIR "/apps/gnect"
-#define KEY_LEVEL_PLAYER1      KEY_DIR "/player1"
-#define KEY_LEVEL_PLAYER2      KEY_DIR "/player2"
-#define KEY_THEME_ID           KEY_DIR "/theme_id"
-#define KEY_MOVE_LEFT          KEY_DIR "/keyleft"
-#define KEY_MOVE_RIGHT         KEY_DIR "/keyright"
-#define KEY_MOVE_DROP          KEY_DIR "/keydrop"
-#define KEY_DO_SOUND           KEY_DIR "/sound"
-#define KEY_DO_ANIMATE         KEY_DIR "/animate"
-
+#define KEY_MOVE_LEFT          "keyleft"
+#define KEY_MOVE_RIGHT         "keyright"
+#define KEY_MOVE_DROP          "keydrop"
 
 typedef struct _Prefs Prefs;
 struct _Prefs {

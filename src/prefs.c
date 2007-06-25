@@ -25,9 +25,10 @@
 
 
 #include "config.h"
+
+#include <gdk/gdkkeysyms.h>
 #include <gnome.h>
-#include <gconf/gconf-client.h>
-#include <games-gconf.h>
+#include <games-conf.h>
 #include <games-frame.h>
 #include <games-controls.h>
 #include <games-sound.h>
@@ -39,16 +40,15 @@
 #define DEFAULT_LEVEL_PLAYER1  LEVEL_HUMAN
 #define DEFAULT_LEVEL_PLAYER2  LEVEL_WEAK
 #define DEFAULT_THEME_ID       0
-#define DEFAULT_KEY_LEFT       65361
-#define DEFAULT_KEY_RIGHT      65363
-#define DEFAULT_KEY_DROP       65364
+#define DEFAULT_KEY_LEFT       GDK_Left
+#define DEFAULT_KEY_RIGHT      GDK_Right
+#define DEFAULT_KEY_DROP       GDK_Down
 #define DEFAULT_DO_SOUND       TRUE
 #define DEFAULT_DO_ANIMATE     TRUE
 
 Prefs p;
-GConfClient *conf_client = NULL;
 
-extern GnomeUIInfo settings_menu_uiinfo[];
+//extern GnomeUIInfo settings_menu_uiinfo[];
 extern GtkWidget *app;
 extern Theme theme[];
 extern gint n_themes;
@@ -62,71 +62,35 @@ static GtkWidget *combobox_theme;
 static GtkWidget *checkbutton_animate;
 static GtkWidget *checkbutton_sound;
 
-
 static gint
-gnect_gconf_get_int (gchar * key, gint default_int)
+gnect_conf_get_int (gchar * key, gint default_int)
 {
-  /* First checks gconf, then schema, then defaults to the
-   * value passed. (Code taken from gataxx.)
-   */
-  GConfValue *value = NULL;
-  GConfValue *schema_value = NULL;
-  gint retval;
+  gint value;
+  GError *error = NULL;
 
-  value = gconf_client_get (conf_client, key, NULL);
-
-  if (value == NULL)
-    return default_int;
-
-  if (value->type == GCONF_VALUE_INT) {
-    retval = gconf_value_get_int (value);
-    gconf_value_free (value);
-  } else {
-    schema_value =
-      gconf_client_get_default_from_schema (conf_client, key, NULL);
-    if (schema_value == NULL) {
-      retval = default_int;
-    } else {
-      retval = gconf_value_get_int (schema_value);
-    }
-    gconf_value_free (value);
-    gconf_value_free (schema_value);
+  value = games_conf_get_integer (NULL, key, &error);
+  if (error) {
+    g_error_free (error);
+    value = default_int;
   }
-  return retval;
+
+  return value;
 }
-
-
 
 static gboolean
-gnect_gconf_get_bool (gchar * key, gboolean default_bool)
+gnect_conf_get_boolean (gchar * key, gboolean default_bool)
 {
-  GConfValue *value = NULL;
-  GConfValue *schema_value = NULL;
-  gboolean retval;
+  gboolean value;
+  GError *error = NULL;
 
-  value = gconf_client_get (conf_client, key, NULL);
-
-  if (value == NULL)
-    return default_bool;
-
-  if (value->type == GCONF_VALUE_BOOL) {
-    retval = gconf_value_get_bool (value);
-    gconf_value_free (value);
-  } else {
-    schema_value =
-      gconf_client_get_default_from_schema (conf_client, key, NULL);
-    if (schema_value == NULL) {
-      retval = default_bool;
-    } else {
-      retval = gconf_value_get_bool (schema_value);
-    }
-    gconf_value_free (value);
-    gconf_value_free (schema_value);
+  value = games_conf_get_boolean (NULL, key, &error);
+  if (error) {
+    g_error_free (error);
+    value = default_bool;
   }
-  return retval;
+
+  return value;
 }
-
-
 
 static gint
 sane_theme_id (gint val)
@@ -135,8 +99,6 @@ sane_theme_id (gint val)
     return DEFAULT_THEME_ID;
   return val;
 }
-
-
 
 static gint
 sane_player_level (gint val)
@@ -147,8 +109,6 @@ sane_player_level (gint val)
     return LEVEL_STRONG;
   return val;
 }
-
-
 
 static void
 prefsbox_update_player_labels (void)
@@ -169,83 +129,47 @@ prefsbox_update_player_labels (void)
   g_free (str);
 }
 
-
-
 static void
-gconf_animate_changed (GConfClient * client, guint cnxn_id,
-		       GConfEntry * entry, gpointer user_data)
+conf_value_changed_cb (GamesConf *conf,
+                       const char *group,
+                       const char *key,
+                       gpointer user_data)
 {
-  p.do_animate = gconf_client_get_bool (conf_client, KEY_DO_ANIMATE, NULL);
-  if (prefsbox == NULL)
+  if (group != NULL)
     return;
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_animate),
-				p.do_animate);
-}
 
-
-
-static void
-gconf_sound_changed (GConfClient * client, guint cnxn_id, GConfEntry * entry,
-		     gpointer user_data)
-{
-  p.do_sound = gconf_client_get_bool (conf_client, KEY_DO_SOUND, NULL);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_sound),
-				p.do_sound);
-  games_sound_enable (p.do_sound);
-}
-
-
-
-static void
-gconf_keyleft_changed (GConfClient * client, guint cnxn_id,
-		       GConfEntry * entry, gpointer user_data)
-{
-  p.keypress[MOVE_LEFT] =
-    gconf_client_get_int (conf_client, KEY_MOVE_LEFT, NULL);
-}
-
-
-
-static void
-gconf_keyright_changed (GConfClient * client, guint cnxn_id,
-			GConfEntry * entry, gpointer user_data)
-{
-  p.keypress[MOVE_RIGHT] =
-    gconf_client_get_int (conf_client, KEY_MOVE_RIGHT, NULL);
-}
-
-
-
-static void
-gconf_keydrop_changed (GConfClient * client, guint cnxn_id,
-		       GConfEntry * entry, gpointer user_data)
-{
-  p.keypress[MOVE_DROP] =
-    gconf_client_get_int (conf_client, KEY_MOVE_DROP, NULL);
-}
-
-
-
-static void
-gconf_theme_changed (GConfClient * client, guint cnxn_id, GConfEntry * entry,
-		     gpointer user_data)
-{
-  gint val;
-
-  val =
-    sane_theme_id (gconf_client_get_int (conf_client, KEY_THEME_ID, NULL));
-  if (val != p.theme_id) {
-    p.theme_id = val;
-    if (!gfx_change_theme ())
-      return;
+  if (strcmp (key, KEY_DO_ANIMATE) == 0) {
+    p.do_animate = games_conf_get_boolean (NULL, KEY_DO_ANIMATE, NULL);
     if (prefsbox == NULL)
       return;
-    gtk_combo_box_set_active (GTK_COMBO_BOX (combobox_theme), p.theme_id);
-    prefsbox_update_player_labels ();
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_animate),
+                                  p.do_animate);
+  } else if (strcmp (key, KEY_DO_SOUND) == 0) {
+    p.do_sound = games_conf_get_boolean (NULL, KEY_DO_SOUND, NULL);
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_sound),
+                                  p.do_sound);
+    games_sound_enable (p.do_sound);
+  } else if (strcmp (key, KEY_MOVE_LEFT) == 0) {
+    p.keypress[MOVE_LEFT] = games_conf_get_keyval_with_default (NULL, KEY_MOVE_LEFT, DEFAULT_KEY_LEFT);
+  } else if (strcmp (key, KEY_MOVE_RIGHT) == 0) {
+    p.keypress[MOVE_RIGHT] = games_conf_get_keyval_with_default (NULL, KEY_MOVE_RIGHT, DEFAULT_KEY_RIGHT);
+  } else if (strcmp (key, KEY_MOVE_DROP) == 0) {
+    p.keypress[MOVE_DROP] = games_conf_get_keyval_with_default (NULL, KEY_MOVE_DROP, DEFAULT_KEY_DROP);
+  } else if (strcmp (key, KEY_THEME_ID) == 0) {
+    gint val;
+
+    val = sane_theme_id (games_conf_get_integer (NULL, KEY_THEME_ID, NULL));
+    if (val != p.theme_id) {
+      p.theme_id = val;
+      if (!gfx_change_theme ())
+        return;
+      if (prefsbox == NULL)
+        return;
+      gtk_combo_box_set_active (GTK_COMBO_BOX (combobox_theme), p.theme_id);
+      prefsbox_update_player_labels ();
+    }
   }
 }
-
-
 
 static void
 on_select_theme (GtkComboBox * combo, gpointer data)
@@ -253,7 +177,7 @@ on_select_theme (GtkComboBox * combo, gpointer data)
   gint id;
 
   id = gtk_combo_box_get_active (combo);
-  gconf_client_set_int (conf_client, KEY_THEME_ID, id, NULL);
+  games_conf_set_integer (NULL, KEY_THEME_ID, id);
 }
 
 
@@ -262,16 +186,15 @@ static void
 on_toggle_animate (GtkToggleButton * t, gpointer data)
 {
   p.do_animate = t->active;
-  gconf_client_set_bool (conf_client, KEY_DO_ANIMATE, t->active, NULL);
+  games_conf_set_boolean (NULL, KEY_DO_ANIMATE, t->active);
 }
 
 static void
 on_toggle_sound (GtkToggleButton * t, gpointer data)
 {
   p.do_sound = t->active;
-  gconf_client_set_bool (conf_client, KEY_DO_SOUND, t->active, NULL);
+  games_conf_set_boolean (NULL, KEY_DO_SOUND, t->active);
 }
-
 
 static void
 on_select_player1 (GtkWidget * w, gpointer data)
@@ -279,14 +202,11 @@ on_select_player1 (GtkWidget * w, gpointer data)
   if (!GTK_TOGGLE_BUTTON (w)->active)
     return;
   p.level[PLAYER1] = GPOINTER_TO_INT (data);
-  gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER1,
-			GPOINTER_TO_INT (data), NULL);
+  games_conf_set_integer (NULL, KEY_LEVEL_PLAYER1, GPOINTER_TO_INT (data));
   scorebox_reset ();
   who_starts = PLAYER2;		/* This gets reversed in game_reset. */
   game_reset ();
 }
-
-
 
 static void
 on_select_player2 (GtkWidget * w, gpointer data)
@@ -294,49 +214,31 @@ on_select_player2 (GtkWidget * w, gpointer data)
   if (!GTK_TOGGLE_BUTTON (w)->active)
     return;
   p.level[PLAYER2] = GPOINTER_TO_INT (data);
-  gconf_client_set_int (conf_client, KEY_LEVEL_PLAYER2,
-			GPOINTER_TO_INT (data), NULL);
+  games_conf_set_integer (NULL, KEY_LEVEL_PLAYER2, GPOINTER_TO_INT (data));
   scorebox_reset ();
   who_starts = PLAYER2;		/* This gets reversed in game_reset. */
   game_reset ();
 }
 
-
-
 void
 prefs_init (void)
 {
-  conf_client = gconf_client_get_default ();
-
-  gconf_client_add_dir (conf_client, KEY_DIR, GCONF_CLIENT_PRELOAD_NONE,
-			NULL);
-
-  p.do_sound = gnect_gconf_get_bool (KEY_DO_SOUND, DEFAULT_DO_SOUND);
-  p.do_animate = gnect_gconf_get_bool (KEY_DO_ANIMATE, DEFAULT_DO_ANIMATE);
+  p.do_sound = gnect_conf_get_boolean (KEY_DO_SOUND, DEFAULT_DO_SOUND);
+  p.do_animate = gnect_conf_get_boolean (KEY_DO_ANIMATE, DEFAULT_DO_ANIMATE);
   p.level[PLAYER1] =
-    gnect_gconf_get_int (KEY_LEVEL_PLAYER1, DEFAULT_LEVEL_PLAYER1);
+    gnect_conf_get_int (KEY_LEVEL_PLAYER1, DEFAULT_LEVEL_PLAYER1);
   p.level[PLAYER2] =
-    gnect_gconf_get_int (KEY_LEVEL_PLAYER2, DEFAULT_LEVEL_PLAYER2);
+    gnect_conf_get_int (KEY_LEVEL_PLAYER2, DEFAULT_LEVEL_PLAYER2);
   p.keypress[MOVE_LEFT] =
-    gnect_gconf_get_int (KEY_MOVE_LEFT, DEFAULT_KEY_LEFT);
+    games_conf_get_keyval_with_default (NULL, KEY_MOVE_LEFT, DEFAULT_KEY_LEFT);
   p.keypress[MOVE_RIGHT] =
-    gnect_gconf_get_int (KEY_MOVE_RIGHT, DEFAULT_KEY_RIGHT);
+    games_conf_get_keyval_with_default (NULL, KEY_MOVE_RIGHT, DEFAULT_KEY_RIGHT);
   p.keypress[MOVE_DROP] =
-    gnect_gconf_get_int (KEY_MOVE_DROP, DEFAULT_KEY_DROP);
-  p.theme_id = gnect_gconf_get_int (KEY_THEME_ID, DEFAULT_THEME_ID);
+    games_conf_get_keyval_with_default (NULL, KEY_MOVE_DROP, DEFAULT_KEY_DROP);
+  p.theme_id = gnect_conf_get_int (KEY_THEME_ID, DEFAULT_THEME_ID);
 
-  gconf_client_notify_add (conf_client, KEY_DO_SOUND,
-			   gconf_sound_changed, NULL, NULL, NULL);
-  gconf_client_notify_add (conf_client, KEY_DO_ANIMATE,
-			   gconf_animate_changed, NULL, NULL, NULL);
-  gconf_client_notify_add (conf_client, KEY_MOVE_LEFT,
-			   gconf_keyleft_changed, NULL, NULL, NULL);
-  gconf_client_notify_add (conf_client, KEY_MOVE_RIGHT,
-			   gconf_keyright_changed, NULL, NULL, NULL);
-  gconf_client_notify_add (conf_client, KEY_MOVE_DROP,
-			   gconf_keydrop_changed, NULL, NULL, NULL);
-  gconf_client_notify_add (conf_client, KEY_THEME_ID,
-			   gconf_theme_changed, NULL, NULL, NULL);
+  g_signal_connect (games_conf_get_default (), "value-changed",
+                    G_CALLBACK (conf_value_changed_cb), NULL);
 
   p.level[PLAYER1] = sane_player_level (p.level[PLAYER1]);
   p.level[PLAYER2] = sane_player_level (p.level[PLAYER2]);
@@ -479,10 +381,12 @@ prefsbox_open (void)
   vbox2 = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox2);
 
-  controls_list = games_controls_list_new ();
+  controls_list = games_controls_list_new (NULL);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
-				    KEY_MOVE_LEFT, KEY_MOVE_RIGHT,
-				    KEY_MOVE_DROP, NULL);
+				    KEY_MOVE_LEFT, _("Move left"), DEFAULT_KEY_LEFT,
+                                    KEY_MOVE_RIGHT, _("Move right"), DEFAULT_KEY_RIGHT,
+				    KEY_MOVE_DROP, _("Drop marble"), DEFAULT_KEY_DROP,
+                                    NULL);
 
   gtk_box_pack_start (GTK_BOX (vbox2), controls_list, TRUE, TRUE, 0);
 
