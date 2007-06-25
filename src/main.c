@@ -1497,14 +1497,18 @@ main (int argc, char *argv[])
                                 GNOME_PARAM_APP_DATADIR, DATADIR,
 				NULL);
 
-  games_conf_initialise ("Gnect");
+  games_conf_initialise (APPNAME);
 
   prefs_init ();
   game_init ();
 
   /* init gfx */
-  if (!gfx_load_pixmaps ())
-    goto loser;
+  if (!gfx_load_pixmaps ()) {
+    games_conf_shutdown ();
+    g_object_unref (program);
+    exit (1);
+  }
+    
 
 #ifdef GGZ_CLIENT
   network_init ();
@@ -1517,7 +1521,6 @@ main (int argc, char *argv[])
 
   game_free ();
 
-loser:
   games_conf_shutdown ();
 
   g_object_unref (program);

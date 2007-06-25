@@ -48,7 +48,6 @@
 
 Prefs p;
 
-//extern GnomeUIInfo settings_menu_uiinfo[];
 extern GtkWidget *app;
 extern Theme theme[];
 extern gint n_themes;
