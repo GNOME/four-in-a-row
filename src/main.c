@@ -918,7 +918,7 @@ on_help_about (GtkAction * action, gpointer data)
 			 _
 			 ("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine."),
 			 "authors", authors, "documenters", documenters,
-			 "artists", artists, "translator_credits",
+			 "artists", artists, "translator-credits",
 			 _("translator-credits"),
 			 "logo-icon-name", "gnome-gnect",
 			 "website", "http://www.gnome.org/projects/gnome-games/",
