@@ -1,3 +1,10 @@
+2007-08-06  Claude Paroz  <claude@2xlibre.net>
+
+	* fr/figures/connect.png:
+	* fr/figures/tables.png: Added links to gnibbles figures.
+	* fr/figures/mainwindow.png: Updated screenshot.
+	* fr/fr.po: Updated French translation.
+
 2007-06-20  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
         * es/es.po: Updated Spanish translation

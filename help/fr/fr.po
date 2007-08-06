@@ -8,15 +8,58 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect documentation\n"
-"POT-Creation-Date: 2007-03-21 20:45+0100\n"
-"PO-Revision-Date: 2007-03-10 18:14+0100\n"
+"POT-Creation-Date: 2007-08-06 16:56+0200\n"
+"PO-Revision-Date: 2007-08-06 17:04+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../C/legal.xml:2(para) ../C/gnect.xml:2(para)
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../C/gnect.xml:172(None)
+msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
+msgstr ""
+"@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../C/gnect.xml:54(None)
+msgid "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
+msgstr "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../C/gnect.xml:77(None)
+msgid "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
+msgstr "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
+
+#: ../C/gnect.xml:22(title)
+msgid "Four-in-a-row Manual"
+msgstr "Manuel de Puissance 4"
+
+#: ../C/gnect.xml:24(para)
+msgid ""
+"Build a line of four of your marbles while trying to stop your opponent from "
+"doing the same. Play against another person or the computer."
+msgstr ""
+"Alignez quatre jetons de votre couleur tout en empêchant votre adversaire "
+"d'en faire de même."
+
+#: ../C/gnect.xml:31(year)
+msgid "2001-2002"
+msgstr "2001-2002"
+
+#: ../C/gnect.xml:32(holder)
+msgid "Timothy Musson"
+msgstr "Timothy Musson"
+
+#: ../C/gnect.xml:45(publishername)
+msgid "GNOME Documentation Project"
+msgstr "Projet de documentation de GNOME"
+
+#: ../C/gnect.xml:2(para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
@@ -33,7 +76,7 @@ msgstr ""
 "ce <ulink type=\"help\" url=\"ghelp:fdl\">lien</ulink> ou dans le fichier "
 "COPYING-DOCS fourni avec le présent manuel."
 
-#: ../C/legal.xml:12(para) ../C/gnect.xml:12(para)
+#: ../C/gnect.xml:12(para)
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -46,7 +89,7 @@ msgstr ""
 "exemplaire de la licence au document, comme indiqué dans la section 6 de "
 "celle-ci."
 
-#: ../C/legal.xml:19(para) ../C/gnect.xml:19(para)
+#: ../C/gnect.xml:19(para)
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -60,7 +103,7 @@ msgstr ""
 "Documentation GNOME sont informés de l'existence de ces marques déposées, "
 "soit ces noms entiers, soit leur première lettre est en majuscule."
 
-#: ../C/legal.xml:35(para) ../C/gnect.xml:35(para)
+#: ../C/gnect.xml:35(para)
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -87,7 +130,7 @@ msgstr ""
 "SA VERSION MODIFIÉE N'EST AUTORISÉE AUX TERMES DU PRÉSENT ACCORD, EXCEPTÉ "
 "SOUS CETTE DÉNÉGATION DE RESPONSABILITÉ ; "
 
-#: ../C/legal.xml:55(para) ../C/gnect.xml:55(para)
+#: ../C/gnect.xml:55(para)
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -113,7 +156,7 @@ msgstr ""
 "À JOUR, ET CE MÊME SI CES PARTIES ONT ÉTÉ INFORMÉES DE LA POSSIBILITÉ DE "
 "TELS DOMMAGES."
 
-#: ../C/legal.xml:28(para) ../C/gnect.xml:28(para)
+#: ../C/gnect.xml:28(para)
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
@@ -122,70 +165,39 @@ msgstr ""
 "LE PRÉSENT DOCUMENT ET SES VERSIONS MODIFIÉES SONT FOURNIS SELON LES TERMES "
 "DE LA LICENCE DE DOCUMENTATION LIBRE GNU SACHANT QUE : <placeholder-1/>"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/gnect.xml:165(None)
-msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
-msgstr ""
-"@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
-
-#: ../C/gnect.xml:21(title)
-msgid "Four-in-a-row Manual"
-msgstr "Manuel de Puissance 4"
-
-#: ../C/gnect.xml:23(para)
-msgid ""
-"Build a line of four of your marbles while trying to stop your opponent from "
-"doing the same. Play against another person or the computer."
-msgstr ""
-"Alignez quatre jetons de votre couleur tout en empêchant votre adversaire "
-"d'en faire de même."
-
-#: ../C/gnect.xml:30(year)
-msgid "2001-2002"
-msgstr "2001-2002"
-
-#: ../C/gnect.xml:31(holder)
-msgid "Timothy Musson"
-msgstr "Timothy Musson"
-
-#: ../C/gnect.xml:44(publishername)
-msgid "GNOME Documentation Project"
-msgstr "Projet de documentation de GNOME"
-
-#: ../C/gnect.xml:51(firstname)
+#: ../C/gnect.xml:52(firstname)
 msgid "Timothy"
 msgstr "Timothy"
 
-#: ../C/gnect.xml:52(surname)
+#: ../C/gnect.xml:53(surname)
 msgid "Musson"
 msgstr "Musson"
 
-#: ../C/gnect.xml:55(email)
+#: ../C/gnect.xml:56(email)
 msgid "trmusson@ihug.co.nz"
 msgstr "trmusson@ihug.co.nz"
 
-#: ../C/gnect.xml:76(revnumber)
+#: ../C/gnect.xml:77(revnumber)
 msgid "Four-in-a-row Manual V2.8"
 msgstr "Manuel de Puissance 4 v2.8"
 
-#: ../C/gnect.xml:77(date)
+#: ../C/gnect.xml:78(date)
 msgid "September 2004"
 msgstr "Septembre 2004"
 
-#: ../C/gnect.xml:79(para)
+#: ../C/gnect.xml:80(para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 
-#: ../C/gnect.xml:87(releaseinfo)
+#: ../C/gnect.xml:88(releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-row."
 msgstr "Ce manuel documente la version 2.12 de Puissance 4."
 
-#: ../C/gnect.xml:91(title)
+#: ../C/gnect.xml:92(title)
 msgid "Feedback"
 msgstr "Votre avis"
 
-#: ../C/gnect.xml:92(para)
+#: ../C/gnect.xml:93(para)
 msgid ""
 "To report a bug or make a suggestion regarding the Four-in-a-row application "
 "or this manual, follow the directions in the <ulink url=\"ghelp:gnome-"
@@ -195,11 +207,11 @@ msgstr ""
 "ou ce manuel, procédez comme indiqué sur la <ulink url=\"ghelp:gnome-feedback"
 "\" type=\"help\">page de réactions sur GNOME</ulink>."
 
-#: ../C/gnect.xml:108(title)
+#: ../C/gnect.xml:109(title)
 msgid "Introduction"
 msgstr "Introduction"
 
-#: ../C/gnect.xml:110(para)
+#: ../C/gnect.xml:111(para)
 msgid ""
 "<application>Four-in-a-row</application> is a four-in-a-row game for the "
 "GNOME Project. The object of the game is to build a line of four of your "
@@ -212,7 +224,7 @@ msgstr ""
 "quatre jetons de sa couleur. Une ligne peut être horizontale, verticale ou "
 "en diagonale."
 
-#: ../C/gnect.xml:118(para)
+#: ../C/gnect.xml:119(para)
 msgid ""
 "To run <application>Four-in-a-row</application>, select <guimenuitem>Four-in-"
 "a-row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
@@ -224,7 +236,7 @@ msgstr ""
 "guisubmenu> du <guimenu>Menu principal</guimenu> ou saisissez la commande "
 "<command>gnect</command> dans un terminal."
 
-#: ../C/gnect.xml:126(para)
+#: ../C/gnect.xml:127(para)
 msgid ""
 "<application>Four-in-a-row</application> is included in the <filename>GNOME-"
 "games</filename> package, which is part of the GNOME desktop environment. "
@@ -236,15 +248,24 @@ msgstr ""
 "bureau GNOME. Ce document présente la version 2.8 de <application>Puissance "
 "4</application>."
 
-#: ../C/gnect.xml:140(title)
+#: ../C/gnect.xml:133(para)
+msgid ""
+"Four-in-a-row also features <link linkend=\"network-games\">multiplayer</"
+"link> support with two human players in hotseat or network mode."
+msgstr ""
+"Puissance 4 offre également la possibilité de jouer à <link linkend="
+"\"network-games\">plusieurs</link>, soit à deux joueurs sur un même "
+"ordinateur, soit en mode réseau."
+
+#: ../C/gnect.xml:147(title)
 msgid "Basic Usage"
 msgstr "Utilisation de base"
 
-#: ../C/gnect.xml:146(title)
+#: ../C/gnect.xml:153(title)
 msgid "Playing Four-in-a-row"
 msgstr "Jouer à Puissance 4"
 
-#: ../C/gnect.xml:148(para)
+#: ../C/gnect.xml:155(para)
 msgid ""
 "To start a new game of Four-in-a-row choose <menuchoice><guimenu>Game</"
 "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
@@ -253,7 +274,7 @@ msgstr ""
 "<menuchoice><guimenu>Jeu</guimenu><guimenuitem>Nouveau</guimenuitem></"
 "menuchoice>."
 
-#: ../C/gnect.xml:152(para)
+#: ../C/gnect.xml:159(para)
 msgid ""
 "The <interface>game board</interface> consists of seven columns and six "
 "rows. Above it, a special row indicates the current player and the marble "
@@ -266,7 +287,7 @@ msgstr ""
 "tomber un jeton dans une des colonnes. Le jeton s'arrête à la première "
 "rangée vide de la colonne depuis le bas."
 
-#: ../C/gnect.xml:157(para)
+#: ../C/gnect.xml:164(para)
 msgid ""
 "To make a move, click on a column with the mouse. To play with the keyboard, "
 "move the marble in the top row with the left and right arrow keys, and drop "
@@ -279,11 +300,11 @@ msgstr ""
 "jeton avec la touche flèche bas. Votre jeton tombe jusqu'à la première "
 "rangée vide de cette colonne depuis le bas."
 
-#: ../C/gnect.xml:168(phrase) ../C/gnect.xml:170(para)
+#: ../C/gnect.xml:175(phrase) ../C/gnect.xml:177(para)
 msgid "Four-in-a-row's Main Window"
 msgstr "Fenêtre principale de Puissance 4"
 
-#: ../C/gnect.xml:173(para)
+#: ../C/gnect.xml:180(para)
 msgid ""
 "The game is won when one of the two players manages to line up four of his "
 "or her marbles horizontally, vertically or diagonally. If the board fills up "
@@ -293,12 +314,12 @@ msgstr ""
 "de ses jetons horizontalement, verticalement ou en diagonale. Si le plateau "
 "se remplit sans que personne ne gagne, la partie se termine sur un score nul."
 
-#: ../C/gnect.xml:184(title)
+#: ../C/gnect.xml:191(title)
 msgid "Commands"
 msgstr "Commandes"
 
 #. id for removed section
-#: ../C/gnect.xml:187(para)
+#: ../C/gnect.xml:194(para)
 msgid ""
 "To take back a move, choose <menuchoice><shortcut><keycombo><keysym>Ctrl</"
 "keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Undo move</"
@@ -315,7 +336,7 @@ msgstr ""
 "déplacement effectué par l'ordinateur ainsi que le vôtre. En continuant "
 "d'annuler, vous retrouvez finalement l'état initial du plateau."
 
-#: ../C/gnect.xml:199(para)
+#: ../C/gnect.xml:206(para)
 msgid ""
 "Choose <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
 "keycap></keycombo></shortcut><guimenuitem>Hint</guimenuitem></menuchoice> to "
@@ -327,7 +348,7 @@ msgstr ""
 "pour obtenir une suggestion de l'ordinateur pour votre prochain déplacement. "
 "La suggestion est visible dans la barre d'état."
 
-#: ../C/gnect.xml:207(para)
+#: ../C/gnect.xml:214(para)
 msgid ""
 "Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
 "tally of wins and draws for the current playing session. The scores will be "
@@ -338,25 +359,25 @@ msgstr ""
 "session actuelle de jeu. Les scores sont réinitialisés si la sélection des "
 "joueurs est modifiée dans les préférences."
 
-#: ../C/gnect.xml:222(title)
+#: ../C/gnect.xml:229(title)
 msgid "Preferences"
 msgstr "Préférences"
 
-#: ../C/gnect.xml:224(para)
+#: ../C/gnect.xml:231(para)
 msgid ""
 "To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
 "from the <guimenu>Settings</guimenu> menu. This opens the "
 "<interface>Preferences Dialog</interface>."
 msgstr ""
 "Pour modifier les réglages du jeu, choisissez <guimenuitem>Préférences</"
-"guimenuitem> dans le menu des <guimenu>Préférences</guimenu>. La boîte de "
+"guimenuitem> dans le menu <guimenu>Paramètres</guimenu>. La boîte de "
 "dialogue des <interface>Préférences</interface> apparaît."
 
-#: ../C/gnect.xml:238(term)
+#: ../C/gnect.xml:245(term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
 msgstr "<guilabel>Joueur 1</guilabel> et <guilabel>Joueur 2</guilabel>"
 
-#: ../C/gnect.xml:243(para)
+#: ../C/gnect.xml:250(para)
 msgid ""
 "These two columns tell <application>Four-in-a-row</application> who's "
 "playing and, if it is the computer, how hard they play. To play against a "
@@ -367,28 +388,28 @@ msgstr ""
 "contre une autre personne, sélectionnez « Humain » à la fois pour le joueur "
 "1 et le joueur 2."
 
-#: ../C/gnect.xml:253(guilabel)
+#: ../C/gnect.xml:260(guilabel)
 msgid "Theme"
 msgstr "Thème"
 
-#: ../C/gnect.xml:255(para)
+#: ../C/gnect.xml:262(para)
 msgid ""
 "The theme menu lists available themes and lets you choose your favourite."
 msgstr ""
 "Le menu des thèmes énumère les thèmes disponibles et vous permet de choisir "
 "celui que vous préférez."
 
-#: ../C/gnect.xml:263(guilabel)
+#: ../C/gnect.xml:270(guilabel)
 msgid "Enable Animation"
 msgstr "Activer les animations"
 
-#: ../C/gnect.xml:265(para)
+#: ../C/gnect.xml:272(para)
 msgid "Here you can toggle the game's animation on or off."
 msgstr ""
 "Cette option permet d'activer ou de désactiver les animations durant les "
 "parties."
 
-#: ../C/gnect.xml:231(para)
+#: ../C/gnect.xml:238(para)
 msgid ""
 "Configuration options in the <guilabel>Game</guilabel> tab are: <placeholder-"
 "1/>"
@@ -396,7 +417,7 @@ msgstr ""
 "Les options de configuration dans l'onglet <guilabel>Jeu</guilabel> sont : "
 "<placeholder-1/>"
 
-#: ../C/gnect.xml:273(para)
+#: ../C/gnect.xml:280(para)
 msgid ""
 "Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
 "controls. To change a control, double click the appropriate entry and then "
@@ -406,11 +427,11 @@ msgstr ""
 "les touches utilisées au clavier. Pour modifier une commande, double-cliquez "
 "sur la commande souhaitée et appuyez sur la nouvelle touche."
 
-#: ../C/gnect.xml:288(title)
+#: ../C/gnect.xml:295(title)
 msgid "Creating New Themes"
 msgstr "Création de thèmes"
 
-#: ../C/gnect.xml:290(para)
+#: ../C/gnect.xml:297(para)
 msgid ""
 "This section's included in case you'd like to make your own themes for "
 "<application>Four-in-a-row</application>. It assumes you're familiar with "
@@ -421,11 +442,11 @@ msgstr ""
 "maîtrise de l'édition de texte, de logiciels graphiques et de la ligne de "
 "commande."
 
-#: ../C/gnect.xml:298(title)
+#: ../C/gnect.xml:305(title)
 msgid "Images"
 msgstr "Images"
 
-#: ../C/gnect.xml:300(para)
+#: ../C/gnect.xml:307(para)
 msgid ""
 "<application>Four-in-a-row</application>'s tile sets contain six tiles of "
 "equal size, lined up horizontally. From left to right:"
@@ -433,39 +454,39 @@ msgstr ""
 "Un jeu de pièces pour <application>Puissance 4</application> contient six "
 "éléments d'égale grandeur, alignés horizontalement. De gauche à droite :"
 
-#: ../C/gnect.xml:307(para)
+#: ../C/gnect.xml:314(para)
 msgid "Player One's marble as it appears on the game board"
 msgstr "Le jeton du joueur 1 tel qu'il apparaît sur le plateau de jeu."
 
-#: ../C/gnect.xml:310(para)
+#: ../C/gnect.xml:317(para)
 msgid "Player Two's marble as it appears on the game board"
 msgstr "Le jeton du joueur 2 tel qu'il apparaît sur le plateau de jeu."
 
-#: ../C/gnect.xml:313(para)
+#: ../C/gnect.xml:320(para)
 msgid "The game board's background"
 msgstr "L'arrière-plan du plateau de jeu."
 
-#: ../C/gnect.xml:316(para)
+#: ../C/gnect.xml:323(para)
 msgid "The top row's background"
 msgstr "L'arrière-plan de la rangée supérieure."
 
-#: ../C/gnect.xml:319(para)
+#: ../C/gnect.xml:326(para)
 msgid "Player One's marble as it appears on the top row"
 msgstr "Le jeton du joueur 1 tel qu'il apparaît sur la rangée supérieure."
 
-#: ../C/gnect.xml:322(para)
+#: ../C/gnect.xml:329(para)
 msgid "Player Two's marble as it appears on the top row"
 msgstr "Le jeton du joueur 2 tel qu'il apparaît sur la rangée supérieure."
 
-#: ../C/gnect.xml:327(title)
+#: ../C/gnect.xml:334(title)
 msgid "An example tile set"
 msgstr "Un exemple de jeu de pièces"
 
-#: ../C/gnect.xml:329(screeninfo)
+#: ../C/gnect.xml:336(screeninfo)
 msgid "This image shows the six tiles in a tile set"
 msgstr "Cette image montre les six pièces dans un ensemble de pièces"
 
-#: ../C/gnect.xml:334(para)
+#: ../C/gnect.xml:341(para)
 msgid ""
 "Tiles three and four will be repeated over the game board and top row unless "
 "a full window background image is specified in the theme file."
@@ -474,12 +495,12 @@ msgstr ""
 "rangée supérieure, sauf si une image d'arrière-plan couvrant toute la "
 "fenêtre est spécifiée dans le fichier du thème."
 
-#: ../C/gnect.xml:341(title) ../C/gnect.xml:352(title)
-#: ../C/gnect.xml:368(title)
+#: ../C/gnect.xml:348(title) ../C/gnect.xml:359(title)
+#: ../C/gnect.xml:375(title)
 msgid "TIP"
 msgstr "Astuce"
 
-#: ../C/gnect.xml:342(para)
+#: ../C/gnect.xml:349(para)
 msgid ""
 "PNG format is recommended for tile sets. The first, second, fifth and sixth "
 "tiles should contain some transparency if you want the background to show "
@@ -492,7 +513,7 @@ msgstr ""
 "transparence, même si vous prévoyez d'utiliser une image d'arrière-plan "
 "couvrant toute la fenêtre dans votre thème."
 
-#: ../C/gnect.xml:353(para)
+#: ../C/gnect.xml:360(para)
 msgid ""
 "Tiles can be square or rectangular, and any size you like. Most of the tile "
 "sets that come with <application>Four-in-a-row</application> use square "
@@ -503,7 +524,7 @@ msgstr ""
 "<application>Puissance 4</application> utilisent des carrés de 50 pixels sur "
 "50 pixels."
 
-#: ../C/gnect.xml:360(para)
+#: ../C/gnect.xml:367(para)
 msgid ""
 "For a full window background image, there's a bit more work to do. Let's say "
 "your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
@@ -516,7 +537,7 @@ msgstr ""
 "supérieure), ce qui donne une taille idéale d'image d'arrière-plan de 350 "
 "sur 350 pixels."
 
-#: ../C/gnect.xml:369(para)
+#: ../C/gnect.xml:376(para)
 msgid ""
 "<application>Four-in-a-row</application> will automatically scale the "
 "background image if it doesn't match the tile set. This means you can make "
@@ -530,7 +551,7 @@ msgstr ""
 "votre thème en utilisant la même image d'arrière-plan, simplement en "
 "modifiant la taille de votre ensemble de pièces."
 
-#: ../C/gnect.xml:377(para)
+#: ../C/gnect.xml:384(para)
 msgid ""
 "So, you now have a tile set and perhaps a background image to go with it. "
 "The next step is to put them in the right place."
@@ -539,11 +560,11 @@ msgstr ""
 "d'arrière-plan correspondante. La prochaine étape consiste à les placer au "
 "bon endroit."
 
-#: ../C/gnect.xml:387(title)
+#: ../C/gnect.xml:394(title)
 msgid "Putting It Together"
 msgstr "Assemblage final"
 
-#: ../C/gnect.xml:389(para)
+#: ../C/gnect.xml:396(para)
 msgid ""
 "The last step is to put your image(s) where <application>Four-in-a-row</"
 "application> can find them. You could put them in Four-in-a-row's install "
@@ -555,7 +576,7 @@ msgstr ""
 "placer dans le répertoire d'installation de Puissance 4 (différent selon "
 "votre système), mais votre dossier personnel est probablement plus approprié."
 
-#: ../C/gnect.xml:396(para)
+#: ../C/gnect.xml:403(para)
 msgid ""
 "Make a <filename class=\"directory\">~/.gnect</filename> directory, and a "
 "<filename class=\"directory\">~/.gnect/pixmaps</filename> directory. Those "
@@ -567,15 +588,15 @@ msgstr ""
 "importants, car c'est précisément là que <application>Puissance 4</"
 "application> va regarder."
 
-#: ../C/gnect.xml:403(para)
+#: ../C/gnect.xml:410(para)
 msgid "Copy your image(s) into the pixmaps directory."
 msgstr "Copier les images dans le répertoire pixmaps."
 
-#: ../C/gnect.xml:407(para)
+#: ../C/gnect.xml:414(para)
 msgid ""
 "If you start <application>Four-in-a-row</application> from the command line, "
-"it'll give you clues about about any problems it has with your new theme. If "
-"it has none, you'll find your new theme listed the <interface>Preferences "
+"it'll give you clues about any problems it has with your new theme. If it "
+"has none, you'll find your new theme listed the <interface>Preferences "
 "Dialog</interface>."
 msgstr ""
 "Si vous lancez <application>Puissance 4</application> à partir d'une ligne "
@@ -584,26 +605,214 @@ msgstr ""
 "thème sera présent dans la liste des thèmes dans les <interface>Préférences</"
 "interface>."
 
-#: ../C/gnect.xml:414(para)
+#: ../C/gnect.xml:421(para)
 msgid "Have fun!"
 msgstr "Amusez-vous !"
 
-#: ../C/gnect.xml:427(title)
+#: ../C/gnect.xml:10(title)
+msgid "Network Games"
+msgstr "Parties en réseau"
+
+#: ../C/gnect.xml:11(para)
+msgid ""
+"Four-in-a-row support networked multiplayer games which is provided by "
+"<ulink type=\"http\" url=\"http://www.ggzgamingzone.org\">GGZ Gaming Zone</"
+"ulink>. By connecting to a Four-in-a-row server on the Internet, you can "
+"challenge other players in multiplayer games. For news, updates and a list "
+"of servers to connect to, see the <ulink type=\"http\" url=\"http://www."
+"gnome.org/projects/gnome-games/\">gnome-games website</ulink>."
+msgstr ""
+"Puissance 4 prend en charge le jeu multijoueur en réseau dans le cadre de la "
+"<ulink type=\"http\" url=\"http://www.ggzgamingzone.org\">Zone de jeux GGZ</"
+"ulink>. En vous connectant sur un serveur Puissance 4 sur Internet, vous "
+"pouvez défier d'autres joueurs dans des parties à plusieurs joueurs. Pour "
+"obtenir des informations récentes et une liste de serveurs disponibles, "
+"consultez le <ulink type=\"http\" url=\"http://www.gnome.org/projects/gnome-"
+"games/\">site Web des jeux GNOME</ulink>."
+
+#: ../C/gnect.xml:18(para)
+msgid ""
+"To start the multiplayer game of Four-in-a-row, select "
+"<menuchoice><guimenu>Game</guimenu><guimenuitem>Network Game</guimenuitem></"
+"menuchoice> on the Four-in-a-row menu."
+msgstr ""
+"Pour commencer une nouvelle partie de Puissance 4 en réseau, choisissez "
+"<menuchoice><guimenu>Jeu</guimenu><guimenuitem>Partie en réseau</"
+"guimenuitem></menuchoice> dans le menu de Puissance 4."
+
+#: ../C/gnect.xml:24(title)
+msgid "Connecting to a Four-in-a-row network server"
+msgstr "Connexion à un serveur réseau de Puissance 4"
+
+#: ../C/gnect.xml:25(para)
+msgid ""
+"The Four-in-a-row connection dialog is shown initially when starting a new "
+"network game. This dialog allows you to select a server to connect to, and "
+"the username that you will have while connected to that server."
+msgstr ""
+"La boîte de dialogue de connexion de Puissance 4 apparaît dès que vous "
+"demandez une nouvelle partie en réseau. Cette boîte de dialogue vous permet "
+"de vous connecter à un serveur et de définir le nom d'utilisateur que vous "
+"utiliserez pour cette connexion."
+
+#: ../C/gnect.xml:31(para)
+msgid ""
+"It is possible to connect to a server with either a guest account or a "
+"normal registered account. Guest accounts allows you to anonymously login, "
+"while a normal login account allows you to reserve your own username which "
+"is protected by the password that you choose."
+msgstr ""
+"On peut se connecter à un serveur avec un compte invité ou avec un compte "
+"nominatif standard. Les comptes invités vous permettent de vous connecter de "
+"manière anonyme, alors qu'un compte nominatif vous permet de réserver votre "
+"propre nom d'utilisateur qui sera protégé par un mot de passe de votre choix."
+
+#: ../C/gnect.xml:38(para)
+msgid ""
+"The <guimenuitem>Guest Login</guimenuitem> option should be selected if you "
+"want an anonymous guest account. If you want to create a new login account, "
+"then select the <guimenuitem>First-time Login</guimenuitem> option, with the "
+"username, password and email of your choice. If you have already created "
+"your account, you can connect by selecting the <guimenuitem>Normal Login</"
+"guimenuitem> option, and enter the username and password that you have "
+"chosen."
+msgstr ""
+"L'option <guimenuitem>Connexion en tant qu'invité</guimenuitem> doit être "
+"sélectionnée si vous souhaitez vous connecter de façon anonyme. Si vous "
+"souhaitez créer un nouveau compte, choisissez l'option <guimenuitem>Première "
+"connexion</guimenuitem>, en indiquant un nom d'utilisateur, un mot de passe "
+"et une adresse électronique de votre choix. Si vous disposez déjà d'un "
+"compte, vous pouvez vous connecter en utilisant l'option "
+"<guimenuitem>Connexion normale</guimenuitem> et en indiquant votre nom "
+"d'utilisateur et votre mot de passe."
+
+#: ../C/gnect.xml:46(para)
+msgid ""
+"To connect to a server, click on the <guimenuitem>Connect</guimenuitem> "
+"button."
+msgstr ""
+"Pour vous connecter à un serveur, cliquez sur le bouton <guimenuitem>Se "
+"connecter</guimenuitem>."
+
+#: ../C/gnect.xml:50(title) ../C/gnect.xml:57(phrase)
+msgid "The Four-in-a-row network connection dialog."
+msgstr "La boîte de dialogue de connexion de Puissance 4."
+
+#: ../C/gnect.xml:65(title)
+msgid "Joining a game room"
+msgstr "Entrée dans un salon de jeu"
+
+#: ../C/gnect.xml:66(para)
+msgid ""
+"Once you have successfully connected to a server, you can choose which game "
+"room to join. To play a multiplayer game of Four-in-a-row, select the Four-"
+"in-a-row room. If you want to host your own game, then click on the Launch "
+"button. This creates a new table where other players can participate in a "
+"game against you. If there are any other games already started, then you can "
+"double-click on an existing game table to join it. The list of game tables "
+"on the right shows you the number of available seats, which means the number "
+"of players that can join the game table."
+msgstr ""
+"Après une connexion réussie à un serveur, vous pouvez choisir de rejoindre "
+"un salon de jeu. Pour jouer en réseau à Puissance 4, sélectionnez le salon "
+"« Four-in-a-Row ». Si vous souhaitez héberger vous-même une partie, cliquez "
+"sur le bouton Lancer. Cela crée une nouvelle table pouvant accueillir des "
+"adversaires pour jouer contre vous. S'il y a d'autres parties déjà lancées, "
+"vous pouvez double-cliquer sur une table de salon de jeu pour la rejoindre. "
+"La liste des tables de jeu sur la droite vous montre le nombre de sièges "
+"disponibles, ce qui correspond au nombre de joueurs pouvant rejoindre la "
+"table de jeu."
+
+#: ../C/gnect.xml:73(title) ../C/gnect.xml:80(phrase)
+msgid ""
+"This Four-in-a-row network dialog allows you to join a game room to find "
+"other players."
+msgstr ""
+"La boîte de dialogue réseau de Puissance 4 vous permet de rejoindre un salon "
+"de jeu pour y trouver d'autres joueurs."
+
+#: ../C/gnect.xml:85(para)
+msgid ""
+"When creating a new table for Four-in-a-row games, a preference dialog is "
+"displayed which allows you to customize the game, such as set the minimum "
+"number of players for the game. Once the total number of seats have been "
+"taken, then no more players are allowed to join that game table."
+msgstr ""
+"Lorsque vous créez une nouvelle table pour des parties de Puissance 4, une "
+"boîte de dialogue de préférences apparaît. Elle vous permet de personnaliser "
+"la partie, comme par exemple le nombre minimum de joueurs pour une partie. "
+"Dès que le nombre total de sièges est occupé, plus aucun autre joueur ne "
+"peut rejoindre la table de jeu."
+
+#: ../C/gnect.xml:90(para)
+msgid ""
+"It is possible to chat with other players in network games. Ask for advice "
+"or help playing the games, but please be polite against other players."
+msgstr ""
+"Il est possible de converser avec d'autres joueurs lors de parties en "
+"réseau. Vous pouvez demander conseil ou de l'aide sur la manière de jouer, "
+"mais de grâce, soyez poli envers les autres joueurs."
+
+#: ../C/gnect.xml:97(title)
+msgid "Waiting for other players to join the game"
+msgstr "Attente de l'arrivée d'autres joueurs"
+
+#: ../C/gnect.xml:98(para)
+msgid ""
+"Once you have successfully joined a game table, then you have to wait until "
+"enough players have joined the table. The <guimenuitem>Players List</"
+"guimenuitem> menu item allows you to see a list of the players who have "
+"joined the game. The game will begin immediately when the total number of "
+"players in the the game have been reached."
+msgstr ""
+"Après avoir rejoint une table de jeu, il s'agit de patienter jusqu'à ce "
+"qu'un nombre suffisant de joueurs aient rejoint la table. L'élément de menu "
+"<guimenuitem>Liste des joueurs</guimenuitem> permet de voir une liste de "
+"joueurs qui ont rejoint la table de jeu. La partie démarre immédiatement dès "
+"que le nombre total de joueurs pour cette partie est atteint."
+
+#: ../C/gnect.xml:107(title)
+msgid "Playing multiplayer Four-in-a-row games"
+msgstr "Parties de Puissance 4 en réseau"
+
+#: ../C/gnect.xml:108(para)
+msgid ""
+"Multiplayer Four-in-a-row games have pretty much the same rules as normal "
+"Four-in-a-row games, except that you are now playing against human players. "
+"This means that other strategies might possibly be better than when playing "
+"against AI players."
+msgstr ""
+"Les parties de Puissance 4 en réseau présentent à peu près les mêmes règles "
+"que les parties normales, à la différence que vous jouez cette fois contre "
+"des adversaires humains. Cela signifie qu'il faut peut-être utiliser "
+"d'autres stratégies que lors des parties contre l'ordinateur."
+
+#: ../C/gnect.xml:113(para)
+msgid ""
+"Once a player has won, the game ends and you can return to the initial "
+"network game screen. Then you can play yet another game of addictive Four-in-"
+"a-row multiplayer!"
+msgstr ""
+"Dès qu'un joueur a gagné, la partie se termine et vous pouvez retourner à "
+"l'écran initial du jeu en réseau. Vous pouvez alors recommencer une autre "
+"partie passionante de Puissance 4 en réseau !"
+
+#: ../C/gnect.xml:443(title)
 msgid "Known Bugs and Limitations"
 msgstr "Problèmes connus et limitations"
 
-#: ../C/gnect.xml:429(para)
+#: ../C/gnect.xml:445(para)
 msgid ""
 "Occasionally a marble-dropping animation doesn't look as smooth as it should."
 msgstr ""
 "Il peut arriver parfois que l'animation d'un jeton qui tombe ne soit pas "
 "très fluide."
 
-#: ../C/gnect.xml:442(title)
+#: ../C/gnect.xml:458(title)
 msgid "Authors"
 msgstr "Auteurs"
 
-#: ../C/gnect.xml:444(para)
+#: ../C/gnect.xml:460(para)
 msgid ""
 "<application>Four-in-a-row</application> was written by Timothy Musson "
 "(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
@@ -616,7 +825,7 @@ msgstr ""
 "différentes manières depuis la création de <application>Puissance 4</"
 "application>."
 
-#: ../C/gnect.xml:449(para)
+#: ../C/gnect.xml:465(para)
 msgid ""
 "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
 "\">Velena Engine</ulink>, <application>Four-in-a-row</application>'s main "
@@ -630,11 +839,11 @@ msgstr ""
 "d'utiliser son travail, sans lequel <application>Puissance 4</application> "
 "ne serait de loin pas aussi attractif."
 
-#: ../C/gnect.xml:456(para)
+#: ../C/gnect.xml:472(para)
 msgid "This manual was written by Timothy Musson."
 msgstr "Ce manuel a été écrit par Timothy Musson."
 
-#: ../C/gnect.xml:459(para)
+#: ../C/gnect.xml:475(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
@@ -644,11 +853,11 @@ msgstr ""
 "application ou ce manuel, procédez comme indiqué sur <ulink url=\"ghelp:"
 "gnome-feedback\" type=\"help\">ce document</ulink>."
 
-#: ../C/gnect.xml:484(title)
+#: ../C/gnect.xml:500(title)
 msgid "License"
 msgstr "Licence"
 
-#: ../C/gnect.xml:486(para)
+#: ../C/gnect.xml:502(para)
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the <citetitle>GNU General Public License</citetitle> as "
@@ -660,7 +869,7 @@ msgstr ""
 "citetitle>, tels que publiés par la Free Software Foundation ; soit la "
 "version 2 de cette licence ou (à votre choix) toute version ultérieure."
 
-#: ../C/gnect.xml:494(para)
+#: ../C/gnect.xml:510(para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -672,7 +881,7 @@ msgstr ""
 "commercialisation ou d’adaptation dans un but spécifique. Se référer à la "
 "<citetitle>GNU General Public License</citetitle> pour plus de détails."
 
-#: ../C/gnect.xml:501(para)
+#: ../C/gnect.xml:517(para)
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
