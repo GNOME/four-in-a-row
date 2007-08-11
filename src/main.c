@@ -915,8 +915,8 @@ on_help_about (GtkAction * action, gpointer data)
 			 "copyright",
 			 "Copyright \xc2\xa9 1999-2007, Tim Musson and David Neary",
 			 "license", license, "comments",
-			 _
-			 ("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine.\n\n\"Four in a Row\" is a part of GNOME Games."),
+		         "website-label", _("GNOME Games web site"),
+			 _("\"Four in a Row\" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine.\n\n\"Four in a Row\" is a part of GNOME Games."),
 			 "authors", authors, "documenters", documenters,
 			 "artists", artists, "translator-credits",
 			 _("translator-credits"),
