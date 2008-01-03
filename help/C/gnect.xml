@@ -7,8 +7,8 @@
   <!ENTITY appversion "2.12">
   <!ENTITY manrevision "2.8">
   <!ENTITY date "September 2004">
-  <!ENTITY app "<application>Four-in-a-row</application>">
-  <!ENTITY appname "Four-in-a-row">
+  <!ENTITY app "<application>Four-in-a-Row</application>">
+  <!ENTITY appname "Four-in-a-Row">
   <!ENTITY version "2.8">
 ]>
 
@@ -22,8 +22,10 @@
     <title>&appname; Manual</title>
     <abstract role="description">
       <para>
-        Build a line of four of your marbles while trying to stop your opponent from
-        doing the same. Play against another person or the computer.
+	The object of Four-in-a-Row is to place four pieces in a vertical, 
+	horizontal, or diagonal row while the opponent tries to block and
+	make his/her own row of four. Four-in-a-Row can be played against 
+	another human or the computer.
       </para>
     </abstract>
 
