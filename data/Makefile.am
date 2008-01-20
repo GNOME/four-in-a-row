@@ -13,8 +13,8 @@ schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 
 EXTRA_DIST = gnect-client.dsc.in \
 	     gnect-server.dsc.in \
-             gnect.room          \
-	     $(velena_DATA)      \
+             gnect.room.in \
+	     $(velena_DATA) \
              $(schema_in_files)
 
 CLEANFILES = $(ggzroom_DATA)
