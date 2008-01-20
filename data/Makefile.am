@@ -17,6 +17,7 @@ EXTRA_DIST = gnect-client.dsc.in \
 	     $(velena_DATA)      \
              $(schema_in_files)
 
+CLEANFILES = $(ggzroom_DATA)
 DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
 
 install-data-local:
@@ -33,8 +34,10 @@ endif
 
 
 if GGZ_SERVER
-ggzroom_DATA = gnect.room
+ggzroom_in_files = gnect.room.in
+ggzroom_DATA = $(ggzroom_in_files:.room.in=.room)
 ggzroomdir = ${prefix}/etc/ggzd/rooms/
+@GNOME_GAMES_GGZ_INTLTOOL_ROOM_RULE@
 
 ggzgame_DATA = gnect-server.dsc
 ggzgamedir = ${prefix}/etc/ggzd/games/
