@@ -3,10 +3,10 @@ Author = The GNOME Project
 Description = Place four tiles in a row.
 Homepage = http://www.gnome.org/projects/gnome-games/ 
 Name = Gnect
-Version = @VERSION@ 
+Version = @VERSION@
 
 [LaunchInfo]
-ExecutablePath = @prefix@/bin/gnectd 
+ExecutablePath = @ggzexecmoddir@/gnectd
 # Set ExecutableArgs in the room file
 
 [Protocol]

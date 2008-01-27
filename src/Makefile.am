@@ -1,5 +1,8 @@
+bin_PROGRAMS = gnect
+ggzexecmod_PROGRAMS =
+
 if GGZ_SERVER
-bin_PROGRAMS = gnect gnectd
+ggzexecmod_PROGRAMS += gnectd
 gnectd_SOURCES = server.h   \
 		 server.c   \
 		 main.h	    \
@@ -18,15 +21,11 @@ gnectd_SOURCES = server.h   \
                  proto.h    \
                  rules.h    
 
-gnectd_LDFLAGS = @GGZDMOD_LDFLAGS@
-
 gnectd_LDADD = \
-	../../libgames-support/libgames-support.la         \
+	$(top_builddir)/libgames-support/libgames-support.la         \
 	$(GNOME_GAMES_LIBS)     \
 	$(INTLLIBS) 		\
-	@LIB_GGZDMOD@
-else
-bin_PROGRAMS = gnect 
+	$(LIB_GGZDMOD)
 endif
 
 if GGZ_CLIENT
@@ -70,11 +69,9 @@ INCLUDES = -I.. \
 	$(GGZMOD_INCLUDES) $(GGZ_GTK_INCLUDES) $(GGZCORE_INCLUDES)\
 	$(LIBGGZ_INCLUDES) $(GGZDMOD_INCLUDES)
 
-gnect_LDFLAGS = $(GGZMOD_LDFLAGS)
 gnect_LDADD = \
 	../../libgames-support/libgames-support.la         \
 	$(GNOME_GAMES_LIBS)     \
 	$(INTLLIBS) \
 	$(LIB_GGZMOD) \
 	$(LIB_GGZ_GTK)
-
