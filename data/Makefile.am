@@ -1,3 +1,5 @@
+NULL =
+
 velenadir      = $(datadir)/gnect
 velena_DATA    = white_ob.cn4.gz
 
@@ -29,7 +31,13 @@ EXTRA_DIST = gnect-client.dsc.in \
 	     $(velena_DATA) \
              $(schema_in_files)
 
-CLEANFILES = $(ggzroom_DATA) $(ggzclient_dsc_in_files:.dsc.in=.dsc)
+
+CLEANFILES = \
+	$(ggzroom_DATA) \
+	$(ggzserver_dsc_in_files:.dsc.in=.dsc) \
+	$(ggzclient_dsc_in_files:.dsc.in=.dsc) \
+	$(NULL)
+
 DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
 
 install-data-local: $(ggzclient_dsc_in_files:.dsc.in=.dsc)
