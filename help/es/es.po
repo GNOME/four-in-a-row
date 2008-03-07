@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2008-01-03 18:49+0000\n"
-"PO-Revision-Date: 2008-02-12 11:29+0100\n"
+"POT-Creation-Date: 2008-02-12 10:51+0000\n"
+"PO-Revision-Date: 2008-03-07 21:39+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,8 +47,8 @@ msgid ""
 msgstr ""
 "El objetivo de Cuatro en raya es poner cuatro fichas en una fila vertical, "
 "horizontal o diagonal mientras que el oponente intenta bloquearle y hacer su "
-"propia fila de cuatro fichas. Cuatro en raya se puede jugar contra otra persona "
-"o contra el equipo."
+"propia fila de cuatro fichas. Cuatro en raya se puede jugar contra otra "
+"persona o contra el equipo."
 
 #: C/gnect.xml:33(year)
 msgid "2001-2002"
@@ -686,7 +686,7 @@ msgstr ""
 
 #: C/gnect.xml:50(title) C/gnect.xml:57(phrase)
 msgid "The Four-in-a-Row network connection dialog."
-msgstr "El diálogo de conexión en red de Cuatro en raya"
+msgstr "El diálogo de conexión en red de Cuatro en raya."
 
 #: C/gnect.xml:65(title)
 msgid "Joining a game room"
@@ -885,9 +885,9 @@ msgstr ""
 "citetitle>. También puede obtener una copia de la <citetitle>Licencia "
 "Pública General GNU</citetitle> de la Free Software Foundation visitando "
 "<ulink url=\"http://www.fsf.org\" type=\"http\">su página web</ulink> o "
-"escribiendo a la <address>Free Software Foundation, Inc. <street>59 Temple Place</"
-"street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-"
-"1307</postcode><country>USA</country></address>"
+"escribiendo a la <address>Free Software Foundation, Inc. <street>59 Temple "
+"Place</street> - Suite 330 <city>Boston</city>, <state>MA</"
+"state><postcode>02111-1307</postcode><country>USA</country></address>"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/gnect.xml:0(None)
