@@ -65,9 +65,9 @@ INCLUDES = -I.. \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\"         \
 	-DGNECT_DATA_DIR=\""$(datadir)/"\" \
-	$(GNOME_GAMES_CFLAGS) \
-	$(GGZMOD_INCLUDES) $(GGZ_GTK_INCLUDES) $(GGZCORE_INCLUDES)\
-	$(LIBGGZ_INCLUDES) $(GGZDMOD_INCLUDES)
+	$(GGZ_GTK_INCLUDES) $(GGZMOD_INCLUDES) $(GGZCORE_INCLUDES) \
+	$(LIBGGZ_INCLUDES) $(GGZDMOD_INCLUDES) \
+	$(GNOME_GAMES_CFLAGS)
 
 gnect_LDADD = \
 	../../libgames-support/libgames-support.la         \
