@@ -22,8 +22,6 @@
  * USA
  */
 
-
-
 #include "config.h"
 #include <gnome.h>
 
@@ -31,6 +29,7 @@
 #include <games-stock.h>
 #include <games-sound.h>
 #include <games-conf.h>
+#include <games-runtime.h>
 
 #include "connect4.h"
 #include "main.h"
@@ -1488,6 +1487,10 @@ main (int argc, char *argv[])
   textdomain (GETTEXT_PACKAGE);
 
   g_thread_init (NULL);
+  
+  if (!games_runtime_init ("gnect"))
+    return 1;
+
   context = g_option_context_new (NULL);
   games_sound_add_option_group (context);
 
@@ -1524,6 +1527,8 @@ main (int argc, char *argv[])
   games_conf_shutdown ();
 
   g_object_unref (program);
+
+  games_runtime_shutdown ();
 
   return 0;
 }
