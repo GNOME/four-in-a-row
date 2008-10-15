@@ -111,10 +111,8 @@ init_prg (struct board *board)
   long ob_size, len;
   FILE *h1;
   short x;
-  char *tmp = games_runtime_get_directory (GAMES_RUNTIME_GAME_DATA_DIRECTORY);
-  char *bookdata = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", tmp, WHITE_BOOK);
-
-  g_free (tmp);
+  const char *tmp = games_runtime_get_directory (GAMES_RUNTIME_GAME_DATA_DIRECTORY);
+  char *bookdata = g_build_filename (tmp, WHITE_BOOK, NULL);
 
   if (!g_file_test (bookdata, G_FILE_TEST_EXISTS)) {
     g_printerr ("velena: required file not found (%s)\n", bookdata);

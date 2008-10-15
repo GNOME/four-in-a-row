@@ -24,8 +24,11 @@
 
 
 
-#include "config.h"
-#include <gnome.h>
+#include <config.h>
+
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+
 #include "main.h"
 #include "theme.h"
 #include "prefs.h"

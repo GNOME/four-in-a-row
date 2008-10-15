@@ -25,10 +25,12 @@
 
 
 
-#include "config.h"
-#include <gnome.h>
-#include <pwd.h>
+#include <config.h>
 
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+
+#include <pwd.h>
 #include <ggzmod.h>
 #include <ggz-embed.h>
 #include <ggz-gtk.h>

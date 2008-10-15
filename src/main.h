@@ -2,6 +2,7 @@
 
 
 #define APPNAME "gnect"
+#define APPNAME_LONG N_("Four-in-a-row")
 
 #define TILE_PLAYER1           0
 #define TILE_PLAYER2           1

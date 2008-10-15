@@ -26,8 +26,10 @@
 
 #include <config.h>
 
+#include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
+
 #include <libgames-support/games-runtime.h>
 
 #include "main.h"
@@ -271,11 +273,10 @@ gfx_load_error (const gchar * fname)
 }
 
 
-
 gboolean
 gfx_load_pixmaps (void)
 {
-  gchar *dname;
+  const char *dname;
   gchar *fname;
   GdkPixbuf *pb_tileset_tmp;
   GdkPixbuf *pb_bground_tmp = NULL;
@@ -283,9 +284,7 @@ gfx_load_pixmaps (void)
   dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
   /* Try the theme pixmaps, fallback to the default and then give up */
   while (TRUE) {
-    fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
-			     theme[p.theme_id].fname_tileset);
-
+    fname = g_build_filename (dname, theme[p.theme_id].fname_tileset, NULL);
     pb_tileset_tmp = gdk_pixbuf_new_from_file (fname, NULL);
     if (pb_tileset_tmp == NULL) {
       if (p.theme_id != 0) {
@@ -294,7 +293,6 @@ gfx_load_pixmaps (void)
 	continue;
       } else {
 	gfx_load_error (fname);
-	g_free (dname);
 	g_free (fname);
 	return FALSE;
       }
@@ -310,19 +308,16 @@ gfx_load_pixmaps (void)
   pb_tileset_raw = pb_tileset_tmp;
 
   if (theme[p.theme_id].fname_bground != NULL) {
-    fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
-			     theme[p.theme_id].fname_bground);
+    fname = g_build_filename (dname, theme[p.theme_id].fname_bground, NULL);
     pb_bground_tmp = gdk_pixbuf_new_from_file (fname, NULL);
     if (pb_bground_tmp == NULL) {
       gfx_load_error (fname);
       g_object_unref (pb_tileset_tmp);
-      g_free (dname);
       g_free (fname);
       return FALSE;
     }
     g_free (fname);
   }
-  g_free (dname);
 
   if (pb_bground_raw)
     g_object_unref (pb_bground_raw);

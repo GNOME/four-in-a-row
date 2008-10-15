@@ -24,14 +24,17 @@
 
 
 
-#include "config.h"
+#include <config.h>
 
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <gnome.h>
+
 #include <games-conf.h>
 #include <games-frame.h>
 #include <games-controls.h>
 #include <games-sound.h>
+
 #include "main.h"
 #include "theme.h"
 #include "prefs.h"

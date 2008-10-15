@@ -22,14 +22,16 @@
  * USA
  */
 
-#include "config.h"
-#include <gnome.h>
+#include <config.h>
 
-#include <games-gridframe.h>
-#include <games-stock.h>
-#include <games-sound.h>
-#include <games-conf.h>
-#include <games-runtime.h>
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+
+#include <libgames-support/games-conf.h>
+#include <libgames-support/games-gridframe.h>
+#include <libgames-support/games-runtime.h>
+#include <libgames-support/games-sound.h>
+#include <libgames-support/games-stock.h>
 
 #include "connect4.h"
 #include "main.h"
@@ -38,8 +40,8 @@
 #include "gfx.h"
 
 #ifdef GGZ_CLIENT
-#include <games-dlg-chat.h>
-#include <games-dlg-players.h>
+#include <libgames-support/games-dlg-chat.h>
+#include <libgames-support/games-dlg-players.h>
 #include "connectx_client.h"
 #include "ggz-network.h"
 #include <ggz-embed.h>
@@ -886,7 +888,7 @@ on_game_scores (GtkMenuItem * m, gpointer data)
 static void
 on_help_about (GtkAction * action, gpointer data)
 {
-  const gchar *authors[] = { "Four-in-a-Row:",
+  const gchar *authors[] = { "Four-in-a-row:",
     "  Tim Musson <trmusson@ihug.co.nz>",
     "  David Neary <bolsh@gimp.org>",
     "",
@@ -906,10 +908,10 @@ on_help_about (GtkAction * action, gpointer data)
   const gchar *documenters[] = { "Timothy Musson",
     NULL
   };
-  gchar *license = games_get_license (_("Four-in-a-Row"));
+  gchar *license = games_get_license (_(APPNAME_LONG));
 
   gtk_show_about_dialog (GTK_WINDOW (app),
-			 "name", _("Four-in-a-Row"),
+			 "name", _(APPNAME_LONG),
 			 "version", VERSION,
 			 "copyright",
 			 "Copyright \xc2\xa9 1999-2008, Tim Musson and David Neary",
@@ -1412,7 +1414,9 @@ create_app (void)
   GtkWidget *vpaned;
   GtkUIManager *ui_manager;
 
-  app = gnome_app_new (APPNAME, _("Four-in-a-Row"));
+  app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (app), _(APPNAME_LONG));
+
   gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
   games_conf_add_window (GTK_WINDOW (app), NULL);
 
@@ -1447,7 +1451,7 @@ create_app (void)
   gtk_box_pack_start (GTK_BOX (vbox), vpaned, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
-  gnome_app_set_contents (GNOME_APP (app), notebook);
+  gtk_container_add (GTK_CONTAINER (app), notebook);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, NULL);
   gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), MAIN_PAGE);
 
@@ -1498,26 +1502,31 @@ create_app (void)
 int
 main (int argc, char *argv[])
 {
-  GnomeProgram *program;
   GOptionContext *context;
-
-  bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
-  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-  textdomain (GETTEXT_PACKAGE);
+  gboolean retval;
+  GError *error = NULL;
 
   g_thread_init (NULL);
   
   if (!games_runtime_init ("gnect"))
     return 1;
 
-  context = g_option_context_new (NULL);
-  games_sound_add_option_group (context);
+  bindtextdomain (GETTEXT_PACKAGE, games_runtime_get_directory (GAMES_RUNTIME_LOCALE_DIRECTORY));
+  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+  textdomain (GETTEXT_PACKAGE);
 
-  program = gnome_program_init (APPNAME, VERSION, LIBGNOMEUI_MODULE,
-				argc, argv,
-                                GNOME_PARAM_GOPTION_CONTEXT, context,
-                                GNOME_PARAM_APP_DATADIR, DATADIR,
-				NULL);
+  context = g_option_context_new (NULL);
+  g_option_context_add_group (context, gtk_get_option_group (TRUE));
+  games_sound_add_option_group (context);
+  retval = g_option_context_parse (context, &argc, &argv, &error);
+  g_option_context_free (context);
+  if (!retval) {
+    g_print ("%s", error->message);
+    g_error_free (error);
+    exit (1);
+  }
+
+  g_set_application_name (_(APPNAME_LONG));
 
   games_conf_initialise (APPNAME);
 
@@ -1527,10 +1536,8 @@ main (int argc, char *argv[])
   /* init gfx */
   if (!gfx_load_pixmaps ()) {
     games_conf_shutdown ();
-    g_object_unref (program);
     exit (1);
   }
-    
 
 #ifdef GGZ_CLIENT
   network_init ();
@@ -1544,8 +1551,6 @@ main (int argc, char *argv[])
   game_free ();
 
   games_conf_shutdown ();
-
-  g_object_unref (program);
 
   games_runtime_shutdown ();
 
