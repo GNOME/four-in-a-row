@@ -24,8 +24,12 @@
 
 
 
-#include "config.h"
-#include <gnome.h>
+#include <config.h>
+
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include <libgames-support/games-runtime.h>
+
 #include "main.h"
 #include "theme.h"
 #include "prefs.h"
@@ -276,9 +280,7 @@ gfx_load_pixmaps (void)
   GdkPixbuf *pb_tileset_tmp;
   GdkPixbuf *pb_bground_tmp = NULL;
 
-  dname = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,
-				     APPNAME, FALSE, NULL);
-
+  dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
   /* Try the theme pixmaps, fallback to the default and then give up */
   while (TRUE) {
     fname = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", dname,
@@ -320,7 +322,6 @@ gfx_load_pixmaps (void)
     }
     g_free (fname);
   }
-
   g_free (dname);
 
   if (pb_bground_raw)

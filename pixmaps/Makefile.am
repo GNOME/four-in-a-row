@@ -1,4 +1,4 @@
-pixmapdir = $(datadir)/pixmaps/gnect
+pixmapdir = $(datadir)/gnome-games/gnect/pixmaps
 
 pixmap_DATA = \
     tileset_50x50_sunspot.svg \

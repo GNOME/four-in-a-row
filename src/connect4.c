@@ -23,6 +23,7 @@
 
 */
 
+#include <config.h>
 
 #include <stdio.h>
 #include <string.h>
@@ -33,13 +34,13 @@
 #include <unistd.h>
 
 #include <zlib.h>
-#include <gnome.h>
+#include <gtk/gtk.h>
+
+#include <libgames-support/games-runtime.h>
 
 #include "connect4.h"
 #include "pnsearch.h"
 #include "proto.h"
-
-#include "config.h"
 #include "main.h"
 
 #define PLAYER1 0
@@ -110,10 +111,9 @@ init_prg (struct board *board)
   long ob_size, len;
   FILE *h1;
   short x;
-  char *tmp = g_strconcat ("gnect/", WHITE_BOOK, NULL);
-  char *bookdata =
-    gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_DATADIR, tmp,
-			       FALSE, NULL);
+  char *tmp = games_runtime_get_directory (GAMES_RUNTIME_GAME_DATA_DIRECTORY);
+  char *bookdata = g_strdup_printf ("%s" G_DIR_SEPARATOR_S "%s", tmp, WHITE_BOOK);
+
   g_free (tmp);
 
   if (!g_file_test (bookdata, G_FILE_TEST_EXISTS)) {
@@ -172,6 +172,8 @@ init_prg (struct board *board)
 
   gzclose (h1);
   board->bbposit = 0;
+  g_free(bookdata);
+
 }
 
 
