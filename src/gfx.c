@@ -143,10 +143,9 @@ gfx_draw_tile (gint r, gint c, gboolean refresh)
 		     tilesize);
 
   if (tile != TILE_CLEAR) {
-    gdk_pixbuf_render_to_drawable_alpha (pb_tileset, pm_display,
-					 os, 0, x, y, tilesize, tilesize,
-					 GDK_PIXBUF_ALPHA_BILEVEL, 128,
-					 GDK_RGB_DITHER_NORMAL, 0, 0);
+    gdk_draw_pixbuf (pm_display, NULL, pb_tileset,
+                     os, 0, x, y, tilesize, tilesize,
+                     GDK_RGB_DITHER_NORMAL, 0, 0);
   }
 
   if (refresh) {
@@ -248,11 +247,11 @@ gfx_resize (GtkWidget * w)
 void
 gfx_expose (GdkRectangle * area)
 {
-  gdk_draw_pixmap (drawarea->window,
-		   gc,
-		   pm_display,
-		   area->x, area->y,
-		   area->x, area->y, area->width, area->height);
+  gdk_draw_drawable (GDK_DRAWABLE (drawarea->window),
+                     gc,
+                     pm_display,
+                     area->x, area->y,
+                     area->x, area->y, area->width, area->height);
 }
 
 

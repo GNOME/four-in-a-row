@@ -23,6 +23,7 @@
  */
 
 #include <config.h>
+#include <stdlib.h>
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -347,7 +348,7 @@ blink_tile (gint r, gint c, gint t, gint n)
   blink_n = n;
   blink_on = FALSE;
   anim = ANIM_BLINK;
-  timeout = gtk_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
+  timeout = g_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
 }
 
 
@@ -390,7 +391,7 @@ stop_anim (void)
   if (timeout == 0)
     return;
   anim = ANIM_NONE;
-  gtk_timeout_remove (timeout);
+  g_source_remove (timeout);
   timeout = 0;
 }
 
@@ -728,7 +729,7 @@ on_game_hint (GtkMenuItem * m, gpointer data)
     while (timeout)
       gtk_main_iteration ();
     anim = ANIM_HINT;
-    timeout = gtk_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, NULL);
+    timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, NULL);
   } else {
     move_cursor (column_moveto);
   }
@@ -824,7 +825,7 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (scorebox)->vbox), 2);
 
   g_signal_connect (GTK_OBJECT (scorebox), "destroy",
-		    GTK_SIGNAL_FUNC (gtk_widget_destroyed), &scorebox);
+		    G_CALLBACK (gtk_widget_destroyed), &scorebox);
 
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
@@ -876,7 +877,7 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   gtk_misc_set_alignment (GTK_MISC (label_score[NOBODY]), 1, 0.5);
 
   g_signal_connect (GTK_DIALOG (scorebox), "response",
-		    GTK_SIGNAL_FUNC (on_dialog_close), NULL);
+		    G_CALLBACK (on_dialog_close), NULL);
 
   gtk_widget_show_all (scorebox);
 
@@ -1078,7 +1079,7 @@ blink_winner (gint n)
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
-    timeout = gtk_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
+    timeout = g_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
     while (timeout)
       gtk_main_iteration ();
   }
@@ -1088,7 +1089,7 @@ blink_winner (gint n)
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
-    timeout = gtk_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
+    timeout = g_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
     while (timeout)
       gtk_main_iteration ();
   }
@@ -1098,7 +1099,7 @@ blink_winner (gint n)
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
-    timeout = gtk_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
+    timeout = g_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
     while (timeout)
       gtk_main_iteration ();
   }
@@ -1108,7 +1109,7 @@ blink_winner (gint n)
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
-    timeout = gtk_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
+    timeout = g_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
     while (timeout)
       gtk_main_iteration ();
   }
@@ -1168,8 +1169,8 @@ void
 process_move (gint c)
 {
   if (timeout) {
-    gtk_timeout_add (SPEED_DROP,
-		     (GSourceFunc) next_move, GINT_TO_POINTER (c));
+    g_timeout_add (SPEED_DROP,
+	           (GSourceFunc) next_move, GINT_TO_POINTER (c));
     return;
 
   }
@@ -1181,8 +1182,8 @@ process_move (gint c)
   } else {
     column_moveto = c;
     anim = ANIM_MOVE;
-    timeout = gtk_timeout_add (SPEED_MOVE,
-			       (GSourceFunc) on_animate, GINT_TO_POINTER (c));
+    timeout = g_timeout_add (SPEED_MOVE,
+                             (GSourceFunc) on_animate, GINT_TO_POINTER (c));
   }
 }
 
@@ -1201,9 +1202,9 @@ process_move2 (gint c)
       row = 0;
       row_dropto = r;
       anim = ANIM_DROP;
-      timeout = gtk_timeout_add (SPEED_DROP,
-				 (GSourceFunc) on_animate,
-				 GINT_TO_POINTER (c));
+      timeout = g_timeout_add (SPEED_DROP,
+                               (GSourceFunc) on_animate,
+                               GINT_TO_POINTER (c));
     }
   } else {
     play_sound (SOUND_COLUMN_FULL);
@@ -1235,8 +1236,8 @@ process_move3 (gint c)
       c = playgame (vstr, vboard) - 1;
       if (c < 0)
 	gameover = TRUE;
-      gtk_timeout_add (SPEED_DROP,
-		       (GSourceFunc) next_move, GINT_TO_POINTER (c));
+      g_timeout_add (SPEED_DROP,
+                     (GSourceFunc) next_move, GINT_TO_POINTER (c));
     }
   }
 }
