@@ -61,7 +61,7 @@ gnect_SOURCES = main.h     \
 		$(GGZ_FILES)
 
 INCLUDES = -I.. \
-	-I$(top_srcdir)/libgames-support                \
+	-I$(top_srcdir) \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\"         \
 	-DGNECT_DATA_DIR=\""$(datadir)/"\" \
