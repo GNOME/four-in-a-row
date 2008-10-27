@@ -30,6 +30,7 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
+#include <libgames-support/games-help.h>
 #include <libgames-support/games-runtime.h>
 #include <libgames-support/games-sound.h>
 #include <libgames-support/games-stock.h>
@@ -932,26 +933,7 @@ on_help_about (GtkAction * action, gpointer data)
 static void
 on_help_contents (GtkAction * action, gpointer data)
 {
-  GdkScreen *screen;
-  GError *error = NULL;
-
-  screen = gtk_widget_get_screen (GTK_WIDGET (app));
-  gtk_show_uri (screen, "ghelp:gnect", gtk_get_current_event_time (), &error);
-
-  if (error != NULL)
-  {
-    GtkWidget *d;
-    d = gtk_message_dialog_new (GTK_WINDOW (app), 
-                              GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                              GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, 
-                              "%s", _("Unable to open help file"));
-    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (d),
-                              "             %s", error->message);
-    g_signal_connect (d, "response", G_CALLBACK (gtk_widget_destroy), NULL);
-    gtk_window_present (GTK_WINDOW (d));
-
-    g_error_free (error);
-  }
+  games_help_display (app, "gnect", NULL);
 }
 
 
