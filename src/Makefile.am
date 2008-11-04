@@ -21,6 +21,16 @@ gnectd_SOURCES = server.h   \
                  proto.h    \
                  rules.h    
 
+gnectd_CPPFLAGS = \
+	-I$(top_srcdir) \
+	$(AM_CPPFLAGS)
+
+gnectd_CFLAGS = \
+	$(GGZ_GTK_INCLUDES) $(GGZMOD_INCLUDES) $(GGZCORE_INCLUDES) \
+	$(LIBGGZ_INCLUDES) $(GGZDMOD_INCLUDES) \
+	$(GNOME_GAMES_CFLAGS) \
+	$(AM_CFLAGS)
+
 gnectd_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la         \
 	$(GNOME_GAMES_LIBS)     \
@@ -60,18 +70,19 @@ gnect_SOURCES = main.h     \
                 rules.h	   \
 		$(GGZ_FILES)
 
-INCLUDES = -I.. \
+gnect_CPPFLAGS = \
 	-I$(top_srcdir) \
-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
-	-DDATADIR=\""$(datadir)"\"         \
-	-DGNECT_DATA_DIR=\""$(datadir)/"\" \
+	$(AM_CPPFLAGS)
+
+gnect_CFLAGS = \
 	$(GGZ_GTK_INCLUDES) $(GGZMOD_INCLUDES) $(GGZCORE_INCLUDES) \
 	$(LIBGGZ_INCLUDES) $(GGZDMOD_INCLUDES) \
-	$(GNOME_GAMES_CFLAGS)
+	$(GNOME_GAMES_CFLAGS) \
+	$(AM_CFLAGS)
 
 gnect_LDADD = \
-	../../libgames-support/libgames-support.la         \
-	$(GNOME_GAMES_LIBS)     \
+	$(top_builddir)/libgames-support/libgames-support.la \
+	$(GNOME_GAMES_LIBS) \
 	$(INTLLIBS) \
 	$(LIB_GGZMOD) \
 	$(LIB_GGZ_GTK)

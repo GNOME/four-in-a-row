@@ -1,4 +1,4 @@
-pixmapdir = $(datadir)/gnome-games/gnect/pixmaps
+pixmapdir = $(pkgdatadir)/gnect/pixmaps
 
 pixmap_DATA = \
     tileset_50x50_sunspot.svg \
@@ -12,4 +12,3 @@ pixmap_DATA = \
     bg_toplight.png
 
 EXTRA_DIST = $(pixmap_DATA)
-

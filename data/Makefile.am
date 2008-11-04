@@ -1,6 +1,6 @@
 NULL =
 
-velenadir      = $(datadir)/gnome-games/gnect
+velenadir      = $(pkgdatadir)/gnect
 velena_DATA    = white_ob.cn4.gz
 
 Games_in_files = gnect.desktop.in.in
