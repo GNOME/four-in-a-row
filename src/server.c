@@ -24,12 +24,8 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <glib/gi18n.h>
-#include <gtk/gtk.h>
 #include <ggzdmod.h>
 
-#include "connect4.h"
-#include "main.h"
 #include "server.h"
 
 
