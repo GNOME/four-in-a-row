@@ -1489,14 +1489,8 @@ main (int argc, char *argv[])
   gboolean retval;
   GError *error = NULL;
 
-  g_thread_init (NULL);
-  
   if (!games_runtime_init ("gnect"))
     return 1;
-
-  bindtextdomain (GETTEXT_PACKAGE, games_runtime_get_directory (GAMES_RUNTIME_LOCALE_DIRECTORY));
-  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-  textdomain (GETTEXT_PACKAGE);
 
   context = g_option_context_new (NULL);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
