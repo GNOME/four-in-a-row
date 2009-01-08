@@ -21,6 +21,7 @@
 */
 
 
+#include <config.h>
 #include <stdio.h>
 
 #include "connect4.h"
