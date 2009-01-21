@@ -59,12 +59,27 @@ gnect_CPPFLAGS = \
 gnect_CFLAGS = \
 	$(GGZ_GTK_INCLUDES) $(GGZMOD_INCLUDES) $(GGZCORE_INCLUDES) \
 	$(LIBGGZ_INCLUDES) $(GGZDMOD_INCLUDES) \
-	$(GNOME_GAMES_CFLAGS) \
+	$(GTK_CFLAGS) \
 	$(AM_CFLAGS)
 
 gnect_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la \
-	$(GNOME_GAMES_LIBS) \
+	$(GTK_LIBS) \
 	$(INTLLIBS) \
 	$(LIB_GGZMOD) \
 	$(LIB_GGZ_GTK)
+
+if HAVE_GNOME
+gnect_CFLAGS += $(GNOME_CFLAGS)
+gnect_LDADD += $(GNOME_LIBS)
+endif
+
+if HAVE_RSVG
+gnect_CFLAGS += $(RSVG_CFLAGS)
+gnect_LDADD += $(RSVG_LIBS)
+endif
+
+if WITH_GTHREAD
+gnect_CFLAGS += $(GHTREAD_CFLAGS)
+gnect_LDADD += $(GTHREAD_LIBS)
+endif
