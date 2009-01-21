@@ -30,10 +30,10 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
-#include <games-conf.h>
-#include <games-frame.h>
-#include <games-controls.h>
-#include <games-sound.h>
+#include <libgames-support/games-conf.h>
+#include <libgames-support/games-frame.h>
+#include <libgames-support/games-controls.h>
+#include <libgames-support/games-sound.h>
 
 #include "main.h"
 #include "theme.h"

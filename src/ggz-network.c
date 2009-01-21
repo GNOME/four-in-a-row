@@ -35,8 +35,8 @@
 #include <ggz-embed.h>
 #include <ggz-gtk.h>
 
-#include <games-dlg-chat.h>
-#include <games-dlg-players.h>
+#include <libgames-support/games-dlg-chat.h>
+#include <libgames-support/games-dlg-players.h>
 
 #include "connectx_client.h"
 #include "connect4.h"
