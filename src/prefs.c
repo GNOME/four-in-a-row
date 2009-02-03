@@ -363,16 +363,7 @@ prefsbox_open (void)
 
   /* keyboard tab */
 
-  vbox1 = gtk_vbox_new (FALSE, 0);
-  label = gtk_label_new_with_mnemonic (_("Controls"));
-  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox1, label);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox1), 12);
-
-  frame = games_frame_new (_("Keyboard Controls"));
-  gtk_container_add (GTK_CONTAINER (vbox1), frame);
-
-  vbox2 = gtk_vbox_new (FALSE, 6);
-  gtk_container_add (GTK_CONTAINER (frame), vbox2);
+  label = gtk_label_new_with_mnemonic (_("Keyboard Controls"));
 
   controls_list = games_controls_list_new (NULL);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
@@ -380,8 +371,8 @@ prefsbox_open (void)
                                     KEY_MOVE_RIGHT, _("Move right"), DEFAULT_KEY_RIGHT,
 				    KEY_MOVE_DROP, _("Drop marble"), DEFAULT_KEY_DROP,
                                     NULL);
-
-  gtk_box_pack_start (GTK_BOX (vbox2), controls_list, TRUE, TRUE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (controls_list), 12);
+  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), controls_list, label);
 
   /* fill in initial values */
 
