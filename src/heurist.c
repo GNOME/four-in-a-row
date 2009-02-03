@@ -77,7 +77,7 @@ fight (char t)
 
 
 short
-whatfight ()
+whatfight (void)
 {
   return (short) fight_for_win;
 }
