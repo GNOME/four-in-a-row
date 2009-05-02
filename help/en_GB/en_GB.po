@@ -372,8 +372,8 @@ msgid ""
 msgstr ""
 "These two columns tell <application>Four-in-a-Row</application> who's "
 "playing and, if it is the computer, how well they play. To play against a "
-"friend, select <guilabel>Human for both Player One and "
-"Player Two</guilabel>."
+"friend, select <guilabel>Human</guilabel> for both <guilabel>Player One</guilabel> and "
+"<guilabel>Player Two</guilabel>."
 
 #: C/gnect.xml:262(guilabel)
 msgid "Theme"
