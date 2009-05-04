@@ -1494,7 +1494,6 @@ main (int argc, char *argv[])
 
   context = g_option_context_new (NULL);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
-  games_sound_add_option_group (context);
   retval = g_option_context_parse (context, &argc, &argv, &error);
   g_option_context_free (context);
   if (!retval) {
