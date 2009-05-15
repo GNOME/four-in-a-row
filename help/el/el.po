@@ -1,36 +1,41 @@
+# Jennie Petoumenou <epetoumenou@gmail.com>, 2009.
+# Fotis Tsamis <ftsamis@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: packagename\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-31 15:46+0000\n"
-"PO-Revision-Date: 2009-03-31 12:31+0200\n"
-"Last-Translator: Simos Xenitellis <simos@gnome.org>\n"
+"POT-Creation-Date: 2009-05-14 00:58+0000\n"
+"PO-Revision-Date: 2009-05-15 22:11+0300\n"
+"Last-Translator: Fotis Tsamis <ftsamis@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnect.xml:174(None)
 msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
 msgstr ""
+"@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnect.xml:54(None)
 msgid "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
-msgstr ""
+msgstr "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnect.xml:77(None)
 msgid "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
-msgstr ""
+msgstr "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
 
 #: C/gnect.xml:22(title)
 msgid "Four-in-a-Row Manual"
-msgstr ""
+msgstr "Εγχειρίδιο Τέσσερα στη σειρά"
 
 #: C/gnect.xml:24(para)
 msgid ""
@@ -39,21 +44,23 @@ msgid ""
 "her own row of four. Four-in-a-Row can be played against another human or "
 "the computer."
 msgstr ""
+"Ο στόχος του Τέσσερα στη σειρά είναι να τοποθετήσετε τέσσερα κομμάτια σε "
+"κάθετη, οριζόντια, ή διαγώνια γραμμή καθώς ο αντίπαλός σας προσπαθεί να "
+"μπλοκάρει και να κάνει την δική του/της γραμμή των τεσσάρων. Μπορείτε να "
+"παίξετε το Τέσσερα στη σειρά με αντίπαλο έναν άλλον άνθρωπο ή τον υπολογιστή."
 
 #: C/gnect.xml:33(year)
 msgid "2001-2002"
-msgstr ""
+msgstr "2001-2002"
 
 #: C/gnect.xml:34(holder)
 msgid "Timothy Musson"
-msgstr ""
+msgstr "Timothy Musson"
 
 #: C/gnect.xml:47(publishername)
 msgid "GNOME Documentation Project"
-msgstr ""
+msgstr "Έργο τεκμηρίωσης GNOME"
 
-# Section: πιστεύω ότι νοούνται τμήματα και όχι εδάφεια. Ορισμος του section (πλήρης) στο : answers.com
-# front and back-cover texts: πιστεύω ότι νοούνται απλά τα εξώφυλλα/οπισθόφυλλα της έντυπης έκδοσης
 #: C/gnect.xml:2(para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
@@ -65,15 +72,12 @@ msgid ""
 msgstr ""
 "Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος "
 "εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU "
-"(GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής της από το Ίδρυμα Ελεύθερου "
-"Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξώφυλλου και κείμενα "
-"οπισθόφυλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <ulink "
+"(GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου "
+"Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα "
+"οπισθοφύλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <ulink "
 "type=\"help\" url=\"ghelp:fdl\">σύνδεσμο</ulink>, ή στο αρχείο COPYING-DOCS "
 "που διανέμεται μαζί με το παρόν εγχειρίδιο."
 
-# Under: προτιμώ το ολοκληρωμένο υπό τους όρους αντί το υπό /κάτω από την GDF. Εναλλακτικά : σύμφωνα με την GFDL.
-# Το section σε ελληνικά νομικά κείμενα αποδίδεται  ως άρθρο και όχι μέρος ή κάτι άλλο. Αντίστοιχα subsection>χωρίο κοκ
-# Η απόδοση της β πρότασης στα Ελληνικά έχει ίγο διαφορετική δομή, για να ρέει το κείμενο.
 #: C/gnect.xml:12(para)
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
@@ -84,7 +88,7 @@ msgstr ""
 "Αυτό το εγχειρίδιο αποτελεί μέρος της συλλογής εγχειριδίων του GNOME που "
 "διανέμονται υπό τους όρους της GFDL. Αν επιθυμείτε να διανείμετε το παρόν "
 "εγχειρίδιο ξεχωριστά από τη συλλογή, οφείλετε να προσθέσετε στο εγχειρίδιο "
-"αντίγραφο της άδειας χρήσης, όπως περιγράφεται στο άρθρο 6 της άδειας. "
+"αντίγραφο της άδειας χρήσης, όπως προβλέπεται στο άρθρο 6 της άδειας."
 
 #: C/gnect.xml:19(para)
 msgid ""
@@ -94,14 +98,13 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για τη "
+"Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για την "
 "διαφοροποίηση των προϊόντων και υπηρεσιών τους έχουν καταχωρισθεί ως "
-"εμπορικά σήματα. Οπουδήποτε στην τεκμηρίωση του GNOME εμφανίζονται αυτές οι "
-"ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης του GNOME έχουν λάβει "
-"γνώση αυτών των εμπορικών σημάτων, οι ονομασίες αυτές θα γράφονται με "
-"κεφαλαίους χαρακτήρες ή με κεφαλαίους τους αρχικούς χαρακτήρες."
+"εμπορικά σήματα. Σε όποιο σημείο της τεκμηρίωσης GNOME τυχόν εμφανίζονται "
+"αυτές οι ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης GNOME έχουν "
+"λάβει γνώση αυτών των εμπορικών σημάτων, οι ονομασίες ή τα αρχικά αυτών θα "
+"γράφονται με κεφαλαίους χαρακτήρες."
 
-# στο τέλος μάλλον θέλει /n  ή κατι τέτοιο
 #: C/gnect.xml:35(para)
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
@@ -117,18 +120,18 @@ msgid ""
 "OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
 "ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΠΑΡΕΧΕΤΑΙ \"ΩΣ ΕΧΕΙ\", ΧΩΡΙΣ ΟΠΟΙΑΔΗΠΟΤΕ ΑΛΛΗ ΕΓΓΥΗΣΗ, ΕΙΤΕ "
-"ΡΗΤΗ ΕΙΤΕ ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ, ΧΩΡΙΣ ΝΑ ΠΕΡΙΟΡΙΖΕΤΑΙ ΣΕ ΑΥΤΗ, ΤΗΣ "
-"ΕΓΓΥΗΣΗΣ ΟΤΙ ΤΟ ΕΓΓΡΑΦΟ, Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΕΙΝΑΙ ΜΗ "
-"ΕΛΑΤΤΩΜΑΤΙΚΟ, ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ, Η ΕΛΕΥΘΕΡΟ "
-"ΠΑΡΑΒΑΣΕΩΝ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΕΞ ΟΛΟΚΛΗΡΟΥ ΤΗΝ ΕΥΘΥΝΗ ΩΣ ΠΡΟΣ ΤΗΝ "
-"ΠΟΙΟΤΗΤΑ, ΤΗΝ ΑΚΡΙΒΕΙΑ ΚΑΙ ΤΗΝ ΑΠΟΤΕΛΕΣΜΑΤΙΚΟΤΗΤΑ ΤΟΥ ΕΓΓΡΑΦΟΥ, Η "
-"ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ. ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΕΝΑ ΕΓΓΡΑΦΟ, Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ "
-"ΕΚΔΟΣΗ ΑΥΤΟΥ, ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΑΤΤΩΜΑΤΙΚΑ ΚΑΘ' ΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΧΡΗΣΤΗΣ (ΚΑΙ "
-"ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, Ο ΔΗΜΙΟΥΡΓΟΣ Η ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ "
-"ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΑΝΑΓΚΑΙΑΣ ΣΥΝΤΗΡΗΣΗΣ, ΕΠΙΣΚΕΥΗΣ 'Η ΔΙΟΡΘΩΣΗΣ. Η ΠΑΡΟΥΣΑ "
-"ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ ΑΠΟΤΕΛΕΙ ΑΝΑΠΟΣΠΑΣΤΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. Η ΧΡΗΣΗ ΤΟΥ "
-"ΕΓΓΡΑΦΟΥ, Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΕΠΙΤΡΕΠΕΤΑΙ ΜΟΝΟ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ "
-"ΤΗΣ ΠΑΡΟΥΣΑΣ ΑΠΟΠΟΙΗΣΗΣ ΕΓΓΥΗΣΗΣ. ΕΠΙΣΗΣ,"
+"ΡΗΤΗ ΕΙΤΕ ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΤΗΣ ΕΓΓΥΗΣΗΣ ΟΤΙ "
+"ΤΟ ΕΓΓΡΑΦΟ, Ή Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΕΙΝΑΙ ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ "
+"ΕΙΔΙΚΟ ΣΚΟΠΟ ΚΑΙ ΔΕΝ ΠΡΟΣΒΑΛΛΕΙ ΔΙΚΑΙΩΜΑΤΑ ΤΡΙΤΩΝ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΕΞ "
+"ΟΛΟΚΛΗΡΟΥ ΤΗΝ ΕΘΥΝΗ ΩΣ ΠΡΟΣ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΤΗΝ ΑΚΡΙΒΕΙΑ ΚΑΙ ΤΗΝ ΧΡΗΣΗ ΤΟΥ "
+"ΕΓΓΡΑΦΟΥ Ή ΤΗΣ ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ. ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΟΠΟΙΟΔΗΠΟΤΕ "
+"ΕΓΓΡΑΦΟ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΑΤΤΩΜΑΤΙΚΑ ΚΑΘ' "
+"ΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΧΡΗΣΤΗΣ (ΚΑΙ ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΔΗΜΙΟΥΡΓΟΣ Ή "
+"ΟΠΟΙΟΣΔΗΠΟΤΕ ΣΥΝΤΕΛΕΣΤΗΣ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΑΝΑΓΚΑΙΑΣ "
+"ΣΥΝΤΗΡΗΣΗΣ, ΕΠΙΣΚΕΥΗΣ Ή ΔΙΟΡΘΩΣΗΣ. Η ΠΑΡΟΥΣΑ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ ΑΠΟΤΕΛΕΙ "
+"ΑΝΑΠΟΣΠΑΣΤΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. ΔΕΝ ΕΠΙΤΡΕΠΕΤΑΙ ΟΥΔΕΜΙΑ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή "
+"ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ ΣΥΜΦΩΝΑ ΜΕ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΠΑΡΟΥΣΑΣ,  ΠΑΡΑ ΜΟΝΟ "
+"ΕΑΝ ΣΥΝΟΔΕΥΕΤΑΙ ΑΠΟ ΤΗΝ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ,  ΚΑΙ"
 
 #: C/gnect.xml:55(para)
 msgid ""
@@ -143,19 +146,19 @@ msgid ""
 "VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
 "POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
-"Ο ΔΗΜΙΟΥΡΓΟΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ ΚΑΙ ΟΙ ΔΙΑΝΟΜΕΙΣ ΤΟΥ "
-"ΕΓΓΡΑΦΟΥ Η ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΚΑΘΩΣ ΚΑΙ ΟΙ ΠΡΟΜΗΘΕΥΤΕΣ ΤΩΝ "
-"ΠΡΟΑΝΑΦΕΡΟΜΕΝΩΝ ΜΕΡΩΝ, ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΝΟΜΙΚΗ ΕΡΜΗΝΕΙΑ ΤΟΥ "
-"ΑΣΤΙΚΟΥ (ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΑΜΕΛΕΙΑΣ), ΤΟΥ ΕΝΟΧΙΚΟΥ Η ΑΛΛΟΥ ΔΙΚΑΙΟΥ, "
-"ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ ΓΙΑ ΤΥΧΟΝ ΑΜΕΣΕΣ, ΕΜΜΕΣΕΣ, ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ "
-"Η ΣΥΝΕΠΑΚΟΛΟΥΘΕΣ ΖΗΜΙΕΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΜΟΡΦΗΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΝΑ "
-"ΠΕΡΙΟΡΙΖΟΝΤΑΙ ΣΕ ΑΥΤΕΣ, ΖΗΜΙΩΝ ΛΟΓΩ ΑΠΩΛΕΙΑΣ ΦΗΜΗΣ ΚΑΙ ΠΕΛΑΤΕΙΑΣ, ΔΙΑΚΟΠΗΣ "
-"ΕΡΓΑΣΙΩΝ, ΔΥΣΛΕΙΤΟΥΡΓΕΙΑΣ Η ΒΛΑΒΗΣ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ, Η ΚΑΘΕ ΑΛΛΗΣ "
-"ΖΗΜΙΑΣ Η ΑΠΩΛΕΙΑΣ ΠΟΥ ΟΦΕΙΛΕΤΑΙ ΣΕ Η ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ "
-"ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ, ΑΚΟΜΑ ΚΑΙ ΑΝ ΤΑ ΩΣ ΑΝΩ ΜΕΡΗ ΕΙΧΑΝ ΛΑΒΕΙ "
-"ΓΝΩΣΗ ΤΗΣ ΠΙΘΑΝΟΤΗΤΑΣ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ."
+"Ο ΔΗΜΙΟΥΡΓΟΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ Ή ΟΙ ΔΙΑΝΟΜΕΙΣ ΤΟΥ "
+"ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΚΑΘΩΣ ΚΑΙ ΟΙ ΠΡΟΜΗΘΕΥΤΕΣ "
+"ΟΠΟΙΩΝΔΗΠΟΤΕ ΕΚ ΤΩΝ ΠΡΟΑΝΑΦΕΡΟΜΕΝΩΝ ΜΕΡΩΝ, ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ, "
+"ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΕΡΜΗΝΕΙΑ ΝΟΜΟΥ, ΕΙΤΕ ΕΞ ΑΔΙΚΟΠΡΑΞΙΑΣ "
+"(ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΑΜΕΛΕΙΑΣ) ΕΙΤΕ ΣΤΟ ΠΛΑΙΣΙΟ ΣΥΜΒΑΤΙΚΗΣ Ή ΑΛΛΗΣ "
+"ΥΠΟΧΡΕΩΣΗΣ, ΓΙΑ ΤΥΧΟΝ ΑΜΕΣΕΣ, ΕΜΜΕΣΕΣ, ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ Ή ΣΥΝΕΠΑΚΟΛΟΥΘΕΣ "
+"ΖΗΜΙΕΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΜΟΡΦΗΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΖΗΜΙΩΝ "
+"ΛΟΓΩ ΑΠΩΛΕΙΑΣ ΦΗΜΗΣ ΚΑΙ ΠΕΛΑΤΕΙΑΣ, ΔΙΑΚΟΠΗΣ ΕΡΓΑΣΙΩΝ, ΔΥΣΛΕΙΤΟΥΡΓΙΑΣ Ή "
+"ΒΛΑΒΗΣ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ, Ή ΚΑΘΕ ΑΛΛΗΣ ΖΗΜΙΑΣ Ή ΑΠΩΛΕΙΑΣ ΠΟΥ "
+"ΟΦΕΙΛΕΤΑΙ Ή ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ "
+"ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ, ΑΚΟΜΑ ΚΑΙ ΑΝ ΤΑ ΩΣ ΑΝΩ ΜΕΡΗ ΕΙΧΑΝ ΛΑΒΕΙ ΓΝΩΣΗ ΤΗΣ "
+"ΠΙΘΑΝΟΤΗΤΑΣ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ."
 
-# Προτιμώ το έγγραφο από το τεμηρίωση. Η επιλογή είναι καθαρά προσωπική
 #: C/gnect.xml:28(para)
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
@@ -168,35 +171,35 @@ msgstr ""
 
 #: C/gnect.xml:54(firstname)
 msgid "Timothy"
-msgstr ""
+msgstr "Timothy"
 
 #: C/gnect.xml:55(surname)
 msgid "Musson"
-msgstr ""
+msgstr "Musson"
 
 #: C/gnect.xml:58(email)
 msgid "trmusson@ihug.co.nz"
-msgstr ""
+msgstr "trmusson@ihug.co.nz"
 
 #: C/gnect.xml:79(revnumber)
 msgid "Four-in-a-Row Manual V2.8"
-msgstr ""
+msgstr "Εγχειρίδιο Τέσσερα στη σειρά V2.8"
 
 #: C/gnect.xml:80(date)
 msgid "September 2004"
-msgstr ""
+msgstr "Σεπτέμβριος 2004 "
 
 #: C/gnect.xml:82(para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
-msgstr ""
+msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 
 #: C/gnect.xml:90(releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-Row."
-msgstr ""
+msgstr "Αυτό το εγχειρίδιο περιγράφει την έκδοση 2.12 του Τέσσερα στη σειρά."
 
 #: C/gnect.xml:94(title)
 msgid "Feedback"
-msgstr ""
+msgstr "Ανάδραση"
 
 #: C/gnect.xml:95(para)
 msgid ""
@@ -204,10 +207,13 @@ msgid ""
 "or this manual, follow the directions in the <ulink url=\"ghelp:gnome-"
 "feedback\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
+"Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή "
+"Τέσσερα στη σειρά, ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στη <ulink "
+"url=\"ghelp:gnome-feedback\" type=\"help\">Σελίδα ανάδρασης GNOME</ulink>."
 
 #: C/gnect.xml:111(title)
 msgid "Introduction"
-msgstr ""
+msgstr "Εισαγωγή"
 
 #: C/gnect.xml:113(para)
 msgid ""
@@ -216,6 +222,12 @@ msgid ""
 "marbles while trying to stop your opponent (human or computer) building a "
 "line of his or her own. A line can be horizontal, vertical or diagonal."
 msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> είναι ένα παιχνίδι του τύπου "
+"τέσσερα-στη-σειρά για το έργο GNOME. Ο στόχος του παιχνιδιού είναι να "
+"φτιάξετε μια γραμμή με τέσσερις από τους βώλους σας ενώ προσπαθείτε να "
+"σταματήσετε τον αντίπαλό σας (άνθρωπος ή υπολογιστής) να φτιάξει μια γραμμή "
+"από τους δικούς του/της. Η γραμμή μπορεί να είναι οριζόντια, κάθετη ή "
+"διαγώνια."
 
 #: C/gnect.xml:121(para)
 msgid ""
@@ -224,6 +236,10 @@ msgid ""
 "<guimenu>Main Menu</guimenu>, or type <command>gnect</command> on the "
 "command line."
 msgstr ""
+"Για να εκκινήσετε το <application>Τέσσερα στη σειρά</application>, επιλέξτε "
+"<guimenuitem>Τέσσερα στη σειρά</guimenuitem> από το μενού "
+"<guisubmenu>Παιχνίδια</guisubmenu> του <guimenu>Κύριου μενού</guimenu>, ή "
+"πληκτρολογήστε <command>gnect</command> στη γραμμή εντολών."
 
 #: C/gnect.xml:129(para)
 msgid ""
@@ -232,26 +248,34 @@ msgid ""
 "This document describes version 2.8 of <application>Four-in-a-Row</"
 "application>."
 msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> συμπεριλαμβάνεται στο πακέτο "
+"<filename>GNOME-games</filename>, το οποίο είναι μέρος του γραφικού "
+"περιβάλλοντος GNOME. Αυτό το έγγραφο περιγράφει την έκδοση 2.8 του "
+"<application>Τέσσερα στη σειρά</application>"
 
 #: C/gnect.xml:135(para)
+#, fuzzy
 msgid ""
 "Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
 "link> support with two human players in hotseat or network mode."
-msgstr ""
+msgstr "Το Τέσσερα στη σειρά "
 
 #: C/gnect.xml:149(title)
 msgid "Basic Usage"
-msgstr ""
+msgstr "Βασική χρήση"
 
 #: C/gnect.xml:155(title)
 msgid "Playing Four-in-a-Row"
-msgstr ""
+msgstr "Παίζοντας το Τέσσερα στη σειρά"
 
 #: C/gnect.xml:157(para)
 msgid ""
 "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
 "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
 msgstr ""
+"Για να ξεκινήσετε ένα νέο παιχνίδι του Τέσσερα στη σειρά επιλέξτε "
+"<menuchoice><guimenu>Παιχνίδι</guimenu><guimenuitem>Νέο παιχνίδι</"
+"guimenuitem></menuchoice>."
 
 #: C/gnect.xml:161(para)
 msgid ""
@@ -260,6 +284,10 @@ msgid ""
 "about to be played. Each move consists of dropping a marble in one of the "
 "columns. The marble lands on the topmost empty row of the chosen column."
 msgstr ""
+"Το <interface>ταμπλό παιχνιδιού</interface> αποτελείται από εφτά στήλες και "
+"έξι σειρές. Πάνω από αυτές, μια ειδική σειρά δείχνει τον τρέχων παίχτη και "
+"τον επόμενο βώλο. Κάθε κίνηση αποτελείται από την ρίψη ενός βώλου σε μια από "
+"τις στήλες. Ο βώλος πάει στην πρώτη κενή σειρά της επιλεγμένης στήλης."
 
 #: C/gnect.xml:166(para)
 msgid ""
@@ -268,10 +296,14 @@ msgid ""
 "it in place with the down arrow key. Your marble will drop into the topmost "
 "empty row of that column."
 msgstr ""
+"Για να κάνετε μια κίνηση, κάντε κλικ σε μια στήλη με το ποντίκι. Για να "
+"παίξετε με το πληκτρολόγιο, μετακινήστε τον βώλο στην πρώτη γραμμή με το "
+"αριστερό και το δεξί βέλος, και ρίξτε το με το κάτω βέλος. Ο βώλος σας θα "
+"πέσει στην πρώτη κενή σειρά αυτής της στήλης."
 
 #: C/gnect.xml:177(phrase) C/gnect.xml:179(para)
 msgid "Four-in-a-Row's Main Window"
-msgstr ""
+msgstr "Το κεντρικό παράθυρο του Τέσσερα στη σειρά"
 
 #: C/gnect.xml:182(para)
 msgid ""
@@ -279,10 +311,13 @@ msgid ""
 "or her marbles horizontally, vertically or diagonally. If the board fills up "
 "without a win, the game ends in a draw."
 msgstr ""
+"Το παιχνίδι κερδίζεται όταν ένας από τους δύο παίχτες καταφέρει να "
+"ευθυγραμμίσει τέσσερις από τους βώλους του οριζοντίως, καθέτως ή διαγωνίως. "
+"Αν το ταμπλό γεμίσει χωρίς κάποιον νικητή, το παιχνίδι τελειώνει με ισοπαλία."
 
 #: C/gnect.xml:193(title)
 msgid "Commands"
-msgstr ""
+msgstr "Εντολές"
 
 #. id for removed section
 #: C/gnect.xml:196(para)
@@ -294,6 +329,13 @@ msgid ""
 "computer's last move and then yours. Repeating this will return the board to "
 "its initial state."
 msgstr ""
+"Για να πάρετε πίσω μια κίνηση, επιλέξτε "
+"<menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>Z</keycap></"
+"keycombo></shortcut><guimenuitem>Αναίρεση κίνησης</guimenuitem></"
+"menuchoice>. Αν παίζετε εναντίον κάποιου φίλου, αυτό θα αναιρέσει μια "
+"κίνηση, Αν παίζετε ενάντια στον υπολογιστή, αυτό θα αναιρέσει την τελευταία "
+"κίνηση του υπολογιστή και μετά την δική σας. Η επανάληψη του θα επαναφέρει "
+"το ταμπλό στην αρχική του κατάσταση."
 
 #: C/gnect.xml:208(para)
 msgid ""
@@ -302,17 +344,24 @@ msgid ""
 "get a suggestion from the computer for your next move. This is shown in the "
 "status bar."
 msgstr ""
+"Επιλέξτε <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
+"keycap></keycombo></shortcut><guimenuitem>Υπόδειξη</guimenuitem></"
+"menuchoice> για να πάρετε μια πρόταση από τον υπολογιστή για την επόμενή σας "
+"κίνηση. Αυτό εμφανίζεται στην γραμμή κατάστασης."
 
 #: C/gnect.xml:216(para)
+#, fuzzy
 msgid ""
 "Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
 "tally of wins and draws for the current playing session. The scores will be "
 "reset to zero if Player Selection is changed in Preferences."
 msgstr ""
+"Επιλέξτε <menuchoice><guimenuitem>Βαθμολογίες</guimenuitem></menuchoice> για "
+"να εμφανίσετε"
 
 #: C/gnect.xml:231(title)
 msgid "Preferences"
-msgstr ""
+msgstr "Προτιμήσεις"
 
 #: C/gnect.xml:233(para)
 msgid ""
@@ -320,10 +369,14 @@ msgid ""
 "from the <guimenu>Settings</guimenu> menu. This opens the "
 "<interface>Preferences Dialog</interface>."
 msgstr ""
+"Για να αλλάξετε τις ρυθμίσεις του παιχνιδιού, επιλέξτε "
+"<guimenuitem>Προτιμήσεις</guimenuitem> από το μενού <guimenu>Ρυθμίσεις</"
+"guimenu>. Αυτό ανοίγει τον <interface>Διάλογο προτιμήσεων</interface>."
 
 #: C/gnect.xml:247(term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
 msgstr ""
+"<guilabel>Πρώτος παίχτης</guilabel> και <guilabel>Δεύτερος παίχτης</guilabel>"
 
 #: C/gnect.xml:252(para)
 msgid ""
@@ -331,29 +384,39 @@ msgid ""
 "playing and, if it is the computer, how hard they play. To play against a "
 "friend, select Human for both Player One and Player Two."
 msgstr ""
+"Αυτές οι δύο στήλες λένε στο <application>Τέσσερα στη σειρά</application> "
+"ποιοι παίζουν και, αν παίζει ο υπολογιστής, πόσο δύσκολα παίζει. Για να "
+"παίξετε ενάντια σε έναν φίλο σας, επιλέξτε Άνθρωπος και για τον πρώτο παίχτη "
+"και για τον δεύτερο."
 
 #: C/gnect.xml:262(guilabel)
 msgid "Theme"
-msgstr ""
+msgstr "Θέμα"
 
 #: C/gnect.xml:264(para)
 msgid ""
 "The theme menu lists available themes and lets you choose your favourite."
 msgstr ""
+"Το μενού Θέμα εμφανίζει τα διαθέσιμα θέματα και σας επιτρέπει να επιλέξετε "
+"το αγαπημένο σας."
 
 #: C/gnect.xml:272(guilabel)
 msgid "Enable Animation"
-msgstr ""
+msgstr "Ενεργοποίηση κίνησης εικόνων"
 
 #: C/gnect.xml:274(para)
 msgid "Here you can toggle the game's animation on or off."
 msgstr ""
+"Εδώ μπορείτε να ενεργοποιήσετε ή απενεργοποιήσετε την κίνηση των εικόνων του "
+"παιχνιδιού"
 
 #: C/gnect.xml:240(para)
 msgid ""
 "Configuration options in the <guilabel>Game</guilabel> tab are: <placeholder-"
 "1/>"
 msgstr ""
+"Οι διαθέσιμες ρυθμίσεις στην καρτέλα <guilabel>Παιχνίδι</guilabel> είναι: "
+"<placeholder-1/>"
 
 #: C/gnect.xml:282(para)
 msgid ""
@@ -361,10 +424,14 @@ msgid ""
 "controls. To change a control, double click the appropriate entry and then "
 "press the new key."
 msgstr ""
+"Τέλος υπάρχει η καρτέλα <guilabel>Ελέγχοι πληκτρολογίου</guilabel> για να "
+"αλλάξετε τους τα πλήκτρα χειρισμού του πληκτρολογίου. Για να αλλάξετε έναν "
+"χειρισμό, κάντε διπλό κλικ στην κατάλληλη καταχώρηση και μετά πιέστε το νέο "
+"πλήκτρο."
 
 #: C/gnect.xml:297(title)
 msgid "Creating New Themes"
-msgstr ""
+msgstr "Δημιουργία νέων θεμάτων"
 
 #: C/gnect.xml:299(para)
 msgid ""
@@ -372,10 +439,14 @@ msgid ""
 "<application>Four-in-a-Row</application>. It assumes you're familiar with "
 "basic text editing, graphics software and the command line."
 msgstr ""
+"Αυτή η ενότητα συμπεριλήφθηκε για την περίπτωση που θα θέλατε να φτιάξετε τα "
+"δικά σας θέματα για το <application>Τέσσερα στη σειρά</application>. "
+"Προϋποθέτει πως είστε εξοικειωμένος με την βασική επεξεργασία κειμένου, με "
+"λογισμικό γραφικών και με την γραμμή εντολών."
 
 #: C/gnect.xml:307(title)
 msgid "Images"
-msgstr ""
+msgstr "Εικόνες"
 
 #: C/gnect.xml:309(para)
 msgid ""
@@ -385,27 +456,27 @@ msgstr ""
 
 #: C/gnect.xml:316(para)
 msgid "Player One's marble as it appears on the game board"
-msgstr ""
+msgstr "Ο βώλος του πρώτου παίχτη όπως εμφανίζεται στο ταμπλό παιχνιδιού"
 
 #: C/gnect.xml:319(para)
 msgid "Player Two's marble as it appears on the game board"
-msgstr ""
+msgstr "Ο βώλος του δεύτερου παίχτη όπως εμφανίζεται στο ταμπλό παιχνιδιού"
 
 #: C/gnect.xml:322(para)
 msgid "The game board's background"
-msgstr ""
+msgstr "Το παρασκήνιο του ταμπλό παιχνιδιού"
 
 #: C/gnect.xml:325(para)
 msgid "The top row's background"
-msgstr ""
+msgstr "Το παρασκήνιο της πρώτης σειράς"
 
 #: C/gnect.xml:328(para)
 msgid "Player One's marble as it appears on the top row"
-msgstr ""
+msgstr "Ο βώλος του πρώτου παίχτη όπως εμφανίζεται στην πρώτη σειρά"
 
 #: C/gnect.xml:331(para)
 msgid "Player Two's marble as it appears on the top row"
-msgstr ""
+msgstr "Ο βώλος του δεύτερου παίχτη όπως εμφανίζεται στην πρώτη σειρά"
 
 #: C/gnect.xml:336(title)
 msgid "An example tile set"
@@ -423,7 +494,7 @@ msgstr ""
 
 #: C/gnect.xml:350(title) C/gnect.xml:361(title) C/gnect.xml:377(title)
 msgid "TIP"
-msgstr ""
+msgstr "ΣΥΜΒΟΥΛΗ"
 
 #: C/gnect.xml:351(para)
 msgid ""
@@ -474,6 +545,11 @@ msgid ""
 "directory (which will depend on your particular system), but your home "
 "directory's probably a better idea."
 msgstr ""
+"Το τελευταίο βήμα είναι να βάλετε τις εικόνες σας κάπου ώστε το "
+"<application>Τέσσερα στη σειρά</application> να μπορεί να τις βρει. Θα "
+"μπορούσατε να τις βάλετε στον κατάλογο εγκατάστασης του Τέσσερα στη σειρά "
+"(που αλλάζει από σύστημα σε σύστημα), αλλά ο αρχικός σας κατάλογος είναι "
+"καλύτερη ιδέα."
 
 #: C/gnect.xml:405(para)
 msgid ""
@@ -482,10 +558,14 @@ msgid ""
 "names are important, as <application>Four-in-a-Row</application> won't look "
 "anywhere else."
 msgstr ""
+"Δημιουργήστε τον κατάλογο <filename class=\"directory\">~/.gnect</filename>, "
+"και έναν κατάλογο <filename class=\"directory\">~/.gnect/pixmaps</filename>. "
+"Αυτά τα ονόματα είναι σημαντικά, αφού το <application>Τέσσερα στη σειρά</"
+"application> δεν θα ψάξει πουθενά αλλού."
 
 #: C/gnect.xml:412(para)
 msgid "Copy your image(s) into the pixmaps directory."
-msgstr ""
+msgstr "Αντιγράψτε τις εικόνες σας στον κατάλογο pixmaps."
 
 #: C/gnect.xml:416(para)
 msgid ""
@@ -494,14 +574,18 @@ msgid ""
 "has none, you'll find your new theme listed the <interface>Preferences "
 "Dialog</interface>."
 msgstr ""
+"Αν εκκινήσετε το <application>Τέσσερα στη σειρά</application> από την γραμμή "
+"εντολών, θα σας δώσει ενδείξεις για κάθε τυχόν πρόβλημα που έχει με το νέο "
+"σας θέμα. Αν δεν έχει κανένα, θα δείτε το νέο σας θέμα να εμφανίζεται στον "
+"<interface>Διάλογο προτιμήσεων</interface>."
 
 #: C/gnect.xml:423(para)
 msgid "Have fun!"
-msgstr ""
+msgstr "Διασκεδάστε!"
 
 #: C/gnect.xml:10(title)
 msgid "Network Games"
-msgstr ""
+msgstr "Δικτυακά παιχνίδια"
 
 #: C/gnect.xml:11(para)
 msgid ""
@@ -522,7 +606,7 @@ msgstr ""
 
 #: C/gnect.xml:24(title)
 msgid "Connecting to a Four-in-a-Row network server"
-msgstr ""
+msgstr "Σύνδεση σε έναν δικτυακό εξυπηρετητή Τέσσερα στη σειρά"
 
 #: C/gnect.xml:25(para)
 msgid ""
@@ -530,6 +614,10 @@ msgid ""
 "network game. This dialog allows you to select a server to connect to, and "
 "the username that you will have while connected to that server."
 msgstr ""
+"Ο διάλογος σύνδεσης του Τέσσερα στη σειρά εμφανίζεται αρχικά όταν ξεκινάτε "
+"ένα νέο δικτυακό παιχνίδι. Αυτός ο διάλογος σας επιτρέπει να επιλέξετε έναν "
+"εξυπηρετητή για να συνδεθείτε, και το όνομα χρήστη που θα έχετε όσο είστε "
+"συνδεδεμένος σε αυτόν τον εξυπηρετητή."
 
 #: C/gnect.xml:31(para)
 msgid ""
@@ -538,6 +626,11 @@ msgid ""
 "while a normal login account allows you to reserve your own username which "
 "is protected by the password that you choose."
 msgstr ""
+"Μπορείτε να συνδεθείτε σε ένα εξυπηρετητή είτε με απλό λογαριασμό επισκέπτη "
+"(guest) είτε με λογαριασμό εγγεγραμμένου χρήστη. Οι λογαριασμοί επισκέπτη "
+"σας επιτρέπουν να συνδέεστε ανώνυμα, ενώ ένας κανονικός λογαριασμός σας "
+"επιτρέπει να διατηρείτε το όνομα χρήστη το οποίο προστατεύεται από τον "
+"κωδικό πρόσβασης που θα δώσετε."
 
 #: C/gnect.xml:38(para)
 msgid ""
@@ -549,20 +642,30 @@ msgid ""
 "guimenuitem> option, and enter the username and password that you have "
 "chosen."
 msgstr ""
+"Μπορείτε να επιλέξετε την επιλογή <guimenuitem>Σύνδεση επισκέπτη</"
+"guimenuitem> όταν θέλετε έναν ανώνυμο λογαριασμό επισκέπτη. Αν θέλετε να "
+"δημιουργήσετε ένα καινούριο λογαριασμό εισόδου, επιλέξτε το "
+"<guimenuitem>Σύνδεση για πρώτη φορά</guimenuitem>, με το όνομα χρήστη, τον "
+"κωδικό πρόσβασης και το email της επιλογής σας. Αν έχετε ήδη δημιουργήσει "
+"λογαριασμό, μπορείτε να συνδεθείτε επιλέγοντας την <guimenuitem>Κανονική "
+"σύνδεση</guimenuitem>, και να βάλετε το όνομα χρήστη και τον κωδικό "
+"πρόσβασης που ήδη επιλέξατε."
 
 #: C/gnect.xml:46(para)
 msgid ""
 "To connect to a server, click on the <guimenuitem>Connect</guimenuitem> "
 "button."
 msgstr ""
+"Για να συνδεθείτε σε ένα εξυπηρετητή πατήστε στο κουμπί "
+"<guimenuitem>Σύνδεση</guimenuitem>."
 
 #: C/gnect.xml:50(title) C/gnect.xml:57(phrase)
 msgid "The Four-in-a-Row network connection dialog."
-msgstr ""
+msgstr "Ο διάλογος δικτυακής σύνδεσης του Τέσσερα στη σειρά."
 
 #: C/gnect.xml:65(title)
 msgid "Joining a game room"
-msgstr ""
+msgstr "Είσοδος σε δωμάτιο παιχνιδιών"
 
 #: C/gnect.xml:66(para)
 msgid ""
@@ -595,10 +698,12 @@ msgid ""
 "It is possible to chat with other players in network games. Ask for advice "
 "or help playing the games, but please be polite against other players."
 msgstr ""
+"It is possible to chat with other players in network games. Ask for advice "
+"or help playing the games, but please be polite against other players."
 
 #: C/gnect.xml:97(title)
 msgid "Waiting for other players to join the game"
-msgstr ""
+msgstr "Αναμονή για άλλους παίκτες να συνδεθούν στον παιχνίδι."
 
 #: C/gnect.xml:98(para)
 msgid ""
@@ -608,6 +713,11 @@ msgid ""
 "joined the game. The game will begin immediately when the total number of "
 "players in the the game have been reached."
 msgstr ""
+"Όταν θα έχετε συνδεθεί επιτυχώς σε ένα ταμπλό παιχνιδιού, τότε πρέπει να "
+"περιμένετε μέχρι να συνδεθούν επαρκείς παίκτες. Το μενού <guimenuitem>Λίστα "
+"παικτών</guimenuitem> σας επιτρέπει να δείτε μια λίστα με τους παίκτες που "
+"έχουν συνδεθεί το παιχνίδι. Το παιχνίδι θα ξεκινήσει όταν ο συνολικός "
+"αριθμός των παικτών έχει συμπληρωθεί."
 
 #: C/gnect.xml:107(title)
 msgid "Playing multiplayer Four-in-a-Row games"
@@ -622,15 +732,19 @@ msgid ""
 msgstr ""
 
 #: C/gnect.xml:113(para)
+#, fuzzy
 msgid ""
 "Once a player has won, the game ends and you can return to the initial "
 "network game screen. Then you can play yet another game of addictive Four-in-"
 "a-Row multiplayer!"
 msgstr ""
+"Όταν νικήσει ένας παίχτης, το παιχνίδι τελειώνει και μπορείτε να επιστρέψετε "
+"στην αρχική οθόνη του δικτυακού παιχνιδιού. Έπειτα, μπορείτε να παίξετε και "
+"άλλη παρτίδα του εθιστικού "
 
 #: C/gnect.xml:445(title)
 msgid "Known Bugs and Limitations"
-msgstr ""
+msgstr "Γνωστά προβλήματα και περιορισμοί"
 
 #: C/gnect.xml:447(para)
 msgid ""
@@ -639,7 +753,7 @@ msgstr ""
 
 #: C/gnect.xml:460(title)
 msgid "Authors"
-msgstr ""
+msgstr "Δημιουργοί"
 
 #: C/gnect.xml:462(para)
 msgid ""
@@ -648,6 +762,11 @@ msgid ""
 "email>). Various others have taken the time to help in many ways since work "
 "on <application>Four-in-a-Row</application> began."
 msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> γράφτηκε από τον Timothy "
+"Musson (<email>trmusson@ihug.co.nz</email>) και τον David Neary "
+"(<email>bolsh@gimp.org</email>). Διάφοροι άλλοι έχουν αφιερώσει χρόνο για να "
+"βοηθήσουν με αρκετούς τρόπους από τότε που η δουλειά στο "
+"<application>Τέσσερα στη σειρά</application> άρχισε."
 
 #: C/gnect.xml:467(para)
 msgid ""
@@ -660,7 +779,7 @@ msgstr ""
 
 #: C/gnect.xml:474(para)
 msgid "This manual was written by Timothy Musson."
-msgstr ""
+msgstr "Αυτό το εγχειρίδιο γράφτηκε από τον Timothy Musson."
 
 # Additional message found in documentation.
 #: C/gnect.xml:477(para)
@@ -669,10 +788,13 @@ msgid ""
 "manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
 "type=\"help\">document</ulink>."
 msgstr ""
+"Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με αυτήν την "
+"εφαρμογή ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες σε αυτό το <ulink url="
+"\"ghelp:gnome-feedback\" type=\"help\">έγγραφο</ulink>."
 
 #: C/gnect.xml:502(title)
 msgid "License"
-msgstr ""
+msgstr "Άδεια χρήσης"
 
 #: C/gnect.xml:504(para)
 msgid ""
@@ -681,8 +803,11 @@ msgid ""
 "published by the Free Software Foundation; either version 2 of the License, "
 "or (at your option) any later version."
 msgstr ""
+"Αυτό το πρόγραμμα είναι ελεύθερο λογισμικό. Μπορείτε να το αναδιανέμετε ή/"
+"και να το τροποποιείτε μέσω των όρων της<citetitle> GNU General Public "
+"License</citetitle> όπως αυτή δημοσιεύτηκε από το  Free Software Foundation, "
+"έκδοση 2, ή (προαιρετικά) οποιαδήποτε νεότερη έκδοση."
 
-# Additional message found in documentation.
 #: C/gnect.xml:512(para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
@@ -690,6 +815,11 @@ msgid ""
 "FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
 "License</citetitle> for more details."
 msgstr ""
+"Το πρόγραμμα αυτό διανέμεται με την ελπίδα ότι θα αποδειχθεί χρήσιμο, παρόλα "
+"αυτά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ — χωρίς ούτε και την σιωπηρή εγγύηση "
+"ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ. Για περισσότερες "
+"λεπτομέρειες ανατρέξτε στη <citetitle>Γενική ‘Αδεια Δημόσιας Χρήσης GNU (GPL)"
+"</citetitle>."
 
 #: C/gnect.xml:519(para)
 msgid ""
@@ -702,6 +832,15 @@ msgid ""
 "<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
 "postcode><country>USA</country></address>"
 msgstr ""
+"Ένα αντίγραφο της Γενικής Δημόσιας Άδειας Χρήσης (<citetitle>GNU General "
+"Public License</citetitle>) συμπεριλαμβάνεται ως παράρτημα στον  "
+"<citetitle>Οδηγό Χρηστών GNOME </citetitle>. Μπορείτε επίσης να αποκτήσετε "
+"ένα αντίγραφο της Γενικής Δημόσιας Άδειας Χρήσης (<citetitle>GNU General "
+"Public License</citetitle>) από το Free Software Foundation επισκεπτόμενοι "
+"<ulink url=\"http://www.fsf.org\" type=\"http\"> την ιστοσελίδα τους</ulink> "
+"ή γράφωντας τους στο<address> Free Software Foundation, Inc. <street>59 "
+"Temple Place</street> - Suite 330 <city>Boston</city>, <state>MA</"
+"state><postcode>02111-1307</postcode><country>USA</country></address>"
 
 # άλλαξα λίγο την διατύπωση
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
@@ -709,6 +848,54 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
-" Όνομα Επώνυμο <myemail@gnome.gr>\n"
+"Φώτης Τσάμης <ftsamis@gmail.com>\n"
 "\n"
 "Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.gnome.gr/"
+
+#~ msgid ""
+#~ "This program is distributed under the terms of the GNU General Public "
+#~ "license as published by the Free Software Foundation; either version 2 of "
+#~ "the License, or (at your option) any later version. A copy of this "
+#~ "license can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</"
+#~ "ulink>, or in the file COPYING included with the source code of this "
+#~ "program."
+#~ msgstr ""
+#~ "Αυτό το πρόγραμμα διανέμεται υπό τους όρους της  Γενικής Άδειας Δημόσιας "
+#~ "Χρήσης GNU (GPL), όπως αυτή έχει δημοσιευτεί από το Ίδρυμα Ελεύθερου "
+#~ "Λογισμικού (FSS) — είτε της έκδοσης 2 της ‘Αδειας, είτε (κατ' επιλογήν "
+#~ "σας) οποιασδήποτε μεταγενέστερης έκδοσης. Αντίγραφο της άδειας είναι "
+#~ "διαθέσιμο στον ακόλουθο  <ulink url=\"ghelp:gpl\" type=\"help\">σύνδεσμο</"
+#~ "ulink>, ή στο αρχείο COPYING-DOCS που διανέμεται μαζί με τον πηγαίο "
+#~ "κώδικα αυτού του προγράμματος."
+
+#~ msgid ""
+#~ "This program and tile artwork is free software; you can redistribute it "
+#~ "and/or modify it under the terms of the <citetitle>GNU General Public "
+#~ "License</citetitle> as published by the Free Software Foundation; either "
+#~ "version 2 of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Αυτό το πρόγραμμα είναι ελεύθερο λογισμικό· επιτρέπεται η αναδιανομή ή/"
+#~ "και τροποποίησή του υπό τους όρους της  <citetitle>Γενικής Άδειας "
+#~ "Δημόσιας Χρήσης GNU (GPL)</citetitle>, όπως αυτή έχει δημοσιευτεί από το "
+#~ "Ίδρυμα Ελεύθερου Λογισμικού (FSS) — είτε της έκδοσης 2 της ‘Αδειας, είτε "
+#~ "(κατ' επιλογήν σας) οποιασδήποτε μεταγενέστερης έκδοσης. "
+
+#~ msgid ""
+#~ "A copy of the <citetitle>GNU General Public License</citetitle> is "
+#~ "included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. "
+#~ "You may also obtain a copy of the <citetitle>GNU General Public License</"
+#~ "citetitle> from the Free Software Foundation by visiting <ulink type="
+#~ "\"http\" url=\"http://www.fsf.org\">their Web site</ulink> or by writing "
+#~ "to <address> Free Software Foundation, Inc. <street>59 Temple Place</"
+#~ "street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-"
+#~ "1307</postcode><country>USA</country></address>"
+#~ msgstr ""
+#~ "Αντίγραφο της <citetitle>Γενικής Άδειας Δημόσιας Χρήσης GNU (GPL)</"
+#~ "citetitle> περιλαμβάνεται ως παράρτημα στον <citetitle>Οδηγό χρήστη "
+#~ "GNOME</citetitle>. Επίσης, αντίγραφο της <citetitle>Γενικής Άδειας "
+#~ "Δημόσιας Χρήσης GNU (GPL)</citetitle> μπορείτε να παραλάβετε από το  "
+#~ "Ίδρυμα Ελεύθερου Λογισμικού (FSS), είτε επισκεπτόμενοι τον <ulink type="
+#~ "\"http\" url=\"http://www.fsf.org\">ιστοχώρο</ulink> του, είτε γράφοντας "
+#~ "στη διεύθυνση <address> Free Software Foundation, Inc. <street>51 "
+#~ "Franklin Street, Fifth Floor</street> <city>Boston</city>, <state>MA</"
+#~ "state><postcode>02110-1301</postcode><country>USA</country></address>."
