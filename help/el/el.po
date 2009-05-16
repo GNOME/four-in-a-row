@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packagename\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-14 00:58+0000\n"
-"PO-Revision-Date: 2009-05-15 22:11+0300\n"
+"POT-Creation-Date: 2009-05-15 23:17+0000\n"
+"PO-Revision-Date: 2009-05-16 17:52+0300\n"
 "Last-Translator: Fotis Tsamis <ftsamis@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
@@ -254,11 +254,13 @@ msgstr ""
 "<application>Τέσσερα στη σειρά</application>"
 
 #: C/gnect.xml:135(para)
-#, fuzzy
 msgid ""
 "Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
 "link> support with two human players in hotseat or network mode."
-msgstr "Το Τέσσερα στη σειρά "
+msgstr ""
+"Το Τέσσερα στη σειρά υποστηρίζει επίσης <link linkend=\"network-games"
+"\">πολλούς παίχτες</link>, με δύο πραγματικούς παίχτες που παίζουν στον ίδιο "
+"υπολογιστή είτε με σειρά, ή μέσω δικτύου."
 
 #: C/gnect.xml:149(title)
 msgid "Basic Usage"
@@ -350,14 +352,15 @@ msgstr ""
 "κίνηση. Αυτό εμφανίζεται στην γραμμή κατάστασης."
 
 #: C/gnect.xml:216(para)
-#, fuzzy
 msgid ""
 "Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
 "tally of wins and draws for the current playing session. The scores will be "
 "reset to zero if Player Selection is changed in Preferences."
 msgstr ""
 "Επιλέξτε <menuchoice><guimenuitem>Βαθμολογίες</guimenuitem></menuchoice> για "
-"να εμφανίσετε"
+"να εμφανίσετε ένα πίνακα με τις νίκες και τις ισοπαλίες για την τρέχουσα "
+"συνεδρία παιχνιδιού. Οι βαθμολογίες θα επαναφερθούν σε μηδέν αν η Επιλογή "
+"παίχτη αλλαχτεί στις Προτιμήσεις."
 
 #: C/gnect.xml:231(title)
 msgid "Preferences"
@@ -453,6 +456,9 @@ msgid ""
 "<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
 "equal size, lined up horizontally. From left to right:"
 msgstr ""
+"Τα σύνολα πλακιδίων του <application>Τέσσερα στη σειρά</application> "
+"περιέχουν έξι πλακίδια ίδιου μεγέθους, ευθυγραμμισμένα οριζοντίως. Από "
+"αριστερά προς δεξιά:"
 
 #: C/gnect.xml:316(para)
 msgid "Player One's marble as it appears on the game board"
@@ -480,17 +486,20 @@ msgstr "Ο βώλος του δεύτερου παίχτη όπως εμφανί
 
 #: C/gnect.xml:336(title)
 msgid "An example tile set"
-msgstr ""
+msgstr "Ένα παράδειγμα συνόλου πλακιδίων"
 
 #: C/gnect.xml:338(screeninfo)
 msgid "This image shows the six tiles in a tile set"
-msgstr ""
+msgstr "Αυτή η εικόνα δείχνει τα έξι πλακίδια σε ένα σύνολο πλακιδίων"
 
 #: C/gnect.xml:343(para)
 msgid ""
 "Tiles three and four will be repeated over the game board and top row unless "
 "a full window background image is specified in the theme file."
 msgstr ""
+"Τα πλακίδια τρία και τέσσερα θα επαναλαμβάνονται στο ταμπλό του παιχνιδιού "
+"και στην πρώτη σειρά εκτός αν μια εικόνα παρασκηνίου πλήρους παραθύρου έχει "
+"οριστεί στο αρχείο θέματος."
 
 #: C/gnect.xml:350(title) C/gnect.xml:361(title) C/gnect.xml:377(title)
 msgid "TIP"
@@ -503,6 +512,11 @@ msgid ""
 "through. The third and fourth tiles should be solid, with no transparency, "
 "even if you'll be using a full window background image with your theme."
 msgstr ""
+"Η μορφή PNG προτείνεται για σύνολα πλακιδίων. Το πρώτο, δεύτερο, πέμπτο και "
+"έκτο πλακίδιο πρέπει να περιέχει διαφάνεια αν θέλετε να φαίνεται μέσα από "
+"αυτό το παρασκήνιο. Το τρίτο και τέταρτο πλακίδιο πρέπει να είναι συμπαγές, "
+"χωρίς διαφάνεια, ακόμη και αν χρησιμοποιείτε μια εικόνα παρασκηνίου πλήρους "
+"παραθύρου με το θέμα σας."
 
 #: C/gnect.xml:362(para)
 msgid ""
@@ -510,6 +524,10 @@ msgid ""
 "sets that come with <application>Four-in-a-Row</application> use square "
 "tiles measuring 50 pixels by 50 pixels."
 msgstr ""
+"Τα πλακίδια μπορεί να είναι κυκλικά ή ορθογώνια, και σε όποιο μέγεθος "
+"θέλετε. Τα περισσότερα σύνολα πλακιδίων που έρχονται με το "
+"<application>Τέσσερα στη σειρά</application> χρησιμοποιούν ορθογώνια "
+"πλακίδια με διαστάσεις 50 pixels επί 50 pixels."
 
 #: C/gnect.xml:369(para)
 msgid ""
@@ -518,6 +536,11 @@ msgid ""
 "tiles, including the top row, so the ideal background image for your tile "
 "set measures 350 by 350 pixels."
 msgstr ""
+"Για μια εικόνα παρασκηνίου πλήρους παραθύρου, πρέπει να γίνει λίγη "
+"περισσότερη δουλειά. Ας πούμε πως τα πλακίδια σας έχουν διαστάσεις 50 επί 50 "
+"pixels έκαστο. Η περιοχή εμφάνισης του παιχνιδιού έχει διαστάσεις 7 επί 7 "
+"πλακίδια, συμπεριλαμβανομένης της πρώτης σειράς, οπότε η ιδανική εικόνα "
+"παρασκηνίου για το σύνολο πλακιδίων σας, έχει διαστάσεις 350 επί 350 pixels."
 
 #: C/gnect.xml:378(para)
 msgid ""
@@ -527,16 +550,23 @@ msgid ""
 "background image, just by having a large and a small version of your tile "
 "set."
 msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> θα κλιμακώσει αυτόματα την "
+"εικόνα παρασκηνίου αν δεν ταιριάζει με το σύνολο πλακιδίων. Αυτό σημαίνει "
+"πως μπορείτε να κάνετε \"μεγάλη\" και \"μικρή\" έκδοση του θέματος σας, "
+"χρησιμοποιώντας και οι δύο την ίδια εικόνα παρασκηνίου, απλώς έχοντας μια "
+"μεγάλη και μια μικρή έκδοση του συνόλου πλακιδίων σας."
 
 #: C/gnect.xml:386(para)
 msgid ""
 "So, you now have a tile set and perhaps a background image to go with it. "
 "The next step is to put them in the right place."
 msgstr ""
+"Λοιπόν, τώρα έχετε ένα σύνολο πλακιδίων και ίσως και μια εικόνα παρασκηνίου "
+"για να πάει με αυτό. Το επόμενο βήμα είναι να τα βάλετε στο σωστό μέρος."
 
 #: C/gnect.xml:396(title)
 msgid "Putting It Together"
-msgstr ""
+msgstr "Τοποθετώντας τα μαζί"
 
 #: C/gnect.xml:398(para)
 msgid ""
@@ -596,6 +626,13 @@ msgid ""
 "of servers to connect to, see the <ulink type=\"http\" url=\"http://www."
 "gnome.org/projects/gnome-games/\">gnome-games website</ulink>."
 msgstr ""
+"Το Τέσσερα στη σειρά υποστηρίζει δικτυακά παιχνίδια με πολλούς παίχτες που "
+"παρέχονται από την <ulink type=\"http\" url=\"http://www.ggzgamingzone.org"
+"\">GGZ Gaming Zone</ulink>. Με την σύνδεσή σας σε έναν διαδικτυακό "
+"εξυπηρετητή του Τέσσερα στη σειρά, μπορείτε να έρθετε αντιμέτωποι με άλλους "
+"παίχτες σε παιχνίδια με πολλούς παίχτες. Για νέα, ενημερώσεις και μια λίστα "
+"με εξυπηρετητές για να συνδεθείτε, δείτε τον <ulink type=\"http\" url="
+"\"http://www.gnome.org/projects/gnome-games/\">Ιστότοπο gnome-games</ulink>."
 
 #: C/gnect.xml:18(para)
 msgid ""
@@ -603,6 +640,9 @@ msgid ""
 "<menuchoice><guimenu>Game</guimenu><guimenuitem>Network Game</guimenuitem></"
 "menuchoice> on the Four-in-a-Row menu."
 msgstr ""
+"Για να ξεκινήσετε το παιχνίδι με πολλούς παίχτες του Τέσσερα στη σειρά, "
+"επιλέξτε <menuchoice><guimenu>Παιχνίδι</guimenu><guimenuitem>Δικτυακό "
+"παιχνίδι</guimenuitem></menuchoice> στο μενού του Τέσσερα στη σειρά."
 
 #: C/gnect.xml:24(title)
 msgid "Connecting to a Four-in-a-Row network server"
@@ -678,12 +718,24 @@ msgid ""
 "on the right shows you the number of available seats, which means the number "
 "of players that can join the game table."
 msgstr ""
+"Μόλις συνδεθείτε επιτυχώς σε έναν εξυπηρετητή, μπορείτε να επιλέξετε σε ποιο "
+"δωμάτιο παιχνιδιού θα συνδεθείτε. Για να παίξετε ένα παιχνίδι Τέσσερα στη "
+"σειρά με πολλούς παίχτες, επιλέξτε το δωμάτιο του Τέσσερα στη σειρά. Αν "
+"θέλετε να ξεκινήσετε το δικό σας παιχνίδι, κάντε κλικ στο κουμπί Εκκίνηση. "
+"Αυτό θα δημιουργήσει ένα νέο πίνακα στον οποίο άλλοι παίχτες μπορούν να "
+"συμμετέχουν σε ένα παιχνίδι εναντίον σας, Αν υπάρχουν άλλα παιχνίδια που "
+"έχουν ήδη ξεκινήσει, μπορείτε να κάνετε διπλό κλικ σε έναν υπάρχων πίνακα "
+"παιχνιδιού για να συμμετάσχετε. Η λίστα των πινάκων παιχνιδιού στα δεξιά, "
+"σας δείχνει τον αριθμό των διαθέσιμων θέσεων, που σημαίνει τον αριθμό των "
+"παιχτών που μπορούν να συμμετάσχουν στον πίνακα παιχνιδιού."
 
 #: C/gnect.xml:73(title) C/gnect.xml:80(phrase)
 msgid ""
 "This Four-in-a-Row network dialog allows you to join a game room to find "
 "other players."
 msgstr ""
+"Αυτός ο δικτυακός διάλογος του Τέσσερα στη σειρά σας επιτρέπει να συνδεθείτε "
+"σε ένα δωμάτιο παιχνιδιών για να βρείτε άλλους παίχτες."
 
 #: C/gnect.xml:85(para)
 msgid ""
@@ -692,6 +744,11 @@ msgid ""
 "number of players for the game. Once the total number of seats have been "
 "taken, then no more players are allowed to join that game table."
 msgstr ""
+"Όταν δημιουργείτε ένα νέο πίνακα για τα παιχνίδια του Τέσσερα στη σειρά, "
+"ένας διάλογος προτιμήσεων εμφανίζεται, που σας επιτρέπει να τροποποιήσετε το "
+"παιχνίδι, όπως ο ορισμός του ελάχιστου αριθμού παιχτών για το παιχνίδι. Όταν "
+"ο συνολικός αριθμός των θέσεων έχει συμπληρωθεί, τότε δεν επιτρέπεται η "
+"είσοδος άλλων παιχτών σε αυτό τον πίνακα παιχνιδιού."
 
 #: C/gnect.xml:90(para)
 msgid ""
@@ -721,7 +778,7 @@ msgstr ""
 
 #: C/gnect.xml:107(title)
 msgid "Playing multiplayer Four-in-a-Row games"
-msgstr ""
+msgstr "Παίζοντας παιχνίδια Τέσσερα στη σειρά με πολλούς παίχτες "
 
 #: C/gnect.xml:108(para)
 msgid ""
@@ -730,9 +787,13 @@ msgid ""
 "This means that other strategies might possibly be better than when playing "
 "against AI players."
 msgstr ""
+"Τα παιχνίδια με πολλούς παίχτες του Τέσσερα στη σειρά έχουν λίγο πολύ τους "
+"ίδιους κανόνες με τα κανονικά παιχνίδια του Τέσσερα στη σειρά, με την "
+"εξαίρεση του ότι παίζετε ενάντια σε πραγματικούς παίχτες. Αυτό σημαίνει πως "
+"άλλες στρατηγικές πιθανόν να είναι καλύτερες σε σχέση με αυτές που "
+"χρησιμοποιείτε στο παιχνίδι ενάντια του υπολογιστή."
 
 #: C/gnect.xml:113(para)
-#, fuzzy
 msgid ""
 "Once a player has won, the game ends and you can return to the initial "
 "network game screen. Then you can play yet another game of addictive Four-in-"
@@ -740,7 +801,7 @@ msgid ""
 msgstr ""
 "Όταν νικήσει ένας παίχτης, το παιχνίδι τελειώνει και μπορείτε να επιστρέψετε "
 "στην αρχική οθόνη του δικτυακού παιχνιδιού. Έπειτα, μπορείτε να παίξετε και "
-"άλλη παρτίδα του εθιστικού "
+"άλλη παρτίδα του εθιστικού παιχνιδιού Τέσσερα στη σειρά με πολλούς παίχτες"
 
 #: C/gnect.xml:445(title)
 msgid "Known Bugs and Limitations"
@@ -750,6 +811,8 @@ msgstr "Γνωστά προβλήματα και περιορισμοί"
 msgid ""
 "Occasionally a marble-dropping animation doesn't look as smooth as it should."
 msgstr ""
+"Περιστασιακά η κινούμενη εικόνα της ρίψης των βώλων δεν εμφανίζεται τόσο "
+"ομαλή όσο θα έπρεπε"
 
 #: C/gnect.xml:460(title)
 msgid "Authors"
@@ -776,6 +839,12 @@ msgid ""
 "for allowing us to include his work, without which <application>Four-in-a-"
 "Row</application> wouldn't be nearly as worthwhile."
 msgstr ""
+"Το <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
+"\">Velena Engine</ulink>, Ο κύριος υπολογιστής-παίχτης του "
+"<application>Τέσσερα στη σειρά</application>, γράφτηκε από τον Giuliano "
+"Bertoletti. Του είμαστε ευγνώμονες που μας αφήνει να συμπεριλαμβάνουμε την "
+"δουλειά του, χωρίς την οποία, το <application>Τέσσερα στη σειρά</"
+"application> δεν θα ήταν τόσο σημαντικό."
 
 #: C/gnect.xml:474(para)
 msgid "This manual was written by Timothy Musson."
