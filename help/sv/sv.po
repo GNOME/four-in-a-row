@@ -104,8 +104,8 @@ msgid "Feedback"
 msgstr "Återkoppling"
 
 #: C/gnect.xml:95(para)
-msgid "To report a bug or make a suggestion regarding the Four-in-a-Row application or this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr "För att rapportera ett fel eller föreslå någonting angående programmet Fyra-i-rad eller den här handboken, följ anvisningarna på <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME:s återkopplingssida</ulink>."
+msgid "To report a bug or make a suggestion regarding the Four-in-a-Row application or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
+msgstr "För att rapportera ett fel eller föreslå någonting angående programmet Fyra-i-rad eller den här handboken, följ anvisningarna på <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME:s återkopplingssida</ulink>."
 
 #: C/gnect.xml:111(title)
 msgid "Introduction"
@@ -426,8 +426,8 @@ msgid "This manual was written by Timothy Musson."
 msgstr "Den här handboken skrevs av Timothy Musson."
 
 #: C/gnect.xml:477(para)
-msgid "To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
-msgstr "För att rapportera ett fel eller föreslå någonting angående det här programmet eller den här handboken, följ anvisningarna i det här <ulink url=\"ghelp:gnome-feedback\" type=\"help\">dokumentet</ulink>."
+msgid "To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
+msgstr "För att rapportera ett fel eller föreslå någonting angående det här programmet eller den här handboken, följ anvisningarna i det här <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">dokumentet</ulink>."
 
 #: C/gnect.xml:502(title)
 msgid "License"

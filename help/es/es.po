@@ -834,11 +834,11 @@ msgstr "Timothy Musson escribió este manual."
 #: C/gnect.xml:477(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
+"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" "
 "type=\"help\">document</ulink>."
 msgstr ""
 "Para informar sobre un fallo o hacer sugerencias sobre esta aplicación o "
-"este manual, siga las indicaciones en este <ulink url=\"ghelp:gnome-feedback"
+"este manual, siga las indicaciones en este <ulink url=\"ghelp:user-guide?feedback-bugs"
 "\" type=\"help\">documento</ulink>."
 
 #: C/gnect.xml:502(title)

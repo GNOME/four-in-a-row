@@ -209,7 +209,7 @@ msgid ""
 msgstr ""
 "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή "
 "Τέσσερα στη σειρά, ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στη <ulink "
-"url=\"ghelp:gnome-feedback\" type=\"help\">Σελίδα ανάδρασης GNOME</ulink>."
+"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Σελίδα ανάδρασης GNOME</ulink>."
 
 #: C/gnect.xml:111(title)
 msgid "Introduction"
@@ -854,12 +854,12 @@ msgstr "Αυτό το εγχειρίδιο γράφτηκε από τον Timoth
 #: C/gnect.xml:477(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
+"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" "
 "type=\"help\">document</ulink>."
 msgstr ""
 "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με αυτήν την "
 "εφαρμογή ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες σε αυτό το <ulink url="
-"\"ghelp:gnome-feedback\" type=\"help\">έγγραφο</ulink>."
+"\"ghelp:user-guide?feedback-bugs\" type=\"help\">έγγραφο</ulink>."
 
 #: C/gnect.xml:502(title)
 msgid "License"

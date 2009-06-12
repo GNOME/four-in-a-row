@@ -203,7 +203,7 @@ msgid ""
 "feedback\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
 "Lauko artzain-jokoaren aplikazioari buruzko akatsen berri emateko edo "
-"oharrak bidaltzeko, <ulink url=\"ghelp:gnome-feedback\" type=\"help"
+"oharrak bidaltzeko, <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help"
 "\">GNOMEra oharrak bidaltzeko orria</ulink>n aurkituko dituzu argibideak."
 
 #: C/gnect.xml:111(title)
@@ -839,11 +839,11 @@ msgstr "Eskuliburu hau Timothy Musson-ek idatzi zuen."
 #: C/gnect.xml:477(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
+"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" "
 "type=\"help\">document</ulink>."
 msgstr ""
 "Aplikazio honi buruzko akatsen berri emateko edo oharrak bidaltzeko, <ulink "
-"url=\"ghelp:gnome-feedback\" type=\"help\">dokumentua</ulink>n aurkituko "
+"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">dokumentua</ulink>n aurkituko "
 "dituzu argibideak."
 
 #: C/gnect.xml:502(title)
