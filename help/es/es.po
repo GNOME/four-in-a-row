@@ -1,13 +1,13 @@
 # translation of gnect.HEAD.po to Español
 # Jorge González <jorge.gonzalez.gonzalez@hispalinux.es>, 2007.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
 # spanish translation for gnect manual
 # traducción al español del manual de gnect
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2008-02-12 10:51+0000\n"
-"PO-Revision-Date: 2008-03-07 21:39+0100\n"
+"POT-Creation-Date: 2009-06-12 22:17+0000\n"
+"PO-Revision-Date: 2009-06-13 13:15+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,10 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnect.xml:174(None)
+#: C/gnect.xml:176(None)
 msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
-msgstr "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
+msgstr ""
+"@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -179,42 +180,46 @@ msgstr "Musson"
 msgid "trmusson@ihug.co.nz"
 msgstr "trmusson@ihug.co.nz"
 
-#: C/gnect.xml:79(revnumber)
+#: C/gnect.xml:81(revnumber)
 msgid "Four-in-a-Row Manual V2.8"
 msgstr "Manual de Cuatro en raya V2.8"
 
-#: C/gnect.xml:80(date)
+#: C/gnect.xml:82(date)
 msgid "September 2004"
 msgstr "Septiembre de 2004"
 
-#: C/gnect.xml:82(para)
+#: C/gnect.xml:84(para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 
-#: C/gnect.xml:90(releaseinfo)
+#: C/gnect.xml:92(releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-Row."
 msgstr "Este manual describe la versión 2.12 de Cuatro en raya."
 
-#: C/gnect.xml:94(title)
+#: C/gnect.xml:96(title)
 msgid "Feedback"
 msgstr "Comentarios"
 
-#: C/gnect.xml:95(para)
+#: C/gnect.xml:97(para)
+#| msgid ""
+#| "To report a bug or make a suggestion regarding the Four-in-a-Row "
+#| "application or this manual, follow the directions in the <ulink url="
+#| "\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
 msgid ""
 "To report a bug or make a suggestion regarding the Four-in-a-Row application "
-"or this manual, follow the directions in the <ulink url=\"ghelp:gnome-"
-"feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+"or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
+"feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
 "Para informar de un fallo o hacer alguna sugerencia sobre la aplicación "
 "Cuatro en raya o sobre este manual, siga las indicaciones en la <ulink url="
-"\"ghelp:user-guide?feedback\" type=\"help\">Página de comentarios de GNOME</"
-"ulink>."
+"\"ghelp:user-guide?feedback-bugs\" type=\"help\">Página de comentarios de "
+"GNOME</ulink>."
 
-#: C/gnect.xml:111(title)
+#: C/gnect.xml:113(title)
 msgid "Introduction"
 msgstr "Introducción"
 
-#: C/gnect.xml:113(para)
+#: C/gnect.xml:115(para)
 msgid ""
 "<application>Four-in-a-Row</application> is a four-in-a-row game for the "
 "GNOME Project. The object of the game is to build a line of four of your "
@@ -227,7 +232,7 @@ msgstr ""
 "construya su propia línea. Una línea puede ser horizontal, vertical o "
 "diagonal."
 
-#: C/gnect.xml:121(para)
+#: C/gnect.xml:123(para)
 msgid ""
 "To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
 "a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
@@ -239,7 +244,7 @@ msgstr ""
 "guisubmenu> del <guimenu>Menú principal</guimenu>, o escriba <command>gnect</"
 "command> en la línea de comandos."
 
-#: C/gnect.xml:129(para)
+#: C/gnect.xml:131(para)
 msgid ""
 "<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
 "games</filename> package, which is part of the GNOME desktop environment. "
@@ -251,7 +256,7 @@ msgstr ""
 "GNOME. Este documento describe la versión 2.8 de <application>Cuatro en "
 "raya</application>."
 
-#: C/gnect.xml:135(para)
+#: C/gnect.xml:137(para)
 msgid ""
 "Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
 "link> support with two human players in hotseat or network mode."
@@ -259,15 +264,15 @@ msgstr ""
 "Cuatro en raya también soporta <link linkend=\"network-games\">multijugador</"
 "link> con dos jugadores humanos en el mismo equipo o en modo red."
 
-#: C/gnect.xml:149(title)
+#: C/gnect.xml:151(title)
 msgid "Basic Usage"
 msgstr "Uso básico"
 
-#: C/gnect.xml:155(title)
+#: C/gnect.xml:157(title)
 msgid "Playing Four-in-a-Row"
 msgstr "Jugar a Cuatro en raya"
 
-#: C/gnect.xml:157(para)
+#: C/gnect.xml:159(para)
 msgid ""
 "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
 "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
@@ -276,7 +281,7 @@ msgstr ""
 "<menuchoice><guimenu>Juego</guimenu><guimenuitem>Nueva partida</"
 "guimenuitem></menuchoice>."
 
-#: C/gnect.xml:161(para)
+#: C/gnect.xml:163(para)
 msgid ""
 "The <interface>game board</interface> consists of seven columns and six "
 "rows. Above it, a special row indicates the current player and the marble "
@@ -289,7 +294,7 @@ msgstr ""
 "en una de las columnas. La canica aterriza en la fila vacía inferior de la "
 "columna elegida."
 
-#: C/gnect.xml:166(para)
+#: C/gnect.xml:168(para)
 msgid ""
 "To make a move, click on a column with the mouse. To play with the keyboard, "
 "move the marble in the top row with the left and right arrow keys, and drop "
@@ -301,11 +306,11 @@ msgstr ""
 "izquierda y derecha, y suéltela en su lugar con la tecla de flecha abajo. Su "
 "canica caerá en la fila vacía inferior de esa columna."
 
-#: C/gnect.xml:177(phrase) C/gnect.xml:179(para)
+#: C/gnect.xml:179(phrase) C/gnect.xml:181(para)
 msgid "Four-in-a-Row's Main Window"
 msgstr "Ventana principal de Cuatro en raya"
 
-#: C/gnect.xml:182(para)
+#: C/gnect.xml:184(para)
 msgid ""
 "The game is won when one of the two players manages to line up four of his "
 "or her marbles horizontally, vertically or diagonally. If the board fills up "
@@ -315,12 +320,12 @@ msgstr ""
 "diagonal de cuatro de sus canicas. Si el tablero se llena sin un ganador, el "
 "juego acaba en empate."
 
-#: C/gnect.xml:193(title)
+#: C/gnect.xml:195(title)
 msgid "Commands"
 msgstr "Comandos"
 
 #. id for removed section
-#: C/gnect.xml:196(para)
+#: C/gnect.xml:198(para)
 msgid ""
 "To take back a move, choose <menuchoice><shortcut><keycombo><keysym>Ctrl</"
 "keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Undo move</"
@@ -336,7 +341,7 @@ msgstr ""
 "está jugando controla el equipo, esto deshará su último movimiento y el del "
 "equipo. Repetir esto hará que se vuelva al estado inicial del tablero."
 
-#: C/gnect.xml:208(para)
+#: C/gnect.xml:210(para)
 msgid ""
 "Choose <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
 "keycap></keycombo></shortcut><guimenuitem>Hint</guimenuitem></menuchoice> to "
@@ -348,7 +353,7 @@ msgstr ""
 "menuchoice> para obtener una sugerencia del equipo para su siguiente "
 "movimiento. Esto se muestra en la barra de estado."
 
-#: C/gnect.xml:216(para)
+#: C/gnect.xml:218(para)
 msgid ""
 "Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
 "tally of wins and draws for the current playing session. The scores will be "
@@ -359,11 +364,11 @@ msgstr ""
 "puntuación se borrará a cero si se cambia la selección de jugadores en las "
 "Preferencias."
 
-#: C/gnect.xml:231(title)
+#: C/gnect.xml:233(title)
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: C/gnect.xml:233(para)
+#: C/gnect.xml:235(para)
 msgid ""
 "To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
 "from the <guimenu>Settings</guimenu> menu. This opens the "
@@ -373,11 +378,11 @@ msgstr ""
 "guimenuitem> del menú <guimenu>Ajustes</guimenu>. Esto abrirá el "
 "<interface>diálogo de preferencias</interface>."
 
-#: C/gnect.xml:247(term)
+#: C/gnect.xml:249(term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
 msgstr "<guilabel>Jugador uno</guilabel> y <guilabel>Jugador dos</guilabel>"
 
-#: C/gnect.xml:252(para)
+#: C/gnect.xml:254(para)
 msgid ""
 "These two columns tell <application>Four-in-a-Row</application> who's "
 "playing and, if it is the computer, how hard they play. To play against a "
@@ -387,23 +392,26 @@ msgstr ""
 "está jugando, y si es el equipo, en qué nivel lo hará. Para jugar contra un "
 "amigo, seleccione Humano tanto para el Jugador uno como para el Jugador dos."
 
-#: C/gnect.xml:262(guilabel)
+#: C/gnect.xml:264(guilabel)
 msgid "Theme"
 msgstr "Tema"
 
-#: C/gnect.xml:264(para)
-msgid "The theme menu lists available themes and lets you choose your favourite."
-msgstr "El menú temas muestra los temas disponibles y le permite elegir su favorito."
+#: C/gnect.xml:266(para)
+msgid ""
+"The theme menu lists available themes and lets you choose your favourite."
+msgstr ""
+"El menú temas muestra los temas disponibles y le permite elegir su favorito."
 
-#: C/gnect.xml:272(guilabel)
+#: C/gnect.xml:274(guilabel)
 msgid "Enable Animation"
 msgstr "Activar animación"
 
-#: C/gnect.xml:274(para)
+#: C/gnect.xml:276(para)
 msgid "Here you can toggle the game's animation on or off."
-msgstr "Aquí puede conmutar la animación del juego entre activada o desactivada."
+msgstr ""
+"Aquí puede conmutar la animación del juego entre activada o desactivada."
 
-#: C/gnect.xml:240(para)
+#: C/gnect.xml:242(para)
 msgid ""
 "Configuration options in the <guilabel>Game</guilabel> tab are: <placeholder-"
 "1/>"
@@ -411,7 +419,7 @@ msgstr ""
 "Las opciones de configuración en la solapa <guilabel>Juego</guilabel> son: "
 "<placeholder-1/>"
 
-#: C/gnect.xml:282(para)
+#: C/gnect.xml:284(para)
 msgid ""
 "Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
 "controls. To change a control, double click the appropriate entry and then "
@@ -421,11 +429,11 @@ msgstr ""
 "controles del teclado. Para cambiar un control, pulse dos veces con el ratón "
 "sobre la entrada apropiada y después pulse una nueva tecla."
 
-#: C/gnect.xml:297(title)
+#: C/gnect.xml:299(title)
 msgid "Creating New Themes"
 msgstr "Crear nuevos temas"
 
-#: C/gnect.xml:299(para)
+#: C/gnect.xml:301(para)
 msgid ""
 "This section's included in case you'd like to make your own themes for "
 "<application>Four-in-a-Row</application>. It assumes you're familiar with "
@@ -435,11 +443,11 @@ msgstr ""
 "<application>Cuatro en raya</application>. Se asume que le es familiar la "
 "edición básica de texto, software de gráficos y la línea de comandos."
 
-#: C/gnect.xml:307(title)
+#: C/gnect.xml:309(title)
 msgid "Images"
 msgstr "Imágenes"
 
-#: C/gnect.xml:309(para)
+#: C/gnect.xml:311(para)
 msgid ""
 "<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
 "equal size, lined up horizontally. From left to right:"
@@ -448,39 +456,39 @@ msgstr ""
 "seis figuras de igual tamaño, alineadas horizontalmente. De izquierda a "
 "derecha:"
 
-#: C/gnect.xml:316(para)
+#: C/gnect.xml:318(para)
 msgid "Player One's marble as it appears on the game board"
 msgstr "Canica del jugador uno tal y como aparece en el tablero de juego"
 
-#: C/gnect.xml:319(para)
+#: C/gnect.xml:321(para)
 msgid "Player Two's marble as it appears on the game board"
 msgstr "Canica del jugador dos tal y como aparece en el tablero de juego"
 
-#: C/gnect.xml:322(para)
+#: C/gnect.xml:324(para)
 msgid "The game board's background"
 msgstr "El fondo del tablero de juego"
 
-#: C/gnect.xml:325(para)
+#: C/gnect.xml:327(para)
 msgid "The top row's background"
 msgstr "El fondo de la fila superior"
 
-#: C/gnect.xml:328(para)
+#: C/gnect.xml:330(para)
 msgid "Player One's marble as it appears on the top row"
 msgstr "Canica del jugador uno tal y como aparece en la fila superior"
 
-#: C/gnect.xml:331(para)
+#: C/gnect.xml:333(para)
 msgid "Player Two's marble as it appears on the top row"
 msgstr "Canica del jugador dos tal y como aparece en la fila superior"
 
-#: C/gnect.xml:336(title)
+#: C/gnect.xml:338(title)
 msgid "An example tile set"
 msgstr "Un ejemplo de un juego de piezas"
 
-#: C/gnect.xml:338(screeninfo)
+#: C/gnect.xml:340(screeninfo)
 msgid "This image shows the six tiles in a tile set"
 msgstr "Esta imagen muestra las seis piezas en un juego de piezas"
 
-#: C/gnect.xml:343(para)
+#: C/gnect.xml:345(para)
 msgid ""
 "Tiles three and four will be repeated over the game board and top row unless "
 "a full window background image is specified in the theme file."
@@ -489,11 +497,11 @@ msgstr ""
 "superior a no ser que se especifique una imagen de ventana completa como "
 "imagen de fondo en el archivo del tema."
 
-#: C/gnect.xml:350(title) C/gnect.xml:361(title) C/gnect.xml:377(title)
+#: C/gnect.xml:352(title) C/gnect.xml:363(title) C/gnect.xml:379(title)
 msgid "TIP"
 msgstr "Consejo"
 
-#: C/gnect.xml:351(para)
+#: C/gnect.xml:353(para)
 msgid ""
 "PNG format is recommended for tile sets. The first, second, fifth and sixth "
 "tiles should contain some transparency if you want the background to show "
@@ -506,7 +514,7 @@ msgstr ""
 "tercera y cuarta piezas deberían ser sólidas, sin transparencia, incluso si "
 "usará una imagen de ventana completa como fondo para su tema."
 
-#: C/gnect.xml:362(para)
+#: C/gnect.xml:364(para)
 msgid ""
 "Tiles can be square or rectangular, and any size you like. Most of the tile "
 "sets that come with <application>Four-in-a-Row</application> use square "
@@ -517,7 +525,7 @@ msgstr ""
 "en raya</application> usan piezas cuadradas de 50 píxeles por 50 píxeles de "
 "tamaño."
 
-#: C/gnect.xml:369(para)
+#: C/gnect.xml:371(para)
 msgid ""
 "For a full window background image, there's a bit more work to do. Let's say "
 "your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
@@ -530,7 +538,7 @@ msgstr ""
 "fila superior, de tal forma que la imagen de fondo ideal para su juego de "
 "piezas tendría un tamaño de 350 por 350 píxeles."
 
-#: C/gnect.xml:378(para)
+#: C/gnect.xml:380(para)
 msgid ""
 "<application>Four-in-a-Row</application> will automatically scale the "
 "background image if it doesn't match the tile set. This means you can make "
@@ -544,7 +552,7 @@ msgstr ""
 "imagen de fondo, simplemente teniendo una versión grande y una pequeña de su "
 "juego de piezas."
 
-#: C/gnect.xml:386(para)
+#: C/gnect.xml:388(para)
 msgid ""
 "So, you now have a tile set and perhaps a background image to go with it. "
 "The next step is to put them in the right place."
@@ -552,11 +560,11 @@ msgstr ""
 "Así que ahora tiene un juego de piezas y quizá una imagen de fondo que va "
 "con él. El siguiente paso es juntarlo todo en el lugar adecuado."
 
-#: C/gnect.xml:396(title)
+#: C/gnect.xml:398(title)
 msgid "Putting It Together"
 msgstr "Juntarlo todo"
 
-#: C/gnect.xml:398(para)
+#: C/gnect.xml:400(para)
 msgid ""
 "The last step is to put your image(s) where <application>Four-in-a-Row</"
 "application> can find them. You could put them in Four-in-a-row's install "
@@ -568,7 +576,7 @@ msgstr ""
 "instalación de Cuatro en raya (que depende de su sistema en particular) pero "
 "su directorio personal probablemente es mejor idea."
 
-#: C/gnect.xml:405(para)
+#: C/gnect.xml:407(para)
 msgid ""
 "Make a <filename class=\"directory\">~/.gnect</filename> directory, and a "
 "<filename class=\"directory\">~/.gnect/pixmaps</filename> directory. Those "
@@ -580,11 +588,11 @@ msgstr ""
 "nombres son importantes, ya que <application>Cuatro en raya</application> no "
 "buscará en ningún otro lugar."
 
-#: C/gnect.xml:412(para)
+#: C/gnect.xml:414(para)
 msgid "Copy your image(s) into the pixmaps directory."
 msgstr "Copie sus imágenes en el directorio pixmaps."
 
-#: C/gnect.xml:416(para)
+#: C/gnect.xml:418(para)
 msgid ""
 "If you start <application>Four-in-a-Row</application> from the command line, "
 "it'll give you clues about any problems it has with your new theme. If it "
@@ -596,7 +604,7 @@ msgstr ""
 "tema. Si no tiene ninguno, encontrará su nuevo tema en la lista del "
 "<interface>diálogo de preferencias</interface>."
 
-#: C/gnect.xml:423(para)
+#: C/gnect.xml:425(para)
 msgid "Have fun!"
 msgstr "¡Diviértase!"
 
@@ -787,19 +795,21 @@ msgstr ""
 "pantalla iniciar de juego en red. Entonces puede jugar otra adictiva partida "
 "de Cuatro en raya."
 
-#: C/gnect.xml:445(title)
+#: C/gnect.xml:447(title)
 msgid "Known Bugs and Limitations"
 msgstr "Errores conocidos y limitaciones"
 
-#: C/gnect.xml:447(para)
-msgid "Occasionally a marble-dropping animation doesn't look as smooth as it should."
-msgstr "Ocasionalmente la caída de las canincas no parece tan suave como debería."
+#: C/gnect.xml:449(para)
+msgid ""
+"Occasionally a marble-dropping animation doesn't look as smooth as it should."
+msgstr ""
+"Ocasionalmente la caída de las canincas no parece tan suave como debería."
 
-#: C/gnect.xml:460(title)
+#: C/gnect.xml:462(title)
 msgid "Authors"
 msgstr "Autores"
 
-#: C/gnect.xml:462(para)
+#: C/gnect.xml:464(para)
 msgid ""
 "<application>Four-in-a-Row</application> was written by Timothy Musson "
 "(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
@@ -812,7 +822,7 @@ msgstr ""
 "maneras desde que comenzó el trabajo en <application>Cuatro en raya</"
 "application>."
 
-#: C/gnect.xml:467(para)
+#: C/gnect.xml:469(para)
 msgid ""
 "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
 "\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
@@ -827,25 +837,25 @@ msgstr ""
 "el cual <application>Cuatro en raya</application> probablemente no merecería "
 "la pena."
 
-#: C/gnect.xml:474(para)
+#: C/gnect.xml:476(para)
 msgid "This manual was written by Timothy Musson."
 msgstr "Timothy Musson escribió este manual."
 
-#: C/gnect.xml:477(para)
+#: C/gnect.xml:479(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" "
-"type=\"help\">document</ulink>."
+"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
+"bugs\" type=\"help\">document</ulink>."
 msgstr ""
 "Para informar sobre un fallo o hacer sugerencias sobre esta aplicación o "
-"este manual, siga las indicaciones en este <ulink url=\"ghelp:user-guide?feedback-bugs"
-"\" type=\"help\">documento</ulink>."
+"este manual, siga las indicaciones en este <ulink url=\"ghelp:user-guide?"
+"feedback-bugs\" type=\"help\">documento</ulink>."
 
-#: C/gnect.xml:502(title)
+#: C/gnect.xml:504(title)
 msgid "License"
 msgstr "Licencia"
 
-#: C/gnect.xml:504(para)
+#: C/gnect.xml:506(para)
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the <citetitle>GNU General Public License</citetitle> as "
@@ -857,7 +867,7 @@ msgstr ""
 "como se publica por la Free Software Foundation; ya sea la versión 2 de la "
 "Licencia, o (a su elección) cualquier versión posterior."
 
-#: C/gnect.xml:512(para)
+#: C/gnect.xml:514(para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -869,7 +879,7 @@ msgstr ""
 "IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Vea la <citetitle>Licencia Pública "
 "General GNU</citetitle> para más detalles."
 
-#: C/gnect.xml:519(para)
+#: C/gnect.xml:521(para)
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
@@ -892,5 +902,4 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/gnect.xml:0(None)
 msgid "translator-credits"
-msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2008."
-
+msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
