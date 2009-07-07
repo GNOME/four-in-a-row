@@ -1,1 +1,5 @@
-SUBDIRS = src data pixmaps help
+SUBDIRS = src data pixmaps
+
+if BUILD_HELP
+SUBDIRS += help
+endif
