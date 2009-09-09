@@ -13,6 +13,8 @@ schemadir = $(GCONF_SCHEMA_FILE_DIR)
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 endif
 
+man_MANS     = gnect.6
+
 if GGZ_SERVER
 ggzroom_in_files = gnect.room.in
 ggzroom_DATA = $(ggzroom_in_files:.room.in=.room)
@@ -31,7 +33,8 @@ EXTRA_DIST = gnect-client.dsc.in \
 	     gnect-server.dsc.in \
              gnect.room.in \
 	     $(velena_DATA) \
-             $(schema_in_files)
+             $(schema_in_files) \
+             $(man_MANS)
 
 
 CLEANFILES = \
