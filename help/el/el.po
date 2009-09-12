@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packagename\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-15 23:17+0000\n"
-"PO-Revision-Date: 2009-05-16 17:52+0300\n"
+"POT-Creation-Date: 2009-07-15 16:03+0000\n"
+"PO-Revision-Date: 2009-07-21 14:10+0300\n"
 "Last-Translator: Fotis Tsamis <ftsamis@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnect.xml:174(None)
+#: C/gnect.xml:176(None)
 msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
 msgstr ""
 "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
@@ -181,41 +181,46 @@ msgstr "Musson"
 msgid "trmusson@ihug.co.nz"
 msgstr "trmusson@ihug.co.nz"
 
-#: C/gnect.xml:79(revnumber)
+#: C/gnect.xml:81(revnumber)
 msgid "Four-in-a-Row Manual V2.8"
 msgstr "Εγχειρίδιο Τέσσερα στη σειρά V2.8"
 
-#: C/gnect.xml:80(date)
+#: C/gnect.xml:82(date)
 msgid "September 2004"
 msgstr "Σεπτέμβριος 2004 "
 
-#: C/gnect.xml:82(para)
+#: C/gnect.xml:84(para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 
-#: C/gnect.xml:90(releaseinfo)
+#: C/gnect.xml:92(releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-Row."
 msgstr "Αυτό το εγχειρίδιο περιγράφει την έκδοση 2.12 του Τέσσερα στη σειρά."
 
-#: C/gnect.xml:94(title)
+#: C/gnect.xml:96(title)
 msgid "Feedback"
 msgstr "Ανάδραση"
 
-#: C/gnect.xml:95(para)
+#: C/gnect.xml:97(para)
+#| msgid ""
+#| "To report a bug or make a suggestion regarding the Four-in-a-Row "
+#| "application or this manual, follow the directions in the <ulink url="
+#| "\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
 msgid ""
 "To report a bug or make a suggestion regarding the Four-in-a-Row application "
-"or this manual, follow the directions in the <ulink url=\"ghelp:gnome-"
-"feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+"or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
+"feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
 "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή "
-"Τέσσερα στη σειρά, ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στη <ulink "
-"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Σελίδα ανάδρασης GNOME</ulink>."
+"Τέσσερα στη σειρά ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στη <ulink "
+"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Σελίδα ανάδρασης GNOME</"
+"ulink>."
 
-#: C/gnect.xml:111(title)
+#: C/gnect.xml:113(title)
 msgid "Introduction"
 msgstr "Εισαγωγή"
 
-#: C/gnect.xml:113(para)
+#: C/gnect.xml:115(para)
 msgid ""
 "<application>Four-in-a-Row</application> is a four-in-a-row game for the "
 "GNOME Project. The object of the game is to build a line of four of your "
@@ -229,7 +234,7 @@ msgstr ""
 "από τους δικούς του/της. Η γραμμή μπορεί να είναι οριζόντια, κάθετη ή "
 "διαγώνια."
 
-#: C/gnect.xml:121(para)
+#: C/gnect.xml:123(para)
 msgid ""
 "To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
 "a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
@@ -241,7 +246,7 @@ msgstr ""
 "<guisubmenu>Παιχνίδια</guisubmenu> του <guimenu>Κύριου μενού</guimenu>, ή "
 "πληκτρολογήστε <command>gnect</command> στη γραμμή εντολών."
 
-#: C/gnect.xml:129(para)
+#: C/gnect.xml:131(para)
 msgid ""
 "<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
 "games</filename> package, which is part of the GNOME desktop environment. "
@@ -253,7 +258,7 @@ msgstr ""
 "περιβάλλοντος GNOME. Αυτό το έγγραφο περιγράφει την έκδοση 2.8 του "
 "<application>Τέσσερα στη σειρά</application>"
 
-#: C/gnect.xml:135(para)
+#: C/gnect.xml:137(para)
 msgid ""
 "Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
 "link> support with two human players in hotseat or network mode."
@@ -262,15 +267,15 @@ msgstr ""
 "\">πολλούς παίχτες</link>, με δύο πραγματικούς παίχτες που παίζουν στον ίδιο "
 "υπολογιστή είτε με σειρά, ή μέσω δικτύου."
 
-#: C/gnect.xml:149(title)
+#: C/gnect.xml:151(title)
 msgid "Basic Usage"
 msgstr "Βασική χρήση"
 
-#: C/gnect.xml:155(title)
+#: C/gnect.xml:157(title)
 msgid "Playing Four-in-a-Row"
 msgstr "Παίζοντας το Τέσσερα στη σειρά"
 
-#: C/gnect.xml:157(para)
+#: C/gnect.xml:159(para)
 msgid ""
 "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
 "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
@@ -279,7 +284,7 @@ msgstr ""
 "<menuchoice><guimenu>Παιχνίδι</guimenu><guimenuitem>Νέο παιχνίδι</"
 "guimenuitem></menuchoice>."
 
-#: C/gnect.xml:161(para)
+#: C/gnect.xml:163(para)
 msgid ""
 "The <interface>game board</interface> consists of seven columns and six "
 "rows. Above it, a special row indicates the current player and the marble "
@@ -291,7 +296,7 @@ msgstr ""
 "τον επόμενο βώλο. Κάθε κίνηση αποτελείται από την ρίψη ενός βώλου σε μια από "
 "τις στήλες. Ο βώλος πάει στην πρώτη κενή σειρά της επιλεγμένης στήλης."
 
-#: C/gnect.xml:166(para)
+#: C/gnect.xml:168(para)
 msgid ""
 "To make a move, click on a column with the mouse. To play with the keyboard, "
 "move the marble in the top row with the left and right arrow keys, and drop "
@@ -303,11 +308,11 @@ msgstr ""
 "αριστερό και το δεξί βέλος, και ρίξτε το με το κάτω βέλος. Ο βώλος σας θα "
 "πέσει στην πρώτη κενή σειρά αυτής της στήλης."
 
-#: C/gnect.xml:177(phrase) C/gnect.xml:179(para)
+#: C/gnect.xml:179(phrase) C/gnect.xml:181(para)
 msgid "Four-in-a-Row's Main Window"
 msgstr "Το κεντρικό παράθυρο του Τέσσερα στη σειρά"
 
-#: C/gnect.xml:182(para)
+#: C/gnect.xml:184(para)
 msgid ""
 "The game is won when one of the two players manages to line up four of his "
 "or her marbles horizontally, vertically or diagonally. If the board fills up "
@@ -317,12 +322,12 @@ msgstr ""
 "ευθυγραμμίσει τέσσερις από τους βώλους του οριζοντίως, καθέτως ή διαγωνίως. "
 "Αν το ταμπλό γεμίσει χωρίς κάποιον νικητή, το παιχνίδι τελειώνει με ισοπαλία."
 
-#: C/gnect.xml:193(title)
+#: C/gnect.xml:195(title)
 msgid "Commands"
 msgstr "Εντολές"
 
 #. id for removed section
-#: C/gnect.xml:196(para)
+#: C/gnect.xml:198(para)
 msgid ""
 "To take back a move, choose <menuchoice><shortcut><keycombo><keysym>Ctrl</"
 "keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Undo move</"
@@ -339,7 +344,7 @@ msgstr ""
 "κίνηση του υπολογιστή και μετά την δική σας. Η επανάληψη του θα επαναφέρει "
 "το ταμπλό στην αρχική του κατάσταση."
 
-#: C/gnect.xml:208(para)
+#: C/gnect.xml:210(para)
 msgid ""
 "Choose <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
 "keycap></keycombo></shortcut><guimenuitem>Hint</guimenuitem></menuchoice> to "
@@ -351,7 +356,7 @@ msgstr ""
 "menuchoice> για να πάρετε μια πρόταση από τον υπολογιστή για την επόμενή σας "
 "κίνηση. Αυτό εμφανίζεται στην γραμμή κατάστασης."
 
-#: C/gnect.xml:216(para)
+#: C/gnect.xml:218(para)
 msgid ""
 "Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
 "tally of wins and draws for the current playing session. The scores will be "
@@ -362,11 +367,11 @@ msgstr ""
 "συνεδρία παιχνιδιού. Οι βαθμολογίες θα επαναφερθούν σε μηδέν αν η Επιλογή "
 "παίχτη αλλαχτεί στις Προτιμήσεις."
 
-#: C/gnect.xml:231(title)
+#: C/gnect.xml:233(title)
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: C/gnect.xml:233(para)
+#: C/gnect.xml:235(para)
 msgid ""
 "To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
 "from the <guimenu>Settings</guimenu> menu. This opens the "
@@ -376,12 +381,12 @@ msgstr ""
 "<guimenuitem>Προτιμήσεις</guimenuitem> από το μενού <guimenu>Ρυθμίσεις</"
 "guimenu>. Αυτό ανοίγει τον <interface>Διάλογο προτιμήσεων</interface>."
 
-#: C/gnect.xml:247(term)
+#: C/gnect.xml:249(term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
 msgstr ""
 "<guilabel>Πρώτος παίχτης</guilabel> και <guilabel>Δεύτερος παίχτης</guilabel>"
 
-#: C/gnect.xml:252(para)
+#: C/gnect.xml:254(para)
 msgid ""
 "These two columns tell <application>Four-in-a-Row</application> who's "
 "playing and, if it is the computer, how hard they play. To play against a "
@@ -392,28 +397,28 @@ msgstr ""
 "παίξετε ενάντια σε έναν φίλο σας, επιλέξτε Άνθρωπος και για τον πρώτο παίχτη "
 "και για τον δεύτερο."
 
-#: C/gnect.xml:262(guilabel)
+#: C/gnect.xml:264(guilabel)
 msgid "Theme"
 msgstr "Θέμα"
 
-#: C/gnect.xml:264(para)
+#: C/gnect.xml:266(para)
 msgid ""
 "The theme menu lists available themes and lets you choose your favourite."
 msgstr ""
 "Το μενού Θέμα εμφανίζει τα διαθέσιμα θέματα και σας επιτρέπει να επιλέξετε "
 "το αγαπημένο σας."
 
-#: C/gnect.xml:272(guilabel)
+#: C/gnect.xml:274(guilabel)
 msgid "Enable Animation"
 msgstr "Ενεργοποίηση κίνησης εικόνων"
 
-#: C/gnect.xml:274(para)
+#: C/gnect.xml:276(para)
 msgid "Here you can toggle the game's animation on or off."
 msgstr ""
 "Εδώ μπορείτε να ενεργοποιήσετε ή απενεργοποιήσετε την κίνηση των εικόνων του "
 "παιχνιδιού"
 
-#: C/gnect.xml:240(para)
+#: C/gnect.xml:242(para)
 msgid ""
 "Configuration options in the <guilabel>Game</guilabel> tab are: <placeholder-"
 "1/>"
@@ -421,7 +426,7 @@ msgstr ""
 "Οι διαθέσιμες ρυθμίσεις στην καρτέλα <guilabel>Παιχνίδι</guilabel> είναι: "
 "<placeholder-1/>"
 
-#: C/gnect.xml:282(para)
+#: C/gnect.xml:284(para)
 msgid ""
 "Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
 "controls. To change a control, double click the appropriate entry and then "
@@ -432,11 +437,11 @@ msgstr ""
 "χειρισμό, κάντε διπλό κλικ στην κατάλληλη καταχώρηση και μετά πιέστε το νέο "
 "πλήκτρο."
 
-#: C/gnect.xml:297(title)
+#: C/gnect.xml:299(title)
 msgid "Creating New Themes"
 msgstr "Δημιουργία νέων θεμάτων"
 
-#: C/gnect.xml:299(para)
+#: C/gnect.xml:301(para)
 msgid ""
 "This section's included in case you'd like to make your own themes for "
 "<application>Four-in-a-Row</application>. It assumes you're familiar with "
@@ -447,11 +452,11 @@ msgstr ""
 "Προϋποθέτει πως είστε εξοικειωμένος με την βασική επεξεργασία κειμένου, με "
 "λογισμικό γραφικών και με την γραμμή εντολών."
 
-#: C/gnect.xml:307(title)
+#: C/gnect.xml:309(title)
 msgid "Images"
 msgstr "Εικόνες"
 
-#: C/gnect.xml:309(para)
+#: C/gnect.xml:311(para)
 msgid ""
 "<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
 "equal size, lined up horizontally. From left to right:"
@@ -460,39 +465,39 @@ msgstr ""
 "περιέχουν έξι πλακίδια ίδιου μεγέθους, ευθυγραμμισμένα οριζοντίως. Από "
 "αριστερά προς δεξιά:"
 
-#: C/gnect.xml:316(para)
+#: C/gnect.xml:318(para)
 msgid "Player One's marble as it appears on the game board"
 msgstr "Ο βώλος του πρώτου παίχτη όπως εμφανίζεται στο ταμπλό παιχνιδιού"
 
-#: C/gnect.xml:319(para)
+#: C/gnect.xml:321(para)
 msgid "Player Two's marble as it appears on the game board"
 msgstr "Ο βώλος του δεύτερου παίχτη όπως εμφανίζεται στο ταμπλό παιχνιδιού"
 
-#: C/gnect.xml:322(para)
+#: C/gnect.xml:324(para)
 msgid "The game board's background"
 msgstr "Το παρασκήνιο του ταμπλό παιχνιδιού"
 
-#: C/gnect.xml:325(para)
+#: C/gnect.xml:327(para)
 msgid "The top row's background"
 msgstr "Το παρασκήνιο της πρώτης σειράς"
 
-#: C/gnect.xml:328(para)
+#: C/gnect.xml:330(para)
 msgid "Player One's marble as it appears on the top row"
 msgstr "Ο βώλος του πρώτου παίχτη όπως εμφανίζεται στην πρώτη σειρά"
 
-#: C/gnect.xml:331(para)
+#: C/gnect.xml:333(para)
 msgid "Player Two's marble as it appears on the top row"
 msgstr "Ο βώλος του δεύτερου παίχτη όπως εμφανίζεται στην πρώτη σειρά"
 
-#: C/gnect.xml:336(title)
+#: C/gnect.xml:338(title)
 msgid "An example tile set"
 msgstr "Ένα παράδειγμα συνόλου πλακιδίων"
 
-#: C/gnect.xml:338(screeninfo)
+#: C/gnect.xml:340(screeninfo)
 msgid "This image shows the six tiles in a tile set"
 msgstr "Αυτή η εικόνα δείχνει τα έξι πλακίδια σε ένα σύνολο πλακιδίων"
 
-#: C/gnect.xml:343(para)
+#: C/gnect.xml:345(para)
 msgid ""
 "Tiles three and four will be repeated over the game board and top row unless "
 "a full window background image is specified in the theme file."
@@ -501,11 +506,11 @@ msgstr ""
 "και στην πρώτη σειρά εκτός αν μια εικόνα παρασκηνίου πλήρους παραθύρου έχει "
 "οριστεί στο αρχείο θέματος."
 
-#: C/gnect.xml:350(title) C/gnect.xml:361(title) C/gnect.xml:377(title)
+#: C/gnect.xml:352(title) C/gnect.xml:363(title) C/gnect.xml:379(title)
 msgid "TIP"
 msgstr "ΣΥΜΒΟΥΛΗ"
 
-#: C/gnect.xml:351(para)
+#: C/gnect.xml:353(para)
 msgid ""
 "PNG format is recommended for tile sets. The first, second, fifth and sixth "
 "tiles should contain some transparency if you want the background to show "
@@ -518,7 +523,7 @@ msgstr ""
 "χωρίς διαφάνεια, ακόμη και αν χρησιμοποιείτε μια εικόνα παρασκηνίου πλήρους "
 "παραθύρου με το θέμα σας."
 
-#: C/gnect.xml:362(para)
+#: C/gnect.xml:364(para)
 msgid ""
 "Tiles can be square or rectangular, and any size you like. Most of the tile "
 "sets that come with <application>Four-in-a-Row</application> use square "
@@ -529,7 +534,7 @@ msgstr ""
 "<application>Τέσσερα στη σειρά</application> χρησιμοποιούν ορθογώνια "
 "πλακίδια με διαστάσεις 50 pixels επί 50 pixels."
 
-#: C/gnect.xml:369(para)
+#: C/gnect.xml:371(para)
 msgid ""
 "For a full window background image, there's a bit more work to do. Let's say "
 "your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
@@ -542,7 +547,7 @@ msgstr ""
 "πλακίδια, συμπεριλαμβανομένης της πρώτης σειράς, οπότε η ιδανική εικόνα "
 "παρασκηνίου για το σύνολο πλακιδίων σας, έχει διαστάσεις 350 επί 350 pixels."
 
-#: C/gnect.xml:378(para)
+#: C/gnect.xml:380(para)
 msgid ""
 "<application>Four-in-a-Row</application> will automatically scale the "
 "background image if it doesn't match the tile set. This means you can make "
@@ -556,7 +561,7 @@ msgstr ""
 "χρησιμοποιώντας και οι δύο την ίδια εικόνα παρασκηνίου, απλώς έχοντας μια "
 "μεγάλη και μια μικρή έκδοση του συνόλου πλακιδίων σας."
 
-#: C/gnect.xml:386(para)
+#: C/gnect.xml:388(para)
 msgid ""
 "So, you now have a tile set and perhaps a background image to go with it. "
 "The next step is to put them in the right place."
@@ -564,11 +569,11 @@ msgstr ""
 "Λοιπόν, τώρα έχετε ένα σύνολο πλακιδίων και ίσως και μια εικόνα παρασκηνίου "
 "για να πάει με αυτό. Το επόμενο βήμα είναι να τα βάλετε στο σωστό μέρος."
 
-#: C/gnect.xml:396(title)
+#: C/gnect.xml:398(title)
 msgid "Putting It Together"
 msgstr "Τοποθετώντας τα μαζί"
 
-#: C/gnect.xml:398(para)
+#: C/gnect.xml:400(para)
 msgid ""
 "The last step is to put your image(s) where <application>Four-in-a-Row</"
 "application> can find them. You could put them in Four-in-a-row's install "
@@ -581,7 +586,7 @@ msgstr ""
 "(που αλλάζει από σύστημα σε σύστημα), αλλά ο αρχικός σας κατάλογος είναι "
 "καλύτερη ιδέα."
 
-#: C/gnect.xml:405(para)
+#: C/gnect.xml:407(para)
 msgid ""
 "Make a <filename class=\"directory\">~/.gnect</filename> directory, and a "
 "<filename class=\"directory\">~/.gnect/pixmaps</filename> directory. Those "
@@ -593,11 +598,11 @@ msgstr ""
 "Αυτά τα ονόματα είναι σημαντικά, αφού το <application>Τέσσερα στη σειρά</"
 "application> δεν θα ψάξει πουθενά αλλού."
 
-#: C/gnect.xml:412(para)
+#: C/gnect.xml:414(para)
 msgid "Copy your image(s) into the pixmaps directory."
 msgstr "Αντιγράψτε τις εικόνες σας στον κατάλογο pixmaps."
 
-#: C/gnect.xml:416(para)
+#: C/gnect.xml:418(para)
 msgid ""
 "If you start <application>Four-in-a-Row</application> from the command line, "
 "it'll give you clues about any problems it has with your new theme. If it "
@@ -609,7 +614,7 @@ msgstr ""
 "σας θέμα. Αν δεν έχει κανένα, θα δείτε το νέο σας θέμα να εμφανίζεται στον "
 "<interface>Διάλογο προτιμήσεων</interface>."
 
-#: C/gnect.xml:423(para)
+#: C/gnect.xml:425(para)
 msgid "Have fun!"
 msgstr "Διασκεδάστε!"
 
@@ -803,22 +808,22 @@ msgstr ""
 "στην αρχική οθόνη του δικτυακού παιχνιδιού. Έπειτα, μπορείτε να παίξετε και "
 "άλλη παρτίδα του εθιστικού παιχνιδιού Τέσσερα στη σειρά με πολλούς παίχτες"
 
-#: C/gnect.xml:445(title)
+#: C/gnect.xml:447(title)
 msgid "Known Bugs and Limitations"
 msgstr "Γνωστά προβλήματα και περιορισμοί"
 
-#: C/gnect.xml:447(para)
+#: C/gnect.xml:449(para)
 msgid ""
 "Occasionally a marble-dropping animation doesn't look as smooth as it should."
 msgstr ""
 "Περιστασιακά η κινούμενη εικόνα της ρίψης των βώλων δεν εμφανίζεται τόσο "
 "ομαλή όσο θα έπρεπε"
 
-#: C/gnect.xml:460(title)
+#: C/gnect.xml:462(title)
 msgid "Authors"
 msgstr "Δημιουργοί"
 
-#: C/gnect.xml:462(para)
+#: C/gnect.xml:464(para)
 msgid ""
 "<application>Four-in-a-Row</application> was written by Timothy Musson "
 "(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
@@ -831,7 +836,7 @@ msgstr ""
 "βοηθήσουν με αρκετούς τρόπους από τότε που η δουλειά στο "
 "<application>Τέσσερα στη σειρά</application> άρχισε."
 
-#: C/gnect.xml:467(para)
+#: C/gnect.xml:469(para)
 msgid ""
 "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
 "\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
@@ -846,26 +851,26 @@ msgstr ""
 "δουλειά του, χωρίς την οποία, το <application>Τέσσερα στη σειρά</"
 "application> δεν θα ήταν τόσο σημαντικό."
 
-#: C/gnect.xml:474(para)
+#: C/gnect.xml:476(para)
 msgid "This manual was written by Timothy Musson."
 msgstr "Αυτό το εγχειρίδιο γράφτηκε από τον Timothy Musson."
 
 # Additional message found in documentation.
-#: C/gnect.xml:477(para)
+#: C/gnect.xml:479(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" "
-"type=\"help\">document</ulink>."
+"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
+"bugs\" type=\"help\">document</ulink>."
 msgstr ""
 "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με αυτήν την "
 "εφαρμογή ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες σε αυτό το <ulink url="
 "\"ghelp:user-guide?feedback-bugs\" type=\"help\">έγγραφο</ulink>."
 
-#: C/gnect.xml:502(title)
+#: C/gnect.xml:504(title)
 msgid "License"
 msgstr "Άδεια χρήσης"
 
-#: C/gnect.xml:504(para)
+#: C/gnect.xml:506(para)
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the <citetitle>GNU General Public License</citetitle> as "
@@ -877,7 +882,7 @@ msgstr ""
 "License</citetitle> όπως αυτή δημοσιεύτηκε από το  Free Software Foundation, "
 "έκδοση 2, ή (προαιρετικά) οποιαδήποτε νεότερη έκδοση."
 
-#: C/gnect.xml:512(para)
+#: C/gnect.xml:514(para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -890,7 +895,7 @@ msgstr ""
 "λεπτομέρειες ανατρέξτε στη <citetitle>Γενική ‘Αδεια Δημόσιας Χρήσης GNU (GPL)"
 "</citetitle>."
 
-#: C/gnect.xml:519(para)
+#: C/gnect.xml:521(para)
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
