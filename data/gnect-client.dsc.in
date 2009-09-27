@@ -1,9 +1,0 @@
-[ModuleInfo]
-Name = Gnect
-Author = The GNOME Project 
-CommandLine = @bindir@/gnect
-Frontend = gtk
-Homepage = http://www.gnome.org/projects/gnome-games/
-ProtocolEngine = Gnect 
-ProtocolVersion = 1
-Version = @VERSION@

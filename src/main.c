@@ -42,15 +42,6 @@
 #include "prefs.h"
 #include "gfx.h"
 
-#ifdef GGZ_CLIENT
-#include <libgames-support/games-dlg-chat.h>
-#include <libgames-support/games-dlg-players.h>
-#include "connectx_client.h"
-#include "ggz-network.h"
-#include <ggz-embed.h>
-#endif
-
-
 #define SPEED_MOVE     25
 #define SPEED_DROP     20
 #define SPEED_BLINK    150
@@ -145,8 +136,8 @@ static gint
 get_n_human_players (void)
 {
   if (ggz_network_mode)
-    return 2;			/* FIXME */
-
+    return 2;
+  
   if (p.level[PLAYER1] != LEVEL_HUMAN && p.level[PLAYER2] != LEVEL_HUMAN) {
     return 0;
   }
@@ -161,9 +152,6 @@ get_n_human_players (void)
 static gboolean
 is_player_human (void)
 {
-  if (ggz_network_mode)
-    return TRUE;		/* FIXME */
-
   if (player == PLAYER1) {
     return p.level[PLAYER1] == LEVEL_HUMAN;
   }
@@ -571,11 +559,6 @@ prompt_player (void)
     }
     return;
   }
-
-/*	if (ggz_network_mode) {
-		network_update_status ();
-		return;
-	}*/
 
   switch (players) {
   case 1:
