@@ -209,12 +209,11 @@ gfx_refresh_pixmaps (void)
 void
 gfx_resize (GtkWidget * w)
 {
-  int width, height;
+  GtkAllocation allocation;
 
-  width = w->allocation.width;
-  height = w->allocation.height;
+  gtk_widget_get_allocation (w, &allocation);
 
-  boardsize = MIN (width, height);
+  boardsize = MIN (allocation.width, allocation.height);
   tilesize = boardsize / 7;
 
   offset[TILE_PLAYER1] = 0;
@@ -230,8 +229,8 @@ gfx_resize (GtkWidget * w)
   if (pm_bground != NULL)
     g_object_unref (pm_bground);
 
-  pm_display = gdk_pixmap_new (w->window, boardsize, boardsize, -1);
-  pm_bground = gdk_pixmap_new (w->window, boardsize, boardsize, -1);
+  pm_display = gdk_pixmap_new (gtk_widget_get_window (w), boardsize, boardsize, -1);
+  pm_bground = gdk_pixmap_new (gtk_widget_get_window (w), boardsize, boardsize, -1);
 
   /* the first time the configure signal is emitted, the drawarea
    * is not shown yet so we do not have the gc.
@@ -247,7 +246,7 @@ gfx_resize (GtkWidget * w)
 void
 gfx_expose (GdkRectangle * area)
 {
-  gdk_draw_drawable (GDK_DRAWABLE (drawarea->window),
+  gdk_draw_drawable (GDK_DRAWABLE (gtk_widget_get_window (drawarea)),
                      gc,
                      pm_display,
                      area->x, area->y,
@@ -363,8 +362,8 @@ gfx_set_grid_style (void)
   g_return_val_if_fail (drawarea != NULL, FALSE);
 
   if (!gc) {
-    gc = gdk_gc_new (drawarea->window);
-    solidgc = gdk_gc_new (drawarea->window);
+    gc = gdk_gc_new (gtk_widget_get_window (drawarea));
+    solidgc = gdk_gc_new (gtk_widget_get_window (drawarea));
   }
 
   if (theme[p.theme_id].grid_rgb == NULL)

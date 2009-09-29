@@ -32,6 +32,7 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-frame.h>
+#include <libgames-support/games-gtk-compat.h>
 #include <libgames-support/games-controls.h>
 #include <libgames-support/games-sound.h>
 
@@ -178,21 +179,21 @@ on_select_theme (GtkComboBox * combo, gpointer data)
 static void
 on_toggle_animate (GtkToggleButton * t, gpointer data)
 {
-  p.do_animate = t->active;
-  games_conf_set_boolean (NULL, KEY_DO_ANIMATE, t->active);
+  p.do_animate = gtk_toggle_button_get_active (t);
+  games_conf_set_boolean (NULL, KEY_DO_ANIMATE, gtk_toggle_button_get_active (t));
 }
 
 static void
 on_toggle_sound (GtkToggleButton * t, gpointer data)
 {
-  p.do_sound = t->active;
-  games_conf_set_boolean (NULL, KEY_DO_SOUND, t->active);
+  p.do_sound = gtk_toggle_button_get_active (t);
+  games_conf_set_boolean (NULL, KEY_DO_SOUND, gtk_toggle_button_get_active (t));
 }
 
 static void
 on_select_player1 (GtkWidget * w, gpointer data)
 {
-  if (!GTK_TOGGLE_BUTTON (w)->active)
+  if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w)))
     return;
   p.level[PLAYER1] = GPOINTER_TO_INT (data);
   games_conf_set_integer (NULL, KEY_LEVEL_PLAYER1, GPOINTER_TO_INT (data));
@@ -204,7 +205,7 @@ on_select_player1 (GtkWidget * w, gpointer data)
 static void
 on_select_player2 (GtkWidget * w, gpointer data)
 {
-  if (!GTK_TOGGLE_BUTTON (w)->active)
+  if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w)))
     return;
   p.level[PLAYER2] = GPOINTER_TO_INT (data);
   games_conf_set_integer (NULL, KEY_LEVEL_PLAYER2, GPOINTER_TO_INT (data));
@@ -283,15 +284,16 @@ prefsbox_open (void)
 					  GTK_RESPONSE_ACCEPT, NULL);
   gtk_dialog_set_has_separator (GTK_DIALOG (prefsbox), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (prefsbox), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (prefsbox)->vbox), 2);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (prefsbox))),
+		       2);
 
   g_signal_connect (G_OBJECT (prefsbox), "destroy",
 		    G_CALLBACK (gtk_widget_destroyed), &prefsbox);
 
   notebook = gtk_notebook_new ();
   gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (prefsbox)->vbox), notebook,
-		      TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (prefsbox))), 
+		      notebook, TRUE, TRUE, 0);
 
 
   /* game tab */

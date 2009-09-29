@@ -30,6 +30,7 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
+#include <libgames-support/games-gtk-compat.h>
 #include <libgames-support/games-help.h>
 #include <libgames-support/games-runtime.h>
 #include <libgames-support/games-sound.h>
@@ -823,15 +824,15 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   gtk_dialog_set_has_separator (GTK_DIALOG (scorebox), FALSE);
   gtk_window_set_resizable (GTK_WINDOW (scorebox), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (scorebox), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (scorebox)->vbox), 2);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))), 2);
 
   g_signal_connect (GTK_OBJECT (scorebox), "destroy",
 		    G_CALLBACK (gtk_widget_destroyed), &scorebox);
 
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (scorebox)->vbox), vbox, TRUE, TRUE,
-		      0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))),
+		      vbox, TRUE, TRUE, 0);
 
   icon = gtk_image_new_from_icon_name ("gnome-gnect", 48);
   gtk_box_pack_start (GTK_BOX (vbox), icon, FALSE, FALSE, 0);
