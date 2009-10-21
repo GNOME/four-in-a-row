@@ -12,3 +12,5 @@ pixmap_DATA = \
     bg_toplight.png
 
 EXTRA_DIST = $(pixmap_DATA)
+
+-include $(top_srcdir)/git.mk
