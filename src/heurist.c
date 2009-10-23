@@ -565,8 +565,8 @@ heuristic_play_best (struct board *board, long maxnodenum)
       (unsigned char) (board->stack[BOARDX - 1 - x] & 0xff);
   }
 
-  rootnode->stack[BOARDX] = (unsigned char) (board->stack[BOARDX] && 0xff);
-  symmetric->stack[BOARDX] = (unsigned char) (board->stack[BOARDX] && 0xff);
+  rootnode->stack[BOARDX] = (unsigned char) (board->stack[BOARDX] & 0xff);
+  symmetric->stack[BOARDX] = (unsigned char) (board->stack[BOARDX] & 0xff);
 
   if (bin_compare (symmetric->square, rootnode->square) > 0) {
     free (rootnode);
