@@ -53,6 +53,7 @@ struct board *brd;
 
 
 
+G_GNUC_NORETURN
 void
 fatal_error (char *str)
 {
