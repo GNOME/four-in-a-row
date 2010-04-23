@@ -1389,6 +1389,7 @@ create_app (void)
 
   notebook = gtk_notebook_new ();
   gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
+  gtk_notebook_set_show_border (GTK_NOTEBOOK (notebook), FALSE);
 
   g_signal_connect (G_OBJECT (app), "delete_event",
 		    G_CALLBACK (on_game_exit), NULL);
