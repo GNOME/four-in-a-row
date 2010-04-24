@@ -35,6 +35,7 @@
 #include <libgames-support/games-runtime.h>
 #include <libgames-support/games-sound.h>
 #include <libgames-support/games-stock.h>
+#include <libgames-support/games-fullscreen-action.h>
 
 #include "connect4.h"
 #include "main.h"
@@ -372,7 +373,6 @@ GtkAction *player_list_action;
 GtkAction *undo_action;
 GtkAction *hint_action;
 GtkAction *fullscreen_action;
-GtkAction *leave_fullscreen_action;
 
 
 static void
@@ -383,36 +383,6 @@ stop_anim (void)
   anim = ANIM_NONE;
   g_source_remove (timeout);
   timeout = 0;
-}
-
-static void
-set_fullscreen_actions (gboolean is_fullscreen)
-{
-  gtk_action_set_sensitive (leave_fullscreen_action, is_fullscreen);
-  gtk_action_set_visible (leave_fullscreen_action, is_fullscreen);
-
-  gtk_action_set_sensitive (fullscreen_action, !is_fullscreen);
-  gtk_action_set_visible (fullscreen_action, !is_fullscreen);
-}
-
-static void
-fullscreen_cb (GtkAction * action)
-{
-  if (action == fullscreen_action) {
-    gtk_window_fullscreen (GTK_WINDOW (app));
-  } else {
-    gtk_window_unfullscreen (GTK_WINDOW (app));
-  }
-}
-
-/* Just in case something else takes us to/from fullscreen. */
-static gboolean
-window_state_cb (GtkWidget * widget, GdkEventWindowState * event)
-{
-  if (event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
-    set_fullscreen_actions (event->new_window_state &
-			    GDK_WINDOW_STATE_FULLSCREEN);
-  return FALSE;
 }
 
 static void
@@ -1292,10 +1262,6 @@ static const GtkActionEntry action_entry[] = {
   {"Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL,
    G_CALLBACK (on_game_scores)},
   {"Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (on_game_exit)},
-  {"Fullscreen", GAMES_STOCK_FULLSCREEN, NULL, NULL, NULL,
-   G_CALLBACK (fullscreen_cb)},
-  {"LeaveFullscreen", GAMES_STOCK_LEAVE_FULLSCREEN, NULL, NULL, NULL,
-   G_CALLBACK (fullscreen_cb)},
   {"Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL,
    G_CALLBACK (on_settings_preferences)},
   {"Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL,
@@ -1321,7 +1287,6 @@ static const char ui_description[] =
   "    </menu>"
   "    <menu action='ViewMenu'>"
   "      <menuitem action='Fullscreen'/>"
-  "      <menuitem action='LeaveFullscreen'/>"
   "    </menu>"
   "    <menu action='SettingsMenu'>"
   "      <menuitem action='Preferences'/>"
@@ -1363,12 +1328,8 @@ create_game_menus (GtkUIManager * ui_manager)
     gtk_action_group_get_action (action_group, "LeaveNetworkGame");
   hint_action = gtk_action_group_get_action (action_group, "Hint");
   undo_action = gtk_action_group_get_action (action_group, "UndoMove");
-  fullscreen_action =
-    gtk_action_group_get_action (action_group, "Fullscreen");
-  leave_fullscreen_action =
-    gtk_action_group_get_action (action_group, "LeaveFullscreen");
-
-  set_fullscreen_actions (FALSE);
+  fullscreen_action = GTK_ACTION (games_fullscreen_action_new ("Fullscreen", GTK_WINDOW (app)));
+  gtk_action_group_add_action_with_accel (action_group, fullscreen_action, NULL);
 }
 
 
@@ -1439,8 +1400,6 @@ create_app (void)
 		    G_CALLBACK (on_button_press), NULL);
   g_signal_connect (G_OBJECT (app), "key_press_event",
 		    G_CALLBACK (on_key_press), NULL);
-  g_signal_connect (G_OBJECT (app), "window_state_event",
-		    G_CALLBACK (window_state_cb), NULL);
 
   /* We do our own double-buffering. */
   gtk_widget_set_double_buffered (GTK_WIDGET (drawarea), FALSE);
