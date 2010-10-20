@@ -345,10 +345,10 @@ prefsbox_open (void)
   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
   gtk_misc_set_alignment (GTK_MISC (label), 7.45058e-09, 0.5);
 
-  combobox_theme = gtk_combo_box_new_text ();
+  combobox_theme = gtk_combo_box_text_new ();
   for (i = 0; i < n_themes; i++) {
-    gtk_combo_box_append_text (GTK_COMBO_BOX (combobox_theme),
-			       _(theme_get_title (i)));
+    gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combobox_theme),
+		 	            _(theme_get_title (i)));
   }
 
   gtk_box_pack_start (GTK_BOX (hbox), combobox_theme, TRUE, TRUE, 0);
