@@ -34,67 +34,58 @@
 #include "prefs.h"
 
 
-#define DEFAULT_GRID_STYLE     GDK_LINE_ON_OFF_DASH
-
-
 extern Prefs p;
 
+#define COLOR(r,g,b) { 0, 0x##r##00, 0x##g##00, 0x##b##00 }
 
 Theme theme[] = {
   {
    N_("Classic"),
    "tileset_50x50_sunspot.svg",
    NULL,
-   "#9999CC",
-   DEFAULT_GRID_STYLE,
+   COLOR (99, 99, CC),
    N_("Red"), N_("Yellow")
    },
   {
    N_("High Contrast"),
    "tileset_50x50_hcontrast.svg",
    NULL,
-   "#000000",
-   DEFAULT_GRID_STYLE,
+   COLOR (00, 00, 00),
    N_("Light"), N_("Dark")
    },
   {
    N_("High Contrast Inverse"),
    "tileset_50x50_hcinverse.svg",
    NULL,
-   "#FFFFFF",
-   DEFAULT_GRID_STYLE,
+   COLOR (FF, FF, FF),
    N_("Light"), N_("Dark")
    },
   {
    N_("Cream Marbles"),
    "tileset_50x50_catseyes.png",
    "bg_toplight.png",
-   "#727F8C",
-   DEFAULT_GRID_STYLE,
+   COLOR (72, 7F, 8C),
    N_("Red"), N_("Blue")
    },
   {
    N_("Glass Marbles"),
    "tileset_50x50_glassy.png",
    "bg_grotty.jpg",
-   "#727F8C",
-   DEFAULT_GRID_STYLE,
+   COLOR (72, 7F, 8C),
    N_("Red"), N_("Blue")
    },
   {
    N_("Nightfall"),
    "tileset_50x50_glassy.png",
    "bg_nightfall.jpg",
-   "#727F8C",
-   DEFAULT_GRID_STYLE,
+   COLOR (72, 7F, 8C),
    N_("Red"), N_("Yellow")
    },
   {
    N_("Blocks"),
    "tileset_50x50_square.png",
    NULL,
-   "#666666",
-   DEFAULT_GRID_STYLE,
+   COLOR (66, 66, 66),
    N_("Orange"), N_("Blue")
    }
 };

@@ -172,7 +172,7 @@ drop_marble (gint r, gint c)
     tile = TILE_PLAYER2;
 
   gboard[r][c] = tile;
-  gfx_draw_tile (r, c, TRUE);
+  gfx_draw_tile (r, c);
 
   column = column_moveto = c;
   row = row_dropto = r;
@@ -191,11 +191,11 @@ drop (void)
     tile = TILE_PLAYER2;
 
   gboard[row][column] = TILE_CLEAR;
-  gfx_draw_tile (row, column, TRUE);
+  gfx_draw_tile (row, column);
 
   row++;
   gboard[row][column] = tile;
-  gfx_draw_tile (row, column, TRUE);
+  gfx_draw_tile (row, column);
 }
 
 
@@ -204,7 +204,7 @@ static void
 move_cursor (gint c)
 {
   gboard[0][column] = TILE_CLEAR;
-  gfx_draw_tile (0, column, TRUE);
+  gfx_draw_tile (0, column);
 
   column = c;
 
@@ -213,7 +213,7 @@ move_cursor (gint c)
   else
     gboard[0][c] = TILE_PLAYER2;
 
-  gfx_draw_tile (0, c, TRUE);
+  gfx_draw_tile (0, c);
 
   column = column_moveto = c;
   row = row_dropto = 0;
@@ -225,7 +225,7 @@ static void
 move (gint c)
 {
   gboard[0][column] = TILE_CLEAR;
-  gfx_draw_tile (0, column, TRUE);
+  gfx_draw_tile (0, column);
 
   column = c;
 
@@ -234,7 +234,7 @@ move (gint c)
   else
     gboard[0][c] = TILE_PLAYER2;
 
-  gfx_draw_tile (0, c, TRUE);
+  gfx_draw_tile (0, c);
 }
 
 
@@ -261,7 +261,7 @@ draw_line (gint r1, gint c1, gint r2, gint c2, gint tile)
   do {
     done = (r1 == r2 && c1 == c2);
     gboard[r1][c1] = tile;
-    gfx_draw_tile (r1, c1, TRUE);
+    gfx_draw_tile (r1, c1);
     if (r1 != r2)
       r1 += d_row;
     if (c1 != c2)
@@ -641,7 +641,7 @@ on_game_undo (GtkMenuItem * m, gpointer data)
   move_cursor (c);
 
   gboard[r][c] = TILE_CLEAR;
-  gfx_draw_tile (r, c, TRUE);
+  gfx_draw_tile (r, c);
 
   if (get_n_human_players () == 1 && !is_player_human ()) {
     if (moves > 0) {
@@ -653,7 +653,7 @@ on_game_undo (GtkMenuItem * m, gpointer data)
       swap_player ();
       move_cursor (c);
       gboard[r][c] = TILE_CLEAR;
-      gfx_draw_tile (r, c, TRUE);
+      gfx_draw_tile (r, c);
     }
   }
 }
@@ -774,12 +774,11 @@ on_game_scores (GtkMenuItem * m, gpointer data)
 					  GTK_STOCK_CLOSE,
 					  GTK_RESPONSE_CLOSE, NULL);
 
-  gtk_dialog_set_has_separator (GTK_DIALOG (scorebox), FALSE);
   gtk_window_set_resizable (GTK_WINDOW (scorebox), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (scorebox), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))), 2);
 
-  g_signal_connect (GTK_OBJECT (scorebox), "destroy",
+  g_signal_connect (scorebox, "destroy",
 		    G_CALLBACK (gtk_widget_destroyed), &scorebox);
 
   vbox = gtk_vbox_new (FALSE, 6);
@@ -1187,9 +1186,9 @@ on_drawarea_resize (GtkWidget * w, GdkEventConfigure * e, gpointer data)
 }
 
 static gboolean
-on_drawarea_expose (GtkWidget * w, GdkEventExpose * e, gpointer data)
+on_drawarea_draw (GtkWidget * w, cairo_t *cr, gpointer data)
 {
-  gfx_expose (&e->area);
+  gfx_expose (cr);
 
   return FALSE;
 }
@@ -1360,7 +1359,6 @@ create_app (void)
   statusbar = gtk_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();
 
-  gtk_statusbar_set_has_resize_grip (GTK_STATUSBAR (statusbar), FALSE);
   games_stock_prepare_for_statusbar_tooltips (ui_manager, statusbar);
   create_game_menus (ui_manager);
   menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
@@ -1394,8 +1392,8 @@ create_app (void)
   gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK);
   g_signal_connect (G_OBJECT (drawarea), "configure_event",
 		    G_CALLBACK (on_drawarea_resize), NULL);
-  g_signal_connect (G_OBJECT (drawarea), "expose_event",
-		    G_CALLBACK (on_drawarea_expose), NULL);
+  g_signal_connect (G_OBJECT (drawarea), "draw",
+		    G_CALLBACK (on_drawarea_draw), NULL);
   g_signal_connect (G_OBJECT (drawarea), "button_press_event",
 		    G_CALLBACK (on_button_press), NULL);
   g_signal_connect (G_OBJECT (app), "key_press_event",
@@ -1411,9 +1409,6 @@ create_app (void)
 #ifdef GGZ_CLIENT
   gtk_widget_hide (chat);
 #endif
-
-  if (!gfx_set_grid_style ())
-    return FALSE;
 
   gfx_refresh_pixmaps ();
   gfx_draw_all ();

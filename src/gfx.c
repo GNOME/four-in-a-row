@@ -56,16 +56,6 @@ static GdkPixbuf *pb_bground_raw = NULL;
 static GdkPixbuf *pb_tileset = NULL;
 static GdkPixbuf *pb_bground = NULL;
 
-/* background pixmap, we draw the grid on it */
-static GdkPixmap *pm_bground = NULL;
-
-/* the buffer we draw in */
-static GdkPixmap *pm_display = NULL;
-
-static GdkGC *gc = NULL;
-static GdkGC *solidgc = NULL;
-
-
 void
 gfx_free (void)
 {
@@ -85,17 +75,7 @@ gfx_free (void)
     g_object_unref (pb_bground);
     pb_bground = NULL;
   }
-  if (pm_bground != NULL) {
-    g_object_unref (pm_bground);
-    pm_bground = NULL;
-  }
-  if (pm_display != NULL) {
-    g_object_unref (pm_display);
-    pm_display = NULL;
-  }
 }
-
-
 
 gint
 gfx_get_column (gint xpos)
@@ -110,17 +90,16 @@ gfx_get_column (gint xpos)
   return c;
 }
 
-
-
-void
-gfx_draw_tile (gint r, gint c, gboolean refresh)
+static void
+gfx_paint_tile (cairo_t *cr, gint r, gint c)
 {
   gint x = c * tilesize;
   gint y = r * tilesize;
   gint tile = gboard[r][c];
   gint os = 0;
 
-  g_return_if_fail (gc != NULL);
+  if (tile == TILE_CLEAR && r != 0)
+    return;
 
   switch (tile) {
   case TILE_PLAYER1:
@@ -135,37 +114,33 @@ gfx_draw_tile (gint r, gint c, gboolean refresh)
     else
       os = offset[TILE_PLAYER2];
     break;
-  default:
+  case TILE_CLEAR:
+    if (r == 0)
+      os = offset[TILE_CLEAR_CURSOR];
+    else
+      os = offset[TILE_CLEAR];
     break;
   }
 
-  gdk_draw_drawable (pm_display, gc, pm_bground, x, y, x, y, tilesize,
-		     tilesize);
-
-  if (tile != TILE_CLEAR) {
-    gdk_draw_pixbuf (pm_display, NULL, pb_tileset,
-                     os, 0, x, y, tilesize, tilesize,
-                     GDK_RGB_DITHER_NORMAL, 0, 0);
-  }
-
-  if (refresh) {
-    gtk_widget_queue_draw_area (drawarea, x, y, tilesize, tilesize);
-  }
+  cairo_save (cr);
+  gdk_cairo_set_source_pixbuf (cr, pb_tileset, x - os, y);
+  cairo_rectangle (cr, x, y, tilesize, tilesize);
+  cairo_clip (cr);
+  cairo_paint (cr);
+  cairo_restore (cr);
 }
 
-
+void
+gfx_draw_tile (gint r, gint c)
+{
+  gtk_widget_queue_draw_area (drawarea,
+                              c * tilesize, r * tilesize,
+                              tilesize, tilesize);
+}
 
 void
 gfx_draw_all (void)
 {
-  gint r, c;
-
-  for (r = 0; r < 7; r++) {
-    for (c = 0; c < 7; c++) {
-      gfx_draw_tile (r, c, FALSE);
-    }
-  }
-
   gtk_widget_queue_draw_area (drawarea, 0, 0, boardsize, boardsize);
 }
 
@@ -174,10 +149,6 @@ gfx_draw_all (void)
 void
 gfx_refresh_pixmaps (void)
 {
-  gint i;
-
-  g_return_if_fail (gc != NULL);
-
   /* scale the pixbufs */
   if (pb_tileset)
     g_object_unref (pb_tileset);
@@ -190,30 +161,47 @@ gfx_refresh_pixmaps (void)
   pb_bground = gdk_pixbuf_scale_simple (pb_bground_raw,
 					boardsize, boardsize,
 					GDK_INTERP_BILINEAR);
+}
 
-  /* draw the background */
-  gdk_draw_pixbuf (pm_bground, gc, pb_bground,
-		   0, 0, 0, 0, -1, -1, GDK_RGB_DITHER_NORMAL, 0, 0);
+static void
+gfx_draw_grid (cairo_t *cr)
+{
+  static const double dashes[] = { 4., 4. };
+  gint i;
+
+  gdk_cairo_set_source_color (cr, &theme[p.theme_id].grid_color);
+  cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+  cairo_set_line_width (cr, 1);
+  cairo_set_line_cap (cr, CAIRO_LINE_CAP_BUTT);
+  cairo_set_line_join (cr, CAIRO_LINE_JOIN_MITER);
+  cairo_set_dash (cr, dashes, G_N_ELEMENTS (dashes), 0);
 
   /* draw the grid on the background pixmap */
   for (i = 1; i < 7; i++) {
-    gdk_draw_line (pm_bground, gc, i * tilesize, 0, i * tilesize, boardsize);
-    gdk_draw_line (pm_bground, gc, 0, i * tilesize, boardsize, i * tilesize);
+    cairo_move_to (cr, i * tilesize + .5, 0);
+    cairo_line_to (cr, i * tilesize + .5, boardsize);
+    cairo_move_to (cr, 0, i * tilesize + .5);
+    cairo_line_to (cr, boardsize, i * tilesize + .5);
   }
-  /* Mark the top off with a solid line. */
-  gdk_draw_line (pm_bground, solidgc, 0, tilesize, boardsize, tilesize);
+  cairo_stroke (cr);
+
+  /* Draw separator line at the top */
+  cairo_set_dash (cr, NULL, 0, 0);
+  cairo_move_to (cr, 0, tilesize + .5);
+  cairo_line_to (cr, boardsize, tilesize + .5);
+
+  cairo_stroke (cr);
 }
-
-
 
 void
 gfx_resize (GtkWidget * w)
 {
-  GtkAllocation allocation;
+  int width, height;
 
-  gtk_widget_get_allocation (w, &allocation);
+  width = gtk_widget_get_allocated_width (w);
+  height = gtk_widget_get_allocated_height (w);
 
-  boardsize = MIN (allocation.width, allocation.height);
+  boardsize = MIN (width, height);
   tilesize = boardsize / 7;
 
   offset[TILE_PLAYER1] = 0;
@@ -223,37 +211,30 @@ gfx_resize (GtkWidget * w)
   offset[TILE_PLAYER1_CURSOR] = tilesize * 4;
   offset[TILE_PLAYER2_CURSOR] = tilesize * 5;
 
-  /* create the buffer and background pixmap of the proper size */
-  if (pm_display != NULL)
-    g_object_unref (pm_display);
-  if (pm_bground != NULL)
-    g_object_unref (pm_bground);
-
-  pm_display = gdk_pixmap_new (gtk_widget_get_window (w), boardsize, boardsize, -1);
-  pm_bground = gdk_pixmap_new (gtk_widget_get_window (w), boardsize, boardsize, -1);
-
-  /* the first time the configure signal is emitted, the drawarea
-   * is not shown yet so we do not have the gc.
-   */
-  if (gc) {
-    gfx_refresh_pixmaps ();
-    gfx_draw_all ();
-  }
+  gfx_refresh_pixmaps ();
+  gfx_draw_all ();
 }
-
-
 
 void
-gfx_expose (GdkRectangle * area)
+gfx_expose (cairo_t *cr)
 {
-  gdk_draw_drawable (GDK_DRAWABLE (gtk_widget_get_window (drawarea)),
-                     gc,
-                     pm_display,
-                     area->x, area->y,
-                     area->x, area->y, area->width, area->height);
+  gint r, c;
+
+  /* draw the background */
+  cairo_save (cr);
+  gdk_cairo_set_source_pixbuf (cr, pb_bground, 0, 0);
+  cairo_rectangle (cr, 0, 0, boardsize, boardsize);
+  cairo_paint (cr);
+  cairo_restore (cr);
+
+  for (r = 0; r < 7; r++) {
+    for (c = 0; c < 7; c++) {
+      gfx_paint_tile (cr, r, c);
+    }
+  }
+
+  gfx_draw_grid (cr);
 }
-
-
 
 static void
 gfx_load_error (const gchar * fname)
@@ -269,7 +250,6 @@ gfx_load_error (const gchar * fname)
   gtk_dialog_run (GTK_DIALOG (dialog));
   gtk_widget_destroy (dialog);
 }
-
 
 gboolean
 gfx_load_pixmaps (void)
@@ -351,55 +331,10 @@ gfx_load_pixmaps (void)
   return TRUE;
 }
 
-
-
-gboolean
-gfx_set_grid_style (void)
-{
-  GdkColormap *cmap;
-  GdkColor color;
-
-  g_return_val_if_fail (drawarea != NULL, FALSE);
-
-  if (!gc) {
-    gc = gdk_gc_new (gtk_widget_get_window (drawarea));
-    solidgc = gdk_gc_new (gtk_widget_get_window (drawarea));
-  }
-
-  if (theme[p.theme_id].grid_rgb == NULL)
-    return FALSE;
-
-  if (!gdk_color_parse (theme[p.theme_id].grid_rgb, &color))
-    gdk_color_parse ("#727F8C", &color);
-
-  cmap = gtk_widget_get_colormap (drawarea);
-  gdk_colormap_alloc_color (cmap, &color, FALSE, TRUE);
-
-  gdk_gc_set_foreground (gc, &color);
-
-  gdk_colormap_free_colors (cmap, &color, 1);
-  g_object_unref (cmap);
-
-  gdk_gc_set_line_attributes (gc, 0, theme[p.theme_id].grid_style,
-			      GDK_CAP_BUTT, GDK_JOIN_MITER);
-
-  gdk_gc_copy (solidgc, gc);
-  gdk_gc_set_line_attributes (solidgc, 0, GDK_LINE_SOLID,
-			      GDK_CAP_BUTT, GDK_JOIN_MITER);
-
-
-  return TRUE;
-}
-
-
-
 gboolean
 gfx_change_theme (void)
 {
   if (!gfx_load_pixmaps ())
-    return FALSE;
-
-  if (!gfx_set_grid_style ())
     return FALSE;
 
   gfx_refresh_pixmaps ();

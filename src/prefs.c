@@ -44,9 +44,9 @@
 #define DEFAULT_LEVEL_PLAYER1  LEVEL_HUMAN
 #define DEFAULT_LEVEL_PLAYER2  LEVEL_WEAK
 #define DEFAULT_THEME_ID       0
-#define DEFAULT_KEY_LEFT       GDK_Left
-#define DEFAULT_KEY_RIGHT      GDK_Right
-#define DEFAULT_KEY_DROP       GDK_Down
+#define DEFAULT_KEY_LEFT       GDK_KEY_Left
+#define DEFAULT_KEY_RIGHT      GDK_KEY_Right
+#define DEFAULT_KEY_DROP       GDK_KEY_Down
 #define DEFAULT_DO_SOUND       TRUE
 #define DEFAULT_DO_ANIMATE     TRUE
 
@@ -282,7 +282,6 @@ prefsbox_open (void)
 					  GTK_DIALOG_DESTROY_WITH_PARENT,
 					  GTK_STOCK_CLOSE,
 					  GTK_RESPONSE_ACCEPT, NULL);
-  gtk_dialog_set_has_separator (GTK_DIALOG (prefsbox), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (prefsbox), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (prefsbox))),
 		       2);
