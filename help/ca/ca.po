@@ -627,7 +627,7 @@ msgid ""
 "<menuchoice><guimenu>Game</guimenu><guimenuitem>Network Game</guimenuitem></"
 "menuchoice> on the Four-in-a-Row menu."
 msgstr ""
-"Per a iniciar la partida multijudaor del Quatre en ratlla, seleccioneu "
+"Per a iniciar la partida multijugador del Quatre en ratlla, seleccioneu "
 "<menuchoice><guimenu>Partida</guimenu><guimenuitem>Joc en xarxa</"
 "guimenuitem></menuchoice> en el menú del Quatre en ratlla."
 
