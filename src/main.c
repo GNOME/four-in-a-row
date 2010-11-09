@@ -1363,11 +1363,7 @@ create_app (void)
   create_game_menus (ui_manager);
   menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
 
-#if GTK_CHECK_VERSION (2, 90, 5)
   vpaned = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
-#else
-  vpaned = gtk_vpaned_new ();
-#endif
 
   vbox = gtk_vbox_new (FALSE, 0);
   gridframe = games_grid_frame_new (7, 7);
