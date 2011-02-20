@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2009-06-12 22:17+0000\n"
+"POT-Creation-Date: 2011-02-08 00:22+0000\n"
 "PO-Revision-Date: 2009-06-13 13:15+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -201,10 +201,6 @@ msgid "Feedback"
 msgstr "Comentarios"
 
 #: C/gnect.xml:97(para)
-#| msgid ""
-#| "To report a bug or make a suggestion regarding the Four-in-a-Row "
-#| "application or this manual, follow the directions in the <ulink url="
-#| "\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
 msgid ""
 "To report a bug or make a suggestion regarding the Four-in-a-Row application "
 "or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
@@ -416,7 +412,7 @@ msgid ""
 "Configuration options in the <guilabel>Game</guilabel> tab are: <placeholder-"
 "1/>"
 msgstr ""
-"Las opciones de configuración en la solapa <guilabel>Juego</guilabel> son: "
+"Las opciones de configuración en la pestaña <guilabel>Juego</guilabel> son: "
 "<placeholder-1/>"
 
 #: C/gnect.xml:284(para)
@@ -425,7 +421,7 @@ msgid ""
 "controls. To change a control, double click the appropriate entry and then "
 "press the new key."
 msgstr ""
-"Finalmente hay una solapa de <guilabel>Controles</guilabel> para cambiar los "
+"Finalmente hay una pestaña de <guilabel>Controles</guilabel> para cambiar los "
 "controles del teclado. Para cambiar un control, pulse dos veces con el ratón "
 "sobre la entrada apropiada y después pulse una nueva tecla."
 
@@ -899,7 +895,7 @@ msgstr ""
 "Place</street> - Suite 330 <city>Boston</city>, <state>MA</"
 "state><postcode>02111-1307</postcode><country>USA</country></address>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/gnect.xml:0(None)
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
