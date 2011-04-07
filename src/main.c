@@ -30,7 +30,6 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
-#include <libgames-support/games-gtk-compat.h>
 #include <libgames-support/games-help.h>
 #include <libgames-support/games-runtime.h>
 #include <libgames-support/games-sound.h>

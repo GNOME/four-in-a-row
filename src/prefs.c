@@ -32,7 +32,6 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-frame.h>
-#include <libgames-support/games-gtk-compat.h>
 #include <libgames-support/games-controls.h>
 #include <libgames-support/games-sound.h>
 
