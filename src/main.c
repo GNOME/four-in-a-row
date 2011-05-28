@@ -760,7 +760,7 @@ scorebox_reset (void)
 static void
 on_game_scores (GtkMenuItem * m, gpointer data)
 {
-  GtkWidget *table, *vbox, *icon;
+  GtkWidget *table, *grid, *icon;
 
   if (scorebox != NULL) {
     gtk_window_present (GTK_WINDOW (scorebox));
@@ -780,16 +780,19 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   g_signal_connect (scorebox, "destroy",
 		    G_CALLBACK (gtk_widget_destroyed), &scorebox);
 
-  vbox = gtk_vbox_new (FALSE, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
+  grid = gtk_grid_new ();
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_VERTICAL);
+  gtk_container_set_border_width (GTK_CONTAINER (grid), 5);
+
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))),
-		      vbox, TRUE, TRUE, 0);
+		      grid, TRUE, TRUE, 0);
 
   icon = gtk_image_new_from_icon_name ("gnome-gnect", 48);
-  gtk_box_pack_start (GTK_BOX (vbox), icon, FALSE, FALSE, 0);
+  gtk_container_add (GTK_CONTAINER (grid), icon);
 
   table = gtk_table_new (3, 2, FALSE);
-  gtk_box_pack_start (GTK_BOX (vbox), table, TRUE, TRUE, 0);
+  gtk_container_add (GTK_CONTAINER (grid), table);
   gtk_table_set_col_spacings (GTK_TABLE (table), 12);
   gtk_table_set_col_spacings (GTK_TABLE (table), 6);
 
@@ -1336,7 +1339,7 @@ create_app (void)
 {
   GtkWidget *menubar;
   GtkWidget *gridframe;
-  GtkWidget *vbox;
+  GtkWidget *grid;
   GtkWidget *vpaned;
   GtkUIManager *ui_manager;
 
@@ -1363,22 +1366,25 @@ create_app (void)
   menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
 
   vpaned = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
+  gtk_widget_set_hexpand (vpaned, TRUE);
+  gtk_widget_set_vexpand (vpaned, TRUE);
 
-  vbox = gtk_vbox_new (FALSE, 0);
+  grid = gtk_grid_new ();
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_VERTICAL);
+
   gridframe = games_grid_frame_new (7, 7);
 
-
   gtk_paned_pack1 (GTK_PANED (vpaned), gridframe, TRUE, FALSE);
-  gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
 #ifdef GGZ_CLIENT
   chat = create_chat_widget ();
   gtk_paned_pack2 (GTK_PANED (vpaned), chat, FALSE, TRUE);
 #endif
-  gtk_box_pack_start (GTK_BOX (vbox), vpaned, TRUE, TRUE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
+  gtk_container_add (GTK_CONTAINER (grid), menubar);
+  gtk_container_add (GTK_CONTAINER (grid), vpaned);
+  gtk_container_add (GTK_CONTAINER (grid), statusbar);
 
   gtk_container_add (GTK_CONTAINER (app), notebook);
-  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, NULL);
+  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), grid, NULL);
   gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), MAIN_PAGE);
 
   drawarea = gtk_drawing_area_new ();
