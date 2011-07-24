@@ -5,7 +5,6 @@ DOC_LINGUAS = ca cs da de el en_GB es eu fi fr it oc sl sr sr@latin sv zh_CN
 DOC_MODULE = gnect
 
 DOC_ENTITIES = \
-	network-games.xml \
 	legal.xml
 
 DOC_FIGURES = \

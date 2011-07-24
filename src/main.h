@@ -14,7 +14,6 @@
 #define SIZE_VSTR      53
 
 #define MAIN_PAGE           	0
-#define NETWORK_PAGE           	1
 
 typedef enum {
   MOVE_LEFT,
@@ -55,7 +54,6 @@ extern GtkWidget *app;
 extern GtkWidget *notebook;
 
 gboolean player_active;
-gboolean ggz_network_mode;
 
 void game_reset (void);
 void process_move (int move);
