@@ -51,14 +51,14 @@ Theme theme[] = {
    "tileset_50x50_hcontrast.svg",
    NULL,
    COLOR (00, 00, 00),
-   N_("Light"), N_("Dark")
+   N_("Circle"), N_("Cross")
    },
   {
    N_("High Contrast Inverse"),
    "tileset_50x50_hcinverse.svg",
    NULL,
    COLOR (FF, FF, FF),
-   N_("Light"), N_("Dark")
+   N_("Circle"), N_("Cross")
    },
   {
    N_("Cream Marbles"),
@@ -79,7 +79,7 @@ Theme theme[] = {
    "tileset_50x50_glassy.png",
    "bg_nightfall.jpg",
    COLOR (72, 7F, 8C),
-   N_("Red"), N_("Yellow")
+   N_("Red"), N_("Blue")
    },
   {
    N_("Blocks"),
