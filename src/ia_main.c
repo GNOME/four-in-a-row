@@ -759,7 +759,7 @@ look_ahed (struct board *board)
 {
   long def_nodes = 0L;
   short x, y, score[BOARDX], sc = IMPOSSIBLE, p;
-  short depth = DEPTH, oracle, set = NO, def_depth = 0, cpu_level;
+  short depth = DEPTH, oracle, def_depth = 0, cpu_level;
 
 
   maxdepth = 0;
@@ -798,7 +798,6 @@ look_ahed (struct board *board)
 
 	score[x] += (oracle << 13);
 	if (oracle) {
-	  set = YES;
 	  if (!board->oracle[2 - board->turn]) {
 	    board->lastguess = board->filled + 1;
 	    board->oracle[2 - board->turn] = YES;
