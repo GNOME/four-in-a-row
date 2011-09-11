@@ -296,18 +296,18 @@ prefsbox_open (void)
 
   /* game tab */
 
-  vbox1 = gtk_vbox_new (FALSE, 18);
+  vbox1 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (vbox1), 12);
   label = gtk_label_new (_("Game"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox1, label);
 
-  hbox = gtk_hbox_new (FALSE, 18);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 18);
   gtk_box_pack_start (GTK_BOX (vbox1), hbox, FALSE, FALSE, 0);
 
   frame_player1 = games_frame_new (NULL);
   gtk_box_pack_start (GTK_BOX (hbox), frame_player1, FALSE, FALSE, 0);
 
-  vbox2 = gtk_vbox_new (FALSE, 0);
+  vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_container_add (GTK_CONTAINER (frame_player1), vbox2);
 
   group = NULL;
@@ -320,7 +320,7 @@ prefsbox_open (void)
   frame_player2 = games_frame_new (NULL);
   gtk_box_pack_start (GTK_BOX (hbox), frame_player2, FALSE, FALSE, 0);
 
-  vbox2 = gtk_vbox_new (FALSE, 0);
+  vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_container_add (GTK_CONTAINER (frame_player2), vbox2);
 
   group = NULL;
@@ -333,10 +333,10 @@ prefsbox_open (void)
   frame = games_frame_new (_("Appearance"));
   gtk_box_pack_start (GTK_BOX (vbox1), frame, FALSE, FALSE, 0);
 
-  vbox2 = gtk_vbox_new (FALSE, 7);
+  vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 7);
   gtk_container_add (GTK_CONTAINER (frame), vbox2);
 
-  hbox = gtk_hbox_new (FALSE, 12);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_box_pack_start (GTK_BOX (vbox2), hbox, TRUE, TRUE, 0);
 
   label = gtk_label_new_with_mnemonic (_("_Theme:"));
