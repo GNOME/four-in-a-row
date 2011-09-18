@@ -1,74 +1,23 @@
 # Danish translation for gnome-games.
-# Copyright (C) 2010 gnome-games.
+# Copyright (C) 2011 gnome-games.
 # This file is distributed under the same license as the gnome-games package.
-# Joe Hansen (joedalton2@yahoo.dk), 2009, 2010.
+# Joe Hansen (joedalton2@yahoo.dk), 2009, 2010, 2011.
 # Korrekturlæst Torben Grøn Helligsø, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
-"POT-Creation-Date: 2010-01-14 18:48+0100\n"
-"PO-Revision-Date: 2010-01-06 22:31+0200\n"
+"POT-Creation-Date: 2011-09-18 23:46+0200\n"
+"PO-Revision-Date: 2011-09-18 22:31+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../C/network-games.xml:10(title)
-msgid "Network Games"
-msgstr "Netværksspil"
-
-#: ../C/network-games.xml:11(para)
-msgid ""
-"support networked multiplayer games which is provided by GGZ Gaming Zone. By "
-"connecting to a server on the Internet, you can challenge other players in "
-"multiplayer games. For news, updates and a list of servers to connect to, "
-"see the gnome-games website. To start the multiplayer game of , select Game "
-"Network Game on the menu. Connecting to a network server The connection "
-"dialog is shown initially when starting a new network game. This dialog "
-"allows you to select a server to connect to, and the username that you will "
-"have while connected to that server. It is possible to connect to a server "
-"with either a guest account or a normal registered account. Guest accounts "
-"allows you to anonymously login, while a normal login account allows you to "
-"reserve your own username which is protected by the password that you "
-"choose. The Guest Login option should be selected if you want an anonymous "
-"guest account. If you want to create a new login account, then select the "
-"First-time Login option, with the username, password and email of your "
-"choice. If you have already created your account, you can connect by "
-"selecting the Normal Login option, and enter the username and password that "
-"you have chosen. To connect to a server, click on the Connect button. The "
-"network connection dialog. The network connection dialog. Joining a game "
-"room Once you have successfully connected to a server, you can choose which "
-"game room to join. To play a multiplayer game of , select the room. If you "
-"want to host your own game, then click on the Launch button. This creates a "
-"new table where other players can participate in a game against you. If "
-"there are any other games already started, then you can double-click on an "
-"existing game table to join it. The list of game tables on the right shows "
-"you the number of available seats, which means the number of players that "
-"can join the game table. This network dialog allows you to join a game room "
-"to find other players. This network dialog allows you to join a game room to "
-"find other players. When creating a new table for games, a preference dialog "
-"is displayed which allows you to customize the game, such as set the minimum "
-"number of players for the game. Once the total number of seats have been "
-"taken, then no more players are allowed to join that game table. It is "
-"possible to chat with other players in network games. Ask for advice or help "
-"playing the games, but please be polite against other players. Waiting for "
-"other players to join the game Once you have successfully joined a game "
-"table, then you have to wait until enough players have joined the table. The "
-"Players List menu item allows you to see a list of the players who have "
-"joined the game. The game will begin immediately when the total number of "
-"players in the the game have been reached. Playing multiplayer games "
-"Multiplayer games have pretty much the same rules as normal games, except "
-"that you are now playing against human players. This means that other "
-"strategies might possibly be better than when playing against AI players. "
-"Once a player has won, the game ends and you can return to the initial "
-"network game screen. Then you can play yet another game of addictive "
-"multiplayer!"
-msgstr ""
-
-#: ../C/legal.xml:2(para)
+#: ../C/legal.xml:2(para) ../C/gnect.xml:2(para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
@@ -84,7 +33,7 @@ msgstr ""
 "kopi af GFDL her <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> eller i "
 "filen COPYING-DOCS som distribueres sammen med denne manual."
 
-#: ../C/legal.xml:12(para)
+#: ../C/legal.xml:12(para) ../C/gnect.xml:12(para)
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -96,7 +45,7 @@ msgstr ""
 "du gøre dette ved at tilføje en kopi af licensen til manualen, som beskrevet "
 "i afsnit 6 af licensen."
 
-#: ../C/legal.xml:19(para)
+#: ../C/legal.xml:19(para) ../C/gnect.xml:19(para)
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -110,7 +59,7 @@ msgstr ""
 "gjort opmærksomme på disse varemærker, er navnene skrevet med store "
 "bogstaver eller store forbogstaver."
 
-#: ../C/legal.xml:35(para)
+#: ../C/legal.xml:35(para) ../C/gnect.xml:35(para)
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -138,7 +87,7 @@ msgstr ""
 "ÆNDRET VERSION AF DOKUMENTET ER AUTORISERET HERUNDER BORTSET FRA DENNE "
 "ANSVARSFRASKRIVELSE OG"
 
-#: ../C/legal.xml:55(para)
+#: ../C/legal.xml:55(para) ../C/gnect.xml:55(para)
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -162,7 +111,7 @@ msgstr ""
 "BRUG AF DETTE DOKUMENT ELLER MODIFICEREDE VERSIONER HERAF, SELV HVIS EN "
 "SÅDAN PART HAR VÆRET INFORMERET OM MULIGHEDEN FOR SÅDANNE SKADER."
 
-#: ../C/legal.xml:28(para)
+#: ../C/legal.xml:28(para) ../C/gnect.xml:28(para)
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
@@ -173,16 +122,16 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../C/gnect.xml:176(None)
+#: ../C/gnect.xml:175(None)
 msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
 msgstr ""
 "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
 
-#: ../C/gnect.xml:22(title)
+#: ../C/gnect.xml:21(title)
 msgid "Four-in-a-Row Manual"
 msgstr "Manual til Fire på stribe"
 
-#: ../C/gnect.xml:24(para)
+#: ../C/gnect.xml:23(para)
 msgid ""
 "The object of Four-in-a-Row is to place four pieces in a vertical, "
 "horizontal, or diagonal row while the opponent tries to block and make his/"
@@ -194,47 +143,51 @@ msgstr ""
 "placere sin egen række med fire spillebrikker. Fire på stribe kan spilles "
 "mod en anden person eller mod computeren."
 
-#: ../C/gnect.xml:33(year)
+#: ../C/gnect.xml:32(year)
 msgid "2001-2002"
 msgstr "2001-2002"
 
-#: ../C/gnect.xml:34(holder)
+#: ../C/gnect.xml:33(holder)
 msgid "Timothy Musson"
 msgstr "Timothy Musson"
 
-#: ../C/gnect.xml:47(publishername)
+#: ../C/gnect.xml:46(publishername)
 msgid "GNOME Documentation Project"
 msgstr "GNOME's dokumentationsprojekt"
 
-#: ../C/gnect.xml:54(firstname)
+#: ../C/gnect.xml:53(firstname)
 msgid "Timothy"
 msgstr "Timothy"
 
-#: ../C/gnect.xml:55(surname)
+#: ../C/gnect.xml:54(surname)
 msgid "Musson"
 msgstr "Musson"
 
-#: ../C/gnect.xml:58(email)
+#: ../C/gnect.xml:57(email)
 msgid "trmusson@ihug.co.nz"
 msgstr "trmusson@ihug.co.nz"
 
-#: ../C/gnect.xml:81(revnumber)
+#: ../C/gnect.xml:80(revnumber)
 msgid "Four-in-a-Row Manual V2.8"
 msgstr "Manual til Fire på stribe version 2.8"
 
-#: ../C/gnect.xml:84(para)
+#: ../C/gnect.xml:81(date)
+msgid "September 2004"
+msgstr "September 2004"
+
+#: ../C/gnect.xml:83(para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 
-#: ../C/gnect.xml:92(releaseinfo)
+#: ../C/gnect.xml:91(releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-Row."
 msgstr "Denne manual beskriver version 2.12 af Fire på stribe."
 
-#: ../C/gnect.xml:96(title)
+#: ../C/gnect.xml:95(title)
 msgid "Feedback"
 msgstr "Tilbagemeldinger"
 
-#: ../C/gnect.xml:97(para)
+#: ../C/gnect.xml:96(para)
 msgid ""
 "To report a bug or make a suggestion regarding the Four-in-a-Row application "
 "or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
@@ -245,11 +198,11 @@ msgstr ""
 "på siden <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help"
 "\">tilbagemeldinger omkring GNOME</ulink>."
 
-#: ../C/gnect.xml:113(title)
+#: ../C/gnect.xml:112(title)
 msgid "Introduction"
 msgstr "Introduktion"
 
-#: ../C/gnect.xml:115(para)
+#: ../C/gnect.xml:114(para)
 msgid ""
 "<application>Four-in-a-Row</application> is a four-in-a-row game for the "
 "GNOME Project. The object of the game is to build a line of four of your "
@@ -262,7 +215,7 @@ msgstr ""
 "eller computer) i at bygge sin linje. En linje kan være lodret, vandret "
 "eller skrå (diagonal)."
 
-#: ../C/gnect.xml:123(para)
+#: ../C/gnect.xml:122(para)
 msgid ""
 "To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
 "a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
@@ -274,7 +227,7 @@ msgstr ""
 "guisubmenu> i <guimenu>Hovedmenuen</guimenu>, eller der tastes "
 "<command>gnect</command> fra kommandolinjen."
 
-#: ../C/gnect.xml:131(para)
+#: ../C/gnect.xml:130(para)
 msgid ""
 "<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
 "games</filename> package, which is part of the GNOME desktop environment. "
@@ -286,24 +239,23 @@ msgstr ""
 "Dette dokument beskriver version 2.8 af <application>Fire på stribe</"
 "application>."
 
-#: ../C/gnect.xml:137(para)
+#: ../C/gnect.xml:136(para)
 msgid ""
-"Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
-"link> support with two human players in hotseat or network mode."
+"Four-in-a-Row also features multiplayer support with two human players in "
+"hotseat mode."
 msgstr ""
-"Fire på stribe understøtter også <link linkend=\"network-games\">flere "
-"spillere</link> i form af to spillere der udfordrer hinanden eller via "
-"netværket."
+"Fire på stribe understøtter også flere spillere i form af to spillere der "
+"udfordrer hinanden."
 
-#: ../C/gnect.xml:151(title)
+#: ../C/gnect.xml:150(title)
 msgid "Basic Usage"
 msgstr "Grundlæggende brug"
 
-#: ../C/gnect.xml:157(title)
+#: ../C/gnect.xml:156(title)
 msgid "Playing Four-in-a-Row"
 msgstr "Sådan spiller du Fire på stribe"
 
-#: ../C/gnect.xml:159(para)
+#: ../C/gnect.xml:158(para)
 msgid ""
 "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
 "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
@@ -311,7 +263,7 @@ msgstr ""
 "For at begynde et spil Fire på stribe vælges <menuchoice><guimenu>Spil</"
 "guimenu><guimenuitem>Nyt spil</guimenuitem></menuchoice>."
 
-#: ../C/gnect.xml:163(para)
+#: ../C/gnect.xml:162(para)
 msgid ""
 "The <interface>game board</interface> consists of seven columns and six "
 "rows. Above it, a special row indicates the current player and the marble "
@@ -324,7 +276,7 @@ msgstr ""
 "kolonnerne. Marmorkuglen lander på den øverste tomme række i den valgte "
 "kolonne."
 
-#: ../C/gnect.xml:168(para)
+#: ../C/gnect.xml:167(para)
 msgid ""
 "To make a move, click on a column with the mouse. To play with the keyboard, "
 "move the marble in the top row with the left and right arrow keys, and drop "
@@ -336,11 +288,11 @@ msgstr ""
 "piletast, og sænkes med piletasten der peger nedad. Din marmorkugle vil "
 "lande i den øverste tomme række i den kolonne."
 
-#: ../C/gnect.xml:179(phrase) ../C/gnect.xml:181(para)
+#: ../C/gnect.xml:178(phrase) ../C/gnect.xml:180(para)
 msgid "Four-in-a-Row's Main Window"
 msgstr "Fire på stribes hovedvindue"
 
-#: ../C/gnect.xml:184(para)
+#: ../C/gnect.xml:183(para)
 msgid ""
 "The game is won when one of the two players manages to line up four of his "
 "or her marbles horizontally, vertically or diagonally. If the board fills up "
@@ -350,12 +302,12 @@ msgstr ""
 "af fire marmorkugler enten vandret, lodret eller diagonalt. Hvis brættet "
 "bliver fyldt op uden fire på stribe, så ender spillet uafgjort."
 
-#: ../C/gnect.xml:195(title)
+#: ../C/gnect.xml:194(title)
 msgid "Commands"
 msgstr "Kommandoer"
 
 #. id for removed section
-#: ../C/gnect.xml:198(para)
+#: ../C/gnect.xml:197(para)
 msgid ""
 "To take back a move, choose <menuchoice><shortcut><keycombo><keysym>Ctrl</"
 "keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Undo move</"
@@ -371,7 +323,7 @@ msgstr ""
 "omgjort og så dit. Gentagelse af dette vil føre brættet tilbage til sin "
 "udgangsposition."
 
-#: ../C/gnect.xml:210(para)
+#: ../C/gnect.xml:209(para)
 msgid ""
 "Choose <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
 "keycap></keycombo></shortcut><guimenuitem>Hint</guimenuitem></menuchoice> to "
@@ -383,7 +335,7 @@ msgstr ""
 "at få et forslag fra computeren til dit næste træk. Forslaget vises i "
 "statusbjælken."
 
-#: ../C/gnect.xml:218(para)
+#: ../C/gnect.xml:217(para)
 msgid ""
 "Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
 "tally of wins and draws for the current playing session. The scores will be "
@@ -393,13 +345,13 @@ msgstr ""
 "det totale antal sejre og uafgjorte for den aktuelle spilsession. Pointene "
 "vil blive nulstillet hvis spillervalget ændres under indstillinger."
 
-#: ../C/gnect.xml:233(title)
+#: ../C/gnect.xml:232(title)
 msgid "Preferences"
 msgstr "Indstillinger"
 
 # nb settings ikke korrekt oversat i selve filen i ubuntu 9.10.
 # Den hedder indstillinger og så indstillinger igen.
-#: ../C/gnect.xml:235(para)
+#: ../C/gnect.xml:234(para)
 msgid ""
 "To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
 "from the <guimenu>Settings</guimenu> menu. This opens the "
@@ -409,12 +361,12 @@ msgstr ""
 "guimenuitem> fra menuen <guimenu>Opsætning</guimenu>. Dette åbner "
 "dialogvinduet <interface>Indstillinger</interface>."
 
-#: ../C/gnect.xml:249(term)
+#: ../C/gnect.xml:248(term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
 msgstr ""
 "<guilabel>Første spiller</guilabel> og <guilabel>Anden spiller</guilabel>"
 
-#: ../C/gnect.xml:254(para)
+#: ../C/gnect.xml:253(para)
 msgid ""
 "These two columns tell <application>Four-in-a-Row</application> who's "
 "playing and, if it is the computer, how hard they play. To play against a "
@@ -424,33 +376,33 @@ msgstr ""
 "som spiller, og hvis det er computeren, hvilken sværhedsgrad den har. For at "
 "spille mod en ven vælges Menneske for både Første spiller og Anden spiller."
 
-#: ../C/gnect.xml:264(guilabel)
+#: ../C/gnect.xml:263(guilabel)
 msgid "Theme"
 msgstr "Tema"
 
-#: ../C/gnect.xml:266(para)
+#: ../C/gnect.xml:265(para)
 msgid ""
 "The theme menu lists available themes and lets you choose your favourite."
 msgstr "Temamenuen viser tilgængelige temaer og lader dig vælge din favorit."
 
-#: ../C/gnect.xml:274(guilabel)
+#: ../C/gnect.xml:273(guilabel)
 msgid "Enable Animation"
 msgstr "Aktiver animering"
 
 # "Her kan du slå spilanimering til og fra."
-#: ../C/gnect.xml:276(para)
+#: ../C/gnect.xml:275(para)
 msgid "Here you can toggle the game's animation on or off."
 msgstr "Her kan du aktivere spillets animering."
 
-#: ../C/gnect.xml:242(para)
+#: ../C/gnect.xml:241(para)
 msgid ""
-"Configuration options in the <guilabel>Game</guilabel> tab are: <placeholder-"
-"1/>"
+"Configuration options in the <guilabel>Game</guilabel> tab are: "
+"<placeholder-1/>"
 msgstr ""
 "Konfigurationsindstillingerne i fanebladet <guilabel>Spil</guilabel> er: "
 "<placeholder-1/>"
 
-#: ../C/gnect.xml:284(para)
+#: ../C/gnect.xml:283(para)
 msgid ""
 "Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
 "controls. To change a control, double click the appropriate entry and then "
@@ -460,11 +412,11 @@ msgstr ""
 "ændre på styringen via tastaturet. For at ændre en tastefunktion "
 "dobbeltklikkes der på en post, og så trykkes der på en ny tast."
 
-#: ../C/gnect.xml:299(title)
+#: ../C/gnect.xml:298(title)
 msgid "Creating New Themes"
 msgstr "Oprettelse af nye temaer"
 
-#: ../C/gnect.xml:301(para)
+#: ../C/gnect.xml:300(para)
 msgid ""
 "This section's included in case you'd like to make your own themes for "
 "<application>Four-in-a-Row</application>. It assumes you're familiar with "
@@ -475,11 +427,11 @@ msgstr ""
 "er velkendt med grundlæggende tekstredigering, grafiske programmer og "
 "kommandolinjen."
 
-#: ../C/gnect.xml:309(title)
+#: ../C/gnect.xml:308(title)
 msgid "Images"
 msgstr "Billeder"
 
-#: ../C/gnect.xml:311(para)
+#: ../C/gnect.xml:310(para)
 msgid ""
 "<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
 "equal size, lined up horizontally. From left to right:"
@@ -487,39 +439,39 @@ msgstr ""
 "<application>Fire på stribes</application> feltsæt indeholder seks felter af "
 "ens størrelse, opsat vandret. Fra venstre mod højre:"
 
-#: ../C/gnect.xml:318(para)
+#: ../C/gnect.xml:317(para)
 msgid "Player One's marble as it appears on the game board"
 msgstr "Første spillers marmorkugle som den fremgår af spilbrættet"
 
-#: ../C/gnect.xml:321(para)
+#: ../C/gnect.xml:320(para)
 msgid "Player Two's marble as it appears on the game board"
 msgstr "Anden spillers marmorkugle som den fremgår af spilbrættet"
 
-#: ../C/gnect.xml:324(para)
+#: ../C/gnect.xml:323(para)
 msgid "The game board's background"
 msgstr "Spilbrættets baggrund"
 
-#: ../C/gnect.xml:327(para)
+#: ../C/gnect.xml:326(para)
 msgid "The top row's background"
 msgstr "Den øverste rækkes baggrund"
 
-#: ../C/gnect.xml:330(para)
+#: ../C/gnect.xml:329(para)
 msgid "Player One's marble as it appears on the top row"
 msgstr "Første spillers marmorkugle som den fremstår på den øverste række"
 
-#: ../C/gnect.xml:333(para)
+#: ../C/gnect.xml:332(para)
 msgid "Player Two's marble as it appears on the top row"
 msgstr "Anden spillers marmorkugle som den fremstår på den øverste række"
 
-#: ../C/gnect.xml:338(title)
+#: ../C/gnect.xml:337(title)
 msgid "An example tile set"
 msgstr "Et eksempel på et feltsæt"
 
-#: ../C/gnect.xml:340(screeninfo)
+#: ../C/gnect.xml:339(screeninfo)
 msgid "This image shows the six tiles in a tile set"
 msgstr "Dette billede viser de seks felter i et feltsæt"
 
-#: ../C/gnect.xml:345(para)
+#: ../C/gnect.xml:344(para)
 msgid ""
 "Tiles three and four will be repeated over the game board and top row unless "
 "a full window background image is specified in the theme file."
@@ -527,12 +479,12 @@ msgstr ""
 "Felterne tre og fire vil blive gentaget hen over spilbrættet og øverste "
 "række medmindre et fuldt vinduebaggrundsbillede er angivet i temafilen."
 
-#: ../C/gnect.xml:352(title) ../C/gnect.xml:363(title)
-#: ../C/gnect.xml:379(title)
+#: ../C/gnect.xml:351(title) ../C/gnect.xml:362(title)
+#: ../C/gnect.xml:378(title)
 msgid "TIP"
 msgstr "FIF"
 
-#: ../C/gnect.xml:353(para)
+#: ../C/gnect.xml:352(para)
 msgid ""
 "PNG format is recommended for tile sets. The first, second, fifth and sixth "
 "tiles should contain some transparency if you want the background to show "
@@ -545,7 +497,7 @@ msgstr ""
 "uden gennemsigtighed, også selvom du bruger et fuldt vinduebaggrundsbillede "
 "med dit tema."
 
-#: ../C/gnect.xml:364(para)
+#: ../C/gnect.xml:363(para)
 msgid ""
 "Tiles can be square or rectangular, and any size you like. Most of the tile "
 "sets that come with <application>Four-in-a-Row</application> use square "
@@ -555,7 +507,7 @@ msgstr ""
 "måtte ønske. De fleste af de medfølgende feltsæt i <application>Fire på "
 "stribe</application> bruger kvadrater der måler 50 x 50 billedpunkter."
 
-#: ../C/gnect.xml:371(para)
+#: ../C/gnect.xml:370(para)
 msgid ""
 "For a full window background image, there's a bit more work to do. Let's say "
 "your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
@@ -567,7 +519,7 @@ msgstr ""
 "visningsmål er 7 x 7 felter iberegnet den øverste række, så det ideelle "
 "baggrundsbillede til dit feltsæt måler 350 x 350 billedpunkter."
 
-#: ../C/gnect.xml:380(para)
+#: ../C/gnect.xml:379(para)
 msgid ""
 "<application>Four-in-a-Row</application> will automatically scale the "
 "background image if it doesn't match the tile set. This means you can make "
@@ -581,7 +533,7 @@ msgstr ""
 "samme baggrundsbillede, bare ved at have en stor og en lille version af dit "
 "feltsæt."
 
-#: ../C/gnect.xml:388(para)
+#: ../C/gnect.xml:387(para)
 msgid ""
 "So, you now have a tile set and perhaps a background image to go with it. "
 "The next step is to put them in the right place."
@@ -590,11 +542,11 @@ msgstr ""
 "trin er at placere dem det korrekte sted."
 
 # Samle det hele
-#: ../C/gnect.xml:398(title)
+#: ../C/gnect.xml:397(title)
 msgid "Putting It Together"
 msgstr "Nu skal det hele samles"
 
-#: ../C/gnect.xml:400(para)
+#: ../C/gnect.xml:399(para)
 msgid ""
 "The last step is to put your image(s) where <application>Four-in-a-Row</"
 "application> can find them. You could put them in Four-in-a-row's install "
@@ -606,7 +558,7 @@ msgstr ""
 "for Fire på stribe (som vil afhænge af dit system), men din hjemmemappe er "
 "sikkert en bedre ide."
 
-#: ../C/gnect.xml:407(para)
+#: ../C/gnect.xml:406(para)
 msgid ""
 "Make a <filename class=\"directory\">~/.gnect</filename> directory, and a "
 "<filename class=\"directory\">~/.gnect/pixmaps</filename> directory. Those "
@@ -618,11 +570,11 @@ msgstr ""
 "vigtige, da <application>Fire på stribe</application> ikke kigger andre "
 "steder."
 
-#: ../C/gnect.xml:414(para)
+#: ../C/gnect.xml:413(para)
 msgid "Copy your image(s) into the pixmaps directory."
 msgstr "Kopier dine billeder ind i mappen pixmaps."
 
-#: ../C/gnect.xml:418(para)
+#: ../C/gnect.xml:417(para)
 msgid ""
 "If you start <application>Four-in-a-Row</application> from the command line, "
 "it'll give you clues about any problems it has with your new theme. If it "
@@ -635,26 +587,26 @@ msgstr ""
 "under <interface>Indstillinger</interface>."
 
 # Mor dig!
-#: ../C/gnect.xml:425(para)
+#: ../C/gnect.xml:424(para)
 msgid "Have fun!"
 msgstr "God fornøjelse!"
 
-#: ../C/gnect.xml:447(title)
+#: ../C/gnect.xml:437(title)
 msgid "Known Bugs and Limitations"
 msgstr "Kendte fejl og begrænsninger"
 
-#: ../C/gnect.xml:449(para)
+#: ../C/gnect.xml:439(para)
 msgid ""
 "Occasionally a marble-dropping animation doesn't look as smooth as it should."
 msgstr ""
 "Undertiden ser animationen for en marmorkugle ikke så glidende ud, som den "
 "burde, når kuglen falder."
 
-#: ../C/gnect.xml:462(title)
+#: ../C/gnect.xml:452(title)
 msgid "Authors"
 msgstr "Forfattere"
 
-#: ../C/gnect.xml:464(para)
+#: ../C/gnect.xml:454(para)
 msgid ""
 "<application>Four-in-a-Row</application> was written by Timothy Musson "
 "(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
@@ -666,7 +618,7 @@ msgstr ""
 "email>). Forskellige andre har brugt tid og kræfter på at hjælpe på mange "
 "måder siden arbejdet med <application>Fire på stribe</application> begyndte."
 
-#: ../C/gnect.xml:469(para)
+#: ../C/gnect.xml:459(para)
 msgid ""
 "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
 "\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
@@ -680,11 +632,11 @@ msgstr ""
 "ladet os bruge sit arbejde. Et arbejde som har givet os et bedre spil "
 "<application>Fire på stribe</application>."
 
-#: ../C/gnect.xml:476(para)
+#: ../C/gnect.xml:466(para)
 msgid "This manual was written by Timothy Musson."
 msgstr "Denne manual blev skrevet af Timothy Musson."
 
-#: ../C/gnect.xml:479(para)
+#: ../C/gnect.xml:469(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
@@ -694,11 +646,11 @@ msgstr ""
 "vedrørende denne manual så følg vejledningen i dette <ulink url=\"ghelp:user-"
 "guide?feedback-bugs\" type=\"help\">dokument</ulink>."
 
-#: ../C/gnect.xml:504(title)
+#: ../C/gnect.xml:494(title)
 msgid "License"
 msgstr "Licens"
 
-#: ../C/gnect.xml:506(para)
+#: ../C/gnect.xml:496(para)
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the <citetitle>GNU General Public License</citetitle> as "
@@ -710,7 +662,7 @@ msgstr ""
 "udgives af Free Software Foundation; enten version 2 eller (ved dit valg) "
 "enhver senere version."
 
-#: ../C/gnect.xml:514(para)
+#: ../C/gnect.xml:504(para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -722,7 +674,7 @@ msgstr ""
 "SALGBARHED eller EGNETHED TIL ET BESTEMT FORMÅL. Yderligere detaljer kan "
 "læses i <citetitle>GNU General Public License</citetitle>."
 
-#: ../C/gnect.xml:521(para)
+#: ../C/gnect.xml:511(para)
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
@@ -751,15 +703,15 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
+#~ msgid "Network Games"
+#~ msgstr "Netværksspil"
+
 #~ msgid "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
 #~ msgstr ""
 #~ "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
 
 #~ msgid "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
 #~ msgstr "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
-
-#~ msgid "September 2004"
-#~ msgstr "September 2004"
 
 #~ msgid ""
 #~ "Four-in-a-Row support networked multiplayer games which is provided by "
