@@ -242,7 +242,7 @@ msgid ""
 "hotseat mode."
 msgstr ""
 "Čtyři-v-řadě rovněž podporuje hru pro více hráčů se dvěma lidskými hráči "
-"přímo u počítače."
+"přímo u počítače nebo přes síť."
 
 #: C/gnect.xml:150(title)
 msgid "Basic Usage"
