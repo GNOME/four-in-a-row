@@ -359,7 +359,7 @@ her_set_proof_and_disproof_numbers (struct node *node)
 
 
   if (!node)
-    fatal_error ("Invalid node choosen");
+    fatal_error ("Invalid node chosen");
   else if (node->expanded) {
     switch (node->type) {
     case AND_TYPE:
