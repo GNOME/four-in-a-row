@@ -1,4 +1,4 @@
-SUBDIRS = src data pixmaps
+SUBDIRS = src data
 
 if BUILD_HELP
 SUBDIRS += help
