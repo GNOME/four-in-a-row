@@ -11,3 +11,5 @@ icon24_DATA = 24x24/gnect.png
 icon32_DATA = 32x32/gnect.png
 icon48_DATA = 48x48/gnect.png
 iconscalable_DATA = scalable/gnect.svg
+
+EXTRA_DIST = $(icon16_DATA) $(icon22_DATA) $(icon24_DATA) $(icon32_DATA) $(icon48_DATA) $(icon256_DATA) $(iconscalable_DATA)
