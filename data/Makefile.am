@@ -1,3 +1,5 @@
+SUBDIRS = icons
+
 NULL =
 
 velenadir      = $(pkgdatadir)/gnect

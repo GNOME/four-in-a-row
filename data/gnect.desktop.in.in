@@ -1,5 +1,5 @@
 [Desktop Entry]
-Icon=gnome-gnect
+Icon=gnect
 _Name=Four-in-a-Row
 _Comment=Make lines of the same color to win
 Exec=gnect

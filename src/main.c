@@ -739,7 +739,7 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))),
 		      grid, TRUE, TRUE, 0);
 
-  icon = gtk_image_new_from_icon_name ("gnome-gnect", 48);
+  icon = gtk_image_new_from_icon_name ("gnect", 48);
   gtk_container_add (GTK_CONTAINER (grid), icon);
 
   grid2 = gtk_grid_new ();
@@ -816,7 +816,7 @@ on_help_about (GtkAction * action, gpointer data)
 			 "authors", authors, "documenters", documenters,
 			 "artists", artists, "translator-credits",
 			 _("translator-credits"),
-			 "logo-icon-name", "gnome-gnect",
+			 "logo-icon-name", "gnect",
 			 "website", "http://www.gnome.org/projects/gnome-games/",
 			 "wrap-license", TRUE, NULL);
   g_free (license);
@@ -1264,7 +1264,7 @@ create_app (void)
   g_signal_connect (G_OBJECT (app), "delete_event",
 		    G_CALLBACK (on_game_exit), NULL);
 
-  gtk_window_set_default_icon_name ("gnome-gnect");
+  gtk_window_set_default_icon_name ("gnect");
 
   statusbar = gtk_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();
