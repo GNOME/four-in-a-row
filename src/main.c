@@ -711,7 +711,7 @@ scorebox_reset (void)
 static void
 on_game_scores (GtkMenuItem * m, gpointer data)
 {
-  GtkWidget *table, *grid, *icon;
+  GtkWidget *grid, *grid2, *icon;
 
   if (scorebox != NULL) {
     gtk_window_present (GTK_WINDOW (scorebox));
@@ -742,45 +742,32 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   icon = gtk_image_new_from_icon_name ("gnome-gnect", 48);
   gtk_container_add (GTK_CONTAINER (grid), icon);
 
-  table = gtk_table_new (3, 2, FALSE);
-  gtk_container_add (GTK_CONTAINER (grid), table);
-  gtk_table_set_col_spacings (GTK_TABLE (table), 12);
-  gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+  grid2 = gtk_grid_new ();
+  gtk_container_add (GTK_CONTAINER (grid), grid2);
+  gtk_grid_set_column_spacing (GTK_GRID (grid2), 6);
 
   label_name[PLAYER1] = gtk_label_new (NULL);
-  gtk_table_attach (GTK_TABLE (table), label_name[PLAYER1], 0, 1, 0, 1,
-		    (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) 0, 0,
-		    0);
+  gtk_grid_attach (GTK_GRID (grid2), label_name[PLAYER1], 0, 0, 1, 1);
   gtk_misc_set_alignment (GTK_MISC (label_name[PLAYER1]), 0, 0.5);
 
   label_score[PLAYER1] = gtk_label_new (NULL);
-  gtk_table_attach (GTK_TABLE (table), label_score[PLAYER1], 1, 2, 0, 1,
-		    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-		    (GtkAttachOptions) 0, 0, 0);
+  gtk_grid_attach (GTK_GRID (grid2), label_score[PLAYER1], 1, 0, 1, 1);
   gtk_misc_set_alignment (GTK_MISC (label_score[PLAYER1]), 1, 0.5);
 
   label_name[PLAYER2] = gtk_label_new (NULL);
-  gtk_table_attach (GTK_TABLE (table), label_name[PLAYER2], 0, 1, 1, 2,
-		    (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) 0, 0,
-		    0);
+  gtk_grid_attach (GTK_GRID (grid2), label_name[PLAYER2], 0, 1, 1, 1);
   gtk_misc_set_alignment (GTK_MISC (label_name[PLAYER2]), 0, 0.5);
 
   label_score[PLAYER2] = gtk_label_new (NULL);
-  gtk_table_attach (GTK_TABLE (table), label_score[PLAYER2], 1, 2, 1, 2,
-		    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-		    (GtkAttachOptions) 0, 0, 0);
+  gtk_grid_attach (GTK_GRID (grid2), label_score[PLAYER2], 1, 1, 1, 1);
   gtk_misc_set_alignment (GTK_MISC (label_score[PLAYER2]), 1, 0.5);
 
   label_name[NOBODY] = gtk_label_new (_("Drawn:"));
-  gtk_table_attach (GTK_TABLE (table), label_name[NOBODY], 0, 1, 2, 3,
-		    (GtkAttachOptions) (GTK_FILL), (GtkAttachOptions) 0, 0,
-		    0);
+  gtk_grid_attach (GTK_GRID (grid2), label_name[NOBODY], 0, 2, 1, 1);
   gtk_misc_set_alignment (GTK_MISC (label_name[NOBODY]), 0, 0.5);
 
   label_score[NOBODY] = gtk_label_new (NULL);
-  gtk_table_attach (GTK_TABLE (table), label_score[NOBODY], 1, 2, 2, 3,
-		    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-		    (GtkAttachOptions) 0, 0, 0);
+  gtk_grid_attach (GTK_GRID (grid2), label_score[NOBODY], 1, 2, 1, 1);
   gtk_misc_set_alignment (GTK_MISC (label_score[NOBODY]), 1, 0.5);
 
   g_signal_connect (GTK_DIALOG (scorebox), "response",
