@@ -1163,7 +1163,7 @@ on_button_press (GtkWidget * w, GdkEventButton * e, gpointer data)
   if (gameover && !timeout) {
     blink_winner (2);
   } else if (is_player_human () && !timeout) {
-    gtk_widget_get_pointer (w, &x, &y);
+    gdk_window_get_device_position (gtk_widget_get_window (w), e->device, &x, &y, NULL);
     game_process_move (gfx_get_column (x));
   }
 
