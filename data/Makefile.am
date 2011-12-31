@@ -1,7 +1,5 @@
 SUBDIRS = icons
 
-NULL =
-
 pixmapdir = $(pkgdatadir)/gnect/pixmaps
 pixmap_DATA = \
     tileset_50x50_sunspot.svg \
@@ -33,8 +31,6 @@ EXTRA_DIST = $(pixmap_DATA) \
              $(velena_DATA) \
              $(schema_in_files) \
              $(man_MANS)
-
-CLEANFILES = $(NULL)
 
 DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
 

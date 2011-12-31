@@ -35,8 +35,7 @@ gnect_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GTK_LIBS) \
 	$(INTLLIBS) \
-	-lz \
-	$(NULL)
+	-lz
 
 if HAVE_GNOME
 gnect_CFLAGS += $(GNOME_CFLAGS)
