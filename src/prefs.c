@@ -33,7 +33,6 @@
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-frame.h>
 #include <libgames-support/games-controls.h>
-#include <libgames-support/games-sound.h>
 
 #include "main.h"
 #include "theme.h"
@@ -141,7 +140,6 @@ conf_value_changed_cb (GamesConf *conf,
     p.do_sound = games_conf_get_boolean (NULL, KEY_DO_SOUND, NULL);
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_sound),
                                   p.do_sound);
-    games_sound_enable (p.do_sound);
   } else if (strcmp (key, KEY_MOVE_LEFT) == 0) {
     p.keypress[MOVE_LEFT] = games_conf_get_keyval_with_default (NULL, KEY_MOVE_LEFT, DEFAULT_KEY_LEFT);
   } else if (strcmp (key, KEY_MOVE_RIGHT) == 0) {
@@ -236,7 +234,6 @@ prefs_init (void)
   p.level[PLAYER1] = sane_player_level (p.level[PLAYER1]);
   p.level[PLAYER2] = sane_player_level (p.level[PLAYER2]);
   p.theme_id = sane_theme_id (p.theme_id);
-  games_sound_enable (p.do_sound);
 }
 
 

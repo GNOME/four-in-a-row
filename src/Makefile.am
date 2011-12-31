@@ -28,12 +28,15 @@ gnect_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 gnect_CFLAGS = \
+	-DSOUND_DIRECTORY=\"$(pkgdatadir)/sounds\" \
 	$(GTK_CFLAGS) \
+	$(CANBERRA_GTK_CFLAGS) \
 	$(AM_CFLAGS)
 
 gnect_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GTK_LIBS) \
+	$(CANBERRA_GTK_LIBS) \
 	$(INTLLIBS) \
 	-lz
 

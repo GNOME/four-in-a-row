@@ -27,12 +27,12 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
+#include <canberra-gtk.h>
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
 #include <libgames-support/games-help.h>
 #include <libgames-support/games-runtime.h>
-#include <libgames-support/games-sound.h>
 #include <libgames-support/games-stock.h>
 #include <libgames-support/games-fullscreen-action.h>
 
@@ -448,28 +448,45 @@ game_free (void)
 static void
 play_sound (SoundID id)
 {
- /* if (!p.do_sound)
-    return;*/
+ const gchar *name = NULL;
+
+ if (!p.do_sound)
+    return;
 
   switch (id) {
   case SOUND_DROP:
-    games_sound_play ("slide");
+    name = "slide";
     break;
   case SOUND_I_WIN:
-    games_sound_play ("reverse");
+    name = "reverse";
     break;
   case SOUND_YOU_WIN:
-    games_sound_play ("bonus");
+    name = "bonus";
     break;
   case SOUND_PLAYER_WIN:
-    games_sound_play ("bonus");
+    name = "bonus";
     break;
   case SOUND_DRAWN_GAME:
-    games_sound_play ("reverse");
+    name = "reverse";
     break;
   case SOUND_COLUMN_FULL:
-    games_sound_play ("bad");
+    name = "bad";
     break;
+  }
+
+  if (name)
+  {
+    gchar *filename, *path;
+
+    filename = g_strdup_printf ("%s.ogg", name);
+    path = g_build_filename (SOUND_DIRECTORY, filename, NULL);
+    g_free (filename);
+
+    ca_gtk_play_for_widget (drawarea,
+                            0,
+                            CA_PROP_MEDIA_NAME, name,
+                            CA_PROP_MEDIA_FILENAME, path, NULL);
+    g_free (path);
   }
 }
 
