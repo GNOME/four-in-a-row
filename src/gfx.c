@@ -30,8 +30,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <libgames-support/games-runtime.h>
-
 #include "main.h"
 #include "theme.h"
 #include "prefs.h"

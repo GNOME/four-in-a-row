@@ -36,8 +36,6 @@
 #include <zlib.h>
 #include <gtk/gtk.h>
 
-#include <libgames-support/games-runtime.h>
-
 #include "connect4.h"
 #include "pnsearch.h"
 #include "proto.h"

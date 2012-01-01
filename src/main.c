@@ -31,7 +31,6 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
-#include <libgames-support/games-runtime.h>
 #include <libgames-support/games-stock.h>
 #include <libgames-support/games-fullscreen-action.h>
 
@@ -1356,9 +1355,6 @@ main (int argc, char *argv[])
   gboolean retval;
   GError *error = NULL;
 
-  if (!games_runtime_init ("gnect"))
-    return 1;
-
   context = g_option_context_new (NULL);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
   retval = g_option_context_parse (context, &argc, &argv, &error);
@@ -1390,8 +1386,6 @@ main (int argc, char *argv[])
   game_free ();
 
   games_conf_shutdown ();
-
-  games_runtime_shutdown ();
 
   return 0;
 }
