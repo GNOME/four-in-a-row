@@ -254,15 +254,13 @@ gfx_load_error (const gchar * fname)
 gboolean
 gfx_load_pixmaps (void)
 {
-  const char *dname;
   gchar *fname;
   GdkPixbuf *pb_tileset_tmp;
   GdkPixbuf *pb_bground_tmp = NULL;
 
-  dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
   /* Try the theme pixmaps, fallback to the default and then give up */
   while (TRUE) {
-    fname = g_build_filename (dname, theme[p.theme_id].fname_tileset, NULL);
+    fname = g_build_filename (DATA_DIRECTORY, theme[p.theme_id].fname_tileset, NULL);
     pb_tileset_tmp = gdk_pixbuf_new_from_file (fname, NULL);
     if (pb_tileset_tmp == NULL) {
       if (p.theme_id != 0) {
@@ -286,7 +284,7 @@ gfx_load_pixmaps (void)
   pb_tileset_raw = pb_tileset_tmp;
 
   if (theme[p.theme_id].fname_bground != NULL) {
-    fname = g_build_filename (dname, theme[p.theme_id].fname_bground, NULL);
+    fname = g_build_filename (DATA_DIRECTORY, theme[p.theme_id].fname_bground, NULL);
     pb_bground_tmp = gdk_pixbuf_new_from_file (fname, NULL);
     if (pb_bground_tmp == NULL) {
       gfx_load_error (fname);

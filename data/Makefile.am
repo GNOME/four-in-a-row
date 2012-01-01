@@ -1,6 +1,6 @@
 SUBDIRS = icons
 
-pixmapdir = $(pkgdatadir)/gnect/pixmaps
+pixmapdir = $(datadir)/gnect
 pixmap_DATA = \
     tileset_50x50_sunspot.svg \
     tileset_50x50_catseyes.png \
@@ -12,12 +12,12 @@ pixmap_DATA = \
     bg_nightfall.jpg \
     bg_toplight.png
 
-velenadir      = $(pkgdatadir)/gnect
+velenadir      = $(datadir)/gnect
 velena_DATA    = white_ob.cn4.gz
 
-Games_in_files = gnect.desktop.in.in
-Gamesdir       = $(datadir)/applications
-Games_DATA     = $(Games_in_files:.desktop.in.in=.desktop)
+desktop_in_files = gnect.desktop.in.in
+desktopdir       = $(datadir)/applications
+desktop_DATA     = $(desktop_in_files:.desktop.in.in=.desktop)
 
 schema_in_files = gnect.schemas.in
 if HAVE_GNOME
@@ -29,10 +29,11 @@ man_MANS     = gnect.6
 
 EXTRA_DIST = $(pixmap_DATA) \
              $(velena_DATA) \
+             $(desktop_in_files) \
              $(schema_in_files) \
              $(man_MANS)
 
-DISTCLEANFILES = $(schema_DATA) $(Games_DATA)
+DISTCLEANFILES = $(schema_DATA) $(desktop_DATA)
 
 install-data-local: 
 if GCONF_SCHEMAS_INSTALL
