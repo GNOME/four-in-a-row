@@ -31,7 +31,6 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
-#include <libgames-support/games-help.h>
 #include <libgames-support/games-runtime.h>
 #include <libgames-support/games-stock.h>
 #include <libgames-support/games-fullscreen-action.h>
@@ -843,7 +842,12 @@ on_help_about (GtkAction * action, gpointer data)
 static void
 on_help_contents (GtkAction * action, gpointer data)
 {
-  games_help_display (app, "gnect", NULL);
+  GError *error = NULL;
+
+  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (app)), "ghelp:gnect", gtk_get_current_event_time (), &error);
+  if (error)
+    g_warning ("Failed to show help: %s", error->message);
+  g_clear_error (&error);
 }
 
 
