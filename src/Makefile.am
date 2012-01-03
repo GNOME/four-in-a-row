@@ -46,9 +46,4 @@ gnect_CFLAGS += $(RSVG_CFLAGS)
 gnect_LDADD += $(RSVG_LIBS)
 endif
 
-if WITH_GTHREAD
-gnect_CFLAGS += $(GHTREAD_CFLAGS)
-gnect_LDADD += $(GTHREAD_LIBS)
-endif
-
 -include $(top_srcdir)/git.mk
