@@ -41,11 +41,6 @@ gnect_LDADD = \
 	$(INTLLIBS) \
 	-lz
 
-if HAVE_GNOME
-gnect_CFLAGS += $(GNOME_CFLAGS)
-gnect_LDADD += $(GNOME_LIBS)
-endif
-
 if HAVE_RSVG
 gnect_CFLAGS += $(RSVG_CFLAGS)
 gnect_LDADD += $(RSVG_LIBS)

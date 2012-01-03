@@ -49,6 +49,7 @@
 
 extern Prefs p;
 
+GSettings *settings;
 GtkWidget *app;
 GtkWidget *notebook;
 GtkWidget *drawarea;
@@ -855,7 +856,7 @@ static void
 on_settings_toggle_sound (GtkMenuItem * m, gpointer user_data)
 {
   p.do_sound = GTK_CHECK_MENU_ITEM (m)->active;
-  games_conf_set_boolean (NULL, KEY_DO_SOUND, p.do_sound);
+  g_settings_set_boolean (NULL, KEY_DO_SOUND, p.do_sound);
 }
 #endif
 
@@ -1275,7 +1276,7 @@ create_app (void)
   gtk_window_set_title (GTK_WINDOW (app), _(APPNAME_LONG));
 
   gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  games_conf_add_window (GTK_WINDOW (app), NULL);
+  //games_conf_add_window (GTK_WINDOW (app), NULL);
 
   notebook = gtk_notebook_new ();
   gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
@@ -1364,17 +1365,16 @@ main (int argc, char *argv[])
     g_error_free (error);
     exit (1);
   }
+  
+  settings = g_settings_new ("org.gnome.gnect");
 
   g_set_application_name (_(APPNAME_LONG));
-
-  games_conf_initialise (APPNAME);
 
   prefs_init ();
   game_init ();
 
   /* init gfx */
   if (!gfx_load_pixmaps ()) {
-    games_conf_shutdown ();
     exit (1);
   }
 
@@ -1384,8 +1384,6 @@ main (int argc, char *argv[])
   }
 
   game_free ();
-
-  games_conf_shutdown ();
 
   return 0;
 }
