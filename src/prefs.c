@@ -327,7 +327,7 @@ prefsbox_open (void)
 
   label = gtk_label_new_with_mnemonic (_("Keyboard Controls"));
 
-  controls_list = games_controls_list_new_settings (settings);
+  controls_list = games_controls_list_new (settings);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
 				    "key-left", _("Move left"), DEFAULT_KEY_LEFT,
                                     "key-right", _("Move right"), DEFAULT_KEY_RIGHT,

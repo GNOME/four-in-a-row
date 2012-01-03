@@ -29,7 +29,6 @@
 #include <gtk/gtk.h>
 #include <canberra-gtk.h>
 
-#include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
 #include <libgames-support/games-stock.h>
 #include <libgames-support/games-fullscreen-action.h>
