@@ -35,6 +35,5 @@ EXTRA_DIST = $(pixmap_DATA) \
 DISTCLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
 
 @INTLTOOL_DESKTOP_RULE@
-@INTLTOOL_SCHEMAS_RULE@
 
 -include $(top_srcdir)/git.mk
