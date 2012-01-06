@@ -32,6 +32,7 @@ EXTRA_DIST = $(pixmap_DATA) \
              $(gsettings_in_file) \
              $(man_MANS)
 
+CLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
 DISTCLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
 
 @INTLTOOL_DESKTOP_RULE@
