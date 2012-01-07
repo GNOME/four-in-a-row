@@ -2,19 +2,20 @@
 # spanish translation for gnect manual
 # traducción al español del manual de gnect
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2011-07-25 04:23+0000\n"
-"PO-Revision-Date: 2011-07-25 21:23+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-12-03 18:36+0000\n"
+"PO-Revision-Date: 2012-01-07 19:06+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -241,9 +242,6 @@ msgstr ""
 "raya</application>."
 
 #: C/gnect.xml:136(para)
-#| msgid ""
-#| "Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
-#| "link> support with two human players in hotseat or network mode."
 msgid ""
 "Four-in-a-Row also features multiplayer support with two human players in "
 "hotseat mode."
@@ -362,8 +360,8 @@ msgid ""
 "<interface>Preferences Dialog</interface>."
 msgstr ""
 "Para cambiar los ajustes del juego, seleccione <guimenuitem>Preferencias</"
-"guimenuitem> del menú <guimenu>Ajustes</guimenu>. Esto abrirá el "
-"<interface>diálogo de preferencias</interface>."
+"guimenuitem> del menú <guimenu>Configuración</guimenu>. Esto abrirá el "
+"<interface>Diálogo de preferencias</interface>."
 
 #: C/gnect.xml:248(term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
