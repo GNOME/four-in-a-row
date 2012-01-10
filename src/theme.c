@@ -36,56 +36,54 @@
 
 extern Prefs p;
 
-#define COLOR(r,g,b) { 0, 0x##r##00, 0x##g##00, 0x##b##00 }
-
 Theme theme[] = {
   {
    N_("Classic"),
    "tileset_50x50_sunspot.svg",
    NULL,
-   COLOR (99, 99, CC),
+   "#9999CC",
    N_("Red"), N_("Yellow")
    },
   {
    N_("High Contrast"),
    "tileset_50x50_hcontrast.svg",
    NULL,
-   COLOR (00, 00, 00),
+   "#000000",
    N_("Circle"), N_("Cross")
    },
   {
    N_("High Contrast Inverse"),
    "tileset_50x50_hcinverse.svg",
    NULL,
-   COLOR (FF, FF, FF),
+   "#FFFFFF",
    N_("Circle"), N_("Cross")
    },
   {
    N_("Cream Marbles"),
    "tileset_50x50_catseyes.png",
    "bg_toplight.png",
-   COLOR (72, 7F, 8C),
+   "#727F8C",
    N_("Red"), N_("Blue")
    },
   {
    N_("Glass Marbles"),
    "tileset_50x50_glassy.png",
    "bg_grotty.jpg",
-   COLOR (72, 7F, 8C),
+   "#727F8C",
    N_("Red"), N_("Blue")
    },
   {
    N_("Nightfall"),
    "tileset_50x50_glassy.png",
    "bg_nightfall.jpg",
-   COLOR (72, 7F, 8C),
+   "#727F8C",
    N_("Red"), N_("Blue")
    },
   {
    N_("Blocks"),
    "tileset_50x50_square.png",
    NULL,
-   COLOR (66, 66, 66),
+   "#666666",
    N_("Orange"), N_("Blue")
    }
 };

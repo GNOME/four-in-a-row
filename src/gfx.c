@@ -166,8 +166,10 @@ gfx_draw_grid (cairo_t *cr)
 {
   static const double dashes[] = { 4., 4. };
   gint i;
+  GdkRGBA color;
 
-  gdk_cairo_set_source_color (cr, &theme[p.theme_id].grid_color);
+  gdk_rgba_parse (&color, theme[p.theme_id].grid_color);
+  gdk_cairo_set_source_rgba (cr, &color);
   cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
   cairo_set_line_width (cr, 1);
   cairo_set_line_cap (cr, CAIRO_LINE_CAP_BUTT);

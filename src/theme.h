@@ -7,7 +7,7 @@ struct _Theme {
   const gchar *title;
   const gchar *fname_tileset;
   const gchar *fname_bground;
-  const GdkColor grid_color;
+  const gchar *grid_color;
   const gchar *player1;
   const gchar *player2;
 };
