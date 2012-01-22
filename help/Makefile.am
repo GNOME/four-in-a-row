@@ -1,18 +1,16 @@
-include $(top_srcdir)/gnome-doc-utils.make
+@YELP_HELP_RULES@
+HELP_ID = gnect
 
-DOC_LINGUAS = ca cs da de el en_GB es eu fi fr it oc sl sr sr@latin sv zh_CN
-
-DOC_MODULE = gnect
-
-DOC_ENTITIES = \
-	legal.xml
-
-DOC_FIGURES = \
+HELP_MEDIA = \
 	figures/mainwindow.png \
 	figures/tileset.png \
 	figures/connect.png \
 	figures/tables.png 
 
-dist-hook: doc-dist-hook
+HELP_FILES = \
+	gnect.xml \
+	legal.xml
+
+HELP_LINGUAS = ca cs da de el en_GB es eu fi fr it oc sl sr sr@latin sv zh_CN
 
 -include $(top_srcdir)/git.mk

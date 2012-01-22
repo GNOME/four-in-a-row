@@ -230,8 +230,8 @@ msgid ""
 "command line."
 msgstr ""
 "Voit käynnistää <application>Neljä rivissä</application> -pelin valitsemalla "
-"<guimenu>Sovellukset</guimenu>-valikon <guisubmenu>Pelit</guisubmenu>-"
-"alavalikon kohdan <guimenuitem>Neljä rivissä</guimenu>, tai komentoriviltä "
+"<guimenuitem>Sovellukset</guimenuitem>-valikon <guisubmenu>Pelit</guisubmenu>-"
+"alavalikon kohdan <guimenu>Neljä rivissä</guimenu>, tai komentoriviltä "
 "komennolla <command>gnect</command>."
 
 #: C/gnect.xml:131(para)
