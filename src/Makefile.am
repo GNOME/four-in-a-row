@@ -30,6 +30,7 @@ gnect_CPPFLAGS = \
 gnect_CFLAGS = \
 	-DDATA_DIRECTORY=\"$(datadir)/gnect\" \
 	-DSOUND_DIRECTORY=\"$(pkgdatadir)/sounds\" \
+	-DLOCALEDIR=\"$(datadir)/locale\" \
 	$(GTK_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \
 	$(AM_CFLAGS)
