@@ -1,5 +1,5 @@
 # German translation of the four-in-a-row documentation.
-# Mario Blättermann <mariobl@freenet.de>, 2008, 2011.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2011, 2012.
 #
 msgid ""
 msgstr ""
