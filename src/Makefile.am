@@ -32,19 +32,16 @@ gnect_CFLAGS = \
 	-DSOUND_DIRECTORY=\"$(datadir)/gnect/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	$(GTK_CFLAGS) \
+	$(RSVG_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \
 	$(AM_CFLAGS)
 
 gnect_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GTK_LIBS) \
+	$(RSVG_LIBS) \
 	$(CANBERRA_GTK_LIBS) \
 	$(INTLLIBS) \
 	-lz
-
-if HAVE_RSVG
-gnect_CFLAGS += $(RSVG_CFLAGS)
-gnect_LDADD += $(RSVG_LIBS)
-endif
 
 -include $(top_srcdir)/git.mk
