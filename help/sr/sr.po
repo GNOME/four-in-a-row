@@ -1,47 +1,55 @@
 # Serbian translation of gnome-games
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2009.
-#
 # This file is distributed under the same license as the gnome-games package.
-#
 # Translated on 2009-11-01 by Бранко Кокановић <branko.kokanovic@gmail.com>
-#
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
-"POT-Creation-Date: 2009-10-31 02:28+0000\n"
-"PO-Revision-Date: 2009-11-01 14:53+0100\n"
-"Last-Translator: Бранко Кокановић <branko.kokanovic@gmail.com>\n"
+"POT-Creation-Date: 2012-01-22 20:07+0000\n"
+"PO-Revision-Date: 2012-03-23 11:17+0200\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n%"
-"10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Project-Style: gnome\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnect.xml:176(None)
-msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+#| msgid "translator-credits"
+msgctxt "_"
+msgid "translator-credits"
 msgstr ""
-"@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14yel\tq"
+"Бранко Кокановић <branko.kokanovic@gmail.com>\n"
+"\n"
+"Prevod.org — превод на српски језик"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnect.xml:54(None)
-msgid "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
-msgstr "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#.
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/gnect.xml:175(imagedata)
+#| msgid ""
+#| "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
+msgctxt "_"
+msgid ""
+"external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
+msgstr ""
+"external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnect.xml:77(None)
-msgid "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
-msgstr "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
-
-#: C/gnect.xml:22(title)
+#: C/gnect.xml:21(articleinfo/title)
 msgid "Four-in-a-Row Manual"
 msgstr "Упутство за Четири у низу"
 
-#: C/gnect.xml:24(para)
+#: C/gnect.xml:23(abstract/para)
 msgid ""
 "The object of Four-in-a-Row is to place four pieces in a vertical, "
 "horizontal, or diagonal row while the opponent tries to block and make his/"
@@ -53,19 +61,15 @@ msgstr ""
 "уради то исто. Четири у низу можете играти против другара или против "
 "рачунара."
 
-#: C/gnect.xml:33(year)
-msgid "2001-2002"
-msgstr "2001-2002"
+#: C/gnect.xml:31(articleinfo/copyright)
+msgid "<year>2001-2002</year> <holder>Timothy Musson</holder>"
+msgstr "<year>2001-2002</year> <holder>Тимоти Масон</holder>"
 
-#: C/gnect.xml:34(holder)
-msgid "Timothy Musson"
-msgstr "Timothy Musson"
-
-#: C/gnect.xml:47(publishername)
+#: C/gnect.xml:46(publisher/publishername)
 msgid "GNOME Documentation Project"
 msgstr "Пројекат Гномове документације"
 
-#: C/gnect.xml:2(para)
+#: C/gnect.xml:2(legalnotice/para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
@@ -81,7 +85,7 @@ msgstr ""
 "можете пронаћи на овој <ulink type=\"help\" url=\"ghelp:fdl\">адреси</ulink> "
 "или у датотеци COPYING-DOCS која је приложена уз ово упутство."
 
-#: C/gnect.xml:12(para)
+#: C/gnect.xml:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -93,7 +97,7 @@ msgstr ""
 "додавањем примерка лиценце документу, како је описано у одељку 6 саме "
 "лиценце."
 
-#: C/gnect.xml:19(para)
+#: C/gnect.xml:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -107,7 +111,7 @@ msgstr ""
 "документационог пројекта имају сазнања о томе, тада су називи исписани "
 "великим словима или са великим почетним словима."
 
-#: C/gnect.xml:35(para)
+#: C/gnect.xml:35(listitem/para) C/legal.xml:35(listitem/para)
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -134,7 +138,7 @@ msgstr ""
 "ИЛИ ЊЕГОВЕ ИЗМЕЊЕНЕ ВЕРЗИЈЕ НИЈЕ ДОЗВОЉЕНА ОСИМ ПОД УСЛОВИМА ОВОГ ОГРАНИЧЕЊА "
 "ЈАМСТВА."
 
-#: C/gnect.xml:55(para)
+#: C/gnect.xml:55(listitem/para) C/legal.xml:55(listitem/para)
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -157,48 +161,48 @@ msgstr ""
 "ГУБИТКЕ НАСТАЛЕ УСЛЕД КОРИШЋЕЊА ДОКУМЕНТА И ЊЕГОВИХ ИЗМЕЊЕНИХ ВЕРЗИЈА ЧАК И "
 "АКО ЈЕ ОШТЕЋЕНА СТРАНА БИЛА ОБАВЕШТЕНА О МОГУЋНОСТИ НАСТАНКА ТЕ ШТЕТЕ."
 
-#: C/gnect.xml:28(para)
+#: C/gnect.xml:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
+#| msgid ""
+#| "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
+#| "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
+#| "UNDERSTANDING THAT: <placeholder-1/>"
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
 "ОВАЈ ДОКУМЕНТ И ЊЕГОВЕ ИЗМЕЊЕНЕ ВЕРЗИЈЕ СУ ДОСТУПНЕ ПОД УСЛОВИМА ГНУ-ОВЕ "
-"СЛОБОДНЕ ДОКУМЕНТАЦИОНЕ ДОЗВОЛЕ УЗ ДОДАТНУ САГЛАСНОСТ ДА: <placeholder-1/>"
+"СЛОБОДНЕ ДОКУМЕНТАЦИОНЕ ДОЗВОЛЕ УЗ ДОДАТНУ САГЛАСНОСТ ДА: <_:orderedlist-1/>"
 
-#: C/gnect.xml:54(firstname)
-msgid "Timothy"
-msgstr "Timothy"
+#: C/gnect.xml:52(authorgroup/author)
+msgid ""
+"<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
+"<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
+msgstr ""
+"<firstname>Тимоти</firstname> <surname>Масон</surname> <affiliation> "
+"<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
 
-#: C/gnect.xml:55(surname)
-msgid "Musson"
-msgstr "Musson"
-
-#: C/gnect.xml:58(email)
-msgid "trmusson@ihug.co.nz"
-msgstr "trmusson@ihug.co.nz"
-
-#: C/gnect.xml:81(revnumber)
-msgid "Four-in-a-Row Manual V2.8"
-msgstr "Упутство за Четири у низу v2.8"
-
-#: C/gnect.xml:82(date)
-msgid "September 2004"
-msgstr "Септембар 2004."
-
-#: C/gnect.xml:84(para)
+#: C/gnect.xml:83(revdescription/para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
-msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
+msgstr "Тимоти Масон <email>trmusson@ihug.co.nz</email>"
 
-#: C/gnect.xml:92(releaseinfo)
+#: C/gnect.xml:79(revhistory/revision)
+msgid ""
+"<revnumber>Four-in-a-Row Manual V2.8</revnumber> <date>September 2004</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Упутство за Четири у низу в2.8</revnumber> <date>Септембар "
+"2004</date> <_:revdescription-1/>"
+
+#: C/gnect.xml:91(articleinfo/releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-Row."
 msgstr "Ово упуство је написано за Четири у низу 2.12."
 
-#: C/gnect.xml:96(title)
+#: C/gnect.xml:95(legalnotice/title)
 msgid "Feedback"
 msgstr "Примедбе"
 
-#: C/gnect.xml:97(para)
+#: C/gnect.xml:96(legalnotice/para)
 msgid ""
 "To report a bug or make a suggestion regarding the Four-in-a-Row application "
 "or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
@@ -209,11 +213,11 @@ msgstr ""
 "смернице на <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help"
 "\">Гномовој страни за примедбе</ulink>."
 
-#: C/gnect.xml:113(title)
+#: C/gnect.xml:112(sect1/title)
 msgid "Introduction"
 msgstr "Увод"
 
-#: C/gnect.xml:115(para)
+#: C/gnect.xml:114(sect1/para)
 msgid ""
 "<application>Four-in-a-Row</application> is a four-in-a-row game for the "
 "GNOME Project. The object of the game is to build a line of four of your "
@@ -222,11 +226,11 @@ msgid ""
 msgstr ""
 "<application>Четири у низу</application> је класична игра повезивања четири "
 "дела у низ написана за Гномов пројекат. Циљ игре је направити линију од "
-"четири кликера, а у исто време спречити вашег противника (другог човека "
-"или рачунара) да их он исто направи. Линија може бити водоравна, усправна "
-"или дијагонална."
+"четири кликера, а у исто време спречити вашег противника (другог човека или "
+"рачунара) да их он исто направи. Линија може бити водоравна, усправна или "
+"дијагонална."
 
-#: C/gnect.xml:123(para)
+#: C/gnect.xml:122(sect1/para)
 msgid ""
 "To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
 "a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
@@ -235,10 +239,10 @@ msgid ""
 msgstr ""
 "Да бисте покренули <application>Четири у низу</application>, одаберите "
 "<guimenuitem>Четири у низу</guimenuitem> из подменија <guisubmenu>Игре</"
-"guisubmenu> са <guimenu>Главног менија</guimenu>, или откуцајте <command>gnect</"
-"command> на командној линији."
+"guisubmenu> са <guimenu>Главног менија</guimenu>, или откуцајте "
+"<command>gnect</command> на командној линији."
 
-#: C/gnect.xml:131(para)
+#: C/gnect.xml:130(sect1/para)
 msgid ""
 "<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
 "games</filename> package, which is part of the GNOME desktop environment. "
@@ -249,24 +253,26 @@ msgstr ""
 "filename> пакет, који је део Гномовог радног окружења. Овај документ је "
 "написан <application>Четири у низу</application> 2.8."
 
-#: C/gnect.xml:137(para)
+#: C/gnect.xml:136(sect1/para)
+#| msgid ""
+#| "Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
+#| "link> support with two human players in hotseat or network mode."
 msgid ""
-"Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
-"link> support with two human players in hotseat or network mode."
+"Four-in-a-Row also features multiplayer support with two human players in "
+"hotseat mode."
 msgstr ""
-"Четири у низу подржава и играње више играча <link linkend=\"network-games"
-"\">преко мреже</link> или на истом рачунару где наизменично игра један, па "
-"други."
+"Четири у низу подржава и играње више играча преко мреже или на истом "
+"рачунару где наизменично игра један, па други."
 
-#: C/gnect.xml:151(title)
+#: C/gnect.xml:150(sect1/title)
 msgid "Basic Usage"
 msgstr "Основна употреба"
 
-#: C/gnect.xml:157(title)
+#: C/gnect.xml:156(sect2/title)
 msgid "Playing Four-in-a-Row"
 msgstr "Играње Четири у низу"
 
-#: C/gnect.xml:159(para)
+#: C/gnect.xml:158(sect2/para)
 msgid ""
 "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
 "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
@@ -274,7 +280,7 @@ msgstr ""
 "Да бисте покренули нову игру, одаберите <menuchoice><guimenu>Игра</"
 "guimenu><guimenuitem>Нова</guimenuitem></menuchoice>."
 
-#: C/gnect.xml:163(para)
+#: C/gnect.xml:162(sect2/para)
 msgid ""
 "The <interface>game board</interface> consists of seven columns and six "
 "rows. Above it, a special row indicates the current player and the marble "
@@ -286,7 +292,7 @@ msgstr ""
 "своди на спуштање кликера на један од стубаца. Кликер ће се спустити на "
 "највиши празан ред одабраног ступца."
 
-#: C/gnect.xml:168(para)
+#: C/gnect.xml:167(sect2/para)
 msgid ""
 "To make a move, click on a column with the mouse. To play with the keyboard, "
 "move the marble in the top row with the left and right arrow keys, and drop "
@@ -298,11 +304,21 @@ msgstr ""
 "спустите га са тастером за доле. Ваш кликер ће пасти на највиши празан ред "
 "тог ступца."
 
-#: C/gnect.xml:179(phrase) C/gnect.xml:181(para)
+#: C/gnect.xml:180(caption/para)
 msgid "Four-in-a-Row's Main Window"
 msgstr "Главни прозор Четири у низу"
 
-#: C/gnect.xml:184(para)
+#: C/gnect.xml:171(sect2/mediaobject)
+msgid ""
+"<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" "
+"srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Four-in-a-Row's Main "
+"Window</phrase> </textobject> <_:caption-1/>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" "
+"srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Главни прозор Четири у "
+"низу</phrase> </textobject> <_:caption-1/>"
+
+#: C/gnect.xml:183(sect2/para)
 msgid ""
 "The game is won when one of the two players manages to line up four of his "
 "or her marbles horizontally, vertically or diagonally. If the board fills up "
@@ -312,55 +328,70 @@ msgstr ""
 "кликера водоравно, усправно или дијагонално. Ако се табла за игру напуни без "
 "победника, игра се завршава нерешено."
 
-#: C/gnect.xml:195(title)
+#: C/gnect.xml:194(sect2/title)
 msgid "Commands"
 msgstr "Команде"
 
-#. id for removed section
-#: C/gnect.xml:198(para)
+#: C/gnect.xml:197(sect2/para)
+#| msgid ""
+#| "To take back a move, choose <menuchoice><shortcut><keycombo><keysym>Ctrl</"
+#| "keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Undo move</"
+#| "guimenuitem></menuchoice>. If you're playing against a friend, this will "
+#| "undo one move. If you're playing against the computer, this will undo the "
+#| "computer's last move and then yours. Repeating this will return the board "
+#| "to its initial state."
 msgid ""
-"To take back a move, choose <menuchoice><shortcut><keycombo><keysym>Ctrl</"
-"keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Undo move</"
-"guimenuitem></menuchoice>. If you're playing against a friend, this will "
+"To take back a move, choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</"
+"keysym><keycap>Z</keycap> </keycombo></shortcut> <guimenuitem>Undo move</"
+"guimenuitem> </menuchoice>. If you're playing against a friend, this will "
 "undo one move. If you're playing against the computer, this will undo the "
 "computer's last move and then yours. Repeating this will return the board to "
 "its initial state."
 msgstr ""
-"Да бисте вратили потез, одаберите "
-"<menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>Z</keycap></"
-"keycombo></shortcut><guimenuitem>Опозови потез</guimenuitem></menuchoice>. "
-"Ако играте против пријатеља, ово ће опозвати ваш последњи потез, а ако "
-"играте против рачунара, ово ће опозвати и његов и ваш последњи потез. "
-"Понављањем ове команде, табла ће се вратити у почетно стање."
+"Да вратите потез, одаберите <menuchoice><shortcut><keycombo> "
+"<keysym>Ctrl</keysym><keycap>Z</keycap> </keycombo></shortcut> "
+"<guimenuitem>Опозови потез</guimenuitem> </menuchoice>. Ако играте против "
+"пријатеља, ово ће опозвати ваш последњи потез, а ако играте против рачунара, "
+"ово ће опозвати и његов и ваш последњи потез. Понављањем ове команде, табла "
+"ће се вратити у почетно стање."
 
-#: C/gnect.xml:210(para)
+#: C/gnect.xml:209(sect2/para)
+#| msgid ""
+#| "Choose <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
+#| "keycap></keycombo></shortcut><guimenuitem>Hint</guimenuitem></menuchoice> "
+#| "to get a suggestion from the computer for your next move. This is shown "
+#| "in the status bar."
 msgid ""
-"Choose <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
-"keycap></keycombo></shortcut><guimenuitem>Hint</guimenuitem></menuchoice> to "
-"get a suggestion from the computer for your next move. This is shown in the "
-"status bar."
+"Choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</"
+"keycap> </keycombo></shortcut> <guimenuitem>Hint</guimenuitem> </menuchoice> "
+"to get a suggestion from the computer for your next move. This is shown in "
+"the status bar."
 msgstr ""
-"Одаберите <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
-"keycap></keycombo></shortcut><guimenuitem>Савет</guimenuitem></menuchoice> "
-"да бисте добили предлог од рачунара за ваш следећи потез. Савет ће се "
-"приказати у траци са стањем."
+"Одаберите <menuchoice> <shortcut><keycombo> "
+"<keysym>Ctrl</keysym><keycap>H</keycap> "
+"</keycombo></shortcut><guimenuitem>Савет</guimenuitem> </menuchoice> да "
+"бисте добили предлог од рачунара за ваш следећи потез. Савет ће се приказати "
+"у траци са стањем."
 
-#: C/gnect.xml:218(para)
+#: C/gnect.xml:217(sect2/para)
+#| msgid ""
+#| "Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show "
+#| "a tally of wins and draws for the current playing session. The scores "
+#| "will be reset to zero if Player Selection is changed in Preferences."
 msgid ""
-"Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
-"tally of wins and draws for the current playing session. The scores will be "
-"reset to zero if Player Selection is changed in Preferences."
+"Choose <menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> to show "
+"a tally of wins and draws for the current playing session. The scores will "
+"be reset to zero if Player Selection is changed in Preferences."
 msgstr ""
-"Одаберите <menuchoice><guimenuitem>Резултати</guimenuitem></menuchoice> да "
-"бисте приказали број победа и нерешених игара за тренутну сесију. "
-"Резултати ће бити поништени ако се промени избор играча у "
-"Поставкама."
+"Одаберите <menuchoice> <guimenuitem>Резултати</guimenuitem> </menuchoice> да "
+"бисте приказали број победа и нерешених игара за тренутну сесију. Резултати "
+"ће бити поништени ако се промени избор играча у Поставкама."
 
-#: C/gnect.xml:233(title)
+#: C/gnect.xml:232(sect2/title)
 msgid "Preferences"
 msgstr "Поставке"
 
-#: C/gnect.xml:235(para)
+#: C/gnect.xml:234(sect2/para)
 msgid ""
 "To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
 "from the <guimenu>Settings</guimenu> menu. This opens the "
@@ -370,11 +401,11 @@ msgstr ""
 "guimenuitem> из менија <guimenu>Подешавања</guimenu>. Овим ће се отворити "
 "<interface>дијалог поставки</interface>."
 
-#: C/gnect.xml:249(term)
+#: C/gnect.xml:248(varlistentry/term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
 msgstr "<guilabel>Први играч</guilabel> и <guilabel>Други играч</guilabel>"
 
-#: C/gnect.xml:254(para)
+#: C/gnect.xml:253(listitem/para)
 msgid ""
 "These two columns tell <application>Four-in-a-Row</application> who's "
 "playing and, if it is the computer, how hard they play. To play against a "
@@ -384,60 +415,65 @@ msgstr ""
 "а ако је неки од играча рачунар, онда и којом тежином да игра. Да бисте "
 "играли против пријатеља, одаберите Човек и за првог и за другог играча."
 
-#: C/gnect.xml:264(guilabel)
-msgid "Theme"
-msgstr "Тема"
+#: C/gnect.xml:263(varlistentry/term)
+msgid "<guilabel>Theme</guilabel>"
+msgstr "<guilabel>Тема</guilabel>"
 
-#: C/gnect.xml:266(para)
+#: C/gnect.xml:265(listitem/para)
 msgid ""
 "The theme menu lists available themes and lets you choose your favourite."
 msgstr ""
 "Мени са темама приказује доступне теме и даје вам да изаберете омиљену."
 
-#: C/gnect.xml:274(guilabel)
-msgid "Enable Animation"
-msgstr "Укључи анимације"
+#: C/gnect.xml:273(varlistentry/term)
+#| msgid "Enable Animation"
+msgid "<guilabel>Enable Animation</guilabel>"
+msgstr "<guilabel>Укључи анимације</guilabel>"
 
-#: C/gnect.xml:276(para)
+#: C/gnect.xml:275(listitem/para)
 msgid "Here you can toggle the game's animation on or off."
 msgstr "Овде можете укључити и искључити анимације у игри."
 
-#: C/gnect.xml:242(para)
+#: C/gnect.xml:241(sect2/para)
+#| msgid ""
+#| "Configuration options in the <guilabel>Game</guilabel> tab are: "
+#| "<placeholder-1/>"
 msgid ""
-"Configuration options in the <guilabel>Game</guilabel> tab are: <placeholder-"
-"1/>"
+"Configuration options in the <guilabel>Game</guilabel> tab are: <_:"
+"variablelist-1/>"
 msgstr ""
-"Опције подешавања у језичку <guilabel>Игра</guilabel> су: <placeholder-1/>"
+"Опције подешавања у језичку <guilabel>Игра</guilabel> су: "
+"<_:variablelist-1/>"
 
-#: C/gnect.xml:284(para)
+#: C/gnect.xml:283(sect2/para)
 msgid ""
 "Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
 "controls. To change a control, double click the appropriate entry and then "
 "press the new key."
 msgstr ""
 "На крају, постоји и језичак <guilabel>Контрола тастатуром</guilabel> за "
-"измени наредби када играте преко тастатуре. Да бисте изменили "
-"наредбу, кликните двапут на одговарајући унос и притисните нови тастер."
+"измени наредби када играте преко тастатуре. Да бисте изменили наредбу, "
+"кликните двапут на одговарајући унос и притисните нови тастер."
 
-#: C/gnect.xml:299(title)
+#: C/gnect.xml:298(sect1/title)
 msgid "Creating New Themes"
 msgstr "Прављење нових тема"
 
-#: C/gnect.xml:301(para)
+#: C/gnect.xml:300(sect1/para)
 msgid ""
 "This section's included in case you'd like to make your own themes for "
 "<application>Four-in-a-Row</application>. It assumes you're familiar with "
 "basic text editing, graphics software and the command line."
 msgstr ""
-"Овај одељак објашњава како да направите нове теме за <application>Четири "
-"у низу</application>. Он подразумева се да сте упознати са "
-"основама уређивања текста, програмом за графику и командном линијом."
+"Овај одељак објашњава како да направите нове теме за <application>Четири у "
+"низу</application>. Он подразумева се да сте упознати са основама уређивања "
+"текста, програмом за графику и командном линијом."
 
-#: C/gnect.xml:309(title)
+#: C/gnect.xml:308(sect2/title)
 msgid "Images"
 msgstr "Слике"
 
-#: C/gnect.xml:311(para)
+#: C/gnect.xml:310(sect2/para)
 msgid ""
 "<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
 "equal size, lined up horizontally. From left to right:"
@@ -445,39 +481,39 @@ msgstr ""
 "Скуп фигура за <application>Четири у низу</application> садржи шест фигура "
 "исте величине, поређане водоравно. То су, са лева на десно:"
 
-#: C/gnect.xml:318(para)
+#: C/gnect.xml:317(listitem/para)
 msgid "Player One's marble as it appears on the game board"
 msgstr "Кликер првог играча као што ће бити приказан на табли"
 
-#: C/gnect.xml:321(para)
+#: C/gnect.xml:320(listitem/para)
 msgid "Player Two's marble as it appears on the game board"
 msgstr "Кликер другог играча као што ће бити приказан на табли"
 
-#: C/gnect.xml:324(para)
+#: C/gnect.xml:323(listitem/para)
 msgid "The game board's background"
 msgstr "Позадина табле за игру"
 
-#: C/gnect.xml:327(para)
+#: C/gnect.xml:326(listitem/para)
 msgid "The top row's background"
 msgstr "Позадина највишег реда"
 
-#: C/gnect.xml:330(para)
+#: C/gnect.xml:329(listitem/para)
 msgid "Player One's marble as it appears on the top row"
 msgstr "Кликер првог играча као што ће бити приказан у највишем реду"
 
-#: C/gnect.xml:333(para)
+#: C/gnect.xml:332(listitem/para)
 msgid "Player Two's marble as it appears on the top row"
 msgstr "Кликер другог играча као што ће бити приказан у највишем реду"
 
-#: C/gnect.xml:338(title)
+#: C/gnect.xml:337(figure/title)
 msgid "An example tile set"
 msgstr "Пример скупа фигура"
 
-#: C/gnect.xml:340(screeninfo)
+#: C/gnect.xml:339(screenshot/screeninfo)
 msgid "This image shows the six tiles in a tile set"
 msgstr "Слика приказује шест фигура у скупу фигура"
 
-#: C/gnect.xml:345(para)
+#: C/gnect.xml:344(sect2/para)
 msgid ""
 "Tiles three and four will be repeated over the game board and top row unless "
 "a full window background image is specified in the theme file."
@@ -486,11 +522,12 @@ msgstr ""
 "реда, осим ако се у датотеци за тему не нагласи да позадинска слика иде "
 "преко целог прозора игре."
 
-#: C/gnect.xml:352(title) C/gnect.xml:363(title) C/gnect.xml:379(title)
+#: C/gnect.xml:351(tip/title) C/gnect.xml:362(tip/title)
+#: C/gnect.xml:378(tip/title)
 msgid "TIP"
 msgstr "САВЕТ"
 
-#: C/gnect.xml:353(para)
+#: C/gnect.xml:352(tip/para)
 msgid ""
 "PNG format is recommended for tile sets. The first, second, fifth and sixth "
 "tiles should contain some transparency if you want the background to show "
@@ -502,7 +539,7 @@ msgstr ""
 "Трећа и четврта фигура би требале да буду непрозирне, чак иако користите "
 "позадинску слику преко целог прозора за вашу тему."
 
-#: C/gnect.xml:364(para)
+#: C/gnect.xml:363(tip/para)
 msgid ""
 "Tiles can be square or rectangular, and any size you like. Most of the tile "
 "sets that come with <application>Four-in-a-Row</application> use square "
@@ -512,7 +549,7 @@ msgstr ""
 "Већина скупова фигура које долазе уз <application>Четири у низу</"
 "application> користе квадратне фигуре величине 50 са 50 пиксела."
 
-#: C/gnect.xml:371(para)
+#: C/gnect.xml:370(sect2/para)
 msgid ""
 "For a full window background image, there's a bit more work to do. Let's say "
 "your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
@@ -524,7 +561,7 @@ msgstr ""
 "фигура, укључујући и највиши ред, тако да је идеална величина позадинске "
 "слике 350 са 350 пиксела."
 
-#: C/gnect.xml:380(para)
+#: C/gnect.xml:379(tip/para)
 msgid ""
 "<application>Four-in-a-Row</application> will automatically scale the "
 "background image if it doesn't match the tile set. This means you can make "
@@ -537,7 +574,7 @@ msgstr ""
 "верзије ваше теме, тако да обе користе исту позадинску слику, тако што ћете "
 "имати већу и мању верзију вачег скупа фигура."
 
-#: C/gnect.xml:388(para)
+#: C/gnect.xml:387(sect2/para)
 msgid ""
 "So, you now have a tile set and perhaps a background image to go with it. "
 "The next step is to put them in the right place."
@@ -545,11 +582,11 @@ msgstr ""
 "Сада имате скуп фигура и можда позадинску слику уз скуп фигура. Следећи "
 "корак је да их ставите на право место."
 
-#: C/gnect.xml:398(title)
+#: C/gnect.xml:397(sect2/title)
 msgid "Putting It Together"
 msgstr "Спајање свега"
 
-#: C/gnect.xml:400(para)
+#: C/gnect.xml:399(sect2/para)
 msgid ""
 "The last step is to put your image(s) where <application>Four-in-a-Row</"
 "application> can find them. You could put them in Four-in-a-row's install "
@@ -561,7 +598,7 @@ msgstr ""
 "(која зависи од вашег система), али је ваша лична фасцикла вероватно боља "
 "идеја."
 
-#: C/gnect.xml:407(para)
+#: C/gnect.xml:406(sect2/para)
 msgid ""
 "Make a <filename class=\"directory\">~/.gnect</filename> directory, and a "
 "<filename class=\"directory\">~/.gnect/pixmaps</filename> directory. Those "
@@ -573,11 +610,11 @@ msgstr ""
 "имена су важна јер <application>Четири у низу</application> неће да гледа "
 "нигде другде."
 
-#: C/gnect.xml:414(para)
+#: C/gnect.xml:413(sect2/para)
 msgid "Copy your image(s) into the pixmaps directory."
 msgstr "Умножите вашу слику(е) у „pixmaps“ фасциклу."
 
-#: C/gnect.xml:418(para)
+#: C/gnect.xml:417(sect2/para)
 msgid ""
 "If you start <application>Four-in-a-Row</application> from the command line, "
 "it'll give you clues about any problems it has with your new theme. If it "
@@ -589,205 +626,26 @@ msgstr ""
 "темом. Ако проблема нема, наћи ћете вашу нову тему на списку тема у "
 "<interface>прозорчету са поставкама</interface>."
 
-#: C/gnect.xml:425(para)
+#: C/gnect.xml:424(sect2/para)
 msgid "Have fun!"
 msgstr "Уживајте!"
 
-#: C/gnect.xml:10(title)
-msgid "Network Games"
-msgstr "Мрежне игре"
-
-#: C/gnect.xml:11(para)
-msgid ""
-"Four-in-a-Row support networked multiplayer games which is provided by "
-"<ulink type=\"http\" url=\"http://www.ggzgamingzone.org\">GGZ Gaming Zone</"
-"ulink>. By connecting to a Four-in-a-Row server on the Internet, you can "
-"challenge other players in multiplayer games. For news, updates and a list "
-"of servers to connect to, see the <ulink type=\"http\" url=\"http://www."
-"gnome.org/projects/gnome-games/\">gnome-games website</ulink>."
-msgstr ""
-"Четири у низу подржава и мрежне игре за више играча коју обезбеђује <ulink "
-"type=\"http\" url=\"http://www.ggzgamingzone.org\">ГГЗ Зона игре</ulink>. "
-"Повезивањем на сервер Четири у низу на Интернету, можете изазвати друге "
-"играче у играма са више играча. За вести, ажурирање и списак сервера за "
-"повезивање, погледајте <ulink type=\"http\" url=\"http://www.gnome.org/"
-"projects/gnome-games/\">веб страну Гномових игара</ulink>."
-
-#: C/gnect.xml:18(para)
-msgid ""
-"To start the multiplayer game of Four-in-a-Row, select "
-"<menuchoice><guimenu>Game</guimenu><guimenuitem>Network Game</guimenuitem></"
-"menuchoice> on the Four-in-a-Row menu."
-msgstr ""
-"Да покренете Четири у низу игру за више играча, одаберите "
-"<menuchoice><guimenu>Игра</guimenu><guimenuitem>Мрежна игра</guimenuitem></"
-"menuchoice> из главног менија."
-
-#: C/gnect.xml:24(title)
-msgid "Connecting to a Four-in-a-Row network server"
-msgstr "Повезивање на мрежни сервер Четири у низу"
-
-#: C/gnect.xml:25(para)
-msgid ""
-"The Four-in-a-Row connection dialog is shown initially when starting a new "
-"network game. This dialog allows you to select a server to connect to, and "
-"the username that you will have while connected to that server."
-msgstr ""
-"При покретању нове мрежне игре, прво се показује прозорче за повезивање. Из "
-"овог прозорчета можете изабрати сервер за повезивање и корисничко име које "
-"ћете имати када се повежете."
-
-#: C/gnect.xml:31(para)
-msgid ""
-"It is possible to connect to a server with either a guest account or a "
-"normal registered account. Guest accounts allows you to anonymously login, "
-"while a normal login account allows you to reserve your own username which "
-"is protected by the password that you choose."
-msgstr ""
-"Могуће је повезати се на сервер са било гостинског налога или као нормални "
-"регистровани налог. Гостински налози вам омогућују анонимну пријаву, док вам "
-"нормални налози дозвољавају да резервишете ваше корисничко име заштићено "
-"лозинком коју одаберете."
-
-#: C/gnect.xml:38(para)
-msgid ""
-"The <guimenuitem>Guest Login</guimenuitem> option should be selected if you "
-"want an anonymous guest account. If you want to create a new login account, "
-"then select the <guimenuitem>First-time Login</guimenuitem> option, with the "
-"username, password and email of your choice. If you have already created "
-"your account, you can connect by selecting the <guimenuitem>Normal Login</"
-"guimenuitem> option, and enter the username and password that you have "
-"chosen."
-msgstr ""
-"Опција <guimenuitem>Пријава као гост</guimenuitem> треба да буде одабрана "
-"ако желите анонимну пријаву. Ако желите да направите нови налог за "
-"пријављивање, одаберите <guimenuitem>Прва пријава</guimenuitem>, са жељеним "
-"корисничким именом, лозинком и е-поштом. Ако већ имате налог, можете се "
-"повезати избором опције <guimenuitem>Нормална пријава</guimenuitem> и "
-"затим унети ваше корисничко име и лозинку."
-
-#: C/gnect.xml:46(para)
-msgid ""
-"To connect to a server, click on the <guimenuitem>Connect</guimenuitem> "
-"button."
-msgstr ""
-"Да бисте се повезали на сервер, кликните на дугме <guimenuitem>Повежи се</"
-"guimenuitem>."
-
-#: C/gnect.xml:50(title) C/gnect.xml:57(phrase)
-msgid "The Four-in-a-Row network connection dialog."
-msgstr "Прозорче за мрежно повезивање Четири у низу за мрежно повезивање."
-
-#: C/gnect.xml:65(title)
-msgid "Joining a game room"
-msgstr "Придруживање соби за игру"
-
-#: C/gnect.xml:66(para)
-msgid ""
-"Once you have successfully connected to a server, you can choose which game "
-"room to join. To play a multiplayer game of Four-in-a-Row, select the Four-"
-"in-a-Row room. If you want to host your own game, then click on the Launch "
-"button. This creates a new table where other players can participate in a "
-"game against you. If there are any other games already started, then you can "
-"double-click on an existing game table to join it. The list of game tables "
-"on the right shows you the number of available seats, which means the number "
-"of players that can join the game table."
-msgstr ""
-"Кад сте се успешно повезали на сервер, можете одабрати собу којој желите да "
-"се придружите. Да бисте играли Четири у низу, одабертите собу Four-in-a-Row. "
-"Ако желите да ви правите игру, кликните дугме „Покрени“. Овим се прави нова "
-"табла где други могу да играју против вас. Ако има већ покренутих игара, "
-"можете кликнути дуплим кликом на постојећу игру да бисте јој се придружили. "
-"Списак табли за игру са десне стране вам показује број слободних места, што "
-"означава број играча који се могу придружити."
-
-#: C/gnect.xml:73(title) C/gnect.xml:80(phrase)
-msgid ""
-"This Four-in-a-Row network dialog allows you to join a game room to find "
-"other players."
-msgstr ""
-"Мрежно прозорче за Четири у низу вам омогућава да се придружите соби за игру да "
-"бисте нашли друге играче."
-
-#: C/gnect.xml:85(para)
-msgid ""
-"When creating a new table for Four-in-a-Row games, a preference dialog is "
-"displayed which allows you to customize the game, such as set the minimum "
-"number of players for the game. Once the total number of seats have been "
-"taken, then no more players are allowed to join that game table."
-msgstr ""
-"При прављењу нове табле за игру Четири у низу, приказује се прозорче са поставкама "
-"које вам омогућава да прилагодите игру, као нпр. најмањи број играча за "
-"игру. Када је укупни број места заузет, играчи се више не могу придружити "
-"табли за игру."
-
-#: C/gnect.xml:90(para)
-msgid ""
-"It is possible to chat with other players in network games. Ask for advice "
-"or help playing the games, but please be polite against other players."
-msgstr ""
-"Могуће је ћаскати са осталим играчима у мрежи. Питајте за савет или "
-"помоћ при игрању игре, али молимо, будите љубазни према осталим играчима."
-
-#: C/gnect.xml:97(title)
-msgid "Waiting for other players to join the game"
-msgstr "Чекање да се остали играчи придруже игри"
-
-#: C/gnect.xml:98(para)
-msgid ""
-"Once you have successfully joined a game table, then you have to wait until "
-"enough players have joined the table. The <guimenuitem>Players List</"
-"guimenuitem> menu item allows you to see a list of the players who have "
-"joined the game. The game will begin immediately when the total number of "
-"players in the the game have been reached."
-msgstr ""
-"Када сте се успешно придружили табли за игру, морате сачекати да се потребан "
-"број играча придружи. Ставка менија <guimenuitem>Списак играча</guimenuitem> "
-"вам омогућава да видите играче који су се придружили игри. Игра ће почети "
-"одмах пошто се достигне потребан број играча."
-
-#: C/gnect.xml:107(title)
-msgid "Playing multiplayer Four-in-a-Row games"
-msgstr "Играње Четири у низу са више играча"
-
-#: C/gnect.xml:108(para)
-msgid ""
-"Multiplayer Four-in-a-Row games have pretty much the same rules as normal "
-"Four-in-a-Row games, except that you are now playing against human players. "
-"This means that other strategies might possibly be better than when playing "
-"against AI players."
-msgstr ""
-"Играње Четири у низу са више играча има иста правила као обична игра Четири "
-"у низу, осим што сада играте против другог човека. То значи да неке друге "
-"стратегије игре могу бити бити боље у односу на то кад играте против "
-"рачунара."
-
-#: C/gnect.xml:113(para)
-msgid ""
-"Once a player has won, the game ends and you can return to the initial "
-"network game screen. Then you can play yet another game of addictive Four-in-"
-"a-Row multiplayer!"
-msgstr ""
-"Када неки играч победи, игра се завршава и можете се вратити на почетни "
-"екран мрежне игре. Онда можете играти још једну занимљиву игру Четири у низу "
-"са више играча!"
-
-#: C/gnect.xml:447(title)
+#: C/gnect.xml:437(sect1/title)
 msgid "Known Bugs and Limitations"
 msgstr "Познате грешке и ограничења"
 
-#: C/gnect.xml:449(para)
+#: C/gnect.xml:439(sect1/para)
 msgid ""
 "Occasionally a marble-dropping animation doesn't look as smooth as it should."
 msgstr ""
 "Некад анимација падања кликера не изгледа онако глатко као што би требала да "
 "буде."
 
-#: C/gnect.xml:462(title)
+#: C/gnect.xml:452(sect1/title)
 msgid "Authors"
 msgstr "Аутори"
 
-#: C/gnect.xml:464(para)
+#: C/gnect.xml:454(sect1/para)
 msgid ""
 "<application>Four-in-a-Row</application> was written by Timothy Musson "
 "(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
@@ -799,7 +657,7 @@ msgstr ""
 "email>). Многи други су издвојили своје време да би помогли на много начина "
 "од када је рад на игри <application>Четири у низу</application> почео."
 
-#: C/gnect.xml:469(para)
+#: C/gnect.xml:459(sect1/para)
 msgid ""
 "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
 "\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
@@ -810,14 +668,14 @@ msgstr ""
 "<ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html\">Мотор "
 "Велену</ulink>, главног рачунарског играча игре <application>Четири у низу</"
 "application> је написао Giuliano Bertoletti. Захвални смо му што је дозволио "
-"да се његово дело укључи у игру, без кога игра <application>Четири у "
-"низу</application> не би била ни близу употребљива."
+"да се његово дело укључи у игру, без кога игра <application>Четири у низу</"
+"application> не би била ни близу употребљива."
 
-#: C/gnect.xml:476(para)
+#: C/gnect.xml:466(sect1/para)
 msgid "This manual was written by Timothy Musson."
 msgstr "Ово упутство је написао Timothy Musson."
 
-#: C/gnect.xml:479(para)
+#: C/gnect.xml:469(sect1/para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
@@ -827,11 +685,11 @@ msgstr ""
 "упутства, пратите смернице из <ulink url=\"ghelp:user-guide?feedback-bugs\" "
 "type=\"help\">документа</ulink>."
 
-#: C/gnect.xml:504(title)
+#: C/gnect.xml:494(sect1/title)
 msgid "License"
 msgstr "Лиценца"
 
-#: C/gnect.xml:506(para)
+#: C/gnect.xml:496(sect1/para)
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the <citetitle>GNU General Public License</citetitle> as "
@@ -839,11 +697,11 @@ msgid ""
 "or (at your option) any later version."
 msgstr ""
 "Овај програм је слободан софтвер; можете га расподељивати и/или га мењати "
-"под условима <citetitle>ГНУ Опште Јавне Лиценце (GNU GPL)</citetitle> како "
-"је објављује Задужбина за Слободни Софтвер (FSF); било верзије 2 те Лиценце, "
-"било (по вашем нахођењу) било које новије верзије."
+"под условима <citetitle>ГНУ Опште Јавне Лиценце</citetitle> како је "
+"објављује Задужбина Слободног Софтвера; било верзије 2 те Лиценце, или (по "
+"вашем мишљењу) било које новије верзије."
 
-#: C/gnect.xml:514(para)
+#: C/gnect.xml:504(sect1/para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -855,30 +713,264 @@ msgstr ""
 "ОДРЕЂЕНОЈ НАМЕНИ.  Видите <citetitle>ГНУ Општу Јавну Лиценцу</citetitle> за "
 "више детаља."
 
-#: C/gnect.xml:521(para)
+#: C/gnect.xml:519(para/address)
+#, no-wrap
+msgid ""
+"\n"
+"        Free Software Foundation, Inc.\n"
+"        <street>59 Temple Place</street> - Suite 330\n"
+"        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>\n"
+"        <country>USA</country>\n"
+"      "
+msgstr ""
+"\n"
+"        Free Software Foundation, Inc.\n"
+"        <street>59 Temple Place</street> - Suite 330\n"
+"        <city>Boston</city>, <state>MA</state> "
+"<postcode>02111-1307</postcode>\n"
+"        <country>USA</country>\n"
+"      "
+
+#: C/gnect.xml:511(sect1/para)
+#| msgid ""
+#| "A copy of the <citetitle>GNU General Public License</citetitle> is "
+#| "included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. "
+#| "You may also obtain a copy of the <citetitle>GNU General Public License</"
+#| "citetitle> from the Free Software Foundation by visiting <ulink url="
+#| "\"http://www.fsf.org\" type=\"http\">their Web site</ulink> or by writing "
+#| "to <address> Free Software Foundation, Inc. <street>59 Temple Place</"
+#| "street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-"
+#| "1307</postcode><country>USA</country></address>"
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
 "obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
 "the Free Software Foundation by visiting <ulink url=\"http://www.fsf.org\" "
-"type=\"http\">their Web site</ulink> or by writing to <address> Free "
-"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
-"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
-"postcode><country>USA</country></address>"
+"type=\"http\">their Web site</ulink> or by writing to <_:address-1/>"
 msgstr ""
 "Примерак <citetitle>ГНУ Опште Јавне Лиценце</citetitle> је укључен у додатку "
 "<citetitle>Гномовог корисничког водича</citetitle>. Такође можете набавити "
-"примерак <citetitle>ГНУ Опште Јавне Лиценце</citetitle> од Задужбине за "
-"Слободни Софтвер одлазећи на <ulink url=\"http://www.fsf.org\" type=\"http"
-"\">њихову веб адресу</ulink> или пишући на <address> Free Software "
-"Foundation, Inc. <street>59 Temple Place</street> - Suite 330 <city>Boston</"
-"city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</"
-"country></address>"
+"примерак <citetitle>ГНУ Опште Јавне Лиценце</citetitle> од Задужбине "
+"Слободног Софтвера посетивши <ulink url=\"http://www.fsf.org\" "
+"type=\"http\">њихов веб сајт</ulink> или пишући на <_:address-1/>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/gnect.xml:0(None)
-msgid "translator-credits"
+#: C/legal.xml:9(para/ulink)
+msgid "link"
+msgstr "вези"
+
+#: C/legal.xml:2(legalnotice/para)
+#| msgid ""
+#| "Permission is granted to copy, distribute and/or modify this document "
+#| "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#| "or any later version published by the Free Software Foundation with no "
+#| "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#| "can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl"
+#| "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
 msgstr ""
-"Бранко Кокановић <branko.kokanovic@gmail.com>\n"
-"\n"
-"Prevod.org — превод на српски језик"
+"Дозвољено је умножавање, расподела, вршење измена овог документа под "
+"условима Гну-ове Лиценце Слободне Документације (ГЛСД), верзије 1.1 или било "
+"које касније верзије без непромењивих одељака, текста на насловној и "
+"последњој страни, а коју је објавила Задужбина Слободног Софтвера. Примерак "
+"ГЛСД можете пронаћи на овој <_:ulink-1/> или у датотеци „COPYING-DOCS“ која "
+"је приложена уз ово упутство."
+
+#~ msgid "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
+#~ msgstr ""
+#~ "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
+
+#~ msgid "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
+#~ msgstr "@@image: 'figures/tables.png'; md5=96e520cee7fdbee56636794251a52b0d"
+
+#~ msgid "2001-2002"
+#~ msgstr "2001-2002"
+
+#~ msgid "Timothy Musson"
+#~ msgstr "Timothy Musson"
+
+#~ msgid "Timothy"
+#~ msgstr "Timothy"
+
+#~ msgid "Musson"
+#~ msgstr "Musson"
+
+#~ msgid "trmusson@ihug.co.nz"
+#~ msgstr "trmusson@ihug.co.nz"
+
+#~ msgid "Four-in-a-Row Manual V2.8"
+#~ msgstr "Упутство за Четири у низу v2.8"
+
+#~ msgid "September 2004"
+#~ msgstr "Септембар 2004."
+
+#~ msgid "Theme"
+#~ msgstr "Тема"
+
+#~ msgid "Network Games"
+#~ msgstr "Мрежне игре"
+
+#~ msgid ""
+#~ "Four-in-a-Row support networked multiplayer games which is provided by "
+#~ "<ulink type=\"http\" url=\"http://www.ggzgamingzone.org\">GGZ Gaming "
+#~ "Zone</ulink>. By connecting to a Four-in-a-Row server on the Internet, "
+#~ "you can challenge other players in multiplayer games. For news, updates "
+#~ "and a list of servers to connect to, see the <ulink type=\"http\" url="
+#~ "\"http://www.gnome.org/projects/gnome-games/\">gnome-games website</"
+#~ "ulink>."
+#~ msgstr ""
+#~ "Четири у низу подржава и мрежне игре за више играча коју обезбеђује "
+#~ "<ulink type=\"http\" url=\"http://www.ggzgamingzone.org\">ГГЗ Зона игре</"
+#~ "ulink>. Повезивањем на сервер Четири у низу на Интернету, можете изазвати "
+#~ "друге играче у играма са више играча. За вести, ажурирање и списак "
+#~ "сервера за повезивање, погледајте <ulink type=\"http\" url=\"http://www."
+#~ "gnome.org/projects/gnome-games/\">веб страну Гномових игара</ulink>."
+
+#~ msgid ""
+#~ "To start the multiplayer game of Four-in-a-Row, select "
+#~ "<menuchoice><guimenu>Game</guimenu><guimenuitem>Network Game</"
+#~ "guimenuitem></menuchoice> on the Four-in-a-Row menu."
+#~ msgstr ""
+#~ "Да покренете Четири у низу игру за више играча, одаберите "
+#~ "<menuchoice><guimenu>Игра</guimenu><guimenuitem>Мрежна игра</"
+#~ "guimenuitem></menuchoice> из главног менија."
+
+#~ msgid "Connecting to a Four-in-a-Row network server"
+#~ msgstr "Повезивање на мрежни сервер Четири у низу"
+
+#~ msgid ""
+#~ "The Four-in-a-Row connection dialog is shown initially when starting a "
+#~ "new network game. This dialog allows you to select a server to connect "
+#~ "to, and the username that you will have while connected to that server."
+#~ msgstr ""
+#~ "При покретању нове мрежне игре, прво се показује прозорче за повезивање. "
+#~ "Из овог прозорчета можете изабрати сервер за повезивање и корисничко име "
+#~ "које ћете имати када се повежете."
+
+#~ msgid ""
+#~ "It is possible to connect to a server with either a guest account or a "
+#~ "normal registered account. Guest accounts allows you to anonymously "
+#~ "login, while a normal login account allows you to reserve your own "
+#~ "username which is protected by the password that you choose."
+#~ msgstr ""
+#~ "Могуће је повезати се на сервер са било гостинског налога или као "
+#~ "нормални регистровани налог. Гостински налози вам омогућују анонимну "
+#~ "пријаву, док вам нормални налози дозвољавају да резервишете ваше "
+#~ "корисничко име заштићено лозинком коју одаберете."
+
+#~ msgid ""
+#~ "The <guimenuitem>Guest Login</guimenuitem> option should be selected if "
+#~ "you want an anonymous guest account. If you want to create a new login "
+#~ "account, then select the <guimenuitem>First-time Login</guimenuitem> "
+#~ "option, with the username, password and email of your choice. If you have "
+#~ "already created your account, you can connect by selecting the "
+#~ "<guimenuitem>Normal Login</guimenuitem> option, and enter the username "
+#~ "and password that you have chosen."
+#~ msgstr ""
+#~ "Опција <guimenuitem>Пријава као гост</guimenuitem> треба да буде одабрана "
+#~ "ако желите анонимну пријаву. Ако желите да направите нови налог за "
+#~ "пријављивање, одаберите <guimenuitem>Прва пријава</guimenuitem>, са "
+#~ "жељеним корисничким именом, лозинком и е-поштом. Ако већ имате налог, "
+#~ "можете се повезати избором опције <guimenuitem>Нормална пријава</"
+#~ "guimenuitem> и затим унети ваше корисничко име и лозинку."
+
+#~ msgid ""
+#~ "To connect to a server, click on the <guimenuitem>Connect</guimenuitem> "
+#~ "button."
+#~ msgstr ""
+#~ "Да бисте се повезали на сервер, кликните на дугме <guimenuitem>Повежи се</"
+#~ "guimenuitem>."
+
+#~ msgid "The Four-in-a-Row network connection dialog."
+#~ msgstr "Прозорче за мрежно повезивање Четири у низу за мрежно повезивање."
+
+#~ msgid "Joining a game room"
+#~ msgstr "Придруживање соби за игру"
+
+#~ msgid ""
+#~ "Once you have successfully connected to a server, you can choose which "
+#~ "game room to join. To play a multiplayer game of Four-in-a-Row, select "
+#~ "the Four-in-a-Row room. If you want to host your own game, then click on "
+#~ "the Launch button. This creates a new table where other players can "
+#~ "participate in a game against you. If there are any other games already "
+#~ "started, then you can double-click on an existing game table to join it. "
+#~ "The list of game tables on the right shows you the number of available "
+#~ "seats, which means the number of players that can join the game table."
+#~ msgstr ""
+#~ "Кад сте се успешно повезали на сервер, можете одабрати собу којој желите "
+#~ "да се придружите. Да бисте играли Четири у низу, одабертите собу Four-in-"
+#~ "a-Row. Ако желите да ви правите игру, кликните дугме „Покрени“. Овим се "
+#~ "прави нова табла где други могу да играју против вас. Ако има већ "
+#~ "покренутих игара, можете кликнути дуплим кликом на постојећу игру да "
+#~ "бисте јој се придружили. Списак табли за игру са десне стране вам "
+#~ "показује број слободних места, што означава број играча који се могу "
+#~ "придружити."
+
+#~ msgid ""
+#~ "This Four-in-a-Row network dialog allows you to join a game room to find "
+#~ "other players."
+#~ msgstr ""
+#~ "Мрежно прозорче за Четири у низу вам омогућава да се придружите соби за "
+#~ "игру да бисте нашли друге играче."
+
+#~ msgid ""
+#~ "When creating a new table for Four-in-a-Row games, a preference dialog is "
+#~ "displayed which allows you to customize the game, such as set the minimum "
+#~ "number of players for the game. Once the total number of seats have been "
+#~ "taken, then no more players are allowed to join that game table."
+#~ msgstr ""
+#~ "При прављењу нове табле за игру Четири у низу, приказује се прозорче са "
+#~ "поставкама које вам омогућава да прилагодите игру, као нпр. најмањи број "
+#~ "играча за игру. Када је укупни број места заузет, играчи се више не могу "
+#~ "придружити табли за игру."
+
+#~ msgid ""
+#~ "It is possible to chat with other players in network games. Ask for "
+#~ "advice or help playing the games, but please be polite against other "
+#~ "players."
+#~ msgstr ""
+#~ "Могуће је ћаскати са осталим играчима у мрежи. Питајте за савет или помоћ "
+#~ "при игрању игре, али молимо, будите љубазни према осталим играчима."
+
+#~ msgid "Waiting for other players to join the game"
+#~ msgstr "Чекање да се остали играчи придруже игри"
+
+#~ msgid ""
+#~ "Once you have successfully joined a game table, then you have to wait "
+#~ "until enough players have joined the table. The <guimenuitem>Players "
+#~ "List</guimenuitem> menu item allows you to see a list of the players who "
+#~ "have joined the game. The game will begin immediately when the total "
+#~ "number of players in the the game have been reached."
+#~ msgstr ""
+#~ "Када сте се успешно придружили табли за игру, морате сачекати да се "
+#~ "потребан број играча придружи. Ставка менија <guimenuitem>Списак играча</"
+#~ "guimenuitem> вам омогућава да видите играче који су се придружили игри. "
+#~ "Игра ће почети одмах пошто се достигне потребан број играча."
+
+#~ msgid "Playing multiplayer Four-in-a-Row games"
+#~ msgstr "Играње Четири у низу са више играча"
+
+#~ msgid ""
+#~ "Multiplayer Four-in-a-Row games have pretty much the same rules as normal "
+#~ "Four-in-a-Row games, except that you are now playing against human "
+#~ "players. This means that other strategies might possibly be better than "
+#~ "when playing against AI players."
+#~ msgstr ""
+#~ "Играње Четири у низу са више играча има иста правила као обична игра "
+#~ "Четири у низу, осим што сада играте против другог човека. То значи да "
+#~ "неке друге стратегије игре могу бити бити боље у односу на то кад играте "
+#~ "против рачунара."
+
+#~ msgid ""
+#~ "Once a player has won, the game ends and you can return to the initial "
+#~ "network game screen. Then you can play yet another game of addictive Four-"
+#~ "in-a-Row multiplayer!"
+#~ msgstr ""
+#~ "Када неки играч победи, игра се завршава и можете се вратити на почетни "
+#~ "екран мрежне игре. Онда можете играти још једну занимљиву игру Четири у "
+#~ "низу са више играча!"
