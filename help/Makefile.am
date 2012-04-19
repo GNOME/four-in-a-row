@@ -3,12 +3,10 @@ HELP_ID = gnect
 
 HELP_MEDIA = \
 	figures/mainwindow.png \
-	figures/tileset.png \
-	figures/connect.png \
-	figures/tables.png 
+	figures/tileset.png
 
 HELP_FILES = \
-	gnect.xml \
+	index.docbook \
 	legal.xml
 
 HELP_LINGUAS = ca cs da de el en_GB es eu fi fr it oc sl sr sr@latin sv zh_CN
