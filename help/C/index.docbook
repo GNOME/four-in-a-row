@@ -397,21 +397,7 @@
       <title>Putting It Together</title>
 
       <para>
-        The last step is to put your image(s) where &app; can
-        find them. You could put them in Four-in-a-row's install directory (which will
-        depend on your particular system), but your home directory's probably
-        a better idea.
-      </para>
-
-      <para>
-        Make a <filename class="directory">~/.gnect</filename> directory,
-        and a <filename class="directory">~/.gnect/pixmaps</filename>
-        directory. Those names are important, as &app; won't look
-        anywhere else.
-      </para>
-
-      <para>
-        Copy your image(s) into the pixmaps directory.
+        Copy your image(s) into the data directory (~/.local/share/gnect).
       </para>
 
       <para>
