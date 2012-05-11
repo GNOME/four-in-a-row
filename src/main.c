@@ -851,17 +851,6 @@ on_help_contents (GtkAction * action, gpointer data)
 }
 
 
-#if 0
-static void
-on_settings_toggle_sound (GtkMenuItem * m, gpointer user_data)
-{
-  p.do_sound = GTK_CHECK_MENU_ITEM (m)->active;
-  g_settings_set_boolean (NULL, KEY_DO_SOUND, p.do_sound);
-}
-#endif
-
-
-
 static void
 on_settings_preferences (GtkAction * action, gpointer user_data)
 {
