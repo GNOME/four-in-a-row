@@ -4,10 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packagename\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 07:38+0000\n"
-"PO-Revision-Date: 2012-07-12 22:54+0200\n"
+"POT-Creation-Date: 2012-08-05 09:25+0000\n"
+"PO-Revision-Date: 2012-08-21 17:06+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,9 +21,9 @@ msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
-"Φώτης Τσάμης <ftsamis@gmail.com>, 2009\n"
+" Φώτης Τσάμης <ftsamis@gmail.com>, 2009\n"
 "\n"
-"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.gnome.gr/"
+"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://gnome.gr/"
 
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
@@ -35,16 +36,26 @@ msgstr ""
 #. whatever you like once you have updated your copy of the file.
 #: C/index.docbook:175(imagedata)
 msgctxt "_"
-msgid "external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
-msgstr "external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
+msgid ""
+"external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
+msgstr ""
+"external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
 
 #: C/index.docbook:21(articleinfo/title)
 msgid "Four-in-a-Row Manual"
 msgstr "Εγχειρίδιο Τέσσερα στη σειρά"
 
 #: C/index.docbook:23(abstract/para)
-msgid "The object of Four-in-a-Row is to place four pieces in a vertical, horizontal, or diagonal row while the opponent tries to block and make his/her own row of four. Four-in-a-Row can be played against another human or the computer."
-msgstr "Ο στόχος του Τέσσερα στη σειρά είναι να τοποθετήσετε τέσσερα κομμάτια σε κάθετη, οριζόντια, ή διαγώνια γραμμή καθώς ο αντίπαλός σας προσπαθεί να μπλοκάρει και να κάνει την δική του/της γραμμή των τεσσάρων. Μπορείτε να παίξετε το Τέσσερα στη σειρά με αντίπαλο έναν άλλον άνθρωπο ή τον υπολογιστή."
+msgid ""
+"The object of Four-in-a-Row is to place four pieces in a vertical, "
+"horizontal, or diagonal row while the opponent tries to block and make his/"
+"her own row of four. Four-in-a-Row can be played against another human or "
+"the computer."
+msgstr ""
+"Ο στόχος του Τέσσερα στη σειρά είναι να τοποθετήσετε τέσσερα κομμάτια σε "
+"κάθετη, οριζόντια, ή διαγώνια γραμμή καθώς ο αντίπαλός σας προσπαθεί να "
+"μπλοκάρει και να κάνει την δική του/της γραμμή των τεσσάρων. Μπορείτε να "
+"παίξετε το Τέσσερα στη σειρά με αντίπαλο έναν άλλον άνθρωπο ή τον υπολογιστή."
 
 #: C/index.docbook:31(articleinfo/copyright)
 msgid "<year>2001-2002</year> <holder>Timothy Musson</holder>"
@@ -55,45 +66,132 @@ msgid "GNOME Documentation Project"
 msgstr "Έργο τεκμηρίωσης GNOME"
 
 #: C/index.docbook:2(legalnotice/para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
-msgstr "Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα οπισθοφύλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <ulink type=\"help\" url=\"ghelp:fdl\">σύνδεσμο</ulink>, ή στο αρχείο COPYING-DOCS που διανέμεται μαζί με το παρόν εγχειρίδιο."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος "
+"εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU "
+"(GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου "
+"Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα "
+"οπισθοφύλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <ulink "
+"type=\"help\" url=\"ghelp:fdl\">σύνδεσμο</ulink>, ή στο αρχείο COPYING-DOCS "
+"που διανέμεται μαζί με το παρόν εγχειρίδιο."
 
-#: C/index.docbook:12(legalnotice/para)
-#: C/legal.xml:12(legalnotice/para)
-msgid "This manual is part of a collection of GNOME manuals distributed under the GFDL. If you want to distribute this manual separately from the collection, you can do so by adding a copy of the license to the manual, as described in section 6 of the license."
-msgstr "Αυτό το εγχειρίδιο αποτελεί μέρος της συλλογής εγχειριδίων του GNOME που διανέμονται υπό τους όρους της GFDL. Αν επιθυμείτε να διανείμετε το παρόν εγχειρίδιο ξεχωριστά από τη συλλογή, οφείλετε να προσθέσετε στο εγχειρίδιο αντίγραφο της άδειας χρήσης, όπως προβλέπεται στο άρθρο 6 της άδειας."
+#: C/index.docbook:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Αυτό το εγχειρίδιο αποτελεί μέρος της συλλογής εγχειριδίων του GNOME που "
+"διανέμονται υπό τους όρους της GFDL. Αν επιθυμείτε να διανείμετε το παρόν "
+"εγχειρίδιο ξεχωριστά από τη συλλογή, οφείλετε να προσθέσετε στο εγχειρίδιο "
+"αντίγραφο της άδειας χρήσης, όπως προβλέπεται στο άρθρο 6 της άδειας."
 
-#: C/index.docbook:19(legalnotice/para)
-#: C/legal.xml:19(legalnotice/para)
-msgid "Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and the members of the GNOME Documentation Project are made aware of those trademarks, then the names are in capital letters or initial capital letters."
-msgstr "Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για την διαφοροποίηση των προϊόντων και υπηρεσιών τους έχουν καταχωρισθεί ως εμπορικά σήματα. Σε όποιο σημείο της τεκμηρίωσης GNOME τυχόν εμφανίζονται αυτές οι ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης GNOME έχουν λάβει γνώση αυτών των εμπορικών σημάτων, οι ονομασίες ή τα αρχικά αυτών θα γράφονται με κεφαλαίους χαρακτήρες."
+#: C/index.docbook:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για την "
+"διαφοροποίηση των προϊόντων και υπηρεσιών τους έχουν καταχωρισθεί ως "
+"εμπορικά σήματα. Σε όποιο σημείο της τεκμηρίωσης GNOME τυχόν εμφανίζονται "
+"αυτές οι ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης GNOME έχουν "
+"λάβει γνώση αυτών των εμπορικών σημάτων, οι ονομασίες ή τα αρχικά αυτών θα "
+"γράφονται με κεφαλαίους χαρακτήρες."
 
-#: C/index.docbook:35(listitem/para)
-#: C/legal.xml:35(listitem/para)
-msgid "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr "ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΠΑΡΕΧΕΤΑΙ \"ΩΣ ΕΧΕΙ\", ΧΩΡΙΣ ΟΠΟΙΑΔΗΠΟΤΕ ΑΛΛΗ ΕΓΓΥΗΣΗ, ΕΙΤΕ ΡΗΤΗ ΕΙΤΕ ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΤΗΣ ΕΓΓΥΗΣΗΣ ΟΤΙ ΤΟ ΕΓΓΡΑΦΟ, Ή Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΕΙΝΑΙ ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ ΚΑΙ ΔΕΝ ΠΡΟΣΒΑΛΛΕΙ ΔΙΚΑΙΩΜΑΤΑ ΤΡΙΤΩΝ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΕΞ ΟΛΟΚΛΗΡΟΥ ΤΗΝ ΕΘΥΝΗ ΩΣ ΠΡΟΣ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΤΗΝ ΑΚΡΙΒΕΙΑ ΚΑΙ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΗΣ ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ. ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΟΠΟΙΟΔΗΠΟΤΕ ΕΓΓΡΑΦΟ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΑΤΤΩΜΑΤΙΚΑ ΚΑΘ' ΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΧΡΗΣΤΗΣ (ΚΑΙ ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΔΗΜΙΟΥΡΓΟΣ Ή ΟΠΟΙΟΣΔΗΠΟΤΕ ΣΥΝΤΕΛΕΣΤΗΣ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΑΝΑΓΚΑΙΑΣ ΣΥΝΤΗΡΗΣΗΣ, ΕΠΙΣΚΕΥΗΣ Ή ΔΙΟΡΘΩΣΗΣ. Η ΠΑΡΟΥΣΑ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ ΑΠΟΤΕΛΕΙ ΑΝΑΠΟΣΠΑΣΤΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. ΔΕΝ ΕΠΙΤΡΕΠΕΤΑΙ ΟΥΔΕΜΙΑ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ ΣΥΜΦΩΝΑ ΜΕ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΠΑΡΟΥΣΑΣ,  ΠΑΡΑ ΜΟΝΟ ΕΑΝ ΣΥΝΟΔΕΥΕΤΑΙ ΑΠΟ ΤΗΝ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ,  ΚΑΙ"
+#: C/index.docbook:35(listitem/para) C/legal.xml:35(listitem/para)
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΠΑΡΕΧΕΤΑΙ \"ΩΣ ΕΧΕΙ\", ΧΩΡΙΣ ΟΠΟΙΑΔΗΠΟΤΕ ΑΛΛΗ ΕΓΓΥΗΣΗ, ΕΙΤΕ "
+"ΡΗΤΗ ΕΙΤΕ ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΤΗΣ ΕΓΓΥΗΣΗΣ ΟΤΙ "
+"ΤΟ ΕΓΓΡΑΦΟ, Ή Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΕΙΝΑΙ ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ "
+"ΕΙΔΙΚΟ ΣΚΟΠΟ ΚΑΙ ΔΕΝ ΠΡΟΣΒΑΛΛΕΙ ΔΙΚΑΙΩΜΑΤΑ ΤΡΙΤΩΝ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΕΞ "
+"ΟΛΟΚΛΗΡΟΥ ΤΗΝ ΕΘΥΝΗ ΩΣ ΠΡΟΣ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΤΗΝ ΑΚΡΙΒΕΙΑ ΚΑΙ ΤΗΝ ΧΡΗΣΗ ΤΟΥ "
+"ΕΓΓΡΑΦΟΥ Ή ΤΗΣ ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ. ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΟΠΟΙΟΔΗΠΟΤΕ "
+"ΕΓΓΡΑΦΟ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΑΤΤΩΜΑΤΙΚΑ ΚΑΘ' "
+"ΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΧΡΗΣΤΗΣ (ΚΑΙ ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΔΗΜΙΟΥΡΓΟΣ Ή "
+"ΟΠΟΙΟΣΔΗΠΟΤΕ ΣΥΝΤΕΛΕΣΤΗΣ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΑΝΑΓΚΑΙΑΣ "
+"ΣΥΝΤΗΡΗΣΗΣ, ΕΠΙΣΚΕΥΗΣ Ή ΔΙΟΡΘΩΣΗΣ. Η ΠΑΡΟΥΣΑ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ ΑΠΟΤΕΛΕΙ "
+"ΑΝΑΠΟΣΠΑΣΤΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. ΔΕΝ ΕΠΙΤΡΕΠΕΤΑΙ ΟΥΔΕΜΙΑ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή "
+"ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ ΣΥΜΦΩΝΑ ΜΕ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΠΑΡΟΥΣΑΣ,  ΠΑΡΑ ΜΟΝΟ "
+"ΕΑΝ ΣΥΝΟΔΕΥΕΤΑΙ ΑΠΟ ΤΗΝ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ,  ΚΑΙ"
 
-#: C/index.docbook:55(listitem/para)
-#: C/legal.xml:55(listitem/para)
-msgid "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES."
-msgstr "Ο ΔΗΜΙΟΥΡΓΟΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ Ή ΟΙ ΔΙΑΝΟΜΕΙΣ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΚΑΘΩΣ ΚΑΙ ΟΙ ΠΡΟΜΗΘΕΥΤΕΣ ΟΠΟΙΩΝΔΗΠΟΤΕ ΕΚ ΤΩΝ ΠΡΟΑΝΑΦΕΡΟΜΕΝΩΝ ΜΕΡΩΝ, ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ, ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΕΡΜΗΝΕΙΑ ΝΟΜΟΥ, ΕΙΤΕ ΕΞ ΑΔΙΚΟΠΡΑΞΙΑΣ (ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΑΜΕΛΕΙΑΣ) ΕΙΤΕ ΣΤΟ ΠΛΑΙΣΙΟ ΣΥΜΒΑΤΙΚΗΣ Ή ΑΛΛΗΣ ΥΠΟΧΡΕΩΣΗΣ, ΓΙΑ ΤΥΧΟΝ ΑΜΕΣΕΣ, ΕΜΜΕΣΕΣ, ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ Ή ΣΥΝΕΠΑΚΟΛΟΥΘΕΣ ΖΗΜΙΕΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΜΟΡΦΗΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΖΗΜΙΩΝ ΛΟΓΩ ΑΠΩΛΕΙΑΣ ΦΗΜΗΣ ΚΑΙ ΠΕΛΑΤΕΙΑΣ, ΔΙΑΚΟΠΗΣ ΕΡΓΑΣΙΩΝ, ΔΥΣΛΕΙΤΟΥΡΓΙΑΣ Ή ΒΛΑΒΗΣ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ, Ή ΚΑΘΕ ΑΛΛΗΣ ΖΗΜΙΑΣ Ή ΑΠΩΛΕΙΑΣ ΠΟΥ ΟΦΕΙΛΕΤΑΙ Ή ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ, ΑΚΟΜΑ ΚΑΙ ΑΝ ΤΑ ΩΣ ΑΝΩ ΜΕΡΗ ΕΙΧΑΝ ΛΑΒΕΙ ΓΝΩΣΗ ΤΗΣ ΠΙΘΑΝΟΤΗΤΑΣ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ."
+#: C/index.docbook:55(listitem/para) C/legal.xml:55(listitem/para)
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"Ο ΔΗΜΙΟΥΡΓΟΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ Ή ΟΙ ΔΙΑΝΟΜΕΙΣ ΤΟΥ "
+"ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΚΑΘΩΣ ΚΑΙ ΟΙ ΠΡΟΜΗΘΕΥΤΕΣ "
+"ΟΠΟΙΩΝΔΗΠΟΤΕ ΕΚ ΤΩΝ ΠΡΟΑΝΑΦΕΡΟΜΕΝΩΝ ΜΕΡΩΝ, ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ, "
+"ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΕΡΜΗΝΕΙΑ ΝΟΜΟΥ, ΕΙΤΕ ΕΞ ΑΔΙΚΟΠΡΑΞΙΑΣ "
+"(ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΑΜΕΛΕΙΑΣ) ΕΙΤΕ ΣΤΟ ΠΛΑΙΣΙΟ ΣΥΜΒΑΤΙΚΗΣ Ή ΑΛΛΗΣ "
+"ΥΠΟΧΡΕΩΣΗΣ, ΓΙΑ ΤΥΧΟΝ ΑΜΕΣΕΣ, ΕΜΜΕΣΕΣ, ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ Ή ΣΥΝΕΠΑΚΟΛΟΥΘΕΣ "
+"ΖΗΜΙΕΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΜΟΡΦΗΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΖΗΜΙΩΝ "
+"ΛΟΓΩ ΑΠΩΛΕΙΑΣ ΦΗΜΗΣ ΚΑΙ ΠΕΛΑΤΕΙΑΣ, ΔΙΑΚΟΠΗΣ ΕΡΓΑΣΙΩΝ, ΔΥΣΛΕΙΤΟΥΡΓΙΑΣ Ή "
+"ΒΛΑΒΗΣ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ, Ή ΚΑΘΕ ΑΛΛΗΣ ΖΗΜΙΑΣ Ή ΑΠΩΛΕΙΑΣ ΠΟΥ "
+"ΟΦΕΙΛΕΤΑΙ Ή ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ "
+"ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ, ΑΚΟΜΑ ΚΑΙ ΑΝ ΤΑ ΩΣ ΑΝΩ ΜΕΡΗ ΕΙΧΑΝ ΛΑΒΕΙ ΓΝΩΣΗ ΤΗΣ "
+"ΠΙΘΑΝΟΤΗΤΑΣ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ."
 
-#: C/index.docbook:28(legalnotice/para)
-#: C/legal.xml:28(legalnotice/para)
-msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <_:orderedlist-1/>"
-msgstr "ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΚΑΙ ΟΙ ΤΡΟΠΟΙΗΜΕΝΕΣ ΕΚΔΟΣΕΙΣ ΑΥΤΟΥ ΠΑΡΕΧΟΝΤΑΙ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΕΛΕΥΘΕΡΗΣ ΑΔΕΙΑΣ ΤΕΚΜΗΡΙΩΣΗΣ GNU (GFDL) ΚΑΙ ΜΕ ΤΗΝ ΠΕΡΑΙΤΕΡΩ ΔΙΕΥΚΡΙΝΙΣΗ ΟΤΙ: <_:orderedlist-1/>"
+#: C/index.docbook:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΚΑΙ ΟΙ ΤΡΟΠΟΙΗΜΕΝΕΣ ΕΚΔΟΣΕΙΣ ΑΥΤΟΥ ΠΑΡΕΧΟΝΤΑΙ ΥΠΟ ΤΟΥΣ "
+"ΟΡΟΥΣ ΤΗΣ ΕΛΕΥΘΕΡΗΣ ΑΔΕΙΑΣ ΤΕΚΜΗΡΙΩΣΗΣ GNU (GFDL) ΚΑΙ ΜΕ ΤΗΝ ΠΕΡΑΙΤΕΡΩ "
+"ΔΙΕΥΚΡΙΝΙΣΗ ΟΤΙ: <_:orderedlist-1/>"
 
 #: C/index.docbook:52(authorgroup/author)
-msgid "<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> <address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
-msgstr "<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> <address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
+msgid ""
+"<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
+"<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
+msgstr ""
+"<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
+"<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
 
 #: C/index.docbook:83(revdescription/para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 
 #: C/index.docbook:79(revhistory/revision)
-msgid "<revnumber>Four-in-a-Row Manual V2.8</revnumber> <date>September 2004</date> <_:revdescription-1/>"
-msgstr "<revnumber>Εγχειρίδιο του Τέσσερα στη σειρά V2.8</revnumber> <date>Σεπτέμβριος 2004</date> <_:revdescription-1/>"
+msgid ""
+"<revnumber>Four-in-a-Row Manual V2.8</revnumber> <date>September 2004</date> "
+"<_:revdescription-1/>"
+msgstr ""
+"<revnumber>Εγχειρίδιο του Τέσσερα στη σειρά V2.8</revnumber> "
+"<date>Σεπτέμβριος 2004</date> <_:revdescription-1/>"
 
 #: C/index.docbook:91(articleinfo/releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-Row."
@@ -104,28 +202,65 @@ msgid "Feedback"
 msgstr "Ανάδραση"
 
 #: C/index.docbook:96(legalnotice/para)
-msgid "To report a bug or make a suggestion regarding the Four-in-a-Row application or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή Τέσσερα στη σειρά ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στη <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Σελίδα ανάδρασης GNOME</ulink>."
+msgid ""
+"To report a bug or make a suggestion regarding the Four-in-a-Row application "
+"or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
+"feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
+msgstr ""
+"Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή "
+"Τέσσερα στη σειρά ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στη <ulink "
+"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Σελίδα ανάδρασης GNOME</"
+"ulink>."
 
 #: C/index.docbook:112(sect1/title)
 msgid "Introduction"
 msgstr "Εισαγωγή"
 
 #: C/index.docbook:114(sect1/para)
-msgid "<application>Four-in-a-Row</application> is a four-in-a-row game for the GNOME Project. The object of the game is to build a line of four of your marbles while trying to stop your opponent (human or computer) building a line of his or her own. A line can be horizontal, vertical or diagonal."
-msgstr "Το <application>Τέσσερα στη σειρά</application> είναι ένα παιχνίδι του τύπου τέσσερα-στη-σειρά για το έργο GNOME. Ο στόχος του παιχνιδιού είναι να φτιάξετε μια γραμμή με τέσσερις από τους βώλους σας ενώ προσπαθείτε να σταματήσετε τον αντίπαλό σας (άνθρωπος ή υπολογιστής) να φτιάξει μια γραμμή από τους δικούς του/της. Η γραμμή μπορεί να είναι οριζόντια, κάθετη ή διαγώνια."
+msgid ""
+"<application>Four-in-a-Row</application> is a four-in-a-row game for the "
+"GNOME Project. The object of the game is to build a line of four of your "
+"marbles while trying to stop your opponent (human or computer) building a "
+"line of his or her own. A line can be horizontal, vertical or diagonal."
+msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> είναι ένα παιχνίδι του τύπου "
+"τέσσερα-στη-σειρά για το έργο GNOME. Ο στόχος του παιχνιδιού είναι να "
+"φτιάξετε μια γραμμή με τέσσερις από τους βώλους σας ενώ προσπαθείτε να "
+"σταματήσετε τον αντίπαλό σας (άνθρωπος ή υπολογιστής) να φτιάξει μια γραμμή "
+"από τους δικούς του/της. Η γραμμή μπορεί να είναι οριζόντια, κάθετη ή "
+"διαγώνια."
 
 #: C/index.docbook:122(sect1/para)
-msgid "To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the <guimenu>Main Menu</guimenu>, or type <command>gnect</command> on the command line."
-msgstr "Για να εκκινήσετε το <application>Τέσσερα στη σειρά</application>, επιλέξτε <guimenuitem>Τέσσερα στη σειρά</guimenuitem> από το μενού <guisubmenu>Παιχνίδια</guisubmenu> του <guimenu>Κύριου μενού</guimenu>, ή πληκτρολογήστε <command>gnect</command> στη γραμμή εντολών."
+msgid ""
+"To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
+"a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
+"<guimenu>Main Menu</guimenu>, or type <command>gnect</command> on the "
+"command line."
+msgstr ""
+"Για να εκκινήσετε το <application>Τέσσερα στη σειρά</application>, επιλέξτε "
+"<guimenuitem>Τέσσερα στη σειρά</guimenuitem> από το μενού "
+"<guisubmenu>Παιχνίδια</guisubmenu> του <guimenu>Κύριου μενού</guimenu>, ή "
+"πληκτρολογήστε <command>gnect</command> στη γραμμή εντολών."
 
 #: C/index.docbook:130(sect1/para)
-msgid "<application>Four-in-a-Row</application> is included in the <filename>GNOME-games</filename> package, which is part of the GNOME desktop environment. This document describes version 2.8 of <application>Four-in-a-Row</application>."
-msgstr "Το <application>Τέσσερα στη σειρά</application> συμπεριλαμβάνεται στο πακέτο <filename>GNOME-games</filename>, το οποίο είναι μέρος του γραφικού περιβάλλοντος GNOME. Αυτό το έγγραφο περιγράφει την έκδοση 2.8 του <application>Τέσσερα στη σειρά</application>"
+msgid ""
+"<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
+"games</filename> package, which is part of the GNOME desktop environment. "
+"This document describes version 2.8 of <application>Four-in-a-Row</"
+"application>."
+msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> συμπεριλαμβάνεται στο πακέτο "
+"<filename>GNOME-games</filename>, το οποίο είναι μέρος του γραφικού "
+"περιβάλλοντος GNOME. Αυτό το έγγραφο περιγράφει την έκδοση 2.8 του "
+"<application>Τέσσερα στη σειρά</application>"
 
 #: C/index.docbook:136(sect1/para)
-msgid "Four-in-a-Row also features multiplayer support with two human players in hotseat mode."
-msgstr "Το Τέσσερα στη σειρά υποστηρίζει επίσης πολλούς παίχτες με δύο πραγματικούς παίχτες να παίζουν στον ίδιο υπολογιστή είτε με σειρά, ή μέσω δικτύου."
+msgid ""
+"Four-in-a-Row also features multiplayer support with two human players in "
+"hotseat mode."
+msgstr ""
+"Το Τέσσερα στη σειρά υποστηρίζει επίσης πολλούς παίχτες με δύο πραγματικούς "
+"παίχτες να παίζουν στον ίδιο υπολογιστή είτε με σειρά, ή μέσω δικτύου."
 
 #: C/index.docbook:150(sect1/title)
 msgid "Basic Usage"
@@ -136,68 +271,146 @@ msgid "Playing Four-in-a-Row"
 msgstr "Παίζοντας το Τέσσερα στη σειρά"
 
 #: C/index.docbook:158(sect2/para)
-msgid "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
-msgstr "Για να ξεκινήσετε ένα νέο παιχνίδι του Τέσσερα στη σειρά επιλέξτε <menuchoice><guimenu>Παιχνίδι</guimenu><guimenuitem>Νέο παιχνίδι</guimenuitem></menuchoice>."
+msgid ""
+"To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
+"guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
+msgstr ""
+"Για να ξεκινήσετε ένα νέο παιχνίδι του Τέσσερα στη σειρά επιλέξτε "
+"<menuchoice><guimenu>Παιχνίδι</guimenu><guimenuitem>Νέο παιχνίδι</"
+"guimenuitem></menuchoice>."
 
 #: C/index.docbook:162(sect2/para)
-msgid "The <interface>game board</interface> consists of seven columns and six rows. Above it, a special row indicates the current player and the marble about to be played. Each move consists of dropping a marble in one of the columns. The marble lands on the topmost empty row of the chosen column."
-msgstr "Το <interface>ταμπλό παιχνιδιού</interface> αποτελείται από εφτά στήλες και έξι σειρές. Πάνω από αυτές, μια ειδική σειρά δείχνει τον τρέχων παίχτη και τον επόμενο βώλο. Κάθε κίνηση αποτελείται από την ρίψη ενός βώλου σε μια από τις στήλες. Ο βώλος πάει στην πρώτη κενή σειρά της επιλεγμένης στήλης."
+msgid ""
+"The <interface>game board</interface> consists of seven columns and six "
+"rows. Above it, a special row indicates the current player and the marble "
+"about to be played. Each move consists of dropping a marble in one of the "
+"columns. The marble lands on the topmost empty row of the chosen column."
+msgstr ""
+"Το <interface>ταμπλό παιχνιδιού</interface> αποτελείται από εφτά στήλες και "
+"έξι σειρές. Πάνω από αυτές, μια ειδική σειρά δείχνει τον τρέχων παίχτη και "
+"τον επόμενο βώλο. Κάθε κίνηση αποτελείται από την ρίψη ενός βώλου σε μια από "
+"τις στήλες. Ο βώλος πάει στην πρώτη κενή σειρά της επιλεγμένης στήλης."
 
 #: C/index.docbook:167(sect2/para)
-msgid "To make a move, click on a column with the mouse. To play with the keyboard, move the marble in the top row with the left and right arrow keys, and drop it in place with the down arrow key. Your marble will drop into the topmost empty row of that column."
-msgstr "Για να κάνετε μια κίνηση, κάντε κλικ σε μια στήλη με το ποντίκι. Για να παίξετε με το πληκτρολόγιο, μετακινήστε τον βώλο στην πρώτη γραμμή με το αριστερό και το δεξί βέλος, και ρίξτε το με το κάτω βέλος. Ο βώλος σας θα πέσει στην πρώτη κενή σειρά αυτής της στήλης."
+msgid ""
+"To make a move, click on a column with the mouse. To play with the keyboard, "
+"move the marble in the top row with the left and right arrow keys, and drop "
+"it in place with the down arrow key. Your marble will drop into the topmost "
+"empty row of that column."
+msgstr ""
+"Για να κάνετε μια κίνηση, κάντε κλικ σε μια στήλη με το ποντίκι. Για να "
+"παίξετε με το πληκτρολόγιο, μετακινήστε τον βώλο στην πρώτη γραμμή με το "
+"αριστερό και το δεξί βέλος, και ρίξτε το με το κάτω βέλος. Ο βώλος σας θα "
+"πέσει στην πρώτη κενή σειρά αυτής της στήλης."
 
 #: C/index.docbook:180(caption/para)
 msgid "Four-in-a-Row's Main Window"
 msgstr "Το κεντρικό παράθυρο του Τέσσερα στη σειρά"
 
 #: C/index.docbook:171(sect2/mediaobject)
-msgid "<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Four-in-a-Row's Main Window</phrase> </textobject> <_:caption-1/>"
-msgstr "<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Το κεντρικό παράθυρου του Τέσσερα στη σειρά</phrase> </textobject> <_:caption-1/>"
+msgid ""
+"<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" "
+"srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Four-in-a-Row's Main "
+"Window</phrase> </textobject> <_:caption-1/>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" "
+"srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Το κεντρικό "
+"παράθυρου του Τέσσερα στη σειρά</phrase> </textobject> <_:caption-1/>"
 
 #: C/index.docbook:183(sect2/para)
-msgid "The game is won when one of the two players manages to line up four of his or her marbles horizontally, vertically or diagonally. If the board fills up without a win, the game ends in a draw."
-msgstr "Το παιχνίδι κερδίζεται όταν ένας από τους δύο παίχτες καταφέρει να ευθυγραμμίσει τέσσερις από τους βώλους του οριζοντίως, καθέτως ή διαγωνίως. Αν το ταμπλό γεμίσει χωρίς κάποιον νικητή, το παιχνίδι τελειώνει με ισοπαλία."
+msgid ""
+"The game is won when one of the two players manages to line up four of his "
+"or her marbles horizontally, vertically or diagonally. If the board fills up "
+"without a win, the game ends in a draw."
+msgstr ""
+"Το παιχνίδι κερδίζεται όταν ένας από τους δύο παίχτες καταφέρει να "
+"ευθυγραμμίσει τέσσερις από τους βώλους του οριζοντίως, καθέτως ή διαγωνίως. "
+"Αν το ταμπλό γεμίσει χωρίς κάποιον νικητή, το παιχνίδι τελειώνει με ισοπαλία."
 
 #: C/index.docbook:194(sect2/title)
 msgid "Commands"
 msgstr "Εντολές"
 
 #: C/index.docbook:197(sect2/para)
-msgid "To take back a move, choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>Z</keycap> </keycombo></shortcut> <guimenuitem>Undo move</guimenuitem> </menuchoice>. If you're playing against a friend, this will undo one move. If you're playing against the computer, this will undo the computer's last move and then yours. Repeating this will return the board to its initial state."
-msgstr "Για να πάρετε πίσω μια κίνηση, επιλέξτε <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Αναίρεση κίνησης</guimenuitem></menuchoice>. Αν παίζετε εναντίον κάποιου φίλου, αυτό θα αναιρέσει μια κίνηση, Αν παίζετε ενάντια στον υπολογιστή, αυτό θα αναιρέσει την τελευταία κίνηση του υπολογιστή και μετά την δική σας. Η επανάληψη του θα επαναφέρει το ταμπλό στην αρχική του κατάσταση."
+msgid ""
+"To take back a move, choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</"
+"keysym><keycap>Z</keycap> </keycombo></shortcut> <guimenuitem>Undo move</"
+"guimenuitem> </menuchoice>. If you're playing against a friend, this will "
+"undo one move. If you're playing against the computer, this will undo the "
+"computer's last move and then yours. Repeating this will return the board to "
+"its initial state."
+msgstr ""
+"Για να πάρετε πίσω μια κίνηση, επιλέξτε "
+"<menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>Z</keycap></"
+"keycombo></shortcut><guimenuitem>Αναίρεση κίνησης</guimenuitem></"
+"menuchoice>. Αν παίζετε εναντίον κάποιου φίλου, αυτό θα αναιρέσει μια "
+"κίνηση, Αν παίζετε ενάντια στον υπολογιστή, αυτό θα αναιρέσει την τελευταία "
+"κίνηση του υπολογιστή και μετά την δική σας. Η επανάληψη του θα επαναφέρει "
+"το ταμπλό στην αρχική του κατάσταση."
 
 #: C/index.docbook:209(sect2/para)
-msgid "Choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</keycap> </keycombo></shortcut> <guimenuitem>Hint</guimenuitem> </menuchoice> to get a suggestion from the computer for your next move. This is shown in the status bar."
-msgstr "Επιλέξτε <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</keycap></keycombo></shortcut><guimenuitem>Υπόδειξη</guimenuitem></menuchoice> για να πάρετε μια πρόταση από τον υπολογιστή για την επόμενή σας κίνηση. Αυτό εμφανίζεται στην γραμμή κατάστασης."
+msgid ""
+"Choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</"
+"keycap> </keycombo></shortcut> <guimenuitem>Hint</guimenuitem> </menuchoice> "
+"to get a suggestion from the computer for your next move. This is shown in "
+"the status bar."
+msgstr ""
+"Επιλέξτε <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
+"keycap></keycombo></shortcut><guimenuitem>Υπόδειξη</guimenuitem></"
+"menuchoice> για να πάρετε μια πρόταση από τον υπολογιστή για την επόμενή σας "
+"κίνηση. Αυτό εμφανίζεται στην γραμμή κατάστασης."
 
 #: C/index.docbook:217(sect2/para)
-msgid "Choose <menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> to show a tally of wins and draws for the current playing session. The scores will be reset to zero if Player Selection is changed in Preferences."
-msgstr "Επιλέξτε <menuchoice><guimenuitem>Βαθμολογίες</guimenuitem></menuchoice> για να εμφανίσετε ένα πίνακα με τις νίκες και τις ισοπαλίες για την τρέχουσα συνεδρία παιχνιδιού. Οι βαθμολογίες θα επαναφερθούν σε μηδέν αν η Επιλογή παίχτη αλλαχτεί στις Προτιμήσεις."
+msgid ""
+"Choose <menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> to show "
+"a tally of wins and draws for the current playing session. The scores will "
+"be reset to zero if Player Selection is changed in Preferences."
+msgstr ""
+"Επιλέξτε <menuchoice><guimenuitem>Βαθμολογίες</guimenuitem></menuchoice> για "
+"να εμφανίσετε ένα πίνακα με τις νίκες και τις ισοπαλίες για την τρέχουσα "
+"συνεδρία παιχνιδιού. Οι βαθμολογίες θα επαναφερθούν σε μηδέν αν η Επιλογή "
+"παίχτη αλλαχτεί στις Προτιμήσεις."
 
 #: C/index.docbook:232(sect2/title)
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
 #: C/index.docbook:234(sect2/para)
-msgid "To change the game's settings, select <guimenuitem>Preferences</guimenuitem> from the <guimenu>Settings</guimenu> menu. This opens the <interface>Preferences Dialog</interface>."
-msgstr "Για να αλλάξετε τις ρυθμίσεις του παιχνιδιού, επιλέξτε <guimenuitem>Προτιμήσεις</guimenuitem> από το μενού <guimenu>Ρυθμίσεις</guimenu>. Αυτό ανοίγει τον <interface>Διάλογο προτιμήσεων</interface>."
+msgid ""
+"To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
+"from the <guimenu>Settings</guimenu> menu. This opens the "
+"<interface>Preferences Dialog</interface>."
+msgstr ""
+"Για να αλλάξετε τις ρυθμίσεις του παιχνιδιού, επιλέξτε "
+"<guimenuitem>Προτιμήσεις</guimenuitem> από το μενού <guimenu>Ρυθμίσεις</"
+"guimenu>. Αυτό ανοίγει τον <interface>Διάλογο προτιμήσεων</interface>."
 
 #: C/index.docbook:248(varlistentry/term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
-msgstr "<guilabel>Πρώτος παίχτης</guilabel> και <guilabel>Δεύτερος παίχτης</guilabel>"
+msgstr ""
+"<guilabel>Πρώτος παίχτης</guilabel> και <guilabel>Δεύτερος παίχτης</guilabel>"
 
 #: C/index.docbook:253(listitem/para)
-msgid "These two columns tell <application>Four-in-a-Row</application> who's playing and, if it is the computer, how hard they play. To play against a friend, select Human for both Player One and Player Two."
-msgstr "Αυτές οι δύο στήλες λένε στο <application>Τέσσερα στη σειρά</application> ποιοι παίζουν και, αν παίζει ο υπολογιστής, πόσο δύσκολα παίζει. Για να παίξετε ενάντια σε έναν φίλο σας, επιλέξτε Άνθρωπος και για τον πρώτο παίχτη και για τον δεύτερο."
+msgid ""
+"These two columns tell <application>Four-in-a-Row</application> who's "
+"playing and, if it is the computer, how hard they play. To play against a "
+"friend, select Human for both Player One and Player Two."
+msgstr ""
+"Αυτές οι δύο στήλες λένε στο <application>Τέσσερα στη σειρά</application> "
+"ποιοι παίζουν και, αν παίζει ο υπολογιστής, πόσο δύσκολα παίζει. Για να "
+"παίξετε ενάντια σε έναν φίλο σας, επιλέξτε Άνθρωπος και για τον πρώτο παίχτη "
+"και για τον δεύτερο."
 
 #: C/index.docbook:263(varlistentry/term)
 msgid "<guilabel>Theme</guilabel>"
 msgstr "<guilabel>Θέμα</guilabel>"
 
 #: C/index.docbook:265(listitem/para)
-msgid "The theme menu lists available themes and lets you choose your favourite."
-msgstr "Το μενού Θέμα εμφανίζει τα διαθέσιμα θέματα και σας επιτρέπει να επιλέξετε το αγαπημένο σας."
+msgid ""
+"The theme menu lists available themes and lets you choose your favourite."
+msgstr ""
+"Το μενού Θέμα εμφανίζει τα διαθέσιμα θέματα και σας επιτρέπει να επιλέξετε "
+"το αγαπημένο σας."
 
 #: C/index.docbook:273(varlistentry/term)
 msgid "<guilabel>Enable Animation</guilabel>"
@@ -205,31 +418,56 @@ msgstr "<guilabel>Ενεργοποίηση κίνησης εικόνων</guilab
 
 #: C/index.docbook:275(listitem/para)
 msgid "Here you can toggle the game's animation on or off."
-msgstr "Εδώ μπορείτε να ενεργοποιήσετε ή απενεργοποιήσετε την κίνηση των εικόνων του παιχνιδιού"
+msgstr ""
+"Εδώ μπορείτε να ενεργοποιήσετε ή απενεργοποιήσετε την κίνηση των εικόνων του "
+"παιχνιδιού"
 
 #: C/index.docbook:241(sect2/para)
-msgid "Configuration options in the <guilabel>Game</guilabel> tab are: <_:variablelist-1/>"
-msgstr "Οι διαθέσιμες ρυθμίσεις στην καρτέλα <guilabel>Παιχνίδι</guilabel> είναι: <_:variablelist-1/>"
+msgid ""
+"Configuration options in the <guilabel>Game</guilabel> tab are: <_:"
+"variablelist-1/>"
+msgstr ""
+"Οι διαθέσιμες ρυθμίσεις στην καρτέλα <guilabel>Παιχνίδι</guilabel> είναι: <_:"
+"variablelist-1/>"
 
 #: C/index.docbook:283(sect2/para)
-msgid "Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard controls. To change a control, double click the appropriate entry and then press the new key."
-msgstr "Τέλος υπάρχει η καρτέλα <guilabel>Ελέγχοι πληκτρολογίου</guilabel> για να αλλάξετε τους τα πλήκτρα χειρισμού του πληκτρολογίου. Για να αλλάξετε έναν χειρισμό, κάντε διπλό κλικ στην κατάλληλη καταχώρηση και μετά πιέστε το νέο πλήκτρο."
+msgid ""
+"Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
+"controls. To change a control, double click the appropriate entry and then "
+"press the new key."
+msgstr ""
+"Τέλος υπάρχει η καρτέλα <guilabel>Ελέγχοι πληκτρολογίου</guilabel> για να "
+"αλλάξετε τους τα πλήκτρα χειρισμού του πληκτρολογίου. Για να αλλάξετε έναν "
+"χειρισμό, κάντε διπλό κλικ στην κατάλληλη καταχώρηση και μετά πιέστε το νέο "
+"πλήκτρο."
 
 #: C/index.docbook:298(sect1/title)
 msgid "Creating New Themes"
 msgstr "Δημιουργία νέων θεμάτων"
 
 #: C/index.docbook:300(sect1/para)
-msgid "This section's included in case you'd like to make your own themes for <application>Four-in-a-Row</application>. It assumes you're familiar with basic text editing, graphics software and the command line."
-msgstr "Αυτή η ενότητα συμπεριλήφθηκε για την περίπτωση που θα θέλατε να φτιάξετε τα δικά σας θέματα για το <application>Τέσσερα στη σειρά</application>. Προϋποθέτει πως είστε εξοικειωμένος με την βασική επεξεργασία κειμένου, με λογισμικό γραφικών και με την γραμμή εντολών."
+msgid ""
+"This section's included in case you'd like to make your own themes for "
+"<application>Four-in-a-Row</application>. It assumes you're familiar with "
+"basic text editing, graphics software and the command line."
+msgstr ""
+"Αυτή η ενότητα συμπεριλήφθηκε για την περίπτωση που θα θέλατε να φτιάξετε τα "
+"δικά σας θέματα για το <application>Τέσσερα στη σειρά</application>. "
+"Προϋποθέτει πως είστε εξοικειωμένος με την βασική επεξεργασία κειμένου, με "
+"λογισμικό γραφικών και με την γραμμή εντολών."
 
 #: C/index.docbook:308(sect2/title)
 msgid "Images"
 msgstr "Εικόνες"
 
 #: C/index.docbook:310(sect2/para)
-msgid "<application>Four-in-a-Row</application>'s tile sets contain six tiles of equal size, lined up horizontally. From left to right:"
-msgstr "Τα σύνολα πλακιδίων του <application>Τέσσερα στη σειρά</application> περιέχουν έξι πλακίδια ίδιου μεγέθους, ευθυγραμμισμένα οριζοντίως. Από αριστερά προς δεξιά:"
+msgid ""
+"<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
+"equal size, lined up horizontally. From left to right:"
+msgstr ""
+"Τα σύνολα πλακιδίων του <application>Τέσσερα στη σειρά</application> "
+"περιέχουν έξι πλακίδια ίδιου μεγέθους, ευθυγραμμισμένα οριζοντίως. Από "
+"αριστερά προς δεξιά:"
 
 #: C/index.docbook:317(listitem/para)
 msgid "Player One's marble as it appears on the game board"
@@ -264,34 +502,77 @@ msgid "This image shows the six tiles in a tile set"
 msgstr "Αυτή η εικόνα δείχνει τα έξι πλακίδια σε ένα σύνολο πλακιδίων"
 
 #: C/index.docbook:344(sect2/para)
-msgid "Tiles three and four will be repeated over the game board and top row unless a full window background image is specified in the theme file."
-msgstr "Τα πλακίδια τρία και τέσσερα θα επαναλαμβάνονται στο ταμπλό του παιχνιδιού και στην πρώτη σειρά εκτός αν μια εικόνα παρασκηνίου πλήρους παραθύρου έχει οριστεί στο αρχείο θέματος."
+msgid ""
+"Tiles three and four will be repeated over the game board and top row unless "
+"a full window background image is specified in the theme file."
+msgstr ""
+"Τα πλακίδια τρία και τέσσερα θα επαναλαμβάνονται στο ταμπλό του παιχνιδιού "
+"και στην πρώτη σειρά εκτός αν μια εικόνα παρασκηνίου πλήρους παραθύρου έχει "
+"οριστεί στο αρχείο θέματος."
 
-#: C/index.docbook:351(tip/title)
-#: C/index.docbook:362(tip/title)
+#: C/index.docbook:351(tip/title) C/index.docbook:362(tip/title)
 #: C/index.docbook:378(tip/title)
 msgid "TIP"
 msgstr "ΣΥΜΒΟΥΛΗ"
 
 #: C/index.docbook:352(tip/para)
-msgid "PNG format is recommended for tile sets. The first, second, fifth and sixth tiles should contain some transparency if you want the background to show through. The third and fourth tiles should be solid, with no transparency, even if you'll be using a full window background image with your theme."
-msgstr "Η μορφή PNG προτείνεται για σύνολα πλακιδίων. Το πρώτο, δεύτερο, πέμπτο και έκτο πλακίδιο πρέπει να περιέχει διαφάνεια αν θέλετε να φαίνεται μέσα από αυτό το παρασκήνιο. Το τρίτο και τέταρτο πλακίδιο πρέπει να είναι συμπαγές, χωρίς διαφάνεια, ακόμη και αν χρησιμοποιείτε μια εικόνα παρασκηνίου πλήρους παραθύρου με το θέμα σας."
+msgid ""
+"PNG format is recommended for tile sets. The first, second, fifth and sixth "
+"tiles should contain some transparency if you want the background to show "
+"through. The third and fourth tiles should be solid, with no transparency, "
+"even if you'll be using a full window background image with your theme."
+msgstr ""
+"Η μορφή PNG προτείνεται για σύνολα πλακιδίων. Το πρώτο, δεύτερο, πέμπτο και "
+"έκτο πλακίδιο πρέπει να περιέχει διαφάνεια αν θέλετε να φαίνεται μέσα από "
+"αυτό το παρασκήνιο. Το τρίτο και τέταρτο πλακίδιο πρέπει να είναι συμπαγές, "
+"χωρίς διαφάνεια, ακόμη και αν χρησιμοποιείτε μια εικόνα παρασκηνίου πλήρους "
+"παραθύρου με το θέμα σας."
 
 #: C/index.docbook:363(tip/para)
-msgid "Tiles can be square or rectangular, and any size you like. Most of the tile sets that come with <application>Four-in-a-Row</application> use square tiles measuring 50 pixels by 50 pixels."
-msgstr "Τα πλακίδια μπορεί να είναι κυκλικά ή ορθογώνια, και σε όποιο μέγεθος θέλετε. Τα περισσότερα σύνολα πλακιδίων που έρχονται με το <application>Τέσσερα στη σειρά</application> χρησιμοποιούν ορθογώνια πλακίδια με διαστάσεις 50 pixels επί 50 pixels."
+msgid ""
+"Tiles can be square or rectangular, and any size you like. Most of the tile "
+"sets that come with <application>Four-in-a-Row</application> use square "
+"tiles measuring 50 pixels by 50 pixels."
+msgstr ""
+"Τα πλακίδια μπορεί να είναι κυκλικά ή ορθογώνια, και σε όποιο μέγεθος "
+"θέλετε. Τα περισσότερα σύνολα πλακιδίων που έρχονται με το "
+"<application>Τέσσερα στη σειρά</application> χρησιμοποιούν ορθογώνια "
+"πλακίδια με διαστάσεις 50 pixels επί 50 pixels."
 
 #: C/index.docbook:370(sect2/para)
-msgid "For a full window background image, there's a bit more work to do. Let's say your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 tiles, including the top row, so the ideal background image for your tile set measures 350 by 350 pixels."
-msgstr "Για μια εικόνα παρασκηνίου πλήρους παραθύρου, πρέπει να γίνει λίγη περισσότερη δουλειά. Ας πούμε πως τα πλακίδια σας έχουν διαστάσεις 50 επί 50 pixels έκαστο. Η περιοχή εμφάνισης του παιχνιδιού έχει διαστάσεις 7 επί 7 πλακίδια, συμπεριλαμβανομένης της πρώτης σειράς, οπότε η ιδανική εικόνα παρασκηνίου για το σύνολο πλακιδίων σας, έχει διαστάσεις 350 επί 350 pixels."
+msgid ""
+"For a full window background image, there's a bit more work to do. Let's say "
+"your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
+"tiles, including the top row, so the ideal background image for your tile "
+"set measures 350 by 350 pixels."
+msgstr ""
+"Για μια εικόνα παρασκηνίου πλήρους παραθύρου, πρέπει να γίνει λίγη "
+"περισσότερη δουλειά. Ας πούμε πως τα πλακίδια σας έχουν διαστάσεις 50 επί 50 "
+"pixels έκαστο. Η περιοχή εμφάνισης του παιχνιδιού έχει διαστάσεις 7 επί 7 "
+"πλακίδια, συμπεριλαμβανομένης της πρώτης σειράς, οπότε η ιδανική εικόνα "
+"παρασκηνίου για το σύνολο πλακιδίων σας, έχει διαστάσεις 350 επί 350 pixels."
 
 #: C/index.docbook:379(tip/para)
-msgid "<application>Four-in-a-Row</application> will automatically scale the background image if it doesn't match the tile set. This means you can make \"large\" and \"small\" versions of your theme, both using the same background image, just by having a large and a small version of your tile set."
-msgstr "Το <application>Τέσσερα στη σειρά</application> θα κλιμακώσει αυτόματα την εικόνα παρασκηνίου αν δεν ταιριάζει με το σύνολο πλακιδίων. Αυτό σημαίνει πως μπορείτε να κάνετε \"μεγάλη\" και \"μικρή\" έκδοση του θέματος σας, χρησιμοποιώντας και οι δύο την ίδια εικόνα παρασκηνίου, απλώς έχοντας μια μεγάλη και μια μικρή έκδοση του συνόλου πλακιδίων σας."
+msgid ""
+"<application>Four-in-a-Row</application> will automatically scale the "
+"background image if it doesn't match the tile set. This means you can make "
+"\"large\" and \"small\" versions of your theme, both using the same "
+"background image, just by having a large and a small version of your tile "
+"set."
+msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> θα κλιμακώσει αυτόματα την "
+"εικόνα παρασκηνίου αν δεν ταιριάζει με το σύνολο πλακιδίων. Αυτό σημαίνει "
+"πως μπορείτε να κάνετε \"μεγάλη\" και \"μικρή\" έκδοση του θέματος σας, "
+"χρησιμοποιώντας και οι δύο την ίδια εικόνα παρασκηνίου, απλώς έχοντας μια "
+"μεγάλη και μια μικρή έκδοση του συνόλου πλακιδίων σας."
 
 #: C/index.docbook:387(sect2/para)
-msgid "So, you now have a tile set and perhaps a background image to go with it. The next step is to put them in the right place."
-msgstr "Λοιπόν, τώρα έχετε ένα σύνολο πλακιδίων και ίσως και μια εικόνα παρασκηνίου για να πάει με αυτό. Το επόμενο βήμα είναι να τα βάλετε στο σωστό μέρος."
+msgid ""
+"So, you now have a tile set and perhaps a background image to go with it. "
+"The next step is to put them in the right place."
+msgstr ""
+"Λοιπόν, τώρα έχετε ένα σύνολο πλακιδίων και ίσως και μια εικόνα παρασκηνίου "
+"για να πάει με αυτό. Το επόμενο βήμα είναι να τα βάλετε στο σωστό μέρος."
 
 #: C/index.docbook:397(sect2/title)
 msgid "Putting It Together"
@@ -299,11 +580,20 @@ msgstr "Τοποθετώντας τα μαζί"
 
 #: C/index.docbook:399(sect2/para)
 msgid "Copy your image(s) into the data directory (~/.local/share/gnect)."
-msgstr "Αντιγράψτε τις εικόνες σας στον κατάλογο δεδομένων (~/.local/share/gnect)."
+msgstr ""
+"Αντιγράψτε τις εικόνες σας στον κατάλογο δεδομένων (~/.local/share/gnect)."
 
 #: C/index.docbook:403(sect2/para)
-msgid "If you start <application>Four-in-a-Row</application> from the command line, it'll give you clues about any problems it has with your new theme. If it has none, you'll find your new theme listed the <interface>Preferences Dialog</interface>."
-msgstr "Αν εκκινήσετε το <application>Τέσσερα στη σειρά</application> από την γραμμή εντολών, θα σας δώσει ενδείξεις για κάθε τυχόν πρόβλημα που έχει με το νέο σας θέμα. Αν δεν έχει κανένα, θα δείτε το νέο σας θέμα να εμφανίζεται στον <interface>Διάλογο προτιμήσεων</interface>."
+msgid ""
+"If you start <application>Four-in-a-Row</application> from the command line, "
+"it'll give you clues about any problems it has with your new theme. If it "
+"has none, you'll find your new theme listed the <interface>Preferences "
+"Dialog</interface>."
+msgstr ""
+"Αν εκκινήσετε το <application>Τέσσερα στη σειρά</application> από την γραμμή "
+"εντολών, θα σας δώσει ενδείξεις για κάθε τυχόν πρόβλημα που έχει με το νέο "
+"σας θέμα. Αν δεν έχει κανένα, θα δείτε το νέο σας θέμα να εμφανίζεται στον "
+"<interface>Διάλογο προτιμήσεων</interface>."
 
 #: C/index.docbook:410(sect2/para)
 msgid "Have fun!"
@@ -314,20 +604,43 @@ msgid "Known Bugs and Limitations"
 msgstr "Γνωστά προβλήματα και περιορισμοί"
 
 #: C/index.docbook:425(sect1/para)
-msgid "Occasionally a marble-dropping animation doesn't look as smooth as it should."
-msgstr "Περιστασιακά η κινούμενη εικόνα της ρίψης των βώλων δεν εμφανίζεται τόσο ομαλή όσο θα έπρεπε"
+msgid ""
+"Occasionally a marble-dropping animation doesn't look as smooth as it should."
+msgstr ""
+"Περιστασιακά η κινούμενη εικόνα της ρίψης των βώλων δεν εμφανίζεται τόσο "
+"ομαλή όσο θα έπρεπε"
 
 #: C/index.docbook:438(sect1/title)
 msgid "Authors"
 msgstr "Δημιουργοί"
 
 #: C/index.docbook:440(sect1/para)
-msgid "<application>Four-in-a-Row</application> was written by Timothy Musson (<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</email>). Various others have taken the time to help in many ways since work on <application>Four-in-a-Row</application> began."
-msgstr "Το <application>Τέσσερα στη σειρά</application> γράφτηκε από τον Timothy Musson (<email>trmusson@ihug.co.nz</email>) και τον David Neary (<email>bolsh@gimp.org</email>). Διάφοροι άλλοι έχουν αφιερώσει χρόνο για να βοηθήσουν με αρκετούς τρόπους από τότε που η δουλειά στο <application>Τέσσερα στη σειρά</application> άρχισε."
+msgid ""
+"<application>Four-in-a-Row</application> was written by Timothy Musson "
+"(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
+"email>). Various others have taken the time to help in many ways since work "
+"on <application>Four-in-a-Row</application> began."
+msgstr ""
+"Το <application>Τέσσερα στη σειρά</application> γράφτηκε από τον Timothy "
+"Musson (<email>trmusson@ihug.co.nz</email>) και τον David Neary "
+"(<email>bolsh@gimp.org</email>). Διάφοροι άλλοι έχουν αφιερώσει χρόνο για να "
+"βοηθήσουν με αρκετούς τρόπους από τότε που η δουλειά στο "
+"<application>Τέσσερα στη σειρά</application> άρχισε."
 
 #: C/index.docbook:445(sect1/para)
-msgid "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main computer player, was written by Giuliano Bertoletti. We're grateful to him for allowing us to include his work, without which <application>Four-in-a-Row</application> wouldn't be nearly as worthwhile."
-msgstr "Το <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html\">Velena Engine</ulink>, Ο κύριος υπολογιστής-παίχτης του <application>Τέσσερα στη σειρά</application>, γράφτηκε από τον Giuliano Bertoletti. Του είμαστε ευγνώμονες που μας αφήνει να συμπεριλαμβάνουμε την δουλειά του, χωρίς την οποία, το <application>Τέσσερα στη σειρά</application> δεν θα ήταν τόσο σημαντικό."
+msgid ""
+"The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
+"\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
+"computer player, was written by Giuliano Bertoletti. We're grateful to him "
+"for allowing us to include his work, without which <application>Four-in-a-"
+"Row</application> wouldn't be nearly as worthwhile."
+msgstr ""
+"Το <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
+"\">Velena Engine</ulink>, Ο κύριος υπολογιστής-παίχτης του "
+"<application>Τέσσερα στη σειρά</application>, γράφτηκε από τον Giuliano "
+"Bertoletti. Του είμαστε ευγνώμονες που μας αφήνει να συμπεριλαμβάνουμε την "
+"δουλειά του, χωρίς την οποία, το <application>Τέσσερα στη σειρά</"
+"application> δεν θα ήταν τόσο σημαντικό."
 
 #: C/index.docbook:452(sect1/para)
 msgid "This manual was written by Timothy Musson."
@@ -335,20 +648,43 @@ msgstr "Αυτό το εγχειρίδιο γράφτηκε από τον Timoth
 
 # Additional message found in documentation.
 #: C/index.docbook:455(sect1/para)
-msgid "To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
-msgstr "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με αυτήν την εφαρμογή ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες σε αυτό το <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">έγγραφο</ulink>."
+msgid ""
+"To report a bug or make a suggestion regarding this application or this "
+"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
+"bugs\" type=\"help\">document</ulink>."
+msgstr ""
+"Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με αυτήν την "
+"εφαρμογή ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες σε αυτό το <ulink url="
+"\"ghelp:user-guide?feedback-bugs\" type=\"help\">έγγραφο</ulink>."
 
 #: C/index.docbook:480(sect1/title)
 msgid "License"
 msgstr "Άδεια χρήσης"
 
 #: C/index.docbook:482(sect1/para)
-msgid "This program is free software; you can redistribute it and/or modify it under the terms of the <citetitle>GNU General Public License</citetitle> as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
-msgstr "Αυτό το πρόγραμμα είναι ελεύθερο λογισμικό. Μπορείτε να το αναδιανέμετε ή/και να το τροποποιείτε μέσω των όρων της<citetitle> GNU General Public License</citetitle> όπως αυτή δημοσιεύτηκε από το  Free Software Foundation, έκδοση 2, ή (προαιρετικά) οποιαδήποτε νεότερη έκδοση."
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the <citetitle>GNU General Public License</citetitle> as "
+"published by the Free Software Foundation; either version 2 of the License, "
+"or (at your option) any later version."
+msgstr ""
+"Αυτό το πρόγραμμα είναι ελεύθερο λογισμικό. Μπορείτε να το αναδιανέμετε ή/"
+"και να το τροποποιείτε μέσω των όρων της<citetitle> GNU General Public "
+"License</citetitle> όπως αυτή δημοσιεύτηκε από το  Free Software Foundation, "
+"έκδοση 2, ή (προαιρετικά) οποιαδήποτε νεότερη έκδοση."
 
 #: C/index.docbook:490(sect1/para)
-msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public License</citetitle> for more details."
-msgstr "Το πρόγραμμα αυτό διανέμεται με την ελπίδα ότι θα αποδειχθεί χρήσιμο, παρόλα αυτά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ — χωρίς ούτε και την σιωπηρή εγγύηση ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ. Για περισσότερες λεπτομέρειες ανατρέξτε στη <citetitle>Γενική ‘Αδεια Δημόσιας Χρήσης GNU (GPL)</citetitle>."
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
+"License</citetitle> for more details."
+msgstr ""
+"Το πρόγραμμα αυτό διανέμεται με την ελπίδα ότι θα αποδειχθεί χρήσιμο, παρόλα "
+"αυτά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ — χωρίς ούτε και την σιωπηρή εγγύηση "
+"ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ. Για περισσότερες "
+"λεπτομέρειες ανατρέξτε στη <citetitle>Γενική ‘Αδεια Δημόσιας Χρήσης GNU (GPL)"
+"</citetitle>."
 
 #: C/index.docbook:505(para/address)
 #, no-wrap
@@ -368,16 +704,41 @@ msgstr ""
 "   "
 
 #: C/index.docbook:497(sect1/para)
-msgid "A copy of the <citetitle>GNU General Public License</citetitle> is included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also obtain a copy of the <citetitle>GNU General Public License</citetitle> from the Free Software Foundation by visiting <ulink url=\"http://www.fsf.org\" type=\"http\">their Web site</ulink> or by writing to <_:address-1/>"
-msgstr "Ένα αντίγραφο της Γενικής Δημόσιας Άδειας Χρήσης (<citetitle>GNU General Public License</citetitle>) συμπεριλαμβάνεται ως παράρτημα στον  <citetitle>Οδηγό Χρηστών GNOME </citetitle>. Μπορείτε επίσης να αποκτήσετε ένα αντίγραφο της Γενικής Δημόσιας Άδειας Χρήσης (<citetitle>GNU General Public License</citetitle>) από το Free Software Foundation επισκεπτόμενοι <ulink url=\"http://www.fsf.org\" type=\"http\"> την ιστοσελίδα τους</ulink> ή γράφωντας τους στο<_:address-1/>"
+msgid ""
+"A copy of the <citetitle>GNU General Public License</citetitle> is included "
+"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
+"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
+"the Free Software Foundation by visiting <ulink url=\"http://www.fsf.org\" "
+"type=\"http\">their Web site</ulink> or by writing to <_:address-1/>"
+msgstr ""
+"Ένα αντίγραφο της Γενικής Δημόσιας Άδειας Χρήσης (<citetitle>GNU General "
+"Public License</citetitle>) συμπεριλαμβάνεται ως παράρτημα στον  "
+"<citetitle>Οδηγό Χρηστών GNOME </citetitle>. Μπορείτε επίσης να αποκτήσετε "
+"ένα αντίγραφο της Γενικής Δημόσιας Άδειας Χρήσης (<citetitle>GNU General "
+"Public License</citetitle>) από το Free Software Foundation επισκεπτόμενοι "
+"<ulink url=\"http://www.fsf.org\" type=\"http\"> την ιστοσελίδα τους</ulink> "
+"ή γράφωντας τους στο<_:address-1/>"
 
 #: C/legal.xml:9(para/ulink)
 msgid "link"
 msgstr "σύνδεσμο"
 
 #: C/legal.xml:2(legalnotice/para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed with this manual."
-msgstr "Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα οπισθοφύλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <_:ulink-1/>, ή στο αρχείο COPYING-DOCS που διανέμεται μαζί με το παρόν εγχειρίδιο."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
+msgstr ""
+"Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος "
+"εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU "
+"(GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου "
+"Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα "
+"οπισθοφύλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <_:"
+"ulink-1/>, ή στο αρχείο COPYING-DOCS που διανέμεται μαζί με το παρόν "
+"εγχειρίδιο."
 
 #~ msgid "@@image: 'figures/connect.png'; md5=9a03bf23f04eacfd6feb9de823d6e321"
 #~ msgstr ""
@@ -645,8 +1006,8 @@ msgstr "Χορηγείται άδεια αντιγραφής, διανομής �
 #~ "citetitle> from the Free Software Foundation by visiting <ulink type="
 #~ "\"http\" url=\"http://www.fsf.org\">their Web site</ulink> or by writing "
 #~ "to <address> Free Software Foundation, Inc. <street>59 Temple Place</"
-#~ "street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-"
-#~ "1307</postcode><country>USA</country></address>"
+#~ "street> - Suite 330 <city>Boston</city>, <state>MA</"
+#~ "state><postcode>02111-1307</postcode><country>USA</country></address>"
 #~ msgstr ""
 #~ "Αντίγραφο της <citetitle>Γενικής Άδειας Δημόσιας Χρήσης GNU (GPL)</"
 #~ "citetitle> περιλαμβάνεται ως παράρτημα στον <citetitle>Οδηγό χρήστη "
