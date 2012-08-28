@@ -14,6 +14,8 @@ gnect_SOURCES = main.h     \
                 connect4.h \
                 connect4.c \
                 evaluate.c \
+                games-gridframe.c \
+                games-gridframe.h \
                 heurist.h  \
                 heurist.c  \
                 ia_main.c  \

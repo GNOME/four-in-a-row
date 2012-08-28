@@ -30,7 +30,6 @@
 #include <gtk/gtk.h>
 #include <canberra-gtk.h>
 
-#include <libgames-support/games-gridframe.h>
 #include <libgames-support/games-stock.h>
 #include <libgames-support/games-fullscreen-action.h>
 
@@ -39,6 +38,7 @@
 #include "theme.h"
 #include "prefs.h"
 #include "gfx.h"
+#include "games-gridframe.h"
 
 #define SPEED_MOVE     25
 #define SPEED_DROP     20
