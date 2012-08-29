@@ -31,7 +31,6 @@
 #include <canberra-gtk.h>
 
 #include <libgames-support/games-stock.h>
-#include <libgames-support/games-fullscreen-action.h>
 
 #include "connect4.h"
 #include "main.h"
@@ -39,6 +38,7 @@
 #include "prefs.h"
 #include "gfx.h"
 #include "games-gridframe.h"
+#include "games-fullscreen-action.h"
 
 #define SPEED_MOVE     25
 #define SPEED_DROP     20
