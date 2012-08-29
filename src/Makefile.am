@@ -18,6 +18,8 @@ gnect_SOURCES = main.h     \
                 games-fullscreen-action.h \
                 games-gridframe.c \
                 games-gridframe.h \
+                games-stock.c \
+                games-stock.h \
                 heurist.h  \
                 heurist.c  \
                 ia_main.c  \
@@ -35,6 +37,7 @@ gnect_CFLAGS = \
 	-DDATA_DIRECTORY=\"$(datadir)/gnect\" \
 	-DSOUND_DIRECTORY=\"$(datadir)/gnect/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
+	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
 	$(GTK_CFLAGS) \
 	$(RSVG_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \
