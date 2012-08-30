@@ -30,12 +30,11 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
-#include <libgames-support/games-controls.h>
-
 #include "main.h"
 #include "theme.h"
 #include "prefs.h"
 #include "gfx.h"
+#include "games-controls.h"
 
 #define DEFAULT_THEME_ID       0
 #define DEFAULT_KEY_LEFT       GDK_KEY_Left

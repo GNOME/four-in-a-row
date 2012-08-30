@@ -14,6 +14,8 @@ gnect_SOURCES = main.h     \
                 connect4.h \
                 connect4.c \
                 evaluate.c \
+                games-controls.c \
+                games-controls.h \
                 games-fullscreen-action.c \
                 games-fullscreen-action.h \
                 games-gridframe.c \
