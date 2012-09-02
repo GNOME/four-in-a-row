@@ -4,10 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2012-01-22 20:07+0000\n"
-"PO-Revision-Date: 2012-02-05 21:00+0100\n"
+"POT-Creation-Date: 2012-08-22 19:44+0000\n"
+"PO-Revision-Date: 2012-09-02 21:31+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,17 +28,17 @@ msgstr "Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2011, 2012"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/gnect.xml:175(imagedata)
+#: C/index.docbook:175(imagedata)
 msgctxt "_"
 msgid ""
 "external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
 msgstr "translated"
 
-#: C/gnect.xml:21(articleinfo/title)
+#: C/index.docbook:21(articleinfo/title)
 msgid "Four-in-a-Row Manual"
 msgstr "»Vier gewinnt«-Handbuch"
 
-#: C/gnect.xml:23(abstract/para)
+#: C/index.docbook:23(abstract/para)
 msgid ""
 "The object of Four-in-a-Row is to place four pieces in a vertical, "
 "horizontal, or diagonal row while the opponent tries to block and make his/"
@@ -49,15 +50,15 @@ msgstr ""
 "verhindern und seine eigenen Viererreihen aufzubauen. Vier-gewinnt kann gegen "
 "einen menschlichen Gegner oder den Computer gespielt werden."
 
-#: C/gnect.xml:31(articleinfo/copyright)
+#: C/index.docbook:31(articleinfo/copyright)
 msgid "<year>2001-2002</year> <holder>Timothy Musson</holder>"
 msgstr "<year>2001-2002</year> <holder>Timothy Musson</holder>"
 
-#: C/gnect.xml:46(publisher/publishername)
+#: C/index.docbook:46(publisher/publishername)
 msgid "GNOME Documentation Project"
 msgstr "GNOME-Dokumentationsprojekt"
 
-#: C/gnect.xml:2(legalnotice/para)
+#: C/index.docbook:2(legalnotice/para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
@@ -74,7 +75,7 @@ msgstr ""
 "<ulink type=\"help\" url=\"help:fdl\">Link</ulink> oder in der mit diesem "
 "Handbuch gelieferten Datei COPYING-DOCS."
 
-#: C/gnect.xml:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
+#: C/index.docbook:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -87,7 +88,7 @@ msgstr ""
 "der Lizenz zum Handbuch hinzufügen, wie es in Abschnitt 6 der Lizenz "
 "beschrieben ist."
 
-#: C/gnect.xml:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
+#: C/index.docbook:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -102,7 +103,7 @@ msgstr ""
 "großen Anfangsbuchstaben geschrieben, wenn das GNOME-Dokumentationsprojekt "
 "auf diese Warenzeichen hingewiesen wird."
 
-#: C/gnect.xml:35(listitem/para) C/legal.xml:35(listitem/para)
+#: C/index.docbook:35(listitem/para) C/legal.xml:35(listitem/para)
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -130,7 +131,7 @@ msgstr ""
 "EINES DOKUMENTS ODER EINER VERÄNDERTEN VERSION DES DOKUMENTS IST NICHT "
 "GESTATTET AUßER UNTER BEACHTUNG DIESES HAFTUNGSAUSSCHLUSSES UND"
 
-#: C/gnect.xml:55(listitem/para) C/legal.xml:55(listitem/para)
+#: C/index.docbook:55(listitem/para) C/legal.xml:55(listitem/para)
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -156,7 +157,7 @@ msgstr ""
 "AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER SCHÄDEN "
 "INFORMIERT WAREN."
 
-#: C/gnect.xml:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
+#: C/index.docbook:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <_:"
@@ -166,7 +167,7 @@ msgstr ""
 "BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT DEM "
 "WEITERGEHENDEN VERSTÄNDNIS, DASS: <_:orderedlist-1/>"
 
-#: C/gnect.xml:52(authorgroup/author)
+#: C/index.docbook:52(authorgroup/author)
 msgid ""
 "<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
 "<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
@@ -174,11 +175,11 @@ msgstr ""
 "<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
 "<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
 
-#: C/gnect.xml:83(revdescription/para)
+#: C/index.docbook:83(revdescription/para)
 msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
 
-#: C/gnect.xml:79(revhistory/revision)
+#: C/index.docbook:79(revhistory/revision)
 msgid ""
 "<revnumber>Four-in-a-Row Manual V2.8</revnumber> <date>September 2004</date> "
 "<_:revdescription-1/>"
@@ -186,15 +187,15 @@ msgstr ""
 "<revnumber>Vier-gewinnt-Handbuch V2.8</revnumber> <date>September 2004</date> "
 "<_:revdescription-1/>"
 
-#: C/gnect.xml:91(articleinfo/releaseinfo)
+#: C/index.docbook:91(articleinfo/releaseinfo)
 msgid "This manual describes version 2.12 of Four-in-a-Row."
 msgstr "Dieses Handbuch beschreibt Version 2.12 von »Vier gewinnt«."
 
-#: C/gnect.xml:95(legalnotice/title)
+#: C/index.docbook:95(legalnotice/title)
 msgid "Feedback"
 msgstr "Rückmeldungen"
 
-#: C/gnect.xml:96(legalnotice/para)
+#: C/index.docbook:96(legalnotice/para)
 msgid ""
 "To report a bug or make a suggestion regarding the Four-in-a-Row application "
 "or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
@@ -205,11 +206,11 @@ msgstr ""
 "Anweisungen auf der <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help"
 "\">GNOME-Seite für Rückmeldungen</ulink>."
 
-#: C/gnect.xml:112(sect1/title)
+#: C/index.docbook:112(sect1/title)
 msgid "Introduction"
 msgstr "Einführung"
 
-#: C/gnect.xml:114(sect1/para)
+#: C/index.docbook:114(sect1/para)
 msgid ""
 "<application>Four-in-a-Row</application> is a four-in-a-row game for the "
 "GNOME Project. The object of the game is to build a line of four of your "
@@ -222,7 +223,7 @@ msgstr ""
 "solche Linie zu bilden versucht. Eine Linie kann waagerecht, senkrecht oder "
 "diagonal angeordnet sein."
 
-#: C/gnect.xml:122(sect1/para)
+#: C/index.docbook:122(sect1/para)
 msgid ""
 "To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
 "a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
@@ -234,7 +235,7 @@ msgstr ""
 "guisubmenu> des <guimenu>Hauptmenüs</guimenu>, oder geben Sie <command>gnect</"
 "command> in einer Befehlszeile ein."
 
-#: C/gnect.xml:130(sect1/para)
+#: C/index.docbook:130(sect1/para)
 msgid ""
 "<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
 "games</filename> package, which is part of the GNOME desktop environment. "
@@ -245,7 +246,7 @@ msgstr ""
 "games</filename>, das seinerseits Teil der GNOME-Desktopumgebung ist. Dieses "
 "Dokument beschreibt Version 2.8 von <application>Vier gewinnt</application>."
 
-#: C/gnect.xml:136(sect1/para)
+#: C/index.docbook:136(sect1/para)
 msgid ""
 "Four-in-a-Row also features multiplayer support with two human players in "
 "hotseat mode."
@@ -253,15 +254,15 @@ msgstr ""
 "Vier-gewinnt unterstützt auch den Mehrspieler-Modus mit zwei menschlichen "
 "Spielern im Hotseat-Modus."
 
-#: C/gnect.xml:150(sect1/title)
+#: C/index.docbook:150(sect1/title)
 msgid "Basic Usage"
 msgstr "Grundlagen der Bedienung"
 
-#: C/gnect.xml:156(sect2/title)
+#: C/index.docbook:156(sect2/title)
 msgid "Playing Four-in-a-Row"
 msgstr "»Vier gewinnt« spielen"
 
-#: C/gnect.xml:158(sect2/para)
+#: C/index.docbook:158(sect2/para)
 msgid ""
 "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
 "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
@@ -270,7 +271,7 @@ msgstr ""
 "<menuchoice><guimenu>Spiel</guimenu><guimenuitem>Neu</guimenuitem></"
 "menuchoice>."
 
-#: C/gnect.xml:162(sect2/para)
+#: C/index.docbook:162(sect2/para)
 msgid ""
 "The <interface>game board</interface> consists of seven columns and six rows. "
 "Above it, a special row indicates the current player and the marble about to "
@@ -283,7 +284,7 @@ msgstr ""
 "Spalten. Die Murmel landet dabei in der untersten leeren Zeile der gewählten "
 "Spalte."
 
-#: C/gnect.xml:167(sect2/para)
+#: C/index.docbook:167(sect2/para)
 msgid ""
 "To make a move, click on a column with the mouse. To play with the keyboard, "
 "move the marble in the top row with the left and right arrow keys, and drop "
@@ -296,11 +297,11 @@ msgstr ""
 "Pfeiltaste nach unten in der gewünschten Spalte ab. Ihre Murmel landet dabei "
 "in der untersten leeren Zeile der gewählten Spalte."
 
-#: C/gnect.xml:180(caption/para)
+#: C/index.docbook:180(caption/para)
 msgid "Four-in-a-Row's Main Window"
 msgstr "Das Hauptfenster von »Vier gewinnt«."
 
-#: C/gnect.xml:171(sect2/mediaobject)
+#: C/index.docbook:171(sect2/mediaobject)
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" "
 "srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Four-in-a-Row's Main "
@@ -310,7 +311,7 @@ msgstr ""
 "srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Hauptfenster von "
 "»Vier gewinnt«</phrase> </textobject> <_:caption-1/>"
 
-#: C/gnect.xml:183(sect2/para)
+#: C/index.docbook:183(sect2/para)
 msgid ""
 "The game is won when one of the two players manages to line up four of his or "
 "her marbles horizontally, vertically or diagonally. If the board fills up "
@@ -321,11 +322,11 @@ msgstr ""
 "Spielfeld gefüllt wurde, ohne dass jemand gewann, endet das Spiel "
 "unentschieden."
 
-#: C/gnect.xml:194(sect2/title)
+#: C/index.docbook:194(sect2/title)
 msgid "Commands"
 msgstr "Befehle"
 
-#: C/gnect.xml:197(sect2/para)
+#: C/index.docbook:197(sect2/para)
 msgid ""
 "To take back a move, choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</"
 "keysym><keycap>Z</keycap> </keycombo></shortcut> <guimenuitem>Undo move</"
@@ -342,7 +343,7 @@ msgstr ""
 "Zug des Computers zurückgenommen und dann Ihr Zug. Das kann wiederholt "
 "werden, bis das Spielfeld wieder im ursprünglichen Zustand ist."
 
-#: C/gnect.xml:209(sect2/para)
+#: C/index.docbook:209(sect2/para)
 msgid ""
 "Choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</"
 "keycap> </keycombo></shortcut> <guimenuitem>Hint</guimenuitem> </menuchoice> "
@@ -354,7 +355,7 @@ msgstr ""
 "um eine Empfehlung des Computers für den nächsten Zug zu bekommen. Dies wird "
 "in der Statusleiste angezeigt."
 
-#: C/gnect.xml:217(sect2/para)
+#: C/index.docbook:217(sect2/para)
 msgid ""
 "Choose <menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> to show a "
 "tally of wins and draws for the current playing session. The scores will be "
@@ -365,11 +366,11 @@ msgstr ""
 "anzuzeigen. Die Ergebnisse werden auf Null zurückgesetzt, sobald die Auswahl "
 "der Spieler in den Einstellungen geändert wird."
 
-#: C/gnect.xml:232(sect2/title)
+#: C/index.docbook:232(sect2/title)
 msgid "Preferences"
 msgstr "Einstellungen"
 
-#: C/gnect.xml:234(sect2/para)
+#: C/index.docbook:234(sect2/para)
 msgid ""
 "To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
 "from the <guimenu>Settings</guimenu> menu. This opens the "
@@ -379,11 +380,11 @@ msgstr ""
 "<guimenuitem>Einstellungen</guimenuitem> aus dem Menü <guimenu>Einstellungen</"
 "guimenu>. Dies öffnet den <interface>Einstellungsdialog</interface>."
 
-#: C/gnect.xml:248(varlistentry/term)
+#: C/index.docbook:248(varlistentry/term)
 msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
 msgstr "<guilabel>Spieler 1</guilabel> und <guilabel>Spieler 2</guilabel>"
 
-#: C/gnect.xml:253(listitem/para)
+#: C/index.docbook:253(listitem/para)
 msgid ""
 "These two columns tell <application>Four-in-a-Row</application> who's playing "
 "and, if it is the computer, how hard they play. To play against a friend, "
@@ -394,26 +395,26 @@ msgstr ""
 "Gegner zu spielen, wählen Sie »Mensch« sowohl für Spieler 1 als auch für "
 "Spieler 2."
 
-#: C/gnect.xml:263(varlistentry/term)
+#: C/index.docbook:263(varlistentry/term)
 msgid "<guilabel>Theme</guilabel>"
 msgstr "<guilabel>Thema</guilabel>"
 
-#: C/gnect.xml:265(listitem/para)
+#: C/index.docbook:265(listitem/para)
 msgid ""
 "The theme menu lists available themes and lets you choose your favourite."
 msgstr ""
 "Das Aufklappmenü »Thema« listet alle verfügbaren Themen auf, aus welchen Sie "
 "dann Ihren Favoriten wählen können."
 
-#: C/gnect.xml:273(varlistentry/term)
+#: C/index.docbook:273(varlistentry/term)
 msgid "<guilabel>Enable Animation</guilabel>"
 msgstr "<guilabel>Animationen aktivieren</guilabel>"
 
-#: C/gnect.xml:275(listitem/para)
+#: C/index.docbook:275(listitem/para)
 msgid "Here you can toggle the game's animation on or off."
 msgstr "Hier können Sie die Animation des Spiels ein- und ausschalten."
 
-#: C/gnect.xml:241(sect2/para)
+#: C/index.docbook:241(sect2/para)
 msgid ""
 "Configuration options in the <guilabel>Game</guilabel> tab are: <_:"
 "variablelist-1/>"
@@ -421,7 +422,7 @@ msgstr ""
 "Die Einstellungsoptionen im Reiter <guilabel>Spiel</guilabel> sind: <_:"
 "variablelist-1/>"
 
-#: C/gnect.xml:283(sect2/para)
+#: C/index.docbook:283(sect2/para)
 msgid ""
 "Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
 "controls. To change a control, double click the appropriate entry and then "
@@ -431,11 +432,11 @@ msgstr ""
 "Tasten für die Tastatursteuerung. Um eine der Zuordnungen zu ändern, "
 "doppelklicken Sie auf den gewünschten Eintrag und drücken dann die neue Taste."
 
-#: C/gnect.xml:298(sect1/title)
+#: C/index.docbook:298(sect1/title)
 msgid "Creating New Themes"
 msgstr "Neue Themen erzeugen"
 
-#: C/gnect.xml:300(sect1/para)
+#: C/index.docbook:300(sect1/para)
 msgid ""
 "This section's included in case you'd like to make your own themes for "
 "<application>Four-in-a-Row</application>. It assumes you're familiar with "
@@ -446,11 +447,11 @@ msgstr ""
 "allerdings Grundkenntnisse im Bearbeiten von Texten, im Umgang mit "
 "Grafikbearbeitungssoftware und der Befehlszeile vorausgesetzt"
 
-#: C/gnect.xml:308(sect2/title)
+#: C/index.docbook:308(sect2/title)
 msgid "Images"
 msgstr "Bilder"
 
-#: C/gnect.xml:310(sect2/para)
+#: C/index.docbook:310(sect2/para)
 msgid ""
 "<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
 "equal size, lined up horizontally. From left to right:"
@@ -458,39 +459,39 @@ msgstr ""
 "Die Murmelsätze für <application>Vier gewinnt</application> enthalten sechs "
 "Murmeln gleicher Größe in waagerechter Anordnung. Von links nach rechts:"
 
-#: C/gnect.xml:317(listitem/para)
+#: C/index.docbook:317(listitem/para)
 msgid "Player One's marble as it appears on the game board"
 msgstr "Die Murmel von Spieler 1, wie sie auf dem Spielfeld erscheint"
 
-#: C/gnect.xml:320(listitem/para)
+#: C/index.docbook:320(listitem/para)
 msgid "Player Two's marble as it appears on the game board"
 msgstr "Die Murmel von Spieler 2, wie sie auf dem Spielfeld erscheint"
 
-#: C/gnect.xml:323(listitem/para)
+#: C/index.docbook:323(listitem/para)
 msgid "The game board's background"
 msgstr "Der Hintergrund des Spielfelds"
 
-#: C/gnect.xml:326(listitem/para)
+#: C/index.docbook:326(listitem/para)
 msgid "The top row's background"
 msgstr "Hintergrund der obersten Zeile"
 
-#: C/gnect.xml:329(listitem/para)
+#: C/index.docbook:329(listitem/para)
 msgid "Player One's marble as it appears on the top row"
 msgstr "Die Murmel von Spieler 1, wie sie in der obersten Zeile erscheint"
 
-#: C/gnect.xml:332(listitem/para)
+#: C/index.docbook:332(listitem/para)
 msgid "Player Two's marble as it appears on the top row"
 msgstr "Die Murmel von Spieler 2, wie sie in der obersten Zeile erscheint"
 
-#: C/gnect.xml:337(figure/title)
+#: C/index.docbook:337(figure/title)
 msgid "An example tile set"
 msgstr "Ein Beispiel-Murmelsatz"
 
-#: C/gnect.xml:339(screenshot/screeninfo)
+#: C/index.docbook:339(screenshot/screeninfo)
 msgid "This image shows the six tiles in a tile set"
 msgstr "Dieses Bild zeigt sechs Murmeln in einem Murmelsatz"
 
-#: C/gnect.xml:344(sect2/para)
+#: C/index.docbook:344(sect2/para)
 msgid ""
 "Tiles three and four will be repeated over the game board and top row unless "
 "a full window background image is specified in the theme file."
@@ -499,12 +500,12 @@ msgstr ""
 "aneinandergereiht, sofern kein vollständiges Hintergrundbild in der "
 "Themendatei angegeben ist."
 
-#: C/gnect.xml:351(tip/title) C/gnect.xml:362(tip/title)
-#: C/gnect.xml:378(tip/title)
+#: C/index.docbook:351(tip/title) C/index.docbook:362(tip/title)
+#: C/index.docbook:378(tip/title)
 msgid "TIP"
 msgstr "Tipp"
 
-#: C/gnect.xml:352(tip/para)
+#: C/index.docbook:352(tip/para)
 msgid ""
 "PNG format is recommended for tile sets. The first, second, fifth and sixth "
 "tiles should contain some transparency if you want the background to show "
@@ -517,7 +518,7 @@ msgstr ""
 "sollten nicht transparent sein, für den Fall, dass Sie ein Hintergrund-"
 "Vollbild mit Ihrem Thema mitliefern."
 
-#: C/gnect.xml:363(tip/para)
+#: C/index.docbook:363(tip/para)
 msgid ""
 "Tiles can be square or rectangular, and any size you like. Most of the tile "
 "sets that come with <application>Four-in-a-Row</application> use square tiles "
@@ -528,7 +529,7 @@ msgstr ""
 "application> enthaltenen Murmelsätze verwenden quadratische Formen in einer "
 "Größe von 50 mal 50 Pixeln."
 
-#: C/gnect.xml:370(sect2/para)
+#: C/index.docbook:370(sect2/para)
 msgid ""
 "For a full window background image, there's a bit more work to do. Let's say "
 "your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
@@ -541,7 +542,7 @@ msgstr ""
 "obersten Zeile. Daher sollte das Hintergrundbild idealerweise 350 mal 350 "
 "Pixel groß sein."
 
-#: C/gnect.xml:379(tip/para)
+#: C/index.docbook:379(tip/para)
 msgid ""
 "<application>Four-in-a-Row</application> will automatically scale the "
 "background image if it doesn't match the tile set. This means you can make "
@@ -554,7 +555,7 @@ msgstr ""
 "gleiche Hintergrundbild verwenden, wobei Sie lediglich eine kleine und eine "
 "große Version Ihres Murmelsatzes benötigen."
 
-#: C/gnect.xml:387(sect2/para)
+#: C/index.docbook:387(sect2/para)
 msgid ""
 "So, you now have a tile set and perhaps a background image to go with it. The "
 "next step is to put them in the right place."
@@ -563,40 +564,15 @@ msgstr ""
 "Hintergrundbild erstellt. Im nächsten Schritt geht es darum, alles an der "
 "richtigen Stelle zu platzieren."
 
-#: C/gnect.xml:397(sect2/title)
+#: C/index.docbook:397(sect2/title)
 msgid "Putting It Together"
 msgstr "Zusammenfügen"
 
-#: C/gnect.xml:399(sect2/para)
-msgid ""
-"The last step is to put your image(s) where <application>Four-in-a-Row</"
-"application> can find them. You could put them in Four-in-a-row's install "
-"directory (which will depend on your particular system), but your home "
-"directory's probably a better idea."
-msgstr ""
-"Im letzten Schritt legen Sie Ihr(e) Bild(er) dort ab, wo <application>Vier "
-"gewinnt</application> sie auch finden kann. Sie können sie im "
-"Installationsordner von <application>Vier gewinnt</application> speichern, "
-"dessen Ort systemabhängigi ist. Vielleicht wäre ihr persönlicher Ordner aber "
-"eine bessere Idee."
+#: C/index.docbook:399(sect2/para)
+msgid "Copy your image(s) into the data directory (~/.local/share/gnect)."
+msgstr "Kopieren Sie Ihr(e) Bild(er) in den Datenordner (~/.local/share/gnect)."
 
-#: C/gnect.xml:406(sect2/para)
-msgid ""
-"Make a <filename class=\"directory\">~/.gnect</filename> directory, and a "
-"<filename class=\"directory\">~/.gnect/pixmaps</filename> directory. Those "
-"names are important, as <application>Four-in-a-Row</application> won't look "
-"anywhere else."
-msgstr ""
-"Legen Sie einen Ordner namens <filename class=\"directory\">~/.gnect</"
-"filename> an, sowie darin einen Unterordner <filename class=\"directory\">~/."
-"gnect/pixmaps</filename> . Diese Bezeichnungen sind zwingend vorgeschrieben, "
-"denn <application>Vier gewinnt</application> schaut nur genau dort nach."
-
-#: C/gnect.xml:413(sect2/para)
-msgid "Copy your image(s) into the pixmaps directory."
-msgstr "Kopieren Sie Ihr(e) Bild(er) in den Pixmap-Ordner."
-
-#: C/gnect.xml:417(sect2/para)
+#: C/index.docbook:403(sect2/para)
 msgid ""
 "If you start <application>Four-in-a-Row</application> from the command line, "
 "it'll give you clues about any problems it has with your new theme. If it has "
@@ -609,26 +585,26 @@ msgstr ""
 "wird Ihr neues Thema von nun an im <interface>Einstellunsdialog</interface> "
 "aufgelistet."
 
-#: C/gnect.xml:424(sect2/para)
+#: C/index.docbook:410(sect2/para)
 msgid "Have fun!"
 msgstr "Viel Spaß!"
 
-#: C/gnect.xml:437(sect1/title)
+#: C/index.docbook:423(sect1/title)
 msgid "Known Bugs and Limitations"
 msgstr "Bekannte Fehler und Einschränkungen"
 
-#: C/gnect.xml:439(sect1/para)
+#: C/index.docbook:425(sect1/para)
 msgid ""
 "Occasionally a marble-dropping animation doesn't look as smooth as it should."
 msgstr ""
 "Gelegentlich könnte eine Animation beim Abwerfen von Murmeln nicht so "
 "geschmeidig aussehen, wie sie sollte."
 
-#: C/gnect.xml:452(sect1/title)
+#: C/index.docbook:438(sect1/title)
 msgid "Authors"
 msgstr "Autoren"
 
-#: C/gnect.xml:454(sect1/para)
+#: C/index.docbook:440(sect1/para)
 msgid ""
 "<application>Four-in-a-Row</application> was written by Timothy Musson "
 "(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
@@ -640,7 +616,7 @@ msgstr ""
 "email>) geschrieben. Viele andere wendeten Zeit auf, um auf vielfältige Weise "
 "zu helfen, seit die Arbeit an <application>Vier gewinnt</application> begann."
 
-#: C/gnect.xml:459(sect1/para)
+#: C/index.docbook:445(sect1/para)
 msgid ""
 "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
 "\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
@@ -655,11 +631,11 @@ msgstr ""
 "durften, ohne die <application>Vier gewinnt</application> kaum lohnenswert "
 "wäre."
 
-#: C/gnect.xml:466(sect1/para)
+#: C/index.docbook:452(sect1/para)
 msgid "This manual was written by Timothy Musson."
 msgstr "Dieses Handbuch wurde von Timothy Musson geschrieben."
 
-#: C/gnect.xml:469(sect1/para)
+#: C/index.docbook:455(sect1/para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
@@ -670,11 +646,11 @@ msgstr ""
 "Anweisungen in diesem <ulink url=\"ghelp:user-guide?feedback-bugs\" type="
 "\"help\">Dokument</ulink>."
 
-#: C/gnect.xml:494(sect1/title)
+#: C/index.docbook:480(sect1/title)
 msgid "License"
 msgstr "Lizenz"
 
-#: C/gnect.xml:496(sect1/para)
+#: C/index.docbook:482(sect1/para)
 msgid ""
 "This program is free software; you can redistribute it and/or modify it under "
 "the terms of the <citetitle>GNU General Public License</citetitle> as "
@@ -688,7 +664,7 @@ msgstr ""
 "ulink> veröffentlicht wurde; entweder in Version 2 der Lizenz oder (nach "
 "Ihrer Wahl) jeder neueren Version."
 
-#: C/gnect.xml:504(sect1/para)
+#: C/index.docbook:490(sect1/para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -698,10 +674,10 @@ msgstr ""
 "Dieses Programm wird in der Hoffnung verbreitet, dass es nützlich ist, aber "
 "OHNE JEGLICHE GARANTIE; auch ohne eine GEBRAUCHSTAUGLICHKEITSGARANTIE oder "
 "eine Garantie über die TAUGLICHKEIT FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die "
-"<citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General Public "
-"License</ulink></citetitle> für genauere Hinweise."
+"<citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General Public License</"
+"ulink></citetitle> für genauere Hinweise."
 
-#: C/gnect.xml:519(para/address)
+#: C/index.docbook:505(para/address)
 #, no-wrap
 msgid ""
 "\n"
@@ -718,7 +694,7 @@ msgstr ""
 "        <country>USA</country>\n"
 "      "
 
-#: C/gnect.xml:511(sect1/para)
+#: C/index.docbook:497(sect1/para)
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
@@ -726,13 +702,13 @@ msgid ""
 "the Free Software Foundation by visiting <ulink url=\"http://www.fsf.org\" "
 "type=\"http\">their Web site</ulink> or by writing to <_:address-1/>"
 msgstr ""
-"Eine Kopie der <citetitle><ulink type=\"help\" url=\"help:gpl\">GNU "
-"General Public License</ulink></citetitle> ist im Anhang des <citetitle>GNOME "
+"Eine Kopie der <citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General "
+"Public License</ulink></citetitle> ist im Anhang des <citetitle>GNOME "
 "Benutzerhandbuchs</citetitle> enthalten. Sie können außerdem eine Kopie der "
-"<citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General Public "
-"License</ulink></citetitle> von der Free Software Foundation erhalten, indem "
-"Sie auf <ulink type=\"http\" url=\"http://www.fsf.org\">ihre Internetseite</"
-"ulink> gehen oder schreiben Sie an die <_:address-1/>"
+"<citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General Public License</"
+"ulink></citetitle> von der Free Software Foundation erhalten, indem Sie auf "
+"<ulink type=\"http\" url=\"http://www.fsf.org\">ihre Internetseite</ulink> "
+"gehen oder schreiben Sie an die <_:address-1/>"
 
 #: C/legal.xml:9(para/ulink)
 msgid "link"
@@ -754,26 +730,3 @@ msgstr ""
 "und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem <_:"
 "ulink-1/> oder in der mit diesem Handbuch gelieferten Datei COPYING-DOCS."
 
-#~ msgid "2001-2002"
-#~ msgstr "2001-2002"
-
-#~ msgid "Timothy Musson"
-#~ msgstr "Timothy Musson"
-
-#~ msgid "Timothy"
-#~ msgstr "Timothy"
-
-#~ msgid "Musson"
-#~ msgstr "Musson"
-
-#~ msgid "trmusson@ihug.co.nz"
-#~ msgstr "trmusson@ihug.co.nz"
-
-#~ msgid "Four-in-a-Row Manual V2.8"
-#~ msgstr "Vier-gewinnt-Handbuch V2.8"
-
-#~ msgid "September 2004"
-#~ msgstr "September 2004"
-
-#~ msgid "Theme"
-#~ msgstr "Thema"
