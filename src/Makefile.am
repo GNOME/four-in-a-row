@@ -46,7 +46,6 @@ gnect_CFLAGS = \
 	$(AM_CFLAGS)
 
 gnect_LDADD = \
-	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GTK_LIBS) \
 	$(RSVG_LIBS) \
 	$(CANBERRA_GTK_LIBS) \
