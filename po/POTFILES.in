@@ -1,0 +1,12 @@
+# List of source files containing translatable strings.
+# Please keep this file in alphabetical order.
+[encoding: UTF-8]
+data/four-in-a-row.desktop.in.in
+data/org.gnome.four-in-a-row.gschema.xml.in
+src/games-controls.c
+src/games-stock.c
+src/gfx.c
+src/main.c
+src/main.h
+src/prefs.c
+src/theme.c
