@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.gnome.gnect" path="/org/gnome/gnect/">
+  <schema id="org.gnome.four-in-a-row" path="/org/gnome/four-in-a-row/">
     <key name="player1" type="i">
       <default>0</default>
       <_summary>Level of Player One</_summary>

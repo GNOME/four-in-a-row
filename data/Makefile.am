@@ -1,11 +1,11 @@
 SUBDIRS = icons
 
-gsettings_in_file = org.gnome.gnect.gschema.xml.in
+gsettings_in_file = org.gnome.four-in-a-row.gschema.xml.in
 gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
-pixmapdir = $(datadir)/gnect
+pixmapdir = $(datadir)/four-in-a-row
 pixmap_DATA = \
     tileset_50x50_sunspot.svg \
     tileset_50x50_catseyes.png \
@@ -17,21 +17,21 @@ pixmap_DATA = \
     bg_nightfall.jpg \
     bg_toplight.png
 
-soundsdir = $(datadir)/gnect/sounds
+soundsdir = $(datadir)/four-in-a-row/sounds
 sounds_DATA = \
 	bad.ogg \
 	bonus.ogg \
 	reverse.ogg \
 	slide.ogg
 
-velenadir      = $(datadir)/gnect
+velenadir      = $(datadir)/four-in-a-row
 velena_DATA    = white_ob.cn4.gz
 
-desktop_in_files = gnect.desktop.in.in
+desktop_in_files = four-in-a-row.desktop.in.in
 desktopdir       = $(datadir)/applications
 desktop_DATA     = $(desktop_in_files:.desktop.in.in=.desktop)
 
-man_MANS     = gnect.6
+man_MANS     = four-in-a-row.6
 
 EXTRA_DIST = $(pixmap_DATA) \
              $(sounds_DATA) \

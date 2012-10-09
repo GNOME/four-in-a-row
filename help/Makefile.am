@@ -1,5 +1,5 @@
 @YELP_HELP_RULES@
-HELP_ID = gnect
+HELP_ID = four-in-a-row
 
 HELP_MEDIA = \
 	figures/mainwindow.png \

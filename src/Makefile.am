@@ -1,6 +1,6 @@
-bin_PROGRAMS = gnect
+bin_PROGRAMS = four-in-a-row
 
-gnect_SOURCES = main.h     \
+four_in_a_row_SOURCES = main.h     \
                 main.c     \
                 gfx.h      \
                 gfx.c      \
@@ -31,25 +31,19 @@ gnect_SOURCES = main.h     \
                 proto.h    \
                 rules.h
 
-gnect_CPPFLAGS = \
+four_in_a_row_CPPFLAGS = \
 	-I$(top_srcdir) \
 	$(AM_CPPFLAGS)
 
-gnect_CFLAGS = \
-	-DDATA_DIRECTORY=\"$(datadir)/gnect\" \
-	-DSOUND_DIRECTORY=\"$(datadir)/gnect/sounds\" \
+four_in_a_row_CFLAGS = \
+	-DDATA_DIRECTORY=\"$(datadir)/four-in-a-row\" \
+	-DSOUND_DIRECTORY=\"$(datadir)/four-in-a-row/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
-	$(GTK_CFLAGS) \
-	$(RSVG_CFLAGS) \
-	$(CANBERRA_GTK_CFLAGS) \
-	$(AM_CFLAGS)
+	$(FOUR_IN_A_ROW_CFLAGS)
 
-gnect_LDADD = \
-	$(GTK_LIBS) \
-	$(RSVG_LIBS) \
-	$(CANBERRA_GTK_LIBS) \
-	$(INTLLIBS) \
+four_in_a_row_LDADD = \
+	$(FOUR_IN_A_ROW_LIBS)
 	-lz
 
 -include $(top_srcdir)/git.mk

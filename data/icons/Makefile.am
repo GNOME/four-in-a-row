@@ -5,11 +5,11 @@ icon32dir=$(datadir)/icons/hicolor/32x32/apps
 icon48dir=$(datadir)/icons/hicolor/48x48/apps
 iconscalabledir=$(datadir)/icons/hicolor/scalable/apps
 
-icon16_DATA = 16x16/gnect.png
-icon22_DATA = 22x22/gnect.png
-icon24_DATA = 24x24/gnect.png
-icon32_DATA = 32x32/gnect.png
-icon48_DATA = 48x48/gnect.png
-iconscalable_DATA = scalable/gnect.svg
+icon16_DATA = 16x16/four-in-a-row.png
+icon22_DATA = 22x22/four-in-a-row.png
+icon24_DATA = 24x24/four-in-a-row.png
+icon32_DATA = 32x32/four-in-a-row.png
+icon48_DATA = 48x48/four-in-a-row.png
+iconscalable_DATA = scalable/four-in-a-row.svg
 
 EXTRA_DIST = $(icon16_DATA) $(icon22_DATA) $(icon24_DATA) $(icon32_DATA) $(icon48_DATA) $(icon256_DATA) $(iconscalable_DATA)
