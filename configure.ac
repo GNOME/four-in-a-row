@@ -21,6 +21,7 @@ PKG_CHECK_MODULES(FOUR_IN_A_ROW, [
   gtk+-3.0 >= $GTK_REQUIRED
   librsvg-2.0 >= $RSVG_REQUIRED
   libcanberra-gtk3 >= $CANBERRA_GTK_REQUIRED
+  zlib
 ])
 
 dnl ###########################################################################
