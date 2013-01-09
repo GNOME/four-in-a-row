@@ -2,6 +2,7 @@
 Icon=four-in-a-row
 _Name=Four-in-a-Row
 _Comment=Make lines of the same color to win
+_Keywords=game;strategy;logic;
 Exec=four-in-a-row
 Terminal=false
 Type=Application
