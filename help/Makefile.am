@@ -9,6 +9,6 @@ HELP_FILES = \
 	index.docbook \
 	legal.xml
 
-HELP_LINGUAS = ca cs da de el en_GB es eu fi fr it oc sl sr sr@latin sv zh_CN
+HELP_LINGUAS = ca cs da de el en_GB es eu fi fr it oc pt_BR sl sr sr@latin sv zh_CN
 
 -include $(top_srcdir)/git.mk
