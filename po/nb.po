@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row 3.7.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-21 11:48+0100\n"
-"PO-Revision-Date: 2013-01-21 11:48+0100\n"
+"POT-Creation-Date: 2013-01-29 19:08+0100\n"
+"PO-Revision-Date: 2013-01-29 19:08+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -24,6 +24,10 @@ msgstr "Fire på rad"
 #: ../data/four-in-a-row.desktop.in.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Lag linjer med samme farge for å vinne"
+
+#: ../data/four-in-a-row.desktop.in.in.h:3
+msgid "game;strategy;logic;"
+msgstr "spill;strategi;logikk;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
 msgid "Level of Player One"
