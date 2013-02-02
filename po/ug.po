@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-12-02 21:12+0000\n"
-"PO-Revision-Date: 2011-11-09 16:10+0900\n"
-"Last-Translator: Gheyret Kenji<gheyret@yahoo.com>\n"
+"POT-Creation-Date: 2013-01-28 23:19+0000\n"
+"PO-Revision-Date: 2013-02-02 11:55+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,10 @@ msgstr "تۆت قاتار"
 #: ../data/four-in-a-row.desktop.in.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "ئوخشاش رەڭدىكى قۇرلارنى ياسىسا ئۇتىدۇ"
+
+#: ../data/four-in-a-row.desktop.in.in.h:3
+msgid "game;strategy;logic;"
+msgstr "game؛strategy؛logic؛ئويۇن؛ئىستراتېگىيە؛لوگىكىلىق؛"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
 msgid "Level of Player One"
@@ -354,13 +358,7 @@ msgstr "گىنوم ئويۇنلىرى تورتۇراسى"
 msgid "translator-credits"
 msgstr "Gheyret Kenji <gheyret@gmail.com>\n"
 "Sahran<sahran@live.com>\n"
-"Muhemmed Erdem <misran_erdem@hotmail.com>\n"
-"\n"
-"Launchpad Contributions:\n"
-"  Abdumomin.Kadir https://launchpad.net/~abdumomin-kadir\n"
-"  Gheyret T.Kenji https://launchpad.net/~gheyret\n"
-"  Gheyret T.Kenji https://launchpad.net/~gheyretkenji\n"
-"  Sahran https://launchpad.net/~sahran"
+"Muhemmed Erdem <misran_erdem@hotmail.com>"
 
 #: ../src/main.c:1183
 msgid "_Game"
@@ -379,7 +377,6 @@ msgid "_Help"
 msgstr "ياردەم(_H)"
 
 #: ../src/main.h:5
-#| msgid "Four-in-a-Row"
 msgid "Four-in-a-row"
 msgstr "بىر قۇردا تۆت"
 
@@ -392,9 +389,6 @@ msgid "Game"
 msgstr "ئويۇن"
 
 #: ../src/prefs.c:233
-#| msgid ""
-#| "Player One:\n"
-#| "%s"
 msgid "Player One:"
 msgstr "بىرىنچى ئوينىغۇچى:"
 
@@ -415,9 +409,6 @@ msgid "Level three"
 msgstr "ئۈچىنچى دەرىجە"
 
 #: ../src/prefs.c:262
-#| msgid ""
-#| "Player Two:\n"
-#| "%s"
 msgid "Player Two:"
 msgstr "ئىككىنچى ئوينىغۇچى:"
 
