@@ -1,11 +1,17 @@
-gnome-mahjongg 3.7.4
+four-in-a-row 3.7.5
+====================
+
+ * Added keywords to .desktop file
+ * Translation updates
+
+four-in-a-row 3.7.4
 ====================
 
  * Fixed game website
 
 Contributions by: Kjartan Maraas, Piotr Drąg, Robert Ancell.
 
-gnome-mahjongg 3.7.2
+four-in-a-row 3.7.2
 ====================
 
 First release split from gnome-games
