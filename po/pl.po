@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-02 23:22+0100\n"
-"PO-Revision-Date: 2013-02-02 23:23+0100\n"
+"POT-Creation-Date: 2013-02-17 15:49+0100\n"
+"PO-Revision-Date: 2013-02-17 15:50+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -84,7 +84,7 @@ msgstr "Dźwięk"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
 msgid "Whether or not to play event sounds."
-msgstr "Określa, czy odtwarzać dźwięki zdarzeń"
+msgstr "Określa, czy odtwarzać dźwięki zdarzeń."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
 msgid "Move left"
@@ -291,8 +291,7 @@ msgstr ""
 "Program %s rozpowszechniany jest z nadzieją, iż będzie on użyteczny - jednak "
 "BEZ JAKIEJKOLWIEK GWARANCJI, nawet domyślnej gwarancji PRZYDATNOŚCI "
 "HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONYCH ZASTOSOWAŃ. W celu uzyskania "
-"bliższych informacji należy zapoznać się z Powszechną Licencją Publiczną "
-"GNU. "
+"bliższych informacji należy zapoznać się z Powszechną Licencją Publiczną GNU."
 
 #: ../src/games-stock.c:327
 #, c-format
