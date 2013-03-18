@@ -27,7 +27,7 @@ sounds_DATA = \
 velenadir      = $(datadir)/four-in-a-row
 velena_DATA    = white_ob.cn4.gz
 
-desktop_in_files = four-in-a-row.desktop.in.in
+desktop_in_files = gnect.desktop.in.in
 desktopdir       = $(datadir)/applications
 desktop_DATA     = $(desktop_in_files:.desktop.in.in=.desktop)
 
