@@ -28,6 +28,7 @@ msgid "Make lines of the same color to win"
 msgstr "ئوخشاش رەڭدىكى قۇرلارنى ياسىسا ئۇتىدۇ"
 
 #: ../data/four-in-a-row.desktop.in.in.h:3
+#, fuzzy
 msgid "game;strategy;logic;"
 msgstr "game؛strategy؛logic؛ئويۇن؛ئىستراتېگىيە؛لوگىكىلىق؛"
 
