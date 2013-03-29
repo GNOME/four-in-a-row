@@ -1,0 +1,55 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="topic" style="task"
+	id="make-easy">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Use hints or undo your wrong moves.</desc>
+  </info>
+
+  <title>Make your game a little easier</title>
+
+<section id="undo">
+  <title>Change your last move</title>
+
+  <p>When the computer makes a winning move because of your last move or when
+  you accidentally make the wrong move, you can undo your last move and change
+  it. To undo your last move, select <guiseq><gui style="menu">Game</gui>
+  <gui style="menuitem">Undo Move</gui></guiseq> or press
+  <keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble at
+  a different square in the game area to change your move.</p>
+
+  <note style="info">
+    <p>You can undo all your moves starting from your current move till you
+    reach a favourable state of the game or till the beginning of your current
+    game by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>
+    repeatedly.</p>
+  </note>
+</section>
+
+<section id="hint">
+  <title>Use hints</title>
+
+  <p>If you are not sure of your next move, you can use a hint. On using one,
+  your marble moves to the top of the column that is the best choice
+  strategy-wise and blinks. You can then drop your marble in that column. To
+  use a hint select <guiseq><gui style="menu">Game</gui>
+  <gui style="menuitem">Hint</gui></guiseq> or press
+  <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+
+  <note style="info">
+  <p>There is no limit on the number of hints you can use in a game.</p>
+  </note>
+</section>
+
+</page>

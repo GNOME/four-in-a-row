@@ -1,0 +1,57 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="topic" style="task"
+	id="scores">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Keep track of your wins and losses.</desc>
+  </info>
+
+  <title>Scores</title>
+  <p>The score in <app>Four-in-a-row</app> is recorded in terms of your wins,
+  your opponent's wins and games that ended in a draw. To check the scores,
+  select <guiseq><gui style="menu">Game</gui>
+  <gui style="menuitem">Scores</gui></guiseq>. If you are playing against the
+  computer, the number next to:</p>
+
+  <list>
+    <item>
+      <p><gui>You</gui> displays the number of games you have won.</p>
+    </item>
+    <item>
+      <p><gui>Me</gui> displays the number of games won by the computer.</p>
+    </item>
+    <item>
+      <p><gui>Drawn</gui> displays the number of games that ended in a
+      draw.</p>
+    </item>
+  </list>
+
+  <p>If you are playing against a friend, the number next to:</p>
+
+  <list>
+    <item>
+      <p><gui>Red</gui> displays the number of games won by the player who was
+      controlling the red marbles.</p>
+    </item>
+    <item>
+      <p><gui>Blue</gui> displays the number of games won by the player who
+      was controlling the blue marbles.</p>
+    </item>
+    <item>
+      <p><gui>Drawn</gui> displays the number of games that ended in a
+      draw.</p>
+    </item>
+  </list>
+
+</page>

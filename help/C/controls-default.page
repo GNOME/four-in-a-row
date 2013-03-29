@@ -1,0 +1,40 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="topic" style="task"
+	id="controls-default">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+
+    <link type="seealso" xref="controls-change"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Default controls for <app>Four-in-a-row</app>.</desc>
+  </info>
+
+  <title>Controls</title>
+
+  <p>You can use your mouse and click on a particular square in the game area
+  to drop your marble into that square. If you want to use the keyboard
+  instead, the default keys for <app>Four-in-a-row</app> are:</p>
+
+  <list>
+    <item>
+      <p><key>&#8592;</key> to move the marble to your left.</p>
+    </item>
+    <item>
+      <p><key>&#8594;</key> to move the marble to your right.</p>
+    </item>
+    <item>
+      <p><key>&#8595;</key> to drop the marble.</p>
+    </item>
+  </list>
+
+</page>

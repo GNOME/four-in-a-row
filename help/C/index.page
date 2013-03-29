@@ -1,0 +1,33 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="guide" style="task"
+	id="index">
+
+  <info>
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Index</desc>
+  </info>
+
+  <title><media type="image" src="figures/logo.png" width="22" height="22">
+  </media>Four-in-a-row</title>
+
+  <p><app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the
+  game is to stack four of your marbles in a horizontal, vertical or diagonal
+  line while stopping your opponent from doing the same with their marbles.</p>
+
+  <section id="play" style="2column">
+    <title>Game play</title>
+  </section>
+
+  <section id="preferences" style="2column">
+    <title>Preferences</title>
+  </section>
+
+</page>

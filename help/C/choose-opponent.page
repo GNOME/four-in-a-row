@@ -1,0 +1,54 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="topic" style="task"
+	id="choose-opponent">
+
+  <info>
+    <link type="guide" xref="index#preferences"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Change the level at which the computer plays or play with a
+    friend.</desc>
+  </info>
+
+  <title>Choose a different opponent to play with</title>
+  <p>By default, your opponent in <app>Four-in-a-row</app> is the computer,
+  playing at level 1. To change this level or to play with a friend:</p>
+
+  <steps>
+    <item>
+      <p>Select <guiseq><gui style="menu">Settings</gui>
+      <gui style="menuitem">Preferences</gui>
+      <gui style="menuitem">Game</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>You will see <gui>Player One</gui> and <gui>Player Two</gui>. Under
+      each player, you can see the color of his marbles or blocks during the
+      game. Choose <gui style="radiobutton">Human</gui> if want to play with a
+      friend or family member. Alternatively, if you want to play against the
+      computer and want to change the level at which the computer plays, you
+      can choose between <gui style="radiobutton">Level one</gui>,
+      <gui style="radiobutton">Level two</gui> or
+      <gui style="radiobutton">Level three</gui>, where
+      <gui style="radiobutton">Level one</gui> is the
+      easiest level and <gui style="radiobutton">Level three</gui> is the most
+      difficult level.</p>
+      <note style="tip">
+	<p>If you are playing with a friend or family member,
+	<gui>Player One</gui> gets to play first in the first game of
+	<app>Four-in-a-row</app>. In subsequent games, the chance to play first
+	is given alternately to each player. So, <gui>Player Two</gui> will get
+	to play first in the second game, <gui>Player One</gui> can play first
+	in the third game and so on.</p>
+      </note>
+    </item>
+  </steps>
+
+</page>
