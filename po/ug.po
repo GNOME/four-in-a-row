@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-02-02 11:55+0900\n"
+"POT-Creation-Date: 2013-03-27 16:31+0000\n"
+"PO-Revision-Date: 2013-04-06 17:58+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: \n"
@@ -19,18 +19,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
+#: ../data/gnect.desktop.in.in.h:1
 msgid "Four-in-a-Row"
 msgstr "تۆت قاتار"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/gnect.desktop.in.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "ئوخشاش رەڭدىكى قۇرلارنى ياسىسا ئۇتىدۇ"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
-#, fuzzy
+#: ../data/gnect.desktop.in.in.h:3
 msgid "game;strategy;logic;"
-msgstr "game؛strategy؛logic؛ئويۇن؛ئىستراتېگىيە؛لوگىكىلىق؛"
+msgstr "game;strategy;logic;ئويۇن;تەدبىر‏;لوگىكىلىق;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
 msgid "Level of Player One"
