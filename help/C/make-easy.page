@@ -5,7 +5,7 @@
   <info>
     <link type="guide" xref="index#play"/>
 
-    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -30,9 +30,9 @@
   a different square in the game area to change your move.</p>
 
   <note style="info">
-    <p>You can undo all your moves starting from your current move till you
-    reach a favourable state of the game or till the beginning of your current
-    game by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>
+    <p>You can undo all your moves starting from your current move until you
+    reach a favourable state of the game, or until the beginning of your current
+    game, by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>
     repeatedly.</p>
   </note>
 </section>
@@ -40,10 +40,10 @@
 <section id="hint">
   <title>Use hints</title>
 
-  <p>If you are not sure of your next move, you can use a hint. On using one,
-  your marble moves to the top of the column that is the best choice
-  strategy-wise and blinks. You can then drop your marble in that column. To
-  use a hint select <guiseq><gui style="menu">Game</gui>
+  <p>If you are not sure of your next move, you can use a hint. When you use a
+  hint, your marble moves to the top of the column that is the best choice,
+  strategy-wise, and blinks. You can then drop your marble into that column. To
+  use a hint, select <guiseq><gui style="menu">Game</gui>
   <gui style="menuitem">Hint</gui></guiseq> or press
   <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
 

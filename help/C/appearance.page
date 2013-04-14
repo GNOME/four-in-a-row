@@ -5,7 +5,7 @@
   <info>
     <link type="guide" xref="index#preferences"/>
 
-    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -20,20 +20,19 @@
   <title>Change the appearance of your gaming area</title>
 
   <p>By default, <app>Four-in-a-row</app> uses solid red and blue marbles
-  against a black grid when you start a new game. In order to use a different
-  theme:</p>
+  against a black grid when you start a new game.</p>
 
   <steps>
+    <title>To use a different theme:</title>
     <item>
       <p>Select <guiseq><gui style="menu">Settings</gui>
       <gui style="menuitem">Preferences</gui>
       <gui style="menuitem">Game</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Under <gui>Appearance</gui>, you will see
-      <gui style="group">Theme</gui>. Pick the theme of your choice from
-      the drop down menu present on the right of <gui>Theme</gui>. The change
-      will be reflected immediately in the game window.</p>
+      <p>Under <gui>Appearance</gui>, pick the theme of your choice from
+      the drop down menu to the right of <gui style="group">Theme</gui>. The
+      change will be reflected immediately in the game window.</p>
     </item>
   </steps>
 

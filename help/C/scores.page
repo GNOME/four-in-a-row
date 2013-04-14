@@ -5,7 +5,7 @@
   <info>
     <link type="guide" xref="index#play"/>
 
-    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
