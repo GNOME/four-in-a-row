@@ -7,7 +7,7 @@
 
     <link type="seealso" xref="controls-default"/>
 
-    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -32,24 +32,22 @@
     </item>
     <item>
       <p>In the list, select the line you want to change, then click on the
-      control. This highlights the line and the words
-      <gui>New accelerator…</gui> are now present in place of the
-      old control.</p>
+      control. The line is highlighted and the label of the control changes to
+      <gui>New accelerator…</gui></p>
     </item>
     <item>
       <p>Press the key you want to use instead of the default key.</p>
       <note style="tip">
-        <p>To keep the old setting click <gui>New accelerator…</gui> again,
-        right click on <gui>New accelerator…</gui>, press <key>Esc</key> or
-        click anywhere else inside the <gui>Keyboard Controls</gui> box.</p>
+        <p>To keep the old setting, click again or right click on
+        <gui>New accelerator…</gui>, press <key>Esc</key> or click anywhere else
+        inside the <gui>Keyboard Controls</gui> box.</p>
       </note>
     </item>
   </steps>
 
   <note style="info">
-    <p>When you are playing with a friend or a family member, both players
-    will share the same set of controls, to be used alternately during your
-    respective turns.</p>
+    <p>When you are playing with a friend or a family member, both players will
+    use the same controls.</p>
   </note>
 
 </page>

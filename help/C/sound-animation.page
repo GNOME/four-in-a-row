@@ -5,7 +5,7 @@
   <info>
     <link type="guide" xref="index#preferences"/>
 
-    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="draft"/>
+    <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -13,29 +13,53 @@
       <name>Aruna Sankaranarayanan</name>
       <email>safincrazy@gmail.com</email>
     </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
 
-    <desc>Play <app>Four-in-a-row</app> without sounds and animation.</desc>
+    <desc>Play <app>Four-in-a-row</app> without sounds or animation.</desc>
   </info>
 
-  <title>Disable sounds and animation</title>
+  <title>Disable sounds or animation</title>
+
+  <section id="sounds">
+  <title>Sounds</title>
+
   <p>When sounds are enabled, you will hear something every time a marble is
-  dropped and at the end of the game. Enabling animation results in a more
-  fluid movement of the marbles. To disable sounds and animation:</p>
+  dropped, or when a game ends.</p>
 
   <steps>
+    <title>To disable sounds:</title>
     <item>
       <p>Select <guiseq><gui style="menu">Settings</gui>
       <gui style="menuitem">Preferences</gui>
       <gui style="menuitem">Game</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Under <gui>Appearance</gui>, you will see
-      <gui style="checkbox">Enable animation</gui> and
-      <gui style="checkbox">Enable sounds</gui>. Click on the small
-      square next to the feature you want to disable. This unchecks the
-      feature. You can check the square again if you
-      want to enable the feature.</p>
+      <p>Uncheck <gui style="checkbox">Enable sounds</gui>. You can check the
+      option again to enable the feature.</p>
     </item>
   </steps>
+  </section>
+
+  <section id="animation">
+  <title>Animation</title>
+
+  <p>Animation results in a more fluid movement of the marbles.</p>
+
+  <steps>
+    <title>To disable animation:</title>
+    <item>
+      <p>Select <guiseq><gui style="menu">Settings</gui>
+      <gui style="menuitem">Preferences</gui>
+      <gui style="menuitem">Game</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Uncheck <gui style="checkbox">Enable animation</gui>. You can check the
+      option again to enable the feature.</p>
+    </item>
+  </steps>
+  </section>
 
 </page>
