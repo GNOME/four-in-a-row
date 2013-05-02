@@ -2,27 +2,27 @@
 # spanish translation for gnect manual
 # traducción al español del manual de gnect
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2012-09-06 15:58+0000\n"
-"PO-Revision-Date: 2012-05-14 11:25+0200\n"
+"POT-Creation-Date: 2013-04-30 15:31+0000\n"
+"PO-Revision-Date: 2013-05-02 19:29+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Gtranslator 2.91.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2012\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2013\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
 #. This is a reference to an external file such as an image or video. When
@@ -34,695 +34,1093 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:175(imagedata)
+#: C/index.page:18(media)
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/mainwindow.png' "
+#| "md5='372e2515d12d07635a88bff671cc1a14'"
 msgctxt "_"
+msgid "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
+msgstr "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
+
+#: C/index.page:11(credit/name) C/appearance.page:13(credit/name)
+#: C/basics.page:13(credit/name) C/choose-opponent.page:13(credit/name)
+#: C/controls-change.page:15(credit/name)
+#: C/controls-default.page:15(credit/name) C/make-easy.page:13(credit/name)
+#: C/scores.page:13(credit/name) C/sound-animation.page:13(credit/name)
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#: C/index.page:15(info/desc)
+msgid "Index"
+msgstr "Índice"
+
+#: C/index.page:18(page/title)
 msgid ""
-"external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
+"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
+"media>Four-in-a-row"
 msgstr ""
-"external ref='figures/mainwindow.png' md5='372e2515d12d07635a88bff671cc1a14'"
+"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
+"media>Cuatro en raya"
 
-#: C/index.docbook:21(articleinfo/title)
-msgid "Four-in-a-Row Manual"
-msgstr "Manual de Cuatro en raya"
-
-#: C/index.docbook:23(abstract/para)
+#: C/index.page:21(page/p)
 msgid ""
-"The object of Four-in-a-Row is to place four pieces in a vertical, "
-"horizontal, or diagonal row while the opponent tries to block and make his/"
-"her own row of four. Four-in-a-Row can be played against another human or "
-"the computer."
+"<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
+"is to stack four of your marbles in a horizontal, vertical or diagonal line "
+"while stopping your opponent from doing the same with their marbles."
 msgstr ""
-"El objetivo de Cuatro en raya es poner cuatro fichas en una fila vertical, "
-"horizontal o diagonal mientras que el oponente intenta bloquearle y hacer su "
-"propia fila de cuatro fichas. Cuatro en raya se puede jugar contra otra "
-"persona o contra el equipo."
+"<app>Cuatro en raya</app> es un juego de estrategia para GNOME. El objetivo "
+"del juego es conseguir cuatro canicas iguales en horizontal, vertical o en "
+"diagonal, impidiendo que el oponente haga lo mismo con las suyas."
 
-#: C/index.docbook:31(articleinfo/copyright)
-msgid "<year>2001-2002</year> <holder>Timothy Musson</holder>"
-msgstr "<year>2001-2002</year> <holder>Timothy Musson</holder>"
+#: C/index.page:26(section/title)
+msgid "Game play"
+msgstr "Juego"
 
-#: C/index.docbook:46(publisher/publishername)
-msgid "GNOME Documentation Project"
-msgstr "Proyecto de Documentación de GNOME"
-
-#: C/index.docbook:2(legalnotice/para)
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or in "
-"the file COPYING-DOCS distributed with this manual."
-msgstr ""
-"Se concede permiso para copiar, distribuir o modificar este documento según "
-"las condiciones de la GNU Free Documentation License (GFDL), Versión 1.1 o "
-"cualquier versión posterior publicada por la Free Software Foundation sin "
-"Secciones invariantes, Textos de portada y Textos de contraportada. "
-"Encontrará una copia de la GFDL en este <ulink type=\"help\" url=\"help:fdl"
-"\">enlace</ulink> o en el archivo COPYING-DOCS distribuido con este manual."
-
-#: C/index.docbook:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
-msgid ""
-"This manual is part of a collection of GNOME manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
-msgstr ""
-"Este manual forma parte de una colección de documentos de GNOME distribuidos "
-"según la GFDL. Si quiere distribuir este manual de forma independiente de la "
-"colección, puede hacerlo agregando una copia de la licencia al documento, "
-"según se describe en la sección 6 de la misma."
-
-#: C/index.docbook:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
-msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any GNOME "
-"documentation, and the members of the GNOME Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
-msgstr ""
-"Muchos de los nombres utilizados por las empresas para distinguir sus "
-"productos y servicios se consideran marcas comerciales. Cuando estos nombres "
-"aparezcan en la documentación de GNOME, y siempre que se haya informado a "
-"los miembros del Proyecto de documentación de GNOME de dichas marcas "
-"comerciales, los nombres aparecerán en mayúsculas o con las iniciales en "
-"mayúsculas."
-
-#: C/index.docbook:35(listitem/para) C/legal.xml:35(listitem/para)
-msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr ""
-"EL DOCUMENTO SE PROPORCIONA \"TAL CUAL\", SIN GARANTÍA DE NINGÚN TIPO, NI "
-"EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL "
-"DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS COMERCIALES, SEA "
-"ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO EL RIESGO "
-"RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU VERSIÓN "
-"MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DE "
-"AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR "
-"INICIAL, AUTOR O CONTRIBUYENTE) ASUMIRÁ LOS COSTES DE TODA REPARACIÓN, "
-"MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE GARANTÍA ES UNA "
-"PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE NINGÚN DOCUMENTO "
-"NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO "
-"DE LA RENUNCIA;Y"
-
-#: C/index.docbook:55(listitem/para) C/legal.xml:55(listitem/para)
-msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
-msgstr ""
-"EN NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR "
-"(INCLUYENDO NEGLIGENCIA) CONTRATO O DOCUMENTO DE OTRO TIPO, EL AUTOR, EL "
-"ESCRITOR INICIAL, EL AUTOR DE APORTACIONES NI NINGÚN DISTRIBUIDOR DEL "
-"DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, NI NINGÚN PROVEEDOR DE NINGUNA "
-"DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN DAÑO "
-"DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, "
-"INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE FONDO DE COMERCIO, PARO "
-"TÉCNICO, FALLO INFORMÁTICO O AVERÍA O CUALQUIER OTRO POSIBLE DAÑO O AVERÍA "
-"DERIVADO O RELACIONADO CON EL USO DEL DOCUMENTO O SUS VERSIONES MODIFICADAS, "
-"AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE SE "
-"PRODUJESEN ESOS DAÑOS."
-
-#: C/index.docbook:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
-msgstr ""
-"EL DOCUMENTO Y VERSIONES MODIFICADAS SE PROPORCIONAN BAJO LOS TÉRMINOS DE LA "
-"LICENCIA LIBRE DE DOCUMENTACIÓN DE GNU Y TENIENDO EN CUENTA QUE: <_:"
-"orderedlist-1/>"
-
-#: C/index.docbook:52(authorgroup/author)
-msgid ""
-"<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
-"<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
-msgstr ""
-"<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
-"<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
-
-#: C/index.docbook:83(revdescription/para)
-msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
-msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
-
-#: C/index.docbook:79(revhistory/revision)
-msgid ""
-"<revnumber>Four-in-a-Row Manual V2.8</revnumber> <date>September 2004</date> "
-"<_:revdescription-1/>"
-msgstr ""
-"<revnumber>Manual de Cuatro en raya v2.8</revnumber> <date>Septiembre 2004</"
-"date> <_:revdescription-1/>"
-
-#: C/index.docbook:91(articleinfo/releaseinfo)
-msgid "This manual describes version 2.12 of Four-in-a-Row."
-msgstr "Este manual describe la versión 2.12 de Cuatro en raya."
-
-#: C/index.docbook:95(legalnotice/title)
-msgid "Feedback"
-msgstr "Comentarios"
-
-#: C/index.docbook:96(legalnotice/para)
-msgid ""
-"To report a bug or make a suggestion regarding the Four-in-a-Row application "
-"or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
-"feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr ""
-"Para informar de un fallo o hacer alguna sugerencia sobre la aplicación "
-"Cuatro en raya o sobre este manual, siga las indicaciones en la <ulink url="
-"\"ghelp:user-guide?feedback-bugs\" type=\"help\">Página de comentarios de "
-"GNOME</ulink>."
-
-#: C/index.docbook:112(sect1/title)
-msgid "Introduction"
-msgstr "Introducción"
-
-#: C/index.docbook:114(sect1/para)
-msgid ""
-"<application>Four-in-a-Row</application> is a four-in-a-row game for the "
-"GNOME Project. The object of the game is to build a line of four of your "
-"marbles while trying to stop your opponent (human or computer) building a "
-"line of his or her own. A line can be horizontal, vertical or diagonal."
-msgstr ""
-"<application>Cuatro en raya</application> es un juego de cuatro en raya para "
-"el proyecto GNOME. El objetivo del juego es construir una línea de cuatro "
-"canicas mientras intenta impedir que su oponente (humano o máquina) "
-"construya su propia línea. Una línea puede ser horizontal, vertical o "
-"diagonal."
-
-#: C/index.docbook:122(sect1/para)
-msgid ""
-"To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
-"a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
-"<guimenu>Main Menu</guimenu>, or type <command>gnect</command> on the "
-"command line."
-msgstr ""
-"Para ejecutar <application>Cuatro en raya</application>, seleccione "
-"<guimenuitem>Cuatro en raya</guimenuitem> del submenú <guisubmenu>Juegos</"
-"guisubmenu> del <guimenu>Menú principal</guimenu>, o escriba <command>gnect</"
-"command> en la línea de comandos."
-
-#: C/index.docbook:130(sect1/para)
-msgid ""
-"<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
-"games</filename> package, which is part of the GNOME desktop environment. "
-"This document describes version 2.8 of <application>Four-in-a-Row</"
-"application>."
-msgstr ""
-"<application>Cuatro en raya</application> está incluido en el paquete "
-"<filename>GNOME-games</filename>, que es parte del entorno de escritorio "
-"GNOME. Este documento describe la versión 2.8 de <application>Cuatro en "
-"raya</application>."
-
-#: C/index.docbook:136(sect1/para)
-msgid ""
-"Four-in-a-Row also features multiplayer support with two human players in "
-"hotseat mode."
-msgstr ""
-"Cuatro en raya también soporta multijugador con dos jugadores humanos en el "
-"mismo equipo o en modo red."
-
-#: C/index.docbook:150(sect1/title)
-msgid "Basic Usage"
-msgstr "Uso básico"
-
-#: C/index.docbook:156(sect2/title)
-msgid "Playing Four-in-a-Row"
-msgstr "Jugar a Cuatro en raya"
-
-#: C/index.docbook:158(sect2/para)
-msgid ""
-"To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
-"guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
-msgstr ""
-"Para iniciar una nueva partida de Cuatro en raya elija "
-"<menuchoice><guimenu>Juego</guimenu><guimenuitem>Nueva partida</"
-"guimenuitem></menuchoice>."
-
-#: C/index.docbook:162(sect2/para)
-msgid ""
-"The <interface>game board</interface> consists of seven columns and six "
-"rows. Above it, a special row indicates the current player and the marble "
-"about to be played. Each move consists of dropping a marble in one of the "
-"columns. The marble lands on the topmost empty row of the chosen column."
-msgstr ""
-"El <interface>tablero de juego</interface> consiste en siete columnas y seis "
-"filas. Encima de esto, una fila especial indica el jugador actual y la "
-"caninca que se está jugando. Cada movimiento consiste en soltar una canica "
-"en una de las columnas. La canica aterriza en la fila vacía inferior de la "
-"columna elegida."
-
-#: C/index.docbook:167(sect2/para)
-msgid ""
-"To make a move, click on a column with the mouse. To play with the keyboard, "
-"move the marble in the top row with the left and right arrow keys, and drop "
-"it in place with the down arrow key. Your marble will drop into the topmost "
-"empty row of that column."
-msgstr ""
-"Para hacer un movimiento, pulse sobre una columna con el ratón. Para jugar "
-"con el teclado, mueva la canina de la fila superior con las teclas de flecha "
-"izquierda y derecha, y suéltela en su lugar con la tecla de flecha abajo. Su "
-"canica caerá en la fila vacía inferior de esa columna."
-
-#: C/index.docbook:180(caption/para)
-msgid "Four-in-a-Row's Main Window"
-msgstr "Ventana principal de Cuatro en raya"
-
-#: C/index.docbook:171(sect2/mediaobject)
-msgid ""
-"<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" "
-"srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Four-in-a-Row's Main "
-"Window</phrase> </textobject> <_:caption-1/>"
-msgstr ""
-"<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG\" "
-"srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Ventana principal de "
-"Cuatro en raya</phrase> </textobject> <_:caption-1/>"
-
-#: C/index.docbook:183(sect2/para)
-msgid ""
-"The game is won when one of the two players manages to line up four of his "
-"or her marbles horizontally, vertically or diagonally. If the board fills up "
-"without a win, the game ends in a draw."
-msgstr ""
-"El juego lo gana quien consigue formar una línea horizontal, vertical o "
-"diagonal de cuatro de sus canicas. Si el tablero se llena sin un ganador, el "
-"juego acaba en empate."
-
-#: C/index.docbook:194(sect2/title)
-msgid "Commands"
-msgstr "Comandos"
-
-#: C/index.docbook:197(sect2/para)
-msgid ""
-"To take back a move, choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</"
-"keysym><keycap>Z</keycap> </keycombo></shortcut> <guimenuitem>Undo move</"
-"guimenuitem> </menuchoice>. If you're playing against a friend, this will "
-"undo one move. If you're playing against the computer, this will undo the "
-"computer's last move and then yours. Repeating this will return the board to "
-"its initial state."
-msgstr ""
-"Para deshacer un movimiento, elija <menuchoice> <shortcut><keycombo> "
-"<keysym>Ctrl</keysym><keycap>Z</keycap> </keycombo></shortcut> "
-"<guimenuitem>Deshacer movimiento</guimenuitem> </menuchoice>. Si está "
-"jugando contra un amigo, esto deshará un movimiento. Si está jugando contra "
-"el equipo, esto deshará su último movimiento y el del equipo. Repetir esto "
-"hará que se vuelva al estado inicial del tablero."
-
-#: C/index.docbook:209(sect2/para)
-msgid ""
-"Choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</"
-"keycap> </keycombo></shortcut> <guimenuitem>Hint</guimenuitem> </menuchoice> "
-"to get a suggestion from the computer for your next move. This is shown in "
-"the status bar."
-msgstr ""
-"Elija <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</"
-"keycap> </keycombo></shortcut> <guimenuitem>Sugerencia</guimenuitem> </"
-"menuchoice> para obtener una sugerencia del equipo para su siguiente "
-"movimiento. Esto se muestra en la barra de estado."
-
-#: C/index.docbook:217(sect2/para)
-msgid ""
-"Choose <menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> to show "
-"a tally of wins and draws for the current playing session. The scores will "
-"be reset to zero if Player Selection is changed in Preferences."
-msgstr ""
-"Elija <menuchoice><guimenuitem>Puntuación</guimenuitem></menuchoice> para "
-"mostrar la cuenta de victorias y empates para la sesión actual. La "
-"puntuación se reiniciará a cero si se cambia la selección de jugadores en las "
-"Preferencias."
-
-#: C/index.docbook:232(sect2/title)
+#: C/index.page:30(section/title)
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: C/index.docbook:234(sect2/para)
+#: C/appearance.page:17(info/desc)
+msgid "Use different themes to improve your gaming experience."
+msgstr "Use diferentes temas para mejorar su experiencia de juego."
+
+#: C/appearance.page:20(page/title)
+msgid "Change the appearance of your gaming area"
+msgstr "Cambiar la apariencia del área de juego"
+
+#: C/appearance.page:22(page/p)
 msgid ""
-"To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
-"from the <guimenu>Settings</guimenu> menu. This opens the "
-"<interface>Preferences Dialog</interface>."
+"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
+"a black grid when you start a new game."
 msgstr ""
-"Para cambiar los ajustes del juego, seleccione <guimenuitem>Preferencias</"
-"guimenuitem> del menú <guimenu>Configuración</guimenu>. Esto abrirá el "
-"<interface>Diálogo de preferencias</interface>."
+"De manera predeterminada, <app>Cuatro en raya</app> usa canicas rojas y "
+"azules con una rejilla negra cuando empieza un juego nuevo."
 
-#: C/index.docbook:248(varlistentry/term)
-msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
-msgstr "<guilabel>Jugador uno</guilabel> y <guilabel>Jugador dos</guilabel>"
+#: C/appearance.page:26(steps/title)
+msgid "To use a different theme:"
+msgstr "Para usar un tema diferente:"
 
-#: C/index.docbook:253(listitem/para)
+#: C/appearance.page:28(item/p) C/sound-animation.page:35(item/p)
+#: C/sound-animation.page:54(item/p)
 msgid ""
-"These two columns tell <application>Four-in-a-Row</application> who's "
-"playing and, if it is the computer, how hard they play. To play against a "
-"friend, select Human for both Player One and Player Two."
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgstr ""
-"Estas dos columnas indican a <application>Cuatro en raya</application> quién "
-"está jugando, y si es el equipo, en qué nivel lo hará. Para jugar contra un "
-"amigo, seleccione Humano tanto para el Jugador uno como para el Jugador dos."
+"Seleccione <guiseq><gui style=\"menu\">Configuración</gui> <gui style="
+"\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Juego</gui></guiseq>."
 
-#: C/index.docbook:263(varlistentry/term)
-msgid "<guilabel>Theme</guilabel>"
-msgstr "<guilabel>Tema</guilabel>"
-
-#: C/index.docbook:265(listitem/para)
+#: C/appearance.page:33(item/p)
 msgid ""
-"The theme menu lists available themes and lets you choose your favourite."
+"Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
+"down menu to the right of <gui style=\"group\">Theme</gui>. The change will "
+"be reflected immediately in the game window."
 msgstr ""
-"El menú temas muestra los temas disponibles y le permite elegir su favorito."
+"En <gui>Apariencia</gui>, seleccione el tema que quiere en el menú "
+"desplegable a la derecha de <gui style=\"group\">Tema</gui>. El cambio se "
+"reflejará inmediatamente en la ventana del juego."
 
-#: C/index.docbook:273(varlistentry/term)
-msgid "<guilabel>Enable Animation</guilabel>"
-msgstr "<guilabel>Activar animación</guilabel>"
-
-#: C/index.docbook:275(listitem/para)
-msgid "Here you can toggle the game's animation on or off."
-msgstr ""
-"Aquí puede conmutar la animación del juego entre activada o desactivada."
-
-#: C/index.docbook:241(sect2/para)
+#: C/basics.page:17(info/desc)
 msgid ""
-"Configuration options in the <guilabel>Game</guilabel> tab are: <_:"
-"variablelist-1/>"
+"Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
 msgstr ""
-"Las opciones de configuración en la pestaña <guilabel>Juego</guilabel> son: "
-"<_:variablelist-1/>"
+"Empezar, jugar en modo a pantalla completa y salir de una partida de "
+"<app>Cuatro en raya</app>."
 
-#: C/index.docbook:283(sect2/para)
+#: C/basics.page:21(page/title)
+#| msgid "Introduction"
+msgid "Basic instructions"
+msgstr "Instrucciones básicas"
+
+#: C/basics.page:24(section/title)
+msgid "Start a new game"
+msgstr "Iniciar un juego nuevo"
+
+#: C/basics.page:26(section/p)
 msgid ""
-"Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
-"controls. To change a control, double click the appropriate entry and then "
-"press the new key."
+"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
+"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
+"a new game."
 msgstr ""
-"Finalmente hay una pestaña de <guilabel>Controles</guilabel> para cambiar "
-"los controles del teclado. Para cambiar un control, pulse dos veces con el "
-"ratón sobre la entrada apropiada y después pulse una nueva tecla."
+"Seleccione <guiseq><gui style=\"menu\">Juego</gui> <gui style=\"menuitem"
+"\">Nuevo</gui></guiseq> o pulse <keyseq><key>Ctrl</key><key>N</key></keyseq> "
+"para empezar una partida nueva."
 
-#: C/index.docbook:298(sect1/title)
-msgid "Creating New Themes"
-msgstr "Crear nuevos temas"
+#: C/basics.page:34(section/title)
+msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
+msgstr "Jugar a <app>Cuatro en raya</app> en modo a pantalla completa"
 
-#: C/index.docbook:300(sect1/para)
+#: C/basics.page:36(section/p)
 msgid ""
-"This section's included in case you'd like to make your own themes for "
-"<application>Four-in-a-Row</application>. It assumes you're familiar with "
-"basic text editing, graphics software and the command line."
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+"fullscreen mode. You can return to the default screen size by pressing "
+"<key>F11</key> again."
 msgstr ""
-"Esta sección se incluye en caso de que quiera hacer sus propios temas para "
-"<application>Cuatro en raya</application>. Se asume que le es familiar la "
-"edición básica de texto, software de gráficos y la línea de comandos."
+"Seleccione <guiseq><gui style=\"menu\">Ver</gui> <gui style=\"menuitem"
+"\">Pantalla completa</gui></guiseq> o pulse <key>F11</key> para jugar en "
+"modo a pantalla completa. Puede volver al tamaño de pantalla predeterminado "
+"pulsando <key>F11</key> otra vez."
 
-#: C/index.docbook:308(sect2/title)
-msgid "Images"
-msgstr "Imágenes"
+#: C/basics.page:44(section/title)
+msgid "Quit <app>Four-in-a-row</app>"
+msgstr "Salir de <app>Cuatro en raya</app>"
 
-#: C/index.docbook:310(sect2/para)
+#: C/basics.page:46(section/p)
 msgid ""
-"<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
-"equal size, lined up horizontally. From left to right:"
+"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
+"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
+"<app>Four-in-a-row</app> at any time."
 msgstr ""
-"Los juegos de piezas de <application>Cuatro en raya</application> contienen "
-"seis figuras de igual tamaño, alineadas horizontalmente. De izquierda a "
-"derecha:"
+"Seleccione <guiseq><gui style=\"menu\">Juego</gui> <gui style=\"menuitem"
+"\">Salir</gui></guiseq> o pulse <keyseq><key>Ctrl</key><key>Q</key></keyseq> "
+"para salir de <app>Cuatro en raya</app> en cualquier momento."
 
-#: C/index.docbook:317(listitem/para)
-msgid "Player One's marble as it appears on the game board"
-msgstr "Canica del jugador uno tal y como aparece en el tablero de juego"
+#: C/choose-opponent.page:17(credit/name)
+#: C/sound-animation.page:17(credit/name)
+msgid "Michael Hill"
+msgstr "Michael Hill"
 
-#: C/index.docbook:320(listitem/para)
-msgid "Player Two's marble as it appears on the game board"
-msgstr "Canica del jugador dos tal y como aparece en el tablero de juego"
+#: C/choose-opponent.page:21(info/desc)
+msgid "Change the level at which the computer plays or play with a friend."
+msgstr "Cambie el nivel al que juega el equipo o juegue con un amigo."
 
-#: C/index.docbook:323(listitem/para)
-msgid "The game board's background"
-msgstr "El fondo del tablero de juego"
+#: C/choose-opponent.page:25(page/title)
+msgid "Choose a different opponent"
+msgstr "Elegir otro distinto"
 
-#: C/index.docbook:326(listitem/para)
-msgid "The top row's background"
-msgstr "El fondo de la fila superior"
-
-#: C/index.docbook:329(listitem/para)
-msgid "Player One's marble as it appears on the top row"
-msgstr "Canica del jugador uno tal y como aparece en la fila superior"
-
-#: C/index.docbook:332(listitem/para)
-msgid "Player Two's marble as it appears on the top row"
-msgstr "Canica del jugador dos tal y como aparece en la fila superior"
-
-#: C/index.docbook:337(figure/title)
-msgid "An example tile set"
-msgstr "Un ejemplo de un juego de piezas"
-
-#: C/index.docbook:339(screenshot/screeninfo)
-msgid "This image shows the six tiles in a tile set"
-msgstr "Esta imagen muestra las seis piezas en un juego de piezas"
-
-#: C/index.docbook:344(sect2/para)
+#: C/choose-opponent.page:26(page/p)
 msgid ""
-"Tiles three and four will be repeated over the game board and top row unless "
-"a full window background image is specified in the theme file."
+"By default, your opponent in <app>Four-in-a-row</app> is the computer, "
+"playing at level one."
 msgstr ""
-"Las piezas tres y cuatro se repetirán por todo el tablero de juego y la fila "
-"superior a no ser que se especifique una imagen de ventana completa como "
-"imagen de fondo en el archivo del tema."
+"De manera predeterminada, su oponente en <app>Cuatro en raya</app> es el "
+"propio equipo, jugando en el nivel uno."
 
-#: C/index.docbook:351(tip/title) C/index.docbook:362(tip/title)
-#: C/index.docbook:378(tip/title)
-msgid "TIP"
-msgstr "Consejo"
+#: C/choose-opponent.page:30(steps/title)
+msgid "To change the level, or to play with a friend:"
+msgstr "Para cambiar el nivel o para jugar con un amigo:"
 
-#: C/index.docbook:352(tip/para)
+#: C/choose-opponent.page:32(item/p)
 msgid ""
-"PNG format is recommended for tile sets. The first, second, fifth and sixth "
-"tiles should contain some transparency if you want the background to show "
-"through. The third and fourth tiles should be solid, with no transparency, "
-"even if you'll be using a full window background image with your theme."
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You will "
+"see <gui>Player One</gui> and <gui>Player Two</gui>."
 msgstr ""
-"Se recomienda usar el formato de archivo PNG para los juegos de piezas. La "
-"primera, segunda, quinta y sexta piezas deberían contener alguna "
-"transparencia si quiere que el fondo se muestre a través de ellas. La "
-"tercera y cuarta piezas deberían ser sólidas, sin transparencia, incluso si "
-"usará una imagen de ventana completa como fondo para su tema."
+"Seleccione <guiseq><gui style=\"menu\">Configuración</gui> <gui style="
+"\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Juego</gui></"
+"guiseq>. Verá <gui>Jugador uno</gui> y <gui>Jugador dos</gui>."
 
-#: C/index.docbook:363(tip/para)
+#: C/choose-opponent.page:38(item/p)
 msgid ""
-"Tiles can be square or rectangular, and any size you like. Most of the tile "
-"sets that come with <application>Four-in-a-Row</application> use square "
-"tiles measuring 50 pixels by 50 pixels."
+"Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
+"play with a friend or family member."
 msgstr ""
-"Las piezas pueden ser cuadradas o rectangulares, y de cualquier tamaño que "
-"desee. La mayoría de los juegos de piezas que vienen con <application>Cuatro "
-"en raya</application> usan piezas cuadradas de 50 píxeles por 50 píxeles de "
-"tamaño."
+"Elija <gui style=\"radiobutton\">Humano</gui> para ambos jugadores si quiere "
+"jugar con un amigo o con un familiar."
 
-#: C/index.docbook:370(sect2/para)
+#: C/choose-opponent.page:40(item/p)
 msgid ""
-"For a full window background image, there's a bit more work to do. Let's say "
-"your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
-"tiles, including the top row, so the ideal background image for your tile "
-"set measures 350 by 350 pixels."
+"Alternatively, choose the level at which the computer plays. Choose between "
+"<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
+"two</gui> or <gui style=\"radiobutton\">Level three</gui>, where <gui style="
+"\"radiobutton\">Level one</gui> is the easiest level and <gui style="
+"\"radiobutton\">Level three</gui> is the most difficult level."
 msgstr ""
-"Para usar una imagen de ventana completa como imagen de fondo, hay algo más "
-"de trabajo que hacer. Digamos que sus piezas tienen un tamaño de 50 por 50 "
-"píxeles. Las dimensiones del juego son de 7 por 7 casillas, incluyendo la "
-"fila superior, de tal forma que la imagen de fondo ideal para su juego de "
-"piezas tendría un tamaño de 350 por 350 píxeles."
+"Alternativamente, elija el nivel en el que juega el equipo. Elija entre <gui "
+"style=\"radiobutton\">Nivel uno</gui>, <gui style=\"radiobutton\">Nivel dos</"
+"gui> o <gui style=\"radiobutton\">Nivel tres</gui>, donde el <gui style="
+"\"radiobutton\">Nivel uno</gui> es el nivel más fácil y el <gui style="
+"\"radiobutton\">Nivel tres</gui> es el más difícil."
 
-#: C/index.docbook:379(tip/para)
+#: C/choose-opponent.page:48(note/p)
 msgid ""
-"<application>Four-in-a-Row</application> will automatically scale the "
-"background image if it doesn't match the tile set. This means you can make "
-"\"large\" and \"small\" versions of your theme, both using the same "
-"background image, just by having a large and a small version of your tile "
-"set."
+"If you are playing with a friend or family member, <gui>Player One</gui> "
+"gets to play first in the first game of <app>Four-in-a-row</app>. In "
+"subsequent games, the chance to play first is given alternately to each "
+"player. So, <gui>Player Two</gui> will get to play first in the second game, "
+"<gui>Player One</gui> can play first in the third game and so on."
 msgstr ""
-"<application>Cuatro en raya</application> escalará automáticamente la imagen "
-"de fondo si no concuerda con el juego de piezas. Esto significa que puede "
-"hacer una versión «grande» y «pequeña» de su tema, ambas usarán la misma "
-"imagen de fondo, simplemente teniendo una versión grande y una pequeña de su "
-"juego de piezas."
+"Si está jugando con un amigo o con un familiar, el, <gui>Jugador uno</gui> "
+"juega primero en la primera partida de <app>Cuatro en raya</app>. En las "
+"siguientes partidas, cada jugador juega primero alternativamente, De este "
+"modo, el <gui>Jugador dos</gui> jugará primero en la segunda partida, el "
+"<gui>Jugador uno</gui> jugará primero en la tercera partida, y así "
+"sucesivamente."
 
-#: C/index.docbook:387(sect2/para)
+#: C/controls-change.page:19(info/desc)
+msgid "Set custom control keys."
+msgstr "Configurar las teclas personalizadas."
+
+#: C/controls-change.page:22(page/title)
+msgid "Change the default controls"
+msgstr "Cambiar los controles predeterminados"
+
+#: C/controls-change.page:24(page/p)
 msgid ""
-"So, you now have a tile set and perhaps a background image to go with it. "
-"The next step is to put them in the right place."
+"To change the <link xref=\"controls-default\">default controls</link> in "
+"<app>Four-in-a-row</app>:"
 msgstr ""
-"Así que ahora tiene un juego de piezas y quizá una imagen de fondo que va "
-"con él. El siguiente paso es juntarlo todo en el lugar adecuado."
+"Para cambiar los <link xref=\"controls-default\">controles predeterminados</"
+"link> en <app>Cuatro en raya</app>:"
 
-#: C/index.docbook:397(sect2/title)
-msgid "Putting It Together"
-msgstr "Juntarlo todo"
-
-#: C/index.docbook:399(sect2/para)
-msgid "Copy your image(s) into the data directory (~/.local/share/gnect)."
-msgstr "Copie sus imágenes en la carpeta de datos (~/.local/share/gnect)."
-
-#: C/index.docbook:403(sect2/para)
+#: C/controls-change.page:29(item/p)
 msgid ""
-"If you start <application>Four-in-a-Row</application> from the command line, "
-"it'll give you clues about any problems it has with your new theme. If it "
-"has none, you'll find your new theme listed the <interface>Preferences "
-"Dialog</interface>."
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+"guiseq>."
 msgstr ""
-"Si inicia <application>Cuatro en raya</application> desde la línea de "
-"comandos, le dará indicios sobre cualquier problema que tenga con su nuevo "
-"tema. Si no tiene ninguno, encontrará su nuevo tema en la lista del "
-"<interface>diálogo de preferencias</interface>."
+"Seleccione <guiseq><gui style=\"menu\">Configuración</gui> <gui style="
+"\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Controles del "
+"teclado</gui></guiseq>."
 
-#: C/index.docbook:410(sect2/para)
-msgid "Have fun!"
-msgstr "¡Diviértase!"
-
-#: C/index.docbook:423(sect1/title)
-msgid "Known Bugs and Limitations"
-msgstr "Errores conocidos y limitaciones"
-
-#: C/index.docbook:425(sect1/para)
+#: C/controls-change.page:34(item/p)
 msgid ""
-"Occasionally a marble-dropping animation doesn't look as smooth as it should."
+"In the list, select the line you want to change, then click on the control. "
+"The line is highlighted and the label of the control changes to <gui>New "
+"accelerator…</gui>"
 msgstr ""
-"Ocasionalmente la caída de las canincas no parece tan suave como debería."
+"En la lista, seleccione la línea que quiere cambiar y pulse sobre el "
+"control. La línea se resaltará y la etiqueta del control cambiará a "
+"<gui>Acelerador nuevo…</gui>"
 
-#: C/index.docbook:438(sect1/title)
-msgid "Authors"
-msgstr "Autores"
+#: C/controls-change.page:39(item/p)
+msgid "Press the key you want to use instead of the default key."
+msgstr "Pulse la tecla que quiere usar en lugar de la tecla predeterminada."
 
-#: C/index.docbook:440(sect1/para)
+#: C/controls-change.page:41(note/p)
 msgid ""
-"<application>Four-in-a-Row</application> was written by Timothy Musson "
-"(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
-"email>). Various others have taken the time to help in many ways since work "
-"on <application>Four-in-a-Row</application> began."
+"To keep the old setting, click again or right click on <gui>New accelerator…"
+"</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
+"Controls</gui> box."
 msgstr ""
-"Timothy Musson (<email>trmusson@ihug.co.nz</email>) y David Neary "
-"(<email>bolsh@gimp.org</email>) escribieron <application>Cuatro en raya</"
-"application>. Otros varios se han tomado su tiempo para ayudar de muchas "
-"maneras desde que comenzó el trabajo en <application>Cuatro en raya</"
-"application>."
+"Para mantener la antigua configuración, pulse otra vez o pulse con el botón "
+"derecho en <gui>Nuevo acelerador…</gui>, pulse <key>Esc</key> o pulse en "
+"cualquier parte dentro del diálogo de <gui>Controles del teclado</gui>."
 
-#: C/index.docbook:445(sect1/para)
+#: C/controls-change.page:49(note/p)
 msgid ""
-"The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
-"\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
-"computer player, was written by Giuliano Bertoletti. We're grateful to him "
-"for allowing us to include his work, without which <application>Four-in-a-"
-"Row</application> wouldn't be nearly as worthwhile."
+"When you are playing with a friend or a family member, both players will use "
+"the same controls."
 msgstr ""
-"El <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
-"\">motor Velena</ulink>, el jugador automático principal de "
-"<application>Cuatro en raya</application>, fue escrito por Giuliano "
-"Bertoletti. Le estamos muy agradecidos por dejarnos incluir su trabajo, sin "
-"el cual <application>Cuatro en raya</application> probablemente no merecería "
-"la pena."
+"Cuando está jugando con un amigo o con un familiar, ambos jugadores usan los "
+"mismos controles."
 
-#: C/index.docbook:452(sect1/para)
-msgid "This manual was written by Timothy Musson."
-msgstr "Timothy Musson escribió este manual."
+#: C/controls-default.page:19(info/desc)
+msgid "Default controls for <app>Four-in-a-row</app>."
+msgstr "Controles predeterminados para <app>Cuatro en raya</app>."
 
-#: C/index.docbook:455(sect1/para)
+#: C/controls-default.page:22(page/title)
+msgid "Controls"
+msgstr "Controles"
+
+#: C/controls-default.page:24(page/p)
 msgid ""
-"To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
-"bugs\" type=\"help\">document</ulink>."
+"You can use your mouse and click on a particular square in the game area to "
+"drop your marble into that square. If you want to use the keyboard instead, "
+"the default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
-"Para informar sobre un fallo o hacer sugerencias sobre esta aplicación o "
-"este manual, siga las indicaciones en este <ulink url=\"ghelp:user-guide?"
-"feedback-bugs\" type=\"help\">documento</ulink>."
+"Puede usar su ratón y pulsar en una casilla en particular en el área de "
+"juego para soltar su canica en esa casilla. Si quiere usar el teclado en su "
+"lugar, las teclas predeterminadas de <app>Cuatro en raya</app> son:"
 
-#: C/index.docbook:480(sect1/title)
-msgid "License"
-msgstr "Licencia"
+#: C/controls-default.page:30(item/p)
+msgid "<key>←</key> to move the marble to your left."
+msgstr "<key>←</key> para mover la canica a su izquierda."
 
-#: C/index.docbook:482(sect1/para)
+#: C/controls-default.page:33(item/p)
+msgid "<key>→</key> to move the marble to your right."
+msgstr "<key>←</key> para mover la canica a su derecha."
+
+#: C/controls-default.page:36(item/p)
+msgid "<key>↓</key> to drop the marble."
+msgstr "<key>←</key> para soltar la canica."
+
+#: C/make-easy.page:17(info/desc)
+msgid "Use hints or undo your wrong moves."
+msgstr "Use pistas o deshaga sus movimientos incorrectos."
+
+#: C/make-easy.page:20(page/title)
+msgid "Make your game a little easier"
+msgstr "Simplificar un poco la partida"
+
+#: C/make-easy.page:23(section/title)
+msgid "Change your last move"
+msgstr "Cambiar su último movimiento"
+
+#: C/make-easy.page:25(section/p)
 msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the <citetitle>GNU General Public License</citetitle> as "
-"published by the Free Software Foundation; either version 2 of the License, "
-"or (at your option) any later version."
+"When the computer makes a winning move because of your last move or when you "
+"accidentally make the wrong move, you can undo your last move and change it. "
+"To undo your last move, select <guiseq><gui style=\"menu\">Game</gui> <gui "
+"style=\"menuitem\">Undo Move</gui></guiseq> or press <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. You can now drop your marble at a different "
+"square in the game area to change your move."
 msgstr ""
-"Este programa es software libre; puede redistribuirlo y/o modificarlo bajo "
-"los términos de la <citetitle>Licencia Pública General GNU</citetitle> tal "
-"como se publica por la Free Software Foundation; ya sea la versión 2 de la "
-"Licencia, o (a su elección) cualquier versión posterior."
+"Cuando el equipo hace un movimiento ganador debido a su último movimiento o "
+"cuando hace un movimiento incorrecto por error, puede deshacer el último "
+"movimiento y cambiarlo. Para deshacer su último movimiento, seleccione "
+"<guiseq><gui style=\"menu\">Juego</gui> <gui style=\"menuitem\">Deshacer "
+"movimiento</gui></guiseq> o pulse <keyseq><key>Ctrl</key><key>Z</key></"
+"keyseq>. Ahora puede soltar la canica en otra casilla del área de juego para "
+"cambiar su movimiento."
 
-#: C/index.docbook:490(sect1/para)
+#: C/make-easy.page:33(note/p)
 msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
-"License</citetitle> for more details."
+"You can undo all your moves starting from your current move until you reach "
+"a favourable state of the game, or until the beginning of your current game, "
+"by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
 msgstr ""
-"Este programa se distribuye con la esperanza de que le sea útil, pero SIN "
-"NINGUNA GARANTÍA; sin incluso la garantía implícita de MERCANTILIDAD o "
-"IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Vea la <citetitle>Licencia Pública "
-"General GNU</citetitle> para más detalles."
+"Puede deshacer todos sus movimientos desde el movimiento actual hasta llegar "
+"a un estado favorable en la partida, o hasta el principio de la partida "
+"actual, pulsando <keyseq><key>Ctrl</key><key>Z</key></keyseq> repetidamente."
 
-#: C/index.docbook:505(para/address)
-#, no-wrap
+#: C/make-easy.page:41(section/title)
+msgid "Use hints"
+msgstr "Usar pistas"
+
+#: C/make-easy.page:43(section/p)
 msgid ""
-"\n"
-"        Free Software Foundation, Inc.\n"
-"        <street>59 Temple Place</street> - Suite 330\n"
-"        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>\n"
-"        <country>USA</country>\n"
-"      "
+"If you are not sure of your next move, you can use a hint. When you use a "
+"hint, your marble moves to the top of the column that is the best choice, "
+"strategy-wise, and blinks. You can then drop your marble into that column. "
+"To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui style="
+"\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</key><key>H</"
+"key></keyseq>."
 msgstr ""
-"\n"
-"        Free Software Foundation, Inc.\n"
-"        <street>59 Temple Place</street> - Suite 330\n"
-"        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>\n"
-"        <country>USA</country>\n"
-"      "
+"Si no está seguro de su próximo movimiento, puede usar una pista. Cuando usa "
+"una pista, su canica se mueve a la parte superior de la columna que es su "
+"mejor opción a nivel de estrategia y parpadea. Entonces puede soltar la "
+"canica en esa columna. Para usar una pista, seleccione <guiseq><gui style="
+"\"menu\">Juego</gui> <gui style=\"menuitem\">Pista</gui></guiseq> o pulse "
+"<keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
-#: C/index.docbook:497(sect1/para)
+#: C/make-easy.page:51(note/p)
+msgid "There is no limit on the number of hints you can use in a game."
+msgstr "No hay límite en el número de pistas que puede usar en una partida."
+
+#: C/scores.page:17(info/desc)
+msgid "Keep track of your wins and losses."
+msgstr "Recordar sus partidas ganadas y perdidas."
+
+#: C/scores.page:20(page/title)
+msgid "Scores"
+msgstr "Puntuación"
+
+#: C/scores.page:21(page/p)
 msgid ""
-"A copy of the <citetitle>GNU General Public License</citetitle> is included "
-"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
-"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
-"the Free Software Foundation by visiting <ulink url=\"http://www.fsf.org\" "
-"type=\"http\">their Web site</ulink> or by writing to <_:address-1/>"
+"The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
+"your opponent's wins and games that ended in a draw. To check the scores, "
+"select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+"\">Scores</gui></guiseq>. If you are playing against the computer, the "
+"number next to:"
 msgstr ""
-"Se incluye una copia de la <citetitle>Licencia Pública General GNU</"
-"citetitle> en el apéndice de la <citetitle>Guía de Usuario de GNOME</"
-"citetitle>. También puede obtener una copia de la <citetitle>Licencia "
-"Pública General GNU</citetitle> de la Free Software Foundation visitando "
-"<ulink url=\"http://www.fsf.org\" type=\"http\">su página web</ulink> o "
-"escribiendo a <_:address-1/>"
+"La puntuación en <app>Cuatro en raya</app> se guarda el términos de sus "
+"victorias, las victorias de su oponente y las partidas empatadas. Para ver "
+"la puntuación, seleccione <guiseq><gui style=\"menu\">Juego</gui> <gui style="
+"\"menuitem\">Puntuación</gui></guiseq>. Si está jugando contra el equipo, el "
+"número junto a:"
 
-#: C/legal.xml:9(para/ulink)
-msgid "link"
-msgstr "enlace"
+#: C/scores.page:29(item/p)
+msgid "<gui>You</gui> displays the number of games you have won."
+msgstr "<gui>Usted</gui> muestra el número de partidas que ha ganado."
 
-#: C/legal.xml:2(legalnotice/para)
+#: C/scores.page:32(item/p)
+msgid "<gui>Me</gui> displays the number of games won by the computer."
+msgstr "<gui>Yo</gui> muestra el número de partidas ganadas por el equipo."
+
+#: C/scores.page:35(item/p) C/scores.page:52(item/p)
+msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
+msgstr ""
+"<gui>Empatadas</gui> muestra el número de partidas terminadas en empate."
+
+#: C/scores.page:40(page/p)
+msgid "If you are playing against a friend, the number next to:"
+msgstr "Si está jugando contra un amigo, el número junto a:"
+
+#: C/scores.page:44(item/p)
 msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
-"with this manual."
+"<gui>Red</gui> displays the number of games won by the player who was "
+"controlling the red marbles."
 msgstr ""
-"Se concede permiso para copiar, distribuir o modificar este documento según "
-"las condiciones de la GNU Free Documentation License (GFDL), Versión 1.1 o "
-"cualquier versión posterior publicada por la Free Software Foundation sin "
-"Secciones invariantes, Textos de portada y Textos de contraportada. "
-"Encontrará una copia de la GFDL en este <_:ulink-1/> o en el archivo COPYING-"
-"DOCS distribuido con este manual."
+"<gui>Rojo</gui> muestra el número de partidas ganadas por el jugador que "
+"controló las canicas rojas."
+
+#: C/scores.page:48(item/p)
+msgid ""
+"<gui>Blue</gui> displays the number of games won by the player who was "
+"controlling the blue marbles."
+msgstr ""
+"<gui>Rojo</gui> muestra el número de partidas ganadas por el jugador que "
+"controló las canicas azules."
+
+#: C/sound-animation.page:21(info/desc)
+msgid "Play <app>Four-in-a-row</app> without sounds or animation."
+msgstr "Jugar a <app>Cuatro en raya</app> con sonidos o con animación."
+
+#: C/sound-animation.page:24(page/title)
+msgid "Disable sounds or animation"
+msgstr "Desactivar los sonidos o la animación"
+
+#: C/sound-animation.page:27(section/title)
+msgid "Sounds"
+msgstr "Sonidos"
+
+#: C/sound-animation.page:29(section/p)
+msgid ""
+"When sounds are enabled, you will hear something every time a marble is "
+"dropped, or when a game ends."
+msgstr ""
+"Cuando los sonidos están activados, escuchará algo cada vez que se suelta "
+"una canica o cuando termina el juego."
+
+#: C/sound-animation.page:33(steps/title)
+msgid "To disable sounds:"
+msgstr "Para desactivar los sonidos:"
+
+#: C/sound-animation.page:40(item/p)
+msgid ""
+"Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
+"option again to enable the feature."
+msgstr ""
+"Desmarque la casilla <gui style=\"checkbox\">Activar sonidos</gui>. Puede "
+"volver a marcar la casilla otra vez para activar esta característica."
+
+#: C/sound-animation.page:47(section/title)
+msgid "Animation"
+msgstr "Animación"
+
+#: C/sound-animation.page:49(section/p)
+msgid "Animation results in a more fluid movement of the marbles."
+msgstr "La animación provoca un movimiento de las canicas más fluido."
+
+#: C/sound-animation.page:52(steps/title)
+msgid "To disable animation:"
+msgstr "Para desactivar la animación:"
+
+#: C/sound-animation.page:59(item/p)
+msgid ""
+"Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
+"option again to enable the feature."
+msgstr ""
+"Desmarque la casilla <gui style=\"checkbox\">Activar animación</gui>. Puede "
+"volver a marcar la casilla otra vez para activar esta característica."
+
+#: C/legal.xml:4(p/link)
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "licencia Creative Commons Atribución-CompartirIgual 3.0 Unported"
+
+#: C/legal.xml:3(license/p)
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
+
+#~ msgid "Four-in-a-Row Manual"
+#~ msgstr "Manual de Cuatro en raya"
+
+#~ msgid ""
+#~ "The object of Four-in-a-Row is to place four pieces in a vertical, "
+#~ "horizontal, or diagonal row while the opponent tries to block and make "
+#~ "his/her own row of four. Four-in-a-Row can be played against another "
+#~ "human or the computer."
+#~ msgstr ""
+#~ "El objetivo de Cuatro en raya es poner cuatro fichas en una fila "
+#~ "vertical, horizontal o diagonal mientras que el oponente intenta "
+#~ "bloquearle y hacer su propia fila de cuatro fichas. Cuatro en raya se "
+#~ "puede jugar contra otra persona o contra el equipo."
+
+#~ msgid "<year>2001-2002</year> <holder>Timothy Musson</holder>"
+#~ msgstr "<year>2001-2002</year> <holder>Timothy Musson</holder>"
+
+#~ msgid "GNOME Documentation Project"
+#~ msgstr "Proyecto de Documentación de GNOME"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:fdl"
+#~ "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+#~ msgstr ""
+#~ "Se concede permiso para copiar, distribuir o modificar este documento "
+#~ "según las condiciones de la GNU Free Documentation License (GFDL), "
+#~ "Versión 1.1 o cualquier versión posterior publicada por la Free Software "
+#~ "Foundation sin Secciones invariantes, Textos de portada y Textos de "
+#~ "contraportada. Encontrará una copia de la GFDL en este <ulink type=\"help"
+#~ "\" url=\"help:fdl\">enlace</ulink> o en el archivo COPYING-DOCS "
+#~ "distribuido con este manual."
+
+#~ msgid ""
+#~ "This manual is part of a collection of GNOME manuals distributed under "
+#~ "the GFDL. If you want to distribute this manual separately from the "
+#~ "collection, you can do so by adding a copy of the license to the manual, "
+#~ "as described in section 6 of the license."
+#~ msgstr ""
+#~ "Este manual forma parte de una colección de documentos de GNOME "
+#~ "distribuidos según la GFDL. Si quiere distribuir este manual de forma "
+#~ "independiente de la colección, puede hacerlo agregando una copia de la "
+#~ "licencia al documento, según se describe en la sección 6 de la misma."
+
+#~ msgid ""
+#~ "Many of the names used by companies to distinguish their products and "
+#~ "services are claimed as trademarks. Where those names appear in any GNOME "
+#~ "documentation, and the members of the GNOME Documentation Project are "
+#~ "made aware of those trademarks, then the names are in capital letters or "
+#~ "initial capital letters."
+#~ msgstr ""
+#~ "Muchos de los nombres utilizados por las empresas para distinguir sus "
+#~ "productos y servicios se consideran marcas comerciales. Cuando estos "
+#~ "nombres aparezcan en la documentación de GNOME, y siempre que se haya "
+#~ "informado a los miembros del Proyecto de documentación de GNOME de dichas "
+#~ "marcas comerciales, los nombres aparecerán en mayúsculas o con las "
+#~ "iniciales en mayúsculas."
+
+#~ msgid ""
+#~ "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+#~ "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES "
+#~ "THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+#~ "MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+#~ "RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+#~ "MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+#~ "MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+#~ "WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+#~ "SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES "
+#~ "AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED "
+#~ "VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS "
+#~ "DISCLAIMER; AND"
+#~ msgstr ""
+#~ "EL DOCUMENTO SE PROPORCIONA \"TAL CUAL\", SIN GARANTÍA DE NINGÚN TIPO, NI "
+#~ "EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL "
+#~ "DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS COMERCIALES, "
+#~ "SEA ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO EL "
+#~ "RIESGO RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU "
+#~ "VERSIÓN MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN "
+#~ "MODIFICADA DE AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y "
+#~ "NO EL REDACTOR INICIAL, AUTOR O CONTRIBUYENTE) ASUMIRÁ LOS COSTES DE TODA "
+#~ "REPARACIÓN, MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE "
+#~ "GARANTÍA ES UNA PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE "
+#~ "NINGÚN DOCUMENTO NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO "
+#~ "DENTRO DEL CUMPLIMIENTO DE LA RENUNCIA;Y"
+
+#~ msgid ""
+#~ "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT "
+#~ "(INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL "
+#~ "WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED "
+#~ "VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE "
+#~ "LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR "
+#~ "CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, "
+#~ "DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR "
+#~ "MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR "
+#~ "RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, "
+#~ "EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH "
+#~ "DAMAGES."
+#~ msgstr ""
+#~ "EN NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR "
+#~ "(INCLUYENDO NEGLIGENCIA) CONTRATO O DOCUMENTO DE OTRO TIPO, EL AUTOR, EL "
+#~ "ESCRITOR INICIAL, EL AUTOR DE APORTACIONES NI NINGÚN DISTRIBUIDOR DEL "
+#~ "DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, NI NINGÚN PROVEEDOR DE "
+#~ "NINGUNA DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN "
+#~ "DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, "
+#~ "INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE FONDO DE COMERCIO, PARO "
+#~ "TÉCNICO, FALLO INFORMÁTICO O AVERÍA O CUALQUIER OTRO POSIBLE DAÑO O "
+#~ "AVERÍA DERIVADO O RELACIONADO CON EL USO DEL DOCUMENTO O SUS VERSIONES "
+#~ "MODIFICADAS, AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE "
+#~ "QUE SE PRODUJESEN ESOS DAÑOS."
+
+#~ msgid ""
+#~ "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
+#~ "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
+#~ "UNDERSTANDING THAT: <_:orderedlist-1/>"
+#~ msgstr ""
+#~ "EL DOCUMENTO Y VERSIONES MODIFICADAS SE PROPORCIONAN BAJO LOS TÉRMINOS DE "
+#~ "LA LICENCIA LIBRE DE DOCUMENTACIÓN DE GNU Y TENIENDO EN CUENTA QUE: <_:"
+#~ "orderedlist-1/>"
+
+#~ msgid ""
+#~ "<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
+#~ "<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
+#~ msgstr ""
+#~ "<firstname>Timothy</firstname> <surname>Musson</surname> <affiliation> "
+#~ "<address><email>trmusson@ihug.co.nz</email></address> </affiliation>"
+
+#~ msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
+#~ msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
+
+#~ msgid ""
+#~ "<revnumber>Four-in-a-Row Manual V2.8</revnumber> <date>September 2004</"
+#~ "date> <_:revdescription-1/>"
+#~ msgstr ""
+#~ "<revnumber>Manual de Cuatro en raya v2.8</revnumber> <date>Septiembre "
+#~ "2004</date> <_:revdescription-1/>"
+
+#~ msgid "This manual describes version 2.12 of Four-in-a-Row."
+#~ msgstr "Este manual describe la versión 2.12 de Cuatro en raya."
+
+#~ msgid "Feedback"
+#~ msgstr "Comentarios"
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding the Four-in-a-Row "
+#~ "application or this manual, follow the directions in the <ulink url="
+#~ "\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</"
+#~ "ulink>."
+#~ msgstr ""
+#~ "Para informar de un fallo o hacer alguna sugerencia sobre la aplicación "
+#~ "Cuatro en raya o sobre este manual, siga las indicaciones en la <ulink "
+#~ "url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Página de "
+#~ "comentarios de GNOME</ulink>."
+
+#~ msgid ""
+#~ "<application>Four-in-a-Row</application> is a four-in-a-row game for the "
+#~ "GNOME Project. The object of the game is to build a line of four of your "
+#~ "marbles while trying to stop your opponent (human or computer) building a "
+#~ "line of his or her own. A line can be horizontal, vertical or diagonal."
+#~ msgstr ""
+#~ "<application>Cuatro en raya</application> es un juego de cuatro en raya "
+#~ "para el proyecto GNOME. El objetivo del juego es construir una línea de "
+#~ "cuatro canicas mientras intenta impedir que su oponente (humano o "
+#~ "máquina) construya su propia línea. Una línea puede ser horizontal, "
+#~ "vertical o diagonal."
+
+#~ msgid ""
+#~ "To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-"
+#~ "in-a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of "
+#~ "the <guimenu>Main Menu</guimenu>, or type <command>gnect</command> on the "
+#~ "command line."
+#~ msgstr ""
+#~ "Para ejecutar <application>Cuatro en raya</application>, seleccione "
+#~ "<guimenuitem>Cuatro en raya</guimenuitem> del submenú <guisubmenu>Juegos</"
+#~ "guisubmenu> del <guimenu>Menú principal</guimenu>, o escriba "
+#~ "<command>gnect</command> en la línea de comandos."
+
+#~ msgid ""
+#~ "<application>Four-in-a-Row</application> is included in the "
+#~ "<filename>GNOME-games</filename> package, which is part of the GNOME "
+#~ "desktop environment. This document describes version 2.8 of "
+#~ "<application>Four-in-a-Row</application>."
+#~ msgstr ""
+#~ "<application>Cuatro en raya</application> está incluido en el paquete "
+#~ "<filename>GNOME-games</filename>, que es parte del entorno de escritorio "
+#~ "GNOME. Este documento describe la versión 2.8 de <application>Cuatro en "
+#~ "raya</application>."
+
+#~ msgid ""
+#~ "Four-in-a-Row also features multiplayer support with two human players in "
+#~ "hotseat mode."
+#~ msgstr ""
+#~ "Cuatro en raya también soporta multijugador con dos jugadores humanos en "
+#~ "el mismo equipo o en modo red."
+
+#~ msgid "Basic Usage"
+#~ msgstr "Uso básico"
+
+#~ msgid "Playing Four-in-a-Row"
+#~ msgstr "Jugar a Cuatro en raya"
+
+#~ msgid ""
+#~ "To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
+#~ "guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
+#~ msgstr ""
+#~ "Para iniciar una nueva partida de Cuatro en raya elija "
+#~ "<menuchoice><guimenu>Juego</guimenu><guimenuitem>Nueva partida</"
+#~ "guimenuitem></menuchoice>."
+
+#~ msgid ""
+#~ "The <interface>game board</interface> consists of seven columns and six "
+#~ "rows. Above it, a special row indicates the current player and the marble "
+#~ "about to be played. Each move consists of dropping a marble in one of the "
+#~ "columns. The marble lands on the topmost empty row of the chosen column."
+#~ msgstr ""
+#~ "El <interface>tablero de juego</interface> consiste en siete columnas y "
+#~ "seis filas. Encima de esto, una fila especial indica el jugador actual y "
+#~ "la caninca que se está jugando. Cada movimiento consiste en soltar una "
+#~ "canica en una de las columnas. La canica aterriza en la fila vacía "
+#~ "inferior de la columna elegida."
+
+#~ msgid ""
+#~ "To make a move, click on a column with the mouse. To play with the "
+#~ "keyboard, move the marble in the top row with the left and right arrow "
+#~ "keys, and drop it in place with the down arrow key. Your marble will drop "
+#~ "into the topmost empty row of that column."
+#~ msgstr ""
+#~ "Para hacer un movimiento, pulse sobre una columna con el ratón. Para "
+#~ "jugar con el teclado, mueva la canina de la fila superior con las teclas "
+#~ "de flecha izquierda y derecha, y suéltela en su lugar con la tecla de "
+#~ "flecha abajo. Su canica caerá en la fila vacía inferior de esa columna."
+
+#~ msgid "Four-in-a-Row's Main Window"
+#~ msgstr "Ventana principal de Cuatro en raya"
+
+#~ msgid ""
+#~ "<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG"
+#~ "\" srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Four-in-a-"
+#~ "Row's Main Window</phrase> </textobject> <_:caption-1/>"
+#~ msgstr ""
+#~ "<imageobject> <imagedata fileref=\"figures/mainwindow.png\" format=\"PNG"
+#~ "\" srccredit=\"trm\"/> </imageobject> <textobject> <phrase>Ventana "
+#~ "principal de Cuatro en raya</phrase> </textobject> <_:caption-1/>"
+
+#~ msgid ""
+#~ "The game is won when one of the two players manages to line up four of "
+#~ "his or her marbles horizontally, vertically or diagonally. If the board "
+#~ "fills up without a win, the game ends in a draw."
+#~ msgstr ""
+#~ "El juego lo gana quien consigue formar una línea horizontal, vertical o "
+#~ "diagonal de cuatro de sus canicas. Si el tablero se llena sin un ganador, "
+#~ "el juego acaba en empate."
+
+#~ msgid "Commands"
+#~ msgstr "Comandos"
+
+#~ msgid ""
+#~ "To take back a move, choose <menuchoice> <shortcut><keycombo> "
+#~ "<keysym>Ctrl</keysym><keycap>Z</keycap> </keycombo></shortcut> "
+#~ "<guimenuitem>Undo move</guimenuitem> </menuchoice>. If you're playing "
+#~ "against a friend, this will undo one move. If you're playing against the "
+#~ "computer, this will undo the computer's last move and then yours. "
+#~ "Repeating this will return the board to its initial state."
+#~ msgstr ""
+#~ "Para deshacer un movimiento, elija <menuchoice> <shortcut><keycombo> "
+#~ "<keysym>Ctrl</keysym><keycap>Z</keycap> </keycombo></shortcut> "
+#~ "<guimenuitem>Deshacer movimiento</guimenuitem> </menuchoice>. Si está "
+#~ "jugando contra un amigo, esto deshará un movimiento. Si está jugando "
+#~ "contra el equipo, esto deshará su último movimiento y el del equipo. "
+#~ "Repetir esto hará que se vuelva al estado inicial del tablero."
+
+#~ msgid ""
+#~ "Choose <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</"
+#~ "keycap> </keycombo></shortcut> <guimenuitem>Hint</guimenuitem> </"
+#~ "menuchoice> to get a suggestion from the computer for your next move. "
+#~ "This is shown in the status bar."
+#~ msgstr ""
+#~ "Elija <menuchoice> <shortcut><keycombo> <keysym>Ctrl</keysym><keycap>H</"
+#~ "keycap> </keycombo></shortcut> <guimenuitem>Sugerencia</guimenuitem> </"
+#~ "menuchoice> para obtener una sugerencia del equipo para su siguiente "
+#~ "movimiento. Esto se muestra en la barra de estado."
+
+#~ msgid ""
+#~ "Choose <menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> to "
+#~ "show a tally of wins and draws for the current playing session. The "
+#~ "scores will be reset to zero if Player Selection is changed in "
+#~ "Preferences."
+#~ msgstr ""
+#~ "Elija <menuchoice><guimenuitem>Puntuación</guimenuitem></menuchoice> para "
+#~ "mostrar la cuenta de victorias y empates para la sesión actual. La "
+#~ "puntuación se reiniciará a cero si se cambia la selección de jugadores en "
+#~ "las Preferencias."
+
+#~ msgid ""
+#~ "To change the game's settings, select <guimenuitem>Preferences</"
+#~ "guimenuitem> from the <guimenu>Settings</guimenu> menu. This opens the "
+#~ "<interface>Preferences Dialog</interface>."
+#~ msgstr ""
+#~ "Para cambiar los ajustes del juego, seleccione <guimenuitem>Preferencias</"
+#~ "guimenuitem> del menú <guimenu>Configuración</guimenu>. Esto abrirá el "
+#~ "<interface>Diálogo de preferencias</interface>."
+
+#~ msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
+#~ msgstr "<guilabel>Jugador uno</guilabel> y <guilabel>Jugador dos</guilabel>"
+
+#~ msgid ""
+#~ "These two columns tell <application>Four-in-a-Row</application> who's "
+#~ "playing and, if it is the computer, how hard they play. To play against a "
+#~ "friend, select Human for both Player One and Player Two."
+#~ msgstr ""
+#~ "Estas dos columnas indican a <application>Cuatro en raya</application> "
+#~ "quién está jugando, y si es el equipo, en qué nivel lo hará. Para jugar "
+#~ "contra un amigo, seleccione Humano tanto para el Jugador uno como para el "
+#~ "Jugador dos."
+
+#~ msgid "<guilabel>Theme</guilabel>"
+#~ msgstr "<guilabel>Tema</guilabel>"
+
+#~ msgid ""
+#~ "The theme menu lists available themes and lets you choose your favourite."
+#~ msgstr ""
+#~ "El menú temas muestra los temas disponibles y le permite elegir su "
+#~ "favorito."
+
+#~ msgid "<guilabel>Enable Animation</guilabel>"
+#~ msgstr "<guilabel>Activar animación</guilabel>"
+
+#~ msgid "Here you can toggle the game's animation on or off."
+#~ msgstr ""
+#~ "Aquí puede conmutar la animación del juego entre activada o desactivada."
+
+#~ msgid ""
+#~ "Configuration options in the <guilabel>Game</guilabel> tab are: <_:"
+#~ "variablelist-1/>"
+#~ msgstr ""
+#~ "Las opciones de configuración en la pestaña <guilabel>Juego</guilabel> "
+#~ "son: <_:variablelist-1/>"
+
+#~ msgid ""
+#~ "Finally there is a <guilabel>Controls</guilabel> tab to change the "
+#~ "keyboard controls. To change a control, double click the appropriate "
+#~ "entry and then press the new key."
+#~ msgstr ""
+#~ "Finalmente hay una pestaña de <guilabel>Controles</guilabel> para cambiar "
+#~ "los controles del teclado. Para cambiar un control, pulse dos veces con "
+#~ "el ratón sobre la entrada apropiada y después pulse una nueva tecla."
+
+#~ msgid "Creating New Themes"
+#~ msgstr "Crear nuevos temas"
+
+#~ msgid ""
+#~ "This section's included in case you'd like to make your own themes for "
+#~ "<application>Four-in-a-Row</application>. It assumes you're familiar with "
+#~ "basic text editing, graphics software and the command line."
+#~ msgstr ""
+#~ "Esta sección se incluye en caso de que quiera hacer sus propios temas "
+#~ "para <application>Cuatro en raya</application>. Se asume que le es "
+#~ "familiar la edición básica de texto, software de gráficos y la línea de "
+#~ "comandos."
+
+#~ msgid "Images"
+#~ msgstr "Imágenes"
+
+#~ msgid ""
+#~ "<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
+#~ "equal size, lined up horizontally. From left to right:"
+#~ msgstr ""
+#~ "Los juegos de piezas de <application>Cuatro en raya</application> "
+#~ "contienen seis figuras de igual tamaño, alineadas horizontalmente. De "
+#~ "izquierda a derecha:"
+
+#~ msgid "Player One's marble as it appears on the game board"
+#~ msgstr "Canica del jugador uno tal y como aparece en el tablero de juego"
+
+#~ msgid "Player Two's marble as it appears on the game board"
+#~ msgstr "Canica del jugador dos tal y como aparece en el tablero de juego"
+
+#~ msgid "The game board's background"
+#~ msgstr "El fondo del tablero de juego"
+
+#~ msgid "The top row's background"
+#~ msgstr "El fondo de la fila superior"
+
+#~ msgid "Player One's marble as it appears on the top row"
+#~ msgstr "Canica del jugador uno tal y como aparece en la fila superior"
+
+#~ msgid "Player Two's marble as it appears on the top row"
+#~ msgstr "Canica del jugador dos tal y como aparece en la fila superior"
+
+#~ msgid "An example tile set"
+#~ msgstr "Un ejemplo de un juego de piezas"
+
+#~ msgid "This image shows the six tiles in a tile set"
+#~ msgstr "Esta imagen muestra las seis piezas en un juego de piezas"
+
+#~ msgid ""
+#~ "Tiles three and four will be repeated over the game board and top row "
+#~ "unless a full window background image is specified in the theme file."
+#~ msgstr ""
+#~ "Las piezas tres y cuatro se repetirán por todo el tablero de juego y la "
+#~ "fila superior a no ser que se especifique una imagen de ventana completa "
+#~ "como imagen de fondo en el archivo del tema."
+
+#~ msgid "TIP"
+#~ msgstr "Consejo"
+
+#~ msgid ""
+#~ "PNG format is recommended for tile sets. The first, second, fifth and "
+#~ "sixth tiles should contain some transparency if you want the background "
+#~ "to show through. The third and fourth tiles should be solid, with no "
+#~ "transparency, even if you'll be using a full window background image with "
+#~ "your theme."
+#~ msgstr ""
+#~ "Se recomienda usar el formato de archivo PNG para los juegos de piezas. "
+#~ "La primera, segunda, quinta y sexta piezas deberían contener alguna "
+#~ "transparencia si quiere que el fondo se muestre a través de ellas. La "
+#~ "tercera y cuarta piezas deberían ser sólidas, sin transparencia, incluso "
+#~ "si usará una imagen de ventana completa como fondo para su tema."
+
+#~ msgid ""
+#~ "Tiles can be square or rectangular, and any size you like. Most of the "
+#~ "tile sets that come with <application>Four-in-a-Row</application> use "
+#~ "square tiles measuring 50 pixels by 50 pixels."
+#~ msgstr ""
+#~ "Las piezas pueden ser cuadradas o rectangulares, y de cualquier tamaño "
+#~ "que desee. La mayoría de los juegos de piezas que vienen con "
+#~ "<application>Cuatro en raya</application> usan piezas cuadradas de 50 "
+#~ "píxeles por 50 píxeles de tamaño."
+
+#~ msgid ""
+#~ "For a full window background image, there's a bit more work to do. Let's "
+#~ "say your tiles measure 50 by 50 pixels each. The game's display measures "
+#~ "7 by 7 tiles, including the top row, so the ideal background image for "
+#~ "your tile set measures 350 by 350 pixels."
+#~ msgstr ""
+#~ "Para usar una imagen de ventana completa como imagen de fondo, hay algo "
+#~ "más de trabajo que hacer. Digamos que sus piezas tienen un tamaño de 50 "
+#~ "por 50 píxeles. Las dimensiones del juego son de 7 por 7 casillas, "
+#~ "incluyendo la fila superior, de tal forma que la imagen de fondo ideal "
+#~ "para su juego de piezas tendría un tamaño de 350 por 350 píxeles."
+
+#~ msgid ""
+#~ "<application>Four-in-a-Row</application> will automatically scale the "
+#~ "background image if it doesn't match the tile set. This means you can "
+#~ "make \"large\" and \"small\" versions of your theme, both using the same "
+#~ "background image, just by having a large and a small version of your tile "
+#~ "set."
+#~ msgstr ""
+#~ "<application>Cuatro en raya</application> escalará automáticamente la "
+#~ "imagen de fondo si no concuerda con el juego de piezas. Esto significa "
+#~ "que puede hacer una versión «grande» y «pequeña» de su tema, ambas usarán "
+#~ "la misma imagen de fondo, simplemente teniendo una versión grande y una "
+#~ "pequeña de su juego de piezas."
+
+#~ msgid ""
+#~ "So, you now have a tile set and perhaps a background image to go with it. "
+#~ "The next step is to put them in the right place."
+#~ msgstr ""
+#~ "Así que ahora tiene un juego de piezas y quizá una imagen de fondo que va "
+#~ "con él. El siguiente paso es juntarlo todo en el lugar adecuado."
+
+#~ msgid "Putting It Together"
+#~ msgstr "Juntarlo todo"
+
+#~ msgid "Copy your image(s) into the data directory (~/.local/share/gnect)."
+#~ msgstr "Copie sus imágenes en la carpeta de datos (~/.local/share/gnect)."
+
+#~ msgid ""
+#~ "If you start <application>Four-in-a-Row</application> from the command "
+#~ "line, it'll give you clues about any problems it has with your new theme. "
+#~ "If it has none, you'll find your new theme listed the "
+#~ "<interface>Preferences Dialog</interface>."
+#~ msgstr ""
+#~ "Si inicia <application>Cuatro en raya</application> desde la línea de "
+#~ "comandos, le dará indicios sobre cualquier problema que tenga con su "
+#~ "nuevo tema. Si no tiene ninguno, encontrará su nuevo tema en la lista del "
+#~ "<interface>diálogo de preferencias</interface>."
+
+#~ msgid "Have fun!"
+#~ msgstr "¡Diviértase!"
+
+#~ msgid "Known Bugs and Limitations"
+#~ msgstr "Errores conocidos y limitaciones"
+
+#~ msgid ""
+#~ "Occasionally a marble-dropping animation doesn't look as smooth as it "
+#~ "should."
+#~ msgstr ""
+#~ "Ocasionalmente la caída de las canincas no parece tan suave como debería."
+
+#~ msgid "Authors"
+#~ msgstr "Autores"
+
+#~ msgid ""
+#~ "<application>Four-in-a-Row</application> was written by Timothy Musson "
+#~ "(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp."
+#~ "org</email>). Various others have taken the time to help in many ways "
+#~ "since work on <application>Four-in-a-Row</application> began."
+#~ msgstr ""
+#~ "Timothy Musson (<email>trmusson@ihug.co.nz</email>) y David Neary "
+#~ "(<email>bolsh@gimp.org</email>) escribieron <application>Cuatro en raya</"
+#~ "application>. Otros varios se han tomado su tiempo para ayudar de muchas "
+#~ "maneras desde que comenzó el trabajo en <application>Cuatro en raya</"
+#~ "application>."
+
+#~ msgid ""
+#~ "The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
+#~ "\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
+#~ "computer player, was written by Giuliano Bertoletti. We're grateful to "
+#~ "him for allowing us to include his work, without which <application>Four-"
+#~ "in-a-Row</application> wouldn't be nearly as worthwhile."
+#~ msgstr ""
+#~ "El <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
+#~ "\">motor Velena</ulink>, el jugador automático principal de "
+#~ "<application>Cuatro en raya</application>, fue escrito por Giuliano "
+#~ "Bertoletti. Le estamos muy agradecidos por dejarnos incluir su trabajo, "
+#~ "sin el cual <application>Cuatro en raya</application> probablemente no "
+#~ "merecería la pena."
+
+#~ msgid "This manual was written by Timothy Musson."
+#~ msgstr "Timothy Musson escribió este manual."
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding this application or this "
+#~ "manual, follow the directions in this <ulink url=\"ghelp:user-guide?"
+#~ "feedback-bugs\" type=\"help\">document</ulink>."
+#~ msgstr ""
+#~ "Para informar sobre un fallo o hacer sugerencias sobre esta aplicación o "
+#~ "este manual, siga las indicaciones en este <ulink url=\"ghelp:user-guide?"
+#~ "feedback-bugs\" type=\"help\">documento</ulink>."
+
+#~ msgid "License"
+#~ msgstr "Licencia"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the <citetitle>GNU General Public License</citetitle> "
+#~ "as published by the Free Software Foundation; either version 2 of the "
+#~ "License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Este programa es software libre; puede redistribuirlo y/o modificarlo "
+#~ "bajo los términos de la <citetitle>Licencia Pública General GNU</"
+#~ "citetitle> tal como se publica por la Free Software Foundation; ya sea la "
+#~ "versión 2 de la Licencia, o (a su elección) cualquier versión posterior."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the "
+#~ "<citetitle>GNU General Public License</citetitle> for more details."
+#~ msgstr ""
+#~ "Este programa se distribuye con la esperanza de que le sea útil, pero SIN "
+#~ "NINGUNA GARANTÍA; sin incluso la garantía implícita de MERCANTILIDAD o "
+#~ "IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Vea la <citetitle>Licencia "
+#~ "Pública General GNU</citetitle> para más detalles."
+
+#~ msgid ""
+#~ "\n"
+#~ "        Free Software Foundation, Inc.\n"
+#~ "        <street>59 Temple Place</street> - Suite 330\n"
+#~ "        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</"
+#~ "postcode>\n"
+#~ "        <country>USA</country>\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "        Free Software Foundation, Inc.\n"
+#~ "        <street>59 Temple Place</street> - Suite 330\n"
+#~ "        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</"
+#~ "postcode>\n"
+#~ "        <country>USA</country>\n"
+#~ "      "
+
+#~ msgid ""
+#~ "A copy of the <citetitle>GNU General Public License</citetitle> is "
+#~ "included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. "
+#~ "You may also obtain a copy of the <citetitle>GNU General Public License</"
+#~ "citetitle> from the Free Software Foundation by visiting <ulink url="
+#~ "\"http://www.fsf.org\" type=\"http\">their Web site</ulink> or by writing "
+#~ "to <_:address-1/>"
+#~ msgstr ""
+#~ "Se incluye una copia de la <citetitle>Licencia Pública General GNU</"
+#~ "citetitle> en el apéndice de la <citetitle>Guía de Usuario de GNOME</"
+#~ "citetitle>. También puede obtener una copia de la <citetitle>Licencia "
+#~ "Pública General GNU</citetitle> de la Free Software Foundation visitando "
+#~ "<ulink url=\"http://www.fsf.org\" type=\"http\">su página web</ulink> o "
+#~ "escribiendo a <_:address-1/>"
+
+#~ msgid "link"
+#~ msgstr "enlace"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <_:ulink-1/> or in the file COPYING-"
+#~ "DOCS distributed with this manual."
+#~ msgstr ""
+#~ "Se concede permiso para copiar, distribuir o modificar este documento "
+#~ "según las condiciones de la GNU Free Documentation License (GFDL), "
+#~ "Versión 1.1 o cualquier versión posterior publicada por la Free Software "
+#~ "Foundation sin Secciones invariantes, Textos de portada y Textos de "
+#~ "contraportada. Encontrará una copia de la GFDL en este <_:ulink-1/> o en "
+#~ "el archivo COPYING-DOCS distribuido con este manual."
 
 #~ msgid ""
 #~ "The last step is to put your image(s) where <application>Four-in-a-Row</"
