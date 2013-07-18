@@ -1,6 +1,7 @@
 # Czech translation of gnect help.
 # Copyright (C) 2009 the author(s) of gnome-games.
 # This file is distributed under the same license as the gnect help.
+#
 # Marek Černocký <marek@manet.cz>, 2009, 2011, 2013.
 #
 msgid ""
@@ -76,7 +77,7 @@ msgstr "Předvolby"
 
 #: C/appearance.page:17(info/desc)
 msgid "Use different themes to improve your gaming experience."
-msgstr "Použijte různé motivy k vylepšení zážitku ze hry."
+msgstr "Používejte různé motivy k vylepšení zážitku ze hry."
 
 #: C/appearance.page:20(page/title)
 msgid "Change the appearance of your gaming area"
