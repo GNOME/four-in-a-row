@@ -442,15 +442,15 @@ msgstr "Člověk"
 
 #: ../src/prefs.c:248 ../src/prefs.c:276
 msgid "Level one"
-msgstr "První úroveň"
+msgstr "Úroveň jedna"
 
 #: ../src/prefs.c:252 ../src/prefs.c:280
 msgid "Level two"
-msgstr "Druhá úroveň"
+msgstr "Úroveň dva"
 
 #: ../src/prefs.c:256 ../src/prefs.c:284
 msgid "Level three"
-msgstr "Třetí úroveň"
+msgstr "Úroveň tři"
 
 #: ../src/prefs.c:262
 msgid "Player Two:"
@@ -479,11 +479,11 @@ msgstr "Klasické"
 
 #: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
 msgid "Red"
-msgstr "Červená"
+msgstr "Červený"
 
 #: ../src/theme.c:45
 msgid "Yellow"
-msgstr "Žlutá"
+msgstr "Žlutý"
 
 #: ../src/theme.c:48
 msgid "High Contrast"
