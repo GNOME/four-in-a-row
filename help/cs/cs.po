@@ -1,686 +1,504 @@
 # Czech translation of gnect help.
 # Copyright (C) 2009 the author(s) of gnome-games.
 # This file is distributed under the same license as the gnect help.
-#
-# Marek Černocký <marek@manet.cz>, 2009, 2011.
+# Marek Černocký <marek@manet.cz>, 2009, 2011, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"POT-Creation-Date: 2011-07-25 04:23+0000\n"
-"PO-Revision-Date: 2011-09-26 19:32+0200\n"
+"POT-Creation-Date: 2013-04-30 15:31+0000\n"
+"PO-Revision-Date: 2013-07-18 12:04+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
-"MIME-Version: 1.0\n"
 "Language: cs\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnect.xml:175(None)
-msgid "@@image: 'figures/mainwindow.png'; md5=372e2515d12d07635a88bff671cc1a14"
-msgstr ""
-"@@image: 'figures/mainwindow.png'; md5=7ac316a507b18d2f707ee051de82720d"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Marek Černocký <marek@manet.cz>, 2013"
 
-#: C/gnect.xml:21(title)
-msgid "Four-in-a-Row Manual"
-msgstr "Příručka ke hře Čtyři-v-řadě"
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#.
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:18(media)
+msgctxt "_"
+msgid "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
+msgstr "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
 
-#: C/gnect.xml:23(para)
+#: C/index.page:11(credit/name) C/appearance.page:13(credit/name)
+#: C/basics.page:13(credit/name) C/choose-opponent.page:13(credit/name)
+#: C/controls-change.page:15(credit/name)
+#: C/controls-default.page:15(credit/name) C/make-easy.page:13(credit/name)
+#: C/scores.page:13(credit/name) C/sound-animation.page:13(credit/name)
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#: C/index.page:15(info/desc)
+msgid "Index"
+msgstr "Rejstřík"
+
+#: C/index.page:18(page/title)
 msgid ""
-"The object of Four-in-a-Row is to place four pieces in a vertical, "
-"horizontal, or diagonal row while the opponent tries to block and make his/"
-"her own row of four. Four-in-a-Row can be played against another human or "
-"the computer."
+"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
+"media>Four-in-a-row"
 msgstr ""
-"Podstatou hry Čtyři-v-řadě je umístit čtyři kameny vedle sebe vodorovně nebo "
-"svisle nebo úhlopříčně, přičemž protihráč se vás snaží blokovat a přitom si "
-"vytvořit svoji vlastní čtveřici. Hru Čtyři-v-řadě můžete hrát proti dalšímu "
-"člověku nebo proti počítači."
+"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
+"media>Čtyři-v-řadě"
 
-#: C/gnect.xml:32(year)
-msgid "2001-2002"
-msgstr "2001-2002"
-
-#: C/gnect.xml:33(holder)
-msgid "Timothy Musson"
-msgstr "Timothy Musson"
-
-#: C/gnect.xml:46(publishername)
-msgid "GNOME Documentation Project"
-msgstr "Dokumentační projekt GNOME"
-
-#: C/gnect.xml:2(para)
+#: C/index.page:21(page/p)
 msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
-"in the file COPYING-DOCS distributed with this manual."
+"<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
+"is to stack four of your marbles in a horizontal, vertical or diagonal line "
+"while stopping your opponent from doing the same with their marbles."
 msgstr ""
-"Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
-"Free Documentation License, verze 1.1 nebo jakékoli další verze vydané "
-"nadací Free Software Foundation; bez neměnných oddílů, bez textů předních "
-"desek a bez textů zadních desek. Kopie této licence je zahrnuta v oddílu "
-"jménem <ulink type=\"help\" url=\"help:fdl\">GNU Free Documentation "
-"License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."
+"<app>Čtyři-v-řadě</app> je strategická hra pro GNOME. Cílem hry je sestavit "
+"řadu čtyř svých kuliček, ať už vodorovně, svisle či úhlopříčně, a přitom se "
+"snažit zabránit svému protihráči udělat to samé."
 
-#: C/gnect.xml:12(para)
-msgid ""
-"This manual is part of a collection of GNOME manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
-msgstr ""
-"Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod "
-"licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, "
-"musíte přiložit kopii licence dle popisu v sekci 6 dané licence."
+#: C/index.page:26(section/title)
+msgid "Game play"
+msgstr "Hraní hry"
 
-#: C/gnect.xml:19(para)
-msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any GNOME "
-"documentation, and the members of the GNOME Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
-msgstr ""
-"Mnoho užívaných jmen určených k zviditelnění produktů nebo služeb jsou "
-"ochranné známky. Na místech, kde jsou tato jména v dokumentaci užita a "
-"členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se "
-"jedná o ochrannou známku, je takové jméno psáno velkými písmeny celé nebo s "
-"velkým písmenem na začátku."
-
-#: C/gnect.xml:35(para)
-msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr ""
-"DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“ BEZ ZÁRUKY V JAKÉKOLIV PODOBĚ, "
-"NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ "
-"VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO "
-"NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, "
-"NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO "
-"JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO "
-"JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY "
-"ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO "
-"LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI "
-"ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
-
-#: C/gnect.xml:55(para)
-msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
-msgstr ""
-"ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN "
-"(VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, "
-"KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO "
-"UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN "
-"ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ "
-"ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY "
-"DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO "
-"JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE "
-"K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY "
-"TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
-
-#: C/gnect.xml:28(para)
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
-msgstr ""
-"DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU "
-"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <placeholder-1/>"
-
-#: C/gnect.xml:53(firstname)
-msgid "Timothy"
-msgstr "Timothy"
-
-#: C/gnect.xml:54(surname)
-msgid "Musson"
-msgstr "Musson"
-
-#: C/gnect.xml:57(email)
-msgid "trmusson@ihug.co.nz"
-msgstr "trmusson@ihug.co.nz"
-
-#: C/gnect.xml:80(revnumber)
-msgid "Four-in-a-Row Manual V2.8"
-msgstr "Příručka V 2.8 ke hře Čtyři-v-řadě"
-
-#: C/gnect.xml:81(date)
-msgid "September 2004"
-msgstr "Září 2004"
-
-#: C/gnect.xml:83(para)
-msgid "Timothy Musson <email>trmusson@ihug.co.nz</email>"
-msgstr "Timothy Musson <email>trmusson@ihug.co.nz</email>"
-
-#: C/gnect.xml:91(releaseinfo)
-msgid "This manual describes version 2.12 of Four-in-a-Row."
-msgstr "Tato příručka popisuje Čtyři-v-řadě ve verzi 2.12"
-
-#: C/gnect.xml:95(title)
-msgid "Feedback"
-msgstr "Ohlasy"
-
-#: C/gnect.xml:96(para)
-msgid ""
-"To report a bug or make a suggestion regarding the Four-in-a-Row application "
-"or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?"
-"feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr ""
-"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
-"<application>Čtyři-v-řadě</application> nebo této příručce, postupujte dle "
-"instrukcí na stránce <ulink url=\"ghelp:user-guide?feedback-bugs\" type="
-"\"help\">Stránka s ohlasy na GNOME</ulink>."
-
-#: C/gnect.xml:112(title)
-msgid "Introduction"
-msgstr "Úvod"
-
-#: C/gnect.xml:114(para)
-msgid ""
-"<application>Four-in-a-Row</application> is a four-in-a-row game for the "
-"GNOME Project. The object of the game is to build a line of four of your "
-"marbles while trying to stop your opponent (human or computer) building a "
-"line of his or her own. A line can be horizontal, vertical or diagonal."
-msgstr ""
-"<application>Čtyři-v-řadě</application> je hra four-in-a-row pro Projekt "
-"GNOME. Podstatou hry je sestavit řadu čtyř svých kuliček a přitom se snažit "
-"zabránit svému protihráči (člověku nebo počítači) sestavit řadu z jeho "
-"vlastních kuliček. Řada může být vodorovná, svislá i úhlopříčná."
-
-#: C/gnect.xml:122(para)
-msgid ""
-"To run <application>Four-in-a-Row</application>, select <guimenuitem>Four-in-"
-"a-Row</guimenuitem> from the <guisubmenu>Games</guisubmenu> submenu of the "
-"<guimenu>Main Menu</guimenu>, or type <command>gnect</command> on the "
-"command line."
-msgstr ""
-"<application>Čtyři-v-řadě</application> spustíte tak, že zvolíte "
-"<guimenuitem>Čtyři-v-řadě</guimenuitem> v podnabídce <guisubmenu>Hry</"
-"guisubmenu> z <guimenu>hlavní nabídky</guimenu> nebo napíšete "
-"<command>gnect</command> v příkazovém řádku."
-
-#: C/gnect.xml:130(para)
-msgid ""
-"<application>Four-in-a-Row</application> is included in the <filename>GNOME-"
-"games</filename> package, which is part of the GNOME desktop environment. "
-"This document describes version 2.8 of <application>Four-in-a-Row</"
-"application>."
-msgstr ""
-"<application>Čtyři-v-řadě</application> je součástí balíku <filename>GNOME-"
-"games</filename>, který patří k pracovnímu prostředí GNOME. Tento dokument "
-"popisuje verzi 2.8 aplikace <application>Čtyři-v-řadě</application>."
-
-#: C/gnect.xml:136(para)
-#| msgid ""
-#| "Four-in-a-Row also features <link linkend=\"network-games\">multiplayer</"
-#| "link> support with two human players in hotseat or network mode."
-msgid ""
-"Four-in-a-Row also features multiplayer support with two human players in "
-"hotseat mode."
-msgstr ""
-"Čtyři-v-řadě rovněž podporuje hru pro více hráčů se dvěma lidskými hráči "
-"přímo u počítače nebo přes síť."
-
-#: C/gnect.xml:150(title)
-msgid "Basic Usage"
-msgstr "Základní použití"
-
-#: C/gnect.xml:156(title)
-msgid "Playing Four-in-a-Row"
-msgstr "Jak hrát Čtyři-v-řadě"
-
-#: C/gnect.xml:158(para)
-msgid ""
-"To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</"
-"guimenu><guimenuitem>New Game</guimenuitem></menuchoice>."
-msgstr ""
-"Novou hru Čtyři-v-řadě začnete volbou <menuchoice><guimenu>Hra</"
-"guimenu><guimenuitem>Nová hra</guimenuitem></menuchoice>."
-
-#: C/gnect.xml:162(para)
-msgid ""
-"The <interface>game board</interface> consists of seven columns and six "
-"rows. Above it, a special row indicates the current player and the marble "
-"about to be played. Each move consists of dropping a marble in one of the "
-"columns. The marble lands on the topmost empty row of the chosen column."
-msgstr ""
-"<interface>Hrací deska</interface> sestává ze sedmi sloupců a šesti řádků. "
-"Nad nimi je speciální řádek ukazující, který hráč právě hraje a jeho "
-"kuličku. Tahem se rozumí upuštění kuličky v jednom ze sloupců. Kulička "
-"přistane v nejvrchnějším volném řádku zvoleného sloupce."
-
-#: C/gnect.xml:167(para)
-msgid ""
-"To make a move, click on a column with the mouse. To play with the keyboard, "
-"move the marble in the top row with the left and right arrow keys, and drop "
-"it in place with the down arrow key. Your marble will drop into the topmost "
-"empty row of that column."
-msgstr ""
-"Tah provedete tak, že kliknete na sloupec myší. Pokud hrajete z klávesnice, "
-"posouvejte kuličku v horním řádku pomocí levé a pravé šípky a šipkou dolů ji "
-"upusťte. Kulička dopadne do volného řádku na vrchu sloupce."
-
-#: C/gnect.xml:178(phrase) C/gnect.xml:180(para)
-msgid "Four-in-a-Row's Main Window"
-msgstr "Hlavní okno hry Čtyři-v-řadě"
-
-#: C/gnect.xml:183(para)
-msgid ""
-"The game is won when one of the two players manages to line up four of his "
-"or her marbles horizontally, vertically or diagonally. If the board fills up "
-"without a win, the game ends in a draw."
-msgstr ""
-"Hru vyhraje ten z hráčů, který uspořádá čtyři své kuličky do vodorovné, "
-"svislé nebo úhlopříčné řady. Pokud se herní deska zaplní, aniž by někdo "
-"vyhrál, končí hra remízou."
-
-#: C/gnect.xml:194(title)
-msgid "Commands"
-msgstr "Příkazy"
-
-#. id for removed section
-#: C/gnect.xml:197(para)
-msgid ""
-"To take back a move, choose <menuchoice><shortcut><keycombo><keysym>Ctrl</"
-"keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Undo move</"
-"guimenuitem></menuchoice>. If you're playing against a friend, this will "
-"undo one move. If you're playing against the computer, this will undo the "
-"computer's last move and then yours. Repeating this will return the board to "
-"its initial state."
-msgstr ""
-"Pokud chcete vrátit tah zpět, zvolte "
-"<menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>Z</keycap></"
-"keycombo></shortcut><guimenuitem>Tah zpět</guimenuitem></menuchoice>. V "
-"případě, že hrajete proti svému kamarádovi, vrátí se zpět jeden tah. V "
-"případě, že hrajete proti počítači, vrátí se zpět poslední tah počítače a "
-"potom váš. Když to budete provádět opakovaně, dostanete se až na začátek hry."
-
-#: C/gnect.xml:209(para)
-msgid ""
-"Choose <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
-"keycap></keycombo></shortcut><guimenuitem>Hint</guimenuitem></menuchoice> to "
-"get a suggestion from the computer for your next move. This is shown in the "
-"status bar."
-msgstr ""
-"Volbou <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</"
-"keycap></keycombo></shortcut><guimenuitem>Rada</guimenuitem></menuchoice> "
-"získáte od počítače doporučení pro příští tah. Ukáže se vám ve stavovém "
-"řádku."
-
-#: C/gnect.xml:217(para)
-msgid ""
-"Choose <menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> to show a "
-"tally of wins and draws for the current playing session. The scores will be "
-"reset to zero if Player Selection is changed in Preferences."
-msgstr ""
-"Pomocí <menuchoice><guimenuitem>Skóre</guimenuitem></menuchoice> se podíváte "
-"na záznam výher a remíz současného herního sezení. Pokud v předvolbách "
-"provedete změny v nastavení hráčů, tak se skóre vynulují."
-
-#: C/gnect.xml:232(title)
+#: C/index.page:30(section/title)
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: C/gnect.xml:234(para)
+#: C/appearance.page:17(info/desc)
+msgid "Use different themes to improve your gaming experience."
+msgstr "Použijte různé motivy k vylepšení zážitku ze hry."
+
+#: C/appearance.page:20(page/title)
+msgid "Change the appearance of your gaming area"
+msgstr "Jak změnit vzhled hrací plochy"
+
+#: C/appearance.page:22(page/p)
 msgid ""
-"To change the game's settings, select <guimenuitem>Preferences</guimenuitem> "
-"from the <guimenu>Settings</guimenu> menu. This opens the "
-"<interface>Preferences Dialog</interface>."
+"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
+"a black grid when you start a new game."
 msgstr ""
-"Pokud chcete změnit nastavení hry, klikněte na <guimenuitem>Předvolby</"
-"guimenuitem> v nabídce <guimenu>Nastavení</guimenu>. Tím se otevře dialogové "
-"okno <interface>Předvolby Čtyři-v-řadě</interface>."
+"Jako výchozí používá hra <app>Čtyři-v-řadě</app> po spuštění plné červené a "
+"modré kuličky na černé herní mřížce."
 
-#: C/gnect.xml:248(term)
-msgid "<guilabel>Player One</guilabel> and <guilabel>Player Two</guilabel>"
-msgstr "<guilabel>Hráč 1</guilabel> a <guilabel>Hráč 2</guilabel>"
+#: C/appearance.page:26(steps/title)
+msgid "To use a different theme:"
+msgstr "Když chcet použít jiný motiv:"
 
-#: C/gnect.xml:253(para)
+#: C/appearance.page:28(item/p) C/sound-animation.page:35(item/p)
+#: C/sound-animation.page:54(item/p)
 msgid ""
-"These two columns tell <application>Four-in-a-Row</application> who's "
-"playing and, if it is the computer, how hard they play. To play against a "
-"friend, select Human for both Player One and Player Two."
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgstr ""
-"Tyto dva sloupce říkají, kdo hru <application>Čtyři-v-řadě</application> "
-"hraje a v případě, že jde o počítač, jak tvrdě hraje. Pokud si chcete zahrát "
-"s kamarádem, tak zvolte Člověk pro Hráče 1 i Hráče 2."
+"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
+"\">Předvolby</gui> <gui style=\"menuitem\">Hra</gui></guiseq>."
 
-#: C/gnect.xml:263(guilabel)
-msgid "Theme"
-msgstr "Motiv"
-
-#: C/gnect.xml:265(para)
+#: C/appearance.page:33(item/p)
 msgid ""
-"The theme menu lists available themes and lets you choose your favourite."
+"Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
+"down menu to the right of <gui style=\"group\">Theme</gui>. The change will "
+"be reflected immediately in the game window."
 msgstr ""
-"Nabídkový seznam motivů obsahuje dostupné motivy, ze kterých si můžete "
-"vybrat svůj oblíbený."
+"Motiv, který se vám líbí, vyberte v části <gui>Vzhled</gui> v rozbalovacím "
+"seznamu naprovo od <gui style=\"group\">Motiv</gui>. Změna se v herním okně "
+"ihned projeví."
 
-#: C/gnect.xml:273(guilabel)
-msgid "Enable Animation"
-msgstr "Povolit animace"
-
-#: C/gnect.xml:275(para)
-msgid "Here you can toggle the game's animation on or off."
-msgstr "Zde můžete přepínat, zda jsou ve hře zapnuté nebo vypnuté animace."
-
-#: C/gnect.xml:241(para)
+#: C/basics.page:17(info/desc)
 msgid ""
-"Configuration options in the <guilabel>Game</guilabel> tab are: "
-"<placeholder-1/>"
+"Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
 msgstr ""
-"Volby nastavení na kartě <guilabel>Hra</guilabel> jsou: <placeholder-1/>"
+"Spuštění hry, hraní přes celou obrazovku a ukončení hry <app>Čtyři-v-řadě</"
+"app>."
 
-#: C/gnect.xml:283(para)
+#: C/basics.page:21(page/title)
+msgid "Basic instructions"
+msgstr "Úvodní instrukce"
+
+#: C/basics.page:24(section/title)
+msgid "Start a new game"
+msgstr "Spuštění hry"
+
+#: C/basics.page:26(section/p)
 msgid ""
-"Finally there is a <guilabel>Controls</guilabel> tab to change the keyboard "
-"controls. To change a control, double click the appropriate entry and then "
-"press the new key."
+"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
+"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
+"a new game."
 msgstr ""
-"Nakonec je zde karta <guilabel>Ovládání klávesnicí</guilabel> na změnu "
-"ovládacích kláves. Ovládání změníte tak, že dvojitě kliknete na příslušnou "
-"položku a po té zmáčknete novou klávesu."
+"Pro spuštění hry vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style="
+"\"menuitem\">Nová</gui></guiseq> nebo zmáčkněte <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq>."
 
-#: C/gnect.xml:298(title)
-msgid "Creating New Themes"
-msgstr "Vytváření nových motivů"
+#: C/basics.page:34(section/title)
+msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
+msgstr "Hraní hry v režimu celé obrazovky"
 
-#: C/gnect.xml:300(para)
+#: C/basics.page:36(section/p)
 msgid ""
-"This section's included in case you'd like to make your own themes for "
-"<application>Four-in-a-Row</application>. It assumes you're familiar with "
-"basic text editing, graphics software and the command line."
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+"fullscreen mode. You can return to the default screen size by pressing "
+"<key>F11</key> again."
 msgstr ""
-"Tato kapitola je zde pro případ, že byste si chtěli vytvořit své vlastní "
-"téma pro hru <application>Čtyři-v-řadě</application>. Předpokladem je, že "
-"jste zběhlí v základní práci s textovým editorem, grafickým software a "
-"příkazovým řádkem."
+"Jestli chcete hrát v režimu celé obrazovky, vyberte <guiseq><gui style=\"menu"
+"\">Zobrazit</gui> <gui style=\"menuitem\">Celá obrazovka</gui></guiseq> nebo "
+"zmáčkněte <key>F11</key>. Opětovným zmáčknutím <key>F11</key> se vrátíte na "
+"původní velikost."
 
-#: C/gnect.xml:308(title)
-msgid "Images"
-msgstr "Obrázky"
+#: C/basics.page:44(section/title)
+msgid "Quit <app>Four-in-a-row</app>"
+msgstr "Ukončení hry"
 
-#: C/gnect.xml:310(para)
+#: C/basics.page:46(section/p)
 msgid ""
-"<application>Four-in-a-Row</application>'s tile sets contain six tiles of "
-"equal size, lined up horizontally. From left to right:"
+"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
+"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
+"<app>Four-in-a-row</app> at any time."
 msgstr ""
-"Sada kamenů pro hru <application>Čtyři-v-řadě</application> sestává z šesti "
-"kamenů stejné velikosti uspořádaných vodorovně. Zleva doprava to jsou:"
+"Hru <app>Čtyři-v-řadě</app> můžete kdykoliv ukončit pomocí nabídky <gui><gui "
+"style=\"menu\">Hra</gui> <gui style=\"menuitem\">Ukončit</gui></guiseq> nebo "
+"zmáčknutím <keyseq><key>Ctrl</key><key>Q</key></keyseq>."
 
-#: C/gnect.xml:317(para)
-msgid "Player One's marble as it appears on the game board"
-msgstr "Kulička prvního hráče v podobě, ve které se objevuje na hrací desce"
+#: C/choose-opponent.page:17(credit/name)
+#: C/sound-animation.page:17(credit/name)
+msgid "Michael Hill"
+msgstr "Michael Hill"
 
-#: C/gnect.xml:320(para)
-msgid "Player Two's marble as it appears on the game board"
-msgstr "Kulička druhého hráče v podobě, ve které se objevuje na hrací desce"
-
-#: C/gnect.xml:323(para)
-msgid "The game board's background"
-msgstr "Pozadí hrací desky"
-
-#: C/gnect.xml:326(para)
-msgid "The top row's background"
-msgstr "Pozadí horního řádku"
-
-#: C/gnect.xml:329(para)
-msgid "Player One's marble as it appears on the top row"
-msgstr "Kulička prvního hráče v podobě, ve které se objevuje v horním řádku"
-
-#: C/gnect.xml:332(para)
-msgid "Player Two's marble as it appears on the top row"
-msgstr "Kulička druhého hráče v podobě, ve které se objevuje v horním řádku"
-
-#: C/gnect.xml:337(title)
-msgid "An example tile set"
-msgstr "Příklad sady kamenů"
-
-#: C/gnect.xml:339(screeninfo)
-msgid "This image shows the six tiles in a tile set"
-msgstr "Tento obrázek ukazuje šest kamenů v sadě"
-
-#: C/gnect.xml:344(para)
-msgid ""
-"Tiles three and four will be repeated over the game board and top row unless "
-"a full window background image is specified in the theme file."
+#: C/choose-opponent.page:21(info/desc)
+msgid "Change the level at which the computer plays or play with a friend."
 msgstr ""
-"Kameny tři a čtyři se budou opakovat po ploše herní desky a horního řádku, "
-"mimo případ, kdy použijete ve svém tématu obrázek na pozadí celého okna."
+"Změňte úroveň, s jakou počítač hraje, nebo si zahrejte proti kamarádovi."
 
-#: C/gnect.xml:351(title) C/gnect.xml:362(title) C/gnect.xml:378(title)
-msgid "TIP"
-msgstr "TIP"
+#: C/choose-opponent.page:25(page/title)
+msgid "Choose a different opponent"
+msgstr "Jak vybrat jiného protihráče"
 
-#: C/gnect.xml:352(para)
+#: C/choose-opponent.page:26(page/p)
 msgid ""
-"PNG format is recommended for tile sets. The first, second, fifth and sixth "
-"tiles should contain some transparency if you want the background to show "
-"through. The third and fourth tiles should be solid, with no transparency, "
-"even if you'll be using a full window background image with your theme."
+"By default, your opponent in <app>Four-in-a-row</app> is the computer, "
+"playing at level one."
 msgstr ""
-"Doporučeným formátem pro sadu kamenů je PNG. První, druhý, pátý a šestý "
-"kámen mohou obsahovat průhlednost, pokud chcete, aby skrz ně bylo vidět "
-"pozadí. Třetí a čtvrtý kámen by měly být plné bez průhlednosti, ledaže "
-"použijete ve svém tématu obrázek na celé pozadí okna."
+"Vašim výchozím protihráčem ve hře <app>Čtyři-v-řadě</app> je počítač hrající "
+"na úrovni jedna."
 
-#: C/gnect.xml:363(para)
+#: C/choose-opponent.page:30(steps/title)
+msgid "To change the level, or to play with a friend:"
+msgstr "Pokud chcete úroveň změnit nebo hrát s kamarádem:"
+
+#: C/choose-opponent.page:32(item/p)
 msgid ""
-"Tiles can be square or rectangular, and any size you like. Most of the tile "
-"sets that come with <application>Four-in-a-Row</application> use square "
-"tiles measuring 50 pixels by 50 pixels."
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You will "
+"see <gui>Player One</gui> and <gui>Player Two</gui>."
 msgstr ""
-"Kameny mohou být čtvercové nebo obdélníkové a to v libovolné velikosti. "
-"Většina sad kamenů dodávaných s hrou <application>Čtyři-v-řadě</application> "
-"používá kameny o rozměrech 50 pixelů krát 50 pixelů."
+"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
+"\">Předvolby</gui> <gui style=\"menuitem\">Hra</gui></guiseq>. Uvidíte "
+"<gui>Hráč 1</gui> a <gui>Hráč 2</gui>."
 
-#: C/gnect.xml:370(para)
+#: C/choose-opponent.page:38(item/p)
 msgid ""
-"For a full window background image, there's a bit more work to do. Let's say "
-"your tiles measure 50 by 50 pixels each. The game's display measures 7 by 7 "
-"tiles, including the top row, so the ideal background image for your tile "
-"set measures 350 by 350 pixels."
+"Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
+"play with a friend or family member."
 msgstr ""
-"Pokud chcete obrázek přes celé pozadí okna, dá to trochu práce navíc. "
-"Řekněme, že vaše kameny mají každý rozměry 50 krát 50 pixelů. Herní plocha "
-"má 7 krát 7 kamenů, včetně horního řádku, takže ideální obrázek pro pozadí "
-"vaší sady kamenů má rozměry 350 krát 350 pixelů."
+"V případě, že chcete hrát proti kamarádovi nebo členovi rodiny, zvolte <gui "
+"style=\"radiobutton\">Člověk</gui>."
 
-#: C/gnect.xml:379(para)
+#: C/choose-opponent.page:40(item/p)
 msgid ""
-"<application>Four-in-a-Row</application> will automatically scale the "
-"background image if it doesn't match the tile set. This means you can make "
-"\"large\" and \"small\" versions of your theme, both using the same "
-"background image, just by having a large and a small version of your tile "
-"set."
+"Alternatively, choose the level at which the computer plays. Choose between "
+"<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
+"two</gui> or <gui style=\"radiobutton\">Level three</gui>, where <gui style="
+"\"radiobutton\">Level one</gui> is the easiest level and <gui style="
+"\"radiobutton\">Level three</gui> is the most difficult level."
 msgstr ""
-"Pokud rozměry obrázku na pozadí neodpovídají sadě kamenů, <application>Čtyři-"
-"v-řadě</application> je automaticky přizpůsobí. To znamená, že si můžete "
-"vytvořit dvě verze motivu, „velké“ a „malé“, které budou používat tentýž "
-"obrázek pozadí pro velkou i malou verzi vaší sady kamenů."
+"V opačném případě zvolte úroveň, na jaké bude hrát počitač. Na výběr máte "
+"mezi <gui style=\"radiobutton\">Úroveň jedna</gui>, <gui style=\"radiobutton"
+"\">Úroveň dva</gui> nebo <gui style=\"radiobutton\">Úroveň tři</gui>, kdy "
+"<gui style=\"radiobutton\">Úroveň jedna</gui> je nejjednodušší a <gui style="
+"\"radiobutton\">Úroveň tři</gui> nejvíce obtížná."
 
-#: C/gnect.xml:387(para)
+#: C/choose-opponent.page:48(note/p)
 msgid ""
-"So, you now have a tile set and perhaps a background image to go with it. "
-"The next step is to put them in the right place."
+"If you are playing with a friend or family member, <gui>Player One</gui> "
+"gets to play first in the first game of <app>Four-in-a-row</app>. In "
+"subsequent games, the chance to play first is given alternately to each "
+"player. So, <gui>Player Two</gui> will get to play first in the second game, "
+"<gui>Player One</gui> can play first in the third game and so on."
 msgstr ""
-"Takže nyní máte sadu kamenů a eventuálně k ní obrázek na pozadí. Dalším "
-"krokem je dostat je na správné místo."
+"Když hrajete proti kamarádovi nebo členu rodiny, <gui>Hráč 1</gui> začíná v "
+"první hře jako první. V další hrách se možnost hrát první pravidelně střídá. "
+"Tj. <gui>Hráč 2</gui> začíná první v druhé hře, <gui>Hráč 1</gui> první ve "
+"třetí hře atd."
 
-#: C/gnect.xml:397(title)
-msgid "Putting It Together"
-msgstr "Jak to dát dohromady"
+#: C/controls-change.page:19(info/desc)
+msgid "Set custom control keys."
+msgstr "Nastavte si vlastní ovládací klávesy."
 
-#: C/gnect.xml:399(para)
+#: C/controls-change.page:22(page/title)
+msgid "Change the default controls"
+msgstr "Jak změnit výchozí ovládání"
+
+#: C/controls-change.page:24(page/p)
 msgid ""
-"The last step is to put your image(s) where <application>Four-in-a-Row</"
-"application> can find them. You could put them in Four-in-a-row's install "
-"directory (which will depend on your particular system), but your home "
-"directory's probably a better idea."
+"To change the <link xref=\"controls-default\">default controls</link> in "
+"<app>Four-in-a-row</app>:"
 msgstr ""
-"Posledním krokem je vložení vašeho obrázku respektive obrázků na místo, kde "
-"je hra <application>Čtyři-v-řadě</application> dokáže najít. Mohli byste je "
-"dát do složky, ve které je hra Čtyři-v-řadě nainstalovaná (což záleží na "
-"vašem konkrétním systému), ale vaše domovská složka je pravděpodobně lepší "
-"nápad."
+"Pokud si chcete změnit <link xref=\"controls-default\">výchozí ovládání</"
+"link> ve hře <app>Čtyři-v-řadě</app>:"
 
-#: C/gnect.xml:406(para)
+#: C/controls-change.page:29(item/p)
 msgid ""
-"Make a <filename class=\"directory\">~/.gnect</filename> directory, and a "
-"<filename class=\"directory\">~/.gnect/pixmaps</filename> directory. Those "
-"names are important, as <application>Four-in-a-Row</application> won't look "
-"anywhere else."
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+"guiseq>."
 msgstr ""
-"Vytvořte složky <filename class=\"directory\">~/.gnect</filename> a "
-"<filename class=\"directory\">~/.gnect/pixmaps</filename>. Přesné názvy jsou "
-"důležité, protože jinde hra <application>Čtyři-v-řadě</application> hledat "
-"nebude."
+"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
+"\">Předvolby</gui> <gui style=\"menuitem\">Ovládání klávesnicí</gui></"
+"guiseq>."
 
-#: C/gnect.xml:413(para)
-msgid "Copy your image(s) into the pixmaps directory."
-msgstr "Nakopírujte svůj obrázek respektive obrázky do složky pixmaps."
-
-#: C/gnect.xml:417(para)
+#: C/controls-change.page:34(item/p)
 msgid ""
-"If you start <application>Four-in-a-Row</application> from the command line, "
-"it'll give you clues about any problems it has with your new theme. If it "
-"has none, you'll find your new theme listed the <interface>Preferences "
-"Dialog</interface>."
+"In the list, select the line you want to change, then click on the control. "
+"The line is highlighted and the label of the control changes to <gui>New "
+"accelerator…</gui>"
 msgstr ""
-"Pokud spustíte hru <application>Čtyři-v-řadě</application> z příkazového "
-"řádku, poskytne vám vodítko v případě nějakého problému ve vašem novém "
-"tématu. Pokud je vše bez problémů, najdete nové téma v seznamu v dialogovém "
-"okně <interface>Předvolby</interface>."
+"V seznamu vyberte řádek, který chcete změnit a klikněte na název klávesy. "
+"Řádek bude zvýrazněný a ovládací klávesa se nahradí textem <gui>Nová "
+"klávesová zkratka…</gui>"
 
-#: C/gnect.xml:424(para)
-msgid "Have fun!"
-msgstr "Užijte si zábavu!"
+#: C/controls-change.page:39(item/p)
+msgid "Press the key you want to use instead of the default key."
+msgstr "Zmáčkněte klávesu, kterou chcete místo té výchozí používat."
 
-#: C/gnect.xml:437(title)
-msgid "Known Bugs and Limitations"
-msgstr "Známé chyby a omezení"
-
-#: C/gnect.xml:439(para)
+#: C/controls-change.page:41(note/p)
 msgid ""
-"Occasionally a marble-dropping animation doesn't look as smooth as it should."
-msgstr "Animace padajících kuliček občas nevypadá tak plynule, jak by měla."
-
-#: C/gnect.xml:452(title)
-msgid "Authors"
-msgstr "Autoři"
-
-#: C/gnect.xml:454(para)
-msgid ""
-"<application>Four-in-a-Row</application> was written by Timothy Musson "
-"(<email>trmusson@ihug.co.nz</email>) and David Neary (<email>bolsh@gimp.org</"
-"email>). Various others have taken the time to help in many ways since work "
-"on <application>Four-in-a-Row</application> began."
+"To keep the old setting, click again or right click on <gui>New accelerator…"
+"</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
+"Controls</gui> box."
 msgstr ""
-"Hru <application>Čtyři-v-řadě</application> napsal Timothy Musson "
-"(<email>trmusson@ihug.co.nz</email>) a David Neary (<email>bolsh@gimp.org</"
-"email>). A mnozí další věnovali svůj čas, aby od doby, kdy vznikla, různými "
-"způsoby pomohli s prací na hře <application>Čtyři-v-řadě</application>."
+"V případě, že si to rozmyslíte a chcete nechat původní klávesu, klikněte "
+"znovu nebo pravým tlačítkem na <gui>Nová klávesová zkratka…</gui> nebo "
+"zmáčkněte <key>Esc</key> nebo klikněte kamkoliv jinam v rámci karty "
+"<gui>Ovládání klavesnicí</gui>."
 
-#: C/gnect.xml:459(para)
+#: C/controls-change.page:49(note/p)
 msgid ""
-"The <ulink type=\"http\" url=\"http://www.ce.unipr.it/~gbe/velena.html"
-"\">Velena Engine</ulink>, <application>Four-in-a-Row</application>'s main "
-"computer player, was written by Giuliano Bertoletti. We're grateful to him "
-"for allowing us to include his work, without which <application>Four-in-a-"
-"Row</application> wouldn't be nearly as worthwhile."
+"When you are playing with a friend or a family member, both players will use "
+"the same controls."
 msgstr ""
-"Giuliano Bertoletti napsal <ulink type=\"http\" url=\"http://www.ce.unipr.it/"
-"~gbe/velena.html\">Velena Engine</ulink>, což je hlavní počítačový hráč v "
-"hře <application>Čtyři-v-řadě</application>. Jsme mu vděční, že nám umožnil "
-"použít jeho práci, bez které by hra <application>Čtyři-v-řadě</application> "
-"nestála úplně za to."
+"Když hrajete proti kamarádovi nebo členu rodiny, používají oba hráči ty "
+"stejné ovládací klávesy."
 
-#: C/gnect.xml:466(para)
-msgid "This manual was written by Timothy Musson."
-msgstr "Tuto příručku napsal Timothy Musson."
+#: C/controls-default.page:19(info/desc)
+msgid "Default controls for <app>Four-in-a-row</app>."
+msgstr "Výchozí ovládání hry <app>Čtyři-v-řadě</app>"
 
-#: C/gnect.xml:469(para)
+#: C/controls-default.page:22(page/title)
+msgid "Controls"
+msgstr "Jak hru ovládat"
+
+#: C/controls-default.page:24(page/p)
 msgid ""
-"To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-"
-"bugs\" type=\"help\">document</ulink>."
+"You can use your mouse and click on a particular square in the game area to "
+"drop your marble into that square. If you want to use the keyboard instead, "
+"the default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
-"Pokud chcete nahlásit chybu nebo podat návrh týkající se této aplikace nebo "
-"tohoto návodu, tak se řiďte instrukcemi v tomto <ulink url=\"ghelp:user-"
-"guide?feedback-bugs\" type=\"help\">dokumentu</ulink>."
+"Můžete používat myš a klikat na příslušná políčka v herní oblasti. Tím "
+"kuličku shodíte na dotyčný čtverec. Nebo místo myši můžete používat "
+"klávesnici. Výchozí klávesy ve hře <app>Čtyři-v-řadě</app> jsou:"
 
-#: C/gnect.xml:494(title)
-msgid "License"
-msgstr "Licence"
+#: C/controls-default.page:30(item/p)
+msgid "<key>←</key> to move the marble to your left."
+msgstr "<key>←</key> pro posun kuličky doleva."
 
-#: C/gnect.xml:496(para)
+#: C/controls-default.page:33(item/p)
+msgid "<key>→</key> to move the marble to your right."
+msgstr "<key>→</key> pro posun kuličky doprava."
+
+#: C/controls-default.page:36(item/p)
+msgid "<key>↓</key> to drop the marble."
+msgstr "<key>↓</key> pro shození kuličky."
+
+#: C/make-easy.page:17(info/desc)
+msgid "Use hints or undo your wrong moves."
+msgstr "Používejte rady nebo vracejte zpět chybné tahy."
+
+#: C/make-easy.page:20(page/title)
+msgid "Make your game a little easier"
+msgstr "Jak si hru usnadnit"
+
+#: C/make-easy.page:23(section/title)
+msgid "Change your last move"
+msgstr "Změna vašeho posledního tahu"
+
+#: C/make-easy.page:25(section/p)
 msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the <citetitle>GNU General Public License</citetitle> as "
-"published by the Free Software Foundation; either version 2 of the License, "
-"or (at your option) any later version."
+"When the computer makes a winning move because of your last move or when you "
+"accidentally make the wrong move, you can undo your last move and change it. "
+"To undo your last move, select <guiseq><gui style=\"menu\">Game</gui> <gui "
+"style=\"menuitem\">Undo Move</gui></guiseq> or press <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. You can now drop your marble at a different "
+"square in the game area to change your move."
 msgstr ""
-"Tento program je svobodný software. Můžete jej dále šířit a/nebo upravovat "
-"za dodržení podmínek <ulink type=\"help\" url=\"help:gpl"
-"\"><citetitle>GNU General Public License</citetitle></ulink>, tak jak ji "
-"vydala Free Software Foundation ve verzi 2 nebo (dle vaší volby) novější."
+"Jestliže počítač udělal vítězný tah, ať už proto, že váš poslední tah byl "
+"špatný nebo jste se jen překlepli, můžete svůj poslední tah vrátit a změnit "
+"jej. Pokud tak chcete učinit, vyberte <guiseq><gui style=\"menu\">Hra</gui> "
+"<gui style=\"menuitem\">Tah zpět</gui></guiseq> nebo zmáčkněte "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Nyní můžete kuličku upustit na "
+"jiný čtverech a tah tak změnit."
 
-#: C/gnect.xml:504(para)
+#: C/make-easy.page:33(note/p)
 msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
-"License</citetitle> for more details."
+"You can undo all your moves starting from your current move until you reach "
+"a favourable state of the game, or until the beginning of your current game, "
+"by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
 msgstr ""
-"Tento program je šířen s přesvědčením, že může být užitečný, ale BEZ "
-"JAKÝCHKOLIV ZÁRUK, bez předpokládané záruky na OBCHODOVATELNOST nebo "
-"VHODNOST PRO URČITÝ ÚČEL. Více podrobností najdete v <citetitle>GNU General "
-"Public License</citetitle>."
+"Můžete se vráti i o více tahů zpět, od aktuálního tahu až po situaci, která "
+"vám vyhovuje nebo dokud se nedostanete na začátek hry. Stačí mačkat "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq> opakovaně."
 
-#: C/gnect.xml:511(para)
+#: C/make-easy.page:41(section/title)
+msgid "Use hints"
+msgstr "Použití rad"
+
+#: C/make-easy.page:43(section/p)
 msgid ""
-"A copy of the <citetitle>GNU General Public License</citetitle> is included "
-"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
-"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
-"the Free Software Foundation by visiting <ulink url=\"http://www.fsf.org\" "
-"type=\"http\">their Web site</ulink> or by writing to <address> Free "
-"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
-"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
-"postcode><country>USA</country></address>"
+"If you are not sure of your next move, you can use a hint. When you use a "
+"hint, your marble moves to the top of the column that is the best choice, "
+"strategy-wise, and blinks. You can then drop your marble into that column. "
+"To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui style="
+"\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</key><key>H</"
+"key></keyseq>."
 msgstr ""
-"Kopie <citetitle>GNU General Public License</citetitle> je zahrnuta v "
-"dodatku <citetitle>Uživatelské přiručky GNOME</citetitle>. Kopii "
-"<citetitle>GNU General Public License</citetitle> můžete také získat od Free "
-"Software Foundation navštívením <ulink type=\"http\" url=\"http://www.fsf.org"
-"\">jejich webu</ulink> nebo zasláním žádosti na <address> Free Software "
-"Foundation, Inc. <street>59 Temple Place</street> - Suite 330 <city>Boston</"
-"city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</"
-"country></address>"
+"Když si nejste jisti, jak byste měli táhnout, můžete využít radu. Když ji "
+"použijete, vaše kulička se přesune na vrchol sloupce, který je nejlepší "
+"volbou a dobrou strategií a bliká. V tomto sloupci pak můžet kuličku shodit. "
+"Pokud chcete radu, vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style="
+"\"menuitem\">Rada</gui></guiseq> nebo zmáčkněte <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/gnect.xml:0(None)
-msgid "translator-credits"
-msgstr "Marek Černocký <marek@manet.cz>"
+#: C/make-easy.page:51(note/p)
+msgid "There is no limit on the number of hints you can use in a game."
+msgstr "Počet rad, které můžete v jedné hře použít, není nijak omezen."
+
+#: C/scores.page:17(info/desc)
+msgid "Keep track of your wins and losses."
+msgstr "Sledujte své výhry a prohry."
+
+#: C/scores.page:20(page/title)
+msgid "Scores"
+msgstr "Skóre"
+
+#: C/scores.page:21(page/p)
+msgid ""
+"The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
+"your opponent's wins and games that ended in a draw. To check the scores, "
+"select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+"\">Scores</gui></guiseq>. If you are playing against the computer, the "
+"number next to:"
+msgstr ""
+"Skóre ve hře <app>Čtyři-v-řadě</app> zaznamenává situace, kdy jste vyhráli, "
+"kdy vyhrál protihráč a kdy hra skončila remízou. Jestli se chcete na skóre "
+"podívat, vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style=\"menuitem"
+"\">Skóre</gui></guiseq>. Pokud hrajete proti počítači, čísla mají "
+"následující význam:"
+
+#: C/scores.page:29(item/p)
+msgid "<gui>You</gui> displays the number of games you have won."
+msgstr "<gui>Vy</gui> údává počet her, které jste vyhráli."
+
+#: C/scores.page:32(item/p)
+msgid "<gui>Me</gui> displays the number of games won by the computer."
+msgstr "<gui>Já</gui> udává počet her, které vyhrál počítač."
+
+#: C/scores.page:35(item/p) C/scores.page:52(item/p)
+msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
+msgstr "<gui>Nerozhodně</gui> udává počet her, které skončily remízou."
+
+#: C/scores.page:40(page/p)
+msgid "If you are playing against a friend, the number next to:"
+msgstr "Pokud hrajete proti kamarádovi, čísla mají následující význam:"
+
+#: C/scores.page:44(item/p)
+msgid ""
+"<gui>Red</gui> displays the number of games won by the player who was "
+"controlling the red marbles."
+msgstr ""
+"<gui>Červený</gui> udává počet her, které vyhrál hráč ovládající červené "
+"kuličky."
+
+#: C/scores.page:48(item/p)
+msgid ""
+"<gui>Blue</gui> displays the number of games won by the player who was "
+"controlling the blue marbles."
+msgstr ""
+"<gui>Modrý</gui> udává počet her, které vyhrál hráč ovládající modré kuličky."
+
+#: C/sound-animation.page:21(info/desc)
+msgid "Play <app>Four-in-a-row</app> without sounds or animation."
+msgstr "Hrajte <app>Čtyři-v-řadě</app> bez zvuků a animací."
+
+#: C/sound-animation.page:24(page/title)
+msgid "Disable sounds or animation"
+msgstr "Jak zakázat zvuky a animace"
+
+#: C/sound-animation.page:27(section/title)
+msgid "Sounds"
+msgstr "Zvuky"
+
+#: C/sound-animation.page:29(section/p)
+msgid ""
+"When sounds are enabled, you will hear something every time a marble is "
+"dropped, or when a game ends."
+msgstr ""
+"Když jsou zvuky povolené, uslyšíte něco pokaždé, když kulička dopadne nebo "
+"skončí hra."
+
+#: C/sound-animation.page:33(steps/title)
+msgid "To disable sounds:"
+msgstr "Pokud chcete zvuky zakázat:"
+
+#: C/sound-animation.page:40(item/p)
+msgid ""
+"Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
+"option again to enable the feature."
+msgstr ""
+"Zruště zaškrtnutí <gui style=\"checkbox\">Povolit zvuky</gui>. Opětovným "
+"zaškrtnutím funkci znovu povolíte."
+
+#: C/sound-animation.page:47(section/title)
+msgid "Animation"
+msgstr "Animace"
+
+#: C/sound-animation.page:49(section/p)
+msgid "Animation results in a more fluid movement of the marbles."
+msgstr "Díky animacím jsou pohyby kuliček plynulejší."
+
+#: C/sound-animation.page:52(steps/title)
+msgid "To disable animation:"
+msgstr "Pokud chcete animace zakázat:"
+
+#: C/sound-animation.page:59(item/p)
+msgid ""
+"Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
+"option again to enable the feature."
+msgstr ""
+"Zruště zaškrtnutí <gui style=\"checkbox\">Povolit animace</gui>. Opětovným "
+"zaškrtnutím funkci znovu povolíte."
+
+#: C/legal.xml:4(p/link)
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#: C/legal.xml:3(license/p)
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Tato práce je vydána pod licencí <_:link-1/>"
