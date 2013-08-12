@@ -1349,6 +1349,12 @@ main (int argc, char *argv[])
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
+  /*
+   * Required because the binary doesn't match the desktop file.
+   * Has to be before the call to g_option_context_parse.
+   */
+  g_set_prgname ("gnect");
+
   context = g_option_context_new (NULL);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
   retval = g_option_context_parse (context, &argc, &argv, &error);
