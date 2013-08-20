@@ -1,3 +1,10 @@
+four-in-a-row 3.9.90
+====================
+
+* Rewritten user help in Mallard
+* Program name displays properly in GNOME Shell when not launched by the shell
+* Translation updates
+
 four-in-a-row 3.8.0
 ===================
 
