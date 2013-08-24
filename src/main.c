@@ -753,7 +753,7 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))),
 		      grid, TRUE, TRUE, 0);
 
-  icon = gtk_image_new_from_icon_name ("four-in-a-row", 48);
+  icon = gtk_image_new_from_icon_name ("four-in-a-row", GTK_ICON_SIZE_DIALOG);
   gtk_container_add (GTK_CONTAINER (grid), icon);
 
   grid2 = gtk_grid_new ();
