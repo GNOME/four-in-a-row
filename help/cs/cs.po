@@ -165,7 +165,7 @@ msgid ""
 "gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
 "<app>Four-in-a-row</app> at any time."
 msgstr ""
-"Hru <app>Čtyři-v-řadě</app> můžete kdykoliv ukončit pomocí nabídky <gui><gui "
+"Hru <app>Čtyři-v-řadě</app> můžete kdykoliv ukončit pomocí nabídky <guiseq><gui "
 "style=\"menu\">Hra</gui> <gui style=\"menuitem\">Ukončit</gui></guiseq> nebo "
 "zmáčknutím <keyseq><key>Ctrl</key><key>Q</key></keyseq>."
 
