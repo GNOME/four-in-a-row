@@ -31,11 +31,15 @@ desktop_in_files = gnect.desktop.in.in
 desktopdir       = $(datadir)/applications
 desktop_DATA     = $(desktop_in_files:.desktop.in.in=.desktop)
 
+appdatadir = $(datadir)/appdata
+appdata_DATA = four-in-a-row.appdata.xml
+
 man_MANS     = four-in-a-row.6
 
 EXTRA_DIST = $(pixmap_DATA) \
              $(sounds_DATA) \
              $(velena_DATA) \
+	     $(appdata_DATA) \
              $(desktop_in_files) \
              $(gsettings_in_file) \
              $(man_MANS)

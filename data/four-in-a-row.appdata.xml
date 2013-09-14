@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+ <id type="desktop">gnect.desktop</id>
+ <licence>CC0</licence>
+ <description>
+  <p>
+   A family classic, the objective of Four-in-a-row is to build a line of four
+   of your marbles while trying to stop your opponent (human or computer) from
+   building a line of his or her own. A line can be horizontal, vertical or
+   diagonal. The first player to connect four in a row is the winner!
+  </p>
+  <p>
+   Four-in-a-row features multiple difficulty levels. If you're having trouble,
+   you can always ask for a hint.
+  </p>
+ </description>
+ <screenshots>
+  <screenshot type="default" width="352" height="430">https://wiki.gnome.org/Four-in-a-row?action=AttachFile&#x26;do=get&#x26;target=four-in-a-row.png</screenshot>
+ </screenshots>
+ <url type="homepage">https://wiki.gnome.org/Four-in-a-row</url>
+ <updatecontact>games_list_at_gnome.org</updatecontact>
+</application>
