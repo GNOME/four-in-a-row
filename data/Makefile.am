@@ -27,9 +27,10 @@ sounds_DATA = \
 velenadir      = $(datadir)/four-in-a-row
 velena_DATA    = white_ob.cn4.gz
 
-desktop_in_files = gnect.desktop.in.in
 desktopdir       = $(datadir)/applications
-desktop_DATA     = $(desktop_in_files:.desktop.in.in=.desktop)
+desktop_in_files = gnect.desktop.in
+desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
 appdatadir = $(datadir)/appdata
 appdata_DATA = four-in-a-row.appdata.xml
@@ -45,12 +46,10 @@ EXTRA_DIST = $(pixmap_DATA) \
              $(man_MANS)
 
 CLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
-DISTCLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
+DISTCLEANFILES = $(gsettings_SCHEMAS)
 
 check-local: $(appdata_DATA) $(desktop_DATA)
 	$(APPDATA_VALIDATE) $(appdata_DATA)
 	$(DESKTOP_FILE_VALIDATE) $(desktop_DATA)
-
-@INTLTOOL_DESKTOP_RULE@
 
 -include $(top_srcdir)/git.mk

@@ -1,7 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file in alphabetical order.
 [encoding: UTF-8]
-data/gnect.desktop.in.in
+data/gnect.desktop.in
 data/org.gnome.four-in-a-row.gschema.xml.in
 src/games-controls.c
 src/games-stock.c
