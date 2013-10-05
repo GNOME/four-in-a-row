@@ -31,19 +31,23 @@ desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 appdatadir = $(datadir)/appdata
-appdata_DATA = four-in-a-row.appdata.xml
+appdata_in_files = four-in-a-row.appdata.xml.in
+appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+@INTLTOOL_XML_RULE@
 
 man_MANS     = four-in-a-row.6
 
 EXTRA_DIST = $(pixmap_DATA) \
              $(sounds_DATA) \
              $(velena_DATA) \
-	     $(appdata_DATA) \
+	     $(appdata_in_files) \
              $(desktop_in_files) \
              $(gsettings_SCHEMAS) \
              $(man_MANS)
 
-CLEANFILES = $(desktop_DATA)
+CLEANFILES = \
+	$(appdata_DATA) \
+	$(desktop_DATA)
 
 check-local: $(appdata_DATA) $(desktop_DATA)
 	$(APPDATA_VALIDATE) $(appdata_DATA)
