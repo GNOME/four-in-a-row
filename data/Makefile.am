@@ -47,6 +47,10 @@ EXTRA_DIST = $(pixmap_DATA) \
 CLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
 DISTCLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
 
+check-local: $(appdata_DATA) $(desktop_DATA)
+	$(APPDATA_VALIDATE) $(appdata_DATA)
+	$(DESKTOP_FILE_VALIDATE) $(desktop_DATA)
+
 @INTLTOOL_DESKTOP_RULE@
 
 -include $(top_srcdir)/git.mk
