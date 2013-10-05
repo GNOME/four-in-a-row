@@ -1,8 +1,6 @@
 SUBDIRS = icons
 
-gsettings_in_file = org.gnome.four-in-a-row.gschema.xml.in
-gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
-@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.gnome.four-in-a-row.gschema.xml
 @GSETTINGS_RULES@
 
 pixmapdir = $(datadir)/four-in-a-row
@@ -42,11 +40,10 @@ EXTRA_DIST = $(pixmap_DATA) \
              $(velena_DATA) \
 	     $(appdata_DATA) \
              $(desktop_in_files) \
-             $(gsettings_in_file) \
+             $(gsettings_SCHEMAS) \
              $(man_MANS)
 
-CLEANFILES = $(gsettings_SCHEMAS) $(desktop_DATA)
-DISTCLEANFILES = $(gsettings_SCHEMAS)
+CLEANFILES = $(desktop_DATA)
 
 check-local: $(appdata_DATA) $(desktop_DATA)
 	$(APPDATA_VALIDATE) $(appdata_DATA)
