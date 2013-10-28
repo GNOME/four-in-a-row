@@ -1,3 +1,11 @@
+four-in-a-row 3.11.1
+====================
+
+* Require intltool 0.50
+* Remove BugBuddy support
+* Update AppData
+* Updated translations
+
 four-in-a-row 3.10.0
 ====================
 
