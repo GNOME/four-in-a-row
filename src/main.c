@@ -817,14 +817,13 @@ on_help_about (GtkAction * action, gpointer data)
   const gchar *documenters[] = { "Timothy Musson",
     NULL
   };
-  gchar *license = games_get_license (_(APPNAME_LONG));
 
   gtk_show_about_dialog (GTK_WINDOW (app),
 			 "name", _(APPNAME_LONG),
 			 "version", VERSION,
 			 "copyright",
 			 "Copyright \xc2\xa9 1999-2008, Tim Musson and David Neary",
-			 "license", license, "comments",
+			 "license-type", GTK_LICENSE_GPL_2_0, "comments",
 		         _("Connect four in a row to win.\n\nFour-in-a-row is a part of GNOME Games."),
 		         "website-label", _("GNOME Games web site"),
 			 "authors", authors, "documenters", documenters,
@@ -832,8 +831,7 @@ on_help_about (GtkAction * action, gpointer data)
 			 _("translator-credits"),
 			 "logo-icon-name", "four-in-a-row",
 			 "website", "http://www.gnome.org/projects/gnome-games/",
-			 "wrap-license", TRUE, NULL);
-  g_free (license);
+			 NULL);
 }
 
 
