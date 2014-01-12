@@ -825,12 +825,11 @@ on_help_about (GtkAction * action, gpointer data)
 			 "Copyright \xc2\xa9 1999-2008, Tim Musson and David Neary",
 			 "license-type", GTK_LICENSE_GPL_2_0, "comments",
 		         _("Connect four in a row to win.\n\nFour-in-a-row is a part of GNOME Games."),
-		         "website-label", _("GNOME Games web site"),
 			 "authors", authors, "documenters", documenters,
 			 "artists", artists, "translator-credits",
 			 _("translator-credits"),
 			 "logo-icon-name", "four-in-a-row",
-			 "website", "http://www.gnome.org/projects/gnome-games/",
+			 "website", "https://wiki.gnome.org/Apps/Four-in-a-row",
 			 NULL);
 }
 
