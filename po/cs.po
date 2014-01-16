@@ -486,7 +486,7 @@ msgstr "Ovládání klávesnicí"
 
 #: ../src/theme.c:40
 msgid "Classic"
-msgstr "Klasické"
+msgstr "Klasika"
 
 #: ../src/theme.c:44 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
 msgid "Red"
