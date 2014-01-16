@@ -16,15 +16,15 @@
 # Petr Pulc <petrpulc@gmail.com>, 2009.
 # Andre Klapper <ak-47@gmx.net>, 2009.
 # Petr Kovar <pknbe@volny.cz>, 2008, 2012.
-# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012, 2013.
+# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-02-17 21:53+0100\n"
+"POT-Creation-Date: 2014-01-12 17:58+0000\n"
+"PO-Revision-Date: 2014-01-16 13:22+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -35,77 +35,98 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
-msgid "Four-in-a-Row"
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Čtyři-v-řadě je klasická rodinná hra, jejímž cílem je uspořádat čtyři své "
+"kuličky do jedné řady, zatímco protivník (člověk nebo počítač) se vám v tom "
+"snaží zabránit a naopak vybudovat svoji vlastní řadu. Řada může být "
+"vodorovná, svislá nebo úhlopříčná. První hráč, který sestaví řadu ze čtyř "
+"kuliček, vyhrává."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Čtyři-v-řadě nabízí několik úrovní složitosti. A vždy, když se dostanete do "
+"úzkých, můžete požádat o radu."
+
+#: ../data/gnect.desktop.in.h:1 ../src/main.h:5
+msgid "Four-in-a-row"
 msgstr "Čtyři-v-řadě"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/gnect.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Soutěžte ve tvorbě úseček ze stejné barvy"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
+#: ../data/gnect.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "hra;strategická;logická;"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
 msgid "Level of Player One"
 msgstr "Úroveň Hráče 1"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "Nula znamená člověk; jedna až tři odpovídá úrovni počítačového hráče."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Level of Player Two"
 msgstr "Úroveň Hráče 2"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "Theme ID"
 msgstr "ID motivu"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "A number specifying the preferred theme."
 msgstr "Číslo určující preferovaný motiv."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:6
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Animate"
 msgstr "Animace"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:7
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
 msgid "Whether or not to use animation."
 msgstr "Zda se má použít animace."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Sound"
 msgstr "Zvuk"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
 msgid "Whether or not to play event sounds."
 msgstr "Zda přehrávat nebo nepřehrávat zvuky k událostem."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:315
 msgid "Move left"
 msgstr "Pohyb doleva"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
 msgid "Key press to move left."
 msgstr "Klávesa pro přesun doleva."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:316
 msgid "Move right"
 msgstr "Pohyb doprava"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
 msgid "Key press to move right."
 msgstr "Klávesa pro přesun doprava."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:14 ../src/prefs.c:317
 msgid "Drop marble"
 msgstr "Položení kamene"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:15
 msgid "Key press to drop a marble."
 msgstr "Klávesa pro položení kamene."
 
@@ -311,7 +332,7 @@ msgstr ""
 "License. Pokud se tak nestalo, podívejte se na <http://www.gnu.org/licenses/"
 ">."
 
-#: ../src/gfx.c:248
+#: ../src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -320,74 +341,68 @@ msgstr ""
 "Nelze načíst obrázek:\n"
 "%s"
 
-#: ../src/main.c:524
+#: ../src/main.c:523
 msgid "It's a draw!"
 msgstr "Je to nerozhodně!"
 
-#: ../src/main.c:533
+#: ../src/main.c:532
 msgid "You win!"
 msgstr "Vyhráli jste!"
 
-#: ../src/main.c:535 ../src/main.c:554
+#: ../src/main.c:534 ../src/main.c:553
 msgid "It is your move."
 msgstr "Jste na tahu."
 
-#: ../src/main.c:538
+#: ../src/main.c:537
 msgid "I win!"
 msgstr "Vyhrál počítač!"
 
-#: ../src/main.c:540 ../src/main.c:642
+#: ../src/main.c:539 ../src/main.c:641
 msgid "Thinking..."
 msgstr "Promýšlí se…"
 
-#: ../src/main.c:551
+#: ../src/main.c:550
 #, c-format
 msgid "%s wins!"
 msgstr "%s vyhrál!"
 
-#: ../src/main.c:558
+#: ../src/main.c:557
 #, c-format
 msgid "Waiting for %s to move."
 msgstr "Na tahu je %s."
 
-#: ../src/main.c:659
+#: ../src/main.c:658
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Rada: Sloupec %d"
 
-#: ../src/main.c:687 ../src/main.c:691
+#: ../src/main.c:686 ../src/main.c:690
 msgid "You:"
 msgstr "Vy:"
 
-#: ../src/main.c:688 ../src/main.c:690
+#: ../src/main.c:687 ../src/main.c:689
 msgid "Me:"
 msgstr "Já:"
 
-#: ../src/main.c:736
+#: ../src/main.c:735
 msgid "Scores"
 msgstr "Skóre"
 
-#: ../src/main.c:780
+#: ../src/main.c:779
 msgid "Drawn:"
 msgstr "Nerozhodně:"
 
-#: ../src/main.c:829
+#: ../src/main.c:827
 msgid ""
-"\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
-"Bertoletti's Velena Engine.\n"
+"Connect four in a row to win.\n"
 "\n"
-"\"Four in a Row\" is a part of GNOME Games."
+"Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"Hra „Čtyři v řadě“ pro GNOME s počítačovým hráčem řízeným systémem Velena od "
-"Giuliana Bertolettiho.\n"
+"Spojte čtyři do jedné řady a vyhrajete.\n"
 "\n"
-"Hra „Čtyři v řadě“ je součástí her GNOME."
+"Čtyři-v-řadě je součástí her GNOME."
 
 #: ../src/main.c:830
-msgid "GNOME Games web site"
-msgstr "Webové stránky her GNOME"
-
-#: ../src/main.c:833
 msgid "translator-credits"
 msgstr ""
 "Jirka Lébl\n"
@@ -404,123 +419,119 @@ msgstr ""
 "Petr Pulc <petrpulc@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/main.c:1183
+#: ../src/main.c:1179
 msgid "_Game"
 msgstr "_Hra"
 
-#: ../src/main.c:1184
+#: ../src/main.c:1180
 msgid "_View"
 msgstr "_Zobrazit"
 
-#: ../src/main.c:1185
+#: ../src/main.c:1181
 msgid "_Settings"
 msgstr "_Nastavení"
 
-#: ../src/main.c:1186
+#: ../src/main.c:1182
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Čtyři-v-řadě"
-
-#: ../src/prefs.c:207
+#: ../src/prefs.c:206
 msgid "Four-in-a-Row Preferences"
 msgstr "Předvolby hry Čtyř-v-řadě"
 
-#: ../src/prefs.c:230
+#: ../src/prefs.c:229
 msgid "Game"
 msgstr "Hra"
 
-#: ../src/prefs.c:233
+#: ../src/prefs.c:232
 msgid "Player One:"
 msgstr "Hráč 1:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
+#: ../src/prefs.c:243 ../src/prefs.c:271
 msgid "Human"
 msgstr "Člověk"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
+#: ../src/prefs.c:247 ../src/prefs.c:275
 msgid "Level one"
 msgstr "Úroveň jedna"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
+#: ../src/prefs.c:251 ../src/prefs.c:279
 msgid "Level two"
 msgstr "Úroveň dva"
 
-#: ../src/prefs.c:256 ../src/prefs.c:284
+#: ../src/prefs.c:255 ../src/prefs.c:283
 msgid "Level three"
 msgstr "Úroveň tři"
 
-#: ../src/prefs.c:262
+#: ../src/prefs.c:261
 msgid "Player Two:"
 msgstr "Hráč 2:"
 
-#: ../src/prefs.c:290
+#: ../src/prefs.c:289
 msgid "_Theme:"
 msgstr "_Motiv:"
 
-#: ../src/prefs.c:303
+#: ../src/prefs.c:302
 msgid "Enable _animation"
 msgstr "Povolit _animace"
 
-#: ../src/prefs.c:307
+#: ../src/prefs.c:306
 msgid "E_nable sounds"
 msgstr "Povolit _zvuky"
 
 #. keyboard tab
-#: ../src/prefs.c:312
+#: ../src/prefs.c:311
 msgid "Keyboard Controls"
 msgstr "Ovládání klávesnicí"
 
-#: ../src/theme.c:41
+#: ../src/theme.c:40
 msgid "Classic"
 msgstr "Klasické"
 
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
+#: ../src/theme.c:44 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
 msgid "Red"
 msgstr "Červený"
 
-#: ../src/theme.c:45
+#: ../src/theme.c:44
 msgid "Yellow"
 msgstr "Žlutý"
 
-#: ../src/theme.c:48
+#: ../src/theme.c:47
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:51 ../src/theme.c:58
 msgid "Circle"
 msgstr "Kolečka"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:51 ../src/theme.c:58
 msgid "Cross"
 msgstr "Křížky"
 
-#: ../src/theme.c:55
+#: ../src/theme.c:54
 msgid "High Contrast Inverse"
 msgstr "Inverzní vysoký kontrast"
 
-#: ../src/theme.c:62
+#: ../src/theme.c:61
 msgid "Cream Marbles"
 msgstr "Smetanové kuličky"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79 ../src/theme.c:86
 msgid "Blue"
 msgstr "Modrá"
 
-#: ../src/theme.c:69
+#: ../src/theme.c:68
 msgid "Glass Marbles"
 msgstr "Skleněné kuličky"
 
-#: ../src/theme.c:76
+#: ../src/theme.c:75
 msgid "Nightfall"
 msgstr "Soumrak"
 
-#: ../src/theme.c:83
+#: ../src/theme.c:82
 msgid "Blocks"
 msgstr "Bloky"
 
-#: ../src/theme.c:87
+#: ../src/theme.c:86
 msgid "Orange"
 msgstr "Oranžová"
