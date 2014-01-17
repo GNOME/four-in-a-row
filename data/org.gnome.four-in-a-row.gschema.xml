@@ -11,7 +11,7 @@
       <description>Zero is human; one through three correspond to the level of the computer player.</description>
     </key>
     <key name="theme-id" type="i">
-      <default>3</default>
+      <default>5</default>
       <summary>Theme ID</summary>
       <description>A number specifying the preferred theme.</description>
     </key>

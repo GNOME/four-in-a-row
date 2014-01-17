@@ -51,13 +51,6 @@ Theme theme[] = {
    N_("Circle"), N_("Cross")
    },
   {
-   N_("Cream Marbles"),
-   "tileset_50x50_catseyes.png",
-   "bg_toplight.png",
-   "#727F8C",
-   N_("Red"), N_("Blue")
-   },
-  {
    N_("Glass Marbles"),
    "tileset_50x50_glassy.png",
    "bg_toplight.png",
