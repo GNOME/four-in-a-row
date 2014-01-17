@@ -5,14 +5,10 @@ gsettings_SCHEMAS = org.gnome.four-in-a-row.gschema.xml
 
 pixmapdir = $(datadir)/four-in-a-row
 pixmap_DATA = \
-    tileset_50x50_sunspot.svg \
     tileset_50x50_catseyes.png \
-    tileset_50x50_square.png \
     tileset_50x50_glassy.png \
     tileset_50x50_hcontrast.svg \
     tileset_50x50_hcinverse.svg \
-    bg_grotty.jpg \
-    bg_nightfall.jpg \
     bg_toplight.png
 
 soundsdir = $(datadir)/four-in-a-row/sounds

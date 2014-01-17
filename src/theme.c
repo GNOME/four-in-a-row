@@ -37,13 +37,6 @@ extern Prefs p;
 
 Theme theme[] = {
   {
-   N_("Classic"),
-   "tileset_50x50_sunspot.svg",
-   NULL,
-   "#9999CC",
-   N_("Red"), N_("Yellow")
-   },
-  {
    N_("High Contrast"),
    "tileset_50x50_hcontrast.svg",
    NULL,
@@ -67,23 +60,9 @@ Theme theme[] = {
   {
    N_("Glass Marbles"),
    "tileset_50x50_glassy.png",
-   "bg_grotty.jpg",
+   "bg_toplight.png",
    "#727F8C",
    N_("Red"), N_("Blue")
-   },
-  {
-   N_("Nightfall"),
-   "tileset_50x50_glassy.png",
-   "bg_nightfall.jpg",
-   "#727F8C",
-   N_("Red"), N_("Blue")
-   },
-  {
-   N_("Blocks"),
-   "tileset_50x50_square.png",
-   NULL,
-   "#666666",
-   N_("Orange"), N_("Blue")
    }
 };
 
