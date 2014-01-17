@@ -63,6 +63,27 @@ Theme theme[] = {
    "bg_toplight.png",
    "#727F8C",
    N_("Red"), N_("Blue")
+   },
+  {
+   N_("Faenza Marbles Green"),
+   "tileset_50x50_faenza-glines-icon1.svg",
+   "bg_toplight.png",
+   "#727F8C",
+   N_("Red"), N_("Green")
+   },
+  {
+   N_("Faenza Marbles Blue"),
+   "tileset_50x50_faenza-glines-icon2.svg",
+   "bg_toplight.png",
+   "#727F8C",
+   N_("Blue"), N_("Red")
+   },
+  {
+   N_("Faenza Stars and Rings"),
+   "tileset_50x50_faenza-gnect-icon.svg",
+   "bg_toplight.png",
+   "#727F8C",
+   N_("Red"), N_("Green")
    }
 };
 
