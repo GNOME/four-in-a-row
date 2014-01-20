@@ -822,7 +822,7 @@ on_help_about (GtkAction * action, gpointer data)
 			 "name", _(APPNAME_LONG),
 			 "version", VERSION,
 			 "copyright",
-			 "Copyright \xc2\xa9 1999-2008, Tim Musson and David Neary",
+			 "Copyright © 1999–2008, Tim Musson and David Neary",
 			 "license-type", GTK_LICENSE_GPL_2_0, "comments",
 		         _("Connect four in a row to win.\n\nFour-in-a-row is a part of GNOME Games."),
 			 "authors", authors, "documenters", documenters,
