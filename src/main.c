@@ -811,6 +811,8 @@ on_help_about (GtkAction * action, gpointer data)
 
   const gchar *artists[] = { "Alan Horkan",
     "Tim Musson",
+    "Anatol Drlicek",
+    "Some themes based on the Faenza icon theme by Matthieu James",
     NULL
   };
 
