@@ -53,9 +53,15 @@ GtkWidget *notebook;
 GtkWidget *drawarea;
 GtkWidget *statusbar;
 GtkWidget *scorebox = NULL;
+static GtkApplication *application;
 
 GtkWidget *label_name[3];
 GtkWidget *label_score[3];
+
+GAction *new_game_action;
+GAction *undo_action;
+GAction *hint_action;
+GAction *fullscreen_action;
 
 PlayerID player;
 PlayerID winner;
@@ -357,12 +363,17 @@ set_status_message (const gchar * message)
     gtk_statusbar_push (GTK_STATUSBAR (statusbar), context_id, message);
 }
 
+static void
+activate_toggle (GSimpleAction *action,
+                 GVariant      *parameter,
+                 gpointer       user_data)
+{
+  GVariant *state;
 
-GtkAction *new_game_action;
-GtkAction *undo_action;
-GtkAction *hint_action;
-GtkAction *fullscreen_action;
-
+  state = g_action_get_state (G_ACTION (action));
+  g_action_change_state (G_ACTION (action), g_variant_new_boolean (!g_variant_get_boolean (state)));
+  g_variant_unref (state);
+}
 
 static void
 stop_anim (void)
@@ -400,8 +411,9 @@ void
 game_reset (void)
 {
   stop_anim ();
-  gtk_action_set_sensitive (undo_action, FALSE);
-  gtk_action_set_sensitive (hint_action, FALSE);
+
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
 
   who_starts = (who_starts == PLAYER1) ? PLAYER2 : PLAYER1;
   player = who_starts;
@@ -496,23 +508,19 @@ prompt_player (void)
   const gchar *who = NULL;
   gchar *str = NULL;
 
-  gtk_action_set_visible (new_game_action, TRUE);
-  gtk_action_set_visible (hint_action, TRUE);
-  gtk_action_set_visible (undo_action, TRUE);
-
-  gtk_action_set_sensitive (new_game_action, (human || gameover));
-  gtk_action_set_sensitive (hint_action, (human || gameover));
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (new_game_action), (human || gameover));
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), (human || gameover));
 
   switch (players) {
   case 0:
-    gtk_action_set_sensitive (undo_action, FALSE);
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
     break;
   case 1:
-    gtk_action_set_sensitive (undo_action,
-			      ((human && moves > 1) || (!human && gameover)));
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action),
+                              ((human && moves > 1) || (!human && gameover)));
     break;
   case 2:
-    gtk_action_set_sensitive (undo_action, (moves > 0));
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), (moves > 0));
     break;
   }
 
@@ -566,23 +574,22 @@ prompt_player (void)
 
 
 static void
-on_game_new (void)
+on_game_new (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   stop_anim ();
   game_reset ();
 }
 
-static gboolean
-on_game_exit (GObject * object, gpointer data)
+static void
+on_game_exit (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
 
   stop_anim ();
-  gtk_main_quit ();
-  return TRUE;
+  g_application_quit (G_APPLICATION (application));
 }
 
 static void
-on_game_undo (GtkMenuItem * m, gpointer data)
+on_game_undo (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   gint r, c;
 
@@ -625,7 +632,7 @@ on_game_undo (GtkMenuItem * m, gpointer data)
 
 
 static void
-on_game_hint (GtkMenuItem * m, gpointer data)
+on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   gchar *s;
   gint c;
@@ -635,8 +642,8 @@ on_game_hint (GtkMenuItem * m, gpointer data)
   if (gameover)
     return;
 
-  gtk_action_set_sensitive (hint_action, FALSE);
-  gtk_action_set_sensitive (undo_action, FALSE);
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
 
   set_status_message (_("Thinking..."));
 
@@ -659,11 +666,20 @@ on_game_hint (GtkMenuItem * m, gpointer data)
   set_status_message (s);
   g_free (s);
 
-  gtk_action_set_sensitive (hint_action, TRUE);
-  gtk_action_set_sensitive (undo_action, (moves > 0));
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), TRUE);
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), (moves > 0));
 }
 
+static void
+change_fullscreen_state (GSimpleAction *action, GVariant *state, gpointer data)
+{
+  if (g_variant_get_boolean (state))
+    gtk_window_fullscreen (GTK_WINDOW (app));
+  else
+    gtk_window_unfullscreen (GTK_WINDOW (app));
 
+  g_simple_action_set_state (action, state);
+}
 
 void
 on_dialog_close (GtkWidget * w, int response_id, gpointer data)
@@ -723,7 +739,7 @@ scorebox_reset (void)
 
 
 static void
-on_game_scores (GtkMenuItem * m, gpointer data)
+on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   GtkWidget *grid, *grid2, *icon;
 
@@ -792,10 +808,8 @@ on_game_scores (GtkMenuItem * m, gpointer data)
   scorebox_update ();
 }
 
-
-
 static void
-on_help_about (GtkAction * action, gpointer data)
+on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   const gchar *authors[] = { "Four-in-a-row:",
     "  Tim Musson <trmusson@ihug.co.nz>",
@@ -837,7 +851,7 @@ on_help_about (GtkAction * action, gpointer data)
 
 
 static void
-on_help_contents (GtkAction * action, gpointer data)
+on_help_contents (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   GError *error = NULL;
 
@@ -849,7 +863,7 @@ on_help_contents (GtkAction * action, gpointer data)
 
 
 static void
-on_settings_preferences (GtkAction * action, gpointer user_data)
+on_settings_preferences (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
   prefsbox_open ();
 }
@@ -1177,88 +1191,28 @@ on_button_press (GtkWidget * w, GdkEventButton * e, gpointer data)
   return TRUE;
 }
 
-static const GtkActionEntry action_entry[] = {
-  {"GameMenu", NULL, N_("_Game")},
-  {"ViewMenu", NULL, N_("_View")},
-  {"SettingsMenu", NULL, N_("_Settings")},
-  {"HelpMenu", NULL, N_("_Help")},
-  {"NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, NULL,
-   G_CALLBACK (on_game_new)},
-  {"UndoMove", GAMES_STOCK_UNDO_MOVE, NULL, NULL, NULL,
-   G_CALLBACK (on_game_undo)},
-  {"Hint", GAMES_STOCK_HINT, NULL, NULL, NULL, G_CALLBACK (on_game_hint)},
-  {"Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL,
-   G_CALLBACK (on_game_scores)},
-  {"Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (on_game_exit)},
-  {"Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL,
-   G_CALLBACK (on_settings_preferences)},
-  {"Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL,
-   G_CALLBACK (on_help_contents)},
-  {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (on_help_about)}
+static const GActionEntry app_entries[] = {
+  {"new-game", on_game_new, NULL, NULL, NULL},
+  {"undo-move", on_game_undo, NULL, NULL, NULL},
+  {"hint", on_game_hint, NULL, NULL, NULL},
+  {"scores", on_game_scores, NULL, NULL, NULL},
+  {"quit", on_game_exit, NULL, NULL, NULL},
+  {"fullscreen", activate_toggle, NULL, "false", change_fullscreen_state},
+  {"preferences", on_settings_preferences, NULL, NULL, NULL},
+  {"help", on_help_contents, NULL, NULL, NULL},
+  {"about", on_help_about, NULL, NULL, NULL}
 };
-
-static const char ui_description[] =
-  "<ui>"
-  "  <menubar name='MainMenu'>"
-  "    <menu action='GameMenu'>"
-  "      <menuitem action='NewGame'/>"
-  "      <separator/>"
-  "      <menuitem action='UndoMove'/>"
-  "      <menuitem action='Hint'/>"
-  "      <separator/>"
-  "      <menuitem action='Scores'/>"
-  "      <separator/>"
-  "      <menuitem action='Quit'/>"
-  "    </menu>"
-  "    <menu action='ViewMenu'>"
-  "      <menuitem action='Fullscreen'/>"
-  "    </menu>"
-  "    <menu action='SettingsMenu'>"
-  "      <menuitem action='Preferences'/>"
-  "    </menu>"
-  "    <menu action='HelpMenu'>"
-  "      <menuitem action='Contents'/>"
-  "      <menuitem action='About'/>" "    </menu>" "  </menubar>" "</ui>";
-
-
-
-static void
-create_game_menus (GtkUIManager * ui_manager)
-{
-  GtkActionGroup *action_group;
-  games_stock_init ();
-
-  action_group = gtk_action_group_new ("actions");
-
-  gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-  gtk_action_group_add_actions (action_group, action_entry,
-				G_N_ELEMENTS (action_entry), app);
-
-  gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
-  gtk_ui_manager_add_ui_from_string (ui_manager, ui_description, -1, NULL);
-
-  gtk_window_add_accel_group (GTK_WINDOW (app),
-			      gtk_ui_manager_get_accel_group (ui_manager));
-
-  new_game_action = gtk_action_group_get_action (action_group, "NewGame");
-
-  hint_action = gtk_action_group_get_action (action_group, "Hint");
-  undo_action = gtk_action_group_get_action (action_group, "UndoMove");
-  fullscreen_action = GTK_ACTION (games_fullscreen_action_new ("Fullscreen", GTK_WINDOW (app)));
-  gtk_action_group_add_action_with_accel (action_group, fullscreen_action, NULL);
-}
-
 
 static gboolean
 create_app (void)
 {
-  GtkWidget *menubar;
   GtkWidget *gridframe;
   GtkWidget *grid;
   GtkWidget *vpaned;
-  GtkUIManager *ui_manager;
+  GMenu *app_menu, *section;
 
-  app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  app = gtk_application_window_new (application);
+  gtk_window_set_application (GTK_WINDOW (app), application);
   gtk_window_set_title (GTK_WINDOW (app), _(APPNAME_LONG));
 
   gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
@@ -1268,17 +1222,44 @@ create_app (void)
   gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
   gtk_notebook_set_show_border (GTK_NOTEBOOK (notebook), FALSE);
 
-  g_signal_connect (G_OBJECT (app), "delete_event",
-		    G_CALLBACK (on_game_exit), NULL);
-
   gtk_window_set_default_icon_name ("four-in-a-row");
 
   statusbar = gtk_statusbar_new ();
-  ui_manager = gtk_ui_manager_new ();
 
-  games_stock_prepare_for_statusbar_tooltips (ui_manager, statusbar);
-  create_game_menus (ui_manager);
-  menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
+  g_action_map_add_action_entries (G_ACTION_MAP (application), app_entries, G_N_ELEMENTS (app_entries), application);
+  gtk_application_add_accelerator (application, "<Primary>n", "app.new-game", NULL);
+  gtk_application_add_accelerator (application, "<Primary>h", "app.hint", NULL);
+  gtk_application_add_accelerator (application, "<Primary>z", "app.undo-move", NULL);
+  gtk_application_add_accelerator (application, "<Primary>q", "app.quit", NULL);
+  gtk_application_add_accelerator (application, "F1", "app.contents", NULL);
+
+  gtk_application_add_accelerator (application, "F11", "app.fullscreen", NULL);
+
+  app_menu = g_menu_new ();
+  section = g_menu_new ();
+  g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
+  g_menu_append (section, _("_New Game"), "app.new-game");
+  g_menu_append (section, _("_Undo Move"), "app.undo-move");
+  g_menu_append (section, _("_Hint"), "app.hint");
+  g_menu_append (section, _("_Scores"), "app.scores");
+  section = g_menu_new ();
+  g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
+  g_menu_append (section, _("_Fullscreen"), "app.fullscreen");
+  section = g_menu_new ();
+  g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
+  g_menu_append (section, _("_Preferences"), "app.preferences");
+  section = g_menu_new ();
+  g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
+  g_menu_append (section, _("_Help"), "app.help");
+  g_menu_append (section, _("_About"), "app.about");
+  g_menu_append (section, _("_Quit"), "app.quit");
+
+  new_game_action = g_action_map_lookup_action (G_ACTION_MAP (application), "new-game");
+  undo_action = g_action_map_lookup_action (G_ACTION_MAP (application), "undo-move");
+  hint_action = g_action_map_lookup_action (G_ACTION_MAP (application), "hint");
+
+  gtk_application_set_app_menu (GTK_APPLICATION (application), G_MENU_MODEL (app_menu));
+
 
   vpaned = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
   gtk_widget_set_hexpand (vpaned, TRUE);
@@ -1291,7 +1272,6 @@ create_app (void)
 
   gtk_paned_pack1 (GTK_PANED (vpaned), gridframe, TRUE, FALSE);
 
-  gtk_container_add (GTK_CONTAINER (grid), menubar);
   gtk_container_add (GTK_CONTAINER (grid), vpaned);
   gtk_container_add (GTK_CONTAINER (grid), statusbar);
 
@@ -1319,8 +1299,8 @@ create_app (void)
   /* We do our own double-buffering. */
   gtk_widget_set_double_buffered (GTK_WIDGET (drawarea), FALSE);
 
-  gtk_action_set_sensitive (hint_action, FALSE);
-  gtk_action_set_sensitive (undo_action, FALSE);
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
 
   gtk_widget_show_all (app);
 
@@ -1330,6 +1310,7 @@ create_app (void)
   scorebox_update ();		/* update visible player descriptions */
   prompt_player ();
 
+  game_reset ();
   return TRUE;
 }
 
@@ -1341,11 +1322,15 @@ main (int argc, char *argv[])
   GOptionContext *context;
   gboolean retval;
   GError *error = NULL;
+  gint app_retval;
 
   setlocale (LC_ALL, "");
   bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
+
+  application = gtk_application_new ("org.gnome.four-in-a-row", 0);
+  g_signal_connect (application, "activate", G_CALLBACK (create_app), NULL);
 
   /*
    * Required because the binary doesn't match the desktop file.
@@ -1375,12 +1360,9 @@ main (int argc, char *argv[])
     exit (1);
   }
 
-  if (create_app ()) {
-    game_reset ();
-    gtk_main ();
-  }
+  app_retval = g_application_run (G_APPLICATION (application), argc, argv);
 
   game_free ();
 
-  return 0;
+  return app_retval;
 }
