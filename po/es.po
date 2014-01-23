@@ -5,15 +5,15 @@
 # Lucas Vieites <lucas@codexion.com>, 2007, 2008.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
 # Chris Leonard <cjl@laptop.org>, 2012.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-25 14:41+0000\n"
-"PO-Revision-Date: 2013-11-04 16:32+0100\n"
+"POT-Creation-Date: 2014-01-22 23:20+0000\n"
+"PO-Revision-Date: 2014-01-23 10:43+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -381,11 +381,7 @@ msgstr "Puntuación"
 msgid "Drawn:"
 msgstr "Repartido:"
 
-#: ../src/main.c:828
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
+#: ../src/main.c:829
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -394,10 +390,6 @@ msgstr ""
 "Conecte 4 en raya para ganar\n"
 "\n"
 "Cuatro en raya es parte de los juegos de GNOME."
-
-#: ../src/main.c:829
-msgid "GNOME Games web site"
-msgstr "Página web de los juegos de GNOME"
 
 #: ../src/main.c:832
 msgid "translator-credits"
@@ -408,19 +400,19 @@ msgstr ""
 "Germán Poo Caamaño <gpoo@ubiobio.cl>\n"
 "Pablo Saratxaga <pablo@mandrakesoft.com>"
 
-#: ../src/main.c:1182
+#: ../src/main.c:1181
 msgid "_Game"
 msgstr "_Juego"
 
-#: ../src/main.c:1183
+#: ../src/main.c:1182
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/main.c:1184
+#: ../src/main.c:1183
 msgid "_Settings"
 msgstr "Aju_stes"
 
-#: ../src/main.c:1185
+#: ../src/main.c:1184
 msgid "_Help"
 msgstr "Ay_uda"
 
@@ -474,56 +466,68 @@ msgid "Keyboard Controls"
 msgstr "Control de teclado"
 
 #: ../src/theme.c:40
-msgid "Classic"
-msgstr "Clásico"
-
-#: ../src/theme.c:44 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
-msgid "Red"
-msgstr "Rojo"
-
-#: ../src/theme.c:44
-msgid "Yellow"
-msgstr "Amarillo"
-
-#: ../src/theme.c:47
 msgid "High Contrast"
 msgstr "Alto contraste"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Círculo"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Cruz"
 
-#: ../src/theme.c:54
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Alto contraste invertido"
 
-#: ../src/theme.c:61
-msgid "Cream Marbles"
-msgstr "Piezas crema"
-
-#: ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79 ../src/theme.c:86
-msgid "Blue"
-msgstr "Azul"
-
-#: ../src/theme.c:68
+#: ../src/theme.c:54
 msgid "Glass Marbles"
 msgstr "Piezas de cristal"
 
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
+msgid "Red"
+msgstr "Rojo"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Blue"
+msgstr "Azul"
+
+#: ../src/theme.c:61
+msgid "Red and Green Marbles"
+msgstr "Piezas rojas y verdes"
+
+#: ../src/theme.c:65 ../src/theme.c:79
+msgid "Green"
+msgstr "Verde"
+
+#: ../src/theme.c:68
+#| msgid "Cream Marbles"
+msgid "Blue and Red Marbles"
+msgstr "Piezas azules y rojas"
+
 #: ../src/theme.c:75
-msgid "Nightfall"
-msgstr "Anochecer"
+#| msgid "Starting %s"
+msgid "Stars and Rings"
+msgstr "Estrellas y anillos"
 
-#: ../src/theme.c:82
-msgid "Blocks"
-msgstr "Bloques"
+#~ msgid "GNOME Games web site"
+#~ msgstr "Página web de los juegos de GNOME"
 
-#: ../src/theme.c:86
-msgid "Orange"
-msgstr "Naranja"
+#~ msgid "Classic"
+#~ msgstr "Clásico"
+
+#~ msgid "Yellow"
+#~ msgstr "Amarillo"
+
+#~ msgid "Nightfall"
+#~ msgstr "Anochecer"
+
+#~ msgid "Blocks"
+#~ msgstr "Bloques"
+
+#~ msgid "Orange"
+#~ msgstr "Naranja"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "Cuatro en raya"
@@ -1529,9 +1533,6 @@ msgstr "Naranja"
 #~ msgid "_Worm color:"
 #~ msgstr "Color del _gusano:"
 
-#~ msgid "Green"
-#~ msgstr "Verde"
-
 #~ msgid "Cyan"
 #~ msgstr "Cian"
 
@@ -2326,7 +2327,8 @@ msgstr "Naranja"
 #~ msgstr "Usar la bandera de «desconocido»"
 
 #~ msgid "Set to true to be able to mark squares as unknown."
-#~ msgstr "Ponga el valor a «true» para poder marcar cuadros como desconocidos."
+#~ msgstr ""
+#~ "Ponga el valor a «true» para poder marcar cuadros como desconocidos."
 
 #~ msgid "Warning about too many flags"
 #~ msgstr "Advertir acerca de demasiadas banderas"
@@ -3586,9 +3588,6 @@ msgstr "Naranja"
 
 #~ msgid "Unrecognized desktop file Version '%s'"
 #~ msgstr "No se reconoce la versión «%s» del archivo desktop"
-
-#~ msgid "Starting %s"
-#~ msgstr "Iniciando %s"
 
 #~ msgid "Application does not accept documents on command line"
 #~ msgstr "La aplicación no acepta documentos en la línea de comandos"
@@ -5412,8 +5411,8 @@ msgstr "Naranja"
 #~ "'lan' (long algebraic notation) or 'san' (standard algebraic notation)"
 #~ msgstr ""
 #~ "El formato en el que mostrar jugadas, puede ser «humano» (legible por "
-#~ "personas), «lan» (notación algebraica larga - «long algebraic notation») o "
-#~ "«san» (notación algebraica estándar - «standard algebraic notation»)"
+#~ "personas), «lan» (notación algebraica larga - «long algebraic notation») "
+#~ "o «san» (notación algebraica estándar - «standard algebraic notation»)"
 
 #~ msgid "The piece style to use. Can be one of: 'simple' or 'fancy'"
 #~ msgstr "El estilo de pieza que usar. Puede ser «simple» o «fantasía»."
@@ -5425,9 +5424,9 @@ msgstr "Naranja"
 #~ "g. handhelds)"
 #~ msgstr ""
 #~ "El lado del tablero que está en primero plano, "
-#~ "«white» (blanco),«black» (negro), «current» (el jugador actual), «human» (el "
-#~ "lado del jugador humano actual) o «facetoface» (apropiado para jugadores a "
-#~ "cada lado de la pantalla, ej. dispositivos portátiles)"
+#~ "«white» (blanco),«black» (negro), «current» (el jugador actual), "
+#~ "«human» (el lado del jugador humano actual) o «facetoface» (apropiado "
+#~ "para jugadores a cada lado de la pantalla, ej. dispositivos portátiles)"
 
 #~ msgid "Logs"
 #~ msgstr "Registros"
