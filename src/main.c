@@ -539,7 +539,7 @@ prompt_player (void)
     if (gameover) {
 	str = g_strdup_printf (_("%s wins!"), who);
       }
-    if (player_active) {
+    else if (player_active) {
       set_status_message (_("Your Turn"));
       return;
 
