@@ -50,7 +50,7 @@ GSettings *settings;
 GtkWidget *app;
 GtkWidget *notebook;
 GtkWidget *drawarea;
-GtkWidget *statusbar;
+GtkWidget *headerbar;
 GtkWidget *scorebox = NULL;
 static GtkApplication *application;
 
@@ -353,12 +353,8 @@ swap_player (void)
 void
 set_status_message (const gchar * message)
 {
-  guint context_id;
-  context_id =
-    gtk_statusbar_get_context_id (GTK_STATUSBAR (statusbar), "message");
-  gtk_statusbar_pop (GTK_STATUSBAR (statusbar), context_id);
   if (message)
-    gtk_statusbar_push (GTK_STATUSBAR (statusbar), context_id, message);
+    gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), message);
 }
 
 static void
@@ -512,7 +508,7 @@ prompt_player (void)
 
   if (gameover && winner == NOBODY) {
     if (score[NOBODY] == 0) {
-      set_status_message ("");
+      set_status_message (NULL);
     } else {
       set_status_message (_("It's a draw!"));
     }
@@ -1198,7 +1194,11 @@ create_app (void)
 
   gtk_window_set_default_icon_name ("four-in-a-row");
 
-  statusbar = gtk_statusbar_new ();
+  headerbar = gtk_header_bar_new ();
+  gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Four-in-a-row"));
+  gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
+  gtk_widget_show (headerbar);
+  gtk_window_set_titlebar (GTK_WINDOW (app), headerbar);
 
   g_action_map_add_action_entries (G_ACTION_MAP (application), app_entries, G_N_ELEMENTS (app_entries), application);
   gtk_application_add_accelerator (application, "<Primary>n", "app.new-game", NULL);
@@ -1242,7 +1242,6 @@ create_app (void)
   gtk_paned_pack1 (GTK_PANED (vpaned), gridframe, TRUE, FALSE);
 
   gtk_container_add (GTK_CONTAINER (grid), vpaned);
-  gtk_container_add (GTK_CONTAINER (grid), statusbar);
 
   gtk_container_add (GTK_CONTAINER (app), notebook);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), grid, NULL);
