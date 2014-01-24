@@ -510,7 +510,7 @@ prompt_player (void)
     if (score[NOBODY] == 0) {
       set_status_message (NULL);
     } else {
-      set_status_message (_("It's a draw!"));
+      set_status_message (_("It’s a draw!"));
     }
     return;
   }
@@ -521,12 +521,12 @@ prompt_player (void)
       if (gameover)
 	set_status_message (_("You win!"));
       else
-	set_status_message (_("It is your move."));
+	set_status_message (_("Your Turn"));
     } else {
       if (gameover)
 	set_status_message (_("I win!"));
       else
-	set_status_message (_("Thinking..."));
+	set_status_message (_("I’m Thinking…"));
     }
     break;
   case 2:
@@ -540,11 +540,11 @@ prompt_player (void)
 	str = g_strdup_printf (_("%s wins!"), who);
       }
     if (player_active) {
-      set_status_message (_("It is your move."));
+      set_status_message (_("Your Turn"));
       return;
 
     } else {
-      str = g_strdup_printf (_("Waiting for %s to move."), who);
+      str = g_strdup_printf (_("%s’s Turn"), who);
     }
 
     set_status_message (str);
@@ -627,7 +627,7 @@ on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
   g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
 
-  set_status_message (_("Thinking..."));
+  set_status_message (_("I’m Thinking…"));
 
   vstr[0] = vlevel[LEVEL_STRONG];
   c = playgame (vstr, vboard) - 1;
