@@ -740,9 +740,6 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))),
 		      grid, TRUE, TRUE, 0);
 
-  icon = gtk_image_new_from_icon_name ("four-in-a-row", GTK_ICON_SIZE_DIALOG);
-  gtk_container_add (GTK_CONTAINER (grid), icon);
-
   grid2 = gtk_grid_new ();
   gtk_container_add (GTK_CONTAINER (grid), grid2);
   gtk_grid_set_column_spacing (GTK_GRID (grid2), 6);
