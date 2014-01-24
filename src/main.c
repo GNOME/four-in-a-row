@@ -722,7 +722,7 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
   scorebox = gtk_dialog_new_with_buttons (_("Scores"),
 					  GTK_WINDOW (app),
 					  GTK_DIALOG_DESTROY_WITH_PARENT,
-					  GTK_STOCK_CLOSE,
+					  _("_Close"),
 					  GTK_RESPONSE_CLOSE, NULL);
 
   gtk_window_set_resizable (GTK_WINDOW (scorebox), FALSE);
