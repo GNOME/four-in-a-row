@@ -16,8 +16,6 @@ four_in_a_row_SOURCES = main.h     \
                 evaluate.c \
                 games-controls.c \
                 games-controls.h \
-                games-fullscreen-action.c \
-                games-fullscreen-action.h \
                 games-gridframe.c \
                 games-gridframe.h \
                 games-stock.c \

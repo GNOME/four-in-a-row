@@ -35,7 +35,6 @@
 #include "prefs.h"
 #include "gfx.h"
 #include "games-gridframe.h"
-#include "games-fullscreen-action.h"
 #include "games-stock.h"
 
 #define SPEED_MOVE     25
@@ -61,7 +60,6 @@ GtkWidget *label_score[3];
 GAction *new_game_action;
 GAction *undo_action;
 GAction *hint_action;
-GAction *fullscreen_action;
 
 PlayerID player;
 PlayerID winner;
@@ -364,18 +362,6 @@ set_status_message (const gchar * message)
 }
 
 static void
-activate_toggle (GSimpleAction *action,
-                 GVariant      *parameter,
-                 gpointer       user_data)
-{
-  GVariant *state;
-
-  state = g_action_get_state (G_ACTION (action));
-  g_action_change_state (G_ACTION (action), g_variant_new_boolean (!g_variant_get_boolean (state)));
-  g_variant_unref (state);
-}
-
-static void
 stop_anim (void)
 {
   if (timeout == 0)
@@ -668,17 +654,6 @@ on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
 
   g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), TRUE);
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), (moves > 0));
-}
-
-static void
-change_fullscreen_state (GSimpleAction *action, GVariant *state, gpointer data)
-{
-  if (g_variant_get_boolean (state))
-    gtk_window_fullscreen (GTK_WINDOW (app));
-  else
-    gtk_window_unfullscreen (GTK_WINDOW (app));
-
-  g_simple_action_set_state (action, state);
 }
 
 void
@@ -1197,7 +1172,6 @@ static const GActionEntry app_entries[] = {
   {"hint", on_game_hint, NULL, NULL, NULL},
   {"scores", on_game_scores, NULL, NULL, NULL},
   {"quit", on_game_exit, NULL, NULL, NULL},
-  {"fullscreen", activate_toggle, NULL, "false", change_fullscreen_state},
   {"preferences", on_settings_preferences, NULL, NULL, NULL},
   {"help", on_help_contents, NULL, NULL, NULL},
   {"about", on_help_about, NULL, NULL, NULL}
@@ -1233,8 +1207,6 @@ create_app (void)
   gtk_application_add_accelerator (application, "<Primary>q", "app.quit", NULL);
   gtk_application_add_accelerator (application, "F1", "app.contents", NULL);
 
-  gtk_application_add_accelerator (application, "F11", "app.fullscreen", NULL);
-
   app_menu = g_menu_new ();
   section = g_menu_new ();
   g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
@@ -1242,9 +1214,6 @@ create_app (void)
   g_menu_append (section, _("_Undo Move"), "app.undo-move");
   g_menu_append (section, _("_Hint"), "app.hint");
   g_menu_append (section, _("_Scores"), "app.scores");
-  section = g_menu_new ();
-  g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
-  g_menu_append (section, _("_Fullscreen"), "app.fullscreen");
   section = g_menu_new ();
   g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
   g_menu_append (section, _("_Preferences"), "app.preferences");
