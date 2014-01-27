@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-22 23:20+0000\n"
-"PO-Revision-Date: 2014-01-23 10:43+0100\n"
+"POT-Creation-Date: 2014-01-25 11:26+0000\n"
+"PO-Revision-Date: 2014-01-27 13:35+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Cuatro en raya tiene varios niveles de dificultad. Si tiene problemas, "
 "siempre puede pedir una pista."
 
-#: ../data/gnect.desktop.in.h:1 ../src/main.h:5
+#: ../data/gnect.desktop.in.h:1 ../src/main.c:1195 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Cuatro en raya"
 
@@ -207,7 +207,7 @@ msgstr "Índ_ice"
 msgid "_Fullscreen"
 msgstr "_Pantalla completa"
 
-#: ../src/games-stock.c:249
+#: ../src/games-stock.c:249 ../src/main.c:1212
 msgid "_Hint"
 msgstr "_Sugerencia"
 
@@ -217,7 +217,7 @@ msgid "_New"
 msgstr "_Nuevo"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1210
 msgid "_New Game"
 msgstr "Juego _nuevo"
 
@@ -235,7 +235,7 @@ msgstr "_Reiniciar"
 msgid "_Restart"
 msgstr "_Reiniciar"
 
-#: ../src/games-stock.c:259
+#: ../src/games-stock.c:259 ../src/main.c:1211
 msgid "_Undo Move"
 msgstr "_Deshacer movimiento"
 
@@ -267,7 +267,7 @@ msgstr "_Pausa"
 msgid "Res_ume"
 msgstr "C_ontinuar"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1213
 msgid "_Scores"
 msgstr "_Puntuación"
 
@@ -330,58 +330,64 @@ msgstr ""
 "No se puede cargar la imagen:\n"
 "%s"
 
-#: ../src/main.c:523
-msgid "It's a draw!"
+#: ../src/main.c:513
+#, fuzzy
+#| msgid "It's a draw!"
+msgid "It’s a draw!"
 msgstr "Es un empate"
 
-#: ../src/main.c:532
+#: ../src/main.c:522
 msgid "You win!"
 msgstr "Usted gana"
 
-#: ../src/main.c:534 ../src/main.c:553
-msgid "It is your move."
-msgstr "Su turno."
+#: ../src/main.c:524 ../src/main.c:543
+msgid "Your Turn"
+msgstr "Su turno"
 
-#: ../src/main.c:537
+#: ../src/main.c:527
 msgid "I win!"
 msgstr "Gano yo"
 
-#: ../src/main.c:539 ../src/main.c:641
-msgid "Thinking..."
-msgstr "Pensando…"
+#: ../src/main.c:529 ../src/main.c:630
+msgid "I’m Thinking…"
+msgstr "Estoy pensando…"
 
-#: ../src/main.c:550
+#: ../src/main.c:540
 #, c-format
 msgid "%s wins!"
 msgstr "Gana %s"
 
-#: ../src/main.c:557
+#: ../src/main.c:547
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "Esperando que %s mueva."
+msgid "%s’s Turn"
+msgstr "Turno de %s"
 
-#: ../src/main.c:658
+#: ../src/main.c:647
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Pista: columna %d"
 
-#: ../src/main.c:686 ../src/main.c:690
+#: ../src/main.c:673 ../src/main.c:677
 msgid "You:"
 msgstr "Usted:"
 
-#: ../src/main.c:687 ../src/main.c:689
+#: ../src/main.c:674 ../src/main.c:676
 msgid "Me:"
 msgstr "Yo:"
 
-#: ../src/main.c:735
+#: ../src/main.c:722
 msgid "Scores"
 msgstr "Puntuación"
 
-#: ../src/main.c:779
+#: ../src/main.c:725
+msgid "_Close"
+msgstr "_Cerrar"
+
+#: ../src/main.c:763
 msgid "Drawn:"
 msgstr "Repartido:"
 
-#: ../src/main.c:829
+#: ../src/main.c:811
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -391,7 +397,7 @@ msgstr ""
 "\n"
 "Cuatro en raya es parte de los juegos de GNOME."
 
-#: ../src/main.c:832
+#: ../src/main.c:814
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2008-2012\n"
@@ -400,21 +406,21 @@ msgstr ""
 "Germán Poo Caamaño <gpoo@ubiobio.cl>\n"
 "Pablo Saratxaga <pablo@mandrakesoft.com>"
 
-#: ../src/main.c:1181
-msgid "_Game"
-msgstr "_Juego"
+#: ../src/main.c:1216
+msgid "_Preferences"
+msgstr "_Preferencias"
 
-#: ../src/main.c:1182
-msgid "_View"
-msgstr "_Ver"
-
-#: ../src/main.c:1183
-msgid "_Settings"
-msgstr "Aju_stes"
-
-#: ../src/main.c:1184
+#: ../src/main.c:1219
 msgid "_Help"
 msgstr "Ay_uda"
+
+#: ../src/main.c:1220
+msgid "_About"
+msgstr "_Acerca de"
+
+#: ../src/main.c:1221
+msgid "_Quit"
+msgstr "_Salir"
 
 #: ../src/prefs.c:206
 msgid "Four-in-a-Row Preferences"
@@ -502,14 +508,30 @@ msgid "Green"
 msgstr "Verde"
 
 #: ../src/theme.c:68
-#| msgid "Cream Marbles"
 msgid "Blue and Red Marbles"
 msgstr "Piezas azules y rojas"
 
 #: ../src/theme.c:75
-#| msgid "Starting %s"
 msgid "Stars and Rings"
 msgstr "Estrellas y anillos"
+
+#~ msgid "It is your move."
+#~ msgstr "Su turno."
+
+#~ msgid "Thinking..."
+#~ msgstr "Pensando…"
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "Esperando que %s mueva."
+
+#~ msgid "_Game"
+#~ msgstr "_Juego"
+
+#~ msgid "_View"
+#~ msgstr "_Ver"
+
+#~ msgid "_Settings"
+#~ msgstr "Aju_stes"
 
 #~ msgid "GNOME Games web site"
 #~ msgstr "Página web de los juegos de GNOME"
@@ -1909,15 +1931,6 @@ msgstr "Estrellas y anillos"
 
 #~ msgid "_Restart Game"
 #~ msgstr "_Reiniciar partida"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Preferencias"
-
-#~ msgid "_About"
-#~ msgstr "_Acerca de"
-
-#~ msgid "_Quit"
-#~ msgstr "_Salir"
 
 #~ msgid "Hint"
 #~ msgstr "Sugerencia"
@@ -4622,9 +4635,6 @@ msgstr "Estrellas y anillos"
 
 #~ msgid "_Cancel"
 #~ msgstr "_Cancelar"
-
-#~ msgid "_Close"
-#~ msgstr "_Cerrar"
 
 #~ msgid "_OK"
 #~ msgstr "_Aceptar"
