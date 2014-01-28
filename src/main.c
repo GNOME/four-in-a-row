@@ -794,7 +794,7 @@ on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
   const gchar *artists[] = { "Alan Horkan",
     "Tim Musson",
     "Anatol Drlicek",
-    "Some themes based on the Faenza icon theme by Matthieu James",
+    "Based on the Faenza icon theme by Matthieu James",
     NULL
   };
 
