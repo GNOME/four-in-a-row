@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2014-01-25 11:26+0000\n"
-"PO-Revision-Date: 2014-01-27 13:35+0100\n"
+"PO-Revision-Date: 2014-01-29 10:05+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -331,7 +331,6 @@ msgstr ""
 "%s"
 
 #: ../src/main.c:513
-#, fuzzy
 #| msgid "It's a draw!"
 msgid "It’s a draw!"
 msgstr "Es un empate"
