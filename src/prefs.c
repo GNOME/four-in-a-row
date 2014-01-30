@@ -43,7 +43,7 @@
 Prefs p;
 
 extern GSettings *settings;
-extern GtkWidget *app;
+extern GtkWidget *window;
 extern Theme theme[];
 extern gint n_themes;
 
@@ -204,7 +204,7 @@ prefsbox_open (void)
   }
 
   prefsbox = gtk_dialog_new_with_buttons (_("Four-in-a-Row Preferences"),
-					  GTK_WINDOW (app),
+					  GTK_WINDOW (window),
 					  GTK_DIALOG_DESTROY_WITH_PARENT,
 					  GTK_STOCK_CLOSE,
 					  GTK_RESPONSE_ACCEPT, NULL);

@@ -47,7 +47,7 @@
 extern Prefs p;
 
 GSettings *settings;
-GtkWidget *app;
+GtkWidget *window;
 GtkWidget *notebook;
 GtkWidget *drawarea;
 GtkWidget *headerbar;
@@ -720,7 +720,7 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
   }
 
   scorebox = gtk_dialog_new_with_buttons (_("Scores"),
-					  GTK_WINDOW (app),
+					  GTK_WINDOW (window),
 					  GTK_DIALOG_DESTROY_WITH_PARENT,
 					  _("_Close"),
 					  GTK_RESPONSE_CLOSE, NULL);
@@ -802,7 +802,7 @@ on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
     NULL
   };
 
-  gtk_show_about_dialog (GTK_WINDOW (app),
+  gtk_show_about_dialog (GTK_WINDOW (window),
 			 "name", _(APPNAME_LONG),
 			 "version", VERSION,
 			 "copyright",
@@ -823,7 +823,7 @@ on_help_contents (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   GError *error = NULL;
 
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (app)), "help:four-in-a-row", gtk_get_current_event_time (), &error);
+  gtk_show_uri (gtk_widget_get_screen (window), "help:four-in-a-row", gtk_get_current_event_time (), &error);
   if (error)
     g_warning ("Failed to show help: %s", error->message);
   g_clear_error (&error);
@@ -1178,11 +1178,11 @@ create_app (void)
   GtkWidget *vpaned;
   GMenu *app_menu, *section;
 
-  app = gtk_application_window_new (application);
-  gtk_window_set_application (GTK_WINDOW (app), application);
-  gtk_window_set_title (GTK_WINDOW (app), _(APPNAME_LONG));
+  window = gtk_application_window_new (application);
+  gtk_window_set_application (GTK_WINDOW (window), application);
+  gtk_window_set_title (GTK_WINDOW (window), _(APPNAME_LONG));
 
-  gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
+  gtk_window_set_default_size (GTK_WINDOW (window), DEFAULT_WIDTH, DEFAULT_HEIGHT);
   //games_conf_add_window (GTK_WINDOW (app), NULL);
 
   notebook = gtk_notebook_new ();
@@ -1195,7 +1195,7 @@ create_app (void)
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Four-in-a-row"));
   gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
   gtk_widget_show (headerbar);
-  gtk_window_set_titlebar (GTK_WINDOW (app), headerbar);
+  gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
 
   g_action_map_add_action_entries (G_ACTION_MAP (application), app_entries, G_N_ELEMENTS (app_entries), application);
   gtk_application_add_accelerator (application, "<Primary>n", "app.new-game", NULL);
@@ -1240,7 +1240,7 @@ create_app (void)
 
   gtk_container_add (GTK_CONTAINER (grid), vpaned);
 
-  gtk_container_add (GTK_CONTAINER (app), notebook);
+  gtk_container_add (GTK_CONTAINER (window), notebook);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), grid, NULL);
   gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), MAIN_PAGE);
 
@@ -1258,7 +1258,7 @@ create_app (void)
 		    G_CALLBACK (on_drawarea_draw), NULL);
   g_signal_connect (G_OBJECT (drawarea), "button_press_event",
 		    G_CALLBACK (on_button_press), NULL);
-  g_signal_connect (G_OBJECT (app), "key_press_event",
+  g_signal_connect (G_OBJECT (window), "key_press_event",
 		    G_CALLBACK (on_key_press), NULL);
 
   /* We do our own double-buffering. */
@@ -1267,7 +1267,7 @@ create_app (void)
   g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
 
-  gtk_widget_show_all (app);
+  gtk_widget_show_all (window);
 
   gfx_refresh_pixmaps ();
   gfx_draw_all ();

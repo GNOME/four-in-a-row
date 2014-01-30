@@ -38,7 +38,7 @@
 extern Prefs p;
 extern Theme theme[];
 extern gint gboard[7][7];
-extern GtkWidget *app;
+extern GtkWidget *window;
 extern GtkWidget *drawarea;
 
 static gint boardsize = 0;
@@ -240,7 +240,7 @@ gfx_load_error (const gchar * fname)
 {
   GtkWidget *dialog;
 
-  dialog = gtk_message_dialog_new (GTK_WINDOW (app),
+  dialog = gtk_message_dialog_new (GTK_WINDOW (window),
 				   GTK_DIALOG_MODAL,
 				   GTK_MESSAGE_WARNING,
 				   GTK_BUTTONS_CLOSE,

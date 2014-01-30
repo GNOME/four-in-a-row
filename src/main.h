@@ -50,7 +50,6 @@ typedef enum {
 } LevelID;
 
 extern PlayerID who_starts;
-extern GtkWidget *app;
 extern GtkWidget *notebook;
 
 gboolean player_active;
