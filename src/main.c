@@ -48,7 +48,6 @@ extern Prefs p;
 
 GSettings *settings;
 GtkWidget *window;
-GtkWidget *notebook;
 GtkWidget *drawarea;
 GtkWidget *headerbar;
 GtkWidget *scorebox = NULL;
@@ -1175,7 +1174,6 @@ create_app (void)
 {
   GtkWidget *gridframe;
   GtkWidget *grid;
-  GtkWidget *vpaned;
   GMenu *app_menu, *section;
 
   window = gtk_application_window_new (application);
@@ -1184,10 +1182,6 @@ create_app (void)
 
   gtk_window_set_default_size (GTK_WINDOW (window), DEFAULT_WIDTH, DEFAULT_HEIGHT);
   //games_conf_add_window (GTK_WINDOW (app), NULL);
-
-  notebook = gtk_notebook_new ();
-  gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
-  gtk_notebook_set_show_border (GTK_NOTEBOOK (notebook), FALSE);
 
   gtk_window_set_default_icon_name ("four-in-a-row");
 
@@ -1226,29 +1220,18 @@ create_app (void)
 
   gtk_application_set_app_menu (GTK_APPLICATION (application), G_MENU_MODEL (app_menu));
 
-
-  vpaned = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
-  gtk_widget_set_hexpand (vpaned, TRUE);
-  gtk_widget_set_vexpand (vpaned, TRUE);
-
   grid = gtk_grid_new ();
   gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_VERTICAL);
+  gtk_container_add (GTK_CONTAINER (window), grid);
 
   gridframe = games_grid_frame_new (7, 7);
-
-  gtk_paned_pack1 (GTK_PANED (vpaned), gridframe, TRUE, FALSE);
-
-  gtk_container_add (GTK_CONTAINER (grid), vpaned);
-
-  gtk_container_add (GTK_CONTAINER (window), notebook);
-  gtk_notebook_append_page (GTK_NOTEBOOK (notebook), grid, NULL);
-  gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), MAIN_PAGE);
+  gtk_widget_set_hexpand (gridframe, TRUE);
+  gtk_widget_set_vexpand (gridframe, TRUE);
+  gtk_container_add (GTK_CONTAINER (grid), gridframe);
 
   drawarea = gtk_drawing_area_new ();
-
   /* set a min size to avoid pathological behavior of gtk when scaling down */
   gtk_widget_set_size_request (drawarea, 200, 200);
-
   gtk_container_add (GTK_CONTAINER (gridframe), drawarea);
 
   gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK);
