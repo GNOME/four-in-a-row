@@ -635,14 +635,10 @@ on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
   c = playgame (vstr, vboard) - 1;
 
   column_moveto = c;
-  if (p.do_animate) {
-    while (timeout)
-      gtk_main_iteration ();
-    anim = ANIM_HINT;
-    timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, NULL);
-  } else {
-    move_cursor (column_moveto);
-  }
+  while (timeout)
+    gtk_main_iteration ();
+  anim = ANIM_HINT;
+  timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, NULL);
 
   blink_tile (0, c, gboard[0][c], 6);
 
@@ -1032,16 +1028,10 @@ process_move (gint c)
 
   }
 
-  if (!p.do_animate) {
-    move_cursor (c);
-    column_moveto = c;
-    process_move2 (c);
-  } else {
-    column_moveto = c;
-    anim = ANIM_MOVE;
-    timeout = g_timeout_add (SPEED_MOVE,
-                             (GSourceFunc) on_animate, GINT_TO_POINTER (c));
-  }
+  column_moveto = c;
+  anim = ANIM_MOVE;
+  timeout = g_timeout_add (SPEED_MOVE,
+                           (GSourceFunc) on_animate, GINT_TO_POINTER (c));
 }
 
 static void
@@ -1051,18 +1041,12 @@ process_move2 (gint c)
 
   r = first_empty_row (c);
   if (r > 0) {
-
-    if (!p.do_animate) {
-      drop_marble (r, c);
-      process_move3 (c);
-    } else {
-      row = 0;
-      row_dropto = r;
-      anim = ANIM_DROP;
-      timeout = g_timeout_add (SPEED_DROP,
-                               (GSourceFunc) on_animate,
-                               GINT_TO_POINTER (c));
-    }
+    row = 0;
+    row_dropto = r;
+    anim = ANIM_DROP;
+    timeout = g_timeout_add (SPEED_DROP,
+                             (GSourceFunc) on_animate,
+                             GINT_TO_POINTER (c));
   } else {
     play_sound (SOUND_COLUMN_FULL);
   }

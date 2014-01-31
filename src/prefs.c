@@ -51,7 +51,6 @@ static GtkWidget *prefsbox = NULL;
 static GtkWidget *combobox1;
 static GtkWidget *combobox2;
 static GtkWidget *combobox_theme;
-static GtkWidget *checkbutton_animate;
 static GtkWidget *checkbutton_sound;
 
 static gint
@@ -77,13 +76,7 @@ settings_changed_cb (GSettings *settings,
                      const char *key,
                      gpointer user_data)
 {
-  if (strcmp (key, "animate") == 0) {
-    p.do_animate = g_settings_get_boolean (settings, "animate");
-    if (prefsbox == NULL)
-      return;
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_animate),
-                                  p.do_animate);
-  } else if (strcmp (key, "sound") == 0) {
+  if (strcmp (key, "sound") == 0) {
     p.do_sound = g_settings_get_boolean (settings, "sound");
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_sound),
                                   p.do_sound);
@@ -115,15 +108,6 @@ on_select_theme (GtkComboBox * combo, gpointer data)
 
   id = gtk_combo_box_get_active (combo);
   g_settings_set_int (settings, "theme-id", id);
-}
-
-
-
-static void
-on_toggle_animate (GtkToggleButton * t, gpointer data)
-{
-  p.do_animate = gtk_toggle_button_get_active (t);
-  g_settings_set_boolean (settings, "animate", gtk_toggle_button_get_active (t));
 }
 
 static void
@@ -171,7 +155,6 @@ void
 prefs_init (void)
 {
   p.do_sound = g_settings_get_boolean (settings, "sound");
-  p.do_animate = g_settings_get_boolean (settings, "animate");
   p.level[PLAYER1] = g_settings_get_int (settings, "player1");
   p.level[PLAYER2] = g_settings_get_int (settings, "player2");
   p.keypress[MOVE_LEFT] = g_settings_get_int (settings, "key-left");
@@ -298,13 +281,9 @@ prefsbox_open (void)
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), combobox_theme);
   gtk_grid_attach (GTK_GRID (grid), combobox_theme, 1, 2, 1, 1);
 
-  checkbutton_animate =
-    gtk_check_button_new_with_mnemonic (_("Enable _animation"));
-  gtk_grid_attach (GTK_GRID (grid), checkbutton_animate, 0, 3, 2, 1);
-
   checkbutton_sound =
     gtk_check_button_new_with_mnemonic (_("E_nable sounds"));
-  gtk_grid_attach (GTK_GRID (grid), checkbutton_sound, 0, 4, 2, 1);
+  gtk_grid_attach (GTK_GRID (grid), checkbutton_sound, 0, 3, 2, 1);
 
   /* keyboard tab */
 
@@ -322,8 +301,6 @@ prefsbox_open (void)
   /* fill in initial values */
 
   gtk_combo_box_set_active (GTK_COMBO_BOX (combobox_theme), p.theme_id);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_animate),
-				p.do_animate);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton_sound),
 				p.do_sound);
 
@@ -334,9 +311,6 @@ prefsbox_open (void)
 
   g_signal_connect (G_OBJECT (combobox_theme), "changed",
 		    G_CALLBACK (on_select_theme), NULL);
-
-  g_signal_connect (G_OBJECT (checkbutton_animate), "toggled",
-		    G_CALLBACK (on_toggle_animate), NULL);
 
   g_signal_connect (G_OBJECT (checkbutton_sound), "toggled",
 		    G_CALLBACK (on_toggle_sound), NULL);

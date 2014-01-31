@@ -15,11 +15,6 @@
       <summary>Theme ID</summary>
       <description>A number specifying the preferred theme.</description>
     </key>
-    <key name="animate" type="b">
-      <default>true</default>
-      <summary>Animate</summary>
-      <description>Whether or not to use animation.</description>
-    </key>
     <key name="sound" type="b">
       <default>true</default>
       <summary>Sound</summary>
