@@ -5,7 +5,6 @@ gsettings_SCHEMAS = org.gnome.four-in-a-row.gschema.xml
 
 pixmapdir = $(datadir)/four-in-a-row
 pixmap_DATA = \
-    tileset_50x50_glassy.png \
     tileset_50x50_hcontrast.svg \
     tileset_50x50_hcinverse.svg \
     tileset_50x50_faenza-glines-icon1.svg \

@@ -51,13 +51,6 @@ Theme theme[] = {
    N_("Circle"), N_("Cross")
    },
   {
-   N_("Glass Marbles"),
-   "tileset_50x50_glassy.png",
-   "bg_toplight.png",
-   "#727F8C",
-   N_("Red"), N_("Blue")
-   },
-  {
    N_("Red and Green Marbles"),
    "tileset_50x50_faenza-glines-icon1.svg",
    "bg_toplight.png",
