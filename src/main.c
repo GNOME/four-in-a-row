@@ -1207,11 +1207,7 @@ create_app (void)
   section = g_menu_new ();
   g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
   g_menu_append (section, _("_New Game"), "app.new-game");
-  g_menu_append (section, _("_Undo Move"), "app.undo-move");
-  g_menu_append (section, _("_Hint"), "app.hint");
   g_menu_append (section, _("_Scores"), "app.scores");
-  section = g_menu_new ();
-  g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
   g_menu_append (section, _("_Preferences"), "app.preferences");
   section = g_menu_new ();
   g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
