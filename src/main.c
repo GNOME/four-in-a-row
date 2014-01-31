@@ -60,10 +60,6 @@ GAction *new_game_action;
 GAction *undo_action;
 GAction *hint_action;
 
-GtkWidget *new_game_button;
-GtkWidget *undo_button;
-GtkWidget *hint_button;
-
 PlayerID player;
 PlayerID winner;
 PlayerID who_starts;
@@ -1161,6 +1157,9 @@ create_app (void)
   GtkWidget *gridframe;
   GtkWidget *hbox, *vbox;
   GtkWidget *image;
+  GtkWidget *new_game_button;
+  GtkWidget *undo_button;
+  GtkWidget *hint_button;
   GMenu *app_menu, *section;
 
   window = gtk_application_window_new (application);
