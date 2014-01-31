@@ -186,7 +186,7 @@ prefsbox_open (void)
     return;
   }
 
-  prefsbox = gtk_dialog_new_with_buttons (_("Four-in-a-Row Preferences"),
+  prefsbox = gtk_dialog_new_with_buttons (_("Preferences"),
 					  GTK_WINDOW (window),
 					  GTK_DIALOG_DESTROY_WITH_PARENT,
 					  GTK_STOCK_CLOSE,
