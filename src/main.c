@@ -1166,10 +1166,7 @@ create_app (void)
   window = gtk_application_window_new (application);
   gtk_window_set_application (GTK_WINDOW (window), application);
   gtk_window_set_title (GTK_WINDOW (window), _(APPNAME_LONG));
-
   gtk_window_set_default_size (GTK_WINDOW (window), DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  //games_conf_add_window (GTK_WINDOW (app), NULL);
-
   gtk_window_set_default_icon_name ("four-in-a-row");
 
   headerbar = gtk_header_bar_new ();
