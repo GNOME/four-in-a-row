@@ -41,8 +41,8 @@
 #define SPEED_DROP     20
 #define SPEED_BLINK    150
 
-#define DEFAULT_WIDTH 350
-#define DEFAULT_HEIGHT 390
+#define DEFAULT_WIDTH 495
+#define DEFAULT_HEIGHT 435
 
 extern Prefs p;
 
@@ -59,6 +59,10 @@ GtkWidget *label_score[3];
 GAction *new_game_action;
 GAction *undo_action;
 GAction *hint_action;
+
+GtkWidget *new_game_button;
+GtkWidget *undo_button;
+GtkWidget *hint_button;
 
 PlayerID player;
 PlayerID winner;
@@ -1173,7 +1177,8 @@ static gboolean
 create_app (void)
 {
   GtkWidget *gridframe;
-  GtkWidget *grid;
+  GtkWidget *hbox, *vbox;
+  GtkWidget *image;
   GMenu *app_menu, *section;
 
   window = gtk_application_window_new (application);
@@ -1220,18 +1225,17 @@ create_app (void)
 
   gtk_application_set_app_menu (GTK_APPLICATION (application), G_MENU_MODEL (app_menu));
 
-  grid = gtk_grid_new ();
-  gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_VERTICAL);
-  gtk_container_add (GTK_CONTAINER (window), grid);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_container_add (GTK_CONTAINER (window), hbox);
 
   gridframe = games_grid_frame_new (7, 7);
   gtk_widget_set_hexpand (gridframe, TRUE);
   gtk_widget_set_vexpand (gridframe, TRUE);
-  gtk_container_add (GTK_CONTAINER (grid), gridframe);
+  gtk_box_pack_start (GTK_BOX (hbox), gridframe, TRUE, TRUE, 10);
 
   drawarea = gtk_drawing_area_new ();
   /* set a min size to avoid pathological behavior of gtk when scaling down */
-  gtk_widget_set_size_request (drawarea, 200, 200);
+  gtk_widget_set_size_request (drawarea, 300, 300);
   gtk_container_add (GTK_CONTAINER (gridframe), drawarea);
 
   gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK);
@@ -1246,6 +1250,34 @@ create_app (void)
 
   /* We do our own double-buffering. */
   gtk_widget_set_double_buffered (GTK_WIDGET (drawarea), FALSE);
+
+  if (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL)
+    image = gtk_image_new_from_icon_name ("edit-undo-rtl-symbolic", GTK_ICON_SIZE_DIALOG);
+  else
+    image = gtk_image_new_from_icon_name ("edit-undo-symbolic", GTK_ICON_SIZE_DIALOG);
+
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 6);
+
+  undo_button = gtk_button_new ();
+  gtk_button_set_image (GTK_BUTTON (undo_button), image);
+  gtk_button_set_relief (GTK_BUTTON (undo_button), GTK_RELIEF_NONE);
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (undo_button), "app.undo-move");
+  gtk_box_pack_start (GTK_BOX (vbox), undo_button, FALSE, FALSE, 0);
+
+  hint_button = gtk_button_new ();
+  image = gtk_image_new_from_icon_name ("dialog-question-symbolic", GTK_ICON_SIZE_DIALOG);
+  gtk_button_set_image (GTK_BUTTON (hint_button), image);
+  gtk_button_set_relief (GTK_BUTTON (hint_button), GTK_RELIEF_NONE);
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (hint_button), "app.hint");
+  gtk_box_pack_start (GTK_BOX (vbox), hint_button, FALSE, FALSE, 0);
+
+  new_game_button = gtk_button_new ();
+  image = gtk_image_new_from_icon_name ("view-refresh-symbolic", GTK_ICON_SIZE_DIALOG);
+  gtk_button_set_image (GTK_BUTTON (new_game_button), image);
+  gtk_button_set_relief (GTK_BUTTON (new_game_button), GTK_RELIEF_NONE);
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (new_game_button), "app.new-game");
+  gtk_box_pack_end (GTK_BOX (vbox), new_game_button, FALSE, FALSE, 0);
 
   g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
