@@ -650,7 +650,6 @@ on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
   set_status_message (s);
   g_free (s);
 
-  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), TRUE);
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), (moves > 0));
 }
 
