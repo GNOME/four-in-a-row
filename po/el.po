@@ -29,22 +29,22 @@
 # Simos Xenitellis <simos.lists@googlemail.com>, 2010.
 # Michael Kotsarinis <mk73628@hotmail.com>, 2010.
 # George Stefanakis <george.stefanakis@gmail.com>, 2011.
-# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.el\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-20 03:02+0000\n"
-"PO-Revision-Date: 2013-11-06 17:19+0300\n"
+"POT-Creation-Date: 2014-01-31 03:54+0000\n"
+"PO-Revision-Date: 2014-01-30 20:52+0300\n"
 "Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
-"Language-Team: team@gnome.gr\n"
+"Language-Team: team@lists.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Virtaal 0.7.0\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
@@ -68,7 +68,7 @@ msgstr ""
 "Το τέσσερα στη σειρά χαρακτηρίζεται από πολλαπλά επίπεδα δυσκολίας. Αν έχετε "
 "πρόβλημα, μπορείτε πάντα να ζητήσετε μια υπόδειξη."
 
-#: ../data/gnect.desktop.in.h:1 ../src/main.h:5
+#: ../data/gnect.desktop.in.h:1 ../src/main.c:1172 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Τέσσερα στη σειρά"
 
@@ -105,42 +105,34 @@ msgid "A number specifying the preferred theme."
 msgstr "Ένας αριθμός που καθορίζει το προτιμώμενο θέμα."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
-msgid "Animate"
-msgstr "Σε κίνηση"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
-msgid "Whether or not to use animation."
-msgstr "Αν θα χρησιμοποιούνται κινούμενες εικόνες ή όχι."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Sound"
 msgstr "Ήχος"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
 msgid "Whether or not to play event sounds."
 msgstr "Αν θα αναπαράγονται ήχοι συμβάντων ή όχι."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:315
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8 ../src/prefs.c:294
 msgid "Move left"
 msgstr "Μετακίνηση προς τα αριστερά"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
 msgid "Key press to move left."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα αριστερά."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:295
 msgid "Move right"
 msgstr "Μετακίνηση προς τα δεξιά"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
 msgid "Key press to move right."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα δεξιά."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:14 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:296
 msgid "Drop marble"
 msgstr "Βώλοι"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
 msgid "Key press to drop a marble."
 msgstr "Πάτημα πλήκτρου για να πέσει ένας βώλος."
 
@@ -244,7 +236,7 @@ msgid "_New"
 msgstr "_Νέο"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1187
 msgid "_New Game"
 msgstr "_Νέο παιχνίδι"
 
@@ -294,7 +286,7 @@ msgstr "Π_αύση"
 msgid "Res_ume"
 msgstr "Συνέχιση"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1188
 msgid "_Scores"
 msgstr "_Βαθμολογίες"
 
@@ -358,62 +350,62 @@ msgstr ""
 "Αδυναμία φόρτωσης εικόνας:\n"
 "%s"
 
-#: ../src/main.c:523
-msgid "It's a draw!"
+#: ../src/main.c:511
+msgid "It’s a draw!"
 msgstr "Ισοπαλία!"
 
-#: ../src/main.c:532
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "Κέρδισες!"
 
-#: ../src/main.c:534 ../src/main.c:553
-msgid "It is your move."
-msgstr "Είναι η σειρά σου."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "Η σειρά σας"
 
-#: ../src/main.c:537
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "Κέρδισα!"
 
-#: ../src/main.c:539 ../src/main.c:641
-msgid "Thinking..."
-msgstr "Σκέψη..."
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
+msgstr "Σκέφτομαι…"
 
-#: ../src/main.c:550
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "%s κερδίζει!"
 
-#: ../src/main.c:557
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "Αναμονή για να κινηθεί %s."
+msgid "%s’s Turn"
+msgstr "Η σειρά του %s"
 
-#: ../src/main.c:658
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Υπόδειξη: Στήλη %d"
 
-#: ../src/main.c:686 ../src/main.c:690
+#: ../src/main.c:666 ../src/main.c:670
 msgid "You:"
 msgstr "Εσύ:"
 
-#: ../src/main.c:687 ../src/main.c:689
+#: ../src/main.c:667 ../src/main.c:669
 msgid "Me:"
 msgstr "Εγώ:"
 
-#: ../src/main.c:735
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "Βαθμολογία"
 
-#: ../src/main.c:779
+#: ../src/main.c:718
+msgid "_Close"
+msgstr "_Κλείσιμο"
+
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "Ισοπαλία:"
 
-#: ../src/main.c:828
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
+#: ../src/main.c:804
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -423,11 +415,7 @@ msgstr ""
 "\n"
 "Το τέσσερα σε μια γραμμή είναι μέρος των παιχνιδιών του GNOME."
 
-#: ../src/main.c:829
-msgid "GNOME Games web site"
-msgstr "Ιστοσελίδα των παιχνιδιών του GNOME"
-
-#: ../src/main.c:832
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr ""
 "Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
@@ -436,122 +424,157 @@ msgstr ""
 "Κώστας Παπαδήμας <pkst@gmx.net>\n"
 "Τζένη Πετούμενου <epetoumenou@gmail.com>"
 
-#: ../src/main.c:1182
-msgid "_Game"
-msgstr "_Παιχνίδι"
+#: ../src/main.c:1189
+msgid "_Preferences"
+msgstr "Π_ροτιμήσεις"
 
-#: ../src/main.c:1183
-msgid "_View"
-msgstr "Πρ_οβολή"
-
-#: ../src/main.c:1184
-msgid "_Settings"
-msgstr "Ρυθμίσεις"
-
-#: ../src/main.c:1185
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../src/prefs.c:206
-msgid "Four-in-a-Row Preferences"
-msgstr "Προτιμήσεις του Τέσσερα στη σειρά"
+#: ../src/main.c:1193
+msgid "_About"
+msgstr "_Περί"
 
-#: ../src/prefs.c:229
+#: ../src/main.c:1194
+msgid "_Quit"
+msgstr "Έ_ξοδος"
+
+#: ../src/prefs.c:189
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: ../src/prefs.c:212
 msgid "Game"
 msgstr "Παιχνίδι"
 
-#: ../src/prefs.c:232
+#: ../src/prefs.c:215
 msgid "Player One:"
 msgstr "Πρώτος παίχτης:"
 
-#: ../src/prefs.c:243 ../src/prefs.c:271
+#: ../src/prefs.c:226 ../src/prefs.c:254
 msgid "Human"
 msgstr "Άνθρωπος"
 
-#: ../src/prefs.c:247 ../src/prefs.c:275
+#: ../src/prefs.c:230 ../src/prefs.c:258
 msgid "Level one"
 msgstr "Πρώτο επίπεδο"
 
-#: ../src/prefs.c:251 ../src/prefs.c:279
+#: ../src/prefs.c:234 ../src/prefs.c:262
 msgid "Level two"
 msgstr "Δεύτερο επίπεδο"
 
-#: ../src/prefs.c:255 ../src/prefs.c:283
+#: ../src/prefs.c:238 ../src/prefs.c:266
 msgid "Level three"
 msgstr "Τρίτο επίπεδο"
 
-#: ../src/prefs.c:261
+#: ../src/prefs.c:244
 msgid "Player Two:"
 msgstr "Δεύτερος παίχτης:"
 
-#: ../src/prefs.c:289
+#: ../src/prefs.c:272
 msgid "_Theme:"
 msgstr "_Θέμα:"
 
-#: ../src/prefs.c:302
-msgid "Enable _animation"
-msgstr "Ενεργοποίηση _κίνησης εικόνων"
-
-#: ../src/prefs.c:306
+#: ../src/prefs.c:285
 msgid "E_nable sounds"
 msgstr "Ενε_ργοποίηση ήχων"
 
 #. keyboard tab
-#: ../src/prefs.c:311
+#: ../src/prefs.c:290
 msgid "Keyboard Controls"
 msgstr "Συντομεύσεις πληκτρολογίου"
 
 #: ../src/theme.c:40
-msgid "Classic"
-msgstr "Κλασσικό"
-
-#: ../src/theme.c:44 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
-msgid "Red"
-msgstr "Κόκκινο"
-
-#: ../src/theme.c:44
-msgid "Yellow"
-msgstr "Κίτρινο"
-
-#: ../src/theme.c:47
 msgid "High Contrast"
 msgstr "Υψηλή Αντίθεση"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Κύκλος"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Σταυρός"
 
-#: ../src/theme.c:54
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Αντιστροφή υψηλής αντίθεσης"
 
-#: ../src/theme.c:61
-msgid "Cream Marbles"
-msgstr "Κρεμ βώλοι"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "Κόκκινοι και πράσινοι βώλοι"
 
-#: ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79 ../src/theme.c:86
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "Κόκκινο"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "Πράσινο"
+
+#: ../src/theme.c:61
+msgid "Blue and Red Marbles"
+msgstr "Γαλάζιοι και κόκκινοι βώλοι"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Γαλάζιο"
 
 #: ../src/theme.c:68
-msgid "Glass Marbles"
-msgstr "Γυάλινοι βώλοι"
+msgid "Stars and Rings"
+msgstr "Αστέρια και δακτύλιοι"
 
-#: ../src/theme.c:75
-msgid "Nightfall"
-msgstr "Δειλινό"
+#~ msgid "Animate"
+#~ msgstr "Σε κίνηση"
 
-#: ../src/theme.c:82
-msgid "Blocks"
-msgstr "Κύβοι"
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Αν θα χρησιμοποιούνται κινούμενες εικόνες ή όχι."
 
-#: ../src/theme.c:86
-msgid "Orange"
-msgstr "Πορτοκαλί"
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "Προτιμήσεις του Τέσσερα στη σειρά"
+
+#~ msgid "Enable _animation"
+#~ msgstr "Ενεργοποίηση _κίνησης εικόνων"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "Γυάλινοι βώλοι"
+
+#~ msgid "It is your move."
+#~ msgstr "Είναι η σειρά σου."
+
+#~ msgid "Thinking..."
+#~ msgstr "Σκέψη..."
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "Αναμονή για να κινηθεί %s."
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "Ιστοσελίδα των παιχνιδιών του GNOME"
+
+#~ msgid "_Game"
+#~ msgstr "_Παιχνίδι"
+
+#~ msgid "_View"
+#~ msgstr "Πρ_οβολή"
+
+#~ msgid "_Settings"
+#~ msgstr "Ρυθμίσεις"
+
+#~ msgid "Classic"
+#~ msgstr "Κλασσικό"
+
+#~ msgid "Yellow"
+#~ msgstr "Κίτρινο"
+
+#~ msgid "Nightfall"
+#~ msgstr "Δειλινό"
+
+#~ msgid "Blocks"
+#~ msgstr "Κύβοι"
+
+#~ msgid "Orange"
+#~ msgstr "Πορτοκαλί"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "Τέσσερα στη σειρά"
@@ -683,9 +706,6 @@ msgstr "Πορτοκαλί"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Επίπεδο δυσκολίας της μηχανής του σκακιού που παίζεται αντίπαλοι"
-
-#~ msgid "Preferences"
-#~ msgstr "Προτιμήσεις"
 
 #~ msgid "Play as:"
 #~ msgstr "Παίζετε ως:"
@@ -1582,9 +1602,6 @@ msgstr "Πορτοκαλί"
 #~ msgid "_Worm color:"
 #~ msgstr "_Χρώμα σκουληκιού:"
 
-#~ msgid "Green"
-#~ msgstr "Πράσινο"
-
 #~ msgid "Cyan"
 #~ msgstr "Κυανό"
 
@@ -1964,15 +1981,6 @@ msgstr "Πορτοκαλί"
 
 #~ msgid "_Restart Game"
 #~ msgstr "_Επανεκκίνηση του παιχνιδιού"
-
-#~ msgid "_Preferences"
-#~ msgstr "Π_ροτιμήσεις"
-
-#~ msgid "_About"
-#~ msgstr "_Περί"
-
-#~ msgid "_Quit"
-#~ msgstr "Έ_ξοδος"
 
 #~ msgid "Hint"
 #~ msgstr "Υπόδειξη"
