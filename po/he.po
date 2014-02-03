@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-24 04:53+0200\n"
-"PO-Revision-Date: 2014-01-24 04:59+0200\n"
-"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
+"POT-Creation-Date: 2014-02-03 16:09+0200\n"
+"PO-Revision-Date: 2014-02-03 16:11+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -24,20 +24,16 @@ msgstr ""
 "X-Poedit-Language: Hebrew\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
-msgid ""
-"A family classic, the objective of Four-in-a-row is to build a line of four "
-"of your marbles while trying to stop your opponent (human or computer) from "
-"building a line of his or her own. A line can be horizontal, vertical or "
-"diagonal. The first player to connect four in a row is the winner!"
-msgstr ""
+msgid "A family classic, the objective of Four-in-a-row is to build a line of four of your marbles while trying to stop your opponent (human or computer) from building a line of his or her own. A line can be horizontal, vertical or diagonal. The first player to connect four in a row is the winner!"
+msgstr "קלסיקה משפחתית, המטרה במשחק ארבע בשורה היא להרכיב שורה של ארבע גולות תוך ניסיון למנוע זאת מהיריב (מחשב או אנושי). שורה יכולה להיות אופקית, אנכית או אלכסונית. השחקן הראשון שמחבר ארבעה בשורה הוא המנצח!"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:2
-msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
-"you can always ask for a hint."
-msgstr ""
+msgid "Four-in-a-row features multiple difficulty levels. If you're having trouble, you can always ask for a hint."
+msgstr "ארבע בשורה כולל מספר רמות קושי. אם הסתבכת, תמיד ניתן לבקש רמז."
 
-#: ../data/gnect.desktop.in.h:1 ../src/main.c:1195 ../src/main.h:5
+#: ../data/gnect.desktop.in.h:1
+#: ../src/main.c:1172
+#: ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "ארבע בשורה"
 
@@ -54,12 +50,8 @@ msgid "Level of Player One"
 msgstr "Level of Player One"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
-msgid ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
-msgstr ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
+msgid "Zero is human; one through three correspond to the level of the computer player."
+msgstr "Zero is human; one through three correspond to the level of the computer player."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Level of Player Two"
@@ -74,42 +66,37 @@ msgid "A number specifying the preferred theme."
 msgstr "A number specifying the preferred theme."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
-msgid "Animate"
-msgstr "Animate"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
-msgid "Whether or not to use animation."
-msgstr "Whether or not to use animation."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Sound"
 msgstr "Sound"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
 msgid "Whether or not to play event sounds."
 msgstr "Whether or not to play event sounds."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:315
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: ../src/prefs.c:294
 msgid "Move left"
 msgstr "הזזה שמאלה"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
 msgid "Key press to move left."
 msgstr "Key press to move left."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: ../src/prefs.c:295
 msgid "Move right"
 msgstr "הזזה ימינה"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
 msgid "Key press to move right."
 msgstr "Key press to move right."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:14 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: ../src/prefs.c:296
 msgid "Drop marble"
 msgstr "הפלת גולה"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
 msgid "Key press to drop a marble."
 msgstr "Key press to drop a marble."
 
@@ -201,7 +188,7 @@ msgstr "_תכנים"
 msgid "_Fullscreen"
 msgstr "מסך מ_לא"
 
-#: ../src/games-stock.c:249 ../src/main.c:1212
+#: ../src/games-stock.c:249
 msgid "_Hint"
 msgstr "_רמז"
 
@@ -211,7 +198,8 @@ msgid "_New"
 msgstr "_חדש"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1210
+#: ../src/games-stock.c:253
+#: ../src/main.c:1187
 msgid "_New Game"
 msgstr "_משחק חדש"
 
@@ -229,7 +217,7 @@ msgstr "_איפוס"
 msgid "_Restart"
 msgstr "ה_תחלה מחדש"
 
-#: ../src/games-stock.c:259 ../src/main.c:1211
+#: ../src/games-stock.c:259
 msgid "_Undo Move"
 msgstr "_ביטול מהלך"
 
@@ -261,7 +249,8 @@ msgstr "ה_שהייה"
 msgid "Res_ume"
 msgstr "המש_ך"
 
-#: ../src/games-stock.c:267 ../src/main.c:1213
+#: ../src/games-stock.c:267
+#: ../src/main.c:1188
 msgid "_Scores"
 msgstr "_תוצאות"
 
@@ -272,48 +261,22 @@ msgstr "_סיום המשחק"
 #. %s is replaced with the name of the game in gnome-games.
 #: ../src/games-stock.c:317
 #, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
+msgid "%s is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version %d of the License, or (at your option) any later version."
+msgstr "%s is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version %d of the License, or (at your option) any later version."
 
 #: ../src/games-stock.c:322
 #, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
+msgid "%s is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
+msgstr "%s is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
 
 #: ../src/games-stock.c:327
 #, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
+msgid "You should have received a copy of the GNU General Public License along with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
+msgstr "You should have received a copy of the GNU General Public License along with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
 
 #: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
+msgid "You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr "You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>."
 
 #: ../src/gfx.c:247
 #, c-format
@@ -324,62 +287,66 @@ msgstr ""
 "לא ניתן לטעון את התמונה:\n"
 "%s"
 
-#: ../src/main.c:513
+#: ../src/main.c:511
 msgid "It’s a draw!"
 msgstr "זהו תיקו!"
 
-#: ../src/main.c:522
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "ניצחת!"
 
-#: ../src/main.c:524 ../src/main.c:543
+#: ../src/main.c:522
+#: ../src/main.c:541
 msgid "Your Turn"
 msgstr "התור שלך"
 
-#: ../src/main.c:527
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "אני ניצחתי!"
 
-#: ../src/main.c:529 ../src/main.c:630
+#: ../src/main.c:527
+#: ../src/main.c:628
 msgid "I’m Thinking…"
 msgstr "אני חושב…"
 
-#: ../src/main.c:540
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "%s ניצח!"
 
-#: ../src/main.c:547
+#: ../src/main.c:545
 #, c-format
 msgid "%s’s Turn"
 msgstr "התור של %s"
 
-#: ../src/main.c:647
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "רמז: עמודה %d"
 
-#: ../src/main.c:673 ../src/main.c:677
+#: ../src/main.c:666
+#: ../src/main.c:670
 msgid "You:"
 msgstr "אתה:"
 
-#: ../src/main.c:674 ../src/main.c:676
+#: ../src/main.c:667
+#: ../src/main.c:669
 msgid "Me:"
 msgstr "אני:"
 
-#: ../src/main.c:722
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "תוצאות"
 
-#: ../src/main.c:725
+#: ../src/main.c:718
 msgid "_Close"
 msgstr "_סגירה"
 
-#: ../src/main.c:763
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "תיקו:"
 
-#: ../src/main.c:811
+#: ../src/main.c:804
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -388,7 +355,7 @@ msgstr ""
 "לחבר ארבעה בשורה כדי לנצח.\n"
 "ארבע בשורה הוא חלק מחבילת משחקי GNOME."
 
-#: ../src/main.c:814
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -403,68 +370,68 @@ msgstr ""
 "פרויקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../src/main.c:1216
+#: ../src/main.c:1189
 msgid "_Preferences"
 msgstr "ה_עדפות"
 
-#: ../src/main.c:1219
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "ע_זרה"
 
-#: ../src/main.c:1220
+#: ../src/main.c:1193
 msgid "_About"
 msgstr "על _אודות"
 
-#: ../src/main.c:1221
+#: ../src/main.c:1194
 msgid "_Quit"
 msgstr "י_ציאה"
 
-#: ../src/prefs.c:206
-msgid "Four-in-a-Row Preferences"
-msgstr "העדפות ארבע בשורה"
+#: ../src/prefs.c:189
+msgid "Preferences"
+msgstr "העדפות"
 
-#: ../src/prefs.c:229
+#: ../src/prefs.c:212
 msgid "Game"
 msgstr "משחק"
 
-#: ../src/prefs.c:232
+#: ../src/prefs.c:215
 msgid "Player One:"
 msgstr "שחקן ראשון:"
 
-#: ../src/prefs.c:243 ../src/prefs.c:271
+#: ../src/prefs.c:226
+#: ../src/prefs.c:254
 msgid "Human"
 msgstr "אנושי"
 
-#: ../src/prefs.c:247 ../src/prefs.c:275
+#: ../src/prefs.c:230
+#: ../src/prefs.c:258
 msgid "Level one"
 msgstr "רמה אחת"
 
-#: ../src/prefs.c:251 ../src/prefs.c:279
+#: ../src/prefs.c:234
+#: ../src/prefs.c:262
 msgid "Level two"
 msgstr "רמה שתיים"
 
-#: ../src/prefs.c:255 ../src/prefs.c:283
+#: ../src/prefs.c:238
+#: ../src/prefs.c:266
 msgid "Level three"
 msgstr "רמה שלוש"
 
-#: ../src/prefs.c:261
+#: ../src/prefs.c:244
 msgid "Player Two:"
 msgstr "שחקן שני:"
 
-#: ../src/prefs.c:289
+#: ../src/prefs.c:272
 msgid "_Theme:"
 msgstr "_ערכת נושא:"
 
-#: ../src/prefs.c:302
-msgid "Enable _animation"
-msgstr "אפשר _הנפשה"
-
-#: ../src/prefs.c:306
+#: ../src/prefs.c:285
 msgid "E_nable sounds"
 msgstr "א_פשר צלילים"
 
 #. keyboard tab
-#: ../src/prefs.c:311
+#: ../src/prefs.c:290
 msgid "Keyboard Controls"
 msgstr "שליטת מקלדת"
 
@@ -472,11 +439,13 @@ msgstr "שליטת מקלדת"
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44
+#: ../src/theme.c:51
 msgid "Circle"
 msgstr "עיגול"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44
+#: ../src/theme.c:51
 msgid "Cross"
 msgstr "צלב"
 
@@ -485,32 +454,46 @@ msgid "High Contrast Inverse"
 msgstr "ניגוד גבוה הפוך"
 
 #: ../src/theme.c:54
-msgid "Glass Marbles"
-msgstr "גולות זכוכית"
-
-#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
-msgid "Red"
-msgstr "אדום"
-
-#: ../src/theme.c:58 ../src/theme.c:72
-msgid "Blue"
-msgstr "כחול"
-
-#: ../src/theme.c:61
 msgid "Red and Green Marbles"
 msgstr "גולות אדומות וירוקות"
 
-#: ../src/theme.c:65 ../src/theme.c:79
+#: ../src/theme.c:58
+#: ../src/theme.c:65
+#: ../src/theme.c:72
+msgid "Red"
+msgstr "אדום"
+
+#: ../src/theme.c:58
+#: ../src/theme.c:72
 msgid "Green"
 msgstr "ירוק"
 
-#: ../src/theme.c:68
+#: ../src/theme.c:61
 msgid "Blue and Red Marbles"
 msgstr "גולות כחולות ואדומות"
 
-#: ../src/theme.c:75
+#: ../src/theme.c:65
+msgid "Blue"
+msgstr "כחול"
+
+#: ../src/theme.c:68
 msgid "Stars and Rings"
 msgstr "כוכבים וטבעות"
+
+#~ msgid "Animate"
+#~ msgstr "Animate"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Whether or not to use animation."
+
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "העדפות ארבע בשורה"
+
+#~ msgid "Enable _animation"
+#~ msgstr "אפשר _הנפשה"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "גולות זכוכית"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "ארבע בשורה"
@@ -673,9 +656,6 @@ msgstr "כוכבים וטבעות"
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Difficulty of the opponent chess engine"
 
-#~ msgid "Preferences"
-#~ msgstr "העדפות"
-
 #~ msgid "Play as:"
 #~ msgstr "לשחק בתור:"
 
@@ -723,28 +703,28 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "_Appearance"
 #~ msgstr "מ_ראה"
-
 #~ msgctxt "difficulty"
+
 #~ msgid "Easy"
 #~ msgstr "קל"
-
 #~ msgctxt "difficulty"
+
 #~ msgid "Normal"
 #~ msgstr "רגיל"
-
 #~ msgctxt "difficulty"
+
 #~ msgid "Hard"
 #~ msgstr "קשה"
-
 #~ msgctxt "chess-opponent"
+
 #~ msgid "Human"
 #~ msgstr "אנושי"
-
 #~ msgctxt "chess-player"
+
 #~ msgid "White"
 #~ msgstr "לבן"
-
 #~ msgctxt "chess-player"
+
 #~ msgid "Black"
 #~ msgstr "שחור"
 
@@ -771,56 +751,56 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Fancy"
 #~ msgstr "מהודר"
-
 #~ msgctxt "chess-side"
+
 #~ msgid "White Side"
 #~ msgstr "צד לבן"
-
 #~ msgctxt "chess-side"
+
 #~ msgid "Black Side"
 #~ msgstr "צד שחור"
-
 #~ msgctxt "chess-side"
+
 #~ msgid "Human Side"
 #~ msgstr "צד אנושי"
-
 #~ msgctxt "chess-side"
+
 #~ msgid "Current Player"
 #~ msgstr "השחקן הנוכחי"
-
 #~ msgctxt "chess-side"
+
 #~ msgid "Face to Face"
 #~ msgstr "פנים מול פנים"
-
 #~ msgctxt "chess-move-format"
+
 #~ msgid "Human"
 #~ msgstr "בן אדם"
-
 #~ msgctxt "chess-move-format"
+
 #~ msgid "Standard Algebraic"
 #~ msgstr "אלגברי רגיל"
-
 #~ msgctxt "chess-move-format"
+
 #~ msgid "Figurine"
 #~ msgstr "דמות"
-
 #~ msgctxt "chess-move-format"
+
 #~ msgid "Long Algebraic"
 #~ msgstr "אלגברי ארוך"
-
 #~ msgctxt "chess-piece"
+
 #~ msgid "Queen"
 #~ msgstr "מלכה"
-
 #~ msgctxt "chess-piece"
+
 #~ msgid "Knight"
 #~ msgstr "אביר"
-
 #~ msgctxt "chess-piece"
+
 #~ msgid "Rook"
 #~ msgstr "צריח"
-
 #~ msgctxt "chess-piece"
+
 #~ msgid "Bishop"
 #~ msgstr "רץ"
 
@@ -1096,16 +1076,19 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "_שמירת המשחק למועד מאוחר יותר"
 
 #~ msgid "second"
+
 #~ msgid_plural "seconds"
 #~ msgstr[0] "שנייה"
 #~ msgstr[1] "שניות"
 
 #~ msgid "minute"
+
 #~ msgid_plural "minutes"
 #~ msgstr[0] "דקה"
 #~ msgstr[1] "דקות"
 
 #~ msgid "hour"
+
 #~ msgid_plural "hours"
 #~ msgstr[0] "שעה"
 #~ msgstr[1] "שעות"
@@ -1252,16 +1235,16 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "true if the window is fullscren"
 #~ msgstr "true if the window is fullscren"
-
 #~ msgctxt "board size"
+
 #~ msgid "Small"
 #~ msgstr "קטן"
-
 #~ msgctxt "board size"
+
 #~ msgid "Medium"
 #~ msgstr "בינוני"
-
 #~ msgctxt "board size"
+
 #~ msgid "Large"
 #~ msgstr "גדול"
 
@@ -1444,36 +1427,36 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Your score has made the top ten."
 #~ msgstr "נכנסת לעשרת הגדולים!"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Beginner"
 #~ msgstr "מתחיל"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Slow"
 #~ msgstr "איטי"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Medium"
 #~ msgstr "בינוני"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Fast"
 #~ msgstr "מהיר"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Beginner with Fakes"
 #~ msgstr "מתחיל עם זיופים"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Slow with Fakes"
 #~ msgstr "איטי עם זיופים"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Medium with Fakes"
 #~ msgstr "בינוני עם זיופים"
-
 #~ msgctxt "game speed"
+
 #~ msgid "Fast with Fakes"
 #~ msgstr "מהיר עם זיופים"
 
@@ -1868,36 +1851,36 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Disassemble a pile of tiles by removing matching pairs"
 #~ msgstr "פרק ערמת אריחים על-ידי הסרת זוגות תואמים"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "The Ziggurat"
 #~ msgstr "הזיגוראט"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Four Bridges"
 #~ msgstr "ארבע הגשרים"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Cloud"
 #~ msgstr "ענן"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Tic-Tac-Toe"
 #~ msgstr "איקס-מיקס-דריקס"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Red Dragon"
 #~ msgstr "דרקון אדום"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Pyramid's Walls"
 #~ msgstr "קירות פירמידה"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Confounding Cross"
 #~ msgstr "צלב מעורבב"
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Difficult"
 #~ msgstr "קשה"
 
@@ -2064,11 +2047,13 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "קשה מאד"
 
 #~ msgid "Last played %(n)s second ago"
+
 #~ msgid_plural "Last played %(n)s seconds ago"
 #~ msgstr[0] "משחק אחרון לפני שנייה %(n)s"
 #~ msgstr[1] "משחק אחרון לפני %(n)s שניות"
 
 #~ msgid "Last played %(n)s minute ago"
+
 #~ msgid_plural "Last played %(n)s minutes ago"
 #~ msgstr[0] "משחק אחרון לפני דקה %(n)s"
 #~ msgstr[1] "משחק אחרון לפני %(n)s דקות"
@@ -2098,16 +2083,19 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "לוח קשה מאוד"
 
 #~ msgid "Played for %d hour"
+
 #~ msgid_plural "Played for %d hours"
 #~ msgstr[0] "משחק למשך שעה %d"
 #~ msgstr[1] "משחק למשך %d שעות"
 
 #~ msgid "Played for %d minute"
+
 #~ msgid_plural "Played for %d minutes"
 #~ msgstr[0] "משחק למשך דקה %d"
 #~ msgstr[1] "משחק למשך %d דקות"
 
 #~ msgid "Played for %d second"
+
 #~ msgid_plural "Played for %d seconds"
 #~ msgstr[0] "משחק למשך שנייה %d"
 #~ msgstr[1] "משחק למשך %d שניות"
@@ -2180,16 +2168,19 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "_סמן בצבעים את השורה, הטור והתיבה הנוכחיים"
 
 #~ msgid "You completed the puzzle in %d second"
+
 #~ msgid_plural "You completed the puzzle in %d seconds"
 #~ msgstr[0] "השלמת את הלוח תוך שנייה %d "
 #~ msgstr[1] "השלמת את הלוח תוך %d שניות"
 
 #~ msgid "%d minute"
+
 #~ msgid_plural "%d minutes"
 #~ msgstr[0] "דקה %d"
 #~ msgstr[1] "%d דקות"
 
 #~ msgid "%d second"
+
 #~ msgid_plural "%d seconds"
 #~ msgstr[0] "שנייה %d "
 #~ msgstr[1] "%d שניות"
@@ -2198,6 +2189,7 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "השלמת את הלוח תוך %(minute)s ו־%(second)s"
 
 #~ msgid "%d hour"
+
 #~ msgid_plural "%d hours"
 #~ msgstr[0] "שעה %d"
 #~ msgstr[1] "%d שעות"
@@ -2206,11 +2198,13 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "השלמת את הלוח תוך %(hour)s, %(minute)s ו־%(second)s"
 
 #~ msgid "You got %(n)s hint."
+
 #~ msgid_plural "You got %(n)s hints."
 #~ msgstr[0] "השתמשת ברמז אחד."
 #~ msgstr[1] "השתמשת ב־%(n)s רמזים."
 
 #~ msgid "You had %(n)s impossibility pointed out."
+
 #~ msgid_plural "You had %(n)s impossibilities pointed out."
 #~ msgstr[0] "הייתה לך אי היתכנות אחת."
 #~ msgstr[1] "היו לך %(n)s אי היתכנויות."
@@ -2344,8 +2338,8 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Size of the board (0-2 = small-large, 3=custom)"
 #~ msgstr "Size of the board (0-2 = small-large, 3=custom)"
-
 #~ msgctxt "board size"
+
 #~ msgid "Custom"
 #~ msgstr "מותאם אישית"
 
@@ -2368,6 +2362,7 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "ל_שחק במשחק"
 
 #~ msgid "<b>%d</b> mine"
+
 #~ msgid_plural "<b>%d</b> mines"
 #~ msgstr[0] "מוקש <b>אחד</b>"
 #~ msgstr[1] "<b>%d</b> מוקשים"
@@ -2733,12 +2728,12 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Number of trials for each roll for the computer"
 #~ msgstr "Number of trials for each roll for the computer"
-
 #~ msgctxt "game type"
+
 #~ msgid "Regular"
 #~ msgstr "רגיל"
-
 #~ msgctxt "game type"
+
 #~ msgid "Colors"
 #~ msgstr "צבעים"
 
@@ -2755,6 +2750,7 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "תוצאות טאלי"
 
 #~ msgid "%s wins the game with %d point"
+
 #~ msgid_plural "%s wins the game with %d points"
 #~ msgstr[0] "%s זוכה במשחק עם נקודה אחת"
 #~ msgstr[1] "%s זוכה במשחק עם %d נקודות"
@@ -2815,8 +2811,8 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "_Difficulty:"
 #~ msgstr "רמת קו_שי:"
-
 #~ msgctxt "difficulty"
+
 #~ msgid "Medium"
 #~ msgstr "בינוני"
 
@@ -2960,20 +2956,20 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "_Tile set:"
 #~ msgstr "_ערכת אריחים:"
-
 #~ msgctxt "score-dialog"
+
 #~ msgid "Time"
 #~ msgstr "זמן"
-
 #~ msgctxt "score-dialog"
+
 #~ msgid "Score"
 #~ msgstr "ניקוד"
-
 #~ msgctxt "score-dialog"
+
 #~ msgid "%1$dm %2$ds"
 #~ msgstr "%1$dדק׳ %2$dשנ׳"
-
 #~ msgctxt "score-dialog"
+
 #~ msgid "Name"
 #~ msgstr "שם"
 
@@ -3204,6 +3200,7 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "פינוי המסך על ידי הסרת קבוצות של אריחים צבעוניים ובעלי צורה"
 
 #~ msgid "%u point"
+
 #~ msgid_plural "%u points"
 #~ msgstr[0] "נקודה אחת"
 #~ msgstr[1] "%u נקודות"
@@ -3678,44 +3675,44 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "SIZE"
 #~ msgstr "SIZE"
-
 #~ msgctxt "number"
+
 #~ msgid "0"
 #~ msgstr "0"
-
 #~ msgctxt "number"
+
 #~ msgid "1"
 #~ msgstr "1"
-
 #~ msgctxt "number"
+
 #~ msgid "2"
 #~ msgstr "2"
-
 #~ msgctxt "number"
+
 #~ msgid "3"
 #~ msgstr "3"
-
 #~ msgctxt "number"
+
 #~ msgid "4"
 #~ msgstr "4"
-
 #~ msgctxt "number"
+
 #~ msgid "5"
 #~ msgstr "5"
-
 #~ msgctxt "number"
+
 #~ msgid "6"
 #~ msgstr "6"
-
 #~ msgctxt "number"
+
 #~ msgid "7"
 #~ msgstr "7"
-
 #~ msgctxt "number"
+
 #~ msgid "8"
 #~ msgstr "8"
-
 #~ msgctxt "number"
+
 #~ msgid "9"
 #~ msgstr "9"
 
@@ -3756,8 +3753,8 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Remove matching pairs of tiles."
 #~ msgstr "הסר זוגות של אריחים תואמים."
-
 #~ msgctxt "mahjongg map name"
+
 #~ msgid "Easy"
 #~ msgstr "קל"
 
@@ -3863,12 +3860,12 @@ msgstr "כוכבים וטבעות"
 #~ "Aisleriot cannot load the file “%s”. Please check your Aisleriot "
 #~ "installation."
 #~ msgstr "‏Aisleriot לא יכול לטעון את הקובץ “%s”. אנא בדוק את ההתקנה של המשחק."
-
 #~ msgctxt "slot type"
+
 #~ msgid "tableau"
 #~ msgstr "שולחן המשחק"
-
 #~ msgctxt "slot hint"
+
 #~ msgid "%s on tableau"
 #~ msgstr "%s על השולחן"
 
@@ -4477,8 +4474,8 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Display cards with “%s” card theme"
 #~ msgstr "הצגת קלפים עם ערכת הנושא \"%s\""
-
 #~ msgctxt "score"
+
 #~ msgid "%6d"
 #~ msgstr "%6d"
 
@@ -4553,60 +4550,60 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "Cannot start the game “%s”"
 #~ msgstr "לא ניתן להתחיל את המשחק “%s”"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "JOKER"
 #~ msgstr "ג׳וקר"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "A"
 #~ msgstr "A"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "2"
 #~ msgstr "2"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "3"
 #~ msgstr "3"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "4"
 #~ msgstr "4"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "5"
 #~ msgstr "5"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "6"
 #~ msgstr "6"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "7"
 #~ msgstr "7"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "8"
 #~ msgstr "8"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "9"
 #~ msgstr "9"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "J"
 #~ msgstr "J"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "Q"
 #~ msgstr "Q"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "K"
 #~ msgstr "K"
-
 #~ msgctxt "card symbol"
+
 #~ msgid "1"
 #~ msgstr "1"
 
@@ -5581,92 +5578,92 @@ msgstr "כוכבים וטבעות"
 
 #~ msgid "AI (%s)"
 #~ msgstr "בינה מלאכותית (%s)"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "a"
 #~ msgstr "א"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "b"
 #~ msgstr "ב"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "c"
 #~ msgstr "ג"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "d"
 #~ msgstr "ד"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "e"
 #~ msgstr "ה"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "f"
 #~ msgstr "ו"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "g"
 #~ msgstr "ז"
-
 #~ msgctxt "chess-file"
+
 #~ msgid "h"
 #~ msgstr "ח"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "1"
 #~ msgstr "1"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "2"
 #~ msgstr "2"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "3"
 #~ msgstr "3"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "4"
 #~ msgstr "4"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "5"
 #~ msgstr "5"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "6"
 #~ msgstr "6"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "7"
 #~ msgstr "7"
-
 #~ msgctxt "chess-rank"
+
 #~ msgid "8"
 #~ msgstr "8"
-
 #~ msgctxt "chess-notation"
+
 #~ msgid "P"
 #~ msgstr "P"
-
 #~ msgctxt "chess-notation"
+
 #~ msgid "N"
 #~ msgstr "N"
-
 #~ msgctxt "chess-notation"
+
 #~ msgid "B"
 #~ msgstr "B"
-
 #~ msgctxt "chess-notation"
+
 #~ msgid "R"
 #~ msgstr "R"
-
 #~ msgctxt "chess-notation"
+
 #~ msgid "Q"
 #~ msgstr "Q"
-
 #~ msgctxt "chess-notation"
+
 #~ msgid "K"
 #~ msgstr "K"
 
@@ -5747,21 +5744,25 @@ msgstr "כוכבים וטבעות"
 #~ msgstr "לוח ברמה %(level)s"
 
 #~ msgid "%(n)s year"
+
 #~ msgid_plural "%(n)s years"
 #~ msgstr[0] "שנה אחת"
 #~ msgstr[1] "%(n)s שנים"
 
 #~ msgid "%(n)s month"
+
 #~ msgid_plural "%(n)s months"
 #~ msgstr[0] "חודש אחד"
 #~ msgstr[1] "%(n)s חודשים"
 
 #~ msgid "%(n)s week"
+
 #~ msgid_plural "%(n)s weeks"
 #~ msgstr[0] "שבוע אחד"
 #~ msgstr[1] "%(n)s שבועות"
 
 #~ msgid "%(n)s day"
+
 #~ msgid_plural "%(n)s days"
 #~ msgstr[0] "יום אחד"
 #~ msgstr[1] "%(n)s ימים"
