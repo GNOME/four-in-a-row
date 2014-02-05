@@ -2,7 +2,7 @@
 # Please keep this file in alphabetical order.
 [encoding: UTF-8]
 data/four-in-a-row.appdata.xml.in
-data/gnect.desktop.in
+data/four-in-a-row.desktop.in
 data/org.gnome.four-in-a-row.gschema.xml
 src/games-controls.c
 src/games-stock.c

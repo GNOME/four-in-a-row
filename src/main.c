@@ -1292,12 +1292,6 @@ main (int argc, char *argv[])
   application = gtk_application_new ("org.gnome.four-in-a-row", 0);
   g_signal_connect (application, "activate", G_CALLBACK (create_app), NULL);
 
-  /*
-   * Required because the binary doesn't match the desktop file.
-   * Has to be before the call to g_option_context_parse.
-   */
-  g_set_prgname (APPNAME);
-
   context = g_option_context_new (NULL);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
   retval = g_option_context_parse (context, &argc, &argv, &error);

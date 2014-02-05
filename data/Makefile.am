@@ -23,7 +23,7 @@ velenadir      = $(datadir)/four-in-a-row
 velena_DATA    = white_ob.cn4.gz
 
 desktopdir       = $(datadir)/applications
-desktop_in_files = gnect.desktop.in
+desktop_in_files = four-in-a-row.desktop.in
 desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
