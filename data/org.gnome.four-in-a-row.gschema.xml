@@ -1,7 +1,7 @@
 <schemalist>
   <schema id="org.gnome.four-in-a-row" path="/org/gnome/four-in-a-row/">
     <key name="opponent" type="i">
-      <default>0</default>
+      <default>1</default>
       <summary>Opponent</summary>
       <description>Zero is human; one through three correspond to the level of the computer player.</description>
     </key>
