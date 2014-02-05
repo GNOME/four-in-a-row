@@ -1035,7 +1035,7 @@ ia_compute_move (struct board *board)
 
   if (board->filled == 0) {
     move = 3;
-    goto IA_RETURN_MOVE;
+    return move;
   }
 
   if (board->filled == 1) {
@@ -1044,14 +1044,14 @@ ia_compute_move (struct board *board)
       move = 2;
     else if (board->moves[0] == 5)
       move = 4;
-    goto IA_RETURN_MOVE;
+    return move;
   }
 
   if (board->filled == MAXMEN - 1) {
     for (x = 0; x < BOARDX; x++) {
       if (board->stack[x] < BOARDY) {
 	move = x;
-	goto IA_RETURN_MOVE;
+	return move;
       }
     }
     fatal_error ("I shouldn't have come here...");
@@ -1059,16 +1059,16 @@ ia_compute_move (struct board *board)
 
   move = try_to_win (board);
   if (move >= 0)
-    goto IA_RETURN_MOVE;
+    return move;
 
   move = avoid_immediate_loss (board);
   if (move >= 0)
-    goto IA_RETURN_MOVE;
+    return move;
 
   if (board->turn == BLACK && board->black_lev == 3) {
     move = get_black_best_move (board);
     if (move >= 0)
-      goto IA_RETURN_MOVE;
+      return move;
   }
 
   else if (board->filled == 1 && board->stack[3] == 1) {
@@ -1095,7 +1095,7 @@ ia_compute_move (struct board *board)
     } else
       move = 3;
 
-    goto IA_RETURN_MOVE;
+    return move;
   }
 
   /* Let's look in the opening book */
@@ -1120,7 +1120,7 @@ ia_compute_move (struct board *board)
   }
 
   if (move >= 0)
-    goto IA_RETURN_MOVE;
+    return move;
 
   fight (NO);
   move = heuristic_play_best (board, 2800L);
@@ -1142,11 +1142,10 @@ ia_compute_move (struct board *board)
   }
 
   if (move >= 0)
-    goto IA_RETURN_MOVE;
+    return move;
 
   move = look_ahed (board);
 
-IA_RETURN_MOVE:
   return move;
 }
 
