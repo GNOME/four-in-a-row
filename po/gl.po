@@ -10,13 +10,13 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2011, 2012, 2013.
+# Fran Dieguez <frandieguez@gnome.org>, 2011, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games-master-po-gl-54590\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-30 00:29+0100\n"
-"PO-Revision-Date: 2013-12-30 00:34+0200\n"
+"POT-Creation-Date: 2014-02-07 02:12+0100\n"
+"PO-Revision-Date: 2014-02-07 02:14+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -34,8 +34,8 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
-"Un clásico familiar, o obxectivo de Catro en raia é construir unha liña coas "
-"súas catro canicas mentres tenta evitar ao seu opoñente (que pode ser "
+"Un clásico familiar, o obxectivo de Catro en raia é construír unha liña coas "
+"súas catro canicas mentres tenta evitar ao seu contrincante (que pode ser "
 "humano ou o propio computador) faga a súa. Unha liña pode ser horizontal, "
 "vertical ou diagonal. O primeiro xogador en conseguir as catro en raia gana."
 
@@ -47,21 +47,21 @@ msgstr ""
 "Catro en raia conta con varios niveis de dificultade. Se ten problemas, "
 "sempre pode pedir un consello."
 
-#: ../data/gnect.desktop.in.h:1 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1172 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Catro en raia"
 
-#: ../data/gnect.desktop.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Faga liñas da mesma cor para gañar"
 
-#: ../data/gnect.desktop.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "xogo;estratexia;lóxica;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-msgid "Level of Player One"
-msgstr "Nivel do xogador 1"
+msgid "Opponent"
+msgstr "Contrincantes"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
@@ -72,54 +72,42 @@ msgstr ""
 "polo computador."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
-msgid "Level of Player Two"
-msgstr "Nivel do xogador 2"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "Theme ID"
 msgstr "ID de tema"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "Un número que especifica o tema preferido."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
-msgid "Animate"
-msgstr "Animar"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
-msgid "Whether or not to use animation."
-msgstr "Indica se se usa a animación ou non."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "Son"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "Indica se reproducir ou non sons de evento."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:315
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "Mover á esquerda"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "Tecla para mover á esquerda."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "Mover á dereita"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "Tecla para mover á dereita."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:14 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "Soltar a bóla"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "Tecla para soltar a bóla."
 
@@ -221,7 +209,7 @@ msgid "_New"
 msgstr "_Novo"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1187
 msgid "_New Game"
 msgstr "Xogo _novo"
 
@@ -271,7 +259,7 @@ msgstr "_Pausa"
 msgid "Res_ume"
 msgstr "C_ontinuar"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1188
 msgid "_Scores"
 msgstr "_Puntuacións"
 
@@ -333,58 +321,62 @@ msgstr ""
 "Non é posíbel baixar a imaxe:\n"
 "%s"
 
-#: ../src/main.c:523
-msgid "It's a draw!"
-msgstr "É empate!"
+#: ../src/main.c:511
+msgid "It’s a draw!"
+msgstr "É un empate!"
 
-#: ../src/main.c:532
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "Gañou!"
 
-#: ../src/main.c:534 ../src/main.c:553
-msgid "It is your move."
-msgstr "É a súa quenda."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "O seu turno"
 
-#: ../src/main.c:537
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "Gañei!"
 
-#: ../src/main.c:539 ../src/main.c:641
-msgid "Thinking..."
-msgstr "Pensando…"
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
+msgstr "Estou pensando…"
 
-#: ../src/main.c:550
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "Gañou %s!"
 
-#: ../src/main.c:557
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "Agardando por %s para mover."
+msgid "%s’s Turn"
+msgstr "Turno de %s"
 
-#: ../src/main.c:658
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Suxestión: columna %d"
 
-#: ../src/main.c:686 ../src/main.c:690
+#: ../src/main.c:666 ../src/main.c:670
 msgid "You:"
 msgstr "Vostede:"
 
-#: ../src/main.c:687 ../src/main.c:689
+#: ../src/main.c:667 ../src/main.c:669
 msgid "Me:"
 msgstr "Eu:"
 
-#: ../src/main.c:735
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "Puntuacións"
 
-#: ../src/main.c:779
+#: ../src/main.c:718
+msgid "_Close"
+msgstr "Pecha_r"
+
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "Empate:"
 
-#: ../src/main.c:827
+#: ../src/main.c:804
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -394,139 +386,178 @@ msgstr ""
 "\n"
 "Catro en raia forma parte do GNOME Games."
 
-#: ../src/main.c:828
-msgid "GNOME Games web site"
-msgstr "Sitio web do GNOME Games"
-
-#: ../src/main.c:831
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr ""
 "Fran Diéguez <frandieguez@ubuntu.com>, 2009-2014;\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.\n"
 "Antón Méixome <meixome@mancomun.org>, 2009.\n"
 "Suso Baleato <suso.baleato@xunta.es>, 2009.\n"
-"Mancomún - Centro de Referencia e Servizos de Software Libre "
-"<g11n@mancomun.org>, 2009.\n"
+"Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
+"org>, 2009.\n"
 "Ignacio Casal Quinteiro <icq@svn.gnome.org>, 2008.\n"
 "Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005, 2006.\n"
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000."
 
-#: ../src/main.c:1180
-msgid "_Game"
-msgstr "_Xogo"
+#: ../src/main.c:1189
+msgid "_Preferences"
+msgstr "_Preferencias"
 
-#: ../src/main.c:1181
-msgid "_View"
-msgstr "_Ver"
-
-#: ../src/main.c:1182
-msgid "_Settings"
-msgstr "_Configuracións"
-
-#: ../src/main.c:1183
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "_Axuda"
 
-#: ../src/prefs.c:206
-msgid "Four-in-a-Row Preferences"
-msgstr "Preferencias do Catro en raia"
+#: ../src/main.c:1193
+msgid "_About"
+msgstr "So_bre"
 
-#: ../src/prefs.c:229
+#: ../src/main.c:1194
+msgid "_Quit"
+msgstr "_Saír"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "Xogo"
 
-#: ../src/prefs.c:232
-msgid "Player One:"
-msgstr "Xogador Un:"
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "Contrincante:"
 
-#: ../src/prefs.c:243 ../src/prefs.c:271
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "Humano"
 
-#: ../src/prefs.c:247 ../src/prefs.c:275
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "Nivel 1"
 
-#: ../src/prefs.c:251 ../src/prefs.c:279
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "Level 2"
 
-#: ../src/prefs.c:255 ../src/prefs.c:283
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "Level 3"
 
-#: ../src/prefs.c:261
-msgid "Player Two:"
-msgstr "Xogador Dous:"
-
-#: ../src/prefs.c:289
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: ../src/prefs.c:302
-msgid "Enable _animation"
-msgstr "Activar _animación"
-
-#: ../src/prefs.c:306
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "Acti_var sons"
 
 #. keyboard tab
-#: ../src/prefs.c:311
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "Controis do teclado"
 
 #: ../src/theme.c:40
-msgid "Classic"
-msgstr "Clásico"
-
-#: ../src/theme.c:44 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
-msgid "Red"
-msgstr "Vermello"
-
-#: ../src/theme.c:44
-msgid "Yellow"
-msgstr "Amarelo"
-
-#: ../src/theme.c:47
 msgid "High Contrast"
 msgstr "Alto contraste"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Círculo"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Cruz"
 
-#: ../src/theme.c:54
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Alto contraste invertido"
 
-#: ../src/theme.c:61
-msgid "Cream Marbles"
-msgstr "Bólas de cor crema"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "Bolas vermellas e verdes"
 
-#: ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79 ../src/theme.c:86
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "Vermello"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "Verde"
+
+#: ../src/theme.c:61
+msgid "Blue and Red Marbles"
+msgstr "Bolas azuis e vermellas"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Azul"
 
 #: ../src/theme.c:68
-msgid "Glass Marbles"
-msgstr "Bólas de cristal"
+msgid "Stars and Rings"
+msgstr "Estrelas e aneis"
 
-#: ../src/theme.c:75
-msgid "Nightfall"
-msgstr "Anoitecer"
+#~ msgid "Level of Player One"
+#~ msgstr "Nivel do xogador 1"
 
-#: ../src/theme.c:82
-msgid "Blocks"
-msgstr "Bloques"
+#~ msgid "Level of Player Two"
+#~ msgstr "Nivel do xogador 2"
 
-#: ../src/theme.c:86
-msgid "Orange"
-msgstr "Laranxa"
+#~ msgid "Animate"
+#~ msgstr "Animar"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Indica se se usa a animación ou non."
+
+#~ msgid "It is your move."
+#~ msgstr "É a súa quenda."
+
+#~ msgid "Thinking..."
+#~ msgstr "Pensando…"
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "Agardando por %s para mover."
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "Sitio web do GNOME Games"
+
+#~ msgid "_Game"
+#~ msgstr "_Xogo"
+
+#~ msgid "_View"
+#~ msgstr "_Ver"
+
+#~ msgid "_Settings"
+#~ msgstr "_Configuracións"
+
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "Preferencias do Catro en raia"
+
+#~ msgid "Player One:"
+#~ msgstr "Xogador Un:"
+
+#~ msgid "Player Two:"
+#~ msgstr "Xogador Dous:"
+
+#~ msgid "Enable _animation"
+#~ msgstr "Activar _animación"
+
+#~ msgid "Classic"
+#~ msgstr "Clásico"
+
+#~ msgid "Yellow"
+#~ msgstr "Amarelo"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "Bólas de cristal"
+
+#~ msgid "Nightfall"
+#~ msgstr "Anoitecer"
+
+#~ msgid "Blocks"
+#~ msgstr "Bloques"
+
+#~ msgid "Orange"
+#~ msgstr "Laranxa"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "Catro en raia"
@@ -654,9 +685,6 @@ msgstr "Laranxa"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Dificultade do motor de xadrez do opoñente"
-
-#~ msgid "Preferences"
-#~ msgstr "Preferencias"
 
 #~ msgid "Play as:"
 #~ msgstr "Xogar como:"
@@ -1531,9 +1559,6 @@ msgstr "Laranxa"
 #~ msgid "_Worm color:"
 #~ msgstr "Cor do v_erme:"
 
-#~ msgid "Green"
-#~ msgstr "Verde"
-
 #~ msgid "Cyan"
 #~ msgstr "Cian"
 
@@ -1908,15 +1933,6 @@ msgstr "Laranxa"
 
 #~ msgid "_Restart Game"
 #~ msgstr "_Reiniciar xogo"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Preferencias"
-
-#~ msgid "_About"
-#~ msgstr "So_bre"
-
-#~ msgid "_Quit"
-#~ msgstr "_Saír"
 
 #~ msgid "Hint"
 #~ msgstr "Suxestión"
@@ -2826,9 +2842,6 @@ msgstr "Laranxa"
 #~ msgid "_Number of players:"
 #~ msgstr "_Número de xogadores:"
 
-#~ msgid "Computer Opponents"
-#~ msgstr "Opoñentes electrónicos"
-
 #~ msgid "_Delay between rolls"
 #~ msgstr "_Atraso entre lanzamentos"
 
@@ -3653,9 +3666,6 @@ msgstr "Laranxa"
 
 #~ msgid "Unrecognized desktop file Version '%s'"
 #~ msgstr "A versión «%s» do ficheiro .desktop non se recoñece"
-
-#~ msgid "Starting %s"
-#~ msgstr "Iniciando %s"
 
 #~ msgid "Application does not accept documents on command line"
 #~ msgstr "O aplicativo non acepta documentos na liña de ordes"
@@ -5333,9 +5343,6 @@ msgstr "Laranxa"
 
 #~ msgid "_Cancel"
 #~ msgstr "_Cancelar"
-
-#~ msgid "_Close"
-#~ msgstr "Pecha_r"
 
 #~ msgid "_OK"
 #~ msgstr "_Aceptar"
