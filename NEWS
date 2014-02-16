@@ -2,6 +2,17 @@
 
 * New themes by Anatol Drlicek, based on images from the Faenza icon theme by
   Matthieu James.
+* All old themes, except for the high contrast themes, have been removed.
+* Removed the menu bar and status bar
+* Added a header bar
+* Undo, Hint, and New Game buttons added into the window
+* Use an application menu (David Sedeño)
+* The game now properly displays the winner in two-player games.
+* Fullscreen mode has been removed, since it doesn't look very good.
+* It is no longer possible to request a hint twice in a row.
+* It is no longer possible to start a computer vs. computer game.
+* It is no longer possible to disable animations.
+* Updated translations
 
 four-in-a-row 3.11.3
 ====================
