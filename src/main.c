@@ -1239,6 +1239,7 @@ create_app (void)
   gtk_button_set_image (GTK_BUTTON (undo_button), image);
   gtk_button_set_relief (GTK_BUTTON (undo_button), GTK_RELIEF_NONE);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (undo_button), "app.undo-move");
+  gtk_widget_set_tooltip_text (undo_button, _("Undo your most recent move"));
   gtk_box_pack_start (GTK_BOX (vbox), undo_button, FALSE, FALSE, 0);
 
   hint_button = gtk_button_new ();
@@ -1248,6 +1249,7 @@ create_app (void)
   gtk_button_set_image (GTK_BUTTON (hint_button), image);
   gtk_button_set_relief (GTK_BUTTON (hint_button), GTK_RELIEF_NONE);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (hint_button), "app.hint");
+  gtk_widget_set_tooltip_text (hint_button, _("Receive a hint for the next move"));
   gtk_box_pack_start (GTK_BOX (vbox), hint_button, FALSE, FALSE, 0);
 
   new_game_button = gtk_button_new ();
@@ -1257,6 +1259,7 @@ create_app (void)
   gtk_button_set_image (GTK_BUTTON (new_game_button), image);
   gtk_button_set_relief (GTK_BUTTON (new_game_button), GTK_RELIEF_NONE);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (new_game_button), "app.new-game");
+  gtk_widget_set_tooltip_text (new_game_button, _("Start a new game"));
   gtk_box_pack_end (GTK_BOX (vbox), new_game_button, FALSE, FALSE, 0);
 
   g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
