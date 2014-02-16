@@ -1249,7 +1249,7 @@ create_app (void)
   gtk_button_set_image (GTK_BUTTON (hint_button), image);
   gtk_button_set_relief (GTK_BUTTON (hint_button), GTK_RELIEF_NONE);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (hint_button), "app.hint");
-  gtk_widget_set_tooltip_text (hint_button, _("Receive a hint for the next move"));
+  gtk_widget_set_tooltip_text (hint_button, _("Receive a hint for your next move"));
   gtk_box_pack_start (GTK_BOX (vbox), hint_button, FALSE, FALSE, 0);
 
   new_game_button = gtk_button_new ();
