@@ -1,3 +1,6 @@
+four-in-a-row 3.11.90
+=====================
+
 * License notice: the new themes are GPLv3+
 
 * New themes by Anatol Drlicek, based on images from the Faenza icon theme by
@@ -12,6 +15,7 @@
 * It is no longer possible to request a hint twice in a row.
 * It is no longer possible to start a computer vs. computer game.
 * It is no longer possible to disable animations.
+* Added tooltips to all buttons
 * Updated translations
 
 four-in-a-row 3.11.3
