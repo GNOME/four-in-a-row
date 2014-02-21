@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-08 06:10+0000\n"
-"PO-Revision-Date: 2014-02-08 10:04+0100\n"
+"POT-Creation-Date: 2014-02-21 17:54+0000\n"
+"PO-Revision-Date: 2014-02-21 21:23+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -150,7 +150,7 @@ msgstr "Začít novou síťovou hru pro více hráčů"
 msgid "End the current network game and return to network server"
 msgstr "Ukončit současnou síťovou hru"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1262
 msgid "Start a new game"
 msgstr "Začít novou hru"
 
@@ -426,6 +426,14 @@ msgstr "O _aplikaci"
 #: ../src/main.c:1194
 msgid "_Quit"
 msgstr "U_končit"
+
+#: ../src/main.c:1242
+msgid "Undo your most recent move"
+msgstr "Vrátit zpět váš poslední tah"
+
+#: ../src/main.c:1252
+msgid "Receive a hint for your next move"
+msgstr "Získat radu pro váš další tah"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
