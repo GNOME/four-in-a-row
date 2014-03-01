@@ -642,7 +642,10 @@ on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
   set_status_message (s);
   g_free (s);
 
-  g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), (moves > 0));
+  if (moves <= 0 || (moves == 1 && is_player_human ()))
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
+  else
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), TRUE);
 }
 
 void
