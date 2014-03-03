@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games-master-po-gl-54590\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 02:12+0100\n"
-"PO-Revision-Date: 2014-02-07 02:14+0200\n"
+"POT-Creation-Date: 2014-03-03 21:20+0100\n"
+"PO-Revision-Date: 2014-03-03 21:20+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -143,7 +143,7 @@ msgstr "Iniciar unha partida de rede multixogador"
 msgid "End the current network game and return to network server"
 msgstr "Rematar a partida en rede actual e volver ao servidor de rede"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1262
 msgid "Start a new game"
 msgstr "Comezar un xogo novo"
 
@@ -414,6 +414,14 @@ msgstr "So_bre"
 #: ../src/main.c:1194
 msgid "_Quit"
 msgstr "_Saír"
+
+#: ../src/main.c:1242
+msgid "Undo your most recent move"
+msgstr "Desfacer o movemento máis recente"
+
+#: ../src/main.c:1252
+msgid "Receive a hint for your next move"
+msgstr "Recibir unha suxestión para o próximo movemento"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
@@ -3023,9 +3031,6 @@ msgstr "Estrelas e aneis"
 
 #~ msgid "The current level"
 #~ msgstr "O nivel actual"
-
-#~ msgid "The users's most recent level."
-#~ msgstr "O nivel máis recente do usuario."
 
 #~ msgid ""
 #~ "Turn off all the lights\n"
