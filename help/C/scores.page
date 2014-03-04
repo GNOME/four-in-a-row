@@ -6,12 +6,16 @@
     <link type="guide" xref="index#play"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
-
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
     <credit type="author">
       <name>Aruna Sankaranarayanan</name>
       <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email>anna.cs.au@gmail.com</email>
     </credit>
 
     <desc>Keep track of your wins and losses.</desc>
@@ -21,37 +25,27 @@
   <p>The score in <app>Four-in-a-row</app> is recorded in terms of your wins,
   your opponent's wins and games that ended in a draw. To check the scores,
   select <guiseq><gui style="menu">Game</gui>
-  <gui style="menuitem">Scores</gui></guiseq>. If you are playing against the
-  computer, the number next to:</p>
+  <gui style="menuitem">Scores</gui></guiseq>. In the default theme:</p>
 
   <list>
     <item>
-      <p><gui>You</gui> displays the number of games you have won.</p>
+      <p><gui>Red</gui> displays the number of games you have won.</p>
     </item>
     <item>
-      <p><gui>Me</gui> displays the number of games won by the computer.</p>
+      <p><gui>Green</gui> displays the number of games won by the opponent.</p>
     </item>
     <item>
-      <p><gui>Drawn</gui> displays the number of games that ended in a
-      draw.</p>
+      <p><gui>Drawn</gui> displays the number of games that ended in a draw.</p>
     </item>
   </list>
 
-  <p>If you are playing against a friend, the number next to:</p>
-
-  <list>
-    <item>
-      <p><gui>Red</gui> displays the number of games won by the player who was
-      controlling the red marbles.</p>
-    </item>
-    <item>
-      <p><gui>Blue</gui> displays the number of games won by the player who
-      was controlling the blue marbles.</p>
-    </item>
-    <item>
-      <p><gui>Drawn</gui> displays the number of games that ended in a
-      draw.</p>
-    </item>
-  </list>
+  <note style="important">
+    <p>The labels to represent players shown in <app>Scores</app> change based
+    on opponent and theme selected. If you have selected the varying levels of
+    computer as your opponent, then you will see the labels <gui>You</gui> and
+    <gui>Me</gui>. If you are playing against another person, then the labels
+    to represent you and the person will be the color of the marbles in the
+    currently set theme.</p>
+  </note>
 
 </page>
