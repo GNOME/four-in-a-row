@@ -16,7 +16,7 @@
   </_p>
  </description>
  <screenshots>
-  <screenshot type="default" width="1200" height="675">https://people.gnome.org/~mcatanzaro/four-in-a-row.png</screenshot>
+  <screenshot type="default" width="748" height="398">https://people.gnome.org/~mcatanzaro/four-in-a-row.png</screenshot>
  </screenshots>
  <url type="homepage">https://wiki.gnome.org/Apps/Four-in-a-row</url>
  <updatecontact>games_list_at_gnome.org</updatecontact>
