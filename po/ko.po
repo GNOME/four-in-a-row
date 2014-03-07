@@ -1,8 +1,10 @@
+# -*- compile-command: "ko-po-check ko.po" -*-
+#
 # gnome-games Korean translation
 # This file is distributed under the same license as the gnome-games package.
 #
 # GwanSun Back <backiss@kornet.net>, 2001
-# Changwoo Ryu <cwryu@debian.org>, 1998, 2002-2013.
+# Changwoo Ryu <cwryu@debian.org>, 1998, 2002-2014.
 #
 #
 # 새로 번역하신 분은 아래 "translator-credits"에 추가하세요.
@@ -12,8 +14,8 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-03-18 11:21+0900\n"
+"POT-Creation-Date: 2014-02-16 16:31+0000\n"
+"PO-Revision-Date: 2014-03-08 03:33+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: Korean\n"
@@ -22,77 +24,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
-msgid "Four-in-a-Row"
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr "사목 게임의 목표는 구슬을 4개 연속으로 이으면서 상대방(사람 또는 컴퓨터)이 4개를 연속으로 잇지 못하게 만드는 것입니다. 가로 줄, 세로 줄, 대각선 줄 모두 가능합니다. 먼저 4개 연속으로 이으면 승리합니다!"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr "사목은 여러가지 난이도가 있습니다. 풀기 어려우면 언제든지 힌트를 얻을 수 있습니다."
+
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1172 ../src/main.h:5
+msgid "Four-in-a-row"
 msgstr "사목"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "같은 색을 한 줄로 놓아야 이기는 게임"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "game;게임;strategy;전략;logic;논리;로직;"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
-msgid "Level of Player One"
-msgstr "플레이어 1의 수준"
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+msgid "Opponent"
+msgstr "상대"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "0은 사용자; 1부터 3은 컴퓨터 플레이어의 수준에 해당합니다."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
-msgid "Level of Player Two"
-msgstr "플레이어 2의 수준"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
 msgstr "테마 ID"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "사용할 테마를 지정하는 숫자."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:6
-msgid "Animate"
-msgstr "애니메이션"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:7
-msgid "Whether or not to use animation."
-msgstr "애니메이션을 사용할 지 여부."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "소리"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "이벤트 사운드를 재생할 지 여부."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "왼쪽으로 이동"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "왼쪽으로 이동할 때 누를 키."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "오른쪽으로 이동"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "오른쪽으로 이동할 때 누를 키."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "돌 떨어뜨리기"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "돌 떨어뜨릴 때 누를 키."
 
@@ -128,7 +132,7 @@ msgstr "새 멀티플레이어 네트워크 게임을 시작합니다"
 msgid "End the current network game and return to network server"
 msgstr "현재 네트워크 게임을 끝내고 네트워크 서버로 돌아갑니다"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1262
 msgid "Start a new game"
 msgstr "새 게임을 시작합니다"
 
@@ -194,7 +198,7 @@ msgid "_New"
 msgstr "새 게임(_N)"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1187
 msgid "_New Game"
 msgstr "새 게임(_N)"
 
@@ -244,7 +248,7 @@ msgstr "일시 중지(_P)"
 msgid "Res_ume"
 msgstr "다시 시작(_U)"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1188
 msgid "_Scores"
 msgstr "점수(_S)"
 
@@ -298,7 +302,7 @@ msgstr ""
 "You should have received a copy of the GNU General Public License along with "
 "this program.  If not, see <http://www.gnu.org/licenses/>."
 
-#: ../src/gfx.c:248
+#: ../src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -307,194 +311,176 @@ msgstr ""
 "그림을 읽어들일 수 없습니다:\n"
 "%s"
 
-#: ../src/main.c:524
-msgid "It's a draw!"
+#: ../src/main.c:511
+msgid "It’s a draw!"
 msgstr "무승부입니다!"
 
-#: ../src/main.c:533
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "당신이 이겼습니다!"
 
-#: ../src/main.c:535 ../src/main.c:554
-msgid "It is your move."
-msgstr "당신 차례입니다."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "당신 턴"
 
-#: ../src/main.c:538
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "내가 이겼습니다!"
 
-#: ../src/main.c:540 ../src/main.c:642
-msgid "Thinking..."
-msgstr "생각중..."
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
+msgstr "생각하는 중…"
 
-#: ../src/main.c:551
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "%s의 승리!"
 
-#: ../src/main.c:558
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "%s의 차례를 기다리는 중입니다."
+msgid "%s’s Turn"
+msgstr "%s의 턴"
 
-#: ../src/main.c:659
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "힌트: %d열"
 
-#: ../src/main.c:687 ../src/main.c:691
+#: ../src/main.c:666 ../src/main.c:670
 msgid "You:"
 msgstr "당신:"
 
-#: ../src/main.c:688 ../src/main.c:690
+#: ../src/main.c:667 ../src/main.c:669
 msgid "Me:"
 msgstr "나:"
 
-#: ../src/main.c:736
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "점수"
 
-#: ../src/main.c:780
+#: ../src/main.c:718
+msgid "_Close"
+msgstr "닫기(_C)"
+
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "무승부:"
 
-#: ../src/main.c:829
+#: ../src/main.c:804
 msgid ""
-"\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
-"Bertoletti's Velena Engine.\n"
+"Connect four in a row to win.\n"
 "\n"
-"\"Four in a Row\" is a part of GNOME Games."
+"Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"그놈 \"사목\" 게임. 컴퓨터 플레이어는 Giuliano Bertoletti의 Velena 엔진에 기"
-"반했습니다.\n"
+"이기려면 4줄 연속으로 연결하십시오.\n"
 "\n"
-"\"사목\"은 그놈 게임의 일부입니다."
+"사목은 그놈 게임의 일부입니다."
 
-#: ../src/main.c:830
-msgid "GNOME Games web site"
-msgstr "그놈 게임 웹사이트"
-
-#: ../src/main.c:833
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr "류창우 <cwryu@debian.org>"
 
-#: ../src/main.c:1183
-msgid "_Game"
-msgstr "게임(_G)"
+#: ../src/main.c:1189
+msgid "_Preferences"
+msgstr "기본 설정(_P)"
 
-#: ../src/main.c:1184
-msgid "_View"
-msgstr "보기(_V)"
-
-#: ../src/main.c:1185
-msgid "_Settings"
-msgstr "설정(_S)"
-
-#: ../src/main.c:1186
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "사목"
+#: ../src/main.c:1193
+msgid "_About"
+msgstr "정보(_A)"
 
-#: ../src/prefs.c:207
-msgid "Four-in-a-Row Preferences"
-msgstr "사목 기본 설정"
+#: ../src/main.c:1194
+msgid "_Quit"
+msgstr "끝내기(_Q)"
 
-#: ../src/prefs.c:230
+#: ../src/main.c:1242
+msgid "Undo your most recent move"
+msgstr "최근 움직임을 취소합니다"
+
+#: ../src/main.c:1252
+msgid "Receive a hint for your next move"
+msgstr "다음 움직임에 대한 힌트를 얻습니다"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "기본 설정"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "게임"
 
-#: ../src/prefs.c:233
-msgid "Player One:"
-msgstr "플레이어 1:"
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "상대:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "사람"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "수준 하"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "수준 중"
 
-#: ../src/prefs.c:256 ../src/prefs.c:284
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "수준 상"
 
-#: ../src/prefs.c:262
-msgid "Player Two:"
-msgstr "플레이어 2:"
-
-#: ../src/prefs.c:290
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "테마(_T):"
 
-#: ../src/prefs.c:303
-msgid "Enable _animation"
-msgstr "애니메이션 사용(_A)"
-
-#: ../src/prefs.c:307
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "사운드 사용(_N)"
 
 #. keyboard tab
-#: ../src/prefs.c:312
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "키보드 조작"
 
-#: ../src/theme.c:41
-msgid "Classic"
-msgstr "클래식"
-
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
-msgid "Red"
-msgstr "빨강"
-
-#: ../src/theme.c:45
-msgid "Yellow"
-msgstr "노랑"
-
-#: ../src/theme.c:48
+#: ../src/theme.c:40
 msgid "High Contrast"
 msgstr "고대비"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "원"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "십자가"
 
-#: ../src/theme.c:55
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "고대비 반전"
 
-#: ../src/theme.c:62
-msgid "Cream Marbles"
-msgstr "크림 대리석"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "빨강 및 녹색 구슬"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "빨강"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "녹색"
+
+#: ../src/theme.c:61
+msgid "Blue and Red Marbles"
+msgstr "파랑 및 빨강 구슬"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "파랑"
 
-#: ../src/theme.c:69
-msgid "Glass Marbles"
-msgstr "유리 대리석"
-
-#: ../src/theme.c:76
-msgid "Nightfall"
-msgstr "황혼"
-
-#: ../src/theme.c:83
-msgid "Blocks"
-msgstr "블록"
-
-#: ../src/theme.c:87
-msgid "Orange"
-msgstr "주황"
+#: ../src/theme.c:68
+msgid "Stars and Rings"
+msgstr "별 및 고리"
