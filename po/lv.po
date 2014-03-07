@@ -5,14 +5,14 @@
 # Peteris Krisjanis <peteris.krisjanis@os.lv>, 2002.
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011.
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-03-18 14:20+0200\n"
+"POT-Creation-Date: 2014-02-16 16:31+0000\n"
+"PO-Revision-Date: 2014-03-07 21:26+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -21,81 +21,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "X-Poedit-Language: Latvian\n"
 "X-Poedit-Country: LATVIA\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
-msgid "Four-in-a-Row"
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Klasiska ģimenes spēle, kurā mērķis ir salikt rindu ar četrām lodītēm, "
+"mēģinot traucēt to pašu izdarīt pretiniekam, vai tas būtu cilvēks vai dators. "
+"Rindas var būt horizontālas, vertikālas vai diagonālas. Pirmais, kas saliks "
+"četras secīgas lodītes, būs uzvarētājs!"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Spēlē “Četri rindā” ir vairāki grūtības līmeņi. Ja ir kāda ķibele, vienmēr "
+"vari prasīt padomu."
+
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1172 ../src/main.h:5
+msgid "Four-in-a-row"
 msgstr "Četri rindā"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Lai uzvarētu, veidojiet līnijas vienā krāsā"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "spēle;stratēģija;loģika;"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
-msgid "Level of Player One"
-msgstr "Pirmā spēlētāja līmenis"
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#| msgid "Computer Opponents"
+msgid "Opponent"
+msgstr "Pretinieks"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "Nulle ir cilvēks, viens līdz trīs atbilst datora spēlētāju līmenim."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
-msgid "Level of Player Two"
-msgstr "Otrā spēlētāja līmenis"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
 msgstr "Motīva ID"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "Skaitlis, kas nosaka vēlamo motīvu."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:6
-msgid "Animate"
-msgstr "Animēt"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:7
-msgid "Whether or not to use animation."
-msgstr "Vai lietot animāciju."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "Skaņa"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "Vai atskaņot notikumu skaņas."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "Iet pa kreisi"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "Taustiņš, ko spiest, lai pārvietotu pa kreisi."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "Iet pa labi"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "Taustiņš, ko spiest, lai pārvietotu pa labi."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "Nomest lodīti"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "Taustiņš, ko spiest, lai nomestu lodīti."
 
@@ -131,7 +140,7 @@ msgstr "Sākt jaunu tīkla spēli"
 msgid "End the current network game and return to network server"
 msgstr "Beigt pašreizējo tīkla spēli un atgriezties pie servera"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1262
 msgid "Start a new game"
 msgstr "Sākt jaunu spēli"
 
@@ -197,7 +206,7 @@ msgid "_New"
 msgstr "Jau_na"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1187
 msgid "_New Game"
 msgstr "Jau_na spēle"
 
@@ -247,7 +256,7 @@ msgstr "_Pauzēt"
 msgid "Res_ume"
 msgstr "T_urpināt"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1188
 msgid "_Scores"
 msgstr "Re_zultāti"
 
@@ -298,7 +307,7 @@ msgstr ""
 "Jums vajadzēja saņemt GNU Vispārējo Publisko Licenci ar šo programmu. Ja nē, "
 "skatiet <http://www.gnu.org/licenses/>."
 
-#: ../src/gfx.c:248
+#: ../src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -307,200 +316,268 @@ msgstr ""
 "Nevar ielādēt attēlu:\n"
 "%s"
 
-#: ../src/main.c:524
-msgid "It's a draw!"
+#: ../src/main.c:511
+#| msgid "It's a draw!"
+msgid "It’s a draw!"
 msgstr "Neizšķirts!"
 
-#: ../src/main.c:533
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "Tu uzvarēji!"
 
-#: ../src/main.c:535 ../src/main.c:554
-msgid "It is your move."
-msgstr "Tavs gājiens."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "Tavs gājiens"
 
-#: ../src/main.c:538
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "Es uzvarēju!"
 
-#: ../src/main.c:540 ../src/main.c:642
-msgid "Thinking..."
-msgstr "Domā..."
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
+msgstr "Es domāju…"
 
-#: ../src/main.c:551
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "%s uzvar!"
 
-#: ../src/main.c:558
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "Gaida %s gājienu."
+msgid "%s’s Turn"
+msgstr "%s gājiens"
 
-#: ../src/main.c:659
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Padoms — kolonna %d"
 
-#: ../src/main.c:687 ../src/main.c:691
+#: ../src/main.c:666 ../src/main.c:670
 msgid "You:"
 msgstr "Tu:"
 
-#: ../src/main.c:688 ../src/main.c:690
+#: ../src/main.c:667 ../src/main.c:669
 msgid "Me:"
 msgstr "Es:"
 
-#: ../src/main.c:736
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "Rezultāti"
 
-#: ../src/main.c:780
+#: ../src/main.c:718
+msgid "_Close"
+msgstr "_Aizvērt"
+
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "Neizšķirts:"
 
-#: ../src/main.c:829
+#: ../src/main.c:804
+#| msgid ""
+#| "Based on classic BSD Robots.\n"
+#| "\n"
+#| "Robots is a part of GNOME Games."
 msgid ""
-"\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
-"Bertoletti's Velena Engine.\n"
+"Connect four in a row to win.\n"
 "\n"
-"\"Four in a Row\" is a part of GNOME Games."
+"Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"“Četri rindā” GNOME videi ar datora spēlētāju, ko vada Giuliano Bertoletti "
-"Velena dzinis.\n"
+"Savieno četrus, lai uzvarētu.\n"
 "\n"
 "“Četri rindā” ir daļa no GNOME spēlēm."
 
-#: ../src/main.c:830
-msgid "GNOME Games web site"
-msgstr "GNOME Games tīmekļa vietne"
-
-#: ../src/main.c:833
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr ""
 "Raivis Dejus <orvils@gmail.com>\n"
 "Sandra Zabarovska <sandra.zabarovska@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/main.c:1183
-msgid "_Game"
-msgstr "_Spēle"
+#: ../src/main.c:1189
+msgid "_Preferences"
+msgstr "_Iestatījumi"
 
-#: ../src/main.c:1184
-msgid "_View"
-msgstr "_Skats"
-
-#: ../src/main.c:1185
-msgid "_Settings"
-msgstr "Ie_statījumi"
-
-#: ../src/main.c:1186
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "_Palīdzība"
 
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Četri rindā"
+#: ../src/main.c:1193
+msgid "_About"
+msgstr "P_ar"
 
-#: ../src/prefs.c:207
-msgid "Four-in-a-Row Preferences"
-msgstr "“Četri rindā” iestatījumi"
+#: ../src/main.c:1194
+msgid "_Quit"
+msgstr "_Iziet"
 
-#: ../src/prefs.c:230
+#: ../src/main.c:1242
+#| msgid "The users's most recent level."
+msgid "Undo your most recent move"
+msgstr "Atsaukt savu pēdējo gājienu"
+
+#: ../src/main.c:1252
+#| msgid "Get a hint for your next move"
+msgid "Receive a hint for your next move"
+msgstr "Saņemt padomu par nākamo gājienu"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "Iestatījumi"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "Spēle"
 
-#: ../src/prefs.c:233
-msgid "Player One:"
-msgstr "Pirmais spēlētājs:"
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "Pretinieks:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "Cilvēks"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "Pirmais līmenis"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "Otrais līmenis"
 
-#: ../src/prefs.c:256 ../src/prefs.c:284
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "Trešais līmenis"
 
-#: ../src/prefs.c:262
-msgid "Player Two:"
-msgstr "Otrais spēlētājs:"
-
-#: ../src/prefs.c:290
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "Mo_tīvs:"
 
-#: ../src/prefs.c:303
-msgid "Enable _animation"
-msgstr "_Aktivēt animāciju"
-
-#: ../src/prefs.c:307
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "A_ktivēt skaņas"
 
 #. keyboard tab
-#: ../src/prefs.c:312
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "Tastatūras vadība"
 
-#: ../src/theme.c:41
-msgid "Classic"
-msgstr "Klasiska"
-
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
-msgid "Red"
-msgstr "Sarkans"
-
-#: ../src/theme.c:45
-msgid "Yellow"
-msgstr "Dzeltens"
-
-#: ../src/theme.c:48
+#: ../src/theme.c:40
 msgid "High Contrast"
 msgstr "Augsts kontrasts"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Aplis"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Krusts"
 
-#: ../src/theme.c:55
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Pretējs augsts kontrasts"
 
-#: ../src/theme.c:62
-msgid "Cream Marbles"
-msgstr "Krēmkrāsas lodītes"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "Sarkanas un zaļas lodītes"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "Sarkans"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "Zaļš"
+
+#: ../src/theme.c:61
+#| msgid "Cream Marbles"
+msgid "Blue and Red Marbles"
+msgstr "Zilas un sarkanas lodītes"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Zils"
 
-#: ../src/theme.c:69
-msgid "Glass Marbles"
-msgstr "Stikla lodītes"
+#: ../src/theme.c:68
+#| msgid "Starting %s"
+msgid "Stars and Rings"
+msgstr "Zvaigznes un riņķi"
 
-#: ../src/theme.c:76
-msgid "Nightfall"
-msgstr "Krēsla"
+#~ msgid "Four-in-a-Row"
+#~ msgstr "Četri rindā"
 
-#: ../src/theme.c:83
-msgid "Blocks"
-msgstr "Bloki"
+#~ msgid "Level of Player One"
+#~ msgstr "Pirmā spēlētāja līmenis"
 
-#: ../src/theme.c:87
-msgid "Orange"
-msgstr "Oranžs"
+#~ msgid "Level of Player Two"
+#~ msgstr "Otrā spēlētāja līmenis"
+
+#~ msgid "Animate"
+#~ msgstr "Animēt"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Vai lietot animāciju."
+
+#~ msgid "It is your move."
+#~ msgstr "Tavs gājiens."
+
+#~ msgid "Thinking..."
+#~ msgstr "Domā..."
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "Gaida %s gājienu."
+
+#~ msgid ""
+#~ "\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
+#~ "Bertoletti's Velena Engine.\n"
+#~ "\n"
+#~ "\"Four in a Row\" is a part of GNOME Games."
+#~ msgstr ""
+#~ "“Četri rindā” GNOME videi ar datora spēlētāju, ko vada Giuliano "
+#~ "Bertoletti Velena dzinis.\n"
+#~ "\n"
+#~ "“Četri rindā” ir daļa no GNOME spēlēm."
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "GNOME Games tīmekļa vietne"
+
+#~ msgid "_Game"
+#~ msgstr "_Spēle"
+
+#~ msgid "_View"
+#~ msgstr "_Skats"
+
+#~ msgid "_Settings"
+#~ msgstr "Ie_statījumi"
+
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "“Četri rindā” iestatījumi"
+
+#~ msgid "Player One:"
+#~ msgstr "Pirmais spēlētājs:"
+
+#~ msgid "Player Two:"
+#~ msgstr "Otrais spēlētājs:"
+
+#~ msgid "Enable _animation"
+#~ msgstr "_Aktivēt animāciju"
+
+#~ msgid "Classic"
+#~ msgstr "Klasiska"
+
+#~ msgid "Yellow"
+#~ msgstr "Dzeltens"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "Stikla lodītes"
+
+#~ msgid "Nightfall"
+#~ msgstr "Krēsla"
+
+#~ msgid "Blocks"
+#~ msgstr "Bloki"
+
+#~ msgid "Orange"
+#~ msgstr "Oranžs"
 
 #~ msgid "Chess"
 #~ msgstr "Šahs"
@@ -613,9 +690,6 @@ msgstr "Oranžs"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Grūtība pretinieka šaha dzinim"
-
-#~ msgid "Preferences"
-#~ msgstr "Iestatījumi"
 
 #~ msgid "Play as:"
 #~ msgstr "Spēlē kā:"
@@ -1491,9 +1565,6 @@ msgstr "Oranžs"
 #~ msgid "_Worm color:"
 #~ msgstr "_Tārpa krāsa:"
 
-#~ msgid "Green"
-#~ msgstr "Zaļš"
-
 #~ msgid "Cyan"
 #~ msgstr "Gaiši zils"
 
@@ -1771,15 +1842,6 @@ msgstr "Oranžs"
 #~ msgid "Show or hide the toolbar"
 #~ msgstr "Rādīt vai slēpt rīkjoslu"
 
-#~ msgid ""
-#~ "Based on classic BSD Robots.\n"
-#~ "\n"
-#~ "Robots is a part of GNOME Games."
-#~ msgstr ""
-#~ "Balstīts uz klasiskajiem BSD Robots.\n"
-#~ "\n"
-#~ "Robots ir daļa no GNOME spēlēm."
-
 #~ msgid "Robots Preferences"
 #~ msgstr "Robotu iestatījumi"
 
@@ -1871,15 +1933,6 @@ msgstr "Oranžs"
 
 #~ msgid "_Restart Game"
 #~ msgstr "Pā_rstartēt spēli"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Iestatījumi"
-
-#~ msgid "_About"
-#~ msgstr "P_ar"
-
-#~ msgid "_Quit"
-#~ msgstr "_Iziet"
 
 #~ msgid "Hint"
 #~ msgstr "Padoms"
@@ -2794,9 +2847,6 @@ msgstr "Oranžs"
 #~ msgid "_Number of players:"
 #~ msgstr "_Spēlētāju skaits:"
 
-#~ msgid "Computer Opponents"
-#~ msgstr "Datoru pretinieki"
-
 #~ msgid "_Delay between rolls"
 #~ msgstr "_Aizture starp metieniem"
 
@@ -2978,9 +3028,6 @@ msgstr "Oranžs"
 
 #~ msgid "The current level"
 #~ msgstr "Pašreizējais līmenis"
-
-#~ msgid "The users's most recent level."
-#~ msgstr "Lietotāja pēdējais līmenis."
 
 #~ msgid ""
 #~ "Turn off all the lights\n"
@@ -3634,9 +3681,6 @@ msgstr "Oranžs"
 
 #~ msgid "Unrecognized desktop file Version '%s'"
 #~ msgstr "Neatpazīta darbvirsmas faila versija '%s'"
-
-#~ msgid "Starting %s"
-#~ msgstr "Palaiž %s"
 
 #~ msgid "Application does not accept documents on command line"
 #~ msgstr "Lietotne nepieņem norādes uz dokumentiem no komandrindas"
@@ -5252,9 +5296,6 @@ msgstr "Oranžs"
 
 #~ msgid "_Cancel"
 #~ msgstr "At_celt"
-
-#~ msgid "_Close"
-#~ msgstr "_Aizvērt"
 
 #~ msgid "_OK"
 #~ msgstr "_Labi"
