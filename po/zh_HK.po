@@ -11,15 +11,16 @@ msgstr ""
 "Project-Id-Version: gnome-games 3.3.91\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-24 02:42+0000\n"
-"PO-Revision-Date: 2014-02-01 06:57+0800\n"
+"POT-Creation-Date: 2014-03-06 05:55+0000\n"
+"PO-Revision-Date: 2014-03-09 11:35+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.6.3\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
 msgid ""
@@ -35,21 +36,21 @@ msgid ""
 "you can always ask for a hint."
 msgstr "四子連環棋有多種難度等級。如果你遇到困難，可以隨時要求提示。"
 
-#: ../data/gnect.desktop.in.h:1 ../src/main.c:1195 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1172 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "四子連環棋"
 
-#: ../data/gnect.desktop.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "將 4 粒棋子排成一直線"
 
-#: ../data/gnect.desktop.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;遊戲;策略;邏輯;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-msgid "Level of Player One"
-msgstr "第一個玩家的棋力"
+msgid "Opponent"
+msgstr "對手"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
@@ -58,54 +59,42 @@ msgid ""
 msgstr "0 是人類玩家；1 至 3 表示電腦玩家的棋力。"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
-msgid "Level of Player Two"
-msgstr "第二個玩家的棋力"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "Theme ID"
 msgstr "佈景主題數字"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "一個數字，代表你想用的佈景主題。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
-msgid "Animate"
-msgstr "平滑移動"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
-msgid "Whether or not to use animation."
-msgstr "是否使用動畫。"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "音效"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "是否以音效代表不同事件發生。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:315
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "向左移動"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "向左移所使用的按鍵。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "向右移動"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "向右移所使用的按鍵。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:14 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "放下棋子"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "放下棋子所使用的按鍵。"
 
@@ -141,7 +130,7 @@ msgstr "開始一個新的多人網絡遊戲"
 msgid "End the current network game and return to network server"
 msgstr "終止目前的網絡遊戲，回到伺服器"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1262
 msgid "Start a new game"
 msgstr "開始另一局"
 
@@ -197,7 +186,7 @@ msgstr "內容(_C)"
 msgid "_Fullscreen"
 msgstr "全螢幕(_F)"
 
-#: ../src/games-stock.c:249 ../src/main.c:1212
+#: ../src/games-stock.c:249
 msgid "_Hint"
 msgstr "提示(_H)"
 
@@ -207,7 +196,7 @@ msgid "_New"
 msgstr "新增(_N)"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1210
+#: ../src/games-stock.c:253 ../src/main.c:1187
 msgid "_New Game"
 msgstr "開新局(_N)"
 
@@ -225,7 +214,7 @@ msgstr "重設(_R)"
 msgid "_Restart"
 msgstr "再玩(_R)"
 
-#: ../src/games-stock.c:259 ../src/main.c:1211
+#: ../src/games-stock.c:259
 msgid "_Undo Move"
 msgstr "復原移動(_U)"
 
@@ -257,7 +246,7 @@ msgstr "暫停(_P)"
 msgid "Res_ume"
 msgstr "繼續(_U)"
 
-#: ../src/games-stock.c:267 ../src/main.c:1213
+#: ../src/games-stock.c:267 ../src/main.c:1188
 msgid "_Scores"
 msgstr "分數(_S)"
 
@@ -312,63 +301,62 @@ msgstr ""
 "無法載入圖片:\n"
 "%s"
 
-#: ../src/main.c:513
-#| msgid "It's a draw!"
+#: ../src/main.c:511
 msgid "It’s a draw!"
 msgstr "平手！"
 
-#: ../src/main.c:522
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "你贏了！"
 
-#: ../src/main.c:524 ../src/main.c:543
+#: ../src/main.c:522 ../src/main.c:541
 msgid "Your Turn"
 msgstr "輸到你"
 
-#: ../src/main.c:527
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "我贏了！"
 
-#: ../src/main.c:529 ../src/main.c:630
+#: ../src/main.c:527 ../src/main.c:628
 msgid "I’m Thinking…"
 msgstr "我正在思考…"
 
-#: ../src/main.c:540
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr " %s 贏了！"
 
-#: ../src/main.c:547
+#: ../src/main.c:545
 #, c-format
 msgid "%s’s Turn"
 msgstr "輪到 %s"
 
-#: ../src/main.c:647
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "提示：第 %d 欄"
 
-#: ../src/main.c:673 ../src/main.c:677
+#: ../src/main.c:666 ../src/main.c:670
 msgid "You:"
 msgstr "勝："
 
-#: ../src/main.c:674 ../src/main.c:676
+#: ../src/main.c:667 ../src/main.c:669
 msgid "Me:"
 msgstr "負："
 
-#: ../src/main.c:722
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "分數"
 
-#: ../src/main.c:725
+#: ../src/main.c:718
 msgid "_Close"
 msgstr "關閉(_C)"
 
-#: ../src/main.c:763
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "平手："
 
-#: ../src/main.c:811
+#: ../src/main.c:804
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -378,7 +366,7 @@ msgstr ""
 "\n"
 "四子連環棋是 GNOME 遊戲的一部分。"
 
-#: ../src/main.c:814
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -388,69 +376,70 @@ msgstr ""
 "Abel Cheung <abel@oaka.org>, 2001-07\n"
 "Fernando <bv1al@journalist.com.tw>, 1999"
 
-#: ../src/main.c:1216
-#| msgid "Preferences"
+#: ../src/main.c:1189
 msgid "_Preferences"
 msgstr "偏好設定(_P)"
 
-#: ../src/main.c:1219
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: ../src/main.c:1220
+#: ../src/main.c:1193
 msgid "_About"
 msgstr "關於(_A)"
 
-#: ../src/main.c:1221
+#: ../src/main.c:1194
 msgid "_Quit"
 msgstr "結束(_Q)"
 
-#: ../src/prefs.c:206
-msgid "Four-in-a-Row Preferences"
-msgstr "四子連環棋偏好設定"
+#: ../src/main.c:1242
+msgid "Undo your most recent move"
+msgstr "取消你最後一次移動"
 
-#: ../src/prefs.c:229
+#: ../src/main.c:1252
+#| msgid "Get a hint for your next move"
+msgid "Receive a hint for your next move"
+msgstr "給下一步的提示"
+
+#: ../src/prefs.c:171
+#| msgid "_Preferences"
+msgid "Preferences"
+msgstr "偏好設定"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "遊戲"
 
-#: ../src/prefs.c:232
-msgid "Player One:"
-msgstr "玩家一："
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "對手："
 
-#: ../src/prefs.c:243 ../src/prefs.c:271
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "人類"
 
-#: ../src/prefs.c:247 ../src/prefs.c:275
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "第一級"
 
-#: ../src/prefs.c:251 ../src/prefs.c:279
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "第二級"
 
-#: ../src/prefs.c:255 ../src/prefs.c:283
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "第三級"
 
-#: ../src/prefs.c:261
-msgid "Player Two:"
-msgstr "玩家二："
-
-#: ../src/prefs.c:289
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "佈景主題(_T)："
 
-#: ../src/prefs.c:302
-msgid "Enable _animation"
-msgstr "平滑移動(_A)"
-
-#: ../src/prefs.c:306
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "開啟音效(_N)"
 
 #. keyboard tab
-#: ../src/prefs.c:311
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "鍵盤控制"
 
@@ -471,34 +460,56 @@ msgid "High Contrast Inverse"
 msgstr "高反差 + 反白"
 
 #: ../src/theme.c:54
-msgid "Glass Marbles"
-msgstr "玻璃彈珠"
+msgid "Red and Green Marbles"
+msgstr "紅色與綠色彈珠"
 
-#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
 msgid "Red"
 msgstr "紅"
 
 #: ../src/theme.c:58 ../src/theme.c:72
-msgid "Blue"
-msgstr "藍"
-
-#: ../src/theme.c:61
-msgid "Red and Green Marbles"
-msgstr "紅色與綠色彈珠"
-
-#: ../src/theme.c:65 ../src/theme.c:79
 msgid "Green"
 msgstr "綠"
 
 # (Abel) 隨便作的。
-#: ../src/theme.c:68
-#| msgid "Cream Marbles"
+#: ../src/theme.c:61
 msgid "Blue and Red Marbles"
 msgstr "藍色與紅色彈珠"
 
-#: ../src/theme.c:75
+#: ../src/theme.c:65
+msgid "Blue"
+msgstr "藍"
+
+#: ../src/theme.c:68
 msgid "Stars and Rings"
 msgstr "星星與圓環"
+
+#~ msgid "Level of Player One"
+#~ msgstr "第一個玩家的棋力"
+
+#~ msgid "Level of Player Two"
+#~ msgstr "第二個玩家的棋力"
+
+#~ msgid "Animate"
+#~ msgstr "平滑移動"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "是否使用動畫。"
+
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "四子連環棋偏好設定"
+
+#~ msgid "Player One:"
+#~ msgstr "玩家一："
+
+#~ msgid "Player Two:"
+#~ msgstr "玩家二："
+
+#~ msgid "Enable _animation"
+#~ msgstr "平滑移動(_A)"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "玻璃彈珠"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "四子連環棋"
