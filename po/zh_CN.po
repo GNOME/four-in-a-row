@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-24 03:06+0000\n"
+"POT-Creation-Date: 2014-03-08 05:55+0000\n"
 "PO-Revision-Date: 2012-03-23 17:59+0800\n"
-"Last-Translator: tuhaihe <wangdianjin@linuxdeepin.com>\n"
+"Last-Translator: Sphinx Jiang <yishanj13@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -25,28 +25,31 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
+"一个家庭经典游戏，四字连线的目的是将你自己的四个弹珠连成一线同时阻止你的对手"
+"(人或者计算机)连线成功。连线可以是横的，竖的或斜的。第一个将四个弹珠"
+"连成一条线的选手获胜。"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:2
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
-msgstr ""
+msgstr "四子连线有多个难度级别。如果您玩不下去，也可以获取提示。"
 
-#: ../data/gnect.desktop.in.h:1 ../src/main.c:1195 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1175 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "四子连线"
 
-#: ../data/gnect.desktop.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "将四粒棋子排成一线以取胜"
 
-#: ../data/gnect.desktop.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;游戏;策略;逻辑;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-msgid "Level of Player One"
-msgstr "玩家一的级别"
+msgid "Opponent"
+msgstr "对手"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
@@ -55,54 +58,42 @@ msgid ""
 msgstr "0 代表玩家；1 至 3 代表相应的计算机玩家。"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
-msgid "Level of Player Two"
-msgstr "玩家二的级别"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "Theme ID"
 msgstr "主题编号"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "指定首选主题的数字。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
-msgid "Animate"
-msgstr "动画"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
-msgid "Whether or not to use animation."
-msgstr "是否使用动画。"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "音效"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "是否播放事件声音。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:315
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "向左移动"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "左移的按键。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "向右移动"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "右移的按键。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:14 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "落下小球"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "落下小球的按键。"
 
@@ -138,7 +129,7 @@ msgstr "开始多人网络游戏"
 msgid "End the current network game and return to network server"
 msgstr "结束当前网络游戏并回到服务器"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1265
 msgid "Start a new game"
 msgstr "开始新游戏"
 
@@ -194,7 +185,7 @@ msgstr "目录(_C)"
 msgid "_Fullscreen"
 msgstr "全屏(_F)"
 
-#: ../src/games-stock.c:249 ../src/main.c:1212
+#: ../src/games-stock.c:249
 msgid "_Hint"
 msgstr "提示(_H)"
 
@@ -204,7 +195,7 @@ msgid "_New"
 msgstr "新建(_N)"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1210
+#: ../src/games-stock.c:253 ../src/main.c:1190
 msgid "_New Game"
 msgstr "新建游戏(_N)"
 
@@ -222,7 +213,7 @@ msgstr "重置(_R)"
 msgid "_Restart"
 msgstr "重新开始(_R)"
 
-#: ../src/games-stock.c:259 ../src/main.c:1211
+#: ../src/games-stock.c:259
 msgid "_Undo Move"
 msgstr "撤消移动(_U)"
 
@@ -254,7 +245,7 @@ msgstr "暂停(_P)"
 msgid "Res_ume"
 msgstr "继续(_U)"
 
-#: ../src/games-stock.c:267 ../src/main.c:1213
+#: ../src/games-stock.c:267 ../src/main.c:1191
 msgid "_Scores"
 msgstr "得分(_S)"
 
@@ -313,67 +304,62 @@ msgstr ""
 "无法载入图像：\n"
 "%s"
 
-#: ../src/main.c:513
-#| msgid "It's a draw!"
+#: ../src/main.c:511
 msgid "It’s a draw!"
 msgstr "平局！"
 
-#: ../src/main.c:522
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "您赢了！"
 
-#: ../src/main.c:524 ../src/main.c:543
+#: ../src/main.c:522 ../src/main.c:541
 msgid "Your Turn"
 msgstr "轮到你走"
 
-#: ../src/main.c:527
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "我赢了！"
 
-#: ../src/main.c:529 ../src/main.c:630
+#: ../src/main.c:527 ../src/main.c:628
 msgid "I’m Thinking…"
 msgstr "我想想..."
 
-#: ../src/main.c:540
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "%s 赢了！"
 
-#: ../src/main.c:547
+#: ../src/main.c:545
 #, c-format
 msgid "%s’s Turn"
 msgstr "轮到 %s 走"
 
-#: ../src/main.c:647
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "提示：列 %d"
 
-#: ../src/main.c:673 ../src/main.c:677
+#: ../src/main.c:669 ../src/main.c:673
 msgid "You:"
 msgstr "您："
 
-#: ../src/main.c:674 ../src/main.c:676
+#: ../src/main.c:670 ../src/main.c:672
 msgid "Me:"
 msgstr "我："
 
-#: ../src/main.c:722
+#: ../src/main.c:718
 msgid "Scores"
 msgstr "得分"
 
-#: ../src/main.c:725
+#: ../src/main.c:721
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: ../src/main.c:763
+#: ../src/main.c:759
 msgid "Drawn:"
 msgstr "平局："
 
-#: ../src/main.c:811
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
+#: ../src/main.c:807
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -383,75 +369,75 @@ msgstr ""
 "\n"
 "机器人是 GNOME 游戏的一部分。"
 
-#: ../src/main.c:814
+#: ../src/main.c:810
 msgid "translator-credits"
 msgstr ""
 "Yang Zhang <zyangmath@gmail.com>, 2007\n"
 "Ping Z <zpsigma@gmail.com>, 2007\n"
 "Xhacker Liu <liu.dongyuan@gmail.com>, 2010"
 
-#: ../src/main.c:1216
+#: ../src/main.c:1192
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
-#: ../src/main.c:1219
+#: ../src/main.c:1195
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../src/main.c:1220
+#: ../src/main.c:1196
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../src/main.c:1221
+#: ../src/main.c:1197
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: ../src/prefs.c:206
-msgid "Four-in-a-Row Preferences"
-msgstr "四子连线首选项"
+#: ../src/main.c:1245
+msgid "Undo your most recent move"
+msgstr "撤销上一步。"
 
-#: ../src/prefs.c:229
+#: ../src/main.c:1255
+msgid "Receive a hint for your next move"
+msgstr "获取您下一步走法的提示"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "首选项"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "游戏"
 
-#: ../src/prefs.c:232
-msgid "Player One:"
-msgstr "玩家一："
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "对手："
 
-#: ../src/prefs.c:243 ../src/prefs.c:271
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "人"
 
-#: ../src/prefs.c:247 ../src/prefs.c:275
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "一级"
 
-#: ../src/prefs.c:251 ../src/prefs.c:279
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "二级"
 
-#: ../src/prefs.c:255 ../src/prefs.c:283
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "三级"
 
-#: ../src/prefs.c:261
-msgid "Player Two:"
-msgstr "玩家二："
-
-#: ../src/prefs.c:289
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "主题(_T)："
 
-#: ../src/prefs.c:302
-msgid "Enable _animation"
-msgstr "启用动画(_A)"
-
-#: ../src/prefs.c:306
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "启用声音(_N)"
 
 #. keyboard tab
-#: ../src/prefs.c:311
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "键盘控制"
 
@@ -472,34 +458,55 @@ msgid "High Contrast Inverse"
 msgstr "白黑"
 
 #: ../src/theme.c:54
-msgid "Glass Marbles"
-msgstr "玻璃球"
+msgid "Red and Green Marbles"
+msgstr "红色和蓝色弹球"
 
-#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
 msgid "Red"
 msgstr "红色"
 
 #: ../src/theme.c:58 ../src/theme.c:72
-msgid "Blue"
-msgstr "蓝色"
-
-#: ../src/theme.c:61
-msgid "Red and Green Marbles"
-msgstr "红色和蓝色弹球"
-
-#: ../src/theme.c:65 ../src/theme.c:79
 msgid "Green"
 msgstr "绿"
 
-#: ../src/theme.c:68
-#| msgid "Cream Marbles"
+#: ../src/theme.c:61
 msgid "Blue and Red Marbles"
 msgstr "蓝色和红色弹球"
 
-#: ../src/theme.c:75
-#| msgid "Starting %s"
+#: ../src/theme.c:65
+msgid "Blue"
+msgstr "蓝色"
+
+#: ../src/theme.c:68
 msgid "Stars and Rings"
 msgstr "星和圈"
+
+#~ msgid "Level of Player One"
+#~ msgstr "玩家一的级别"
+
+#~ msgid "Level of Player Two"
+#~ msgstr "玩家二的级别"
+
+#~ msgid "Animate"
+#~ msgstr "动画"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "是否使用动画。"
+
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "四子连线首选项"
+
+#~ msgid "Player One:"
+#~ msgstr "玩家一："
+
+#~ msgid "Player Two:"
+#~ msgstr "玩家二："
+
+#~ msgid "Enable _animation"
+#~ msgstr "启用动画(_A)"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "玻璃球"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "四子连线"
@@ -660,9 +667,6 @@ msgstr "星和圈"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "与之对战的国际象棋引擎的难度"
-
-#~ msgid "Preferences"
-#~ msgstr "首选项"
 
 #~ msgid "Play as:"
 #~ msgstr "玩家身份："
@@ -2666,9 +2670,6 @@ msgstr "星和圈"
 #~ msgid "_Number of players:"
 #~ msgstr "玩家数量(_N)："
 
-#~ msgid "Computer Opponents"
-#~ msgstr "计算机对手"
-
 #~ msgid "_Delay between rolls"
 #~ msgstr "每次投掷之间的延迟(_D)"
 
@@ -2844,9 +2845,6 @@ msgstr "星和圈"
 
 #~ msgid "The current level"
 #~ msgstr "当前级别"
-
-#~ msgid "The users's most recent level."
-#~ msgstr "用户最近的级别。"
 
 #~ msgid ""
 #~ "Turn off all the lights\n"
