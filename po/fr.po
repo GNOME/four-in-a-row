@@ -30,7 +30,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2014-03-15 05:54+0000\n"
-"PO-Revision-Date: 2014-03-16 16:40+0100\n"
+"PO-Revision-Date: 2014-03-16 18:31+0100\n"
 "Last-Translator: Bruno Cauet <brunocauet@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: \n"
@@ -228,7 +228,7 @@ msgstr "_Nouvelle partie"
 
 #: ../src/games-stock.c:254
 msgid "_Redo Move"
-msgstr "_Rétablir le déplacement"
+msgstr "_Rétablir le coup"
 
 #. Translators: this is the "Reset" scores button in a scores dialogue
 #: ../src/games-stock.c:256
@@ -242,7 +242,7 @@ msgstr "_Recommencer"
 
 #: ../src/games-stock.c:259
 msgid "_Undo Move"
-msgstr "A_nnuler le déplacement"
+msgstr "A_nnuler le coup"
 
 #: ../src/games-stock.c:260
 msgid "_Deal"
