@@ -1,3 +1,11 @@
+four-in-a-row 3.11.92
+=====================
+
+* Disable Hint after Undo to start if the computer moves first (Nikhar Agrawal)
+* Distribute new file COPYING.faenza-themes (Yanko Kaneti)
+* Help: scores page should not mention theme-specific colors (Anna Philips)
+* Many updated translations
+
 four-in-a-row 3.11.90
 =====================
 
