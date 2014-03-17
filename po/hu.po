@@ -10,41 +10,62 @@
 # Andras Timar <timar at gnome dot hu>, 2002, 2003.
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
 # Szabolcs Varga <shirokuma at shirokuma dot hu>, 2005.
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014.
 # Balázs Úr <urbalazs at gmail dot com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-03-14 22:19+0100\n"
-"Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"POT-Creation-Date: 2014-02-16 16:31+0000\n"
+"PO-Revision-Date: 2014-03-17 12:54+0100\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
-msgid "Four-in-a-Row"
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Egy családi klasszikus, a Négyet egy sorba célja egy négy golyóból álló sor "
+"összeállítása, miközben megakadályozza ellenfelét (ember vagy számítógép) "
+"ugyanebben. A sor lehet vízszintes, függőleges vagy átlós. Aki elsőként "
+"összeköt négyet egy sorba, nyer!"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"A Négyet egy sorba több nehézségi szintet tartalmaz. Ha bajban van, bármikor "
+"kérhet tippet."
+
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1172 ../src/main.h:5
+msgid "Four-in-a-row"
 msgstr "Négyet egy sorba"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Alkosson azonos színű sorokat a győzelemhez"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "játék;stratégia;logika;"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
-msgid "Level of Player One"
-msgstr "Első játékos szintje"
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#| msgid "Computer Opponents"
+msgid "Opponent"
+msgstr "Ellenfél"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
@@ -52,55 +73,43 @@ msgstr ""
 "A nulla az ember, az egytől háromig terjedő értékek a számítógépes játékos "
 "szintjét jelentik."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
-msgid "Level of Player Two"
-msgstr "Második játékos szintje"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
 msgstr "Témaazonosító"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "A kedvelt témát megadó szám."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:6
-msgid "Animate"
-msgstr "Animáció"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:7
-msgid "Whether or not to use animation."
-msgstr "Legyen-e animáció."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "Hang"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "Legyen-e az eseményeknek hangjuk."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "Lépés balra"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "Billentyű a balra mozgáshoz."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "Lépés jobbra"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "Billentyű a jobbra mozgáshoz."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "Üveggolyó leejtése"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "Billentyű az üveggolyó leejtéséhez."
 
@@ -138,7 +147,7 @@ msgid "End the current network game and return to network server"
 msgstr ""
 "A jelenlegi hálózati játék befejezése és visszatérés a hálózati kiszolgálóhoz"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1262
 msgid "Start a new game"
 msgstr "Új játék indítása"
 
@@ -204,7 +213,7 @@ msgid "_New"
 msgstr "Ú_j"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1187
 msgid "_New Game"
 msgstr "Ú_j játék"
 
@@ -256,7 +265,7 @@ msgstr "_Szünet"
 msgid "Res_ume"
 msgstr "_Folytatás"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1188
 msgid "_Scores"
 msgstr "_Pontszámok"
 
@@ -309,7 +318,7 @@ msgstr ""
 "A(z) %s programhoz a GNU General Public License egy példánya is jár, ha nem "
 "kapta meg, a <http://www.gnu.org/licenses/> oldalon elolvashatja."
 
-#: ../src/gfx.c:248
+#: ../src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -318,74 +327,77 @@ msgstr ""
 "Nem lehet betölteni a következő képet:\n"
 "%s"
 
-#: ../src/main.c:524
-msgid "It's a draw!"
+#: ../src/main.c:511
+#| msgid "It's a draw!"
+msgid "It’s a draw!"
 msgstr "Döntetlen!"
 
-#: ../src/main.c:533
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "Ön nyert!"
 
-#: ../src/main.c:535 ../src/main.c:554
-msgid "It is your move."
-msgstr "Ön jön."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "Ön jön"
 
-#: ../src/main.c:538
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "Én nyertem!"
 
-#: ../src/main.c:540 ../src/main.c:642
-msgid "Thinking..."
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
 msgstr "Gondolkodom…"
 
-#: ../src/main.c:551
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "%s nyert!"
 
-#: ../src/main.c:558
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "%s jön."
+msgid "%s’s Turn"
+msgstr "%s jön"
 
-#: ../src/main.c:659
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Javaslat: %d. oszlop"
 
-#: ../src/main.c:687 ../src/main.c:691
+#: ../src/main.c:666 ../src/main.c:670
 msgid "You:"
 msgstr "Ön:"
 
-#: ../src/main.c:688 ../src/main.c:690
+#: ../src/main.c:667 ../src/main.c:669
 msgid "Me:"
 msgstr "Én:"
 
-#: ../src/main.c:736
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "Pontszámok"
 
-#: ../src/main.c:780
+#: ../src/main.c:718
+msgid "_Close"
+msgstr "_Bezárás"
+
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "Döntetlen:"
 
-#: ../src/main.c:829
+#: ../src/main.c:804
+#| msgid ""
+#| "Based on classic BSD Robots.\n"
+#| "\n"
+#| "Robots is a part of GNOME Games."
 msgid ""
-"\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
-"Bertoletti's Velena Engine.\n"
+"Connect four in a row to win.\n"
 "\n"
-"\"Four in a Row\" is a part of GNOME Games."
+"Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"„Négyet egy sorba” játék a GNOME-hoz. A számítógép által vezérelt játékost "
-"Giuliano Bertoletti Velena alrendszere működteti.\n"
+"Kössön össze négyet egy sorba a győzelemhez.\n"
 "\n"
 "A „négyet egy sorba” a GNOME játékok része."
 
-#: ../src/main.c:830
-msgid "GNOME Games web site"
-msgstr "A GNOME játékok weboldala"
-
-#: ../src/main.c:833
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -396,126 +408,190 @@ msgstr ""
 "Tímár András <timar at gnome dot hu>\n"
 "Varga Szabolcs <shirokuma at shirokuma dot hu>"
 
-#: ../src/main.c:1183
-msgid "_Game"
-msgstr "_Játék"
-
-#: ../src/main.c:1184
-msgid "_View"
-msgstr "_Nézet"
-
-#: ../src/main.c:1185
-msgid "_Settings"
+#: ../src/main.c:1189
+msgid "_Preferences"
 msgstr "_Beállítások"
 
-#: ../src/main.c:1186
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Négyet egy sorba"
+#: ../src/main.c:1193
+msgid "_About"
+msgstr "_Névjegy"
 
-#: ../src/prefs.c:207
-msgid "Four-in-a-Row Preferences"
-msgstr "A Négyet egy sorba játék beállításai"
+#: ../src/main.c:1194
+msgid "_Quit"
+msgstr "_Kilépés"
 
-#: ../src/prefs.c:230
+#: ../src/main.c:1242
+#| msgid "The users's most recent level."
+msgid "Undo your most recent move"
+msgstr "A legutóbbi lépés visszavonása"
+
+#: ../src/main.c:1252
+#| msgid "Get a hint for your next move"
+msgid "Receive a hint for your next move"
+msgstr "Javaslat a következő lépéshez"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "Játék"
 
-#: ../src/prefs.c:233
-msgid "Player One:"
-msgstr "1. játékos:"
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "Ellenfél:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "Ember"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "Első szint"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "Második szint"
 
-#: ../src/prefs.c:256 ../src/prefs.c:284
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "Harmadik szint"
 
-#: ../src/prefs.c:262
-msgid "Player Two:"
-msgstr "2. játékos:"
-
-#: ../src/prefs.c:290
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "_Téma:"
 
-#: ../src/prefs.c:303
-msgid "Enable _animation"
-msgstr "_Animáció bekapcsolása"
-
-#: ../src/prefs.c:307
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "Ha_ngok bekapcsolása"
 
 #. keyboard tab
-#: ../src/prefs.c:312
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "Billentyűzetes vezérlés"
 
-#: ../src/theme.c:41
-msgid "Classic"
-msgstr "Klasszikus"
-
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
-msgid "Red"
-msgstr "Vörös"
-
-#: ../src/theme.c:45
-msgid "Yellow"
-msgstr "Sárga"
-
-#: ../src/theme.c:48
+#: ../src/theme.c:40
 msgid "High Contrast"
 msgstr "Nagy kontraszt"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Kör"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Kereszt"
 
-#: ../src/theme.c:55
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Inverz nagy kontraszt"
 
-#: ../src/theme.c:62
-msgid "Cream Marbles"
-msgstr "Krémes golyók"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "Vörös és zöld golyók"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "Vörös"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "Zöld"
+
+#: ../src/theme.c:61
+#| msgid "Cream Marbles"
+msgid "Blue and Red Marbles"
+msgstr "Kék és vörös golyók"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Kék"
 
-#: ../src/theme.c:69
-msgid "Glass Marbles"
-msgstr "Üveggolyók"
+#: ../src/theme.c:68
+msgid "Stars and Rings"
+msgstr "Csillagok és gyűrűk"
 
-#: ../src/theme.c:76
-msgid "Nightfall"
-msgstr "Szürkület"
+#~ msgid "Four-in-a-Row"
+#~ msgstr "Négyet egy sorba"
 
-#: ../src/theme.c:83
-msgid "Blocks"
-msgstr "Tömbök"
+#~ msgid "Level of Player One"
+#~ msgstr "Első játékos szintje"
 
-#: ../src/theme.c:87
-msgid "Orange"
-msgstr "Narancs"
+#~ msgid "Level of Player Two"
+#~ msgstr "Második játékos szintje"
+
+#~ msgid "Animate"
+#~ msgstr "Animáció"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Legyen-e animáció."
+
+#~ msgid "It is your move."
+#~ msgstr "Ön jön."
+
+#~ msgid "Thinking..."
+#~ msgstr "Gondolkodom…"
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "%s jön."
+
+#~ msgid ""
+#~ "\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
+#~ "Bertoletti's Velena Engine.\n"
+#~ "\n"
+#~ "\"Four in a Row\" is a part of GNOME Games."
+#~ msgstr ""
+#~ "„Négyet egy sorba” játék a GNOME-hoz. A számítógép által vezérelt "
+#~ "játékost Giuliano Bertoletti Velena alrendszere működteti.\n"
+#~ "\n"
+#~ "A „négyet egy sorba” a GNOME játékok része."
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "A GNOME játékok weboldala"
+
+#~ msgid "_Game"
+#~ msgstr "_Játék"
+
+#~ msgid "_View"
+#~ msgstr "_Nézet"
+
+#~ msgid "_Settings"
+#~ msgstr "_Beállítások"
+
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "A Négyet egy sorba játék beállításai"
+
+#~ msgid "Player One:"
+#~ msgstr "1. játékos:"
+
+#~ msgid "Player Two:"
+#~ msgstr "2. játékos:"
+
+#~ msgid "Enable _animation"
+#~ msgstr "_Animáció bekapcsolása"
+
+#~ msgid "Classic"
+#~ msgstr "Klasszikus"
+
+#~ msgid "Yellow"
+#~ msgstr "Sárga"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "Üveggolyók"
+
+#~ msgid "Nightfall"
+#~ msgstr "Szürkület"
+
+#~ msgid "Blocks"
+#~ msgstr "Tömbök"
+
+#~ msgid "Orange"
+#~ msgstr "Narancs"
 
 #~ msgid "Chess"
 #~ msgstr "Sakk"
@@ -629,9 +705,6 @@ msgstr "Narancs"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Az ellenfél sakkmotor nehézsége"
-
-#~ msgid "Preferences"
-#~ msgstr "Beállítások"
 
 #~ msgid "Play as:"
 #~ msgstr "Játék mint:"
@@ -1499,9 +1572,6 @@ msgstr "Narancs"
 #~ msgid "_Worm color:"
 #~ msgstr "K_ukac színe:"
 
-#~ msgid "Green"
-#~ msgstr "Zöld"
-
 #~ msgid "Cyan"
 #~ msgstr "Ciánkék"
 
@@ -1779,15 +1849,6 @@ msgstr "Narancs"
 #~ msgid "Show or hide the toolbar"
 #~ msgstr "Eszköztár megjelenítése vagy elrejtése"
 
-#~ msgid ""
-#~ "Based on classic BSD Robots.\n"
-#~ "\n"
-#~ "Robots is a part of GNOME Games."
-#~ msgstr ""
-#~ "A klasszikus BSD robotok alapján.\n"
-#~ "\n"
-#~ "A Robotok a GNOME játékok része."
-
 #~ msgid "Robots Preferences"
 #~ msgstr "A Robotok beállításai"
 
@@ -1879,15 +1940,6 @@ msgstr "Narancs"
 
 #~ msgid "_Restart Game"
 #~ msgstr "Játék új_raindítása"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Beállítások"
-
-#~ msgid "_About"
-#~ msgstr "_Névjegy"
-
-#~ msgid "_Quit"
-#~ msgstr "_Kilépés"
 
 #~ msgid "Hint"
 #~ msgstr "Javaslat"
@@ -2792,9 +2844,6 @@ msgstr "Narancs"
 #~ msgid "_Number of players:"
 #~ msgstr "_Játékosok száma:"
 
-#~ msgid "Computer Opponents"
-#~ msgstr "Számítógépes ellenfelek"
-
 #~ msgid "_Delay between rolls"
 #~ msgstr "_Dobások közötti késleltetés"
 
@@ -2976,9 +3025,6 @@ msgstr "Narancs"
 
 #~ msgid "The current level"
 #~ msgstr "A jelenlegi szint"
-
-#~ msgid "The users's most recent level."
-#~ msgstr "A felhasználó legutóbbi szintje."
 
 #~ msgid ""
 #~ "Turn off all the lights\n"
