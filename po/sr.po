@@ -1,19 +1,19 @@
 # Serbian translation of gnome-games
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2012.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2014.
 # This file is distributed under the same license as the gnome-games package.
 # Maintainer: Душан Марјановић <madafaka@bsd.org.yu>
 # Reviewed on 2005-08-03 by: Игор Несторовић <igor@prevod.org>
 # Translated by: Милош Поповић <gpopac@gmail.com>
 # Translated on 2010-08-25 by: Бранко Кокановић <branko.kokanovic@gmail.com>
 # Милош Поповић <gpopac@gmai, 2010.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: Гномове игре\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-02-15 23:00+0200\n"
+"POT-Creation-Date: 2014-02-16 16:31+0000\n"
+"PO-Revision-Date: 2014-03-17 20:56+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -24,77 +24,85 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
-msgid "Four-in-a-Row"
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Класична породична, циљ игре Четири у низу је да повежете четири кликера у "
+"једном низу и да не дозволите вашем противнику (другару или рачунару) да "
+"дође до решења пре вас. Низ може бит положен, усправан или дијагоналан. "
+"Победник је онај ко први повеже четири у низу."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Четири у низу се одликује вишеструким нивоима тежине. Ако сте у неприлици, "
+"увек можете да затражите савет."
+
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1172 ../src/main.h:5
+msgid "Four-in-a-row"
 msgstr "Четири у низу"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
-msgstr "Начините линије исте боје како би победили"
+msgstr "Начините низове исте боје да победите"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "игра;стратегија;логика;"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
-msgid "Level of Player One"
-msgstr "Ниво првог играча"
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+msgid "Opponent"
+msgstr "Противник"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
-msgstr "Нула је човек; од један до три је ниво компјутерског противника."
+msgstr "Нула је човек; од један до три је ниво рачунарсог противника."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
-msgid "Level of Player Two"
-msgstr "Ниво другог играча"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
 msgstr "ИБ теме"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "Број који означава жељену тему."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:6
-msgid "Animate"
-msgstr "Анимирано"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:7
-msgid "Whether or not to use animation."
-msgstr "Да ли приказивати анимације."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "Звук"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
-msgstr "Да ли пуштати звуке при догађајима."
+msgstr "Да ли ће бити пуштани звуци при догађајима."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "Потез у лево"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "Тастер за кретање у лево."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "Потез у десно"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "Тастер за кретање у десно."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "Пусти кликер"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "Тастер за пуштање кликера."
 
@@ -104,15 +112,15 @@ msgstr "Непозната наредба"
 
 #: ../src/games-stock.c:41
 msgid "View help for this game"
-msgstr "Прикажи помоћ за ову игру"
+msgstr "Прикажите помоћ за ову игру"
 
 #: ../src/games-stock.c:42
 msgid "End the current game"
-msgstr "Заврши игру у току"
+msgstr "Завршите текућу игру"
 
 #: ../src/games-stock.c:43
 msgid "Toggle fullscreen mode"
-msgstr "Искључује/укључује приказ преко целог екрана"
+msgstr "Пребаците режим приказа преко целог екрана"
 
 #: ../src/games-stock.c:44
 msgid "Get a hint for your next move"
@@ -124,27 +132,27 @@ msgstr "Напустите режим преко целог екрана"
 
 #: ../src/games-stock.c:46
 msgid "Start a new multiplayer network game"
-msgstr "Започни нову игру са више играча у мрежи"
+msgstr "Започните нову игру са више играча на мрежи"
 
 #: ../src/games-stock.c:47
 msgid "End the current network game and return to network server"
-msgstr "Заврши тренутну мрежну игру и врати се на мрежни сервер"
+msgstr "Завршите тренутну игру на мрежи и вратите се на мрежни сервер"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1262
 msgid "Start a new game"
 msgstr "Започните нову игру"
 
 #: ../src/games-stock.c:49
 msgid "Pause the game"
-msgstr "Паузирај игру"
+msgstr "Паузирајте игру"
 
 #: ../src/games-stock.c:50
 msgid "Show a list of players in the network game"
-msgstr "Прикажи списак играча у мрежној игри"
+msgstr "Прикажите списак играча у игри на мрежи"
 
 #: ../src/games-stock.c:51
 msgid "Redo the undone move"
-msgstr "Поновите опозван потез"
+msgstr "Поновите опозвани потез"
 
 #: ../src/games-stock.c:52
 msgid "Restart the game"
@@ -152,11 +160,11 @@ msgstr "Поново покрените игру"
 
 #: ../src/games-stock.c:53
 msgid "Resume the paused game"
-msgstr "Настави паузирану игру"
+msgstr "Наставите паузирану игру"
 
 #: ../src/games-stock.c:54
 msgid "View the scores"
-msgstr "Прегледај резултате"
+msgstr "Прегледајте резултате"
 
 #: ../src/games-stock.c:55
 msgid "Undo the last move"
@@ -172,11 +180,11 @@ msgstr "Затворите овај прозор"
 
 #: ../src/games-stock.c:58
 msgid "Configure the game"
-msgstr "Подеси игру"
+msgstr "Подесите игру"
 
 #: ../src/games-stock.c:59
 msgid "Quit this game"
-msgstr "Изађи из ове игре"
+msgstr "Изађите из ове игре"
 
 #: ../src/games-stock.c:247
 msgid "_Contents"
@@ -196,7 +204,7 @@ msgid "_New"
 msgstr "_Нова"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1187
 msgid "_New Game"
 msgstr "_Нова игра"
 
@@ -207,7 +215,7 @@ msgstr "_Понови потез"
 #. Translators: this is the "Reset" scores button in a scores dialogue
 #: ../src/games-stock.c:256
 msgid "_Reset"
-msgstr "_Поново покрени"
+msgstr "_Поново постави"
 
 #. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
 #: ../src/games-stock.c:258
@@ -228,7 +236,7 @@ msgstr "_Напусти цео екран"
 
 #: ../src/games-stock.c:262
 msgid "Network _Game"
-msgstr "_Мрежна игра"
+msgstr "Игра на _мрежи"
 
 #: ../src/games-stock.c:263
 msgid "L_eave Game"
@@ -240,13 +248,13 @@ msgstr "Списак _играча"
 
 #: ../src/games-stock.c:265
 msgid "_Pause"
-msgstr "_Пауза"
+msgstr "_Застани"
 
 #: ../src/games-stock.c:266
 msgid "Res_ume"
 msgstr "На_стави"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1188
 msgid "_Scores"
 msgstr "_Резултати"
 
@@ -263,9 +271,9 @@ msgid ""
 "Foundation; either version %d of the License, or (at your option) any later "
 "version."
 msgstr ""
-"%s је слободан софтвер; можете га прослеђивати и/или мењати под условима ГНУ "
-"Опште јавне лиценце коју је објавила Задужбина слободног софтвера; било "
-"верзије %d лиценце или (по вашем избору) било које новије верзије."
+"%s је слободан софтвер; можете га прослеђивати и/или мењати под условима "
+"Гнуове опште јавне лиценце коју је објавила Задужбина слободног софтвера; "
+"било издања %d лиценце или (по вашем избору) било којег новијег издања."
 
 #: ../src/games-stock.c:322
 #, c-format
@@ -277,7 +285,7 @@ msgid ""
 msgstr ""
 "%s се расподељује у нади да ће бити користан, али БЕЗ ИКАКВЕ ГАРАНЦИЈЕ; чак "
 "и без примењене гаранције ТРЖИШНЕ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ "
-"НАМЕНИ.  Погледајте ГНУ Општу јавну лиценцу за више детаља."
+"НАМЕНИ.  Погледајте Гнуову општу јавну лиценцу за више детаља."
 
 #: ../src/games-stock.c:327
 #, c-format
@@ -286,7 +294,7 @@ msgid ""
 "%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA  02110-1301  USA"
 msgstr ""
-"Требали сте да примите примерак ГНУ Опште јавне лиценце уз %s; ако нисте, "
+"Требали сте да примите примерак Гнуове опште јавне лиценце уз %s; ако нисте, "
 "пишите Задужбини слободног софтва на адресу: „Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA“"
 
@@ -295,10 +303,10 @@ msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program.  If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
-"Требали сте да примите примерак Гнуове опште јавне лиценце уз овај програм.  "
-"Ако нисте, погледајте <http://www.gnu.org/licenses/>."
+"Требали сте да примите примерак Гнуове опште јавне лиценце уз овај програм. "
+" Ако нисте, погледајте <http://www.gnu.org/licenses/>."
 
-#: ../src/gfx.c:248
+#: ../src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -307,199 +315,260 @@ msgstr ""
 "Не могу да учитам слику:\n"
 "%s"
 
-#: ../src/main.c:524
-msgid "It's a draw!"
+#: ../src/main.c:511
+#| msgid "It's a draw!"
+msgid "It’s a draw!"
 msgstr "Нерешено је!"
 
-#: ../src/main.c:533
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "Победили сте!"
 
-#: ../src/main.c:535 ../src/main.c:554
-msgid "It is your move."
-msgstr "Ви сте на реду."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "Ви сте на потезу"
+
+#: ../src/main.c:525
+msgid "I win!"
+msgstr "Ја сам победио!"
+
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
+msgstr "Размишљам…"
 
 #: ../src/main.c:538
-msgid "I win!"
-msgstr "Моја победа!"
-
-#: ../src/main.c:540 ../src/main.c:642
-msgid "Thinking..."
-msgstr "Размишљам..."
-
-#: ../src/main.c:551
 #, c-format
 msgid "%s wins!"
 msgstr "%s је победио!"
 
-#: ../src/main.c:558
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "Чекам да се %s помери."
+msgid "%s’s Turn"
+msgstr "%s је на потезу"
 
-#: ../src/main.c:659
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
-msgstr "Савет: колона %d"
+msgstr "Савет: %d. стубац"
 
-#: ../src/main.c:687 ../src/main.c:691
+#: ../src/main.c:666 ../src/main.c:670
 msgid "You:"
 msgstr "Ви:"
 
-#: ../src/main.c:688 ../src/main.c:690
+#: ../src/main.c:667 ../src/main.c:669
 msgid "Me:"
 msgstr "Ја:"
 
-#: ../src/main.c:736
+#: ../src/main.c:715
 msgid "Scores"
 msgstr "Резултати"
 
-#: ../src/main.c:780
+#: ../src/main.c:718
+msgid "_Close"
+msgstr "_Затвори"
+
+#: ../src/main.c:756
 msgid "Drawn:"
 msgstr "Нерешено:"
 
-#: ../src/main.c:829
+#: ../src/main.c:804
 msgid ""
-"\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
-"Bertoletti's Velena Engine.\n"
+"Connect four in a row to win.\n"
 "\n"
-"\"Four in a Row\" is a part of GNOME Games."
+"Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"„Четири у низу“ за Гном, где рачунаром као играчем управља Велена машина "
-"Ђулијана Бертолетија.\n"
+"Повежите четири у низу да победите.\n"
 "\n"
-"„Четири у низу“ је део Гномових игара."
+"Четири у низу је део Гномових игара."
 
-#: ../src/main.c:830
-msgid "GNOME Games web site"
-msgstr "Веб сајт Гномових игара"
-
-#: ../src/main.c:833
+#: ../src/main.c:807
 msgid "translator-credits"
 msgstr ""
 "Душан Марјановић <madafaka@root.co.yu>\n"
-"Милош Поповић <gpopac@gmail.com>\n"
+"Милош Поповић    <gpopac@gmail.com>\n"
 "Бранко Кокановић <branko.kokanovic@gmail.com>\n"
+"Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "\n"
 "http://prevod.org — превод на српски језик"
 
-#: ../src/main.c:1183
-msgid "_Game"
-msgstr "_Игра"
+#: ../src/main.c:1189
+msgid "_Preferences"
+msgstr "_Поставке"
 
-#: ../src/main.c:1184
-msgid "_View"
-msgstr "П_реглед"
-
-#: ../src/main.c:1185
-msgid "_Settings"
-msgstr "_Подешавања"
-
-#: ../src/main.c:1186
+#: ../src/main.c:1192
 msgid "_Help"
 msgstr "По_моћ"
 
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Четири у низу"
+#: ../src/main.c:1193
+msgid "_About"
+msgstr "_О програму"
 
-#: ../src/prefs.c:207
-msgid "Four-in-a-Row Preferences"
-msgstr "Поставке за Четири у низу"
+#: ../src/main.c:1194
+msgid "_Quit"
+msgstr "_Изађи"
 
-#: ../src/prefs.c:230
+#: ../src/main.c:1242
+msgid "Undo your most recent move"
+msgstr "Поништите ваш последњи потез"
+
+#: ../src/main.c:1252
+#| msgid "Get a hint for your next move"
+msgid "Receive a hint for your next move"
+msgstr "Потражите савет за следећи потез"
+
+#: ../src/prefs.c:171
+#| msgid "Four-in-a-Row Preferences"
+msgid "Preferences"
+msgstr "Поставке"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "Игра"
 
-#: ../src/prefs.c:233
-msgid "Player One:"
-msgstr "Први играч:"
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "Противник:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "Човек"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "Први ниво"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "Други ниво"
 
-#: ../src/prefs.c:256 ../src/prefs.c:284
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "Трећи ниво"
 
-#: ../src/prefs.c:262
-msgid "Player Two:"
-msgstr "Други играч:"
-
-#: ../src/prefs.c:290
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "_Тема:"
 
-#: ../src/prefs.c:303
-msgid "Enable _animation"
-msgstr "Укључи _анимације"
-
-#: ../src/prefs.c:307
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
-msgstr "У_кључи звукове"
+msgstr "Укључи _звуке"
 
 #. keyboard tab
-#: ../src/prefs.c:312
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
-msgstr "Контрола тастатуром"
+msgstr "Управљање тастатуром"
 
-#: ../src/theme.c:41
-msgid "Classic"
-msgstr "Класични"
-
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
-msgid "Red"
-msgstr "Црвени"
-
-#: ../src/theme.c:45
-msgid "Yellow"
-msgstr "Жути"
-
-#: ../src/theme.c:48
+#: ../src/theme.c:40
 msgid "High Contrast"
 msgstr "Велики контраст"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Кружић"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Крстић"
 
-#: ../src/theme.c:55
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Обрнути велики контраст"
 
-#: ../src/theme.c:62
-msgid "Cream Marbles"
-msgstr "Порцуланци"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "Црвени и зелени стакленци"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "Црвени"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "Зелени"
+
+#: ../src/theme.c:61
+#| msgid "Cream Marbles"
+msgid "Blue and Red Marbles"
+msgstr "Плави и црвени порцуланци"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Плави"
 
-#: ../src/theme.c:69
-msgid "Glass Marbles"
-msgstr "Стакленци"
+#: ../src/theme.c:68
+msgid "Stars and Rings"
+msgstr "Звездице и прстенови"
 
-#: ../src/theme.c:76
-msgid "Nightfall"
-msgstr "Сутон"
+#~ msgid "Four-in-a-Row"
+#~ msgstr "Четири у низу"
 
-#: ../src/theme.c:83
-msgid "Blocks"
-msgstr "Блокови"
+#~ msgid "Level of Player One"
+#~ msgstr "Ниво првог играча"
 
-#: ../src/theme.c:87
-msgid "Orange"
-msgstr "Наранџасти"
+#~ msgid "Level of Player Two"
+#~ msgstr "Ниво другог играча"
+
+#~ msgid "Animate"
+#~ msgstr "Анимирано"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Да ли приказивати анимације."
+
+#~ msgid "It is your move."
+#~ msgstr "Ви сте на реду."
+
+#~ msgid "Thinking..."
+#~ msgstr "Размишљам..."
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "Чекам да се %s помери."
+
+#~ msgid ""
+#~ "\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
+#~ "Bertoletti's Velena Engine.\n"
+#~ "\n"
+#~ "\"Four in a Row\" is a part of GNOME Games."
+#~ msgstr ""
+#~ "„Четири у низу“ за Гном, где рачунаром као играчем управља Велена машина "
+#~ "Ђулијана Бертолетија.\n"
+#~ "\n"
+#~ "„Четири у низу“ је део Гномових игара."
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "Веб сајт Гномових игара"
+
+#~ msgid "_Game"
+#~ msgstr "_Игра"
+
+#~ msgid "_View"
+#~ msgstr "П_реглед"
+
+#~ msgid "_Settings"
+#~ msgstr "_Подешавања"
+
+#~ msgid "Player One:"
+#~ msgstr "Први играч:"
+
+#~ msgid "Player Two:"
+#~ msgstr "Други играч:"
+
+#~ msgid "Enable _animation"
+#~ msgstr "Укључи _анимације"
+
+#~ msgid "Classic"
+#~ msgstr "Класични"
+
+#~ msgid "Yellow"
+#~ msgstr "Жути"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "Стакленци"
+
+#~ msgid "Nightfall"
+#~ msgstr "Сутон"
+
+#~ msgid "Blocks"
+#~ msgstr "Блокови"
+
+#~ msgid "Orange"
+#~ msgstr "Наранџасти"
