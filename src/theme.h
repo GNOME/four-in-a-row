@@ -10,6 +10,10 @@ struct _Theme {
   const gchar *grid_color;
   const gchar *player1;
   const gchar *player2;
+  const gchar *player1_win;
+  const gchar *player2_win;
+  const gchar *player1_turn;
+  const gchar *player2_turn;
 };
 
 

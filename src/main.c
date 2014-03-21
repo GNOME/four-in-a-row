@@ -529,20 +529,24 @@ prompt_player (void)
     break;
   case 2:
   case 0:
-    if (player == PLAYER1)
-	who = _(theme_get_player (PLAYER1));
-    else
-	who = _(theme_get_player (PLAYER2));
 
     if (gameover) {
-	str = g_strdup_printf (_("%s wins!"), who);
+	if (player == PLAYER1)
+	  who = _(theme_get_player_win (PLAYER1));
+	else
+	  who = _(theme_get_player_win (PLAYER2));
+	str = g_strdup_printf (_("%s"), who);
       }
     else if (player_active) {
       set_status_message (_("Your Turn"));
       return;
 
     } else {
-      str = g_strdup_printf (_("%s’s Turn"), who);
+	if (player == PLAYER1)
+	  who = _(theme_get_player_turn (PLAYER1));
+	else
+	  who = _(theme_get_player_turn (PLAYER2));
+        str = g_strdup_printf (_("%s"), who);
     }
 
     set_status_message (str);
