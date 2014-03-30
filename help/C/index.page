@@ -1,4 +1,5 @@
 <page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
 	type="guide" style="task"
 	id="index">
 
@@ -15,8 +16,8 @@
     <desc>Index</desc>
   </info>
 
-  <title><media type="image" src="figures/logo.png" width="22" height="22">
-  </media> Four-in-a-row</title>
+  <title><media type="image" src="figures/logo.png" width="22" height="22" its:translate="no">
+  </media><span its:translate="yes"> Four-in-a-row</span></title>
 
   <p><app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the
   game is to stack four of your marbles in a horizontal, vertical or diagonal
