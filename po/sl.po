@@ -5,15 +5,15 @@
 # Matej Erman <matej.erman@guest.arnes.si>, 2002.
 # Tadej Janež <tadej_janez@email.si>, 2003.
 # Matic Žgur <mr.zgur@gmail.com>, 2006 - 2007.
-# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2013.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-18 18:08+0000\n"
-"PO-Revision-Date: 2013-12-23 20:16+0100\n"
+"POT-Creation-Date: 2014-03-31 17:10+0000\n"
+"PO-Revision-Date: 2014-03-31 22:41+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -32,28 +32,32 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
+"Klasična igra štirih v vrsto. Cilj igre je postaviti 4 kroglice v vrsto in "
+"hkrati preprečiti nasprotniku (drugemu igralci ali računalniku), da stori "
+"enako. Vrsta je lahko navpična, vodoravna ali diagonalna. Zmagi tisti, ki "
+"prvi postavi štiri v vrsto."
 
 #: ../data/four-in-a-row.appdata.xml.in.h:2
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
-msgstr ""
+msgstr "Igra ima več zahtevnostnih ravni, omogoča pa tudi namige."
 
-#: ../data/gnect.desktop.in.h:1 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1175 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Štiri v vrsto"
 
-#: ../data/gnect.desktop.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Za zmago čim hitreje uredite vrstice v isti barvi"
 
-#: ../data/gnect.desktop.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "igra;strategija;logika;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-msgid "Level of Player One"
-msgstr "Rank prvega igralca"
+msgid "Opponent"
+msgstr "Nasprotnik"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
@@ -64,54 +68,42 @@ msgstr ""
 "igralca."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
-msgid "Level of Player Two"
-msgstr "Rank drugega igralca"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "Theme ID"
 msgstr "ID teme"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "Številka ki določa prednostno temo."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
-msgid "Animate"
-msgstr "Animiraj"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7
-msgid "Whether or not to use animation."
-msgstr "Uporabljaj ali ne uporabljaj animacij."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "Zvok"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "Ali naj se ob dogodkih predvajajo zvoki."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10 ../src/prefs.c:315
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "Premaknite se v levo"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "Pritisk tipke za premik v levo."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "Premaknite se v desno"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "Pritisk tipke za premik v desno."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:14 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "Izpusti kroglico"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "Pritisk tipke za izpustitev kroglice."
 
@@ -147,7 +139,7 @@ msgstr "Začni novo omrežno igro"
 msgid "End the current network game and return to network server"
 msgstr "Zaključi trenutno omrežno igro in se vrni na omrežni strežnik"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1265
 msgid "Start a new game"
 msgstr "Začni novo igro"
 
@@ -213,7 +205,7 @@ msgid "_New"
 msgstr "_Nova"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1190
 msgid "_New Game"
 msgstr "_Nova Igra"
 
@@ -263,7 +255,7 @@ msgstr "_Premor"
 msgid "Res_ume"
 msgstr "Na_daljuj"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1191
 msgid "_Scores"
 msgstr "_Točke"
 
@@ -325,58 +317,62 @@ msgstr ""
 "Ni mogoče naložiti slike:\n"
 "%s"
 
-#: ../src/main.c:523
-msgid "It's a draw!"
-msgstr "Izenačeno je!"
+#: ../src/main.c:511
+msgid "It’s a draw!"
+msgstr "Neodločena igra!"
 
-#: ../src/main.c:532
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "Zmagali ste!"
 
-#: ../src/main.c:534 ../src/main.c:553
-msgid "It is your move."
-msgstr "Vaša poteza."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "Vaša poteza"
 
-#: ../src/main.c:537
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "Zmagal sem!"
 
-#: ../src/main.c:539 ../src/main.c:641
-msgid "Thinking..."
-msgstr "Razmišljanje ..."
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
+msgstr "Preiskovanje možnosti ..."
 
-#: ../src/main.c:550
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "Zmagal je %s!"
 
-#: ../src/main.c:557
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "Čakanje na premik %s."
+msgid "%s’s Turn"
+msgstr "Poteza %s"
 
-#: ../src/main.c:658
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Namig: Stolpec %d"
 
-#: ../src/main.c:686 ../src/main.c:690
+#: ../src/main.c:669 ../src/main.c:673
 msgid "You:"
 msgstr "Vi:"
 
-#: ../src/main.c:687 ../src/main.c:689
+#: ../src/main.c:670 ../src/main.c:672
 msgid "Me:"
 msgstr "Jaz:"
 
-#: ../src/main.c:735
+#: ../src/main.c:718
 msgid "Scores"
 msgstr "Rezultati"
 
-#: ../src/main.c:779
+#: ../src/main.c:721
+msgid "_Close"
+msgstr "_Zapri"
+
+#: ../src/main.c:759
 msgid "Drawn:"
 msgstr "Izvlečeno:"
 
-#: ../src/main.c:827
+#: ../src/main.c:807
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -386,11 +382,7 @@ msgstr ""
 "\n"
 "Igra Štiri v vrsto je del zbirke iger GNOME."
 
-#: ../src/main.c:828
-msgid "GNOME Games web site"
-msgstr "Spletna stran iger GNOME"
-
-#: ../src/main.c:831
+#: ../src/main.c:810
 msgid "translator-credits"
 msgstr ""
 "Matic Žgur <mr.zgur@gmail.com>\n"
@@ -398,122 +390,170 @@ msgstr ""
 "Tadej Janež <tadej_janez@email.si>\n"
 "Matej Urbančič <mateju@svn.gnome.org>"
 
-#: ../src/main.c:1180
-msgid "_Game"
-msgstr "_Igra"
+#: ../src/main.c:1192
+msgid "_Preferences"
+msgstr "_Možnosti"
 
-#: ../src/main.c:1181
-msgid "_View"
-msgstr "P_ogled"
-
-#: ../src/main.c:1182
-msgid "_Settings"
-msgstr "_Nastavitve"
-
-#: ../src/main.c:1183
+#: ../src/main.c:1195
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: ../src/prefs.c:206
-msgid "Four-in-a-Row Preferences"
-msgstr "nastavitve igre Štiri v vrsto"
+#: ../src/main.c:1196
+msgid "_About"
+msgstr "_O programu"
 
-#: ../src/prefs.c:229
+#: ../src/main.c:1197
+msgid "_Quit"
+msgstr "_Končaj"
+
+#: ../src/main.c:1245
+msgid "Undo your most recent move"
+msgstr "Razveljavi zadnjo potezo"
+
+#: ../src/main.c:1255
+msgid "Receive a hint for your next move"
+msgstr "Namig za naslednjo potezo"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "Možnosti"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "Igra"
 
-#: ../src/prefs.c:232
-msgid "Player One:"
-msgstr "Drugi igralec:"
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "Nasprotnik:"
 
-#: ../src/prefs.c:243 ../src/prefs.c:271
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "Človek"
 
-#: ../src/prefs.c:247 ../src/prefs.c:275
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "Prva reven"
 
-#: ../src/prefs.c:251 ../src/prefs.c:279
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "Druga reven"
 
-#: ../src/prefs.c:255 ../src/prefs.c:283
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "Tretja reven"
 
-#: ../src/prefs.c:261
-msgid "Player Two:"
-msgstr "Prvi igralec:"
-
-#: ../src/prefs.c:289
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: ../src/prefs.c:302
-msgid "Enable _animation"
-msgstr "Omogoči _animacijo"
-
-#: ../src/prefs.c:306
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "Omogoči _zvoke"
 
 #. keyboard tab
-#: ../src/prefs.c:311
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "Tipkovne bližnjice"
 
 #: ../src/theme.c:40
-msgid "Classic"
-msgstr "Običajno"
-
-#: ../src/theme.c:44 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
-msgid "Red"
-msgstr "Rdeča"
-
-#: ../src/theme.c:44
-msgid "Yellow"
-msgstr "Rumena"
-
-#: ../src/theme.c:47
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Krog"
 
-#: ../src/theme.c:51 ../src/theme.c:58
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Križ"
 
-#: ../src/theme.c:54
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Obrnjen visok kontrast"
 
-#: ../src/theme.c:61
-msgid "Cream Marbles"
-msgstr "Kremne frnikole"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "Rdeče in zelene kroglice"
 
-#: ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79 ../src/theme.c:86
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "Rdeča"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "Zelena"
+
+#: ../src/theme.c:61
+msgid "Blue and Red Marbles"
+msgstr "Modre in rdeče kroglice"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Modra"
 
 #: ../src/theme.c:68
-msgid "Glass Marbles"
-msgstr "Steklene frnikole"
+msgid "Stars and Rings"
+msgstr "Zvezdice in obroči"
 
-#: ../src/theme.c:75
-msgid "Nightfall"
-msgstr "Pomračitev"
+#~ msgid "Level of Player One"
+#~ msgstr "Rank prvega igralca"
 
-#: ../src/theme.c:82
-msgid "Blocks"
-msgstr "Bloki"
+#~ msgid "Level of Player Two"
+#~ msgstr "Rank drugega igralca"
 
-#: ../src/theme.c:86
-msgid "Orange"
-msgstr "Oranžna"
+#~ msgid "Animate"
+#~ msgstr "Animiraj"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Uporabljaj ali ne uporabljaj animacij."
+
+#~ msgid "It is your move."
+#~ msgstr "Vaša poteza."
+
+#~ msgid "Thinking..."
+#~ msgstr "Razmišljanje ..."
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "Čakanje na premik %s."
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "Spletna stran iger GNOME"
+
+#~ msgid "_Game"
+#~ msgstr "_Igra"
+
+#~ msgid "_View"
+#~ msgstr "P_ogled"
+
+#~ msgid "_Settings"
+#~ msgstr "_Nastavitve"
+
+#~ msgid "Player One:"
+#~ msgstr "Drugi igralec:"
+
+#~ msgid "Player Two:"
+#~ msgstr "Prvi igralec:"
+
+#~ msgid "Enable _animation"
+#~ msgstr "Omogoči _animacijo"
+
+#~ msgid "Classic"
+#~ msgstr "Običajno"
+
+#~ msgid "Yellow"
+#~ msgstr "Rumena"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "Steklene frnikole"
+
+#~ msgid "Nightfall"
+#~ msgstr "Pomračitev"
+
+#~ msgid "Blocks"
+#~ msgstr "Bloki"
+
+#~ msgid "Orange"
+#~ msgstr "Oranžna"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "Štiri v vrsto"
