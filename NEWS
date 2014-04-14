@@ -1,3 +1,9 @@
+four-in-a-row 3.12.1
+====================
+
+* Fix GTK+ build requirement (GTK+ 3.10 is required)
+* Update Slovenian translation
+
 four-in-a-row 3.12.0
 ====================
 
