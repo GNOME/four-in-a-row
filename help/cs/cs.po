@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"POT-Creation-Date: 2014-03-11 17:56+0000\n"
-"PO-Revision-Date: 2014-03-11 21:11+0100\n"
+"POT-Creation-Date: 2014-04-23 04:48+0000\n"
+"PO-Revision-Date: 2014-04-23 10:03+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -24,7 +24,7 @@ msgstr "Marek Černocký <marek@manet.cz>, 2013"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:13 C/basics.page:13 C/choose-opponent.page:13
-#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:11
+#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:12
 #: C/make-easy.page:13 C/scores.page:12 C/sound-animation.page:13
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -45,8 +45,8 @@ msgid ""
 "By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
 "a black grid when you start a new game."
 msgstr ""
-"Jako výchozí používá hra <app>Čtyři-v-řadě</app> po spuštění plné červené a "
-"modré kuličky na černé herní mřížce."
+"Jako výchozí používá hra <app>Čtyři-v-jedné-řadě</app> po spuštění plné "
+"červené a modré kuličky na černé herní mřížce."
 
 #. (itstool) path: steps/title
 #: C/appearance.page:26
@@ -78,8 +78,8 @@ msgstr ""
 msgid ""
 "Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
 msgstr ""
-"Spuštění hry, hraní přes celou obrazovku a ukončení hry <app>Čtyři-v-řadě</"
-"app>."
+"Spuštění hry, hraní přes celou obrazovku a ukončení hry <app>Čtyři-v-jedné-"
+"řadě</app>."
 
 #. (itstool) path: page/title
 #: C/basics.page:21
@@ -132,7 +132,7 @@ msgid ""
 "gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
 "<app>Four-in-a-row</app> at any time."
 msgstr ""
-"Hru <app>Čtyři-v-řadě</app> můžete kdykoliv ukončit pomocí nabídky "
+"Hru <app>Čtyři-v-jedné-řadě</app> můžete kdykoliv ukončit pomocí nabídky "
 "<guiseq><gui style=\"menu\">Hra</gui> <gui style=\"menuitem\">Ukončit</gui></"
 "guiseq> nebo zmáčknutím <keyseq><key>Ctrl</key><key>Q</key></keyseq>."
 
@@ -158,8 +158,8 @@ msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at level one."
 msgstr ""
-"Vašim výchozím protihráčem ve hře <app>Čtyři-v-řadě</app> je počítač hrající "
-"na úrovni jedna."
+"Vašim výchozím protihráčem ve hře <app>Čtyři-v-jedné-řadě</app> je počítač "
+"hrající na úrovni jedna."
 
 #. (itstool) path: steps/title
 #: C/choose-opponent.page:30
@@ -232,7 +232,7 @@ msgid ""
 "<app>Four-in-a-row</app>:"
 msgstr ""
 "Pokud si chcete změnit <link xref=\"controls-default\">výchozí ovládání</"
-"link> ve hře <app>Čtyři-v-řadě</app>:"
+"link> ve hře <app>Čtyři-v-jedné-řadě</app>:"
 
 #. (itstool) path: item/p
 #: C/controls-change.page:29
@@ -285,7 +285,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/controls-default.page:19
 msgid "Default controls for <app>Four-in-a-row</app>."
-msgstr "Výchozí ovládání hry <app>Čtyři-v-řadě</app>"
+msgstr "Výchozí ovládání hry <app>Čtyři-v-jedné-řadě</app>"
 
 #. (itstool) path: page/title
 #: C/controls-default.page:22
@@ -301,7 +301,7 @@ msgid ""
 msgstr ""
 "Můžete používat myš a klikat na příslušná políčka v herní oblasti. Tím "
 "kuličku shodíte na dotyčný čtverec. Nebo místo myši můžete používat "
-"klávesnici. Výchozí klávesy ve hře <app>Čtyři-v-řadě</app> jsou:"
+"klávesnici. Výchozí klávesy ve hře <app>Čtyři-v-jedné-řadě</app> jsou:"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:30
@@ -318,48 +318,34 @@ msgstr "<key>→</key> pro posun kuličky doprava."
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> pro shození kuličky."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.page:18
-msgctxt "_"
-msgid "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
-msgstr "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
-
 #. (itstool) path: info/desc
-#: C/index.page:15
+#: C/index.page:16
 msgid "Index"
 msgstr "Rejstřík"
 
 #. (itstool) path: page/title
-#: C/index.page:18
-msgid ""
-"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
-"media> Four-in-a-row"
-msgstr ""
-"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
-"media> Čtyři-v-řadě"
+#: C/index.page:19
+msgid "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
+msgstr "<_:media-1/><span its:translate=\"yes\"> Čtyři-v-jedné-řadě</span>"
 
 #. (itstool) path: page/p
-#: C/index.page:21
+#: C/index.page:22
 msgid ""
 "<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
 "is to stack four of your marbles in a horizontal, vertical or diagonal line "
 "while stopping your opponent from doing the same with their marbles."
 msgstr ""
-"<app>Čtyři-v-řadě</app> je strategická hra pro GNOME. Cílem hry je sestavit "
-"řadu čtyř svých kuliček, ať už vodorovně, svisle či úhlopříčně, a přitom se "
-"snažit zabránit svému protihráči udělat to samé."
+"<app>Čtyři-v-jedné-řadě</app> je strategická hra pro GNOME. Cílem hry je "
+"sestavit řadu čtyř svých kuliček, ať už vodorovně, svisle či úhlopříčně, a "
+"přitom se snažit zabránit svému protihráči udělat to samé."
 
 #. (itstool) path: section/title
-#: C/index.page:26
+#: C/index.page:27
 msgid "Game play"
 msgstr "Hraní hry"
 
 #. (itstool) path: section/title
-#: C/index.page:30
+#: C/index.page:31
 msgid "Preferences"
 msgstr "Předvolby"
 
@@ -456,10 +442,10 @@ msgid ""
 "select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
 "\">Scores</gui></guiseq>. In the default theme:"
 msgstr ""
-"Skóre ve hře <app>Čtyři-v-řadě</app> zaznamenává situace, kdy jste vyhráli, "
-"kdy vyhrál protihráč a kdy hra skončila remízou. Jestli se chcete na skóre "
-"podívat, vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style=\"menuitem"
-"\">Skóre</gui></guiseq>. Ve výchozím motivu:"
+"Skóre ve hře <app>Čtyři-v-jedné-řadě</app> zaznamenává situace, kdy jste "
+"vyhráli, kdy vyhrál protihráč a kdy hra skončila remízou. Jestli se chcete "
+"na skóre podívat, vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style="
+"\"menuitem\">Skóre</gui></guiseq>. Ve výchozím motivu:"
 
 #. (itstool) path: item/p
 #: C/scores.page:32
@@ -494,7 +480,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/sound-animation.page:21
 msgid "Play <app>Four-in-a-row</app> without sounds or animation."
-msgstr "Hrajte <app>Čtyři-v-řadě</app> bez zvuků a animací."
+msgstr "Hrajte <app>Čtyři-v-jedné-řadě</app> bez zvuků a animací."
 
 #. (itstool) path: page/title
 #: C/sound-animation.page:24
@@ -562,20 +548,3 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Tato práce je vydána pod licencí <_:link-1/>"
-
-#~ msgid "If you are playing against a friend, the number next to:"
-#~ msgstr "Pokud hrajete proti kamarádovi, čísla mají následující význam:"
-
-#~ msgid ""
-#~ "<gui>Red</gui> displays the number of games won by the player who was "
-#~ "controlling the red marbles."
-#~ msgstr ""
-#~ "<gui>Červený</gui> udává počet her, které vyhrál hráč ovládající červené "
-#~ "kuličky."
-
-#~ msgid ""
-#~ "<gui>Blue</gui> displays the number of games won by the player who was "
-#~ "controlling the blue marbles."
-#~ msgstr ""
-#~ "<gui>Modrý</gui> udává počet her, které vyhrál hráč ovládající modré "
-#~ "kuličky."
