@@ -21,38 +21,57 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-row master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-"
-"a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-02-26 21:06+0100\n"
-"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-04-25 04:45+0000\n"
+"PO-Revision-Date: 2014-04-27 21:12+0100\n"
+"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
-"Language: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"X-Generator: Poedit 1.6.4\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
-msgid "Four-in-a-Row"
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Vier gewinnt ist ein Familienklassiker, dessen Ziel es ist, vier Ihrer "
+"Murmeln in eine Reihe zu bringen und gleichzeitig den Gegner (Mensch oder "
+"Rechner) an der gleichen Aufgabe zu hindern. Eine Reihe kann horizontal, "
+"vertikal oder diagonal sein. Der erste Spieler, der vier in einer Reihe hat, "
+"gewinnt!"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Vier gewinnt hat mehrere Schwierigkeitsstufen. Wenn Sie Schwierigkeiten "
+"haben, so können Sie immer nach einem Tipp fragen."
+
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1175 ../src/main.h:5
+msgid "Four-in-a-row"
 msgstr "Vier gewinnt"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Im Wettkampf Reihen gleicher Farben anordnen"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
+#: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
-msgstr "Spiel;Strategie;Logik;"
+msgstr "Spiel;Strategie;Logik;Vier gewinnt;"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
-msgid "Level of Player One"
-msgstr "Spielstufe von Spieler Eins"
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+msgid "Opponent"
+msgstr "Gegner"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
@@ -60,55 +79,43 @@ msgstr ""
 "Null ist menschlich, eins bis drei entspricht der Spielstufe des "
 "Computergegners."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
-msgid "Level of Player Two"
-msgstr "Spielstufe von Spieler Zwei"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
 msgstr "Themenkennung"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
 msgstr "Eine Zahl, die das bevorzugte Thema angibt."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:6
-msgid "Animate"
-msgstr "Animieren"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:7
-msgid "Whether or not to use animation."
-msgstr "Sollen Animationen angezeigt werden?"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:8
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
 msgstr "Ton"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
 msgstr "Legt fest, ob bei bestimmten Ereignissen Klänge abgespielt werden."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "Nach links bewegen"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:11
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
 msgstr "Tastendruck zum Verschieben nach links."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "Nach rechts bewegen"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:13
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
 msgstr "Tastendruck zum Verschieben nach rechts."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "Murmel abwerfen"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:15
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
 msgstr "Tastendruck zum Abwerfen einer Murmel"
 
@@ -144,7 +151,7 @@ msgstr "Eine neue Netzwerk-Spielpartie beginnen"
 msgid "End the current network game and return to network server"
 msgstr "Das aktuelle Netzwerkspiel beenden und zum Netzwerkserver zurückkehren"
 
-#: ../src/games-stock.c:48
+#: ../src/games-stock.c:48 ../src/main.c:1265
 msgid "Start a new game"
 msgstr "Eine neue Spielpartie beginnen"
 
@@ -210,7 +217,7 @@ msgid "_New"
 msgstr "_Neu"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
+#: ../src/games-stock.c:253 ../src/main.c:1190
 msgid "_New Game"
 msgstr "_Neues Spiel"
 
@@ -260,7 +267,7 @@ msgstr "_Pause"
 msgid "Res_ume"
 msgstr "_Fortsetzen"
 
-#: ../src/games-stock.c:267
+#: ../src/games-stock.c:267 ../src/main.c:1191
 msgid "_Scores"
 msgstr "Er_gebnisse"
 
@@ -272,8 +279,8 @@ msgstr "Spiel _beenden"
 #: ../src/games-stock.c:317
 #, c-format
 msgid ""
-"%s is free software; you can redistribute it and/or modify it under the terms "
-"of the GNU General Public License as published by the Free Software "
+"%s is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version %d of the License, or (at your option) any later "
 "version."
 msgstr ""
@@ -286,8 +293,9 @@ msgstr ""
 #, c-format
 msgid ""
 "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR "
-"A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
 msgstr ""
 "%s wurde mit dem Ziel veröffentlicht, dass Sie es nützlich finden, jedoch "
 "OHNE JEDWEDE GARANTIE, sogar ohne eine implizite Garantie der VERKAUFBARKEIT "
@@ -314,7 +322,7 @@ msgstr ""
 "Sie sollten eine Kopie der GNU General Public License erhalten haben. Wenn "
 "dem nicht so ist, so lesen Sie bitte <http://www.gnu.org/licenses/>."
 
-#: ../src/gfx.c:248
+#: ../src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -323,74 +331,72 @@ msgstr ""
 "Bild konnte nicht geladen werden:\n"
 "%s"
 
-#: ../src/main.c:524
-msgid "It's a draw!"
+#: ../src/main.c:511
+msgid "It’s a draw!"
 msgstr "Unentschieden!"
 
-#: ../src/main.c:533
+#: ../src/main.c:520
 msgid "You win!"
 msgstr "Sie haben gewonnen!"
 
-#: ../src/main.c:535 ../src/main.c:554
-msgid "It is your move."
-msgstr "Sie sind am Zug."
+#: ../src/main.c:522 ../src/main.c:541
+msgid "Your Turn"
+msgstr "Ihr Zug"
 
-#: ../src/main.c:538
+#: ../src/main.c:525
 msgid "I win!"
 msgstr "Ich habe gewonnen!"
 
-#: ../src/main.c:540 ../src/main.c:642
-msgid "Thinking..."
-msgstr "Überlegen …"
+#: ../src/main.c:527 ../src/main.c:628
+msgid "I’m Thinking…"
+msgstr "Ich denke nach …"
 
-#: ../src/main.c:551
+#: ../src/main.c:538
 #, c-format
 msgid "%s wins!"
 msgstr "%s gewinnt!"
 
-#: ../src/main.c:558
+#: ../src/main.c:545
 #, c-format
-msgid "Waiting for %s to move."
-msgstr "Auf den Zug von %s wird gewartet."
+msgid "%s’s Turn"
+msgstr "%s ist am Zug"
 
-#: ../src/main.c:659
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Tipp: Spalte %d"
 
-#: ../src/main.c:687 ../src/main.c:691
+#: ../src/main.c:669 ../src/main.c:673
 msgid "You:"
 msgstr "Sie:"
 
-#: ../src/main.c:688 ../src/main.c:690
+#: ../src/main.c:670 ../src/main.c:672
 msgid "Me:"
 msgstr "Ich:"
 
-#: ../src/main.c:736
+#: ../src/main.c:718
 msgid "Scores"
 msgstr "Punkte"
 
-#: ../src/main.c:780
+#: ../src/main.c:721
+msgid "_Close"
+msgstr "_Schließen"
+
+#: ../src/main.c:759
 msgid "Drawn:"
 msgstr "Unentschieden:"
 
-#: ../src/main.c:829
+#: ../src/main.c:807
 msgid ""
-"\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
-"Bertoletti's Velena Engine.\n"
+"Connect four in a row to win.\n"
 "\n"
-"\"Four in a Row\" is a part of GNOME Games."
+"Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"»Vier gewinnt« für GNOME, mit einem von Giulano Bertolettis Velena-Engine "
-"gesteuerten Computergegner.\n"
+"Bringen Sie vier in eine Reihe, um zu gewinnen.\n"
 "\n"
-"»Vier gewinnt« ist ein Teil der GNOME-Spiele."
+"Vier gewinnt ist Teil der GNOME-Spiele."
 
-#: ../src/main.c:830
-msgid "GNOME Games web site"
-msgstr "GNOME Games-Website"
-
-#: ../src/main.c:833
+#: ../src/main.c:810
 msgid "translator-credits"
 msgstr ""
 "Karl Eichwalder <ke@suse.de>\n"
@@ -407,125 +413,184 @@ msgstr ""
 "Andre Klapper <ak-47@gmx.net>\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Christian Kirbach <Christian.Kirbach@googlemail.com>\n"
-"Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>"
+"Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>\n"
+"Benjamin Steinwender <b@stbe.at>"
 
-#: ../src/main.c:1183
-msgid "_Game"
-msgstr "_Spiel"
-
-#: ../src/main.c:1184
-msgid "_View"
-msgstr "_Ansicht"
-
-#: ../src/main.c:1185
-msgid "_Settings"
+#: ../src/main.c:1192
+msgid "_Preferences"
 msgstr "_Einstellungen"
 
-#: ../src/main.c:1186
+#: ../src/main.c:1195
 msgid "_Help"
 msgstr "_Hilfe"
 
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Vier gewinnt"
+#: ../src/main.c:1196
+msgid "_About"
+msgstr "_Info"
 
-#: ../src/prefs.c:207
-msgid "Four-in-a-Row Preferences"
-msgstr "»Vier gewinnt«-Einstellungen"
+#: ../src/main.c:1197
+msgid "_Quit"
+msgstr "_Beenden"
 
-#: ../src/prefs.c:230
+#: ../src/main.c:1245
+msgid "Undo your most recent move"
+msgstr "Ihren letzten Zug zurücknehmen"
+
+#: ../src/main.c:1255
+msgid "Receive a hint for your next move"
+msgstr "Einen Tipp für Ihren nächsten Zug bekommen"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "Spiel"
 
-#: ../src/prefs.c:233
-msgid "Player One:"
-msgstr "Spieler Eins:"
+#: ../src/prefs.c:197
+msgid "Opponent:"
+msgstr "Gegner:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "Mensch"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "Spielstufe eins"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "Spielstufe zwei"
 
-#: ../src/prefs.c:256 ../src/prefs.c:284
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "Spielstufe drei"
 
-#: ../src/prefs.c:262
-msgid "Player Two:"
-msgstr "Spieler Zwei:"
-
-#: ../src/prefs.c:290
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "_Thema:"
 
-#: ../src/prefs.c:303
-msgid "Enable _animation"
-msgstr "_Animationen aktivieren"
-
-#: ../src/prefs.c:307
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "_Klang aktivieren"
 
 #. keyboard tab
-#: ../src/prefs.c:312
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "Tastatursteuerung"
 
-#: ../src/theme.c:41
-msgid "Classic"
-msgstr "Klassisch"
-
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
-msgid "Red"
-msgstr "Rot"
-
-#: ../src/theme.c:45
-msgid "Yellow"
-msgstr "Gelb"
-
-#: ../src/theme.c:48
+#: ../src/theme.c:40
 msgid "High Contrast"
 msgstr "Hoher Kontrast"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Kreis"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Kreuz"
 
-#: ../src/theme.c:55
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Hoher Kontrast, invertiert"
 
-#: ../src/theme.c:62
-msgid "Cream Marbles"
-msgstr "Creme-Murmeln"
+#: ../src/theme.c:54
+msgid "Red and Green Marbles"
+msgstr "Rote und grüne Murmeln"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+msgid "Red"
+msgstr "Rot"
+
+#: ../src/theme.c:58 ../src/theme.c:72
+msgid "Green"
+msgstr "Grün"
+
+#: ../src/theme.c:61
+msgid "Blue and Red Marbles"
+msgstr "Blaue und rote Murmeln"
+
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Blau"
 
-#: ../src/theme.c:69
-msgid "Glass Marbles"
-msgstr "Glasmurmeln"
+#: ../src/theme.c:68
+msgid "Stars and Rings"
+msgstr "Sterne und Ringe"
 
-#: ../src/theme.c:76
-msgid "Nightfall"
-msgstr "Abenddämmerung"
+#~ msgid "Four-in-a-Row"
+#~ msgstr "Vier gewinnt"
 
-#: ../src/theme.c:83
-msgid "Blocks"
-msgstr "Blöcke"
+#~ msgid "Level of Player One"
+#~ msgstr "Spielstufe von Spieler Eins"
 
-#: ../src/theme.c:87
-msgid "Orange"
-msgstr "Orange"
+#~ msgid "Level of Player Two"
+#~ msgstr "Spielstufe von Spieler Zwei"
+
+#~ msgid "Animate"
+#~ msgstr "Animieren"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "Sollen Animationen angezeigt werden?"
+
+#~ msgid "It is your move."
+#~ msgstr "Sie sind am Zug."
+
+#~ msgid "Thinking..."
+#~ msgstr "Überlegen …"
+
+#~ msgid "Waiting for %s to move."
+#~ msgstr "Auf den Zug von %s wird gewartet."
+
+#~ msgid ""
+#~ "\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
+#~ "Bertoletti's Velena Engine.\n"
+#~ "\n"
+#~ "\"Four in a Row\" is a part of GNOME Games."
+#~ msgstr ""
+#~ "»Vier gewinnt« für GNOME, mit einem von Giulano Bertolettis Velena-Engine "
+#~ "gesteuerten Computergegner.\n"
+#~ "\n"
+#~ "»Vier gewinnt« ist ein Teil der GNOME-Spiele."
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "GNOME Games-Website"
+
+#~ msgid "_Game"
+#~ msgstr "_Spiel"
+
+#~ msgid "_View"
+#~ msgstr "_Ansicht"
+
+#~ msgid "_Settings"
+#~ msgstr "_Einstellungen"
+
+#~ msgid "Player One:"
+#~ msgstr "Spieler Eins:"
+
+#~ msgid "Player Two:"
+#~ msgstr "Spieler Zwei:"
+
+#~ msgid "Enable _animation"
+#~ msgstr "_Animationen aktivieren"
+
+#~ msgid "Classic"
+#~ msgstr "Klassisch"
+
+#~ msgid "Yellow"
+#~ msgstr "Gelb"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "Glasmurmeln"
+
+#~ msgid "Nightfall"
+#~ msgstr "Abenddämmerung"
+
+#~ msgid "Blocks"
+#~ msgstr "Blöcke"
+
+#~ msgid "Orange"
+#~ msgstr "Orange"
