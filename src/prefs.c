@@ -170,9 +170,8 @@ prefsbox_open (void)
 
   prefsbox = gtk_dialog_new_with_buttons (_("Preferences"),
 					  GTK_WINDOW (window),
-					  GTK_DIALOG_DESTROY_WITH_PARENT,
-					  GTK_STOCK_CLOSE,
-					  GTK_RESPONSE_ACCEPT, NULL);
+					  GTK_DIALOG_USE_HEADER_BAR,
+					  NULL);
   gtk_container_set_border_width (GTK_CONTAINER (prefsbox), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (prefsbox))),
 		       2);
