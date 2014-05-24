@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-11 22:09+0000\n"
-"PO-Revision-Date: 2014-02-26 23:52+0100\n"
+"POT-Creation-Date: 2014-05-24 10:46+0000\n"
+"PO-Revision-Date: 2014-05-24 12:47+0200\n"
 "Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -46,7 +46,7 @@ msgstr ""
 "El Quatre en ratlla té múltiples nivells de dificultat. Si no sabeu on tirar "
 "la bola, sempre podeu demanar una pista."
 
-#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1179 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1175 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Quatre en ratlla"
 
@@ -84,7 +84,7 @@ msgstr "So"
 msgid "Whether or not to play event sounds."
 msgstr "Si s'han de reproduir els esdeveniments de so."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
 msgid "Move left"
 msgstr "Mou a l'esquerra"
 
@@ -92,7 +92,7 @@ msgstr "Mou a l'esquerra"
 msgid "Key press to move left."
 msgstr "Tecla per moure a l'esquerra."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
 msgid "Move right"
 msgstr "Mou a la dreta"
 
@@ -100,7 +100,7 @@ msgstr "Mou a la dreta"
 msgid "Key press to move right."
 msgstr "Tecla per moure a la dreta."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
 msgid "Drop marble"
 msgstr "Deixa caure una bola"
 
@@ -140,7 +140,7 @@ msgstr "Comença una partida nova per a diversos jugador en xarxa"
 msgid "End the current network game and return to network server"
 msgstr "Finalitza la partida de xarxa actual i torna al servidor de xarxa"
 
-#: ../src/games-stock.c:48 ../src/main.c:1269
+#: ../src/games-stock.c:48 ../src/main.c:1265
 msgid "Start a new game"
 msgstr "Comença una partida nova"
 
@@ -206,7 +206,7 @@ msgid "_New"
 msgstr "_Nova"
 
 #. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1194
+#: ../src/games-stock.c:253 ../src/main.c:1190
 msgid "_New Game"
 msgstr "Partida _nova"
 
@@ -257,7 +257,7 @@ msgstr "Fes una _pausa"
 msgid "Res_ume"
 msgstr "Contin_ua"
 
-#: ../src/games-stock.c:267 ../src/main.c:1195
+#: ../src/games-stock.c:267 ../src/main.c:1191
 msgid "_Scores"
 msgstr "Puntuacion_s"
 
@@ -338,41 +338,46 @@ msgstr "El vostre torn"
 msgid "I win!"
 msgstr "He guanyat!"
 
-#: ../src/main.c:527 ../src/main.c:632
+#: ../src/main.c:527 ../src/main.c:628
 msgid "I’m Thinking…"
 msgstr "Hi estic pensant…"
 
-#: ../src/main.c:538 ../src/main.c:549
+#: ../src/main.c:538
 #, c-format
-msgid "%s"
-msgstr "%s"
+msgid "%s wins!"
+msgstr "Guanya %s!"
 
-#: ../src/main.c:645
+#: ../src/main.c:545
+#, c-format
+msgid "%s’s Turn"
+msgstr "Torn per %s"
+
+#: ../src/main.c:641
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Suggeriment: columna %d"
 
-#: ../src/main.c:673 ../src/main.c:677
+#: ../src/main.c:669 ../src/main.c:673
 msgid "You:"
 msgstr "Vós:"
 
-#: ../src/main.c:674 ../src/main.c:676
+#: ../src/main.c:670 ../src/main.c:672
 msgid "Me:"
 msgstr "Jo:"
 
-#: ../src/main.c:722
+#: ../src/main.c:718
 msgid "Scores"
 msgstr "Puntuacions"
 
-#: ../src/main.c:725
+#: ../src/main.c:721
 msgid "_Close"
 msgstr "_Tanca"
 
-#: ../src/main.c:763
+#: ../src/main.c:759
 msgid "Drawn:"
 msgstr "Empat:"
 
-#: ../src/main.c:811
+#: ../src/main.c:807
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -382,7 +387,7 @@ msgstr ""
 "\n"
 "El Quatre en ratlla forma part dels jocs del GNOME."
 
-#: ../src/main.c:814
+#: ../src/main.c:810
 msgid "translator-credits"
 msgstr ""
 "Jordi Vila <gnome@softcatala.net>\n"
@@ -392,27 +397,27 @@ msgstr ""
 "Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "David Planella <david.planella@gmail.com>"
 
-#: ../src/main.c:1196
+#: ../src/main.c:1192
 msgid "_Preferences"
 msgstr "_Preferències"
 
-#: ../src/main.c:1199
+#: ../src/main.c:1195
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../src/main.c:1200
+#: ../src/main.c:1196
 msgid "_About"
 msgstr "_Quant a"
 
-#: ../src/main.c:1201
+#: ../src/main.c:1197
 msgid "_Quit"
 msgstr "S_urt"
 
-#: ../src/main.c:1249
+#: ../src/main.c:1245
 msgid "Undo your most recent move"
 msgstr "Desfeu el vostre canvi més recent"
 
-#: ../src/main.c:1259
+#: ../src/main.c:1255
 msgid "Receive a hint for your next move"
 msgstr "Obtingueu una pista per al vostre proper moviment"
 
@@ -420,40 +425,40 @@ msgstr "Obtingueu una pista per al vostre proper moviment"
 msgid "Preferences"
 msgstr "Preferències"
 
-#: ../src/prefs.c:193
+#: ../src/prefs.c:194
 msgid "Game"
 msgstr "Partida"
 
-#: ../src/prefs.c:196
+#: ../src/prefs.c:197
 msgid "Opponent:"
 msgstr "Oponent:"
 
-#: ../src/prefs.c:207
+#: ../src/prefs.c:208
 msgid "Human"
 msgstr "Humà"
 
-#: ../src/prefs.c:211
+#: ../src/prefs.c:212
 msgid "Level one"
 msgstr "Primer nivell"
 
-#: ../src/prefs.c:215
+#: ../src/prefs.c:216
 msgid "Level two"
 msgstr "Segon nivell"
 
-#: ../src/prefs.c:219
+#: ../src/prefs.c:220
 msgid "Level three"
 msgstr "Tercer nivell"
 
-#: ../src/prefs.c:225
+#: ../src/prefs.c:226
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: ../src/prefs.c:238
+#: ../src/prefs.c:239
 msgid "E_nable sounds"
 msgstr "_Habilita el so"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: ../src/prefs.c:244
 msgid "Keyboard Controls"
 msgstr "Controls del teclat"
 
@@ -461,78 +466,38 @@ msgstr "Controls del teclat"
 msgid "High Contrast"
 msgstr "Alt contrast"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Circle"
 msgstr "Cercle"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: ../src/theme.c:44 ../src/theme.c:51
 msgid "Cross"
 msgstr "Creu"
 
-#: ../src/theme.c:45 ../src/theme.c:54
-msgid "Circle wins!"
-msgstr "Guanya els cercles"
-
-#: ../src/theme.c:45 ../src/theme.c:54
-msgid "Cross wins!"
-msgstr "Guanyen les creus!"
-
-#: ../src/theme.c:46 ../src/theme.c:55
-msgid "Circle’s turn"
-msgstr "Torn per els cercles"
-
-#: ../src/theme.c:46 ../src/theme.c:55
-msgid "Cross’s turn"
-msgstr "Torn per les creus"
-
-#: ../src/theme.c:49
+#: ../src/theme.c:47
 msgid "High Contrast Inverse"
 msgstr "Alt contrast invers"
 
-#: ../src/theme.c:58
+#: ../src/theme.c:54
 msgid "Red and Green Marbles"
 msgstr "Boles vermelles i verdes"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
 msgid "Red"
 msgstr "Vermell"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: ../src/theme.c:58 ../src/theme.c:72
 msgid "Green"
 msgstr "Verd"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-msgid "Red wins!"
-msgstr "Guanyen els vermells"
-
-#: ../src/theme.c:63 ../src/theme.c:81
-msgid "Green wins!"
-msgstr "Guanyen els verds"
-
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
-msgid "Red’s turn"
-msgstr "Torn per els vermells"
-
-#: ../src/theme.c:64 ../src/theme.c:82
-msgid "Green’s turn"
-msgstr "Torn per els verds"
-
-#: ../src/theme.c:67
+#: ../src/theme.c:61
 msgid "Blue and Red Marbles"
 msgstr "Boles blaves i vermelles"
 
-#: ../src/theme.c:71
+#: ../src/theme.c:65
 msgid "Blue"
 msgstr "Blau"
 
-#: ../src/theme.c:72
-msgid "Blue wins!"
-msgstr "Guanyen els blaus"
-
-#: ../src/theme.c:73
-msgid "Blue’s turn"
-msgstr "Torn per els blaus"
-
-#: ../src/theme.c:76
+#: ../src/theme.c:68
 msgid "Stars and Rings"
 msgstr "Estrelles i anells"
