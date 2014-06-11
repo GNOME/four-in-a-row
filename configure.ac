@@ -7,6 +7,7 @@ AM_MAINTAINER_MODE
 GNOME_MAINTAINER_MODE_DEFINES
 AC_CONFIG_HEADERS([config.h])
 
+AM_PROG_VALAC([0.22])
 AM_PROG_CC_C_O
 
 GLIB_GSETTINGS
@@ -23,11 +24,15 @@ PKG_CHECK_MODULES(FOUR_IN_A_ROW, [
   gtk+-3.0 >= $GTK_REQUIRED
   librsvg-2.0 >= $RSVG_REQUIRED
   libcanberra-gtk3 >= $CANBERRA_GTK_REQUIRED
-  zlib
 ])
 
 AC_PATH_PROG([APPDATA_VALIDATE], [appdata-validate], [/bin/true])
 AC_PATH_PROG([DESKTOP_FILE_VALIDATE], [desktop-file-validate], [/bin/true])
+
+AC_PATH_PROG([GTESTER], [gtester])
+if ! test -x "${GTESTER}" ; then
+  AC_MSG_ERROR([Please install gtester])
+fi
 
 dnl ###########################################################################
 dnl Internationalization
