@@ -206,19 +206,19 @@ prefsbox_open (void)
   gtk_combo_box_set_model (GTK_COMBO_BOX (combobox), GTK_TREE_MODEL (model));
   gtk_list_store_append (model, &iter);
   gtk_list_store_set (model, &iter, 0, _("Human"), 1, LEVEL_HUMAN, -1);
-  if (p.level[PLAYER1] == LEVEL_HUMAN)
+  if (p.level[PLAYER2] == LEVEL_HUMAN)
     gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
   gtk_list_store_append (model, &iter);
   gtk_list_store_set (model, &iter, 0, _("Level one"), 1, LEVEL_WEAK, -1);
-  if (p.level[PLAYER1] == LEVEL_WEAK)
+  if (p.level[PLAYER2] == LEVEL_WEAK)
     gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
   gtk_list_store_append (model, &iter);
   gtk_list_store_set (model, &iter, 0, _("Level two"), 1, LEVEL_MEDIUM, -1);
-  if (p.level[PLAYER1] == LEVEL_MEDIUM)
+  if (p.level[PLAYER2] == LEVEL_MEDIUM)
     gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
   gtk_list_store_append (model, &iter);
   gtk_list_store_set (model, &iter, 0, _("Level three"), 1, LEVEL_STRONG, -1);
-  if (p.level[PLAYER1] == LEVEL_STRONG)
+  if (p.level[PLAYER2] == LEVEL_STRONG)
     gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
   g_signal_connect (combobox, "changed", G_CALLBACK (on_select_opponent), NULL);
   gtk_grid_attach (GTK_GRID (grid), combobox, 1, 0, 1, 1);
