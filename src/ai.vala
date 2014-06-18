@@ -503,12 +503,12 @@ public class DecisionTree
 		else if (vstr[0] == 'b')
 		{
 			level = Difficulty.MEDIUM;
-			plies = 8;
+			plies = 7;
 		}
 		else
 		{
 			level = Difficulty.HARD;
-			plies = 8;
+			plies = 7;
 		}
 	}
 
