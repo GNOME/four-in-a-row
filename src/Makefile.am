@@ -14,8 +14,6 @@ four_in_a_row_SOURCES = main.h     \
                 games-controls.h \
                 games-gridframe.c \
                 games-gridframe.h \
-                games-stock.c \
-                games-stock.h \
                 rules.h \
                 $(ai_C) \
                 $(ai_HEADER)

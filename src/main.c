@@ -35,7 +35,6 @@
 #include "prefs.h"
 #include "gfx.h"
 #include "games-gridframe.h"
-#include "games-stock.h"
 
 #define SPEED_MOVE     25
 #define SPEED_DROP     20
