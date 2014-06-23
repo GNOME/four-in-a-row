@@ -1,3 +1,13 @@
+3.13.3 - June 23, 2014
+======================
+
+Dependencies: GTK+ 3.12
+
+* New AI that should be much easier to beat (Nikhar Agrawal)
+* Improve internationalization of status messages (Nikhar Agrawal)
+* Use a header bar on the preferences dialog
+* Updated translations
+
 four-in-a-row 3.12.0
 ====================
 
