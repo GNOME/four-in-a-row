@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.gnome.four-in-a-row" path="/org/gnome/four-in-a-row/">
+  <schema id="org.gnome.four-in-a-row" path="/org/gnome/four-in-a-row/" gettext-domain="four-in-a-row">
     <key name="opponent" type="i">
       <default>1</default>
       <summary>Opponent</summary>
