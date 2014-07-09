@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: gnome-games.HEAD.el\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-24 14:39+0000\n"
-"PO-Revision-Date: 2014-04-18 19:54+0200\n"
+"POT-Creation-Date: 2014-07-07 04:52+0000\n"
+"PO-Revision-Date: 2014-07-07 22:27+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@lists.gnome.gr\n"
 "Language: el\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
@@ -66,7 +66,7 @@ msgid ""
 "you can always ask for a hint."
 msgstr ""
 "Το Τέσσερα στη σειρά διαθέτει πολλαπλά επίπεδα δυσκολίας. Αν έχετε πρόβλημα, "
-"μπορείτε πάντα να ζητήσετε μια συμβουλή."
+"μπορείτε πάντα να ζητήσετε μια υπόδειξη."
 
 #: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1179 ../src/main.h:5
 msgid "Four-in-a-row"
@@ -89,12 +89,12 @@ msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr ""
-"Το μηδέν είναι για τον άνθρωπο. Οι αριθμοί από το ένα ώς το τρία "
+"Το μηδέν είναι για τον άνθρωπο. Οι αριθμοί από το ένα ως το τρία "
 "αντιστοιχούν στον υπολογιστή."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
-msgstr "Ταυτότητα θέματος"
+msgstr "Αναγνωριστικό θέματος"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
@@ -106,9 +106,9 @@ msgstr "Ήχος"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
-msgstr "Αν θα αναπαράγονται ήχοι συμβάντων ή όχι."
+msgstr "Αν θα αναπαράγονται ή όχι οι ήχοι συμβάντων."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
 msgid "Move left"
 msgstr "Μετακίνηση προς τα αριστερά"
 
@@ -116,7 +116,7 @@ msgstr "Μετακίνηση προς τα αριστερά"
 msgid "Key press to move left."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα αριστερά."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
 msgid "Move right"
 msgstr "Μετακίνηση προς τα δεξιά"
 
@@ -124,7 +124,7 @@ msgstr "Μετακίνηση προς τα δεξιά"
 msgid "Key press to move right."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα δεξιά."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
 msgid "Drop marble"
 msgstr "Ρίψη βώλων"
 
@@ -135,207 +135,6 @@ msgstr "Πάτημα πλήκτρου για να πέσει ένας βώλος
 #: ../src/games-controls.c:288
 msgid "Unknown Command"
 msgstr "Άγνωστη εντολή"
-
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Προβολή βοήθειας για αυτό το παιχνίδι"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Τερματισμός του τρέχοντος παιχνιδιού"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Εναλλαγή λειτουργίας πλήρους οθόνης"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Υπόδειξη για την επόμενη κίνησή σας"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Έξοδος από λειτουργία πλήρους οθόνης"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Εκκίνηση νέου δικτυακού παιχνιδιού με πολλούς παίχτες"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr ""
-"Τερματισμός του τρέχοντος δικτυακού παιχνιδιού και επιστροφή στον δικτυακό "
-"εξυπηρετητή"
-
-#: ../src/games-stock.c:48 ../src/main.c:1269
-msgid "Start a new game"
-msgstr "Εκκίνηση νέου παιχνιδιού"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Προσωρινή παύση παιχνιδιού"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Εμφάνιση μιας λίστας παικτών στο δικτυακό παιχνίδι"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Ακύρωση αναίρεσης της τελευταίας κίνησης"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Επανεκκίνηση του παιχνιδιού"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Συνέχιση του τρέχοντος επιπέδου"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Προβολή της βαθμολογίας"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Αναίρεση της τελευταίας κίνησης"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "Σχετικά με αυτό το παιχνίδι"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Κλείσιμο του παραθύρου"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Ρύθμιση παιχνιδιού"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Έξοδος από αυτό το παιχνίδι"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Περιεχόμενα"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Πλήρης οθόνη"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Υπόδειξη"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Νέο"
-
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1194
-msgid "_New Game"
-msgstr "_Νέο παιχνίδι"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_Επανάληψη κίνησης"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "Επαναφορά"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "_Επανεκκίνηση"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "_Αναίρεση κίνησης"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "Μοί_ρασμα"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "_Έξοδος από πλήρη οθόνη"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "Δικτυακό _παιχνίδι"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "Εγ_κατάλειψη παιγνιδιού"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "_Λίστα παιχτών"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "Π_αύση"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "Συνέχιση"
-
-#: ../src/games-stock.c:267 ../src/main.c:1195
-msgid "_Scores"
-msgstr "_Βαθμολογίες"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "_Τέλος παιχνιδιού"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"Το %s είναι ελεύθερο λογισμικό· επιτρέπεται η αναδιανομή ή/και τροποποίησή "
-"του υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU (GPL), όπως αυτή "
-"έχει δημοσιευτεί από το Ίδρυμα Ελεύθερου Λογισμικού (FSF) — είτε της έκδοσης "
-"%d της Άδειας, είτε (κατ' επιλογήν σας) οποιασδήποτε μεταγενέστερης έκδοσης."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"Το %s διανέμεται με την ελπίδα ότι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ ΚΑΜΙΑ "
-"ΕΓΓΥΗΣΗ. Χωρίς ούτε την έμμεση εγγύηση ΛΕΙΤΟΥΡΓΙΚΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣΓΙΑ "
-"ΕΝΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Για περισσότερες λεπτομέρειες, δείτε τη γενική "
-"δημόσια άδεια χρήσης GNU."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Δημόσιας Άδειας GNU μαζί "
-"με το %s· Εάν όχι, γράψτε στο Free Software Foundation, Inc., 51 Franklin "
-"Street, Fifth Floor, Boston, MA  02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Άδειας Δημόσιας Χρήσης "
-"GNU (GPL) μαζί με το πρόγραμμα· Εάν όχι, επισκεφθείτε το <http://www.gnu.org/"
-"licenses/>."
 
 #: ../src/gfx.c:247
 #, c-format
@@ -402,19 +201,29 @@ msgid ""
 "\n"
 "Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"Βάλτε τέσσερα σε μια γραμμή για να κερδίσετε. \n"
+"Βάλτε τέσσερα στη σειρά για να κερδίσετε. \n"
 "\n"
-"Το τέσσερα σε μια γραμμή είναι μέρος των παιχνιδιών του GNOME."
+"Το Τέσσερα στη σειρά είναι μέρος των παιχνιδιών του GNOME."
 
 #: ../src/main.c:814
 msgid "translator-credits"
 msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
 "Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
 "Spiros Papadimitriou <spapadim+@cs.cmu.edu>\n"
 "Συμεών (Σίμος) Ξενιτέλλης <simos@hellug.gr>\n"
 "Κώστας Παπαδήμας <pkst@gmx.net>\n"
 "Τζένη Πετούμενου <epetoumenou@gmail.com>\n"
-"Μαρία Θουκυδίδου <marablack3@gmail.com>"
+"Μαρία Θουκυδίδου <marablack3@gmail.com>\n"
+"Για περισσότερα δείτε: http://gnome.gr"
+
+#: ../src/main.c:1194
+msgid "_New Game"
+msgstr "_Νέο παιχνίδι"
+
+#: ../src/main.c:1195
+msgid "_Scores"
+msgstr "_Βαθμολογίες"
 
 #: ../src/main.c:1196
 msgid "_Preferences"
@@ -440,44 +249,48 @@ msgstr "Αναίρεση της πιο προσφατής σας κίνησης"
 msgid "Receive a hint for your next move"
 msgstr "Λήψη υπόδειξης για την επόμενή σας κίνηση"
 
+#: ../src/main.c:1269
+msgid "Start a new game"
+msgstr "Εκκίνηση νέου παιχνιδιού"
+
 #: ../src/prefs.c:171
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../src/prefs.c:194
+#: ../src/prefs.c:193
 msgid "Game"
 msgstr "Παιχνίδι"
 
-#: ../src/prefs.c:197
+#: ../src/prefs.c:196
 msgid "Opponent:"
 msgstr "Αντίπαλος:"
 
-#: ../src/prefs.c:208
+#: ../src/prefs.c:207
 msgid "Human"
 msgstr "Άνθρωπος"
 
-#: ../src/prefs.c:212
+#: ../src/prefs.c:211
 msgid "Level one"
 msgstr "Πρώτο επίπεδο"
 
-#: ../src/prefs.c:216
+#: ../src/prefs.c:215
 msgid "Level two"
 msgstr "Δεύτερο επίπεδο"
 
-#: ../src/prefs.c:220
+#: ../src/prefs.c:219
 msgid "Level three"
 msgstr "Τρίτο επίπεδο"
 
-#: ../src/prefs.c:226
+#: ../src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Θέμα:"
 
-#: ../src/prefs.c:239
+#: ../src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "Ενε_ργοποίηση ήχων"
 
 #. keyboard tab
-#: ../src/prefs.c:244
+#: ../src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Συντομεύσεις πληκτρολογίου"
 
@@ -494,12 +307,10 @@ msgid "Cross"
 msgstr "Σταυρός"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "Circle"
 msgid "Circle wins!"
 msgstr "Ο κύκλος κερδίζει!"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "%s wins!"
 msgid "Cross wins!"
 msgstr "Ο σταυρός κερδίζει!"
 
@@ -508,7 +319,6 @@ msgid "Circle’s turn"
 msgstr "Η σειρά του κύκλου"
 
 #: ../src/theme.c:46 ../src/theme.c:55
-#| msgid "%s’s Turn"
 msgid "Cross’s turn"
 msgstr "Η σειρά του σταυρού"
 
@@ -529,12 +339,10 @@ msgid "Green"
 msgstr "Πράσινο"
 
 #: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Red wins!"
 msgstr "Ο κόκκινος κερδίζει!"
 
 #: ../src/theme.c:63 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Green wins!"
 msgstr "Ο πράσινος κερδίζει!"
 
@@ -555,7 +363,6 @@ msgid "Blue"
 msgstr "Γαλάζιο"
 
 #: ../src/theme.c:72
-#| msgid "%s wins!"
 msgid "Blue wins!"
 msgstr "Ο μπλε κερδίζει!"
 
@@ -566,6 +373,150 @@ msgstr "Η σειρά του μπλε"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Αστέρια και δακτύλιοι"
+
+#~ msgid "View help for this game"
+#~ msgstr "Προβολή βοήθειας για αυτό το παιχνίδι"
+
+#~ msgid "End the current game"
+#~ msgstr "Τερματισμός του τρέχοντος παιχνιδιού"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Εναλλαγή λειτουργίας πλήρους οθόνης"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Υπόδειξη για την επόμενη κίνησή σας"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Έξοδος από λειτουργία πλήρους οθόνης"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Εκκίνηση νέου δικτυακού παιχνιδιού με πολλούς παίχτες"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr ""
+#~ "Τερματισμός του τρέχοντος δικτυακού παιχνιδιού και επιστροφή στον "
+#~ "δικτυακό εξυπηρετητή"
+
+#~ msgid "Pause the game"
+#~ msgstr "Προσωρινή παύση παιχνιδιού"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "Εμφάνιση μιας λίστας παικτών στο δικτυακό παιχνίδι"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "Ακύρωση αναίρεσης της τελευταίας κίνησης"
+
+#~ msgid "Restart the game"
+#~ msgstr "Επανεκκίνηση του παιχνιδιού"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "Συνέχιση του τρέχοντος επιπέδου"
+
+#~ msgid "View the scores"
+#~ msgstr "Προβολή της βαθμολογίας"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Αναίρεση της τελευταίας κίνησης"
+
+#~ msgid "About this game"
+#~ msgstr "Σχετικά με αυτό το παιχνίδι"
+
+#~ msgid "Close this window"
+#~ msgstr "Κλείσιμο του παραθύρου"
+
+#~ msgid "Configure the game"
+#~ msgstr "Ρύθμιση παιχνιδιού"
+
+#~ msgid "Quit this game"
+#~ msgstr "Έξοδος από αυτό το παιχνίδι"
+
+#~ msgid "_Contents"
+#~ msgstr "_Περιεχόμενα"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_Πλήρης οθόνη"
+
+#~ msgid "_Hint"
+#~ msgstr "_Υπόδειξη"
+
+#~ msgid "_New"
+#~ msgstr "_Νέο"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_Επανάληψη κίνησης"
+
+#~ msgid "_Reset"
+#~ msgstr "Επαναφορά"
+
+#~ msgid "_Restart"
+#~ msgstr "_Επανεκκίνηση"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Αναίρεση κίνησης"
+
+#~ msgid "_Deal"
+#~ msgstr "Μοί_ρασμα"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "_Έξοδος από πλήρη οθόνη"
+
+#~ msgid "Network _Game"
+#~ msgstr "Δικτυακό _παιχνίδι"
+
+#~ msgid "L_eave Game"
+#~ msgstr "Εγ_κατάλειψη παιγνιδιού"
+
+#~ msgid "Player _List"
+#~ msgstr "_Λίστα παιχτών"
+
+#~ msgid "_Pause"
+#~ msgstr "Π_αύση"
+
+#~ msgid "Res_ume"
+#~ msgstr "Συνέχιση"
+
+#~ msgid "_End Game"
+#~ msgstr "_Τέλος παιχνιδιού"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "Το %s είναι ελεύθερο λογισμικό· επιτρέπεται η αναδιανομή ή/και "
+#~ "τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU "
+#~ "(GPL), όπως αυτή έχει δημοσιευτεί από το Ίδρυμα Ελεύθερου Λογισμικού "
+#~ "(FSF) — είτε της έκδοσης %d της Άδειας, είτε (κατ' επιλογήν σας) "
+#~ "οποιασδήποτε μεταγενέστερης έκδοσης."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "Το %s διανέμεται με την ελπίδα ότι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ ΚΑΜΙΑ "
+#~ "ΕΓΓΥΗΣΗ. Χωρίς ούτε την έμμεση εγγύηση ΛΕΙΤΟΥΡΓΙΚΟΤΗΤΑΣ ή "
+#~ "ΚΑΤΑΛΛΗΛΟΤΗΤΑΣΓΙΑ ΕΝΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Για περισσότερες λεπτομέρειες, "
+#~ "δείτε τη γενική δημόσια άδεια χρήσης GNU."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Δημόσιας Άδειας GNU "
+#~ "μαζί με το %s· Εάν όχι, γράψτε στο Free Software Foundation, Inc., 51 "
+#~ "Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Άδειας Δημόσιας Χρήσης "
+#~ "GNU (GPL) μαζί με το πρόγραμμα· Εάν όχι, επισκεφθείτε το <http://www.gnu."
+#~ "org/licenses/>."
 
 #~ msgid "Level of Player One"
 #~ msgstr "Επίπεδο του πρώτου παίχτη"
