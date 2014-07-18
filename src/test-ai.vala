@@ -20,6 +20,8 @@
  */
 
 const int NUMBER_GAMES = 5;
+const int MAXIMUM_GAMES = 100;
+const int THRESHOLD_DENOMINATOR = 4;
 
 /* Tests if the AI makes moves so as to take up immediate horizontal wins. The argument to playgame function is the sequence of moves
  made until now. The return value of playgame function is the column number in which the AI should move.*/
@@ -178,25 +180,45 @@ private int test_ai_vs_ai (string easier, string harder)
 	return easier_wins;
 }
 
+/* Repeatedly contest between the two AI until either easier win ratio is less than a threshold
+   or maximum numbers of contests have been played.*/
+private void repeat_contests (string easier, string harder, out int games_contested, out int easy_wins)
+{
+	easy_wins = test_ai_vs_ai (easier, harder);
+	games_contested = NUMBER_GAMES;
+
+	while (games_contested <= MAXIMUM_GAMES && easy_wins > games_contested/THRESHOLD_DENOMINATOR)
+	{
+		easy_wins += test_ai_vs_ai (easier, harder);
+		games_contested += NUMBER_GAMES;
+	}
+}
+
 private void test_easy_vs_medium ()
 {
-	int easy_wins = test_ai_vs_ai ("a0","b0");
+	int easy_wins;
+	int games_contested;
+	repeat_contests ("a0", "b0", out games_contested, out easy_wins);
 
-	assert (easy_wins <= NUMBER_GAMES/2);
+	assert (easy_wins <= games_contested/THRESHOLD_DENOMINATOR);
 }
 
 private void test_easy_vs_hard ()
 {
-	int easy_wins = test_ai_vs_ai ("a0","c0");
+	int easy_wins;
+	int games_contested;
+	repeat_contests ("a0", "c0", out games_contested, out easy_wins);
 
-	assert (easy_wins <= NUMBER_GAMES/2);
+	assert (easy_wins <= games_contested/THRESHOLD_DENOMINATOR);
 }
 
 private void test_medium_vs_hard ()
 {
-	int medium_wins = test_ai_vs_ai ("b0","c0");
+	int medium_wins;
+	int games_contested;
+	repeat_contests ("b0", "c0", out games_contested, out medium_wins);
 
-	assert (medium_wins <= NUMBER_GAMES/2);
+	assert (medium_wins <= games_contested/THRESHOLD_DENOMINATOR);
 }
 
 public int main (string[] args)
