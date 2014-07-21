@@ -1,3 +1,10 @@
+3.13.4 - July 20, 2014
+======================
+
+* Add missing function prototypes
+* Make AI tests less likely to fail
+* Translation fixes and updates
+
 3.13.3 - June 23, 2014
 ======================
 
