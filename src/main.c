@@ -732,6 +732,7 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
 		    G_CALLBACK (gtk_widget_destroyed), &scorebox);
 
   grid = gtk_grid_new ();
+  gtk_widget_set_halign (grid, GTK_ALIGN_CENTER);
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_VERTICAL);
   gtk_container_set_border_width (GTK_CONTAINER (grid), 5);
