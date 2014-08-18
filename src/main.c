@@ -1181,6 +1181,14 @@ create_app (void)
   gtk_widget_show (headerbar);
   gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
 
+  undo_button = gtk_button_new_from_icon_name ("edit-undo-symbolic", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_set_valign (undo_button, GTK_ALIGN_CENTER);
+  gtk_widget_set_halign (undo_button, GTK_ALIGN_CENTER);
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (undo_button), "app.undo-move");
+  gtk_widget_set_tooltip_text (undo_button, _("Undo your most recent move"));
+  gtk_widget_show (undo_button);
+  gtk_header_bar_pack_start (GTK_HEADER_BAR (headerbar), undo_button);
+
   g_action_map_add_action_entries (G_ACTION_MAP (application), app_entries, G_N_ELEMENTS (app_entries), application);
   gtk_application_add_accelerator (application, "<Primary>n", "app.new-game", NULL);
   gtk_application_add_accelerator (application, "<Primary>h", "app.hint", NULL);
@@ -1232,22 +1240,9 @@ create_app (void)
   /* We do our own double-buffering. */
   gtk_widget_set_double_buffered (GTK_WIDGET (drawarea), FALSE);
 
-  if (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL)
-    image = gtk_image_new_from_icon_name ("edit-undo-rtl-symbolic", GTK_ICON_SIZE_DIALOG);
-  else
-    image = gtk_image_new_from_icon_name ("edit-undo-symbolic", GTK_ICON_SIZE_DIALOG);
-
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 6);
 
-  undo_button = gtk_button_new ();
-  gtk_widget_set_valign (undo_button, GTK_ALIGN_CENTER);
-  gtk_widget_set_halign (undo_button, GTK_ALIGN_CENTER);
-  gtk_button_set_image (GTK_BUTTON (undo_button), image);
-  gtk_button_set_relief (GTK_BUTTON (undo_button), GTK_RELIEF_NONE);
-  gtk_actionable_set_action_name (GTK_ACTIONABLE (undo_button), "app.undo-move");
-  gtk_widget_set_tooltip_text (undo_button, _("Undo your most recent move"));
-  gtk_box_pack_start (GTK_BOX (vbox), undo_button, FALSE, FALSE, 0);
 
   hint_button = gtk_button_new ();
   gtk_widget_set_valign (hint_button, GTK_ALIGN_CENTER);
