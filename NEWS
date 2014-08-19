@@ -1,3 +1,14 @@
+3.13.90 - August 18, 2014
+=========================
+
+Dependencies: GTK+ 3.13.2
+
+* Use text buttons
+* Move undo to header bar
+* Use header bar in scores dialog (Yosef Or Boczko)
+* Window layout improvements (Arnaud Bonatti)
+* Updated translations
+
 3.13.4 - July 20, 2014
 ======================
 
