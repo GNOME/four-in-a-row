@@ -19,9 +19,6 @@ sounds_DATA = \
 	reverse.ogg \
 	slide.ogg
 
-velenadir      = $(datadir)/four-in-a-row
-velena_DATA    = white_ob.cn4.gz
-
 desktopdir       = $(datadir)/applications
 desktop_in_files = four-in-a-row.desktop.in
 desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
@@ -36,7 +33,6 @@ man_MANS     = four-in-a-row.6
 
 EXTRA_DIST = $(pixmap_DATA) \
              $(sounds_DATA) \
-             $(velena_DATA) \
 	     $(appdata_in_files) \
              $(desktop_in_files) \
              $(gsettings_SCHEMAS) \
