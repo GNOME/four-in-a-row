@@ -1161,6 +1161,7 @@ static const GActionEntry app_entries[] = {
 static gboolean
 create_app (void)
 {
+  GtkWidget *frame;
   GtkWidget *gridframe;
   GtkWidget *hbox, *vbox;
   GtkWidget *image;
@@ -1172,6 +1173,7 @@ create_app (void)
   window = gtk_application_window_new (application);
   gtk_window_set_application (GTK_WINDOW (window), application);
   gtk_window_set_title (GTK_WINDOW (window), _(APPNAME_LONG));
+  gtk_container_set_border_width (GTK_CONTAINER (window), 25);
   gtk_window_set_default_size (GTK_WINDOW (window), DEFAULT_WIDTH, DEFAULT_HEIGHT);
   gtk_window_set_default_icon_name ("four-in-a-row");
 
@@ -1214,18 +1216,17 @@ create_app (void)
 
   gtk_application_set_app_menu (GTK_APPLICATION (application), G_MENU_MODEL (app_menu));
 
-  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-  gtk_container_add (GTK_CONTAINER (window), hbox);
+  frame = gtk_aspect_frame_new (NULL, 0.5, 0.5, 1.45, FALSE);
+  gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_NONE);
+  gtk_container_add (GTK_CONTAINER (window), frame);
 
-  gridframe = games_grid_frame_new (7, 7);
-  gtk_widget_set_hexpand (gridframe, TRUE);
-  gtk_widget_set_vexpand (gridframe, TRUE);
-  gtk_box_pack_start (GTK_BOX (hbox), gridframe, TRUE, TRUE, 10);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 25);
+  gtk_container_add (GTK_CONTAINER (frame), hbox);
 
   drawarea = gtk_drawing_area_new ();
   /* set a min size to avoid pathological behavior of gtk when scaling down */
-  gtk_widget_set_size_request (drawarea, 300, 300);
-  gtk_container_add (GTK_CONTAINER (gridframe), drawarea);
+  gtk_widget_set_size_request (drawarea, 350, 350);
+  gtk_box_pack_start (GTK_BOX (hbox), drawarea, TRUE, TRUE, 0);
 
   gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK);
   g_signal_connect (G_OBJECT (drawarea), "configure_event",
@@ -1240,26 +1241,27 @@ create_app (void)
   /* We do our own double-buffering. */
   gtk_widget_set_double_buffered (GTK_WIDGET (drawarea), FALSE);
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 6);
-
+  vbox = gtk_button_box_new (GTK_ORIENTATION_VERTICAL);
+  gtk_box_set_spacing (GTK_BOX (vbox), 6);
+  gtk_widget_set_valign (vbox, GTK_ALIGN_END);
+  gtk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, TRUE, 0);
 
   hint_button = gtk_button_new ();
+  gtk_button_set_label (GTK_BUTTON (hint_button), _("_Hint"));
+  gtk_button_set_use_underline (GTK_BUTTON (hint_button), TRUE);
   gtk_widget_set_valign (hint_button, GTK_ALIGN_CENTER);
   gtk_widget_set_halign (hint_button, GTK_ALIGN_CENTER);
-  image = gtk_image_new_from_icon_name ("dialog-question-symbolic", GTK_ICON_SIZE_DIALOG);
-  gtk_button_set_image (GTK_BUTTON (hint_button), image);
-  gtk_button_set_relief (GTK_BUTTON (hint_button), GTK_RELIEF_NONE);
+  gtk_widget_set_size_request (hint_button, 120, 60);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (hint_button), "app.hint");
   gtk_widget_set_tooltip_text (hint_button, _("Receive a hint for your next move"));
-  gtk_box_pack_start (GTK_BOX (vbox), hint_button, FALSE, FALSE, 0);
+  gtk_box_pack_end (GTK_BOX (vbox), hint_button, FALSE, FALSE, 0);
 
   new_game_button = gtk_button_new ();
+  gtk_button_set_label (GTK_BUTTON (new_game_button), _("_Start Over"));
+  gtk_button_set_use_underline (GTK_BUTTON (new_game_button), TRUE);
   gtk_widget_set_valign (new_game_button, GTK_ALIGN_CENTER);
   gtk_widget_set_halign (new_game_button, GTK_ALIGN_CENTER);
-  image = gtk_image_new_from_icon_name ("view-refresh-symbolic", GTK_ICON_SIZE_DIALOG);
-  gtk_button_set_image (GTK_BUTTON (new_game_button), image);
-  gtk_button_set_relief (GTK_BUTTON (new_game_button), GTK_RELIEF_NONE);
+  gtk_widget_set_size_request (new_game_button, 120, 60);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (new_game_button), "app.new-game");
   gtk_widget_set_tooltip_text (new_game_button, _("Start a new game"));
   gtk_box_pack_end (GTK_BOX (vbox), new_game_button, FALSE, FALSE, 0);
