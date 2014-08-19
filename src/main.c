@@ -34,7 +34,6 @@
 #include "theme.h"
 #include "prefs.h"
 #include "gfx.h"
-#include "games-gridframe.h"
 
 #define SPEED_MOVE     25
 #define SPEED_DROP     20
@@ -1162,7 +1161,6 @@ static gboolean
 create_app (void)
 {
   GtkWidget *frame;
-  GtkWidget *gridframe;
   GtkWidget *hbox, *vbox;
   GtkWidget *image;
   GtkWidget *new_game_button;
