@@ -3,6 +3,9 @@ SUBDIRS = icons
 gsettings_SCHEMAS = org.gnome.four-in-a-row.gschema.xml
 @GSETTINGS_RULES@
 
+uidir = $(datadir)/four-in-a-row
+ui_DATA = four-in-a-row.ui
+
 pixmapdir = $(datadir)/four-in-a-row
 pixmap_DATA = \
     tileset_50x50_hcontrast.svg \
@@ -31,9 +34,10 @@ appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 
 man_MANS     = four-in-a-row.6
 
-EXTRA_DIST = $(pixmap_DATA) \
+EXTRA_DIST = $(ui_DATA) \
+             $(pixmap_DATA) \
              $(sounds_DATA) \
-	     $(appdata_in_files) \
+             $(appdata_in_files) \
              $(desktop_in_files) \
              $(gsettings_SCHEMAS) \
              $(man_MANS)
