@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: gnome-games.HEAD.el\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-07-07 04:52+0000\n"
-"PO-Revision-Date: 2014-07-07 22:27+0200\n"
+"POT-Creation-Date: 2014-08-27 04:50+0000\n"
+"PO-Revision-Date: 2014-08-27 16:55+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@lists.gnome.gr\n"
 "Language: el\n"
@@ -145,57 +145,53 @@ msgstr ""
 "Αδυναμία φόρτωσης εικόνας:\n"
 "%s"
 
-#: ../src/main.c:511
+#: ../src/main.c:510
 msgid "It’s a draw!"
 msgstr "Ισοπαλία!"
 
-#: ../src/main.c:520
+#: ../src/main.c:519
 msgid "You win!"
 msgstr "Κέρδισες!"
 
-#: ../src/main.c:522 ../src/main.c:541
+#: ../src/main.c:521 ../src/main.c:540
 msgid "Your Turn"
 msgstr "Η σειρά σας"
 
-#: ../src/main.c:525
+#: ../src/main.c:524
 msgid "I win!"
 msgstr "Κέρδισα!"
 
-#: ../src/main.c:527 ../src/main.c:632
+#: ../src/main.c:526 ../src/main.c:631
 msgid "I’m Thinking…"
 msgstr "Σκέφτομαι…"
 
-#: ../src/main.c:538 ../src/main.c:549
+#: ../src/main.c:537 ../src/main.c:548
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/main.c:645
+#: ../src/main.c:644
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Υπόδειξη: Στήλη %d"
 
-#: ../src/main.c:673 ../src/main.c:677
+#: ../src/main.c:672 ../src/main.c:676
 msgid "You:"
 msgstr "Εσύ:"
 
-#: ../src/main.c:674 ../src/main.c:676
+#: ../src/main.c:673 ../src/main.c:675
 msgid "Me:"
 msgstr "Εγώ:"
 
-#: ../src/main.c:722
+#: ../src/main.c:721
 msgid "Scores"
 msgstr "Βαθμολογία"
 
-#: ../src/main.c:725
-msgid "_Close"
-msgstr "_Κλείσιμο"
-
-#: ../src/main.c:763
+#: ../src/main.c:762
 msgid "Drawn:"
 msgstr "Ισοπαλία:"
 
-#: ../src/main.c:811
+#: ../src/main.c:810
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -205,51 +201,61 @@ msgstr ""
 "\n"
 "Το Τέσσερα στη σειρά είναι μέρος των παιχνιδιών του GNOME."
 
-#: ../src/main.c:814
+#: ../src/main.c:813
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
 "Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
-"Spiros Papadimitriou <spapadim+@cs.cmu.edu>\n"
+"Σπύρος Παπαδημητρίου <spapadim+@cs.cmu.edu>\n"
 "Συμεών (Σίμος) Ξενιτέλλης <simos@hellug.gr>\n"
 "Κώστας Παπαδήμας <pkst@gmx.net>\n"
 "Τζένη Πετούμενου <epetoumenou@gmail.com>\n"
 "Μαρία Θουκυδίδου <marablack3@gmail.com>\n"
-"Για περισσότερα δείτε: http://gnome.gr"
+"\n"
+"Για περισστερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
+"http://gnome.gr/"
 
-#: ../src/main.c:1194
-msgid "_New Game"
-msgstr "_Νέο παιχνίδι"
-
-#: ../src/main.c:1195
-msgid "_Scores"
-msgstr "_Βαθμολογίες"
-
-#: ../src/main.c:1196
-msgid "_Preferences"
-msgstr "Π_ροτιμήσεις"
-
-#: ../src/main.c:1199
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: ../src/main.c:1200
-msgid "_About"
-msgstr "_Περί"
-
-#: ../src/main.c:1201
-msgid "_Quit"
-msgstr "Έ_ξοδος"
-
-#: ../src/main.c:1249
+#: ../src/main.c:1188
 msgid "Undo your most recent move"
 msgstr "Αναίρεση της πιο προσφατής σας κίνησης"
 
-#: ../src/main.c:1259
+#: ../src/main.c:1202
+msgid "_New Game"
+msgstr "_Νέο παιχνίδι"
+
+#: ../src/main.c:1203
+msgid "_Scores"
+msgstr "_Βαθμολογίες"
+
+#: ../src/main.c:1204
+msgid "_Preferences"
+msgstr "Π_ροτιμήσεις"
+
+#: ../src/main.c:1207
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#: ../src/main.c:1208
+msgid "_About"
+msgstr "_Περί"
+
+#: ../src/main.c:1209
+msgid "_Quit"
+msgstr "Έ_ξοδος"
+
+#: ../src/main.c:1248
+msgid "_Hint"
+msgstr "_Υπόδειξη"
+
+#: ../src/main.c:1254
 msgid "Receive a hint for your next move"
 msgstr "Λήψη υπόδειξης για την επόμενή σας κίνηση"
 
-#: ../src/main.c:1269
+#: ../src/main.c:1258
+msgid "_Start Over"
+msgstr "Εκκίνη_ση"
+
+#: ../src/main.c:1264
 msgid "Start a new game"
 msgstr "Εκκίνηση νέου παιχνιδιού"
 
@@ -374,6 +380,9 @@ msgstr "Η σειρά του μπλε"
 msgid "Stars and Rings"
 msgstr "Αστέρια και δακτύλιοι"
 
+#~ msgid "_Close"
+#~ msgstr "_Κλείσιμο"
+
 #~ msgid "View help for this game"
 #~ msgstr "Προβολή βοήθειας για αυτό το παιχνίδι"
 
@@ -435,9 +444,6 @@ msgstr "Αστέρια και δακτύλιοι"
 
 #~ msgid "_Fullscreen"
 #~ msgstr "_Πλήρης οθόνη"
-
-#~ msgid "_Hint"
-#~ msgstr "_Υπόδειξη"
 
 #~ msgid "_New"
 #~ msgstr "_Νέο"
