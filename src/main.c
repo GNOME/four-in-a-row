@@ -1248,7 +1248,7 @@ create_app (void)
   gtk_button_set_label (GTK_BUTTON (hint_button), _("_Hint"));
   gtk_button_set_use_underline (GTK_BUTTON (hint_button), TRUE);
   gtk_widget_set_valign (hint_button, GTK_ALIGN_CENTER);
-  gtk_widget_set_halign (hint_button, GTK_ALIGN_CENTER);
+  gtk_widget_set_halign (hint_button, GTK_ALIGN_FILL);
   gtk_widget_set_size_request (hint_button, 120, 60);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (hint_button), "app.hint");
   gtk_widget_set_tooltip_text (hint_button, _("Receive a hint for your next move"));
@@ -1258,7 +1258,7 @@ create_app (void)
   gtk_button_set_label (GTK_BUTTON (new_game_button), _("_Start Over"));
   gtk_button_set_use_underline (GTK_BUTTON (new_game_button), TRUE);
   gtk_widget_set_valign (new_game_button, GTK_ALIGN_CENTER);
-  gtk_widget_set_halign (new_game_button, GTK_ALIGN_CENTER);
+  gtk_widget_set_halign (new_game_button, GTK_ALIGN_FILL);
   gtk_widget_set_size_request (new_game_button, 120, 60);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (new_game_button), "app.new-game");
   gtk_widget_set_tooltip_text (new_game_button, _("Start a new game"));
