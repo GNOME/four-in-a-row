@@ -488,7 +488,7 @@ prompt_player (void)
   const gchar *who = NULL;
   gchar *str = NULL;
 
-  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), (human || gameover));
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), (human && !gameover));
 
   switch (players) {
   case 0:
