@@ -531,10 +531,10 @@ prompt_player (void)
 
     if (gameover) {
 	if (player == PLAYER1)
-	  who = _(theme_get_player_win (PLAYER1));
+	  who = theme_get_player_win (PLAYER1);
 	else
-	  who = _(theme_get_player_win (PLAYER2));
-	str = g_strdup_printf (_("%s"), who);
+	  who = theme_get_player_win (PLAYER2);
+	str = g_strdup_printf ("%s", _(who));
       }
     else if (player_active) {
       set_status_message (_("Your Turn"));
@@ -542,10 +542,10 @@ prompt_player (void)
 
     } else {
 	if (player == PLAYER1)
-	  who = _(theme_get_player_turn (PLAYER1));
+	  who = theme_get_player_turn (PLAYER1);
 	else
-	  who = _(theme_get_player_turn (PLAYER2));
-        str = g_strdup_printf (_("%s"), who);
+	  who = theme_get_player_turn (PLAYER2);
+        str = g_strdup_printf ("%s", _(who));
     }
 
     set_status_message (str);
