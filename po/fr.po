@@ -1,5 +1,5 @@
 # French translation of gnome-games.
-# Copyright (C) 1998-2013 Free Software Foundation, Inc.
+# Copyright (C) 1998-2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-games package.
 #
 # Vincent Renardias <vincent@ldsol.com>, 1998-1999.
@@ -29,11 +29,11 @@ msgstr ""
 "Project-Id-Version: gnome-games HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-15 05:54+0000\n"
-"PO-Revision-Date: 2014-03-16 18:31+0100\n"
-"Last-Translator: Bruno Cauet <brunocauet@gmail.com>\n"
+"POT-Creation-Date: 2014-09-01 04:51+0000\n"
+"PO-Revision-Date: 2014-09-01 09:50+0200\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,8 +49,7 @@ msgstr ""
 "L'objectif de Quatre-à-la-suite est de construire une ligne de quatre billes "
 "tout en empêchant votre adversaire (humain ou électronique) de construire "
 "une telle ligne avec ses billes. Une ligne peut être horizontale, verticale "
-"ou diagonale. Le premier joueur qui connecte quatre billes à la suite "
-"gagne !"
+"ou diagonale. Le premier joueur qui connecte quatre billes à la suite gagne !"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:2
 msgid ""
@@ -60,7 +59,7 @@ msgstr ""
 "Quatre-à-la-suite propose différents niveaux de difficulté. Si vous avez du "
 "mal, vous pouvez toujours demander une astuce."
 
-#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1175 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1179 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Quatre-à-la-suite"
 
@@ -100,7 +99,7 @@ msgstr "Son"
 msgid "Whether or not to play event sounds."
 msgstr "Indique s'il faut jouer ou non les sons d'événements."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
 msgid "Move left"
 msgstr "Déplacer à gauche"
 
@@ -108,7 +107,7 @@ msgstr "Déplacer à gauche"
 msgid "Key press to move left."
 msgstr "Touche à appuyer pour déplacer à gauche."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
 msgid "Move right"
 msgstr "Déplacer à droite"
 
@@ -116,7 +115,7 @@ msgstr "Déplacer à droite"
 msgid "Key press to move right."
 msgstr "Touche à appuyer pour déplacer à droite."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
 msgid "Drop marble"
 msgstr "Laisser tomber la bille"
 
@@ -128,205 +127,6 @@ msgstr "Touche à appuyer pour laisser tomber une bille."
 msgid "Unknown Command"
 msgstr "Commande inconnue"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Affiche l'aide pour ce jeu"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Termine la partie en cours"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Bascule le mode plein écran"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Affiche une astuce pour votre prochain coup"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Quitte le mode plein écran"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Commencer une nouvelle partie multi-joueurs en réseau"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Termine le jeu en réseau et retourne sur le serveur du réseau"
-
-#: ../src/games-stock.c:48 ../src/main.c:1265
-msgid "Start a new game"
-msgstr "Commence une nouvelle partie"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Suspend la partie"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Affiche une liste de joueurs dans le jeu en réseau"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Rétablit le mouvement annulé"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Recommence la partie"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Reprend la partie"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Affiche les scores"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Annule le dernier mouvement"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "À propos de ce jeu"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Ferme cette fenêtre"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Configure le jeu"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Quitte ce jeu"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Sommaire"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Plein écran"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Astuce"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Nouveau"
-
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1190
-msgid "_New Game"
-msgstr "_Nouvelle partie"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_Rétablir le coup"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Réinitialiser"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "_Recommencer"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "A_nnuler le coup"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Distribuer"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "_Quitter le plein écran"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "_Partie en réseau"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "_Quitter la partie"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "_Liste des joueurs"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Pause"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "_Continuer"
-
-#: ../src/games-stock.c:267 ../src/main.c:1191
-msgid "_Scores"
-msgstr "_Scores"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "_Fin du jeu"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s est un logiciel libre ; vous pouvez le distribuer et/ou le modifier sous "
-"les termes de la Licence Publique Générale GNU telle que publiée par la Free "
-"Software Foundation ; soit la version %d de la licence, ou (à votre "
-"discrétion), toute version suivante."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s est distribué dans l'espoir qu'il puisse être utile mais SANS AUCUNE "
-"GARANTIE ; sans même une garantie implicite de VALEUR MARCHANDE ou "
-"d'ADÉQUATION À UN BESOIN PARTICULIER. Voir la Licence Publique Générale GNU "
-"pour plus d'informations."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Vous devriez avoir reçu une copie de la Licence Publique Générale GNU avec "
-"%s ; si ce n'est pas le cas, écrivez à la Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Vous devriez avoir reçu une copie de la Licence Publique Générale GNU avec "
-"ce programme ; si ce n'est pas le cas, consultez <http://www.gnu.org/"
-"licenses/>."
-
 #: ../src/gfx.c:247
 #, c-format
 msgid ""
@@ -336,62 +136,53 @@ msgstr ""
 "Impossible de charger l'image :\n"
 "%s"
 
-#: ../src/main.c:511
+#: ../src/main.c:510
 msgid "It’s a draw!"
 msgstr "Match nul !"
 
-#: ../src/main.c:520
+#: ../src/main.c:519
 msgid "You win!"
 msgstr "Vous avez gagné !"
 
-#: ../src/main.c:522 ../src/main.c:541
+#: ../src/main.c:521 ../src/main.c:540
 msgid "Your Turn"
 msgstr "À votre tour"
 
-#: ../src/main.c:525
+#: ../src/main.c:524
 msgid "I win!"
 msgstr "J'ai gagné !"
 
-#: ../src/main.c:527 ../src/main.c:628
+#: ../src/main.c:526 ../src/main.c:631
 msgid "I’m Thinking…"
 msgstr "Je réfléchis…"
 
-#: ../src/main.c:538
+#: ../src/main.c:537 ../src/main.c:548
 #, c-format
-msgid "%s wins!"
-msgstr "%s a gagné !"
+msgid "%s"
+msgstr "%s"
 
-#: ../src/main.c:545
-#, c-format
-msgid "%s’s Turn"
-msgstr "Au tour de %s"
-
-#: ../src/main.c:641
+#: ../src/main.c:644
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Astuce : colonne %d"
 
-#: ../src/main.c:669 ../src/main.c:673
+#: ../src/main.c:672 ../src/main.c:676
 msgid "You:"
 msgstr "Vous :"
 
-#: ../src/main.c:670 ../src/main.c:672
+#: ../src/main.c:673 ../src/main.c:675
 msgid "Me:"
 msgstr "Moi :"
 
-#: ../src/main.c:718
+#: ../src/main.c:721
 msgid "Scores"
 msgstr "Scores"
 
-#: ../src/main.c:721
-msgid "_Close"
-msgstr "_Fermer"
-
-#: ../src/main.c:759
+#: ../src/main.c:762
 msgid "Drawn:"
 msgstr "Nul :"
 
-#: ../src/main.c:807
+#: ../src/main.c:810
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -401,7 +192,7 @@ msgstr ""
 "\n"
 "Quatre-à-la-suite fait partie des jeux GNOME."
 
-#: ../src/main.c:810
+#: ../src/main.c:813
 msgid "translator-credits"
 msgstr ""
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
@@ -416,68 +207,88 @@ msgstr ""
 "Didier Vidal <didier-devel@melix.net>\n"
 "Pierre Lemaire <pierre.lemaire@kamick.org>"
 
-#: ../src/main.c:1192
-msgid "_Preferences"
-msgstr "_Préférences"
-
-#: ../src/main.c:1195
-msgid "_Help"
-msgstr "Aid_e"
-
-#: ../src/main.c:1196
-msgid "_About"
-msgstr "_À propos"
-
-#: ../src/main.c:1197
-msgid "_Quit"
-msgstr "_Quitter"
-
-#: ../src/main.c:1245
+#: ../src/main.c:1188
 msgid "Undo your most recent move"
 msgstr "Annuler votre plus récente action"
 
-#: ../src/main.c:1255
+#: ../src/main.c:1202
+msgid "_New Game"
+msgstr "_Nouvelle partie"
+
+#: ../src/main.c:1203
+msgid "_Scores"
+msgstr "_Scores"
+
+#: ../src/main.c:1204
+msgid "_Preferences"
+msgstr "_Préférences"
+
+#: ../src/main.c:1207
+msgid "_Help"
+msgstr "Aid_e"
+
+#: ../src/main.c:1208
+msgid "_About"
+msgstr "_À propos"
+
+#: ../src/main.c:1209
+msgid "_Quit"
+msgstr "_Quitter"
+
+#: ../src/main.c:1248
+msgid "_Hint"
+msgstr "_Astuce"
+
+#: ../src/main.c:1254
 msgid "Receive a hint for your next move"
 msgstr "Recevoir une astuce pour votre prochain coup"
+
+#: ../src/main.c:1258
+msgid "_Start Over"
+msgstr "_Recommencer"
+
+#: ../src/main.c:1264
+msgid "Start a new game"
+msgstr "Commence une nouvelle partie"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
 msgstr "Préférences"
 
-#: ../src/prefs.c:194
+#: ../src/prefs.c:193
 msgid "Game"
 msgstr "Jeu"
 
-#: ../src/prefs.c:197
+#: ../src/prefs.c:196
 msgid "Opponent:"
 msgstr "Adversaire :"
 
-#: ../src/prefs.c:208
+#: ../src/prefs.c:207
 msgid "Human"
 msgstr "Humain"
 
-#: ../src/prefs.c:212
+#: ../src/prefs.c:211
 msgid "Level one"
 msgstr "Niveau un"
 
-#: ../src/prefs.c:216
+#: ../src/prefs.c:215
 msgid "Level two"
 msgstr "Niveau deux"
 
-#: ../src/prefs.c:220
+#: ../src/prefs.c:219
 msgid "Level three"
 msgstr "Niveau trois"
 
-#: ../src/prefs.c:226
+#: ../src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Thème :"
 
-#: ../src/prefs.c:239
+#: ../src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "A_ctiver les sons"
 
 #. keyboard tab
-#: ../src/prefs.c:244
+#: ../src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Commandes au clavier"
 
@@ -485,41 +296,183 @@ msgstr "Commandes au clavier"
 msgid "High Contrast"
 msgstr "Fort contraste"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
 msgstr "Cercle"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44 ../src/theme.c:53
 msgid "Cross"
 msgstr "Croix"
 
-#: ../src/theme.c:47
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Circle wins!"
+msgstr "Les cercles ont gagné !"
+
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Cross wins!"
+msgstr "Les croix ont gagné !"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Circle’s turn"
+msgstr "Au tour des cercles"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Cross’s turn"
+msgstr "Au tour des croix"
+
+#: ../src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "Fort contraste inversé"
 
-#: ../src/theme.c:54
+#: ../src/theme.c:58
 msgid "Red and Green Marbles"
 msgstr "Billes rouges et vertes"
 
-#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
 msgid "Red"
 msgstr "Rouge"
 
-#: ../src/theme.c:58 ../src/theme.c:72
+#: ../src/theme.c:62 ../src/theme.c:80
 msgid "Green"
 msgstr "Vert"
 
-#: ../src/theme.c:61
+#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+msgid "Red wins!"
+msgstr "Les rouges ont gagné !"
+
+#: ../src/theme.c:63 ../src/theme.c:81
+msgid "Green wins!"
+msgstr "Les verts ont gagné !"
+
+#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+msgid "Red’s turn"
+msgstr "Au tour des rouges"
+
+#: ../src/theme.c:64 ../src/theme.c:82
+msgid "Green’s turn"
+msgstr "Au tour des verts"
+
+#: ../src/theme.c:67
 msgid "Blue and Red Marbles"
 msgstr "Billes bleues et rouges"
 
-#: ../src/theme.c:65
+#: ../src/theme.c:71
 msgid "Blue"
 msgstr "Bleu"
 
-#: ../src/theme.c:68
+#: ../src/theme.c:72
+msgid "Blue wins!"
+msgstr "Les bleus ont gagné !"
+
+#: ../src/theme.c:73
+msgid "Blue’s turn"
+msgstr "Au tour des bleus"
+
+#: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Étoiles et anneaux"
+
+#~ msgid "View help for this game"
+#~ msgstr "Affiche l'aide pour ce jeu"
+
+#~ msgid "End the current game"
+#~ msgstr "Termine la partie en cours"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Bascule le mode plein écran"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Affiche une astuce pour votre prochain coup"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Quitte le mode plein écran"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Commencer une nouvelle partie multi-joueurs en réseau"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "Termine le jeu en réseau et retourne sur le serveur du réseau"
+
+#~ msgid "Pause the game"
+#~ msgstr "Suspend la partie"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "Affiche une liste de joueurs dans le jeu en réseau"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "Rétablit le mouvement annulé"
+
+#~ msgid "Restart the game"
+#~ msgstr "Recommence la partie"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "Reprend la partie"
+
+#~ msgid "View the scores"
+#~ msgstr "Affiche les scores"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Annule le dernier mouvement"
+
+#~ msgid "About this game"
+#~ msgstr "À propos de ce jeu"
+
+#~ msgid "Close this window"
+#~ msgstr "Ferme cette fenêtre"
+
+#~ msgid "Configure the game"
+#~ msgstr "Configure le jeu"
+
+#~ msgid "Quit this game"
+#~ msgstr "Quitte ce jeu"
+
+#~ msgid "_Contents"
+#~ msgstr "_Sommaire"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_Plein écran"
+
+#~ msgid "_New"
+#~ msgstr "_Nouveau"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_Rétablir le coup"
+
+#~ msgid "_Reset"
+#~ msgstr "_Réinitialiser"
+
+#~ msgid "_Restart"
+#~ msgstr "_Recommencer"
+
+#~ msgid "_Undo Move"
+#~ msgstr "A_nnuler le coup"
+
+#~ msgid "_Deal"
+#~ msgstr "_Distribuer"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "_Quitter le plein écran"
+
+#~ msgid "Network _Game"
+#~ msgstr "_Partie en réseau"
+
+#~ msgid "L_eave Game"
+#~ msgstr "_Quitter la partie"
+
+#~ msgid "Player _List"
+#~ msgstr "_Liste des joueurs"
+
+#~ msgid "_Pause"
+#~ msgstr "_Pause"
+
+#~ msgid "Res_ume"
+#~ msgstr "_Continuer"
+
+#~ msgid "_End Game"
+#~ msgstr "_Fin du jeu"
+
+#~ msgid "_Close"
+#~ msgstr "_Fermer"
 
 #~ msgid "Four-in-a-Row"
 #~ msgstr "Puissance 4"
