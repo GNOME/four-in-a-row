@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect documentation\n"
-"POT-Creation-Date: 2014-03-11 06:10+0000\n"
-"PO-Revision-Date: 2014-03-16 18:35+0100\n"
+"POT-Creation-Date: 2014-09-06 16:51+0000\n"
+"PO-Revision-Date: 2014-09-07 00:17+0200\n"
 "Last-Translator: Alain Lojewski <allomervan@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:13 C/basics.page:13 C/choose-opponent.page:13
-#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:11
+#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:12
 #: C/make-easy.page:13 C/scores.page:12 C/sound-animation.page:13
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -54,8 +54,8 @@ msgid ""
 "By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
 "a black grid when you start a new game."
 msgstr ""
-"Par défaut, <app>Quatre-à-la-suite</app> met en jeu des billes rouges et bleues "
-"sur une grille noire au début d'une nouvelle partie."
+"Par défaut, <app>Quatre-à-la-suite</app> met en jeu des billes rouges et "
+"bleues sur une grille noire au début d'une nouvelle partie."
 
 #. (itstool) path: steps/title
 #: C/appearance.page:26
@@ -87,8 +87,8 @@ msgstr ""
 msgid ""
 "Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
 msgstr ""
-"Démarrer, jouer en mode plein écran et quitter une partie de "
-"<app>Quatre-à-la-suite</app>."
+"Démarrer, jouer en mode plein écran et quitter une partie de <app>Quatre-à-"
+"la-suite</app>."
 
 #. (itstool) path: page/title
 #: C/basics.page:21
@@ -166,8 +166,8 @@ msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at level one."
 msgstr ""
-"Par défaut, votre adversaire dans <app>Quatre-à-la-suite</app> est l'ordinateur "
-"jouant au niveau un."
+"Par défaut, votre adversaire dans <app>Quatre-à-la-suite</app> est "
+"l'ordinateur jouant au niveau un."
 
 #. (itstool) path: steps/title
 #: C/choose-opponent.page:30
@@ -219,8 +219,8 @@ msgid ""
 "<gui>Player One</gui> can play first in the third game and so on."
 msgstr ""
 "Si vous jouez avec un ami ou un membre de votre famille, <gui>Joueur 1</gui> "
-"joue le premier dans la première partie de <app>Quatre-à-la-suite</app>. Pendant "
-"les parties suivantes, la chance de jouer le premier est donnée "
+"joue le premier dans la première partie de <app>Quatre-à-la-suite</app>. "
+"Pendant les parties suivantes, la chance de jouer le premier est donnée "
 "alternativement à chaque joueur. Ainsi, <gui>Joueur 2</gui> jouera le "
 "premier dans la seconde partie, <gui>Joueur 1</gui> peut jouer le premier "
 "dans la troisième partie et ainsi de suite."
@@ -329,49 +329,35 @@ msgstr "<key>→</key> pour déplacer la bille vers la droite."
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> pour déposer la bille."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.page:18
-msgctxt "_"
-msgid "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
-msgstr "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
-
 #. (itstool) path: info/desc
-#: C/index.page:15
+#: C/index.page:16
 msgid "Index"
 msgstr "Index"
 
 #. (itstool) path: page/title
-#: C/index.page:18
-msgid ""
-"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
-"media> Four-in-a-row"
-msgstr ""
-"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
-"media> Quatre-à-la-suite"
+#: C/index.page:19
+msgid "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
+msgstr "<_:media-1/><span its:translate=\"yes\"> Quatre-à-la-suite</span>"
 
 #. (itstool) path: page/p
-#: C/index.page:21
+#: C/index.page:22
 msgid ""
 "<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
 "is to stack four of your marbles in a horizontal, vertical or diagonal line "
 "while stopping your opponent from doing the same with their marbles."
 msgstr ""
-"<app>Quatre-à-la-suite</app> est un jeu de stratégie pour GNOME. Le but du jeu "
-"consiste à aligner quatre de vos billes horizontalement, verticalement ou en "
-"diagonale tout en empêchant votre adversaire d'en faire autant avec les "
-"siennes."
+"<app>Quatre-à-la-suite</app> est un jeu de stratégie pour GNOME. Le but du "
+"jeu consiste à aligner quatre de vos billes horizontalement, verticalement "
+"ou en diagonale tout en empêchant votre adversaire d'en faire autant avec "
+"les siennes."
 
 #. (itstool) path: section/title
-#: C/index.page:26
+#: C/index.page:27
 msgid "Game play"
 msgstr "Le jeu"
 
 #. (itstool) path: section/title
-#: C/index.page:30
+#: C/index.page:31
 msgid "Preferences"
 msgstr "Préférences"
 
@@ -400,13 +386,13 @@ msgid ""
 "key><key>Z</key></keyseq>. You can now drop your marble at a different "
 "square in the game area to change your move."
 msgstr ""
-"Lorsque l'ordinateur fait un coup gagnant en raison de votre dernière "
-"action ou lorsque vous avez malencontreusement fait un mauvais choix, "
-"vous pouvez annuler votre dernière action et la modifier. Pour annuler "
-"votre dernier coup, choisissez <guiseq><gui style=\"menu\">Jeu</gui> "
-"<gui style=\"menuitem\">Annuler le coup</gui></guiseq> ou appuyez sur "
-"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Déposez ensuite votre bille "
-"dans un autre carré de la grille."
+"Lorsque l'ordinateur fait un coup gagnant en raison de votre dernière action "
+"ou lorsque vous avez malencontreusement fait un mauvais choix, vous pouvez "
+"annuler votre dernière action et la modifier. Pour annuler votre dernier "
+"coup, choisissez <guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem"
+"\">Annuler le coup</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. Déposez ensuite votre bille dans un autre carré "
+"de la grille."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:33
@@ -415,10 +401,9 @@ msgid ""
 "a favourable state of the game, or until the beginning of your current game, "
 "by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
 msgstr ""
-"Vous pouvez annuler tous les coups précédent votre coup "
-"actuel jusqu'à atteindre un état favorable du jeu, ou jusqu'au début de la "
-"partie en cours en appuyant sur  <keyseq><key>Ctrl</key><key>Z</key></"
-"keyseq> à répétion."
+"Vous pouvez annuler tous les coups précédent votre coup actuel jusqu'à "
+"atteindre un état favorable du jeu, ou jusqu'au début de la partie en cours "
+"en appuyant sur  <keyseq><key>Ctrl</key><key>Z</key></keyseq> à répétion."
 
 #. (itstool) path: section/title
 #: C/make-easy.page:41
@@ -435,13 +420,12 @@ msgid ""
 "\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</key><key>H</"
 "key></keyseq>."
 msgstr ""
-"Si vous n'êtes pas certain de votre prochain coup, vous pouvez "
-"utiliser une astuce. Quand vous utilisez une astuce, votre bille se "
-"positionne au dessus de la colonne qui est le choix le plus judicieux et "
-"elle clignote. Déposez alors votre bille dans cette colonne. Pour utiliser "
-"une astuce, choisissez <guiseq><gui style=\"menu\">Jeu</gui> <gui style="
-"\"menuitem\">Astuce</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</"
-"key><key>H</key></keyseq>."
+"Si vous n'êtes pas certain de votre prochain coup, vous pouvez utiliser une "
+"astuce. Quand vous utilisez une astuce, votre bille se positionne au dessus "
+"de la colonne qui est le choix le plus judicieux et elle clignote. Déposez "
+"alors votre bille dans cette colonne. Pour utiliser une astuce, choisissez "
+"<guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem\">Astuce</gui></"
+"guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:51
@@ -473,10 +457,10 @@ msgid ""
 "select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
 "\">Scores</gui></guiseq>. In the default theme:"
 msgstr ""
-"Le tableau des scores dans <app>Quatre-à-la-suite</app> enregistre vos victoires, "
-"les victoires de votre adversaire et les parties nulles. Pour afficher les "
-"scores, faites <guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem"
-"\">Scores</gui></guiseq>. Dans le thème par défaut :"
+"Le tableau des scores dans <app>Quatre-à-la-suite</app> enregistre vos "
+"victoires, les victoires de votre adversaire et les parties nulles. Pour "
+"afficher les scores, faites <guiseq><gui style=\"menu\">Jeu</gui> <gui style="
+"\"menuitem\">Scores</gui></guiseq>. Dans le thème par défaut :"
 
 #. (itstool) path: item/p
 #: C/scores.page:32
@@ -505,10 +489,10 @@ msgid ""
 msgstr ""
 "Les libellé décrivant les joueurs affichés dans les <app>scores</app> "
 "changent selon l'adversaire et le thème sélectionné. Si vous avez "
-"sélectionner comme adversaire l'ordinateur, "
-"vous verrez les libellés <gui>Vous</gui> et <gui>Moi</gui>. Si vous "
-"jouez contre une autre personne, les libellés vous représentant seront "
-"la couleur des billes du thème sélectionné."
+"sélectionner comme adversaire l'ordinateur, vous verrez les libellés "
+"<gui>Vous</gui> et <gui>Moi</gui>. Si vous jouez contre une autre personne, "
+"les libellés vous représentant seront la couleur des billes du thème "
+"sélectionné."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:21
@@ -583,6 +567,19 @@ msgstr ""
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Cette œuvre est distribuée sous licence <_:link-1/>."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
+#~ msgstr ""
+#~ "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
+
+#~ msgid ""
+#~ "<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height="
+#~ "\"22\"> </media> Four-in-a-row"
+#~ msgstr ""
+#~ "<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height="
+#~ "\"22\"> </media> Quatre-à-la-suite"
 
 #~ msgid "If you are playing against a friend, the number next to:"
 #~ msgstr "Si vous jouez  contre un ami, le nombre à côté de :"
