@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-07 20:23+0000\n"
-"PO-Revision-Date: 2014-03-22 23:16+0100\n"
-"Last-Translator: Peter Mráz <etkinator@gmail.com>\n"
+"POT-Creation-Date: 2014-09-01 16:11+0000\n"
+"PO-Revision-Date: 2014-09-10 22:39+0100\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Hra Štyri v rade ponúka viaceré stupne obtiažnosti. Ak sa neviete pohnúť "
 "ďalej, môžete požiadať o radu."
 
-#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1175 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1179 ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Štyri v rade"
 
@@ -84,7 +84,7 @@ msgid "Whether or not to play event sounds."
 msgstr "Určuje, či sa majú prehrať zvuky udalostí."
 
 # summary
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
 msgid "Move left"
 msgstr "Posun doľava"
 
@@ -94,7 +94,7 @@ msgid "Key press to move left."
 msgstr "Kláves na posun doľava."
 
 # summary
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
 msgid "Move right"
 msgstr "Posun doprava"
 
@@ -104,7 +104,7 @@ msgid "Key press to move right."
 msgstr "Kláves na posun doprava."
 
 # summary
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
 msgid "Drop marble"
 msgstr "Pustiť"
 
@@ -117,224 +117,6 @@ msgstr "Kláves na pustenie guľôčky."
 msgid "Unknown Command"
 msgstr "Neznámy príkaz"
 
-# tooltip
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Zobrazí pomocníka pre túto hru"
-
-# tooltip
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Ukončí aktuálnu hru"
-
-# tooltip
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Prepne celoobrazovkový režim"
-
-# tooltip
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Zobrazí radu pre ďalší ťah"
-
-# tooltip
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Ukončí celoobrazovkový režim"
-
-# tooltip
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Spustí novú sieťovú hru pre viac hráčov"
-
-# tooltip
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Ukončí aktuálnu sieťovú hru a vráti sa na sieťový server"
-
-# tooltip
-#: ../src/games-stock.c:48 ../src/main.c:1265
-msgid "Start a new game"
-msgstr "Začne novú hru"
-
-# tooltip
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Pozastaví hru"
-
-# tooltip
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Zobrazí zoznam hráčov v sieťovej hre"
-
-# tooltip
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Umožní opakovať vrátený ťah"
-
-# tooltip
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Začne hru odznova"
-
-# tooltip
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Umožní pokračovať v pozastavenej hre"
-
-# tooltip
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Zobrazí tabuľku najlepších"
-
-# tooltip
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Vráti posledný ťah"
-
-# tooltip
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "O tejto hre"
-
-# tooltip
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Zavrie toto okno"
-
-# tooltip
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Nastaví hru"
-
-# tooltip
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Ukončí túto hru"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "Ob_sah"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "Na _celú obrazovku"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Rada"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Nová"
-
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1190
-msgid "_New Game"
-msgstr "_Nová hra"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "Z_opakovať vrátený ťah"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Vynulovať"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "Hrať _odznova"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "_Vrátiť ťah"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Zobrať kartu"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "_Opustiť celoobrazovkový režim"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "_Sieťová hra"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "O_pustiť hru"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "_Zoznam hráčov"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Pozastaviť"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "Po_kračovať"
-
-#: ../src/games-stock.c:267 ../src/main.c:1191
-msgid "_Scores"
-msgstr "_Skóre"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "_Koniec hry"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s je slobodný softvér; môžete ho ďalej šíriť a upravovať podľa ustanovení "
-"licencie GNU General Public Licence (Všeobecná zverejňovacia licencia GNU), "
-"vydávanej nadáciou Free Software Foundation a to buď podľa %d. verzie tejto "
-"Licencie, alebo (podľa vášho uváženia) ktorejkoľvek neskoršej verzie."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s je šírený v nádeji, že bude užitočný, avšak BEZ AKEJKOĽVEK ZÁRUKY; "
-"neposkytujú sa ani odvodené záruky PREDAJNOSTI alebo VHODNOSTI PRE URČITÝ "
-"ÚČEL. Ďalšie podrobnosti hľadajte v licencii GNU General Public License."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Kópiu GNU General Public License (Všeobecnej zverejňovacej licencie GNU) ste "
-"mali dostať spolu s %s; ak sa tak nestalo, požiadajte o ňu na adrese Free "
-"Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
-"02110-1301, USA."
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Kópiu licencie GNU General Public License (Všeobecnej zverejňovacej licencie "
-"GNU) ste mali dostať spolu s programom. Ak sa tak nestalo, navštívte <http://"
-"www.gnu.org/licenses/>."
-
 #: ../src/gfx.c:247
 #, c-format
 msgid ""
@@ -344,64 +126,50 @@ msgstr ""
 "Nepodarilo sa načítať obrázok:\n"
 "%s"
 
-#: ../src/main.c:511
+#: ../src/main.c:510
 msgid "It’s a draw!"
 msgstr "Remíza!"
 
-#: ../src/main.c:520
+#: ../src/main.c:519
 msgid "You win!"
 msgstr "Vyhrali ste!"
 
-#: ../src/main.c:522 ../src/main.c:541
+#: ../src/main.c:521 ../src/main.c:540
 msgid "Your Turn"
 msgstr "Ste na ťahu"
 
-#: ../src/main.c:525
+#: ../src/main.c:524
 msgid "I win!"
 msgstr "Vyhral som!"
 
-#: ../src/main.c:527 ../src/main.c:628
+#: ../src/main.c:526 ../src/main.c:631
 msgid "I’m Thinking…"
 msgstr "Rozmýšľam…"
 
-#: ../src/main.c:538
-#, c-format
-msgid "%s wins!"
-msgstr "%s vyhral!"
-
-#: ../src/main.c:545
-#, c-format
-msgid "%s’s Turn"
-msgstr "Na ťahu je %s"
-
-#: ../src/main.c:641
+#: ../src/main.c:644
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Rada: Stĺpec %d"
 
-#: ../src/main.c:669 ../src/main.c:673
+#: ../src/main.c:672 ../src/main.c:676
 msgid "You:"
 msgstr "Vy:"
 
-#: ../src/main.c:670 ../src/main.c:672
+#: ../src/main.c:673 ../src/main.c:675
 msgid "Me:"
 msgstr "Ja:"
 
-#: ../src/main.c:718
+#: ../src/main.c:721
 msgid "Scores"
 msgstr "Skóre"
 
-#: ../src/main.c:721
-msgid "_Close"
-msgstr "_Zatvoriť"
-
 # PK: preco pl.?
 # PM: lebo je zatým počet remíz.
-#: ../src/main.c:759
+#: ../src/main.c:762
 msgid "Drawn:"
 msgstr "Remízy:"
 
-#: ../src/main.c:807
+#: ../src/main.c:810
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -411,7 +179,7 @@ msgstr ""
 "\n"
 "Hra Štyri v rade je súčasťou Hier GNOME."
 
-#: ../src/main.c:810
+#: ../src/main.c:813
 msgid "translator-credits"
 msgstr ""
 "Stanislav Višňovský (visnovsky@nenya.ms.mff.cuni.cz)\n"
@@ -419,69 +187,90 @@ msgstr ""
 "Peter Mráz <etkinator@gmail.com>\n"
 "Ján Kyselica <kyselica.jan@gmail.com>"
 
-#: ../src/main.c:1192
-msgid "_Preferences"
-msgstr "_Nastavenia"
-
-#: ../src/main.c:1195
-msgid "_Help"
-msgstr "_Pomocník"
-
-#: ../src/main.c:1196
-msgid "_About"
-msgstr "O _programe"
-
-#: ../src/main.c:1197
-msgid "_Quit"
-msgstr "_Ukončiť"
-
-#: ../src/main.c:1245
+#: ../src/main.c:1188
 msgid "Undo your most recent move"
 msgstr "Vráti naposledy použitý ťah"
 
+#: ../src/main.c:1202
+msgid "_New Game"
+msgstr "_Nová hra"
+
+#: ../src/main.c:1203
+msgid "_Scores"
+msgstr "_Skóre"
+
+#: ../src/main.c:1204
+msgid "_Preferences"
+msgstr "_Nastavenia"
+
+#: ../src/main.c:1207
+msgid "_Help"
+msgstr "_Pomocník"
+
+#: ../src/main.c:1208
+msgid "_About"
+msgstr "O _programe"
+
+#: ../src/main.c:1209
+msgid "_Quit"
+msgstr "_Ukončiť"
+
+#: ../src/main.c:1248
+msgid "_Hint"
+msgstr "_Rada"
+
 # tooltip
-#: ../src/main.c:1255
+#: ../src/main.c:1254
 msgid "Receive a hint for your next move"
 msgstr "Zobrazí radu pre ďalší ťah"
+
+#: ../src/main.c:1258
+msgid "_Start Over"
+msgstr "_Začať odznovu"
+
+# tooltip
+#: ../src/main.c:1264
+msgid "Start a new game"
+msgstr "Začne novú hru"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
 msgstr "Nastavenia"
 
-#: ../src/prefs.c:194
+#: ../src/prefs.c:193
 msgid "Game"
 msgstr "Hra"
 
-#: ../src/prefs.c:197
+#: ../src/prefs.c:196
 msgid "Opponent:"
 msgstr "Protihráč:"
 
-#: ../src/prefs.c:208
+#: ../src/prefs.c:207
 msgid "Human"
 msgstr "Človek"
 
-#: ../src/prefs.c:212
+#: ../src/prefs.c:211
 msgid "Level one"
 msgstr "Úroveň 1"
 
-#: ../src/prefs.c:216
+#: ../src/prefs.c:215
 msgid "Level two"
 msgstr "Úroveň 2"
 
-#: ../src/prefs.c:220
+#: ../src/prefs.c:219
 msgid "Level three"
 msgstr "Úroveň 3"
 
-#: ../src/prefs.c:226
+#: ../src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Téma:"
 
-#: ../src/prefs.c:239
+#: ../src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "Povoliť _zvuky"
 
 #. keyboard tab
-#: ../src/prefs.c:244
+#: ../src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Ovládanie klávesnicou"
 
@@ -489,51 +278,82 @@ msgstr "Ovládanie klávesnicou"
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
 msgstr "Krúžok"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44 ../src/theme.c:53
 msgid "Cross"
 msgstr "Krížik"
 
-#: ../src/theme.c:47
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Circle wins!"
+msgstr "Krúžok vyhral!"
+
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Cross wins!"
+msgstr "Krížik vyhral!"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Circle’s turn"
+msgstr "Na ťahu je krúžok"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Cross’s turn"
+msgstr "Na ťahu je krížik"
+
+#: ../src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "Inverzný vysoký kontrast"
 
-#: ../src/theme.c:54
+#: ../src/theme.c:58
 msgid "Red and Green Marbles"
 msgstr "Červené a zelené gulôčky"
 
 # PK: spravny rod?
 # PM: Farba hráča, Farba červíka
-#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
 msgid "Red"
 msgstr "Červená"
 
-#: ../src/theme.c:58 ../src/theme.c:72
+#: ../src/theme.c:62 ../src/theme.c:80
 msgid "Green"
 msgstr "Zelená"
 
-#: ../src/theme.c:61
+#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+msgid "Red wins!"
+msgstr "Červený vyhral!"
+
+#: ../src/theme.c:63 ../src/theme.c:81
+msgid "Green wins!"
+msgstr "Zelený vyhral!"
+
+#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+msgid "Red’s turn"
+msgstr "Na ťahu je červený"
+
+#: ../src/theme.c:64 ../src/theme.c:82
+msgid "Green’s turn"
+msgstr "Na ťahu je zelený"
+
+#: ../src/theme.c:67
 msgid "Blue and Red Marbles"
 msgstr "Modré a červené gulôčky"
 
 # PK: spravny rod?
 # PM: Farba hráča, Farba červíka
-#: ../src/theme.c:65
+#: ../src/theme.c:71
 msgid "Blue"
 msgstr "Modrá"
 
-#: ../src/theme.c:68
+#: ../src/theme.c:72
+msgid "Blue wins!"
+msgstr "Modrý vyhral!"
+
+#: ../src/theme.c:73
+msgid "Blue’s turn"
+msgstr "Na ťahu je modrý"
+
+#: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Hviezdy a kruhy"
-
-#~ msgid "Four-in-a-Row"
-#~ msgstr "Štyri v rade"
-
-#~ msgid "Level of Player One"
-#~ msgstr "Úroveň hráča č.1"
-
-#~ msgid "Level of Player Two"
-#~ msgstr "Úroveň hráča č.2"
