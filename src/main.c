@@ -344,7 +344,7 @@ static void
 swap_player (void)
 {
   player = (player == PLAYER1) ? PLAYER2 : PLAYER1;
-  move_cursor (column);
+  move_cursor (3);
   prompt_player ();
 }
 
