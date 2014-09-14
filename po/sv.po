@@ -1,5 +1,5 @@
 # Swedish messages for gnome-games.
-# Copyright (C) 1999-2014 Free Software Foundation, Inc.
+# Copyright © 1999-2014 Free Software Foundation, Inc.
 # Andreas Persenius <ndap@swipnet.se>, 1999.
 # Andreas Hyden <a.hyden@cyberpoint.se>
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-24 14:39+0000\n"
-"PO-Revision-Date: 2014-03-26 23:26+0100\n"
+"POT-Creation-Date: 2014-09-01 16:11+0000\n"
+"PO-Revision-Date: 2014-08-31 10:46+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -56,7 +56,6 @@ msgid "game;strategy;logic;"
 msgstr "spel;strategi;logik;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-#| msgid "Computer Opponents"
 msgid "Opponent"
 msgstr "Motståndare"
 
@@ -68,7 +67,7 @@ msgstr "Noll är mänsklig, ett till tre motsvarar nivån för datorspelaren."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
-msgstr "Tema-id"
+msgstr "Tema-ID"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
@@ -82,7 +81,7 @@ msgstr "Ljud"
 msgid "Whether or not to play event sounds."
 msgstr "Huruvida händelseljud ska spelas eller inte."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
 msgid "Move left"
 msgstr "Flytta vänster"
 
@@ -90,7 +89,7 @@ msgstr "Flytta vänster"
 msgid "Key press to move left."
 msgstr "Tangenttryck för att flytta till vänster."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
 msgid "Move right"
 msgstr "Flytta höger"
 
@@ -98,7 +97,7 @@ msgstr "Flytta höger"
 msgid "Key press to move right."
 msgstr "Tangenttryck för att flytta till höger."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
 msgid "Drop marble"
 msgstr "Släpp kula"
 
@@ -110,204 +109,6 @@ msgstr "Tangenttryck för att släppa en kula."
 msgid "Unknown Command"
 msgstr "Okänt kommando"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Visa hjälp för detta spel"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Avsluta det aktuella spelet"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Växla helskärmsläge"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Få tips angående ditt nästa drag"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Lämna helskärmsläge"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Starta ett nytt nätverksspel med flera spelare"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Avsluta aktuellt nätverksspel och återvänd till nätverksservern"
-
-#: ../src/games-stock.c:48 ../src/main.c:1269
-msgid "Start a new game"
-msgstr "Starta ett nytt spel"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Gör paus i spelet"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Visa en lista på spelare i nätverksspelet"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Gör om det ångrade draget"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Starta om spelet"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Återuppta det pausade spelet"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Visa poänglistan"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Ångra det senaste draget"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "Om detta spel"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Stäng det här fönstret"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Konfigurera spelet"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Avsluta detta spel"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Innehåll"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Helskärm"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Tips"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Nytt"
-
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1194
-msgid "_New Game"
-msgstr "_Nytt spel"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_Gör om drag"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "N_ollställ"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "Starta _om"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "_Ångra drag"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Ge"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "_Lämna helskärmsläge"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "Nätver_ksspel"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "Läm_na spel"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "Spelar_lista"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "Gör _paus"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "_Återuppta"
-
-#: ../src/games-stock.c:267 ../src/main.c:1195
-msgid "_Scores"
-msgstr "_Poänglista"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "_Avsluta spel"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s är fri programvara. Du kan distribuera det och/eller modifiera det under "
-"villkoren i GNU General Public License, publicerad av Free Software "
-"Foundation, antingen version %d av licensen eller (om du så vill) någon "
-"senare version."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s distribueras i hopp om att det ska vara användbart, men UTAN NÅGON SOM "
-"HELST GARANTI, även utan underförstådd garanti om SÄLJBARHET eller "
-"LÄMPLIGHET FÖR NÅGOT SPECIELLT ÄNDAMÅL. Se GNU General Public License för "
-"ytterligare information."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Du bör ha fått en kopia av GNU General Public License tillsammans med %s. Om "
-"inte, skriv till Free Software Foundation, Inc., 51 Franklin Street, Fifth "
-"Floor, Boston, MA  02110-1301, USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Du bör ha fått en kopia av GNU General Public License tillsammans med detta "
-"program. Om inte, se <http://www.gnu.org/licenses/>."
-
 #: ../src/gfx.c:247
 #, c-format
 msgid ""
@@ -317,62 +118,48 @@ msgstr ""
 "Kan inte läsa in bild:\n"
 "%s"
 
-#: ../src/main.c:511
-#| msgid "It's a draw!"
+#: ../src/main.c:510
 msgid "It’s a draw!"
 msgstr "Det är oavgjort!"
 
-#: ../src/main.c:520
+#: ../src/main.c:519
 msgid "You win!"
 msgstr "Du vinner!"
 
-#: ../src/main.c:522 ../src/main.c:541
+#: ../src/main.c:521 ../src/main.c:540
 msgid "Your Turn"
 msgstr "Ditt drag"
 
-#: ../src/main.c:525
+#: ../src/main.c:524
 msgid "I win!"
 msgstr "Jag vinner!"
 
-#: ../src/main.c:527 ../src/main.c:632
+#: ../src/main.c:526 ../src/main.c:631
 msgid "I’m Thinking…"
 msgstr "Jag tänker…"
 
-#: ../src/main.c:538 ../src/main.c:549
-#, c-format
-msgid "%s"
-msgstr "%s"
-
-#: ../src/main.c:645
+#: ../src/main.c:644
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Tips: Kolumn %d"
 
-#: ../src/main.c:673 ../src/main.c:677
+#: ../src/main.c:672 ../src/main.c:676
 msgid "You:"
 msgstr "Du:"
 
-#: ../src/main.c:674 ../src/main.c:676
+#: ../src/main.c:673 ../src/main.c:675
 msgid "Me:"
 msgstr "Jag:"
 
-#: ../src/main.c:722
+#: ../src/main.c:721
 msgid "Scores"
 msgstr "Poäng"
 
-#: ../src/main.c:725
-msgid "_Close"
-msgstr "_Stäng"
-
-#: ../src/main.c:763
+#: ../src/main.c:762
 msgid "Drawn:"
 msgstr "Oavgjort:"
 
-#: ../src/main.c:811
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
+#: ../src/main.c:810
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -382,7 +169,7 @@ msgstr ""
 "\n"
 "Fyra-i-rad är en del av GNOME Games."
 
-#: ../src/main.c:814
+#: ../src/main.c:813
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -395,70 +182,88 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: ../src/main.c:1196
-msgid "_Preferences"
-msgstr "_Inställningar"
-
-#: ../src/main.c:1199
-msgid "_Help"
-msgstr "_Hjälp"
-
-#: ../src/main.c:1200
-msgid "_About"
-msgstr "_Om"
-
-#: ../src/main.c:1201
-msgid "_Quit"
-msgstr "A_vsluta"
-
-#: ../src/main.c:1249
-#| msgid "The users's most recent level."
+#: ../src/main.c:1188
 msgid "Undo your most recent move"
 msgstr "Ångra ditt senaste drag"
 
-#: ../src/main.c:1259
-#| msgid "Get a hint for your next move"
+#: ../src/main.c:1202
+msgid "_New Game"
+msgstr "_Nytt spel"
+
+#: ../src/main.c:1203
+msgid "_Scores"
+msgstr "_Poänglista"
+
+#: ../src/main.c:1204
+msgid "_Preferences"
+msgstr "_Inställningar"
+
+#: ../src/main.c:1207
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: ../src/main.c:1208
+msgid "_About"
+msgstr "_Om"
+
+#: ../src/main.c:1209
+msgid "_Quit"
+msgstr "A_vsluta"
+
+#: ../src/main.c:1248
+msgid "_Hint"
+msgstr "_Tips"
+
+#: ../src/main.c:1254
 msgid "Receive a hint for your next move"
 msgstr "Få ett tips angående ditt nästa drag"
+
+#: ../src/main.c:1258
+msgid "_Start Over"
+msgstr "_Börja om"
+
+#: ../src/main.c:1264
+msgid "Start a new game"
+msgstr "Starta ett nytt spel"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: ../src/prefs.c:194
+#: ../src/prefs.c:193
 msgid "Game"
 msgstr "Spel"
 
-#: ../src/prefs.c:197
+#: ../src/prefs.c:196
 msgid "Opponent:"
 msgstr "Motståndare:"
 
-#: ../src/prefs.c:208
+#: ../src/prefs.c:207
 msgid "Human"
 msgstr "Mänsklig"
 
-#: ../src/prefs.c:212
+#: ../src/prefs.c:211
 msgid "Level one"
 msgstr "Nivå ett"
 
-#: ../src/prefs.c:216
+#: ../src/prefs.c:215
 msgid "Level two"
 msgstr "Nivå två"
 
-#: ../src/prefs.c:220
+#: ../src/prefs.c:219
 msgid "Level three"
 msgstr "Nivå tre"
 
-#: ../src/prefs.c:226
+#: ../src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: ../src/prefs.c:239
+#: ../src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "Ak_tivera ljud"
 
 #. keyboard tab
-#: ../src/prefs.c:244
+#: ../src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Tangentbordsstyrning"
 
@@ -475,12 +280,10 @@ msgid "Cross"
 msgstr "Kryss"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "Circle"
 msgid "Circle wins!"
 msgstr "Cirkel vinner!"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "%s wins!"
 msgid "Cross wins!"
 msgstr "Kryss vinner!"
 
@@ -509,12 +312,10 @@ msgid "Green"
 msgstr "Grön"
 
 #: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Red wins!"
 msgstr "Röd vinner!"
 
 #: ../src/theme.c:63 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Green wins!"
 msgstr "Grön vinner!"
 
@@ -527,7 +328,6 @@ msgid "Green’s turn"
 msgstr "Grön vid draget"
 
 #: ../src/theme.c:67
-#| msgid "Cream Marbles"
 msgid "Blue and Red Marbles"
 msgstr "Blåa och röda kulor"
 
@@ -536,7 +336,6 @@ msgid "Blue"
 msgstr "Blå"
 
 #: ../src/theme.c:72
-#| msgid "Black wins"
 msgid "Blue wins!"
 msgstr "Blå vinner!"
 
@@ -545,6 +344,5 @@ msgid "Blue’s turn"
 msgstr "Blå vid draget"
 
 #: ../src/theme.c:76
-#| msgid "Squares and Diamonds"
 msgid "Stars and Rings"
 msgstr "Stjärnor och ringar"
