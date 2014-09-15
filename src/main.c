@@ -135,12 +135,10 @@ first_empty_row (gint c)
 static gint
 get_n_human_players (void)
 {
-  if (p.level[PLAYER1] != LEVEL_HUMAN && p.level[PLAYER2] != LEVEL_HUMAN) {
+  if (p.level[PLAYER1] != LEVEL_HUMAN && p.level[PLAYER2] != LEVEL_HUMAN)
     return 0;
-  }
-  if (p.level[PLAYER1] != LEVEL_HUMAN || p.level[PLAYER2] != LEVEL_HUMAN) {
+  if (p.level[PLAYER1] != LEVEL_HUMAN || p.level[PLAYER2] != LEVEL_HUMAN)
     return 1;
-  }
   return 2;
 }
 
@@ -149,10 +147,8 @@ get_n_human_players (void)
 static gboolean
 is_player_human (void)
 {
-  if (player == PLAYER1) {
-    return p.level[PLAYER1] == LEVEL_HUMAN;
-  }
-  return p.level[PLAYER2] == LEVEL_HUMAN;
+  return player == PLAYER1 ? p.level[PLAYER1] == LEVEL_HUMAN
+                           : p.level[PLAYER2] == LEVEL_HUMAN;
 }
 
 
@@ -161,11 +157,7 @@ static void
 drop_marble (gint r, gint c)
 {
   gint tile;
-
-  if (player == PLAYER1)
-    tile = TILE_PLAYER1;
-  else
-    tile = TILE_PLAYER2;
+  tile = player == PLAYER1 ? TILE_PLAYER1 : TILE_PLAYER2;
 
   gboard[r][c] = tile;
   gfx_draw_tile (r, c);
@@ -180,11 +172,7 @@ static void
 drop (void)
 {
   gint tile;
-
-  if (player == PLAYER1)
-    tile = TILE_PLAYER1;
-  else
-    tile = TILE_PLAYER2;
+  tile = player == PLAYER1 ? TILE_PLAYER1 : TILE_PLAYER2;
 
   gboard[row][column] = TILE_CLEAR;
   gfx_draw_tile (row, column);
@@ -197,40 +185,23 @@ drop (void)
 
 
 static void
-move_cursor (gint c)
-{
-  gboard[0][column] = TILE_CLEAR;
-  gfx_draw_tile (0, column);
-
-  column = c;
-
-  if (player == PLAYER1)
-    gboard[0][c] = TILE_PLAYER1;
-  else
-    gboard[0][c] = TILE_PLAYER2;
-
-  gfx_draw_tile (0, c);
-
-  column = column_moveto = c;
-  row = row_dropto = 0;
-}
-
-
-
-static void
 move (gint c)
 {
   gboard[0][column] = TILE_CLEAR;
   gfx_draw_tile (0, column);
 
   column = c;
-
-  if (player == PLAYER1)
-    gboard[0][c] = TILE_PLAYER1;
-  else
-    gboard[0][c] = TILE_PLAYER2;
+  gboard[0][c] = player == PLAYER1 ? TILE_PLAYER1 : TILE_PLAYER2;
 
   gfx_draw_tile (0, c);
+}
+
+static void
+move_cursor (gint c)
+{
+  move (c);
+  column = column_moveto = c;
+  row = row_dropto = 0;
 }
 
 
@@ -285,10 +256,10 @@ on_animate (gint c)
     } else {
       timeout = 0;
       if (anim == ANIM_MOVE) {
-	anim = ANIM_NONE;
-	process_move2 (c);
+        anim = ANIM_NONE;
+        process_move2 (c);
       } else {
-	anim = ANIM_NONE;
+        anim = ANIM_NONE;
       }
       return FALSE;
     }
@@ -304,10 +275,8 @@ on_animate (gint c)
     }
     break;
   case ANIM_BLINK:
-    if (blink_on)
-      draw_line (blink_r1, blink_c1, blink_r2, blink_c2, blink_t);
-    else
-      draw_line (blink_r1, blink_c1, blink_r2, blink_c2, TILE_CLEAR);
+      draw_line (blink_r1, blink_c1, blink_r2, blink_c2, blink_on ? blink_t
+                                                                  : TILE_CLEAR);
     blink_n--;
     if (blink_n <= 0 && blink_on) {
       anim = ANIM_NONE;
@@ -381,7 +350,7 @@ game_init (void)
   score[PLAYER2] = 0;
   score[NOBODY] = 0;
 
-  who_starts = PLAYER2;		/* This gets reversed immediately. */
+  who_starts = PLAYER2;     /* This gets reversed immediately. */
 
   clear_board ();
 }
@@ -415,11 +384,8 @@ game_reset (void)
   gameover = FALSE;
   prompt_player ();
   if (!is_player_human ()) {
-    if (player == PLAYER1) {
-      vstr[0] = vlevel[p.level[PLAYER1]];
-    } else {
-      vstr[0] = vlevel[p.level[PLAYER2]];
-    }
+    vstr[0] = player == PLAYER1 ? vlevel[p.level[PLAYER1]]
+                                : vlevel[p.level[PLAYER2]];
     game_process_move (playgame (vstr) - 1);
   }
 }
@@ -504,11 +470,10 @@ prompt_player (void)
   }
 
   if (gameover && winner == NOBODY) {
-    if (score[NOBODY] == 0) {
+    if (score[NOBODY] == 0)
       set_status_message (NULL);
-    } else {
+    else
       set_status_message (_("It’s a draw!"));
-    }
     return;
   }
 
@@ -516,36 +481,30 @@ prompt_player (void)
   case 1:
     if (human) {
       if (gameover)
-	set_status_message (_("You win!"));
+        set_status_message (_("You win!"));
       else
-	set_status_message (_("Your Turn"));
+        set_status_message (_("Your Turn"));
     } else {
       if (gameover)
-	set_status_message (_("I win!"));
+        set_status_message (_("I win!"));
       else
-	set_status_message (_("I’m Thinking…"));
+        set_status_message (_("I’m Thinking…"));
     }
     break;
   case 2:
   case 0:
 
     if (gameover) {
-	if (player == PLAYER1)
-	  who = theme_get_player_win (PLAYER1);
-	else
-	  who = theme_get_player_win (PLAYER2);
-	str = g_strdup_printf ("%s", _(who));
-      }
-    else if (player_active) {
+      who = player == PLAYER1 ? theme_get_player_win (PLAYER1)
+                              : theme_get_player_win (PLAYER2);
+      str = g_strdup_printf ("%s", _(who));
+    } else if (player_active) {
       set_status_message (_("Your Turn"));
       return;
-
     } else {
-	if (player == PLAYER1)
-	  who = theme_get_player_turn (PLAYER1);
-	else
-	  who = theme_get_player_turn (PLAYER2);
-        str = g_strdup_printf ("%s", _(who));
+      who = player == PLAYER1 ? theme_get_player_turn (PLAYER1)
+                              : theme_get_player_turn (PLAYER2);
+      str = g_strdup_printf ("%s", _(who));
     }
 
     set_status_message (str);
@@ -646,9 +605,9 @@ on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
   g_free (s);
 
   if (moves <= 0 || (moves == 1 && is_player_human ()))
-	g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
   else
-	g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), TRUE);
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), TRUE);
 }
 
 void
@@ -677,9 +636,9 @@ scorebox_update (void)
     }
   } else {
     gtk_label_set_text (GTK_LABEL (label_name[PLAYER1]),
-			_(theme_get_player (PLAYER1)));
+                        _(theme_get_player (PLAYER1)));
     gtk_label_set_text (GTK_LABEL (label_name[PLAYER2]),
-			_(theme_get_player (PLAYER2)));
+                        _(theme_get_player (PLAYER2)));
   }
 
   s = g_strdup_printf ("%d", score[PLAYER1]);
@@ -719,16 +678,16 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
   }
 
   scorebox = gtk_dialog_new_with_buttons (_("Scores"),
-					  GTK_WINDOW (window),
-					  GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_USE_HEADER_BAR,
-					  NULL);
+                                          GTK_WINDOW (window),
+                                          GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_USE_HEADER_BAR,
+                                          NULL);
 
   gtk_window_set_resizable (GTK_WINDOW (scorebox), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (scorebox), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))), 2);
 
   g_signal_connect (scorebox, "destroy",
-		    G_CALLBACK (gtk_widget_destroyed), &scorebox);
+                    G_CALLBACK (gtk_widget_destroyed), &scorebox);
 
   grid = gtk_grid_new ();
   gtk_widget_set_halign (grid, GTK_ALIGN_CENTER);
@@ -737,7 +696,7 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
   gtk_container_set_border_width (GTK_CONTAINER (grid), 5);
 
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))),
-		      grid, TRUE, TRUE, 0);
+                      grid, TRUE, TRUE, 0);
 
   grid2 = gtk_grid_new ();
   gtk_container_add (GTK_CONTAINER (grid), grid2);
@@ -768,7 +727,7 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
   gtk_misc_set_alignment (GTK_MISC (label_score[NOBODY]), 1, 0.5);
 
   g_signal_connect (GTK_DIALOG (scorebox), "response",
-		    G_CALLBACK (on_dialog_close), NULL);
+                    G_CALLBACK (on_dialog_close), NULL);
 
   gtk_widget_show_all (scorebox);
 
@@ -802,18 +761,18 @@ on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
   };
 
   gtk_show_about_dialog (GTK_WINDOW (window),
-			 "name", _(APPNAME_LONG),
-			 "version", VERSION,
-			 "copyright",
-			 "Copyright © 1999–2008, Tim Musson and David Neary",
-			 "license-type", GTK_LICENSE_GPL_2_0, "comments",
-		         _("Connect four in a row to win.\n\nFour-in-a-row is a part of GNOME Games."),
-			 "authors", authors, "documenters", documenters,
-			 "artists", artists, "translator-credits",
-			 _("translator-credits"),
-			 "logo-icon-name", "four-in-a-row",
-			 "website", "https://wiki.gnome.org/Apps/Four-in-a-row",
-			 NULL);
+                         "name", _(APPNAME_LONG),
+                         "version", VERSION,
+                         "copyright",
+                         "Copyright © 1999–2008, Tim Musson and David Neary",
+                         "license-type", GTK_LICENSE_GPL_2_0, "comments",
+                         _("Connect four in a row to win.\n\nFour-in-a-row is a part of GNOME Games."),
+                         "authors", authors, "documenters", documenters,
+                         "artists", artists, "translator-credits",
+                         _("translator-credits"),
+                         "logo-icon-name", "four-in-a-row",
+                         "website", "https://wiki.gnome.org/Apps/Four-in-a-row",
+                         NULL);
 }
 
 
@@ -838,8 +797,7 @@ on_settings_preferences (GSimpleAction *action, GVariant *parameter, gpointer us
 
 
 static gboolean
-is_hline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2,
-	     gint * c2)
+is_hline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   *r1 = *r2 = r;
   *c1 = *c2 = c;
@@ -855,8 +813,7 @@ is_hline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2,
 
 
 static gboolean
-is_vline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2,
-	     gint * c2)
+is_vline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   *r1 = *r2 = r;
   *c1 = *c2 = c;
@@ -872,8 +829,7 @@ is_vline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2,
 
 
 static gboolean
-is_dline1_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2,
-	      gint * c2)
+is_dline1_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   /* upper left to lower right */
   *r1 = *r2 = r;
@@ -894,8 +850,7 @@ is_dline1_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2,
 
 
 static gboolean
-is_dline2_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2,
-	      gint * c2)
+is_dline2_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   /* upper right to lower left */
   *r1 = *r2 = r;
@@ -937,8 +892,7 @@ blink_winner (gint n)
     return;
 
   blink_t = winner;
-  if (is_hline_at
-      (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
+  if (is_hline_at (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
@@ -947,8 +901,7 @@ blink_winner (gint n)
       gtk_main_iteration ();
   }
 
-  if (is_vline_at
-      (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
+  if (is_vline_at (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
@@ -957,8 +910,7 @@ blink_winner (gint n)
       gtk_main_iteration ();
   }
 
-  if (is_dline1_at
-      (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
+  if (is_dline1_at (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
@@ -967,8 +919,7 @@ blink_winner (gint n)
       gtk_main_iteration ();
   }
 
-  if (is_dline2_at
-      (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
+  if (is_dline2_at (winner, row, column, &blink_r1, &blink_c1, &blink_r2, &blink_c2)) {
     anim = ANIM_BLINK;
     blink_on = FALSE;
     blink_n = n;
@@ -988,11 +939,7 @@ check_game_state (void)
     winner = player;
     switch (get_n_human_players ()) {
     case 1:
-      if (is_player_human ()) {
-	play_sound (SOUND_YOU_WIN);
-      } else {
-	play_sound (SOUND_I_WIN);
-      }
+      play_sound (is_player_human () ? SOUND_YOU_WIN : SOUND_I_WIN);
       break;
     case 0:
     case 2:
@@ -1024,16 +971,13 @@ void
 process_move (gint c)
 {
   if (timeout) {
-    g_timeout_add (SPEED_DROP,
-	           (GSourceFunc) next_move, GINT_TO_POINTER (c));
+    g_timeout_add (SPEED_DROP, (GSourceFunc) next_move, GINT_TO_POINTER (c));
     return;
-
   }
 
   column_moveto = c;
   anim = ANIM_MOVE;
-  timeout = g_timeout_add (SPEED_MOVE,
-                           (GSourceFunc) on_animate, GINT_TO_POINTER (c));
+  timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
 }
 
 static void
@@ -1046,9 +990,7 @@ process_move2 (gint c)
     row = 0;
     row_dropto = r;
     anim = ANIM_DROP;
-    timeout = g_timeout_add (SPEED_DROP,
-                             (GSourceFunc) on_animate,
-                             GINT_TO_POINTER (c));
+    timeout = g_timeout_add (SPEED_DROP, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
   } else {
     play_sound (SOUND_COLUMN_FULL);
   }
@@ -1071,16 +1013,12 @@ process_move3 (gint c)
   } else {
     swap_player ();
     if (!is_player_human ()) {
-      if (player == PLAYER1) {
-	vstr[0] = vlevel[p.level[PLAYER1]];
-      } else {
-	vstr[0] = vlevel[p.level[PLAYER2]];
-      }
+      vstr[0] = player == PLAYER1 ? vlevel[p.level[PLAYER1]]
+                                  : vlevel[p.level[PLAYER2]];
       c = playgame (vstr) - 1;
       if (c < 0)
-	gameover = TRUE;
-      g_timeout_add (SPEED_DROP,
-                     (GSourceFunc) next_move, GINT_TO_POINTER (c));
+        gameover = TRUE;
+      g_timeout_add (SPEED_DROP, (GSourceFunc) next_move, GINT_TO_POINTER (c));
     }
   }
 }
@@ -1222,13 +1160,13 @@ create_app (void)
 
   gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK);
   g_signal_connect (G_OBJECT (drawarea), "configure_event",
-		    G_CALLBACK (on_drawarea_resize), NULL);
+                    G_CALLBACK (on_drawarea_resize), NULL);
   g_signal_connect (G_OBJECT (drawarea), "draw",
-		    G_CALLBACK (on_drawarea_draw), NULL);
+                    G_CALLBACK (on_drawarea_draw), NULL);
   g_signal_connect (G_OBJECT (drawarea), "button_press_event",
-		    G_CALLBACK (on_button_press), NULL);
+                    G_CALLBACK (on_button_press), NULL);
   g_signal_connect (G_OBJECT (window), "key_press_event",
-		    G_CALLBACK (on_key_press), NULL);
+                    G_CALLBACK (on_key_press), NULL);
 
   /* We do our own double-buffering. */
   gtk_widget_set_double_buffered (GTK_WIDGET (drawarea), FALSE);
@@ -1241,7 +1179,7 @@ create_app (void)
   gfx_refresh_pixmaps ();
   gfx_draw_all ();
 
-  scorebox_update ();		/* update visible player descriptions */
+  scorebox_update ();       /* update visible player descriptions */
   prompt_player ();
 
   game_reset ();
@@ -1284,9 +1222,8 @@ main (int argc, char *argv[])
   game_init ();
 
   /* init gfx */
-  if (!gfx_load_pixmaps ()) {
+  if (!gfx_load_pixmaps ())
     exit (1);
-  }
 
   app_retval = g_application_run (G_APPLICATION (application), argc, argv);
 
