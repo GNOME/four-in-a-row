@@ -1267,19 +1267,21 @@ create_app (void)
   g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
 
-  gtk_widget_show_all (window);
-
-  gfx_refresh_pixmaps ();
-  gfx_draw_all ();
-
-  scorebox_update ();		/* update visible player descriptions */
-  prompt_player ();
-
-  game_reset ();
   return TRUE;
 }
 
-
+static void
+activate (void)
+{
+  if (!gtk_widget_is_visible (window)) {
+    gtk_widget_show_all (window);
+    gfx_refresh_pixmaps ();
+    gfx_draw_all ();
+    scorebox_update ();		/* update visible player descriptions */
+    prompt_player ();
+    game_reset ();
+  }
+}
 
 int
 main (int argc, char *argv[])
@@ -1295,7 +1297,8 @@ main (int argc, char *argv[])
   textdomain (GETTEXT_PACKAGE);
 
   application = gtk_application_new ("org.gnome.four-in-a-row", 0);
-  g_signal_connect (application, "activate", G_CALLBACK (create_app), NULL);
+  g_signal_connect (application, "startup", G_CALLBACK (create_app), NULL);
+  g_signal_connect (application, "activate", G_CALLBACK (activate), NULL);
 
   context = g_option_context_new (NULL);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
