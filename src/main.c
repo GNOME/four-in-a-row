@@ -737,20 +737,13 @@ on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
 static void
 on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
-  const gchar *authors[] = { "Four-in-a-row:",
-    "  Tim Musson <trmusson@ihug.co.nz>",
-    "  David Neary <bolsh@gimp.org>",
-    "",
-    "Velena Engine V1.07:",
-    "  AI engine written by Giuliano Bertoletti",
-    "  Based on the knowledged approach of Victor Allis",
-    "  Copyright (C) 1996-97 ",
-    "  Giuliano Bertoletti and GBE 32241 Software PR.",
+  const gchar *authors[] = {"Tim Musson <trmusson@ihug.co.nz>",
+    "David Neary <bolsh@gimp.org>",
+    "Nikhar Agrawal <nikharagrawal2006@gmail.com>",
     NULL
   };
 
   const gchar *artists[] = { "Alan Horkan",
-    "Tim Musson",
     "Anatol Drlicek",
     "Based on the Faenza icon theme by Matthieu James",
     NULL
@@ -764,7 +757,7 @@ on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
                          "name", _(APPNAME_LONG),
                          "version", VERSION,
                          "copyright",
-                         "Copyright © 1999–2008, Tim Musson and David Neary",
+                         "Copyright © 1999–2008 Tim Musson and David Neary\nCopyright © 2014 Michael Catanzaro",
                          "license-type", GTK_LICENSE_GPL_2_0, "comments",
                          _("Connect four in a row to win."),
                          "authors", authors, "documenters", documenters,
