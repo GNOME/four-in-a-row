@@ -766,7 +766,7 @@ on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
                          "copyright",
                          "Copyright © 1999–2008, Tim Musson and David Neary",
                          "license-type", GTK_LICENSE_GPL_2_0, "comments",
-                         _("Connect four in a row to win.\n\nFour-in-a-row is a part of GNOME Games."),
+                         _("Connect four in a row to win."),
                          "authors", authors, "documenters", documenters,
                          "artists", artists, "translator-credits",
                          _("translator-credits"),
