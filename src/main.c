@@ -1105,7 +1105,7 @@ create_app (GApplication *app, gpointer user_data)
   if (G_UNLIKELY (error != NULL)) {
       fprintf (stderr, "Could not load UI: %s\n", error->message);
       g_clear_error (&error);
-      return FALSE;
+      return;
   }
   gtk_style_context_add_provider_for_screen (gdk_screen_get_default (), css_provider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
