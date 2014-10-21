@@ -133,17 +133,17 @@ private int test_ai_vs_ai (string easier, string harder)
 
     for (int i = 0; i < NUMBER_GAMES; i++)
     {
-        var e = new StringBuilder();
-        e.append(easier);
+        var e = new StringBuilder ();
+        e.append (easier);
 
-        var m = new StringBuilder();
-        m.append(harder);
+        var m = new StringBuilder ();
+        m.append (harder);
 
         while (true)
         {
             int move;
-            DecisionTree t = new DecisionTree();
-            move = t.playandcheck(e.str);
+            DecisionTree t = new DecisionTree ();
+            move = t.playandcheck (e.str);
             if (move == 0)
             {
                 draw++;
@@ -156,11 +156,11 @@ private int test_ai_vs_ai (string easier, string harder)
                 break;
             }
 
-            e.insert(e.str.length - 1, move.to_string());
-            m.insert(m.str.length - 1, move.to_string());
+            e.insert (e.str.length - 1, move.to_string ());
+            m.insert (m.str.length - 1, move.to_string ());
 
-            DecisionTree d = new DecisionTree();
-            move = d.playandcheck(m.str);
+            DecisionTree d = new DecisionTree ();
+            move = d.playandcheck (m.str);
 
             if (move == 0)
             {
@@ -173,8 +173,8 @@ private int test_ai_vs_ai (string easier, string harder)
                 harder_wins++;
                 break;
             }
-            e.insert(e.str.length - 1, move.to_string());
-            m.insert(m.str.length - 1, move.to_string());
+            e.insert (e.str.length - 1, move.to_string ());
+            m.insert (m.str.length - 1, move.to_string ());
         }
     }
     return easier_wins;
