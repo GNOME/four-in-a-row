@@ -1,5 +1,5 @@
 # gnome-games Finnish Translation
-# Suomennos: http://www.gnome.fi/
+# Suomennos: https://l10n.gnome.org/teams/fi/
 # Copyright (C) 2002-2009 Free Software Foundation, Inc.
 #
 #
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-11 04:50+0000\n"
+"POT-Creation-Date: 2014-11-07 05:42+0000\n"
 "PO-Revision-Date: 2014-09-11 17:51+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -165,10 +165,6 @@ msgid "Drawn:"
 msgstr "Tasoissa:"
 
 #: ../src/main.c:810
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
 msgid ""
 "Connect four in a row to win.\n"
 "\n"
@@ -186,7 +182,7 @@ msgstr ""
 "Ilkka Tuohela, 2006-2009\n"
 "Sami Pesonen, 2002-2005\n"
 "\n"
-"http://www.gnome.fi/\n"
+"https://l10n.gnome.org/teams/fi/\n"
 "\n"
 "Launchpad Contributions:\n"
 "  Heikki Kulhia https://launchpad.net/~hessuk\n"
@@ -236,7 +232,6 @@ msgid "Receive a hint for your next move"
 msgstr "Vastaanota vinkki seuraavasta siirrosta"
 
 #: ../src/main.c:1258
-#| msgid "_Starting level:"
 msgid "_Start Over"
 msgstr "_Aloita alusta"
 
@@ -298,12 +293,10 @@ msgid "Cross"
 msgstr "Risti"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "Circle"
 msgid "Circle wins!"
 msgstr "Ympyrä voittaa!"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "%s wins!"
 msgid "Cross wins!"
 msgstr "Risti voittaa!"
 
@@ -312,7 +305,6 @@ msgid "Circle’s turn"
 msgstr "Ympyrän vuoro"
 
 #: ../src/theme.c:46 ../src/theme.c:55
-#| msgid "%s’s Turn"
 msgid "Cross’s turn"
 msgstr "Ristin vuoro"
 
@@ -333,12 +325,10 @@ msgid "Green"
 msgstr "Vihreä"
 
 #: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Red wins!"
 msgstr "Punainen voittaa!"
 
 #: ../src/theme.c:63 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Green wins!"
 msgstr "Vihreä voittaa!"
 
@@ -351,7 +341,6 @@ msgid "Green’s turn"
 msgstr "Vihreän vuoro"
 
 #: ../src/theme.c:67
-#| msgid "Cream Marbles"
 msgid "Blue and Red Marbles"
 msgstr "Siniset ja punaiset marmorikuulat"
 
@@ -360,7 +349,6 @@ msgid "Blue"
 msgstr "Sininen"
 
 #: ../src/theme.c:72
-#| msgid "Black wins"
 msgid "Blue wins!"
 msgstr "Sininen voittaa!"
 
