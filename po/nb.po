@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row 3.13.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-23 12:12+0200\n"
-"PO-Revision-Date: 2014-08-23 12:12+0200\n"
+"POT-Creation-Date: 2014-11-17 17:06+0100\n"
+"PO-Revision-Date: 2014-11-17 17:06+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -37,7 +37,8 @@ msgstr ""
 "Fire på rad har flere vanskelighetsnivåer. Hvis du har problemer kan du "
 "alltid spørre om et hint."
 
-#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1179 ../src/main.h:5
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Fire på rad"
 
@@ -48,6 +49,26 @@ msgstr "Lag linjer med samme farge for å vinne"
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "spill;strategi;logikk;"
+
+#: ../data/four-in-a-row.ui.h:2
+msgid "Undo your most recent move"
+msgstr "Angre siste trekk"
+
+#: ../data/four-in-a-row.ui.h:3
+msgid "_Hint"
+msgstr "_Hint"
+
+#: ../data/four-in-a-row.ui.h:4
+msgid "Receive a hint for your next move"
+msgstr "Få et hint om ditt neste trekk"
+
+#: ../data/four-in-a-row.ui.h:5
+msgid "_Start Over"
+msgstr "_Start på nytt"
+
+#: ../data/four-in-a-row.ui.h:6
+msgid "Start a new game"
+msgstr "Start et nytt spill"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
 msgid "Opponent"
@@ -114,112 +135,81 @@ msgstr ""
 "Kan ikke laste bilde:\n"
 "%s"
 
-#: ../src/main.c:510
+#: ../src/main.c:476
 msgid "It’s a draw!"
 msgstr "Det er uavgjort!"
 
-#: ../src/main.c:519
+#: ../src/main.c:484
 msgid "You win!"
 msgstr "Du vinner!"
 
-#: ../src/main.c:521 ../src/main.c:540
+#: ../src/main.c:486 ../src/main.c:502
 msgid "Your Turn"
 msgstr "Din tur"
 
-#: ../src/main.c:524
+#: ../src/main.c:489
 msgid "I win!"
 msgstr "Jeg vinner!"
 
-#: ../src/main.c:526 ../src/main.c:631
+#: ../src/main.c:491 ../src/main.c:590
 msgid "I’m Thinking…"
 msgstr "Jeg tenker …"
 
-#: ../src/main.c:537 ../src/main.c:548
-#, c-format
-msgid "%s"
-msgstr "%s"
-
-#: ../src/main.c:644
+#: ../src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
 msgstr " Hint: Kolonne %d"
 
-#: ../src/main.c:672 ../src/main.c:676
+#: ../src/main.c:631 ../src/main.c:635
 msgid "You:"
 msgstr "Du:"
 
-#: ../src/main.c:673 ../src/main.c:675
+#: ../src/main.c:632 ../src/main.c:634
 msgid "Me:"
 msgstr "Meg:"
 
-#: ../src/main.c:721
+#: ../src/main.c:680
 msgid "Scores"
 msgstr "Poeng"
 
-#: ../src/main.c:762
+#: ../src/main.c:721
 msgid "Drawn:"
 msgstr "Trukket:"
 
-#: ../src/main.c:810
-msgid ""
-"Connect four in a row to win.\n"
-"\n"
-"Four-in-a-row is a part of GNOME Games."
-msgstr ""
-"Sett sammen fire på rad for å vinne.\n"
-"\n"
-"Fire på rad er en del av GNOME Spill."
+#: ../src/main.c:762
+msgid "Connect four in a row to win."
+msgstr "Sett sammen fire på rad for å vinne."
 
-#: ../src/main.c:813
+#: ../src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <espens@svn.gnome.org>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/main.c:1188
-msgid "Undo your most recent move"
-msgstr "Angre siste trekk"
-
-#: ../src/main.c:1202
+#: ../src/main.c:1130
 msgid "_New Game"
 msgstr "_Nytt spill"
 
-#: ../src/main.c:1203
+#: ../src/main.c:1131
 msgid "_Scores"
 msgstr "_Poeng"
 
-#: ../src/main.c:1204
+#: ../src/main.c:1132
 msgid "_Preferences"
 msgstr "_Brukervalg"
 
-#: ../src/main.c:1207
+#: ../src/main.c:1135
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: ../src/main.c:1208
+#: ../src/main.c:1136
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/main.c:1209
+#: ../src/main.c:1137
 msgid "_Quit"
 msgstr "A_vslutt"
-
-#: ../src/main.c:1248
-msgid "_Hint"
-msgstr "_Hint"
-
-#: ../src/main.c:1254
-msgid "Receive a hint for your next move"
-msgstr "Få et hint om ditt neste trekk"
-
-#: ../src/main.c:1258
-msgid "_Start Over"
-msgstr "_Start på nytt"
-
-#: ../src/main.c:1264
-msgid "Start a new game"
-msgstr "Start et nytt spill"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
