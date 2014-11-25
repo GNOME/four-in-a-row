@@ -4,6 +4,8 @@
  <id type="desktop">four-in-a-row.desktop</id>
  <metadata_license>CC0-1.0</metadata_license>
  <project_license>GPL-2.0+ and GPL-3.0+ and CC-BY-SA-3.0</project_license>
+ <_name>Four-in-a-row</_name>
+ <_summary>Make lines of the same color to win</_summary>
  <description>
   <_p>
    A family classic, the objective of Four-in-a-row is to build a line of four
