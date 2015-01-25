@@ -1127,7 +1127,6 @@ create_app (GApplication *app, gpointer user_data)
   app_menu = g_menu_new ();
   section = g_menu_new ();
   g_menu_append_section (app_menu, NULL, G_MENU_MODEL (section));
-  g_menu_append (section, _("_New Game"), "app.new-game");
   g_menu_append (section, _("_Scores"), "app.scores");
   g_menu_append (section, _("_Preferences"), "app.preferences");
   section = g_menu_new ();
