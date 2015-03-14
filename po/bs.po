@@ -9,28 +9,17 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2015-02-27 05:45+0000\n"
-"PO-Revision-Date: 2015-03-02 09:19+0100\n"
+"PO-Revision-Date: 2014-01-08 12:50+0000\n"
 "Last-Translator: Ramiza Hošo <rhoso1@etf.unsa.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Launchpad (build 17341)\n"
 "X-Launchpad-Export-Date: 2015-02-15 06:17+0000\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Četiri-u-redu"
-
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
-msgid "Make lines of the same color to win"
-msgstr "Napravite linije iste boje kako biste pobijedili"
-
-#: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -42,7 +31,7 @@ msgstr ""
 "izgradnje svoje vlastite linije. Linija može biti horizontalna, vertikalna "
 "ili dijagonalna. Prvi igrač koji bude povezao četiri u red je pobjednik!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: ../data/four-in-a-row.appdata.xml.in.h:2
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
@@ -50,29 +39,17 @@ msgstr ""
 "Četiri-u-redu ima više težinskih nivoa. Ako imate problem, uvijek možete "
 "pitati za savjet."
 
+#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1179 ../src/main.h:5
+msgid "Four-in-a-row"
+msgstr "Četiri-u-redu"
+
+#: ../data/four-in-a-row.desktop.in.h:2
+msgid "Make lines of the same color to win"
+msgstr "Napravite linije iste boje kako biste pobijedili"
+
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "igra;strategija;logika;"
-
-#: ../data/four-in-a-row.ui.h:2
-msgid "Undo your most recent move"
-msgstr "Poništite vaš posljednji potez"
-
-#: ../data/four-in-a-row.ui.h:3
-msgid "_Hint"
-msgstr "_Savjet"
-
-#: ../data/four-in-a-row.ui.h:4
-msgid "Receive a hint for your next move"
-msgstr "Potražite savjet za sljedeći potez"
-
-#: ../data/four-in-a-row.ui.h:5
-msgid "_Start Over"
-msgstr "_Započni Ispočetka"
-
-#: ../data/four-in-a-row.ui.h:6
-msgid "Start a new game"
-msgstr "Započni novu igru"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
 msgid "Opponent"
@@ -137,74 +114,104 @@ msgstr ""
 "Ne mogu učitati sliku:\n"
 "%s"
 
-#: ../src/main.c:476
+#: ../src/main.c:510
 msgid "It’s a draw!"
 msgstr "Neriješeno je!"
 
-#: ../src/main.c:484
+#: ../src/main.c:519
 msgid "You win!"
 msgstr "Pobijedili ste!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: ../src/main.c:521 ../src/main.c:540
 msgid "Your Turn"
 msgstr "Vi ste na potezu"
 
-#: ../src/main.c:489
+#: ../src/main.c:524
 msgid "I win!"
 msgstr "Ja sam pobijedio!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: ../src/main.c:526 ../src/main.c:631
 msgid "I’m Thinking…"
 msgstr "Razmišljam…"
 
-#: ../src/main.c:603
+#: ../src/main.c:644
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Savjet: Kolona %d"
 
-#: ../src/main.c:631 ../src/main.c:635
+#: ../src/main.c:672 ../src/main.c:676
 msgid "You:"
 msgstr "Vi:"
 
-#: ../src/main.c:632 ../src/main.c:634
+#: ../src/main.c:673 ../src/main.c:675
 msgid "Me:"
 msgstr "Ja:"
 
-#: ../src/main.c:680
+#: ../src/main.c:721
 msgid "Scores"
 msgstr "Rezultati"
 
-#: ../src/main.c:721
+#: ../src/main.c:762
 msgid "Drawn:"
 msgstr "Neriješeno:"
 
-#: ../src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "Spojite četiri u nizu za pobjedu."
+#: ../src/main.c:810
+msgid ""
+"Connect four in a row to win.\n"
+"\n"
+"Four-in-a-row is a part of GNOME Games."
+msgstr ""
+"Povežite četiri u nizu da pobijedite.\n"
+"\n"
+"Četiri u nizu je dio Gnomovih igara."
 
-#: ../src/main.c:765
+#: ../src/main.c:813
 msgid "translator-credits"
 msgstr "   Ramiza Hošo https://launchpad.net/~rhoso1"
 
-#: ../src/main.c:1130
+#: ../src/main.c:1188
+msgid "Undo your most recent move"
+msgstr "Poništite vaš posljednji potez"
+
+#: ../src/main.c:1202
+msgid "_New Game"
+msgstr "_Nova Igra"
+
+#: ../src/main.c:1203
 msgid "_Scores"
 msgstr "_Rezultati"
 
-#: ../src/main.c:1131
+#: ../src/main.c:1204
 msgid "_Preferences"
 msgstr "_Postavke"
 
-#: ../src/main.c:1134
+#: ../src/main.c:1207
 msgid "_Help"
 msgstr "_Pomoć"
 
-#: ../src/main.c:1135
+#: ../src/main.c:1208
 msgid "_About"
 msgstr "_O programu"
 
-#: ../src/main.c:1136
+#: ../src/main.c:1209
 msgid "_Quit"
 msgstr "_Izađi"
+
+#: ../src/main.c:1248
+msgid "_Hint"
+msgstr "_Savjet"
+
+#: ../src/main.c:1254
+msgid "Receive a hint for your next move"
+msgstr "Potražite savjet za sljedeći potez"
+
+#: ../src/main.c:1258
+msgid "_Start Over"
+msgstr "_Počni"
+
+#: ../src/main.c:1264
+msgid "Start a new game"
+msgstr "Započni novu igru"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
