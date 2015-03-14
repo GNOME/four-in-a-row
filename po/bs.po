@@ -1,0 +1,328 @@
+# Bosnian translation for bosnianuniversetranslation
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the bosnianuniversetranslation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bosnianuniversetranslation\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-27 05:45+0000\n"
+"PO-Revision-Date: 2015-03-02 09:19+0100\n"
+"Last-Translator: Ramiza Hošo <rhoso1@etf.unsa.ba>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Launchpad-Export-Date: 2015-02-15 06:17+0000\n"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
+msgid "Four-in-a-row"
+msgstr "Četiri-u-redu"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
+msgid "Make lines of the same color to win"
+msgstr "Napravite linije iste boje kako biste pobijedili"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:3
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Klasičnoj porodici, četiri-u-redu je clj izgraditi linije za vaše četiri "
+"kuglice dok pokušava zaustaviti vašeg protivnika ( osoba ili kompjuter) od "
+"izgradnje svoje vlastite linije. Linija može biti horizontalna, vertikalna "
+"ili dijagonalna. Prvi igrač koji bude povezao četiri u red je pobjednik!"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:4
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Četiri-u-redu ima više težinskih nivoa. Ako imate problem, uvijek možete "
+"pitati za savjet."
+
+#: ../data/four-in-a-row.desktop.in.h:3
+msgid "game;strategy;logic;"
+msgstr "igra;strategija;logika;"
+
+#: ../data/four-in-a-row.ui.h:2
+msgid "Undo your most recent move"
+msgstr "Poništite vaš posljednji potez"
+
+#: ../data/four-in-a-row.ui.h:3
+msgid "_Hint"
+msgstr "_Savjet"
+
+#: ../data/four-in-a-row.ui.h:4
+msgid "Receive a hint for your next move"
+msgstr "Potražite savjet za sljedeći potez"
+
+#: ../data/four-in-a-row.ui.h:5
+msgid "_Start Over"
+msgstr "_Započni Ispočetka"
+
+#: ../data/four-in-a-row.ui.h:6
+msgid "Start a new game"
+msgstr "Započni novu igru"
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+msgid "Opponent"
+msgstr "Protivnik"
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+msgid ""
+"Zero is human; one through three correspond to the level of the computer "
+"player."
+msgstr "Nula je čovjek; od jedan do tri je nivo kompjuterskog protivnika."
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+msgid "Theme ID"
+msgstr "ID Teme"
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+msgid "A number specifying the preferred theme."
+msgstr "Broj koji označava željenu temu."
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+msgid "Sound"
+msgstr "Zvuk"
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+msgid "Whether or not to play event sounds."
+msgstr "Da li puštati zvukove pri događajima."
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+msgid "Move left"
+msgstr "Pomjeri lijevo"
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+msgid "Key press to move left."
+msgstr "Taster za kretanje u lijevo."
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+msgid "Move right"
+msgstr "Pomjeri desno"
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+msgid "Key press to move right."
+msgstr "Taster za kretanje u desno."
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+msgid "Drop marble"
+msgstr "Pusti kliker"
+
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+msgid "Key press to drop a marble."
+msgstr "Taster za puštanje klikera."
+
+#: ../src/games-controls.c:288
+msgid "Unknown Command"
+msgstr "Nepoznata komanda"
+
+#: ../src/gfx.c:247
+#, c-format
+msgid ""
+"Unable to load image:\n"
+"%s"
+msgstr ""
+"Ne mogu učitati sliku:\n"
+"%s"
+
+#: ../src/main.c:476
+msgid "It’s a draw!"
+msgstr "Neriješeno je!"
+
+#: ../src/main.c:484
+msgid "You win!"
+msgstr "Pobijedili ste!"
+
+#: ../src/main.c:486 ../src/main.c:502
+msgid "Your Turn"
+msgstr "Vi ste na potezu"
+
+#: ../src/main.c:489
+msgid "I win!"
+msgstr "Ja sam pobijedio!"
+
+#: ../src/main.c:491 ../src/main.c:590
+msgid "I’m Thinking…"
+msgstr "Razmišljam…"
+
+#: ../src/main.c:603
+#, c-format
+msgid "Hint: Column %d"
+msgstr "Savjet: Kolona %d"
+
+#: ../src/main.c:631 ../src/main.c:635
+msgid "You:"
+msgstr "Vi:"
+
+#: ../src/main.c:632 ../src/main.c:634
+msgid "Me:"
+msgstr "Ja:"
+
+#: ../src/main.c:680
+msgid "Scores"
+msgstr "Rezultati"
+
+#: ../src/main.c:721
+msgid "Drawn:"
+msgstr "Neriješeno:"
+
+#: ../src/main.c:762
+msgid "Connect four in a row to win."
+msgstr "Spojite četiri u nizu za pobjedu."
+
+#: ../src/main.c:765
+msgid "translator-credits"
+msgstr "   Ramiza Hošo https://launchpad.net/~rhoso1"
+
+#: ../src/main.c:1130
+msgid "_Scores"
+msgstr "_Rezultati"
+
+#: ../src/main.c:1131
+msgid "_Preferences"
+msgstr "_Postavke"
+
+#: ../src/main.c:1134
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: ../src/main.c:1135
+msgid "_About"
+msgstr "_O programu"
+
+#: ../src/main.c:1136
+msgid "_Quit"
+msgstr "_Izađi"
+
+#: ../src/prefs.c:171
+msgid "Preferences"
+msgstr "Postavke"
+
+#: ../src/prefs.c:193
+msgid "Game"
+msgstr "Igra"
+
+#: ../src/prefs.c:196
+msgid "Opponent:"
+msgstr "Protivnik:"
+
+#: ../src/prefs.c:207
+msgid "Human"
+msgstr "Osoba"
+
+#: ../src/prefs.c:211
+msgid "Level one"
+msgstr "Nivo jedan"
+
+#: ../src/prefs.c:215
+msgid "Level two"
+msgstr "Nivo dva"
+
+#: ../src/prefs.c:219
+msgid "Level three"
+msgstr "Nivo tri"
+
+#: ../src/prefs.c:225
+msgid "_Theme:"
+msgstr "_Tema:"
+
+#: ../src/prefs.c:238
+msgid "E_nable sounds"
+msgstr "U_kluči zvukove"
+
+#. keyboard tab
+#: ../src/prefs.c:243
+msgid "Keyboard Controls"
+msgstr "Kontrole tastature"
+
+#: ../src/theme.c:40
+msgid "High Contrast"
+msgstr "Visoki Kontrast"
+
+#: ../src/theme.c:44 ../src/theme.c:53
+msgid "Circle"
+msgstr "Krug"
+
+#: ../src/theme.c:44 ../src/theme.c:53
+msgid "Cross"
+msgstr "Krst"
+
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Circle wins!"
+msgstr "Kružić je pobijedio!"
+
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Cross wins!"
+msgstr "Krstić je pobijedio!"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Circle’s turn"
+msgstr "Kružić je na potezu"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Cross’s turn"
+msgstr "Krstić je na potezu"
+
+#: ../src/theme.c:49
+msgid "High Contrast Inverse"
+msgstr "Inverzni Visoki Kontrast"
+
+#: ../src/theme.c:58
+msgid "Red and Green Marbles"
+msgstr "Crveni i zeleni staklenci"
+
+#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+msgid "Red"
+msgstr "Crveno"
+
+#: ../src/theme.c:62 ../src/theme.c:80
+msgid "Green"
+msgstr "Zeleni"
+
+#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+msgid "Red wins!"
+msgstr "Crveni je pobijedio!"
+
+#: ../src/theme.c:63 ../src/theme.c:81
+msgid "Green wins!"
+msgstr "Zeleni je pobijedio!"
+
+#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+msgid "Red’s turn"
+msgstr "Crveni je na potezu"
+
+#: ../src/theme.c:64 ../src/theme.c:82
+msgid "Green’s turn"
+msgstr "Zeleni je na potezu"
+
+#: ../src/theme.c:67
+msgid "Blue and Red Marbles"
+msgstr "Plavi i crveni porculanci"
+
+#: ../src/theme.c:71
+msgid "Blue"
+msgstr "Plavo"
+
+#: ../src/theme.c:72
+msgid "Blue wins!"
+msgstr "Plavi je pobijedio!"
+
+#: ../src/theme.c:73
+msgid "Blue’s turn"
+msgstr "Plavi je na potezu"
+
+#: ../src/theme.c:76
+msgid "Stars and Rings"
+msgstr "Zvjezdice i prstenovi"
