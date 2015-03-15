@@ -1,5 +1,5 @@
 # Danish translation of gnome-games.
-# Copyright (C) 1998-2014 Free Software Foundation, Inc.
+# Copyright (C) 1998-2015 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-games package.
 # Anders Wegge Jakobsen <wegge@wegge.dk>, 1998.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2001
@@ -7,7 +7,7 @@
 # Ole Laursen <olau@hardworking.dk>, 2001, 02, 03, 04.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
 # flemming christensen <fc@stromata.dk>, 2011.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007-2014.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007-2015.
 #
 # Konventioner:
 #   cross, circle -> kryds, bolle
@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-20 17:02+0200\n"
-"PO-Revision-Date: 2014-09-19 19:18+0200\n"
+"POT-Creation-Date: 2015-03-15 16:05+0100\n"
+"PO-Revision-Date: 2015-03-15 15:37+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -26,6 +26,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
+msgid "Four-in-a-row"
+msgstr "Fire på stribe"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
+msgid "Make lines of the same color to win"
+msgstr "Dan linjer af samme farve for at vinde"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -37,22 +48,13 @@ msgstr ""
 "at gøre det samme. En linje kan være vandret, lodret eller diagonal. Første "
 "spiller, der forbinder fire på stribe, vinder!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Fire på stribe tilbyder flere sværhedsgrader. Hvis du er i problemer, kan du "
 "altid bede om et fif."
-
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Fire på stribe"
-
-#: ../data/four-in-a-row.desktop.in.h:2
-msgid "Make lines of the same color to win"
-msgstr "Dan linjer af samme farve for at vinde"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
@@ -183,17 +185,11 @@ msgstr "Resultater"
 msgid "Drawn:"
 msgstr "Uafgjort:"
 
-#: ../src/main.c:769
-msgid ""
-"Connect four in a row to win.\n"
-"\n"
-"Four-in-a-row is a part of GNOME Games."
-msgstr ""
-"Forbind fire på stribe for at vinde.\n"
-"\n"
-"Fire på stribe er en del af GNOME Games."
+#: ../src/main.c:762
+msgid "Connect four in a row to win."
+msgstr "Forbind fire på række for at vinde."
 
-#: ../src/main.c:772
+#: ../src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Anders Wegge Jakobsen\n"
@@ -206,27 +202,23 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/main.c:1137
-msgid "_New Game"
-msgstr "_Nyt spil"
-
-#: ../src/main.c:1138
+#: ../src/main.c:1130
 msgid "_Scores"
 msgstr "_Resultater"
 
-#: ../src/main.c:1139
+#: ../src/main.c:1131
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
-#: ../src/main.c:1142
+#: ../src/main.c:1134
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../src/main.c:1143
+#: ../src/main.c:1135
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/main.c:1144
+#: ../src/main.c:1136
 msgid "_Quit"
 msgstr "_Afslut"
 
@@ -350,3 +342,15 @@ msgstr "Blås tur"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Stjerner og ringe"
+
+#~ msgid ""
+#~ "Connect four in a row to win.\n"
+#~ "\n"
+#~ "Four-in-a-row is a part of GNOME Games."
+#~ msgstr ""
+#~ "Forbind fire på stribe for at vinde.\n"
+#~ "\n"
+#~ "Fire på stribe er en del af GNOME Games."
+
+#~ msgid "_New Game"
+#~ msgstr "_Nyt spil"
