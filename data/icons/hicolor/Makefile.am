@@ -10,7 +10,9 @@ icon22_DATA = 22x22/four-in-a-row.png
 icon24_DATA = 24x24/four-in-a-row.png
 icon32_DATA = 32x32/four-in-a-row.png
 icon48_DATA = 48x48/four-in-a-row.png
-iconscalable_DATA = scalable/four-in-a-row.svg
+iconscalable_DATA = \
+  scalable/four-in-a-row.svg \
+  scalable/four-in-a-row-symbolic.svg
 
 EXTRA_DIST = $(icon16_DATA) $(icon22_DATA) $(icon24_DATA) $(icon32_DATA) $(icon48_DATA) $(iconscalable_DATA)
 
