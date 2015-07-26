@@ -27,6 +27,8 @@
 
 #include "games-controls.h"
 
+extern GtkWidget *window;
+
 enum {
   CONFKEY_COLUMN = 0,
   LABEL_COLUMN,
@@ -61,6 +63,9 @@ accel_edited_cb (GtkCellRendererAccel *cell,
   GtkTreePath *path;
   GtkTreeIter iter;
   char *conf_key = NULL;
+  gboolean valid;
+  gboolean unused_key = TRUE;
+
 
   path = gtk_tree_path_new_from_string (path_string);
   if (!path)
@@ -78,9 +83,42 @@ accel_edited_cb (GtkCellRendererAccel *cell,
   if (!conf_key)
     return;
 
+  valid = gtk_tree_model_get_iter_first (list->priv->model, &iter);
+  while (valid) {
+    char *actual_conf_key;
+
+    gtk_tree_model_get (list->priv->model, &iter,
+                        CONFKEY_COLUMN, &actual_conf_key,
+                        -1);
+
+    if (g_settings_get_int (list->priv->settings, actual_conf_key) == keyval){
+      unused_key = FALSE;
+
+      if (strcmp (conf_key, actual_conf_key) == 0) {
+        GtkWidget *dialog;
+
+        dialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (window),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING,
+                                      GTK_BUTTONS_OK,
+                                      "<span weight=\"bold\" size=\"larger\">%s</span>",
+                                      _("This key is already in use."));
+
+        gtk_dialog_run (GTK_DIALOG (dialog));
+        gtk_widget_destroy (dialog);
+      }
+      g_free (actual_conf_key);
+      break;
+    }
+    g_free (actual_conf_key);
+    valid = gtk_tree_model_iter_next (GTK_TREE_MODEL (list->priv->store), &iter);
+  }
+
   /* Note: the model is updated in the conf notification callback */
   /* FIXME: what to do with the modifiers? */
-  g_settings_set_int (list->priv->settings, conf_key, keyval);
+  if (unused_key)
+    g_settings_set_int (list->priv->settings, conf_key, keyval);
+
   g_free (conf_key);
 }
 
