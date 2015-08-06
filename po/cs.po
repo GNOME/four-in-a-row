@@ -16,15 +16,15 @@
 # Petr Pulc <petrpulc@gmail.com>, 2009.
 # Andre Klapper <ak-47@gmx.net>, 2009.
 # Petr Kovar <pknbe@volny.cz>, 2008, 2012.
-# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-01 05:39+0000\n"
-"PO-Revision-Date: 2014-11-01 14:51+0100\n"
+"POT-Creation-Date: 2015-08-06 05:01+0000\n"
+"PO-Revision-Date: 2015-08-06 11:31+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -36,6 +36,17 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
+msgid "Four-in-a-row"
+msgstr "Čtyři-v-jedné-řadě"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
+msgid "Make lines of the same color to win"
+msgstr "Soutěžte ve tvorbě úseček ze stejné barvy"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -48,22 +59,13 @@ msgstr ""
 "vodorovná, svislá nebo úhlopříčná. První hráč, který sestaví řadu ze čtyř "
 "kuliček, vyhrává."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Čtyři-v-jedné-řadě nabízí několik úrovní složitosti. A vždy, když se "
 "dostanete do úzkých, můžete požádat o radu."
-
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Čtyři-v-jedné-řadě"
-
-#: ../data/four-in-a-row.desktop.in.h:2
-msgid "Make lines of the same color to win"
-msgstr "Soutěžte ve tvorbě úseček ze stejné barvy"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
@@ -139,7 +141,11 @@ msgstr "Položení kamene"
 msgid "Key press to drop a marble."
 msgstr "Klávesa pro položení kamene."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Tato klávesa je již použita."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Neznámý příkaz"
 
@@ -215,26 +221,22 @@ msgstr ""
 "Marek Černocký <marek@manet.cz>"
 
 #: ../src/main.c:1130
-msgid "_New Game"
-msgstr "_Nová hra"
-
-#: ../src/main.c:1131
 msgid "_Scores"
 msgstr "_Skóre"
 
-#: ../src/main.c:1132
+#: ../src/main.c:1131
 msgid "_Preferences"
 msgstr "_Předvolby"
 
-#: ../src/main.c:1135
+#: ../src/main.c:1134
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../src/main.c:1136
+#: ../src/main.c:1135
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: ../src/main.c:1137
+#: ../src/main.c:1136
 msgid "_Quit"
 msgstr "U_končit"
 
