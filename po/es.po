@@ -5,17 +5,17 @@
 # Lucas Vieites <lucas@codexion.com>, 2007, 2008.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
 # Chris Leonard <cjl@laptop.org>, 2012.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
 #
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-06 16:55+0000\n"
-"PO-Revision-Date: 2014-10-20 12:31+0200\n"
+"POT-Creation-Date: 2015-07-29 05:00+0000\n"
+"PO-Revision-Date: 2015-08-11 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +25,17 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
+msgid "Four-in-a-row"
+msgstr "Cuatro en raya"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
+msgid "Make lines of the same color to win"
+msgstr "Haga líneas del mismo color para ganar"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -36,22 +47,13 @@ msgstr ""
 "humano o el propio equipo) haga la suya. Una línea puede ser horizontal, "
 "vertical o diagonal. El primer jugador en conseguir las cuatro en raya gana."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Cuatro en raya tiene varios niveles de dificultad. Si tiene problemas, "
 "siempre puede pedir una pista."
-
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Cuatro en raya"
-
-#: ../data/four-in-a-row.desktop.in.h:2
-msgid "Make lines of the same color to win"
-msgstr "Haga líneas del mismo color para ganar"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
@@ -128,7 +130,12 @@ msgstr "Soltar canica"
 msgid "Key press to drop a marble."
 msgstr "Tecla para soltar canica."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+#| msgid "That username is already in use."
+msgid "This key is already in use."
+msgstr "Esta clave ya está usándose."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Comando desconocido"
 
@@ -183,7 +190,6 @@ msgid "Drawn:"
 msgstr "Repartido:"
 
 #: ../src/main.c:762
-#| msgid "Connect four tiles in a row"
 msgid "Connect four in a row to win."
 msgstr "Conecte cuatro fichas en una fila para ganar."
 
@@ -197,26 +203,22 @@ msgstr ""
 "Pablo Saratxaga <pablo@mandrakesoft.com>"
 
 #: ../src/main.c:1130
-msgid "_New Game"
-msgstr "Juego _nuevo"
-
-#: ../src/main.c:1131
 msgid "_Scores"
 msgstr "_Puntuación"
 
-#: ../src/main.c:1132
+#: ../src/main.c:1131
 msgid "_Preferences"
 msgstr "_Preferencias"
 
-#: ../src/main.c:1135
+#: ../src/main.c:1134
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../src/main.c:1136
+#: ../src/main.c:1135
 msgid "_About"
 msgstr "_Acerca de"
 
-#: ../src/main.c:1137
+#: ../src/main.c:1136
 msgid "_Quit"
 msgstr "_Salir"
 
@@ -340,6 +342,9 @@ msgstr "Turno de las azules"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Estrellas y anillos"
+
+#~ msgid "_New Game"
+#~ msgstr "Juego _nuevo"
 
 #~ msgid "%s"
 #~ msgstr "%s"
@@ -2339,8 +2344,7 @@ msgstr "Estrellas y anillos"
 #~ msgstr "Usar la bandera de «desconocido»"
 
 #~ msgid "Set to true to be able to mark squares as unknown."
-#~ msgstr ""
-#~ "Ponga el valor a «true» para poder marcar cuadros como desconocidos."
+#~ msgstr "Ponga el valor a «true» para poder marcar cuadros como desconocidos."
 
 #~ msgid "Warning about too many flags"
 #~ msgstr "Advertir acerca de demasiadas banderas"
@@ -5414,8 +5418,8 @@ msgstr "Estrellas y anillos"
 #~ "'lan' (long algebraic notation) or 'san' (standard algebraic notation)"
 #~ msgstr ""
 #~ "El formato en el que mostrar jugadas, puede ser «humano» (legible por "
-#~ "personas), «lan» (notación algebraica larga - «long algebraic notation») "
-#~ "o «san» (notación algebraica estándar - «standard algebraic notation»)"
+#~ "personas), «lan» (notación algebraica larga - «long algebraic notation») o "
+#~ "«san» (notación algebraica estándar - «standard algebraic notation»)"
 
 #~ msgid "The piece style to use. Can be one of: 'simple' or 'fancy'"
 #~ msgstr "El estilo de pieza que usar. Puede ser «simple» o «fantasía»."
@@ -5427,9 +5431,9 @@ msgstr "Estrellas y anillos"
 #~ "g. handhelds)"
 #~ msgstr ""
 #~ "El lado del tablero que está en primero plano, "
-#~ "«white» (blanco),«black» (negro), «current» (el jugador actual), "
-#~ "«human» (el lado del jugador humano actual) o «facetoface» (apropiado "
-#~ "para jugadores a cada lado de la pantalla, ej. dispositivos portátiles)"
+#~ "«white» (blanco),«black» (negro), «current» (el jugador actual), «human» (el "
+#~ "lado del jugador humano actual) o «facetoface» (apropiado para jugadores a "
+#~ "cada lado de la pantalla, ej. dispositivos portátiles)"
 
 #~ msgid "Logs"
 #~ msgstr "Registros"
@@ -6520,9 +6524,6 @@ msgstr "Estrellas y anillos"
 
 #~ msgid "Login"
 #~ msgstr "Entrada"
-
-#~ msgid "That username is already in use."
-#~ msgstr "Ese nombre de usuario ya está usándose."
 
 #~ msgid ""
 #~ "Authentication has failed.\n"
