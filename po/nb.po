@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of four-in-a-row.
 # Copyright © 1998-2002 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 1998-2014.
+# Kjartan Maraas <kmaraas@gnome.org>, 1998-2015.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: four-in-a-row 3.13.x\n"
+"Project-Id-Version: four-in-a-row 3.17.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-17 17:06+0100\n"
-"PO-Revision-Date: 2014-11-17 17:06+0100\n"
+"POT-Creation-Date: 2015-08-11 18:51+0200\n"
+"PO-Revision-Date: 2015-08-11 18:51+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -18,6 +18,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
+msgid "Four-in-a-row"
+msgstr "Fire på rad"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
+msgid "Make lines of the same color to win"
+msgstr "Lag linjer med samme farge for å vinne"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -29,22 +40,13 @@ msgstr ""
 "gjøre det samme. Linjen kan være horisontal, vertikal eller diagonal. Første "
 "spiller som klarer fire på rad vinner!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Fire på rad har flere vanskelighetsnivåer. Hvis du har problemer kan du "
 "alltid spørre om et hint."
-
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Fire på rad"
-
-#: ../data/four-in-a-row.desktop.in.h:2
-msgid "Make lines of the same color to win"
-msgstr "Lag linjer med samme farge for å vinne"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
@@ -122,7 +124,11 @@ msgstr "Slipp klinkekulen"
 msgid "Key press to drop a marble."
 msgstr "Tastetrykk for å slippe en klinkekule."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Denne nøkkelen er allerede i bruk."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Ukjent kommando"
 
@@ -188,26 +194,22 @@ msgstr ""
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
 #: ../src/main.c:1130
-msgid "_New Game"
-msgstr "_Nytt spill"
-
-#: ../src/main.c:1131
 msgid "_Scores"
 msgstr "_Poeng"
 
-#: ../src/main.c:1132
+#: ../src/main.c:1131
 msgid "_Preferences"
 msgstr "_Brukervalg"
 
-#: ../src/main.c:1135
+#: ../src/main.c:1134
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: ../src/main.c:1136
+#: ../src/main.c:1135
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/main.c:1137
+#: ../src/main.c:1136
 msgid "_Quit"
 msgstr "A_vslutt"
 
