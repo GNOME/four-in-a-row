@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-"
 "row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-27 05:42+0000\n"
-"PO-Revision-Date: 2015-01-27 11:24+0100\n"
+"POT-Creation-Date: 2015-07-26 17:00+0000\n"
+"PO-Revision-Date: 2015-07-26 21:24+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.2\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1 ../data/four-in-a-row.desktop.in.h:1
 #: ../data/four-in-a-row.ui.h:1 ../src/main.h:5
@@ -125,7 +125,11 @@ msgstr "Släpp kula"
 msgid "Key press to drop a marble."
 msgstr "Tangenttryck för att släppa en kula."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Denna tangent används redan."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Okänt kommando"
 
