@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 23:19+0100\n"
-"PO-Revision-Date: 2015-03-04 23:20+0100\n"
+"POT-Creation-Date: 2015-08-25 13:47+0200\n"
+"PO-Revision-Date: 2015-08-25 13:48+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -141,7 +141,11 @@ msgstr "Upuszczenie kuli"
 msgid "Key press to drop a marble."
 msgstr "Klawisz upuszczenia kuli."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Ten klawisz jest już używany."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Nieznane polecenie"
 
