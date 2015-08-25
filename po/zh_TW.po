@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gnome-games 3.3.91\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-21 05:45+0000\n"
-"PO-Revision-Date: 2015-02-21 16:07+0800\n"
+"POT-Creation-Date: 2015-08-25 12:52+0800\n"
+"PO-Revision-Date: 2015-08-25 12:52+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional)\n"
 "Language: zh_TW\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
 #: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
@@ -124,7 +124,11 @@ msgstr "放下棋子"
 msgid "Key press to drop a marble."
 msgstr "放下棋子所使用的按鍵。"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "這個設定鍵已經被使用。"
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "不明指令"
 
@@ -134,7 +138,7 @@ msgid ""
 "Unable to load image:\n"
 "%s"
 msgstr ""
-"無法載入圖片:\n"
+"無法載入影像:\n"
 "%s"
 
 #: ../src/main.c:476
@@ -1199,7 +1203,7 @@ msgstr "星星與圓環"
 #~ msgstr "棋子款式"
 
 #~ msgid "Ball style. The filename of the images to use for the balls."
-#~ msgstr "棋子款式。設定值為棋子的圖片檔名。"
+#~ msgstr "棋子款式。設定值為棋子的影像檔名。"
 
 #~ msgid "Background color"
 #~ msgstr "背景顏色"
