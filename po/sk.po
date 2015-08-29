@@ -5,51 +5,54 @@
 # Marcel Telka <marcel@telka.sk>, 2005, 2008.
 # Peter Mráz <etkinator@gmail.com>, 2010, 2011.
 # Ján Kyselica <kyselica.jan@gmail.com>, 2013-2014.
+# Dušan Kazik <prescott66@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-"
-"row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-18 17:45+0000\n"
-"PO-Revision-Date: 2015-02-18 22:32+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-08-29 17:01+0000\n"
+"PO-Revision-Date: 2015-08-29 21:23+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
-"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"Language-Team: slovenčina <>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1 ../data/four-in-a-row.desktop.in.h:1
-#: ../data/four-in-a-row.ui.h:1 ../src/main.h:5
+#: ../data/four-in-a-row.appdata.xml.in.h:1
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Štyri v rade"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2 ../data/four-in-a-row.desktop.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Vyhráte vytvorením radu kameňov rovnakej farby"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
-"A family classic, the objective of Four-in-a-row is to build a line of four of your "
-"marbles while trying to stop your opponent (human or computer) from building a line "
-"of his or her own. A line can be horizontal, vertical or diagonal. The first player "
-"to connect four in a row is the winner!"
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
-"Klasická rodinná hra, ktorej cieľom je postaviť líniu zo štyroch guľôčok a zároveň "
-"zabrániť protihráčovi (človek alebo počítač) postaviť jeho vlastnú líniu. Línia môže "
-"byť vodorovná, zvislá alebo uhlopriečna. Víťazom je hráč, ktorý pospája štyri "
-"guľôčky za sebo ako prvý."
+"Klasická rodinná hra, ktorej cieľom je postaviť líniu zo štyroch guľôčok a "
+"zároveň zabrániť protihráčovi (človek alebo počítač) postaviť jeho vlastnú "
+"líniu. Línia môže byť vodorovná, zvislá alebo uhlopriečna. Víťazom je hráč, "
+"ktorý pospája štyri guľôčky za sebo ako prvý."
 
 #: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, you can "
-"always ask for a hint."
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
 msgstr ""
-"Hra Štyri v rade ponúka viaceré stupne obtiažnosti. Ak sa neviete pohnúť ďalej, "
-"môžete požiadať o radu."
+"Hra Štyri v rade ponúka viaceré stupne obtiažnosti. Ak sa neviete pohnúť "
+"ďalej, môžete požiadať o radu."
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
@@ -83,8 +86,10 @@ msgstr "Protihráč"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
-"Zero is human; one through three correspond to the level of the computer player."
-msgstr "Nula reprezentuje človeka, jeden až tri určujú úroveň počítačového súpera."
+"Zero is human; one through three correspond to the level of the computer "
+"player."
+msgstr ""
+"Nula reprezentuje človeka, jeden až tri určujú úroveň počítačového súpera."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
@@ -134,7 +139,11 @@ msgstr "Pustiť"
 msgid "Key press to drop a marble."
 msgstr "Kláves na pustenie guľôčky."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Tento kláves sa už používa."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Neznámy príkaz"
 
