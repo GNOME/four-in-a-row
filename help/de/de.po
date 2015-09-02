@@ -1,84 +1,33 @@
 # German translation of the four-in-a-row documentation.
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2011, 2012.
+# Wolfgang Stöggl <c72578@yahoo.de>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-09-02 16:06+0000\n"
-"PO-Revision-Date: 2013-09-05 12:06+0100\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
+"POT-Creation-Date: 2015-08-12 17:00+0000\n"
+"PO-Revision-Date: 2015-09-02 14:46+0200\n"
+"Last-Translator: Wolfgang Stoeggl <c72578@yahoo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2012\n"
-"Christian Kirbach <christian.kirbach@gmail.com>, 2011, 2012, 2013"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.page:18
-#, fuzzy
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/mainwindow.png' "
-#| "md5='372e2515d12d07635a88bff671cc1a14'"
-msgctxt "_"
-msgid "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
-msgstr "original"
+"Christian Kirbach <christian.kirbach@gmail.com>, 2011, 2012, 2013, 2015"
 
 #. (itstool) path: credit/name
-#: C/index.page:11 C/appearance.page:13 C/basics.page:13
-#: C/choose-opponent.page:13 C/controls-change.page:15
-#: C/controls-default.page:15 C/make-easy.page:13 C/scores.page:13
-#: C/sound-animation.page:13
+#: C/appearance.page:13 C/basics.page:13 C/choose-opponent.page:13
+#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:12
+#: C/make-easy.page:13 C/scores.page:12 C/sound-animation.page:13
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
-
-#. (itstool) path: info/desc
-#: C/index.page:15
-msgid "Index"
-msgstr "Index"
-
-#. (itstool) path: page/title
-#: C/index.page:18
-msgid ""
-"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
-"media> Four-in-a-row"
-msgstr ""
-"<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height=\"22\"> </"
-"media> Vier gewinnt"
-
-#. (itstool) path: page/p
-#: C/index.page:21
-msgid ""
-"<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
-"is to stack four of your marbles in a horizontal, vertical or diagonal line "
-"while stopping your opponent from doing the same with their marbles."
-msgstr ""
-"<app>Vier gewinnt</app> ist ein Strategiespiel für GNOME. Ziel des Spiels "
-"ist es, vier Ihrerr Murmeln in eine horizontalen, vertikalen oder diagonalen "
-"Reihe zu bringen und gleichzeitig den Spielgegner daran zu hindern, das "
-"gleiche mit seinen Murmeln zu tun."
-
-#. (itstool) path: section/title
-#: C/index.page:26
-msgid "Game play"
-msgstr "Spielverlauf"
-
-#. (itstool) path: section/title
-#: C/index.page:30
-msgid "Preferences"
-msgstr "Einstellungen"
 
 #. (itstool) path: info/desc
 #: C/appearance.page:17
@@ -377,6 +326,38 @@ msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> um die Murmel nach unten zu verschieben."
 
 #. (itstool) path: info/desc
+#: C/index.page:16
+msgid "Index"
+msgstr "Index"
+
+#. (itstool) path: page/title
+#: C/index.page:19
+msgid "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
+msgstr "<_:media-1/><span its:translate=\"yes\"> Vier gewinnt</span>"
+
+#. (itstool) path: page/p
+#: C/index.page:22
+msgid ""
+"<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
+"is to stack four of your marbles in a horizontal, vertical or diagonal line "
+"while stopping your opponent from doing the same with their marbles."
+msgstr ""
+"<app>Vier gewinnt</app> ist ein Strategiespiel für GNOME. Ziel des Spiels "
+"ist es, vier Ihrerr Murmeln in eine horizontalen, vertikalen oder diagonalen "
+"Reihe zu bringen und gleichzeitig den Spielgegner daran zu hindern, das "
+"gleiche mit seinen Murmeln zu tun."
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "Game play"
+msgstr "Spielverlauf"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#. (itstool) path: info/desc
 #: C/make-easy.page:17
 msgid "Use hints or undo your wrong moves."
 msgstr "Tipps verwenden oder falsche Spielzüge zurücknehmen."
@@ -447,68 +428,66 @@ msgstr ""
 msgid "There is no limit on the number of hints you can use in a game."
 msgstr "Es gibt eine unbegrenzte Anzahl Tipps im Spiel."
 
-#. (itstool) path: info/desc
+#. (itstool) path: credit/name
 #: C/scores.page:17
+msgid "Anna Philips"
+msgstr "Anna Philips"
+
+#. (itstool) path: info/desc
+#: C/scores.page:21
 msgid "Keep track of your wins and losses."
 msgstr "Siege und Niederlagen im Blick behalten"
 
 #. (itstool) path: page/title
-#: C/scores.page:20
+#: C/scores.page:24
 msgid "Scores"
 msgstr "Punkte"
 
 #. (itstool) path: page/p
-#: C/scores.page:21
+#: C/scores.page:25
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-"\">Scores</gui></guiseq>. If you are playing against the computer, the "
-"number next to:"
+"\">Scores</gui></guiseq>. In the default theme:"
 msgstr ""
 "Die Siegpunkte werden in <app>Vier gewinnt</app> gespeichert im Sinne von "
 "Siegen, Niederlagen und Unentschieden. Wählen Sie zum Nachlesen der Punkte "
 "<guiseq><gui style=\"menu\">Spiel</gui> <gui style=\"menuitem\">Punkte</"
-"gui></guiseq>. Wenn Sie gegen den Rechner spielen, so ist die Zahl neben:"
-
-#. (itstool) path: item/p
-#: C/scores.page:29
-msgid "<gui>You</gui> displays the number of games you have won."
-msgstr "<gui>Sie</gui> zeigt die Anzahl der von Ihnen gewonnenen Spiele."
+"gui></guiseq>. Im Vorgabe-Thema:"
 
 #. (itstool) path: item/p
 #: C/scores.page:32
-msgid "<gui>Me</gui> displays the number of games won by the computer."
-msgstr "<gui>Ich</gui> zeigt die Anzahl der vom Rechner gewonnenen Spiele."
+msgid "<gui>Red</gui> displays the number of games you have won."
+msgstr "<gui>Rot</gui> zeigt die Anzahl der von Ihnen gewonnenen Spiele."
 
 #. (itstool) path: item/p
-#: C/scores.page:35 C/scores.page:52
+#: C/scores.page:35
+msgid "<gui>Green</gui> displays the number of games won by the opponent."
+msgstr "<gui>Grün</gui> zeigt die Anzahl der vom Rechner gewonnenen Spiele."
+
+#. (itstool) path: item/p
+#: C/scores.page:38
 msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
 msgstr ""
 "<gui>Unentschieden</gui> zeigt die Anzahl der Spiele mit einem Unentschieden."
 
-#. (itstool) path: page/p
-#: C/scores.page:40
-msgid "If you are playing against a friend, the number next to:"
-msgstr "Wenn Sie gegen einen Freund spielen, so ist die Zahl neben:"
-
-#. (itstool) path: item/p
-#: C/scores.page:44
+#. (itstool) path: note/p
+#: C/scores.page:43
 msgid ""
-"<gui>Red</gui> displays the number of games won by the player who was "
-"controlling the red marbles."
+"The labels to represent players shown in <app>Scores</app> change based on "
+"opponent and theme selected. If you have selected the varying levels of "
+"computer as your opponent, then you will see the labels <gui>You</gui> and "
+"<gui>Me</gui>. If you are playing against another person, then the labels to "
+"represent you and the person will be the color of the marbles in the "
+"currently set theme."
 msgstr ""
-"<gui>Rot</gui> zeigt die Anzahl der gewonnenen Spiele des Spielers mit den "
-"roten Murmeln."
-
-#. (itstool) path: item/p
-#: C/scores.page:48
-msgid ""
-"<gui>Blue</gui> displays the number of games won by the player who was "
-"controlling the blue marbles."
-msgstr ""
-"<gui>Blau</gui> zeigt die Anzahl der gewonnenen Spiele des Spielers mit den "
-"blauen Murmeln."
+"Die Beschriftungen im Fenster <app>Scores</app> ändern sich je nach "
+"gewähltem Gegner oder Thema. Wenn Sie den Rechner in unterschiedlichen "
+"Schwierigkeitsstufen als Gegner gewählt haben, so erscheinen die "
+"Beschriftungen <gui>Sie</gui> und <gui>Ich</gui>. Wenn Sie gegen einen "
+"anderen Menschen spielen, dann entsprechen die Farben der Beschriftungen den "
+"Farben der Spielsteine beider Parteien, entsprechend dem aktuellen Thema."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:21
@@ -583,6 +562,40 @@ msgstr ""
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Dieses Programm ist unter der <_:link-1/> lizenziert."
+
+#, fuzzy
+#~| msgctxt "_"
+#~| msgid ""
+#~| "external ref='figures/mainwindow.png' "
+#~| "md5='372e2515d12d07635a88bff671cc1a14'"
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
+#~ msgstr "original"
+
+#~ msgid ""
+#~ "<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height="
+#~ "\"22\"> </media> Four-in-a-row"
+#~ msgstr ""
+#~ "<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height="
+#~ "\"22\"> </media> Vier gewinnt"
+
+#~ msgid "If you are playing against a friend, the number next to:"
+#~ msgstr "Wenn Sie gegen einen Freund spielen, so ist die Zahl neben:"
+
+#~ msgid ""
+#~ "<gui>Red</gui> displays the number of games won by the player who was "
+#~ "controlling the red marbles."
+#~ msgstr ""
+#~ "<gui>Rot</gui> zeigt die Anzahl der gewonnenen Spiele des Spielers mit "
+#~ "den roten Murmeln."
+
+#~ msgid ""
+#~ "<gui>Blue</gui> displays the number of games won by the player who was "
+#~ "controlling the blue marbles."
+#~ msgstr ""
+#~ "<gui>Blau</gui> zeigt die Anzahl der gewonnenen Spiele des Spielers mit "
+#~ "den blauen Murmeln."
 
 #~ msgid "Four-in-a-Row Manual"
 #~ msgstr "»Vier gewinnt«-Handbuch"
