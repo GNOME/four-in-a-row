@@ -1150,7 +1150,7 @@ create_app (GApplication *app, gpointer user_data)
   gtk_widget_set_valign (drawarea, GTK_ALIGN_FILL);
   gtk_container_add (GTK_CONTAINER (frame), drawarea);
 
-  gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK);
+  gtk_widget_set_events (drawarea, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK);
   g_signal_connect (G_OBJECT (drawarea), "configure_event",
                     G_CALLBACK (on_drawarea_resize), NULL);
   g_signal_connect (G_OBJECT (drawarea), "draw",
