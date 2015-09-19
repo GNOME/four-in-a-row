@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-15 16:05+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-09-10 05:02+0000\n"
 "PO-Revision-Date: 2015-03-15 15:37+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -23,7 +23,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: da_DK\n"
+"X-Source-Language: C\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
 #: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
@@ -31,8 +33,7 @@ msgstr ""
 msgid "Four-in-a-row"
 msgstr "Fire på stribe"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:2 ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Dan linjer af samme farve for at vinde"
 
@@ -44,7 +45,7 @@ msgid ""
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
 "En familieklassiker. Målet i Fire på stribe er at danne en linje med fire "
-"kugler, mens du forhindrer den menneskelige eller elektroniske modstander i "
+"kugler, mens du forhindrer menneske- eller computermodstanderen i "
 "at gøre det samme. En linje kan være vandret, lodret eller diagonal. Første "
 "spiller, der forbinder fire på stribe, vinder!"
 
@@ -53,8 +54,8 @@ msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
-"Fire på stribe tilbyder flere sværhedsgrader. Hvis du er i problemer, kan du "
-"altid bede om et fif."
+"Fire på stribe har flere sværhedsgrader. Hvis du er i problemer, kan du "
+"altid bede om et tip."
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
@@ -66,15 +67,15 @@ msgstr "Fortryd dit seneste træk"
 
 #: ../data/four-in-a-row.ui.h:3
 msgid "_Hint"
-msgstr "F_if"
+msgstr "_Tip"
 
 #: ../data/four-in-a-row.ui.h:4
 msgid "Receive a hint for your next move"
-msgstr "Få et fif til dit næste træk"
+msgstr "Få et tip til dit næste træk"
 
 #: ../data/four-in-a-row.ui.h:5
 msgid "_Start Over"
-msgstr "_Begynd forfra"
+msgstr "_Start forfra"
 
 #: ../data/four-in-a-row.ui.h:6
 msgid "Start a new game"
@@ -97,7 +98,7 @@ msgstr "Tema-id"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
-msgstr "En tal der angiver det foretrukne tema."
+msgstr "Et tal der angiver det foretrukne tema."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
@@ -109,7 +110,7 @@ msgstr "Om lydhændelser skal afspilles."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
 msgid "Move left"
-msgstr "Træk til venstre"
+msgstr "Flyt til venstre"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
@@ -117,7 +118,7 @@ msgstr "Tastetryk for at flytte til venstre."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
 msgid "Move right"
-msgstr "Træk til højre"
+msgstr "Flyt til højre"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
@@ -131,7 +132,11 @@ msgstr "Slip kugle"
 msgid "Key press to drop a marble."
 msgstr "Tastetryk for at slippe en kugle."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Denne tast er allerede i brug."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Ukendt kommando"
 
@@ -167,7 +172,7 @@ msgstr "Jeg tænker…"
 #: ../src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
-msgstr "Fif: Søjle %d"
+msgstr "Tip: søjle %d"
 
 #: ../src/main.c:631 ../src/main.c:635
 msgid "You:"
@@ -261,11 +266,11 @@ msgstr "A_ktivér lyde"
 #. keyboard tab
 #: ../src/prefs.c:243
 msgid "Keyboard Controls"
-msgstr "Tastaturstyreenheder"
+msgstr "Tastaturstyring"
 
 #: ../src/theme.c:40
 msgid "High Contrast"
-msgstr "Højkontrast"
+msgstr "Høj kontrast"
 
 #: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
@@ -293,7 +298,7 @@ msgstr "Kryds' tur"
 
 #: ../src/theme.c:49
 msgid "High Contrast Inverse"
-msgstr "Højkontrast omvendt"
+msgstr "Høj kontrast omvendt"
 
 #: ../src/theme.c:58
 msgid "Red and Green Marbles"
@@ -342,15 +347,3 @@ msgstr "Blås tur"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Stjerner og ringe"
-
-#~ msgid ""
-#~ "Connect four in a row to win.\n"
-#~ "\n"
-#~ "Four-in-a-row is a part of GNOME Games."
-#~ msgstr ""
-#~ "Forbind fire på stribe for at vinde.\n"
-#~ "\n"
-#~ "Fire på stribe er en del af GNOME Games."
-
-#~ msgid "_New Game"
-#~ msgstr "_Nyt spil"
