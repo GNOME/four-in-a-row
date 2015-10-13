@@ -2,14 +2,16 @@
 # Copyright © 1998, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 gnome-games
 # Distributed under the same licence as the gnome-games package
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1998.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# 
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-15 16:04+0000\n"
-"PO-Revision-Date: 2013-03-15 16:10+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-09-29 05:15+0000\n"
+"PO-Revision-Date: 2015-10-13 09:52+0100\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
@@ -17,22 +19,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
+#: ../data/gnect.desktop.in.in.h:1
 msgid "Four-in-a-Row"
-msgstr "Quatro-em-Linha"
+msgstr "Quatro em linha"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: ../data/gnect.desktop.in.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Construa linhas da mesma cor para ganhar"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
+#: ../data/gnect.desktop.in.in.h:3
 msgid "game;strategy;logic;"
 msgstr "jogo;estratégia;lógica;"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
 msgid "Level of Player One"
-msgstr "Nível do Jogador Um"
+msgstr "Nível do jogador 1"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
 msgid ""
@@ -44,11 +47,11 @@ msgstr ""
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
 msgid "Level of Player Two"
-msgstr "Nível do Jogador Dois"
+msgstr "Nível do jogador 2"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
 msgid "Theme ID"
-msgstr "ID de Tema"
+msgstr "ID de tema"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
 msgid "A number specifying the preferred theme."
@@ -70,7 +73,7 @@ msgstr "Som"
 msgid "Whether or not to play event sounds."
 msgstr "Se reproduzir ou não sons de eventos."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:315
 msgid "Move left"
 msgstr "Mover à esquerda"
 
@@ -78,7 +81,7 @@ msgstr "Mover à esquerda"
 msgid "Key press to move left."
 msgstr "Tecla para mover à esquerda."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:316
 msgid "Move right"
 msgstr "Mover à direita"
 
@@ -86,7 +89,7 @@ msgstr "Mover à direita"
 msgid "Key press to move right."
 msgstr "Tecla para mover à direita."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:317
 msgid "Drop marble"
 msgstr "Largar esfera"
 
@@ -96,11 +99,11 @@ msgstr "Tecla para largar uma esfera."
 
 #: ../src/games-controls.c:288
 msgid "Unknown Command"
-msgstr "Comando Desconhecido"
+msgstr "Comando desconhecido"
 
 #: ../src/games-stock.c:41
 msgid "View help for this game"
-msgstr "Apresentar a ajuda deste jogo"
+msgstr "Mostrar a ajuda deste jogo"
 
 #: ../src/games-stock.c:42
 msgid "End the current game"
@@ -136,7 +139,7 @@ msgstr "Pausar o jogo"
 
 #: ../src/games-stock.c:50
 msgid "Show a list of players in the network game"
-msgstr "Apresentar uma lista de jogadores no jogo em rede"
+msgstr "Mostrar uma lista de jogadores no jogo em rede"
 
 #: ../src/games-stock.c:51
 msgid "Redo the undone move"
@@ -152,7 +155,7 @@ msgstr "Retomar o jogo pausado"
 
 #: ../src/games-stock.c:54
 msgid "View the scores"
-msgstr "Visualizar as pontuações"
+msgstr "Ver as pontuações"
 
 #: ../src/games-stock.c:55
 msgid "Undo the last move"
@@ -180,7 +183,7 @@ msgstr "_Conteúdo"
 
 #: ../src/games-stock.c:248
 msgid "_Fullscreen"
-msgstr "_Ecrã Completo"
+msgstr "_Ecrã completo"
 
 #: ../src/games-stock.c:249
 msgid "_Hint"
@@ -194,11 +197,11 @@ msgstr "_Novo"
 #. Translators: This "_New Game" is for the game-over dialogue
 #: ../src/games-stock.c:253
 msgid "_New Game"
-msgstr "_Novo Jogo"
+msgstr "_Novo jogo"
 
 #: ../src/games-stock.c:254
 msgid "_Redo Move"
-msgstr "_Refazer a Jogada"
+msgstr "_Refazer a jogada"
 
 #. Translators: this is the "Reset" scores button in a scores dialogue
 #: ../src/games-stock.c:256
@@ -212,7 +215,7 @@ msgstr "_Reiniciar"
 
 #: ../src/games-stock.c:259
 msgid "_Undo Move"
-msgstr "_Desfazer a Jogada"
+msgstr "_Desfazer a jogada"
 
 #: ../src/games-stock.c:260
 msgid "_Deal"
@@ -220,19 +223,19 @@ msgstr "_Dar as cartas"
 
 #: ../src/games-stock.c:261
 msgid "_Leave Fullscreen"
-msgstr "_Deixar Ecrã Completo"
+msgstr "_Deixar ecrã completo"
 
 #: ../src/games-stock.c:262
 msgid "Network _Game"
-msgstr "_Jogo em Rede"
+msgstr "_Jogo em rede"
 
 #: ../src/games-stock.c:263
 msgid "L_eave Game"
-msgstr "_Abandonar o Jogo"
+msgstr "_Abandonar o jogo"
 
 #: ../src/games-stock.c:264
 msgid "Player _List"
-msgstr "_Lista de Jogadores"
+msgstr "_Lista de jogadores"
 
 #: ../src/games-stock.c:265
 msgid "_Pause"
@@ -240,7 +243,7 @@ msgstr "_Pausa"
 
 #: ../src/games-stock.c:266
 msgid "Res_ume"
-msgstr "Re_tomar"
+msgstr "Re_Tomar"
 
 #: ../src/games-stock.c:267
 msgid "_Scores"
@@ -248,7 +251,7 @@ msgstr "_Pontuações"
 
 #: ../src/games-stock.c:268
 msgid "_End Game"
-msgstr "_Terminar o Jogo"
+msgstr "_Terminar o jogo"
 
 #. %s is replaced with the name of the game in gnome-games.
 #: ../src/games-stock.c:317
@@ -273,7 +276,7 @@ msgid ""
 "details."
 msgstr ""
 "%s é distribuído na expectativa de que possa ser útil, mas SEM QUALQUER "
-"GARANTIA; nem mesmo a garantia implícita de COMERCIABILIDADE ou ADEQUAÇÃO A "
+"GARANTIA; nem mesmo a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO A "
 "UM FIM ESPECÍFICO.  Consulte a Licença Pública Genérica GNU para mais "
 "detalhes."
 
@@ -296,203 +299,205 @@ msgstr ""
 "Deverá ter recebido uma cópia da Licença Pública Genérica GNU juntamente com "
 "esta aplicação.  Caso contrário, consulte <http://www.gnu.org/licenses/>."
 
-#: ../src/gfx.c:248
+#: ../src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
 "%s"
 msgstr ""
-"Incapaz de ler imagem:\n"
+"Impossível carregar imagem:\n"
 "%s"
 
-#: ../src/main.c:524
+#: ../src/main.c:523
 msgid "It's a draw!"
 msgstr "É um empate!"
 
-#: ../src/main.c:533
+#: ../src/main.c:532
 msgid "You win!"
 msgstr "É o vencedor!"
 
-#: ../src/main.c:535 ../src/main.c:554
+#: ../src/main.c:534 ../src/main.c:553
 msgid "It is your move."
 msgstr "É a sua vez de jogar."
 
-#: ../src/main.c:538
+#: ../src/main.c:537
 msgid "I win!"
-msgstr "Computador é o vencedor!"
+msgstr "Ganhou o computador!"
 
-#: ../src/main.c:540 ../src/main.c:642
+#: ../src/main.c:539 ../src/main.c:641
 msgid "Thinking..."
 msgstr "A pensar..."
 
-#: ../src/main.c:551
+#: ../src/main.c:550
 #, c-format
 msgid "%s wins!"
 msgstr "%s é o vencedor!"
 
-#: ../src/main.c:558
+#: ../src/main.c:557
 #, c-format
 msgid "Waiting for %s to move."
 msgstr "A aguardar a jogada de %s."
 
-#: ../src/main.c:659
+#: ../src/main.c:658
 #, c-format
 msgid "Hint: Column %d"
-msgstr "Dica: Coluna %d"
+msgstr "Dica: coluna %d"
 
-#: ../src/main.c:687 ../src/main.c:691
+#: ../src/main.c:686 ../src/main.c:690
 msgid "You:"
-msgstr "O Jogador:"
+msgstr "O jogador:"
 
-#: ../src/main.c:688 ../src/main.c:690
+#: ../src/main.c:687 ../src/main.c:689
 msgid "Me:"
-msgstr "O Computador:"
+msgstr "O computador:"
 
-#: ../src/main.c:736
+#: ../src/main.c:735
 msgid "Scores"
 msgstr "Pontuações"
 
-#: ../src/main.c:780
+#: ../src/main.c:779
 msgid "Drawn:"
 msgstr "Empate:"
 
-#: ../src/main.c:829
+#: ../src/main.c:828
 msgid ""
 "\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
 "Bertoletti's Velena Engine.\n"
 "\n"
 "\"Four in a Row\" is a part of GNOME Games."
 msgstr ""
-"\"Quatro em Linha\" para o GNOME, com um jogador controlado pelo computador "
-"utilizando o Motor Velena do Giuliano Bertoletti.\n"
-"\"Quatro em Linha\" faz parte dos Jogos GNOME."
+"\"Quatro em linha\" para o GNOME, com um jogador controlado pelo computador "
+"utilizando o motor Velena do Giuliano Bertoletti.\n"
+"\"Quatro em linha\" faz parte dos Jogos GNOME."
 
-#: ../src/main.c:830
+#: ../src/main.c:829
 msgid "GNOME Games web site"
 msgstr "Página dos jogos GNOME"
 
-#: ../src/main.c:833
+#: ../src/main.c:832
 msgid "translator-credits"
-msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
+msgstr ""
+"Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com>"
 
-#: ../src/main.c:1183
+#: ../src/main.c:1182
 msgid "_Game"
 msgstr "_Jogo"
 
-#: ../src/main.c:1184
+#: ../src/main.c:1183
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/main.c:1185
+#: ../src/main.c:1184
 msgid "_Settings"
 msgstr "_Definições"
 
-#: ../src/main.c:1186
+#: ../src/main.c:1185
 msgid "_Help"
-msgstr "_Ajuda"
+msgstr "A_Juda"
 
 #: ../src/main.h:5
 msgid "Four-in-a-row"
-msgstr "Quatro-em-linha"
+msgstr "Quatro em linha"
 
-#: ../src/prefs.c:207
+#: ../src/prefs.c:206
 msgid "Four-in-a-Row Preferences"
-msgstr "Preferências do Quatro-em-Linha"
+msgstr "Preferências do Quatro em linha"
 
-#: ../src/prefs.c:230
+#: ../src/prefs.c:229
 msgid "Game"
 msgstr "Jogo"
 
-#: ../src/prefs.c:233
+#: ../src/prefs.c:232
 msgid "Player One:"
-msgstr "Jogador Um:"
+msgstr "Jogador 1:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
+#: ../src/prefs.c:243 ../src/prefs.c:271
 msgid "Human"
 msgstr "Humano"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
+#: ../src/prefs.c:247 ../src/prefs.c:275
 msgid "Level one"
 msgstr "Nível um"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
+#: ../src/prefs.c:251 ../src/prefs.c:279
 msgid "Level two"
 msgstr "Nível dois"
 
-#: ../src/prefs.c:256 ../src/prefs.c:284
+#: ../src/prefs.c:255 ../src/prefs.c:283
 msgid "Level three"
 msgstr "Nível três"
 
-#: ../src/prefs.c:262
+#: ../src/prefs.c:261
 msgid "Player Two:"
 msgstr "Jogador 2:"
 
-#: ../src/prefs.c:290
+#: ../src/prefs.c:289
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: ../src/prefs.c:303
+#: ../src/prefs.c:302
 msgid "Enable _animation"
-msgstr "Ativar _animações"
+msgstr "_Ativar animações"
 
-#: ../src/prefs.c:307
+#: ../src/prefs.c:306
 msgid "E_nable sounds"
-msgstr "Ativar _sons"
+msgstr "Ativar _Sons"
 
 #. keyboard tab
-#: ../src/prefs.c:312
+#: ../src/prefs.c:311
 msgid "Keyboard Controls"
-msgstr "Controlos por Teclado"
+msgstr "Controlos por teclado"
 
-#: ../src/theme.c:41
+#: ../src/theme.c:40
 msgid "Classic"
 msgstr "Clássico"
 
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
+#: ../src/theme.c:44 ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79
 msgid "Red"
 msgstr "Vermelho"
 
-#: ../src/theme.c:45
+#: ../src/theme.c:44
 msgid "Yellow"
 msgstr "Amarelo"
 
-#: ../src/theme.c:48
+#: ../src/theme.c:47
 msgid "High Contrast"
-msgstr "Contraste Elevado"
+msgstr "Contraste elevado"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:51 ../src/theme.c:58
 msgid "Circle"
 msgstr "Círculo"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: ../src/theme.c:51 ../src/theme.c:58
 msgid "Cross"
 msgstr "Cruz"
 
-#: ../src/theme.c:55
+#: ../src/theme.c:54
 msgid "High Contrast Inverse"
-msgstr "Contraste Elevado Invertido"
+msgstr "Contraste elevado invertido"
 
-#: ../src/theme.c:62
+#: ../src/theme.c:61
 msgid "Cream Marbles"
-msgstr "Esferas Creme"
+msgstr "Esferas creme"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: ../src/theme.c:65 ../src/theme.c:72 ../src/theme.c:79 ../src/theme.c:86
 msgid "Blue"
 msgstr "Azul"
 
-#: ../src/theme.c:69
+#: ../src/theme.c:68
 msgid "Glass Marbles"
-msgstr "Esferas de Vidro"
+msgstr "Esferas de vidro"
 
-#: ../src/theme.c:76
+#: ../src/theme.c:75
 msgid "Nightfall"
 msgstr "Crepúsculo"
 
-#: ../src/theme.c:83
+#: ../src/theme.c:82
 msgid "Blocks"
 msgstr "Blocos"
 
-#: ../src/theme.c:87
+#: ../src/theme.c:86
 msgid "Orange"
 msgstr "Laranja"
 
@@ -7470,15 +7475,15 @@ msgstr "Laranja"
 #~ "%(move)s White %(piece)s at %1$s takes the black %(victim_piece)s at %2$s "
 #~ "(%(result)s)"
 #~ msgstr ""
-#~ "%(move)s %(piece)s Branco em %1$s toma o %(victim_piece)s Preto em %(end)"
-#~ "s (%(result)s)"
+#~ "%(move)s %(piece)s Branco em %1$s toma o %(victim_piece)s Preto em "
+#~ "%(end)s (%(result)s)"
 
 #~ msgid ""
 #~ "%(move)s Black %(piece)s at %1$s takes the white %(victim_piece)s at %2$s "
 #~ "(%(result)s)"
 #~ msgstr ""
-#~ "%(move)s %(piece)s Preto em %1$s toma o %(victim_piece)s Branco em %(end)"
-#~ "s (%(result)s)"
+#~ "%(move)s %(piece)s Preto em %1$s toma o %(victim_piece)s Branco em "
+#~ "%(end)s (%(result)s)"
 
 #~ msgid "%(move)s White %(piece)s moves from %1$s to %2$s (%(result)s)"
 #~ msgstr "%(move)s %(piece)s Branco é movido de %1$s para %2$s (%(result)s)"
