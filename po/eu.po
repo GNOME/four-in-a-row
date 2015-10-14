@@ -2,23 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-#
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008-2014.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008-2014, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: four-in-a-row master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-31 17:07+0100\n"
-"PO-Revision-Date: 2014-12-05 23:00+0100\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Project-Id-Version: four-in-a-row gnome-3-18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-14 10:48+0200\n"
+"PO-Revision-Date: 2015-09-28 23:46+0200\n"
+"Last-Translator: Inaki Larranaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"\n"
 "X-Generator: Lokalize 1.5\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
@@ -127,7 +124,11 @@ msgstr "Jaregin puxtarriari"
 msgid "Key press to drop a marble."
 msgstr "Sakatu tekla puxtarriari jaregiteko."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Gako hau jadanik erabilita dago."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Komando ezezaguna"
 
@@ -190,26 +191,22 @@ msgid "translator-credits"
 msgstr "Hizkuntza Politikarako Sailburuordetza <hizkpol@ej-gv.es>"
 
 #: ../src/main.c:1130
-msgid "_New Game"
-msgstr "_Joko berria"
-
-#: ../src/main.c:1131
 msgid "_Scores"
 msgstr "_Puntuazioak"
 
-#: ../src/main.c:1132
+#: ../src/main.c:1131
 msgid "_Preferences"
 msgstr "_Hobespenak"
 
-#: ../src/main.c:1135
+#: ../src/main.c:1134
 msgid "_Help"
 msgstr "La_guntza"
 
-#: ../src/main.c:1136
+#: ../src/main.c:1135
 msgid "_About"
 msgstr "Honi _buruz"
 
-#: ../src/main.c:1137
+#: ../src/main.c:1136
 msgid "_Quit"
 msgstr "_Irten"
 
@@ -333,6 +330,9 @@ msgstr "Urdinaren txanda"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Izarrak eta eraztunak"
+
+#~ msgid "_New Game"
+#~ msgstr "_Joko berria"
 
 #~ msgid "%s"
 #~ msgstr "%s"
