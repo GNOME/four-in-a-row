@@ -1,5 +1,5 @@
 AC_PREREQ([2.63])
-AC_INIT([Four-in-a-Row], [3.18.1], [https://bugzilla.gnome.org/],
+AC_INIT([Four-in-a-Row], [3.18.2], [https://bugzilla.gnome.org/],
         [four-in-a-row], [https://wiki.gnome.org/Apps/Four-in-a-row])
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz foreign])
 AM_SILENT_RULES([yes])
