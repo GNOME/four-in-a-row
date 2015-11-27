@@ -4,13 +4,14 @@
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1998.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014.
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-06 16:54+0000\n"
+"POT-Creation-Date: 2015-10-19 05:14+0000\n"
 "PO-Revision-Date: 2014-10-08 08:38+0100\n"
 "Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -28,7 +29,7 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
-"Um clássico familiar, o objetivo do Quatro-em-linha é construir uma linha de "
+"Um clássico familiar, o objetivo do Quatro em linha é construir uma linha de "
 "quatro esferas e simultaneamente impedir o adversário (humano ou computador) "
 "de construir a sua própria linha. Uma linha pode ser horizontal, vertical ou "
 "diagonal. O primeiro jogador a ligar quatro em linha é o vencedor!"
@@ -38,12 +39,12 @@ msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
-"Quatro-em-linha apresenta vários níveis de dificuldade. Se estiver em "
-"dificuldades, pode sempre pedir uma dica."
+"O Quatro em linha tem vários níveis de dificuldade. Se estiver com "
+"problemas, pode sempre pedir uma dica."
 
 #: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1179 ../src/main.h:5
 msgid "Four-in-a-row"
-msgstr "Quatro-em-linha"
+msgstr "Quatro em linha"
 
 #: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
@@ -115,7 +116,7 @@ msgid ""
 "Unable to load image:\n"
 "%s"
 msgstr ""
-"Incapaz de ler imagem:\n"
+"Impossível carregar imagem:\n"
 "%s"
 
 #: ../src/main.c:510
@@ -165,13 +166,15 @@ msgid ""
 "\n"
 "Four-in-a-row is a part of GNOME Games."
 msgstr ""
-"Ligar quatro em linha para vencer.\n"
+"Ligue quatro em linha para vencer.\n"
 "\n"
-"Quatro-em-Linha faz parte dos Jogos GNOME."
+"Quatro em linha faz parte dos Jogos GNOME."
 
 #: ../src/main.c:813
 msgid "translator-credits"
-msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
+msgstr ""
+"Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com>"
 
 #: ../src/main.c:1188
 msgid "Undo your most recent move"
@@ -191,7 +194,7 @@ msgstr "_Preferências"
 
 #: ../src/main.c:1207
 msgid "_Help"
-msgstr "_Ajuda"
+msgstr "A_Juda"
 
 #: ../src/main.c:1208
 msgid "_About"
@@ -211,7 +214,7 @@ msgstr "Obter uma dica para a próxima jogada"
 
 #: ../src/main.c:1258
 msgid "_Start Over"
-msgstr "Co_meçar de novo"
+msgstr "_Recomeçar de novo"
 
 #: ../src/main.c:1264
 msgid "Start a new game"
@@ -251,7 +254,7 @@ msgstr "_Tema:"
 
 #: ../src/prefs.c:238
 msgid "E_nable sounds"
-msgstr "Ativar _sons"
+msgstr "Ativar _Sons"
 
 #. keyboard tab
 #: ../src/prefs.c:243
@@ -271,12 +274,10 @@ msgid "Cross"
 msgstr "Cruz"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "Circle"
 msgid "Circle wins!"
 msgstr "Ganhou o círculo!"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "%s wins!"
 msgid "Cross wins!"
 msgstr "Ganhou a cruz!"
 
@@ -285,7 +286,6 @@ msgid "Circle’s turn"
 msgstr "Vez do círculo"
 
 #: ../src/theme.c:46 ../src/theme.c:55
-#| msgid "%s’s Turn"
 msgid "Cross’s turn"
 msgstr "Vez da cruz"
 
@@ -306,12 +306,10 @@ msgid "Green"
 msgstr "Verde"
 
 #: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Red wins!"
 msgstr "Ganhou o vermelho!"
 
 #: ../src/theme.c:63 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Green wins!"
 msgstr "Ganhou o verde!"
 
@@ -332,7 +330,6 @@ msgid "Blue"
 msgstr "Azul"
 
 #: ../src/theme.c:72
-#| msgid "%s wins!"
 msgid "Blue wins!"
 msgstr "Ganhou o azul!"
 
