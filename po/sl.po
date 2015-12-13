@@ -6,16 +6,16 @@
 # Tadej Janež <tadej_janez@email.si>, 2003.
 # Matic Žgur <mr.zgur@gmail.com>, 2006-2007.
 # Matej Urbančič <mateju@svn.gnome.org>, 2007-2015.
-#
+# Andrej Mernik <andrejm@ubuntu.si>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-08 17:02+0000\n"
-"PO-Revision-Date: 2015-09-08 22:14+0100\n"
+"POT-Creation-Date: 2015-12-11 18:27+0000\n"
+"PO-Revision-Date: 2015-12-11 20:12+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgstr "Štiri v vrsto"
 #: ../data/four-in-a-row.appdata.xml.in.h:2
 #: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
-msgstr "Za zmago čim hitreje uredite vrstice v isti barvi"
+msgstr "Za zmago čim hitreje sestavite vrstice iste barve"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
@@ -44,8 +44,8 @@ msgid ""
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
 "Klasična igra štirih v vrsto. Cilj igre je postaviti 4 kroglice v vrsto in "
-"hkrati preprečiti nasprotniku (drugemu igralci ali računalniku), da stori "
-"enako. Vrsta je lahko navpična, vodoravna ali diagonalna. Zmagi tisti, ki "
+"hkrati preprečiti nasprotniku (drugemu igralcu ali računalniku), da stori "
+"enako. Vrsta je lahko navpična, vodoravna ali diagonalna. Zmaga tisti, ki "
 "prvi postavi štiri v vrsto."
 
 #: ../data/four-in-a-row.appdata.xml.in.h:4
@@ -96,7 +96,7 @@ msgstr "ID teme"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
-msgstr "Številka ki določa prednostno temo."
+msgstr "Številka, ki določa prednostno temo."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
@@ -132,7 +132,7 @@ msgstr "Pritisk tipke za izpustitev kroglice."
 
 #: ../src/games-controls.c:105
 msgid "This key is already in use."
-msgstr "Ključ je že v uporabi."
+msgstr "Tipka je že v uporabi."
 
 #: ../src/games-controls.c:326
 msgid "Unknown Command"
@@ -186,7 +186,7 @@ msgstr "Rezultati"
 
 #: ../src/main.c:721
 msgid "Drawn:"
-msgstr "Izvlečeno:"
+msgstr "Neodločeno:"
 
 #: ../src/main.c:762
 msgid "Connect four in a row to win."
@@ -238,15 +238,15 @@ msgstr "Človek"
 
 #: ../src/prefs.c:211
 msgid "Level one"
-msgstr "Prva reven"
+msgstr "Prva raven"
 
 #: ../src/prefs.c:215
 msgid "Level two"
-msgstr "Druga reven"
+msgstr "Druga raven"
 
 #: ../src/prefs.c:219
 msgid "Level three"
-msgstr "Tretja reven"
+msgstr "Tretja raven"
 
 #: ../src/prefs.c:225
 msgid "_Theme:"
@@ -267,27 +267,27 @@ msgstr "Visok kontrast"
 
 #: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
-msgstr "Krog"
+msgstr "Krožci"
 
 #: ../src/theme.c:44 ../src/theme.c:53
 msgid "Cross"
-msgstr "Križ"
+msgstr "Križci"
 
 #: ../src/theme.c:45 ../src/theme.c:54
 msgid "Circle wins!"
-msgstr "Igralec s krožcem je zmagal!"
+msgstr "Igralec s krožci je zmagal!"
 
 #: ../src/theme.c:45 ../src/theme.c:54
 msgid "Cross wins!"
-msgstr "Igralec s krožcem je zmagal!"
+msgstr "Igralec s križci je zmagal!"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Circle’s turn"
-msgstr "Igralec s križcem je zmagal!"
+msgstr "Igralec s krožci je na potezi"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Cross’s turn"
-msgstr "Igralec s križcem je na potezi"
+msgstr "Igralec s križci je na potezi"
 
 #: ../src/theme.c:49
 msgid "High Contrast Inverse"
