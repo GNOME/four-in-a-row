@@ -2,9 +2,10 @@ AC_PREREQ([2.63])
 AC_INIT([Four-in-a-Row], [3.18.1], [https://bugzilla.gnome.org/],
         [four-in-a-row], [https://wiki.gnome.org/Apps/Four-in-a-row])
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz foreign])
+AC_CONFIG_MACRO_DIR([m4])
+
 AM_SILENT_RULES([yes])
 AM_MAINTAINER_MODE
-GNOME_MAINTAINER_MODE_DEFINES
 AC_CONFIG_HEADERS([config.h])
 
 AM_PROG_VALAC([0.22])

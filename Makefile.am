@@ -7,4 +7,7 @@ MAINTAINERCLEANFILES = \
 EXTRA_DIST = \
 	COPYING.faenza-themes
 
+# We currently have no custom macros
+GITIGNOREFILES = m4
+
 -include $(top_srcdir)/git.mk
