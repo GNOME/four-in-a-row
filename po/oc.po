@@ -1513,7 +1513,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "_Netejar"
 
 #~ msgid "Print Preview"
-#~ msgstr "Previsualizacion de l'imprimitge"
+#~ msgstr "Previsualizacion de l'impression"
 
 #~ msgid "Stopped"
 #~ msgstr "Arrestat"
