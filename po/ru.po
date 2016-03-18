@@ -13,15 +13,16 @@
 # Nickolay V. Shmyrev <nshmyrev@yandex.ru>
 # Yuri Myasoedov <ymyasoedov@yandex.ru>, 2012-2014.
 # Ivan Komaritsyn <vantu5z@mail.ru>, 2015.
+# Stas Solovey <whats_up@tut.by>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-20 05:43+0000\n"
-"PO-Revision-Date: 2015-02-20 14:05+0300\n"
-"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"POT-Creation-Date: 2016-03-18 06:28+0000\n"
+"PO-Revision-Date: 2016-03-18 12:12+0300\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -29,13 +30,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
 #: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
 #: ../src/main.h:5
 msgid "Four-in-a-row"
-msgstr "Четыре-в-ряд"
+msgstr "Четыре в ряд"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:2
 #: ../data/four-in-a-row.desktop.in.h:2
@@ -136,9 +137,13 @@ msgstr "Бросить шарик"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
-msgstr "Нажмите клавишу для сброса шарика."
+msgstr "Клавиша для сброса шарика."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Данная клавиша уже используется."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Неизвестная команда"
 
@@ -199,11 +204,8 @@ msgstr "Соберите четыре шарика в ряд, чтобы поб�
 #: ../src/main.c:765
 msgid "translator-credits"
 msgstr ""
-"Валек Филиппов aka frob\n"
-"Дмитрий Мастрюков\n"
-"Вячеслав Диконов\n"
-"Михаил Яхонтов\n"
-"Леонид Кантер"
+"Yuri Myasoedov <ymyasoedov@yandex.ru>, 2012-2014.\n"
+"Stas Solovey <whats_up@tut.by>, 2016."
 
 #: ../src/main.c:1130
 msgid "_Scores"
@@ -223,7 +225,7 @@ msgstr "_О приложении"
 
 #: ../src/main.c:1136
 msgid "_Quit"
-msgstr "_Закончить"
+msgstr "_Завершить"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
