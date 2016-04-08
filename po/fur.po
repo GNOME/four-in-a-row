@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-10-28 06:27+0000\n"
-"PO-Revision-Date: 2015-10-28 15:13+0100\n"
+"POT-Creation-Date: 2016-04-08 05:40+0000\n"
+"PO-Revision-Date: 2016-04-08 18:31+0200\n"
+"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "X-Generator: Poedit 1.8.5\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Un classic zûc par fameis, l'obietîf di Fuarce 4 al è chel di creâ une rie "
 "di cuatri modons dal tô colôr intant che tu ciris di fermâ il to aversari "
-"(uman o calcoladôr). Une rie a pues sedi orizontâl, verticâl o diagonâl: cui "
-"che al rive par prin a metiju cuatri in linie al vinç!"
+"(uman o calcoladôr). Une rie e pues jessi orizontâl, verticâl o diagonâl: "
+"cui che al rive par prin a metiju cuatri in linie al vinç!"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
@@ -81,7 +81,7 @@ msgstr "Aversari"
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
-msgstr "Zero al è uman; da un a trê al corispuint il nivel dal computer."
+msgstr "Zero al è uman; di un a trê al corispuint il nivel dal computer."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
@@ -248,7 +248,7 @@ msgstr "A_bilite suns"
 #. keyboard tab
 #: ../src/prefs.c:243
 msgid "Keyboard Controls"
-msgstr "Controi da tastiere"
+msgstr "Controi di tastiere"
 
 #: ../src/theme.c:40
 msgid "High Contrast"
