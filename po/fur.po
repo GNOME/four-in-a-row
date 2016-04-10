@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-08 05:40+0000\n"
-"PO-Revision-Date: 2016-04-08 18:31+0200\n"
+"POT-Creation-Date: 2016-04-10 17:41+0000\n"
+"PO-Revision-Date: 2016-04-10 20:30+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -55,7 +55,7 @@ msgstr "zûc;strategjie; logjiche;"
 
 #: ../data/four-in-a-row.ui.h:2
 msgid "Undo your most recent move"
-msgstr "Anule le tô ultime mosse"
+msgstr "Anule la tô ultime mosse"
 
 #: ../data/four-in-a-row.ui.h:3
 msgid "_Hint"
@@ -137,7 +137,7 @@ msgid ""
 "Unable to load image:\n"
 "%s"
 msgstr ""
-"Impussibil cjariâ la inmagjin:\n"
+"Impussibil cjariâ la imagjin:\n"
 "%s"
 
 #: ../src/main.c:476
