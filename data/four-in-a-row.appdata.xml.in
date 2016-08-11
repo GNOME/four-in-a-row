@@ -3,7 +3,7 @@
 <component type="desktop">
   <id>four-in-a-row.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.0+ and GPL-3.0+ and CC-BY-SA-3.0</project_license>
+  <project_license>GPL-3.0+</project_license>
   <_name>Four-in-a-row</_name>
   <_summary>Make lines of the same color to win</_summary>
   <description>
@@ -19,7 +19,7 @@
     </_p>
   </description>
   <screenshots>
-    <screenshot type="default" width="700" height="447">
+    <screenshot height="447" width="700" type="default">
       <image>https://people.gnome.org/~mcatanzaro/four-in-a-row.png</image>
     </screenshot>
   </screenshots>
@@ -29,6 +29,7 @@
   <url type="help">https://help.gnome.org/users/four-in-a-row/stable/</url>
   <update_contact>mcatanzaro_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
+  <_developer_name>The GNOME Project</_developer_name>
   <kudos>
     <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>
@@ -36,4 +37,6 @@
     <kudo>UserDocs</kudo>
   </kudos>
   <translation type="gettext">four-in-a-row</translation>
+  <url type="translate">https://wiki.gnome.org/TranslationProject</url>
+  <url type="donation">https://www.gnome.org/friends/</url>
 </component>
