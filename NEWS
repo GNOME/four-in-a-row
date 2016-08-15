@@ -1,3 +1,11 @@
+3.21.90 - August 16, 2016
+=========================
+
+* Simplify style-checker enabling code(Sahil Sareen)
+* Fix style-checker with new libgnome-games-support(Sahil Sareen)
+* Add Language headers to po files(Piotr Drąg)
+* Updated translations
+
 3.20.1 - May 6, 2016
 ====================
 
