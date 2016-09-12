@@ -1,5 +1,5 @@
 # Danish translation of gnome-games.
-# Copyright (C) 1998-2015 Free Software Foundation, Inc.
+# Copyright (C) 1998-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-games package.
 # Anders Wegge Jakobsen <wegge@wegge.dk>, 1998.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2001
@@ -7,16 +7,16 @@
 # Ole Laursen <olau@hardworking.dk>, 2001, 02, 03, 04.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
 # flemming christensen <fc@stromata.dk>, 2011.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007-2015.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007-2016.
 #
 # Konventioner:
 #   cross, circle -> kryds, bolle
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-10 05:02+0000\n"
-"PO-Revision-Date: 2015-03-15 15:37+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-12 02:04+0200\n"
+"PO-Revision-Date: 2016-09-08 02:59+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -33,7 +33,8 @@ msgstr ""
 msgid "Four-in-a-row"
 msgstr "Fire på stribe"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2 ../data/four-in-a-row.desktop.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
 msgstr "Dan linjer af samme farve for at vinde"
 
@@ -45,9 +46,9 @@ msgid ""
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
 "En familieklassiker. Målet i Fire på stribe er at danne en linje med fire "
-"kugler, mens du forhindrer menneske- eller computermodstanderen i "
-"at gøre det samme. En linje kan være vandret, lodret eller diagonal. Første "
-"spiller, der forbinder fire på stribe, vinder!"
+"kugler, mens du forhindrer menneske- eller computermodstanderen i at gøre "
+"det samme. En linje kan være vandret, lodret eller diagonal. Første spiller, "
+"der forbinder fire på stribe, vinder!"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
@@ -56,6 +57,10 @@ msgid ""
 msgstr ""
 "Fire på stribe har flere sværhedsgrader. Hvis du er i problemer, kan du "
 "altid bede om et tip."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "GNOME-projektet"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
