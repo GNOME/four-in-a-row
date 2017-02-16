@@ -14,8 +14,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-12 02:04+0200\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-09-12 08:09+0000\n"
 "PO-Revision-Date: 2016-09-08 02:59+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -172,7 +173,7 @@ msgstr "Jeg vandt!"
 
 #: ../src/main.c:491 ../src/main.c:590
 msgid "I’m Thinking…"
-msgstr "Jeg tænker…"
+msgstr "Jeg tænker …"
 
 #: ../src/main.c:603
 #, c-format
@@ -352,3 +353,4 @@ msgstr "Blås tur"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Stjerner og ringe"
+
