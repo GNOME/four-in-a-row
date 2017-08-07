@@ -1,14 +1,15 @@
 # Ales Nyakhaychyk <nab@mail.by>, 2003.
 # Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2011, 2014.
 # Kasia Bondarava <kasia.bondarava@gmail.com>, 2012.
+# Yuras Shumovich <shumovichy@gmail.com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-24 15:10+0000\n"
-"PO-Revision-Date: 2012-09-07 18:13+0300\n"
-"Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
+"POT-Creation-Date: 2017-02-28 06:51+0000\n"
+"PO-Revision-Date: 2017-05-15 20:13+0300\n"
+"Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
@@ -16,10 +17,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Virtaal 0.7.0\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
+#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
+#: ../src/main.h:5
+msgid "Four-in-a-row"
+msgstr "Чатыры ў радок"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.desktop.in.h:2
+msgid "Make lines of the same color to win"
+msgstr "Каб выйграць, складай лініі з аднаго колеру"
+
+#: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -27,28 +39,45 @@ msgid ""
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
 "Класічная гульня, задача якой заключаецца ў тым, каб скласці лінію з чатырох "
-"каменьчыкаў, у той самы час стараючыся не дазволіць суперніку (чалавеку або камп'ютару) "
-"зрабіць гэта. Лінія можа быць гарызантальнай, вертыкальнай або дыяганальнай. "
-"Хто першы складзе чатыры каменьчыкі ў рад, той і выйграў!"
+"каменьчыкаў, у той самы час стараючыся не дазволіць суперніку (чалавеку або "
+"камп'ютару) зрабіць гэта. Лінія можа быць гарызантальнай, вертыкальнай або "
+"дыяганальнай. Хто першы складзе чатыры каменьчыкі ў рад, той і выйграў!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
+#: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
-"Гульня \"Чатыры ў радок\" мае некалькі ўзроўняў цяжкасці. Калі ў вас праблемы, заўсёды можна звярнуцца па падказку."
+"Гульня \"Чатыры ў радок\" мае некалькі ўзроўняў цяжкасці. Калі ў вас "
+"праблемы, заўсёды можна звярнуцца па падказку."
 
-#: ../data/four-in-a-row.desktop.in.h:1 ../src/main.c:1175 ../src/main.h:5
-msgid "Four-in-a-row"
-msgstr "Чатыры ў радок"
-
-#: ../data/four-in-a-row.desktop.in.h:2
-msgid "Make lines of the same color to win"
-msgstr "Каб выйграць, складай лініі з аднаго колеру"
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "Праект GNOME"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "гульня;стратэгія;логіка;лагічная гульня;"
+
+#: ../data/four-in-a-row.ui.h:2
+msgid "Undo your most recent move"
+msgstr "Адрабіць апошні ход назад"
+
+#: ../data/four-in-a-row.ui.h:3
+msgid "_Hint"
+msgstr "Пад_казка"
+
+#: ../data/four-in-a-row.ui.h:4
+msgid "Receive a hint for your next move"
+msgstr "Атрымаць падказку для наступнага ходу"
+
+#: ../data/four-in-a-row.ui.h:5
+msgid "_Start Over"
+msgstr "_Пачаць з пачатку"
+
+#: ../data/four-in-a-row.ui.h:6
+msgid "Start a new game"
+msgstr "Распачаць новую гульню"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
 msgid "Opponent"
@@ -76,7 +105,7 @@ msgstr "Гук"
 msgid "Whether or not to play event sounds."
 msgstr "Ці трэба агучваць гульню."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:248
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
 msgid "Move left"
 msgstr "Пахадзіць улева"
 
@@ -84,7 +113,7 @@ msgstr "Пахадзіць улева"
 msgid "Key press to move left."
 msgstr "Клавіша, каб пахадзіць улева."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:249
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
 msgid "Move right"
 msgstr "Пахадзіць управа"
 
@@ -92,7 +121,7 @@ msgstr "Пахадзіць управа"
 msgid "Key press to move right."
 msgstr "Клавіша, каб пахадзіць управа."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:250
+#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
 msgid "Drop marble"
 msgstr "Кінуць каменьчык"
 
@@ -100,207 +129,13 @@ msgstr "Кінуць каменьчык"
 msgid "Key press to drop a marble."
 msgstr "Клавіша, каб кінуць каменьчык."
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:105
+msgid "This key is already in use."
+msgstr "Гэта клавіша ўжо выкарыстоўваецца."
+
+#: ../src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Невядомы загад"
-
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Паказаць даведнік па гэтай гульні"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Скончыць актыўную гульню"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Пераключыць поўнаэкранны рэжым"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Атрымаць падказку для наступнага ходу"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Выйсці з поўнаэкраннага рэжыму"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Распачаць новую шматкарыстальніцкую сеткавую гульню"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Скончыць актыўную сеткавую гульню і вярнуцца да сервера"
-
-#: ../src/games-stock.c:48 ../src/main.c:1265
-msgid "Start a new game"
-msgstr "Распачаць новую гульню"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Прыпыніць гульню"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Паказаць спіс сеткавых гульцоў"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Паўтарыць скасаваны ход"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Перазапусціць гульню"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Працягнуць прыпыненую гульню"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Паказаць рэкорды"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Адрабіць апошні ход назад"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "Аб гэтай гульні"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Закрыць гэта акно"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Настроіць гульню"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Выйсці з гульні"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Змест"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_На ўвесь экран"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "Пад_казка"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Новая партыя"
-
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253 ../src/main.c:1190
-msgid "_New Game"
-msgstr "_Новая гульня"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_Паўтарыць скасаваны ход"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Ануляваць"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "_Перазапусціць"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "_Адрабіць ход назад"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Выдаць"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "_Выйсці з поўнаэкраннага рэжыму"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "_Сеткавая гульня"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "_Выйсці з гульні"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "Спіс _гульцоў"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Паўза"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "_Працягнуць"
-
-#: ../src/games-stock.c:267 ../src/main.c:1191
-msgid "_Scores"
-msgstr "_Рэкорды"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "_Скончыць гульню"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s з'яўляецца свабодным апраграмаваннем. Вы можаце распаўсюджваць гэту "
-"гульню згодна з умовамі Агульнай Грамадскай Ліцэнзіі GNU (GPL), "
-"апублікаванай Фондам свабоднага апраграмавання, версіі %d ці любой пазнейшай."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s распаўсюджваецца з надзеяй, што гэта гульня будзе карыснай, але без "
-"ніякіх гарантый, у тым ліку камерцыйнай вартасці праграмы і наогул яе "
-"карысці. Падрабязней глядзіце ў тэксце Агульнай Грамадскай Ліцэнзіі GNU "
-"(GPL)."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Вы павінны былі атрымаць копію Агульнай Грамадскай Ліцэнзіі GNU (GPL) разам "
-"з %s. Калі вы не атрымалі яе, паведаміце пра гэта Фонду свабоднага "
-"апраграмавання на адрас: the Free Software Foundation, Inc., 51 Franklin "
-"Street, Fifth Floor, Boston, MA  02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Вы павінны былі атрымаць копію Агульнай Грамадскай Ліцэнзіі GNU (GPL) разам "
-"з гэтай праграмай. Калі не, гл.: <http://www.gnu.org/licenses/>."
 
 #: ../src/gfx.c:247
 #, c-format
@@ -311,139 +146,116 @@ msgstr ""
 "Не ўдалося загрузіць выяву:\n"
 "%s"
 
-#: ../src/main.c:511
+#: ../src/main.c:476
 msgid "It’s a draw!"
 msgstr "Нічыя!"
 
-#: ../src/main.c:520
+#: ../src/main.c:484
 msgid "You win!"
 msgstr "Вы перамаглі!"
 
-#: ../src/main.c:522 ../src/main.c:541
+#: ../src/main.c:486 ../src/main.c:502
 msgid "Your Turn"
 msgstr "Ваш ход"
 
-#: ../src/main.c:525
+#: ../src/main.c:489
 msgid "I win!"
 msgstr "Я перамог!"
 
-#: ../src/main.c:527 ../src/main.c:628
+#: ../src/main.c:491 ../src/main.c:590
 msgid "I’m Thinking…"
 msgstr "Думаю..."
 
-#: ../src/main.c:538
-#, c-format
-msgid "%s wins!"
-msgstr "%s перамог!"
-
-#: ../src/main.c:545
-#, c-format
-msgid "%s’s Turn"
-msgstr "Ходзіць %s"
-
-#: ../src/main.c:641
+#: ../src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Падказка: слупок %d"
 
-#: ../src/main.c:669 ../src/main.c:673
+#: ../src/main.c:631 ../src/main.c:635
 msgid "You:"
 msgstr "Вы:"
 
-#: ../src/main.c:670 ../src/main.c:672
+#: ../src/main.c:632 ../src/main.c:634
 msgid "Me:"
 msgstr "Я:"
 
-#: ../src/main.c:718
+#: ../src/main.c:680
 msgid "Scores"
 msgstr "Лік"
 
 #: ../src/main.c:721
-msgid "_Close"
-msgstr "_Закрыць"
-
-#: ../src/main.c:759
 msgid "Drawn:"
 msgstr "Нічыйных:"
 
-#: ../src/main.c:807
-msgid ""
-"Connect four in a row to win.\n"
-"\n"
-"Four-in-a-row is a part of GNOME Games."
-msgstr ""
-"Каб перамагчы, складзіце чатыры каменьчыкі ў радок.\n"
-"\n"
-"Гульня \"Чатыры ў радок\" з'яўляецца складовай часткай пакунка гульняў для GNOME."
+#: ../src/main.c:762
+msgid "Connect four in a row to win."
+msgstr "Збярыце чатыры ў радок каб перамагчы."
 
-#: ../src/main.c:810
+#: ../src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Ales Nyakhaychyk <nab@mail.by>\n"
-"Ihar Hrachyshka <ihar.hrachyshka@gmail.com>"
+"Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
+"Юрась Шумовіч <shumovichy@gmail.com>"
 
-#: ../src/main.c:1192
+#: ../src/main.c:1130
+msgid "_Scores"
+msgstr "_Рэкорды"
+
+#: ../src/main.c:1131
 msgid "_Preferences"
 msgstr "_Настройкі"
 
-#: ../src/main.c:1195
+#: ../src/main.c:1134
 msgid "_Help"
 msgstr "_Дапамога"
 
-#: ../src/main.c:1196
+#: ../src/main.c:1135
 msgid "_About"
 msgstr "_Аб праграме"
 
-#: ../src/main.c:1197
+#: ../src/main.c:1136
 msgid "_Quit"
 msgstr "_Выйсці"
-
-#: ../src/main.c:1245
-msgid "Undo your most recent move"
-msgstr "Адрабіць апошні ход назад"
-
-#: ../src/main.c:1255
-msgid "Receive a hint for your next move"
-msgstr "Атрымаць падказку для наступнага ходу"
 
 #: ../src/prefs.c:171
 msgid "Preferences"
 msgstr "Настройкі"
 
-#: ../src/prefs.c:194
+#: ../src/prefs.c:193
 msgid "Game"
 msgstr "Гульня"
 
-#: ../src/prefs.c:197
+#: ../src/prefs.c:196
 msgid "Opponent:"
 msgstr "Супернік:"
 
-#: ../src/prefs.c:208
+#: ../src/prefs.c:207
 msgid "Human"
 msgstr "Чалавек"
 
-#: ../src/prefs.c:212
+#: ../src/prefs.c:211
 msgid "Level one"
 msgstr "Першы ўзровень"
 
-#: ../src/prefs.c:216
+#: ../src/prefs.c:215
 msgid "Level two"
 msgstr "Другі ўзровень"
 
-#: ../src/prefs.c:220
+#: ../src/prefs.c:219
 msgid "Level three"
 msgstr "Трэці ўзровень"
 
-#: ../src/prefs.c:226
+#: ../src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Матыў:"
 
-#: ../src/prefs.c:239
+#: ../src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "Уключыць _гук"
 
 #. keyboard tab
-#: ../src/prefs.c:244
+#: ../src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Клавіятурнае кіраванне"
 
@@ -451,39 +263,232 @@ msgstr "Клавіятурнае кіраванне"
 msgid "High Contrast"
 msgstr "Высокая кантраснасць"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
 msgstr "Нулік"
 
-#: ../src/theme.c:44 ../src/theme.c:51
+#: ../src/theme.c:44 ../src/theme.c:53
 msgid "Cross"
 msgstr "Крыжык"
 
-#: ../src/theme.c:47
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Circle wins!"
+msgstr "Нулік перамог!"
+
+#: ../src/theme.c:45 ../src/theme.c:54
+msgid "Cross wins!"
+msgstr "Крыжык перамог!"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Circle’s turn"
+msgstr "Ходзіць нулік"
+
+#: ../src/theme.c:46 ../src/theme.c:55
+msgid "Cross’s turn"
+msgstr "Ходзіць крыжык"
+
+#: ../src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "Высокая інверсійная кантраснасць"
 
-#: ../src/theme.c:54
+#: ../src/theme.c:58
 msgid "Red and Green Marbles"
 msgstr "Чырвоныя і зялёныя каменьчыкі"
 
-#: ../src/theme.c:58 ../src/theme.c:65 ../src/theme.c:72
+#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
 msgid "Red"
 msgstr "Чырвоны"
 
-#: ../src/theme.c:58 ../src/theme.c:72
+#: ../src/theme.c:62 ../src/theme.c:80
 msgid "Green"
 msgstr "Зялёны"
 
-#: ../src/theme.c:61
+#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+msgid "Red wins!"
+msgstr "Чырвоны перамог!"
+
+#: ../src/theme.c:63 ../src/theme.c:81
+msgid "Green wins!"
+msgstr "Зялёны перамог!"
+
+#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+msgid "Red’s turn"
+msgstr "Ходзіць чырвоны!"
+
+#: ../src/theme.c:64 ../src/theme.c:82
+msgid "Green’s turn"
+msgstr "Ходзіць зялёны!"
+
+#: ../src/theme.c:67
 msgid "Blue and Red Marbles"
 msgstr "Сінія і чырвоныя каменьчыкі"
 
-#: ../src/theme.c:65
+#: ../src/theme.c:71
 msgid "Blue"
 msgstr "Сіні"
 
-#: ../src/theme.c:68
+#: ../src/theme.c:72
+msgid "Blue wins!"
+msgstr "Сіні перамог!"
+
+#: ../src/theme.c:73
+msgid "Blue’s turn"
+msgstr "Ходзіць сіні"
+
+#: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Зоркі і кольцы"
 
+#~ msgid "View help for this game"
+#~ msgstr "Паказаць даведнік па гэтай гульні"
+
+#~ msgid "End the current game"
+#~ msgstr "Скончыць актыўную гульню"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Пераключыць поўнаэкранны рэжым"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Атрымаць падказку для наступнага ходу"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Выйсці з поўнаэкраннага рэжыму"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Распачаць новую шматкарыстальніцкую сеткавую гульню"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "Скончыць актыўную сеткавую гульню і вярнуцца да сервера"
+
+#~ msgid "Pause the game"
+#~ msgstr "Прыпыніць гульню"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "Паказаць спіс сеткавых гульцоў"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "Паўтарыць скасаваны ход"
+
+#~ msgid "Restart the game"
+#~ msgstr "Перазапусціць гульню"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "Працягнуць прыпыненую гульню"
+
+#~ msgid "View the scores"
+#~ msgstr "Паказаць рэкорды"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Адрабіць апошні ход назад"
+
+#~ msgid "About this game"
+#~ msgstr "Аб гэтай гульні"
+
+#~ msgid "Close this window"
+#~ msgstr "Закрыць гэта акно"
+
+#~ msgid "Configure the game"
+#~ msgstr "Настроіць гульню"
+
+#~ msgid "Quit this game"
+#~ msgstr "Выйсці з гульні"
+
+#~ msgid "_Contents"
+#~ msgstr "_Змест"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_На ўвесь экран"
+
+#~ msgid "_New"
+#~ msgstr "_Новая партыя"
+
+#~ msgid "_New Game"
+#~ msgstr "_Новая гульня"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_Паўтарыць скасаваны ход"
+
+#~ msgid "_Reset"
+#~ msgstr "_Ануляваць"
+
+#~ msgid "_Restart"
+#~ msgstr "_Перазапусціць"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Адрабіць ход назад"
+
+#~ msgid "_Deal"
+#~ msgstr "_Выдаць"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "_Выйсці з поўнаэкраннага рэжыму"
+
+#~ msgid "Network _Game"
+#~ msgstr "_Сеткавая гульня"
+
+#~ msgid "L_eave Game"
+#~ msgstr "_Выйсці з гульні"
+
+#~ msgid "Player _List"
+#~ msgstr "Спіс _гульцоў"
+
+#~ msgid "_Pause"
+#~ msgstr "_Паўза"
+
+#~ msgid "Res_ume"
+#~ msgstr "_Працягнуць"
+
+#~ msgid "_End Game"
+#~ msgstr "_Скончыць гульню"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s з'яўляецца свабодным апраграмаваннем. Вы можаце распаўсюджваць гэту "
+#~ "гульню згодна з умовамі Агульнай Грамадскай Ліцэнзіі GNU (GPL), "
+#~ "апублікаванай Фондам свабоднага апраграмавання, версіі %d ці любой "
+#~ "пазнейшай."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s распаўсюджваецца з надзеяй, што гэта гульня будзе карыснай, але без "
+#~ "ніякіх гарантый, у тым ліку камерцыйнай вартасці праграмы і наогул яе "
+#~ "карысці. Падрабязней глядзіце ў тэксце Агульнай Грамадскай Ліцэнзіі GNU "
+#~ "(GPL)."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "Вы павінны былі атрымаць копію Агульнай Грамадскай Ліцэнзіі GNU (GPL) "
+#~ "разам з %s. Калі вы не атрымалі яе, паведаміце пра гэта Фонду свабоднага "
+#~ "апраграмавання на адрас: the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "Вы павінны былі атрымаць копію Агульнай Грамадскай Ліцэнзіі GNU (GPL) "
+#~ "разам з гэтай праграмай. Калі не, гл.: <http://www.gnu.org/licenses/>."
+
+#~ msgid "_Close"
+#~ msgstr "_Закрыць"
+
+#~ msgid ""
+#~ "Connect four in a row to win.\n"
+#~ "\n"
+#~ "Four-in-a-row is a part of GNOME Games."
+#~ msgstr ""
+#~ "Каб перамагчы, складзіце чатыры каменьчыкі ў радок.\n"
+#~ "\n"
+#~ "Гульня \"Чатыры ў радок\" з'яўляецца складовай часткай пакунка гульняў "
+#~ "для GNOME."

@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-07-26 13:49+0000\n"
-"PO-Revision-Date: 2016-03-03 19:11+0200\n"
+"POT-Creation-Date: 2016-05-19 05:40+0000\n"
+"PO-Revision-Date: 2016-05-29 20:34+0200\n"
 "Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
 "Language-Team: Tot En Òc\n"
 "Language: oc\n"
@@ -26,12 +26,12 @@ msgstr ""
 #: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
 #: ../src/main.h:5
 msgid "Four-in-a-row"
-msgstr ""
+msgstr "Quatre-en-seguida"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:2
 #: ../data/four-in-a-row.desktop.in.h:2
 msgid "Make lines of the same color to win"
-msgstr ""
+msgstr "Realizar de linhas de la meteissa color per ganhar"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:3
 msgid ""
@@ -40,32 +40,36 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
+"L'objectiu de Quatre-en-seguida es de construire una linha de quatre bilhas "
+"tot en empachant vòstre adversari (uman o electronic) de construire una tala "
+"linha amb sas bilhas. Una linha pòt èsser orizontala, verticala o diagonala. "
+"Lo primièr jogaire que connècta quatre bilhas en seguida ganha !"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
+"Quatre-en-seguida prepausa diferents nivèls de dificultat. Se avètz de mal, "
+"podètz totjorn demandar una astúcia."
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
-msgstr ""
+msgstr "jòc;estrategia;logica;"
 
 #: ../data/four-in-a-row.ui.h:2
 msgid "Undo your most recent move"
-msgstr ""
+msgstr "Anullar vòstra accion mai recenta"
 
 #: ../data/four-in-a-row.ui.h:3
 msgid "_Hint"
 msgstr "_Astúcia"
 
 #: ../data/four-in-a-row.ui.h:4
-#| msgid "Get a hint for your next move"
 msgid "Receive a hint for your next move"
 msgstr "Afichar una astúcia pel desplaçament que ven"
 
 #: ../data/four-in-a-row.ui.h:5
-#| msgid "Game Over"
 msgid "_Start Over"
 msgstr "_Jòc acabat"
 
@@ -75,21 +79,23 @@ msgstr "Començar una partida novèla"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
 msgid "Opponent"
-msgstr ""
+msgstr "Adversari"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr ""
+"Zèro correspond a la causida uman ; un a tres correspondon al nivèl de "
+"l'adversari electronic."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
-msgstr ""
+msgstr "ID del tèma"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
-msgstr ""
+msgstr "Un numèro qu'especifica lo tèma preferit."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
@@ -97,7 +103,7 @@ msgstr "Son"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
 msgid "Whether or not to play event sounds."
-msgstr ""
+msgstr "Indica se cal jogar o pas los sons d'eveniments."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
 msgid "Move left"
@@ -105,31 +111,31 @@ msgstr "Desplaçar cap a esquèrra"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
 msgid "Key press to move left."
-msgstr ""
+msgstr "Tòca de quichar per desplaçar a esquèrra."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
 msgid "Move right"
-msgstr "Desplaçar cap a drecha"
+msgstr "Desplaçar cap a dreita"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
 msgid "Key press to move right."
-msgstr ""
+msgstr "Tòca de quichar per desplaçar a dreita."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
 msgid "Drop marble"
-msgstr ""
+msgstr "Daissar tombar la bilha"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
-msgstr ""
+msgstr "Tòca de quichar per daissar tombar una bilha."
 
 #: ../src/games-controls.c:105
 msgid "This key is already in use."
-msgstr ""
+msgstr "Aquesta tòca es ja utilizada."
 
 #: ../src/games-controls.c:326
 msgid "Unknown Command"
-msgstr ""
+msgstr "Comanda desconeguda"
 
 #: ../src/gfx.c:247
 #, c-format
@@ -142,7 +148,7 @@ msgstr ""
 
 #: ../src/main.c:476
 msgid "It’s a draw!"
-msgstr ""
+msgstr "Match nul !"
 
 #: ../src/main.c:484
 msgid "You win!"
@@ -150,7 +156,7 @@ msgstr "Avètz ganhat !"
 
 #: ../src/main.c:486 ../src/main.c:502
 msgid "Your Turn"
-msgstr ""
+msgstr "A vòstre torn"
 
 #: ../src/main.c:489
 msgid "I win!"
@@ -158,7 +164,7 @@ msgstr "Ai ganhat !"
 
 #: ../src/main.c:491 ../src/main.c:590
 msgid "I’m Thinking…"
-msgstr ""
+msgstr "Sosqui…"
 
 #: ../src/main.c:603
 #, c-format
@@ -179,11 +185,11 @@ msgstr "Marcas"
 
 #: ../src/main.c:721
 msgid "Drawn:"
-msgstr ""
+msgstr "Nul :"
 
 #: ../src/main.c:762
 msgid "Connect four in a row to win."
-msgstr ""
+msgstr "Alinhaz quatre bilhas per ganhar."
 
 #: ../src/main.c:765
 msgid "translator-credits"
@@ -194,7 +200,6 @@ msgid "_Scores"
 msgstr "_Marcas"
 
 #: ../src/main.c:1131
-#| msgid "Preferences"
 msgid "_Preferences"
 msgstr "_Preferéncias"
 
@@ -207,7 +212,6 @@ msgid "_About"
 msgstr "_A prepaus"
 
 #: ../src/main.c:1136
-#| msgid "Quit"
 msgid "_Quit"
 msgstr "_Quitar"
 
@@ -221,7 +225,7 @@ msgstr "Jòc"
 
 #: ../src/prefs.c:196
 msgid "Opponent:"
-msgstr ""
+msgstr "Adversari :"
 
 #: ../src/prefs.c:207
 msgid "Human"
@@ -250,45 +254,43 @@ msgstr "_Activar los sons"
 #. keyboard tab
 #: ../src/prefs.c:243
 msgid "Keyboard Controls"
-msgstr ""
+msgstr "Comandas amb lo clavièr"
 
 #: ../src/theme.c:40
 msgid "High Contrast"
-msgstr ""
+msgstr "Fòrt contraste"
 
 #: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
-msgstr ""
+msgstr "Cercle"
 
 #: ../src/theme.c:44 ../src/theme.c:53
 msgid "Cross"
-msgstr ""
+msgstr "Crotz"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "Dark player wins!"
 msgid "Circle wins!"
 msgstr "Lo cercle a ganhat !"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#| msgid "%s wins!"
 msgid "Cross wins!"
 msgstr "La crotz a ganhat !"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Circle’s turn"
-msgstr ""
+msgstr "Al torn dels cercles"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Cross’s turn"
-msgstr ""
+msgstr "Al torn de las croses"
 
 #: ../src/theme.c:49
 msgid "High Contrast Inverse"
-msgstr ""
+msgstr "Fòrt contraste inversat"
 
 #: ../src/theme.c:58
 msgid "Red and Green Marbles"
-msgstr ""
+msgstr "Bilhas rojas e verdas"
 
 #: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
 msgid "Red"
@@ -299,39 +301,36 @@ msgid "Green"
 msgstr "Verd"
 
 #: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Red wins!"
 msgstr "Lo roge a ganhat !"
 
 #: ../src/theme.c:63 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Green wins!"
 msgstr "Lo verd a ganhat !"
 
 #: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
 msgid "Red’s turn"
-msgstr ""
+msgstr "Al torn dels roges"
 
 #: ../src/theme.c:64 ../src/theme.c:82
 msgid "Green’s turn"
-msgstr ""
+msgstr "Al torn dels verds"
 
 #: ../src/theme.c:67
 msgid "Blue and Red Marbles"
-msgstr ""
+msgstr "Bilhas blavas e rojas"
 
 #: ../src/theme.c:71
 msgid "Blue"
 msgstr "Blau"
 
 #: ../src/theme.c:72
-#| msgid "%s wins!"
 msgid "Blue wins!"
 msgstr "Lo blau a ganhat !"
 
 #: ../src/theme.c:73
 msgid "Blue’s turn"
-msgstr ""
+msgstr "Al torn dels blaus"
 
 #: ../src/theme.c:76
 msgid "Stars and Rings"
@@ -342,7 +341,7 @@ msgstr "Estelas e anèls"
 #~ "games played, best time (in seconds) and worst time (also in seconds). "
 #~ "Unplayed games do not need to be represented."
 #~ msgstr ""
-#~ "Una tièra de cadenas jos la forma d'un quintuplet : nom, victòrias, "
+#~ "Una lista de cadenas jos la forma d'un quintuplet : nom, victòrias, "
 #~ "partidas jogadas, melhor temps (en segondas) e temps pièger (en segondas "
 #~ "tanben). Las partidas non jogadas an pas mestièr d'èsser representadas."
 
@@ -352,8 +351,7 @@ msgstr "Estelas e anèls"
 #~ msgid ""
 #~ "Select whether to drag the cards or to click on the source then the "
 #~ "destination."
-#~ msgstr ""
-#~ "Causir se volètz rossegar las cartas o clicar la font puèi la tòca."
+#~ msgstr "Causir se volètz retalhar las cartas o clicar la font puèi la tòca."
 
 #~ msgid "Statistics of games played"
 #~ msgstr "Estatisticas de las partidas jogadas"
@@ -365,7 +363,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Lo nom del fichièr que cap los grafismes de las cartas."
 
 #~ msgid "The name of the scheme file containing the solitaire game to play."
-#~ msgstr "Lo nom del fichièr que cap lo jòc de solitari de jogar."
+#~ msgstr "Lo nom del fichièr que conten lo jòc de solitari de jogar."
 
 #~ msgid "Theme file name"
 #~ msgstr "Nom del fichièr de tèma"
@@ -389,7 +387,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "NOM"
 
 #~ msgid "NUMBER"
-#~ msgstr "NUMERÒ"
+#~ msgstr "NUMÈRO"
 
 #~ msgid "AisleRiot"
 #~ msgstr "AisleRiot"
@@ -416,7 +414,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "caires"
 
 #~ msgid "eight"
-#~ msgstr "uèch"
+#~ msgstr "uèit"
 
 #~ msgid "five"
 #~ msgstr "cinc"
@@ -467,16 +465,16 @@ msgstr "Estelas e anèls"
 #~ msgstr "l'as de picas"
 
 #~ msgid "the eight of clubs"
-#~ msgstr "l'uèch de flor"
+#~ msgstr "l'uèit de flor"
 
 #~ msgid "the eight of diamonds"
-#~ msgstr "l'uèch de caire"
+#~ msgstr "l'uèit de caire"
 
 #~ msgid "the eight of hearts"
-#~ msgstr "l'uèch de còr"
+#~ msgstr "l'uèit de còr"
 
 #~ msgid "the eight of spades"
-#~ msgstr "l'uèch de picas"
+#~ msgstr "l'uèit de picas"
 
 #~ msgid "the five of clubs"
 #~ msgstr "lo cinc de flor"
@@ -656,7 +654,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Anhès"
 
 #~ msgid "Athena"
-#~ msgstr "Atenà"
+#~ msgstr "Atèna"
 
 #~ msgid "Auld Lang Syne"
 #~ msgstr "Auld Lang Syne"
@@ -728,7 +726,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "_Jòc"
 
 #~ msgid "_View"
-#~ msgstr "_Visualizacion"
+#~ msgstr "_Afichatge"
 
 #~ msgid "_Control"
 #~ msgstr "_Contraròtle"
@@ -806,7 +804,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Soi pas segur"
 
 #~ msgid "Remove the aces"
-#~ msgstr "Levar los ases"
+#~ msgstr "Levar los asses"
 
 #~ msgid "Remove the eights"
 #~ msgstr "Lever los 8"
@@ -881,7 +879,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Victòria"
 
 #~ msgid "Lose"
-#~ msgstr "Desfacha"
+#~ msgstr "Desfaita"
 
 #~ msgid "Hit"
 #~ msgstr "Tocat"
@@ -890,7 +888,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Doble"
 
 #~ msgid "Split"
-#~ msgstr "Dividir"
+#~ msgstr "Devesir"
 
 #~ msgid "New password"
 #~ msgstr "Senhal novèl"
@@ -1049,10 +1047,10 @@ msgstr "Estelas e anèls"
 #~ msgstr "Proprietats"
 
 #~ msgid "View"
-#~ msgstr "Visualizacion"
+#~ msgstr "Afichatge"
 
 #~ msgid "Player List"
-#~ msgstr "Tièra de jogaires"
+#~ msgstr "Lista de jogaires"
 
 #~ msgid "Help"
 #~ msgstr "Ajuda"
@@ -1082,7 +1080,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Nom :"
 
 #~ msgid "City:"
-#~ msgstr "Ciutat :"
+#~ msgstr "Vila :"
 
 #~ msgid "State:"
 #~ msgstr "Estat :"
@@ -1280,7 +1278,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "_Imatge :"
 
 #~ msgid "B_ackground color:"
-#~ msgstr "_Color de fons :"
+#~ msgstr "_Color de rèireplan :"
 
 #~ msgid "_Small"
 #~ msgstr "_Pichòt"
@@ -1289,7 +1287,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Seguent :"
 
 #~ msgid "Background color"
-#~ msgstr "Color de fons"
+#~ msgstr "Color de rèireplan"
 
 #~ msgid "Game preview"
 #~ msgstr "Previsualizacion del jòc"
@@ -1450,7 +1448,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Pausa"
 
 #~ msgid "The background color"
-#~ msgstr "La color de fons"
+#~ msgstr "La color de rèireplan"
 
 #~ msgid "LEVEL"
 #~ msgstr "NIVÈL"
@@ -1498,7 +1496,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Jòc novèl"
 
 #~ msgid "_Tools"
-#~ msgstr "_Espleches"
+#~ msgstr "_Aisinas"
 
 #~ msgid "_Edit"
 #~ msgstr "_Edicion"
@@ -1679,7 +1677,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Iagno"
 
 #~ msgid "_Player list"
-#~ msgstr "Tièra de _jogaires"
+#~ msgstr "Lista de _jogaires"
 
 #~ msgid "Dark:"
 #~ msgstr "Negres :"
@@ -1691,7 +1689,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "%.2d"
 
 #~ msgid "Light player wins!"
-#~ msgstr "Los blancs an ganat !"
+#~ msgstr "Los blancs an ganhat !"
 
 #~ msgid "Animation"
 #~ msgstr "Animacion"
@@ -1751,7 +1749,7 @@ msgstr "Estelas e anèls"
 #~ msgstr "Ecran complet"
 
 #~ msgid "Player _List"
-#~ msgstr "_Tièra de jogaires"
+#~ msgstr "_Lista de jogaires"
 
 #~ msgid "Res_ume"
 #~ msgstr "_Contunhar"
