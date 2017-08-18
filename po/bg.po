@@ -1,10 +1,10 @@
 # Bulgarian translation of four-in-a-row po-file.
 # Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
-# Copyright (C) 2009, 2010, 2012, 2016 Free Software Foundation, Inc.
+# Copyright (C) 2009, 2010, 2012, 2016, 2017 Free Software Foundation, Inc.
 # Copyright (C) 2010, 2012 Krasimir Chonov <mk2616@abv.bg>.
 # Evgeni Boevski <linkej@yahoo.com>, 2002, 2003.
 # Rostislav "zbrox" Raykov <zbrox@i-space.org>, 2004, 2005, 2006.
-# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2009, 2010, 2012, 2016.
+# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2009, 2010, 2012, 2016, 2017.
 # Yavor Doganov <yavor@gnu.org>, 2008.
 # Krasimir Chonov <mk2616@abv.bg>, 2010, 2012.
 #
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-18 06:41+0200\n"
-"PO-Revision-Date: 2016-01-18 06:41+0200\n"
+"POT-Creation-Date: 2017-09-02 08:57+0300\n"
+"PO-Revision-Date: 2017-08-18 10:07+0200\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -51,6 +51,10 @@ msgid ""
 msgstr ""
 "„Четири в линия“ разполага с много нива на трудност. Ако ви е трудно, може "
 "да поискате подсказка."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "Проектът GNOME"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
