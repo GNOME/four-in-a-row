@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-12 23:40+0100\n"
-"PO-Revision-Date: 2017-03-12 23:40+0100\n"
-"Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
+"PO-Revision-Date: 2017-08-27 08:50+0200\n"
+"Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
 #: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
@@ -195,7 +195,7 @@ msgstr "Empat:"
 
 #: ../src/main.c:762
 msgid "Connect four in a row to win."
-msgstr "Connecteu quatre boles en línia per guanyar"
+msgstr "Connecteu quatre boles en línia per guanyar."
 
 #: ../src/main.c:765
 msgid "translator-credits"
@@ -270,7 +270,7 @@ msgstr "Controls del teclat"
 
 #: ../src/theme.c:40
 msgid "High Contrast"
-msgstr "Alt contrast"
+msgstr "Contrast alt"
 
 #: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
@@ -290,7 +290,7 @@ msgstr "Guanyen les creus!"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Circle’s turn"
-msgstr "Torn per els cercles"
+msgstr "Torn pels cercles"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Cross’s turn"
@@ -298,7 +298,7 @@ msgstr "Torn per les creus"
 
 #: ../src/theme.c:49
 msgid "High Contrast Inverse"
-msgstr "Alt contrast invers"
+msgstr "Contrast alt invers"
 
 #: ../src/theme.c:58
 msgid "Red and Green Marbles"
@@ -322,11 +322,11 @@ msgstr "Guanyen els verds"
 
 #: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
 msgid "Red’s turn"
-msgstr "Torn per els vermells"
+msgstr "Torn pels vermells"
 
 #: ../src/theme.c:64 ../src/theme.c:82
 msgid "Green’s turn"
-msgstr "Torn per els verds"
+msgstr "Torn pels verds"
 
 #: ../src/theme.c:67
 msgid "Blue and Red Marbles"
@@ -342,7 +342,7 @@ msgstr "Guanyen els blaus"
 
 #: ../src/theme.c:73
 msgid "Blue’s turn"
-msgstr "Torn per els blaus"
+msgstr "Torn pels blaus"
 
 #: ../src/theme.c:76
 msgid "Stars and Rings"
