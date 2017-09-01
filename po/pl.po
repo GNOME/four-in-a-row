@@ -1,5 +1,5 @@
 # Polish translation for four-in-a-row.
-# Copyright © 1998-2016 the four-in-a-row authors.
+# Copyright © 1998-2017 the four-in-a-row authors.
 # This file is distributed under the same license as the four-in-a-row package.
 # Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002.
 # Marcin Gorycki <mgo@olicom.dk>, 1999.
@@ -12,15 +12,15 @@
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008.
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010.
 # Wojciech Kapusta <wkapusta@aviary.pl>, 2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
-# Aviary.pl <community-poland@mozilla.org>, 2007-2016.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2017.
+# Aviary.pl <community-poland@mozilla.org>, 2007-2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-16 10:58+0200\n"
-"PO-Revision-Date: 2016-08-16 10:59+0200\n"
+"POT-Creation-Date: 2017-09-01 05:38+0200\n"
+"PO-Revision-Date: 2017-09-01 05:39+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -135,11 +135,11 @@ msgstr "Klawisz przesunięcia w prawo."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
 msgid "Drop marble"
-msgstr "Upuszczenie kuli"
+msgstr "Upuszczenie kulki"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
 msgid "Key press to drop a marble."
-msgstr "Klawisz upuszczenia kuli."
+msgstr "Klawisz upuszczenia kulki."
 
 #: ../src/games-controls.c:105
 msgid "This key is already in use."
@@ -176,12 +176,12 @@ msgstr "Zwycięstwo komputera!"
 
 #: ../src/main.c:491 ../src/main.c:590
 msgid "I’m Thinking…"
-msgstr "Namyślanie się…"
+msgstr "Myślę…"
 
 #: ../src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
-msgstr "Podpowiedź: kolumna %d"
+msgstr "Podpowiedź: %d. kolumna"
 
 #: ../src/main.c:631 ../src/main.c:635
 msgid "You:"
@@ -197,7 +197,7 @@ msgstr "Punkty"
 
 #: ../src/main.c:721
 msgid "Drawn:"
-msgstr "Remis:"
+msgstr "Remisy:"
 
 #: ../src/main.c:762
 msgid "Connect four in a row to win."
@@ -217,8 +217,8 @@ msgstr ""
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2008\n"
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010\n"
 "Wojciech Kapusta <wkapusta@aviary.pl>, 2009\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2016\n"
-"Aviary.pl <community-poland@mozilla.org>, 2007-2016"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2017\n"
+"Aviary.pl <community-poland@mozilla.org>, 2007-2017"
 
 #: ../src/main.c:1130
 msgid "_Scores"
