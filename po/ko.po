@@ -5,6 +5,7 @@
 #
 # GwanSun Back <backiss@kornet.net>, 2001
 # Changwoo Ryu <cwryu@debian.org>, 1998, 2002-2015.
+# ChiHyeon Kim <pipi910327@gmail.com>, 2017.
 #
 #
 # 새로 번역하신 분은 아래 "translator-credits"에 추가하세요.
@@ -12,11 +13,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-28 06:51+0000\n"
-"PO-Revision-Date: 2017-08-26 16:35+0900\n"
-"Last-Translator: 김치현 <pipi910327@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-08-27 23:06+0000\n"
+"PO-Revision-Date: 2017-09-02 16:10+0900\n"
+"Last-Translator: ChiHyeon Kim <pipi910327@gmail.com>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -197,7 +197,9 @@ msgstr "네 개를 한 줄로 연결해 승리하십시오."
 
 #: ../src/main.c:765
 msgid "translator-credits"
-msgstr "류창우 <cwryu@debian.org>"
+msgstr ""
+"류창우 <cwryu@debian.org>\n"
+"김치현 <pipi910327@gmail.com>"
 
 #: ../src/main.c:1130
 msgid "_Scores"
