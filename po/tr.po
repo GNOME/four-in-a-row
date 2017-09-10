@@ -11,15 +11,17 @@
 # Hakan Bekdas <hakanbekdas@yahoo.com>, 2006.
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008, 2009.
 # Muhammet Kara <muhammetk@gmail.com>, 2011, 2014, 2015.
+# Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>, 2017.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-31 06:29+0000\n"
-"PO-Revision-Date: 2015-12-31 21:29+0200\n"
-"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"POT-Creation-Date: 2017-09-09 03:57+0000\n"
+"PO-Revision-Date: 2017-09-10 15:43+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -31,8 +33,6 @@ msgstr ""
 #: ../data/four-in-a-row.appdata.xml.in.h:1
 #: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
 #: ../src/main.h:5
-#, fuzzy
-#| msgid "Four-in-a-Row"
 msgid "Four-in-a-row"
 msgstr "Bir-Sırada-Dört-Taş"
 
@@ -48,19 +48,28 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
+"Bir aile klasiği, Bir-Sırada-Dört-Taş’ın amacı rakibinizin (insan veya "
+"bilgisayar) kendine ait bir çizgi oluşturmasını engellemeye çalışırken "
+"pullarınızdan dördü ile bir çizgi oluşturmaktır. Bir çizgi yatay, dikey veya "
+"köşegen olabilir. Bir sırada dört taneyi bağlayan ilk oyuncu kazanır!"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:4
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
+"Bir-Sırada-Dört-Taş birden çok zorluk seviyesine sahiptir. Eğer sorun "
+"yaşıyorsanız, her zaman bir ipucu isteyebilirsiniz."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "GNOME Projesi"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
 msgstr "oyun;strateji;mantık;"
 
 #: ../data/four-in-a-row.ui.h:2
-#| msgid "The users's most recent level."
 msgid "Undo your most recent move"
 msgstr "En son hamlenizi geri alın"
 
@@ -69,12 +78,10 @@ msgid "_Hint"
 msgstr "_İpucu"
 
 #: ../data/four-in-a-row.ui.h:4
-#| msgid "Get a hint for your next move"
 msgid "Receive a hint for your next move"
 msgstr "Sonraki hamleniz için bir ipucu alın"
 
 #: ../data/four-in-a-row.ui.h:5
-#| msgid "_Start"
 msgid "_Start Over"
 msgstr "_Baştan Başla"
 
@@ -96,11 +103,11 @@ msgstr ""
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
 msgid "Theme ID"
-msgstr "Tema No"
+msgstr "Gövde Kimliği"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
 msgid "A number specifying the preferred theme."
-msgstr "Tercih edilen temayı belirten rakam."
+msgstr "Yeğlenen gövdeyi belirten rakam."
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
 msgid "Sound"
@@ -135,7 +142,6 @@ msgid "Key press to drop a marble."
 msgstr "Pul atmak için gereken tuş."
 
 #: ../src/games-controls.c:105
-#| msgid "That username is already in use."
 msgid "This key is already in use."
 msgstr "Bu tuş zaten kullanımda."
 
@@ -175,7 +181,7 @@ msgstr "Düşünüyorum…"
 #: ../src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
-msgstr "İpucu: Sütün %d"
+msgstr "İpucu: Sütun %d"
 
 #: ../src/main.c:631 ../src/main.c:635
 msgid "You:"
@@ -194,10 +200,8 @@ msgid "Drawn:"
 msgstr "Berabere:"
 
 #: ../src/main.c:762
-#, fuzzy
-#| msgid "Connect four tiles in a row"
 msgid "Connect four in a row to win."
-msgstr "Bir sırada dört pulu bağla"
+msgstr "Kazanmak için bir sırada dört taneyi bağla."
 
 #: ../src/main.c:765
 msgid "translator-credits"
@@ -255,7 +259,7 @@ msgstr "Üçüncü seviye"
 
 #: ../src/prefs.c:225
 msgid "_Theme:"
-msgstr "_Tema:"
+msgstr "_Gövde:"
 
 #: ../src/prefs.c:238
 msgid "E_nable sounds"
@@ -275,30 +279,24 @@ msgid "Circle"
 msgstr "Daire"
 
 #: ../src/theme.c:44 ../src/theme.c:53
-#, fuzzy
-#| msgid "Controls"
 msgid "Cross"
-msgstr "Kontroller"
+msgstr "Çarpı"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
-#| msgid "Circle"
 msgid "Circle wins!"
-msgstr "Daire"
+msgstr "Daire kazandı!"
 
 #: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
-#| msgid "%s wins!"
 msgid "Cross wins!"
-msgstr "%s Yendi!"
+msgstr "Çarpı kazadı!"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Circle’s turn"
-msgstr ""
+msgstr "Dairenin sırası"
 
 #: ../src/theme.c:46 ../src/theme.c:55
 msgid "Cross’s turn"
-msgstr ""
+msgstr "Çarpının sırası"
 
 #: ../src/theme.c:49
 msgid "High Contrast Inverse"
@@ -306,7 +304,7 @@ msgstr "Yüksek Zıtlık Tersine"
 
 #: ../src/theme.c:58
 msgid "Red and Green Marbles"
-msgstr ""
+msgstr "Kırmızı ve Yeşil Pullar"
 
 #: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
 msgid "Red"
@@ -317,12 +315,10 @@ msgid "Green"
 msgstr "Yeşil"
 
 #: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Red wins!"
 msgstr "Kırmızı kazandı!"
 
 #: ../src/theme.c:63 ../src/theme.c:81
-#| msgid "%s wins!"
 msgid "Green wins!"
 msgstr "Yeşil kazandı!"
 
@@ -335,27 +331,22 @@ msgid "Green’s turn"
 msgstr "Sıra Yeşilde"
 
 #: ../src/theme.c:67
-#, fuzzy
-#| msgid "Cream Marbles"
 msgid "Blue and Red Marbles"
-msgstr "Krem Mermerler"
+msgstr "Mavi ve Kırmızı Pullar"
 
 #: ../src/theme.c:71
 msgid "Blue"
 msgstr "Mavi"
 
 #: ../src/theme.c:72
-#, fuzzy
-#| msgid "Black wins"
 msgid "Blue wins!"
-msgstr "Siyah kazanır"
+msgstr "Mavi kazandı!"
 
 #: ../src/theme.c:73
 msgid "Blue’s turn"
-msgstr ""
+msgstr "Mavinin sırası"
 
 #: ../src/theme.c:76
-#| msgid "Starting %s"
 msgid "Stars and Rings"
 msgstr "Yıldızlar ve Halkalar"
 
