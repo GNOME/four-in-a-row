@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: gnome-games 0\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-28 06:51+0000\n"
-"PO-Revision-Date: 2017-08-22 22:19+0200\n"
+"POT-Creation-Date: 2017-08-22 20:31+0000\n"
+"PO-Revision-Date: 2017-09-16 14:01+0200\n"
 "Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
 "net>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -260,7 +260,7 @@ msgstr "Upravljanje tipkovnicom"
 
 #: ../src/theme.c:40
 msgid "High Contrast"
-msgstr "Veliki Kontrast"
+msgstr "Visok kontrast"
 
 #: ../src/theme.c:44 ../src/theme.c:53
 msgid "Circle"
