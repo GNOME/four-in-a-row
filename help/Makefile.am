@@ -2,8 +2,6 @@
 HELP_ID = four-in-a-row
 
 HELP_MEDIA = \
-	figures/mainwindow.png \
-	figures/tileset.png \
 	figures/logo.png
 
 HELP_FILES = \
