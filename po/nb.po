@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of four-in-a-row.
 # Copyright © 1998-2002 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 1998-2015.
+# Kjartan Maraas <kmaraas@gnome.org>, 1998-2016.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: four-in-a-row 3.17.x\n"
+"Project-Id-Version: four-in-a-row 3.22.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-11 18:51+0200\n"
-"PO-Revision-Date: 2015-08-11 18:51+0200\n"
+"POT-Creation-Date: 2016-10-16 12:36+0200\n"
+"PO-Revision-Date: 2016-10-16 12:36+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -47,6 +47,10 @@ msgid ""
 msgstr ""
 "Fire på rad har flere vanskelighetsnivåer. Hvis du har problemer kan du "
 "alltid spørre om et hint."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "GNOME prosjektet"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"

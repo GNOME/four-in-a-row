@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-30 11:06+0300\n"
-"PO-Revision-Date: 2015-08-30 11:07+0300\n"
+"POT-Creation-Date: 2016-08-14 16:06+0300\n"
+"PO-Revision-Date: 2016-08-14 16:06+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -50,6 +50,10 @@ msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr "ארבע בשורה כולל מספר רמות קושי. אם הסתבכת, תמיד ניתן לבקש רמז."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "מיזם GNOME"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"

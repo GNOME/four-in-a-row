@@ -29,8 +29,8 @@ msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-04 05:00+0000\n"
-"PO-Revision-Date: 2015-09-04 14:02+0200\n"
+"POT-Creation-Date: 2016-08-14 13:06+0000\n"
+"PO-Revision-Date: 2016-08-28 19:21+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -69,6 +69,10 @@ msgid ""
 msgstr ""
 "Quatre-à-la-suite propose différents niveaux de difficulté. Si vous avez du "
 "mal, vous pouvez toujours demander une astuce."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "Le projet GNOME"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"

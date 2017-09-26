@@ -1,8 +1,6 @@
-# Hungarian translation of gnome-games.
-# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-games package.
-#
-# sakk szakkifejezés-ügyi kisokos: http://mek.oszk.hu/00000/00056/html/141.htm
+# Hungarian translation for four-in-a-row.
+# Copyright (C) 1999-2016 Free Software Foundation, Inc.
+# This file is distributed under the same license as the four-in-a-row package.
 #
 # Szabolcs Ban <shooby at gnome dot hu>, 1999, 2000, 2001.
 # Gergely Nagy <greg at gnome dot hu>, 2001.
@@ -11,14 +9,14 @@
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
 # Szabolcs Varga <shirokuma at shirokuma dot hu>, 2005.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014.
-# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015.
+# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-games master\n"
+"Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-08-31 05:01+0000\n"
-"PO-Revision-Date: 2015-08-31 17:55+0200\n"
+"POT-Creation-Date: 2016-08-14 13:06+0000\n"
+"PO-Revision-Date: 2016-08-19 23:03+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
@@ -58,6 +56,10 @@ msgid ""
 msgstr ""
 "A Négyet egy sorba több nehézségi szintet tartalmaz. Ha bajban van, bármikor "
 "kérhet tippet."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "A GNOME projekt"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"

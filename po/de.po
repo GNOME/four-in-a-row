@@ -14,7 +14,7 @@
 # Philipp Kerling <k.philipp@gmail.com>, 2007-2008.
 # Björn Deiseroth <service@dual-creators.de>, 2007.
 # Andre Klapper <ak-47@gmx.net>, 2008-2009.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2010-2013.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2010-2013, 2016.
 # Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>, 2012.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2009-2012, 2014.
 # Bernd Homuth <dev@hmt.im>, 2015.
@@ -24,16 +24,16 @@ msgstr ""
 "Project-Id-Version: four-in-row master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-17 17:03+0000\n"
-"PO-Revision-Date: 2015-09-18 14:03+0200\n"
-"Last-Translator: Bernd Homuth <dev@hmt.im>\n"
+"POT-Creation-Date: 2016-08-14 13:06+0000\n"
+"PO-Revision-Date: 2016-08-21 11:54+0200\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:1
 #: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
@@ -66,6 +66,10 @@ msgid ""
 msgstr ""
 "Vier gewinnt hat mehrere Schwierigkeitsstufen. Wenn Sie Schwierigkeiten "
 "haben, so können Sie immer nach einem Tipp fragen."
+
+#: ../data/four-in-a-row.appdata.xml.in.h:5
+msgid "The GNOME Project"
+msgstr "Das GNOME-Projekt"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
