@@ -1160,9 +1160,6 @@ create_app (GApplication *app, gpointer user_data)
   g_signal_connect (G_OBJECT (window), "key_press_event",
                     G_CALLBACK (on_key_press), NULL);
 
-  /* We do our own double-buffering. */
-  gtk_widget_set_double_buffered (GTK_WIDGET (drawarea), FALSE);
-
   g_simple_action_set_enabled (G_SIMPLE_ACTION (hint_action), FALSE);
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
 }
