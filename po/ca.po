@@ -347,15 +347,3 @@ msgstr "Torn pels blaus"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Estrelles i anells"
-
-#~ msgid ""
-#~ "Connect four in a row to win.\n"
-#~ "\n"
-#~ "Four-in-a-row is a part of GNOME Games."
-#~ msgstr ""
-#~ "Poseu quatre boles en línia per guanyar.\n"
-#~ "\n"
-#~ "El Quatre en ratlla forma part dels jocs del GNOME."
-
-#~ msgid "_New Game"
-#~ msgstr "Partida _nova"

@@ -13,7 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2016-01-02 06:28+0000\n"
 "PO-Revision-Date: 2016-01-12 00:21+0900\n"
 "Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
@@ -36,16 +37,30 @@ msgid "Make lines of the same color to win"
 msgstr "同じ色のラインを作って競い合ってください"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:3
-msgid "A family classic, the objective of Four-in-a-row is to build a line of four of your marbles while trying to stop your opponent (human or computer) from building a line of his or her own. A line can be horizontal, vertical or diagonal. The first player to connect four in a row is the winner!"
-msgstr "四目並べは家族でも楽しめる古典的なゲームです。あなたと対戦相手（人間またはコンピューター）で交互に石を落とし、どちらが先に石を四つ一列に並べるかを競います。並べる方向は縦、横、斜めのどれでもかまいません。相手を邪魔しながら先に四つ並べた方が勝ちです。"
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"四目並べは家族でも楽しめる古典的なゲームです。あなたと対戦相手（人間またはコ"
+"ンピューター）で交互に石を落とし、どちらが先に石を四つ一列に並べるかを競いま"
+"す。並べる方向は縦、横、斜めのどれでもかまいません。相手を邪魔しながら先に四"
+"つ並べた方が勝ちです。"
 
 #: ../data/four-in-a-row.appdata.xml.in.h:4
-msgid "Four-in-a-row features multiple difficulty levels. If you're having trouble, you can always ask for a hint."
-msgstr "自分のレベルに合わせてコンピューターの強さを選べます。次の一手に悩んだときは、ヒントをもらうこともできます。"
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"自分のレベルに合わせてコンピューターの強さを選べます。次の一手に悩んだとき"
+"は、ヒントをもらうこともできます。"
 
 #: ../data/four-in-a-row.desktop.in.h:3
 msgid "game;strategy;logic;"
-msgstr "game;strategy;logic;ゲーム;ストラテジー;ロジック;論理;puzzle;パズル;Four-in-a-Row;"
+msgstr ""
+"game;strategy;logic;ゲーム;ストラテジー;ロジック;論理;puzzle;パズル;Four-in-"
+"a-Row;"
 
 #: ../data/four-in-a-row.ui.h:2
 msgid "Undo your most recent move"
@@ -72,7 +87,9 @@ msgid "Opponent"
 msgstr "相手"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
-msgid "Zero is human; one through three correspond to the level of the computer player."
+msgid ""
+"Zero is human; one through three correspond to the level of the computer "
+"player."
 msgstr "0 = 人間; 1〜3 = コンピューターのレベル"
 
 #: ../data/org.gnome.four-in-a-row.gschema.xml.h:3

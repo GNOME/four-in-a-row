@@ -360,15 +360,3 @@ msgstr "Na ťahu je modrý"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Hviezdy a kruhy"
-
-#~ msgid ""
-#~ "Connect four in a row to win.\n"
-#~ "\n"
-#~ "Four-in-a-row is a part of GNOME Games."
-#~ msgstr ""
-#~ "Vyhrajte spojením štyroch guľôčok za sebou.\n"
-#~ "\n"
-#~ "Hra Štyri v rade je súčasťou Hier GNOME."
-
-#~ msgid "_New Game"
-#~ msgstr "_Nová hra"

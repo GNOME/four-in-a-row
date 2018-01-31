@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: "
-"http://bugzilla.gnome.org/enter_bug.cgi?product=four-in-a-row&keywords=I18N+L10N&component=general\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2016-09-12 08:09+0000\n"
 "PO-Revision-Date: 2016-09-08 02:59+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
@@ -353,4 +353,3 @@ msgstr "Blås tur"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Stjerner og ringe"
-

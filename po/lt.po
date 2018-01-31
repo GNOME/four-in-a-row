@@ -352,15 +352,3 @@ msgstr "Mėlyno ėjimas"
 #: ../src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Žvaigždės ir žiedai"
-
-#~ msgid ""
-#~ "Connect four in a row to win.\n"
-#~ "\n"
-#~ "Four-in-a-row is a part of GNOME Games."
-#~ msgstr ""
-#~ "Sujunkite keturis eilėje pergalei.\n"
-#~ "\n"
-#~ "Keturi eilėje yra GNOME žaidimų dalis."
-
-#~ msgid "_New Game"
-#~ msgstr "_Naujas žaidimas"
