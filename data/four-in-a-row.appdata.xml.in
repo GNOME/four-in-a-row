@@ -4,19 +4,19 @@
   <id>four-in-a-row.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <_name>Four-in-a-row</_name>
-  <_summary>Make lines of the same color to win</_summary>
+  <name>Four-in-a-row</name>
+  <summary>Make lines of the same color to win</summary>
   <description>
-    <_p>
+    <p>
       A family classic, the objective of Four-in-a-row is to build a line of four
       of your marbles while trying to stop your opponent (human or computer) from
       building a line of his or her own. A line can be horizontal, vertical or
       diagonal. The first player to connect four in a row is the winner!
-    </_p>
-    <_p>
+    </p>
+    <p>
       Four-in-a-row features multiple difficulty levels. If you're having trouble,
       you can always ask for a hint.
-    </_p>
+    </p>
   </description>
   <screenshots>
     <screenshot height="447" width="700" type="default">
@@ -29,7 +29,7 @@
   <url type="help">https://help.gnome.org/users/four-in-a-row/stable/</url>
   <update_contact>mcatanzaro_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
-  <_developer_name>The GNOME Project</_developer_name>
+  <developer_name>The GNOME Project</developer_name>
   <kudos>
     <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>

@@ -1,9 +1,8 @@
 # List of source files containing translatable strings.
 # Please keep this file in alphabetical order.
-[encoding: UTF-8]
 data/four-in-a-row.appdata.xml.in
 data/four-in-a-row.desktop.in
-[type: gettext/glade]data/four-in-a-row.ui
+data/four-in-a-row.ui
 data/org.gnome.four-in-a-row.gschema.xml
 src/games-controls.c
 src/gfx.c
