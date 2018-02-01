@@ -1,5 +1,5 @@
 # Polish translation for four-in-a-row.
-# Copyright © 1998-2017 the four-in-a-row authors.
+# Copyright © 1998-2018 the four-in-a-row authors.
 # This file is distributed under the same license as the four-in-a-row package.
 # Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002.
 # Marcin Gorycki <mgo@olicom.dk>, 1999.
@@ -12,15 +12,16 @@
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008.
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010.
 # Wojciech Kapusta <wkapusta@aviary.pl>, 2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2017.
-# Aviary.pl <community-poland@mozilla.org>, 2007-2017.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2018.
+# Aviary.pl <community-poland@mozilla.org>, 2007-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-01 05:38+0200\n"
-"PO-Revision-Date: 2017-09-01 05:39+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2018-02-01 00:17+0000\n"
+"PO-Revision-Date: 2018-02-01 16:19+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -30,18 +31,16 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
+#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
+#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Czwórki"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "Tworzenie linii tego samego koloru, aby wygrać"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -53,7 +52,7 @@ msgstr ""
 "lub komputerowi). Linia może być pionowa, pozioma lub po przekątnej. "
 "Pierwszy gracz, który połączy cztery kulki wygrywa!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/four-in-a-row.appdata.xml.in:16
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
@@ -61,39 +60,45 @@ msgstr ""
 "Gra Czwórki zawiera kilka poziomów trudności. W razie problemów zawsze można "
 "skorzystać z podpowiedzi."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/four-in-a-row.appdata.xml.in:32
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/four-in-a-row.desktop.in:4
+msgid "four-in-a-row"
+msgstr "four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "gra;gierka;strategiczna;strategia;logiczna;logika;"
 
-#: ../data/four-in-a-row.ui.h:2
+#: data/four-in-a-row.ui:19
 msgid "Undo your most recent move"
 msgstr "Cofa ostatni ruch"
 
-#: ../data/four-in-a-row.ui.h:3
+#: data/four-in-a-row.ui:79
 msgid "_Hint"
 msgstr "P_odpowiedź"
 
-#: ../data/four-in-a-row.ui.h:4
+#: data/four-in-a-row.ui:83
 msgid "Receive a hint for your next move"
 msgstr "Wyświetla podpowiedź kolejnego ruchu"
 
-#: ../data/four-in-a-row.ui.h:5
+#: data/four-in-a-row.ui:98
 msgid "_Start Over"
-msgstr "_Zacznij od początku"
+msgstr "_Nowa gra"
 
-#: ../data/four-in-a-row.ui.h:6
+#: data/four-in-a-row.ui:102
 msgid "Start a new game"
 msgstr "Rozpoczyna nową grę"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#: data/org.gnome.four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Przeciwnik"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
@@ -101,55 +106,55 @@ msgstr ""
 "Zero oznacza gracza; wartości od jeden do trzech ustawiają poziom gry "
 "komputera."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "Identyfikator motywu"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Liczba określająca preferowany motyw."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Dźwięk"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Określa, czy odtwarzać dźwięki zdarzeń."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
 msgid "Move left"
 msgstr "Przesunięcie w lewo"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Klawisz przesunięcia w lewo."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
 msgid "Move right"
 msgstr "Przesunięcie w prawo"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Klawisz przesunięcia w prawo."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
 msgid "Drop marble"
 msgstr "Upuszczenie kulki"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Klawisz upuszczenia kulki."
 
-#: ../src/games-controls.c:105
+#: src/games-controls.c:105
 msgid "This key is already in use."
 msgstr "Ten klawisz jest już używany."
 
-#: ../src/games-controls.c:326
+#: src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Nieznane polecenie"
 
-#: ../src/gfx.c:247
+#: src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -158,52 +163,52 @@ msgstr ""
 "Nie można wczytać obrazu:\n"
 "%s"
 
-#: ../src/main.c:476
+#: src/main.c:476
 msgid "It’s a draw!"
 msgstr "Remis!"
 
-#: ../src/main.c:484
+#: src/main.c:484
 msgid "You win!"
 msgstr "Zwycięstwo!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/main.c:486 src/main.c:502
 msgid "Your Turn"
 msgstr "Proszę wykonać ruch"
 
-#: ../src/main.c:489
+#: src/main.c:489
 msgid "I win!"
 msgstr "Zwycięstwo komputera!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/main.c:491 src/main.c:590
 msgid "I’m Thinking…"
 msgstr "Myślę…"
 
-#: ../src/main.c:603
+#: src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Podpowiedź: %d. kolumna"
 
-#: ../src/main.c:631 ../src/main.c:635
+#: src/main.c:631 src/main.c:635
 msgid "You:"
 msgstr "Gracz:"
 
-#: ../src/main.c:632 ../src/main.c:634
+#: src/main.c:632 src/main.c:634
 msgid "Me:"
 msgstr "Komputer:"
 
-#: ../src/main.c:680
+#: src/main.c:680
 msgid "Scores"
-msgstr "Punkty"
+msgstr "Wyniki"
 
-#: ../src/main.c:721
+#: src/main.c:721
 msgid "Drawn:"
 msgstr "Remisy:"
 
-#: ../src/main.c:762
+#: src/main.c:762
 msgid "Connect four in a row to win."
 msgstr "Tworzenie linii tego samego koloru, aby wygrać."
 
-#: ../src/main.c:765
+#: src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002\n"
@@ -217,146 +222,146 @@ msgstr ""
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2008\n"
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010\n"
 "Wojciech Kapusta <wkapusta@aviary.pl>, 2009\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2017\n"
-"Aviary.pl <community-poland@mozilla.org>, 2007-2017"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2018\n"
+"Aviary.pl <community-poland@mozilla.org>, 2007-2018"
 
-#: ../src/main.c:1130
+#: src/main.c:1130
 msgid "_Scores"
 msgstr "_Wyniki"
 
-#: ../src/main.c:1131
+#: src/main.c:1131
 msgid "_Preferences"
-msgstr "P_referencje"
+msgstr "_Preferencje"
 
-#: ../src/main.c:1134
+#: src/main.c:1134
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../src/main.c:1135
+#: src/main.c:1135
 msgid "_About"
 msgstr "_O grze"
 
-#: ../src/main.c:1136
+#: src/main.c:1136
 msgid "_Quit"
 msgstr "Za_kończ"
 
-#: ../src/prefs.c:171
+#: src/prefs.c:171
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: ../src/prefs.c:193
+#: src/prefs.c:193
 msgid "Game"
 msgstr "Gra"
 
-#: ../src/prefs.c:196
+#: src/prefs.c:196
 msgid "Opponent:"
 msgstr "Przeciwnik:"
 
-#: ../src/prefs.c:207
+#: src/prefs.c:207
 msgid "Human"
 msgstr "Gracz"
 
-#: ../src/prefs.c:211
+#: src/prefs.c:211
 msgid "Level one"
 msgstr "Poziom pierwszy"
 
-#: ../src/prefs.c:215
+#: src/prefs.c:215
 msgid "Level two"
 msgstr "Poziom drugi"
 
-#: ../src/prefs.c:219
+#: src/prefs.c:219
 msgid "Level three"
 msgstr "Poziom trzeci"
 
-#: ../src/prefs.c:225
+#: src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Motyw:"
 
-#: ../src/prefs.c:238
+#: src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "_Dźwięki"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Klawisze sterujące"
 
-#: ../src/theme.c:40
+#: src/theme.c:40
 msgid "High Contrast"
 msgstr "Wysoki kontrast"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Circle"
 msgstr "Kółko"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Cross"
 msgstr "Krzyżyk"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Circle wins!"
 msgstr "Kółka wygrywają!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Cross wins!"
 msgstr "Krzyżyki wygrywają!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Circle’s turn"
 msgstr "Tura kółek"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Cross’s turn"
 msgstr "Tura krzyżyków"
 
-#: ../src/theme.c:49
+#: src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "Odwrócony wysoki kontrast"
 
-#: ../src/theme.c:58
+#: src/theme.c:58
 msgid "Red and Green Marbles"
 msgstr "Czerwone i zielone kulki"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:71 src/theme.c:80
 msgid "Red"
 msgstr "Czerwony"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:80
 msgid "Green"
 msgstr "Zielony"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:72 src/theme.c:81
 msgid "Red wins!"
 msgstr "Czerwone wygrywają!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:81
 msgid "Green wins!"
 msgstr "Zielone wygrywają!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:73 src/theme.c:82
 msgid "Red’s turn"
 msgstr "Tura czerwonych"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:82
 msgid "Green’s turn"
 msgstr "Tura zielonych"
 
-#: ../src/theme.c:67
+#: src/theme.c:67
 msgid "Blue and Red Marbles"
 msgstr "Niebieskie i czerwone kulki"
 
-#: ../src/theme.c:71
+#: src/theme.c:71
 msgid "Blue"
 msgstr "Niebieski"
 
-#: ../src/theme.c:72
+#: src/theme.c:72
 msgid "Blue wins!"
 msgstr "Niebieskie wygrywają!"
 
-#: ../src/theme.c:73
+#: src/theme.c:73
 msgid "Blue’s turn"
 msgstr "Tura niebieskich"
 
-#: ../src/theme.c:76
+#: src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Gwiazdy i kręgi"

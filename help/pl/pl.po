@@ -1,13 +1,13 @@
 # Polish translation for four-in-a-row help.
 # Copyright © 2017 the four-in-a-row authors.
-# This file is distributed under the same license as the four-in-a-row package.
+# This file is distributed under the same license as the four-in-a-row help.
 # Piotr Drąg <piotrdrag@gmail.com>, 2017.
 # Aviary.pl <community-poland@mozilla.org>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row-help\n"
-"POT-Creation-Date: 2017-08-27 23:06+0000\n"
+"POT-Creation-Date: 2018-02-01 00:18+0000\n"
 "PO-Revision-Date: 2017-09-01 05:37+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
