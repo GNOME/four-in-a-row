@@ -1,5 +1,5 @@
 AC_PREREQ([2.63])
-AC_INIT([Four-in-a-Row], [3.22.2], [https://bugzilla.gnome.org/],
+AC_INIT([Four-in-a-Row], [3.27.90], [https://bugzilla.gnome.org/],
         [four-in-a-row], [https://wiki.gnome.org/Apps/Four-in-a-row])
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz foreign])
 AC_CONFIG_MACRO_DIR([m4])

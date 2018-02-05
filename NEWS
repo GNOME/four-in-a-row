@@ -1,3 +1,11 @@
+3.27.90 - February 5, 2018
+==========================
+
+* Use gettext for translations (Robert Roth)
+* Translations cleanup (Piotr Drąg)
+* Allow double-buffering (Robert Roth)
+* Updated translations
+
 3.22.2 - September 8, 2017
 ==========================
 
