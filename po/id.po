@@ -8,11 +8,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 13:06+0000\n"
-"PO-Revision-Date: 2016-09-05 13:22+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"POT-Creation-Date: 2018-02-01 00:17+0000\n"
+"PO-Revision-Date: 2018-02-05 12:14+0700\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -20,20 +20,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Rosetta-Export-Date: 2007-04-23 05:58:10+0000\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
+#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
+#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Four-in-a-row"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "Buat garis dengan warna yang sama untuk menang"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -46,7 +44,7 @@ msgstr ""
 "horisontal, vertikal, atau diagonal. Pemain pertama yang berhasil "
 "menghubungkan empat segaris adalah pemenangnya!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/four-in-a-row.appdata.xml.in:16
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
@@ -54,94 +52,100 @@ msgstr ""
 "Four-in-a-row bisa diatur tingkat kesulitannya. Bila Anda mengalami masalah, "
 "Anda selalu bisa meminta petunjuk."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/four-in-a-row.appdata.xml.in:32
 msgid "The GNOME Project"
 msgstr "Projek GNOME"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/four-in-a-row.desktop.in:4
+msgid "four-in-a-row"
+msgstr "four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "permainan;strategi;logika;"
 
-#: ../data/four-in-a-row.ui.h:2
+#: data/four-in-a-row.ui:19
 msgid "Undo your most recent move"
 msgstr "Batalkan langkah terakhir Anda"
 
-#: ../data/four-in-a-row.ui.h:3
+#: data/four-in-a-row.ui:79
 msgid "_Hint"
 msgstr "_Petunjuk"
 
-#: ../data/four-in-a-row.ui.h:4
+#: data/four-in-a-row.ui:83
 msgid "Receive a hint for your next move"
 msgstr "Dapatkan petunjuk untuk langkah berikutnya"
 
-#: ../data/four-in-a-row.ui.h:5
+#: data/four-in-a-row.ui:98
 msgid "_Start Over"
 msgstr "Mulai _Ulang"
 
-#: ../data/four-in-a-row.ui.h:6
+#: data/four-in-a-row.ui:102
 msgid "Start a new game"
 msgstr "Mulai permainan baru"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#: data/org.gnome.four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Lawan"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr ""
 "Nol adalah manusia; satu sampai tiga merupakan tingkat pemain komputer."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "ID Tema"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Angka yang menspesifikasi tema yang didahulukan."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Suara"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Mainkan suara atau tidak."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
 msgid "Move left"
 msgstr "Bergerak ke kiri"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Tombol yang ditekan untuk bergerak ke kiri."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
 msgid "Move right"
 msgstr "Bergerak ke kanan"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Tombol yang ditekan untuk bergerak ke kanan."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
 msgid "Drop marble"
 msgstr "Jatuhkan marble"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Tombol yang ditekan untuk menjatuhkan marble."
 
-#: ../src/games-controls.c:105
+#: src/games-controls.c:105
 msgid "This key is already in use."
 msgstr "Tombol telah dipakai."
 
-#: ../src/games-controls.c:326
+#: src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Perintah tidak dikenal"
 
-#: ../src/gfx.c:247
+#: src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -150,197 +154,198 @@ msgstr ""
 "Gagal memuat gambar:\n"
 "(%s)"
 
-#: ../src/main.c:476
+#: src/main.c:476
 msgid "It’s a draw!"
 msgstr "Seri!"
 
-#: ../src/main.c:484
+#: src/main.c:484
 msgid "You win!"
 msgstr "Anda menang!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/main.c:486 src/main.c:502
 msgid "Your Turn"
 msgstr "Giliran Anda"
 
-#: ../src/main.c:489
+#: src/main.c:489
 msgid "I win!"
 msgstr "Saya menang!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/main.c:491 src/main.c:590
 msgid "I’m Thinking…"
 msgstr "Saya Sedang Berpikir…"
 
-#: ../src/main.c:603
+#: src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Petunjuk: Kolom %d"
 
-#: ../src/main.c:631 ../src/main.c:635
+#: src/main.c:631 src/main.c:635
 msgid "You:"
 msgstr "Anda:"
 
-#: ../src/main.c:632 ../src/main.c:634
+#: src/main.c:632 src/main.c:634
 msgid "Me:"
 msgstr "Saya:"
 
-#: ../src/main.c:680
+#: src/main.c:680
 msgid "Scores"
 msgstr "_Daftar Nilai"
 
-#: ../src/main.c:721
+#: src/main.c:721
 msgid "Drawn:"
 msgstr "Diambil:"
 
-#: ../src/main.c:762
+#: src/main.c:762
 msgid "Connect four in a row to win."
 msgstr "Sambungkan empat sebaris untuk menang."
 
-#: ../src/main.c:765
+#: src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
 "Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
 "Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2014, 2016.\n"
 "Vincent Sebastian The <vincent.s.the@gmail.com>, 2011, 2012.\n"
-"Dirgita <dirgitadevina@yahoo.co.id>, 2012."
+"Dirgita <dirgitadevina@yahoo.co.id>, 2012.\n"
+"Kukuh Syafaat <syafaatkukuh@gmail.com>, 2018."
 
-#: ../src/main.c:1130
+#: src/main.c:1130
 msgid "_Scores"
 msgstr "_Nilai"
 
-#: ../src/main.c:1131
+#: src/main.c:1131
 msgid "_Preferences"
 msgstr "_Preferensi"
 
-#: ../src/main.c:1134
+#: src/main.c:1134
 msgid "_Help"
 msgstr "_Bantuan"
 
-#: ../src/main.c:1135
+#: src/main.c:1135
 msgid "_About"
 msgstr "Tent_ang"
 
-#: ../src/main.c:1136
+#: src/main.c:1136
 msgid "_Quit"
 msgstr "_Keluar"
 
-#: ../src/prefs.c:171
+#: src/prefs.c:171
 msgid "Preferences"
 msgstr "Preferensi"
 
-#: ../src/prefs.c:193
+#: src/prefs.c:193
 msgid "Game"
 msgstr "Permainan"
 
-#: ../src/prefs.c:196
+#: src/prefs.c:196
 msgid "Opponent:"
 msgstr "Lawan:"
 
-#: ../src/prefs.c:207
+#: src/prefs.c:207
 msgid "Human"
 msgstr "Manusia"
 
-#: ../src/prefs.c:211
+#: src/prefs.c:211
 msgid "Level one"
 msgstr "Tingkat satu"
 
-#: ../src/prefs.c:215
+#: src/prefs.c:215
 msgid "Level two"
 msgstr "Tingkat dua"
 
-#: ../src/prefs.c:219
+#: src/prefs.c:219
 msgid "Level three"
 msgstr "Tingkat tiga"
 
-#: ../src/prefs.c:225
+#: src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: ../src/prefs.c:238
+#: src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "Aktifka_n suara"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Kontrol Papan Tik"
 
-#: ../src/theme.c:40
+#: src/theme.c:40
 msgid "High Contrast"
 msgstr "Kontras Tinggi"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Circle"
 msgstr "Lingkaran"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Cross"
 msgstr "Silang"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Circle wins!"
 msgstr "Lingkaran menang!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Cross wins!"
 msgstr "Silang menang!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Circle’s turn"
 msgstr "Giliran lingkaran"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Cross’s turn"
 msgstr "Giliran silang"
 
-#: ../src/theme.c:49
+#: src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "Kontras Tinggi Terbalik"
 
-#: ../src/theme.c:58
+#: src/theme.c:58
 msgid "Red and Green Marbles"
 msgstr "Kelereng Merah dan Hijau"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:71 src/theme.c:80
 msgid "Red"
 msgstr "Merah"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:80
 msgid "Green"
 msgstr "Hijau"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:72 src/theme.c:81
 msgid "Red wins!"
 msgstr "Merah menang!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:81
 msgid "Green wins!"
 msgstr "Hijau menang!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:73 src/theme.c:82
 msgid "Red’s turn"
 msgstr "Giliran merah"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:82
 msgid "Green’s turn"
 msgstr "Giliran hijau"
 
-#: ../src/theme.c:67
+#: src/theme.c:67
 msgid "Blue and Red Marbles"
 msgstr "Kelereng Biru dan Merah"
 
-#: ../src/theme.c:71
+#: src/theme.c:71
 msgid "Blue"
 msgstr "Biru"
 
-#: ../src/theme.c:72
+#: src/theme.c:72
 msgid "Blue wins!"
 msgstr "Biru menang!"
 
-#: ../src/theme.c:73
+#: src/theme.c:73
 msgid "Blue’s turn"
 msgstr "Giliran biru"
 
-#: ../src/theme.c:76
+#: src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Bintang dan Cincin"
