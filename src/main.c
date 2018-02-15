@@ -437,10 +437,10 @@ play_sound (SoundID id)
     path = g_build_filename (SOUND_DIRECTORY, filename, NULL);
     g_free (filename);
 
-    ca_gtk_play_for_widget (drawarea,
-                            0,
-                            CA_PROP_MEDIA_NAME, name,
-                            CA_PROP_MEDIA_FILENAME, path, NULL);
+    ca_context_play (ca_gtk_context_get(),
+                     id,
+                     CA_PROP_MEDIA_NAME, name,
+                     CA_PROP_MEDIA_FILENAME, path, NULL);
     g_free (path);
   }
 }
