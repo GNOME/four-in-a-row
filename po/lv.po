@@ -5,38 +5,36 @@
 # Peteris Krisjanis <peteris.krisjanis@os.lv>, 2002.
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010, 2011.
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 13:06+0000\n"
-"PO-Revision-Date: 2016-09-01 21:53+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-in"
+"-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2018-02-07 10:07+0000\n"
+"PO-Revision-Date: 2018-02-24 19:50+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
+" 2);\n"
 "X-Generator: Lokalize 2.0\n"
 "X-Poedit-Language: Latvian\n"
 "X-Poedit-Country: LATVIA\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
+#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
+#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
 msgid "Four-in-a-row"
 msgstr "Četri rindā"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "Lai uzvarētu, veidojiet līnijas vienā krāsā"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -48,7 +46,7 @@ msgstr ""
 "dators. Rindas var būt horizontālas, vertikālas vai diagonālas. Pirmais, kas "
 "saliks četras secīgas lodītes, būs uzvarētājs!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/four-in-a-row.appdata.xml.in:16
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
@@ -56,93 +54,100 @@ msgstr ""
 "Spēlē “Četri rindā” ir vairāki grūtības līmeņi. Ja ir kāda ķibele, vienmēr "
 "vari prasīt padomu."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/four-in-a-row.appdata.xml.in:32
 msgid "The GNOME Project"
 msgstr "GNOME projekts"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/four-in-a-row.desktop.in:4
+#| msgid "Four-in-a-row"
+msgid "four-in-a-row"
+msgstr "four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "spēle;stratēģija;loģika;"
 
-#: ../data/four-in-a-row.ui.h:2
+#: data/four-in-a-row.ui:19
 msgid "Undo your most recent move"
 msgstr "Atsaukt savu pēdējo gājienu"
 
-#: ../data/four-in-a-row.ui.h:3
+#: data/four-in-a-row.ui:79
 msgid "_Hint"
 msgstr "_Padoms"
 
-#: ../data/four-in-a-row.ui.h:4
+#: data/four-in-a-row.ui:83
 msgid "Receive a hint for your next move"
 msgstr "Saņemt padomu par nākamo gājienu"
 
-#: ../data/four-in-a-row.ui.h:5
+#: data/four-in-a-row.ui:98
 msgid "_Start Over"
 msgstr "_Sākt no jauna"
 
-#: ../data/four-in-a-row.ui.h:6
+#: data/four-in-a-row.ui:102
 msgid "Start a new game"
 msgstr "Sākt jaunu spēli"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#: data/org.gnome.four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Pretinieks"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "Nulle ir cilvēks, viens līdz trīs atbilst datora spēlētāju līmenim."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "Motīva ID"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Skaitlis, kas nosaka vēlamo motīvu."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Skaņa"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Vai atskaņot notikumu skaņas."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
 msgid "Move left"
 msgstr "Iet pa kreisi"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Taustiņš, ko spiest, lai pārvietotu pa kreisi."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
 msgid "Move right"
 msgstr "Iet pa labi"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Taustiņš, ko spiest, lai pārvietotu pa labi."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
 msgid "Drop marble"
 msgstr "Nomest lodīti"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Taustiņš, ko spiest, lai nomestu lodīti."
 
-#: ../src/games-controls.c:105
+#: src/games-controls.c:105
 msgid "This key is already in use."
 msgstr "Šis taustiņš jau ir aizņemts."
 
-#: ../src/games-controls.c:326
+#: src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Nezināma komanda"
 
-#: ../src/gfx.c:247
+#: src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -151,195 +156,196 @@ msgstr ""
 "Nevar ielādēt attēlu:\n"
 "%s"
 
-#: ../src/main.c:476
+#: src/main.c:476
 msgid "It’s a draw!"
 msgstr "Neizšķirts!"
 
-#: ../src/main.c:484
+#: src/main.c:484
 msgid "You win!"
 msgstr "Tu uzvarēji!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/main.c:486 src/main.c:502
 msgid "Your Turn"
 msgstr "Tavs gājiens"
 
-#: ../src/main.c:489
+#: src/main.c:489
 msgid "I win!"
 msgstr "Es uzvarēju!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/main.c:491 src/main.c:590
 msgid "I’m Thinking…"
 msgstr "Es domāju…"
 
-#: ../src/main.c:603
+#: src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Padoms — kolonna %d"
 
-#: ../src/main.c:631 ../src/main.c:635
+#: src/main.c:631 src/main.c:635
 msgid "You:"
 msgstr "Tu:"
 
-#: ../src/main.c:632 ../src/main.c:634
+#: src/main.c:632 src/main.c:634
 msgid "Me:"
 msgstr "Es:"
 
-#: ../src/main.c:680
+#: src/main.c:680
 msgid "Scores"
 msgstr "Rezultāti"
 
-#: ../src/main.c:721
+#: src/main.c:721
 msgid "Drawn:"
 msgstr "Neizšķirts:"
 
-#: ../src/main.c:762
+#: src/main.c:762
 msgid "Connect four in a row to win."
 msgstr "Savieno četrus rindā, lai uzvarētu."
 
-#: ../src/main.c:765
+#: src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Raivis Dejus <orvils@gmail.com>\n"
 "Sandra Zabarovska <sandra.zabarovska@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/main.c:1130
+#: src/main.c:1130
 msgid "_Scores"
 msgstr "Re_zultāti"
 
-#: ../src/main.c:1131
+#: src/main.c:1131
 msgid "_Preferences"
 msgstr "_Iestatījumi"
 
-#: ../src/main.c:1134
+#: src/main.c:1134
 msgid "_Help"
 msgstr "_Palīdzība"
 
-#: ../src/main.c:1135
+#: src/main.c:1135
 msgid "_About"
 msgstr "P_ar"
 
-#: ../src/main.c:1136
+#: src/main.c:1136
 msgid "_Quit"
 msgstr "_Iziet"
 
-#: ../src/prefs.c:171
+#: src/prefs.c:171
 msgid "Preferences"
 msgstr "Iestatījumi"
 
-#: ../src/prefs.c:193
+#: src/prefs.c:193
 msgid "Game"
 msgstr "Spēle"
 
-#: ../src/prefs.c:196
+#: src/prefs.c:196
 msgid "Opponent:"
 msgstr "Pretinieks:"
 
-#: ../src/prefs.c:207
+#: src/prefs.c:207
 msgid "Human"
 msgstr "Cilvēks"
 
-#: ../src/prefs.c:211
+#: src/prefs.c:211
 msgid "Level one"
 msgstr "Pirmais līmenis"
 
-#: ../src/prefs.c:215
+#: src/prefs.c:215
 msgid "Level two"
 msgstr "Otrais līmenis"
 
-#: ../src/prefs.c:219
+#: src/prefs.c:219
 msgid "Level three"
 msgstr "Trešais līmenis"
 
-#: ../src/prefs.c:225
+#: src/prefs.c:225
 msgid "_Theme:"
 msgstr "Mo_tīvs:"
 
-#: ../src/prefs.c:238
+#: src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "A_ktivēt skaņas"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Tastatūras vadība"
 
-#: ../src/theme.c:40
+#: src/theme.c:40
 msgid "High Contrast"
 msgstr "Augsts kontrasts"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Circle"
 msgstr "Aplis"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Cross"
 msgstr "Krusts"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Circle wins!"
 msgstr "Aplis uzvar!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Cross wins!"
 msgstr "Krusts uzvar!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Circle’s turn"
 msgstr "Apļa gājiens"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Cross’s turn"
 msgstr "Krusta gājiens"
 
-#: ../src/theme.c:49
+#: src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "Pretējs augsts kontrasts"
 
-#: ../src/theme.c:58
+#: src/theme.c:58
 msgid "Red and Green Marbles"
 msgstr "Sarkanas un zaļas lodītes"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:71 src/theme.c:80
 msgid "Red"
 msgstr "Sarkans"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:80
 msgid "Green"
 msgstr "Zaļš"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:72 src/theme.c:81
 msgid "Red wins!"
 msgstr "Sarkanais uzvar!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:81
 msgid "Green wins!"
 msgstr "Zaļais uzvar!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:73 src/theme.c:82
 msgid "Red’s turn"
 msgstr "Sarkanā gājiens"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:82
 msgid "Green’s turn"
 msgstr "Zaļā gājiens"
 
-#: ../src/theme.c:67
+#: src/theme.c:67
 msgid "Blue and Red Marbles"
 msgstr "Zilas un sarkanas lodītes"
 
-#: ../src/theme.c:71
+#: src/theme.c:71
 msgid "Blue"
 msgstr "Zils"
 
-#: ../src/theme.c:72
+#: src/theme.c:72
 msgid "Blue wins!"
 msgstr "Zilais uzvar"
 
-#: ../src/theme.c:73
+#: src/theme.c:73
 msgid "Blue’s turn"
 msgstr "Zilā gājiens"
 
-#: ../src/theme.c:76
+#: src/theme.c:76
 msgid "Stars and Rings"
 msgstr "Zvaigznes un riņķi"
+
