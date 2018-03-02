@@ -1,3 +1,9 @@
+3.27.92 - March 2, 2018
+=======================
+
+* Play sounds using the default libcanberra-gtk3 context (#793485, Yanko Kaneti)
+* Updated translations
+
 3.27.90 - February 5, 2018
 ==========================
 
