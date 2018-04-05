@@ -10,10 +10,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.ro\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-01 00:40+0100\n"
-"PO-Revision-Date: 2011-03-16 17:36+0200\n"
-"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"in-a-row&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2018-03-26 22:43+0000\n"
+"PO-Revision-Date: 2018-04-03 16:44+0300\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -21,189 +22,192 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.6.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Launchpad-Export-Date: 2009-11-27 09:12+0000\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-#, fuzzy
+#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
+#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
 msgid "Four-in-a-row"
-msgstr "Patru-in-linie"
+msgstr "Patru-în-linie"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "Încercați să creați linii de aceeași culoare pentru a câștiga"
+msgstr "Creați linii de aceeași culoare pentru a câștiga"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
+"Un clasic de familie, obiectivul jocului Patru-în-linie este de a construi o "
+"linie cu patru din bilele la dispoziție în timp ce încercați să opriți "
+"oponentul (om sau calculator) din a construi o linie la rândul lui sau ei. O "
+"linie poate fi orizontală, verticală sau diagonală. Primul jucător care "
+"conectează patru în linie este câștigătorul!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/four-in-a-row.appdata.xml.in:16
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
+"Patru-în-linie deține niveluri multiple de dificultate. Dacă aveți probleme, "
+"puteți întotdeauna să solicitați un indiciu."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/four-in-a-row.appdata.xml.in:32
 msgid "The GNOME Project"
-msgstr ""
+msgstr "Proiectul GNOME"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/four-in-a-row.desktop.in:4
+msgid "four-in-a-row"
+msgstr "four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
-msgstr ""
+msgstr "game;strategy;logic;joc;strategie;logică;"
 
-#: ../data/four-in-a-row.ui.h:2
-#, fuzzy
+#: data/four-in-a-row.ui:19
 msgid "Undo your most recent move"
-msgstr "Scorul recent al utilizatorului."
+msgstr "Anulează cea mai recentă mutare"
 
-#: ../data/four-in-a-row.ui.h:3
+#: data/four-in-a-row.ui:79
 msgid "_Hint"
-msgstr "Su_gestie"
+msgstr "_Indiciu"
 
-#: ../data/four-in-a-row.ui.h:4
-#, fuzzy
+#: data/four-in-a-row.ui:83
 msgid "Receive a hint for your next move"
-msgstr "Primește o sugestie pentru următoarea mutare"
+msgstr "Primește un indiciu pentru următoarea mutare"
 
-#: ../data/four-in-a-row.ui.h:5
-#, fuzzy
+#: data/four-in-a-row.ui:98
 msgid "_Start Over"
-msgstr "_Start"
+msgstr "Î_ncepe din nou"
 
-#: ../data/four-in-a-row.ui.h:6
+#: data/four-in-a-row.ui:102
 msgid "Start a new game"
 msgstr "Pornește un joc nou"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-#, fuzzy
+#: data/org.gnome.four-in-a-row.gschema.xml:5
 msgid "Opponent"
-msgstr "Adversari controlați de calculator"
+msgstr "Oponent"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr ""
-"Zero este uman, iar de la unu la trei este corespunzător nivelului "
-"jucătorului calculator."
+"Zero este uman, unu până la trei corespund nivelului jucătorului calculator."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.four-in-a-row.gschema.xml:10
 msgid "Theme ID"
-msgstr "ID Temă"
+msgstr "ID temă"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Un număr specificând tema preferată."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Sunet"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
-msgstr "Dacă sau nu să se folosească sunete pentru evenimente."
+msgstr "Dacă se redau sau nu sunetele de evenimente."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
 msgid "Move left"
 msgstr "Mută la stânga"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Tasta pentru mișcare la stânga."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
 msgid "Move right"
 msgstr "Mută la dreapta"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Tasta pentru mișcare la dreapta."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
 msgid "Drop marble"
 msgstr "Eliberează piesa"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Tasta apăsată pentru a elibera o piesă."
 
-#: ../src/games-controls.c:105
-#, fuzzy
+#: src/games-controls.c:105
 msgid "This key is already in use."
-msgstr "Acel nume de utilizator este deja în folosință."
+msgstr "Această tastă este deja în uz."
 
-#: ../src/games-controls.c:326
+#: src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "Comandă necunoscută"
 
-#: ../src/gfx.c:247
+#: src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
 "%s"
 msgstr ""
-"Nu am putut încărca imaginea:\n"
+"Nu s-a putut încărca imaginea:\n"
 "%s"
 
-#: ../src/main.c:476
-#, fuzzy
+#: src/main.c:476
 msgid "It’s a draw!"
-msgstr "E remiză!"
+msgstr "Este remiză!"
 
-#: ../src/main.c:484
+#: src/main.c:484
 msgid "You win!"
-msgstr "Ai învins!"
+msgstr "Ați câștigat!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/main.c:486 src/main.c:502
 msgid "Your Turn"
-msgstr ""
+msgstr "Rândul tău"
 
-#: ../src/main.c:489
+#: src/main.c:489
 msgid "I win!"
-msgstr "Am invins!"
+msgstr "Am câștigat!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/main.c:491 src/main.c:590
 msgid "I’m Thinking…"
-msgstr ""
+msgstr "Mă gândesc…"
 
-#: ../src/main.c:603
+#: src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
-msgstr "Sugestie: Coloana %d"
+msgstr "Indiciu: coloana %d"
 
-#: ../src/main.c:631 ../src/main.c:635
+#: src/main.c:631 src/main.c:635
 msgid "You:"
 msgstr "Tu:"
 
-#: ../src/main.c:632 ../src/main.c:634
+#: src/main.c:632 src/main.c:634
 msgid "Me:"
 msgstr "Eu:"
 
-#: ../src/main.c:680
+#: src/main.c:680
 msgid "Scores"
 msgstr "Scoruri"
 
-#: ../src/main.c:721
+#: src/main.c:721
 msgid "Drawn:"
-msgstr "Remiză:"
+msgstr "Tras:"
 
-#: ../src/main.c:762
-#, fuzzy
+#: src/main.c:762
 msgid "Connect four in a row to win."
-msgstr "Aranjați patru piese în linie"
+msgstr "Conectați patru consecutiv pentru a câștiga."
 
-#: ../src/main.c:765
+#: src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
 "Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "\n"
 "Launchpad Contributions:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
@@ -221,152 +225,143 @@ msgstr ""
 "  Mugurel Tudor https://launchpad.net/~mugurelu-gnome\n"
 "  leandrud https://launchpad.net/~leandrud"
 
-#: ../src/main.c:1130
+#: src/main.c:1130
 msgid "_Scores"
 msgstr "_Scoruri"
 
-#: ../src/main.c:1131
-#, fuzzy
+#: src/main.c:1131
 msgid "_Preferences"
-msgstr "Preferințe"
+msgstr "_Preferințe"
 
-#: ../src/main.c:1134
+#: src/main.c:1134
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: ../src/main.c:1135
+#: src/main.c:1135
 msgid "_About"
 msgstr "_Despre"
 
-#: ../src/main.c:1136
-#, fuzzy
+#: src/main.c:1136
 msgid "_Quit"
-msgstr "Ieșire"
+msgstr "_Ieșire"
 
-#: ../src/prefs.c:171
+#: src/prefs.c:171
 msgid "Preferences"
 msgstr "Preferințe"
 
-#: ../src/prefs.c:193
+#: src/prefs.c:193
 msgid "Game"
 msgstr "Joc"
 
-#: ../src/prefs.c:196
+#: src/prefs.c:196
 msgid "Opponent:"
-msgstr ""
+msgstr "Oponent:"
 
-#: ../src/prefs.c:207
+#: src/prefs.c:207
 msgid "Human"
 msgstr "Om"
 
-#: ../src/prefs.c:211
+#: src/prefs.c:211
 msgid "Level one"
 msgstr "Nivelul unu"
 
-#: ../src/prefs.c:215
+#: src/prefs.c:215
 msgid "Level two"
 msgstr "Nivelul doi"
 
-#: ../src/prefs.c:219
+#: src/prefs.c:219
 msgid "Level three"
 msgstr "Nivelul trei"
 
-#: ../src/prefs.c:225
+#: src/prefs.c:225
 msgid "_Theme:"
 msgstr "_Temă:"
 
-#: ../src/prefs.c:238
+#: src/prefs.c:238
 msgid "E_nable sounds"
-msgstr "A_ctivează sunetele"
+msgstr "Activează su_netele"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "Control tastatură"
 
-#: ../src/theme.c:40
+#: src/theme.c:40
 msgid "High Contrast"
 msgstr "Contrast mare"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Circle"
-msgstr ""
+msgstr "Cerc"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Cross"
-msgstr ""
+msgstr "Plus"
 
-#: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
+#: src/theme.c:45 src/theme.c:54
 msgid "Circle wins!"
-msgstr "Albul câștigă"
+msgstr "Cerc câștigă!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
+#: src/theme.c:45 src/theme.c:54
 msgid "Cross wins!"
-msgstr "%s a învins!"
+msgstr "Plus câștigă!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Circle’s turn"
-msgstr ""
+msgstr "Rândul lui cerc"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Cross’s turn"
-msgstr ""
+msgstr "Rândul lui plus"
 
-#: ../src/theme.c:49
+#: src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "Contrast mare inversat"
 
-#: ../src/theme.c:58
+#: src/theme.c:58
 msgid "Red and Green Marbles"
-msgstr ""
+msgstr "Bile roșii și verzi"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:71 src/theme.c:80
 msgid "Red"
 msgstr "Roșu"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:80
 msgid "Green"
 msgstr "Verde"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#, fuzzy
+#: src/theme.c:63 src/theme.c:72 src/theme.c:81
 msgid "Red wins!"
-msgstr "%s a învins!"
+msgstr "Roșu câștigă!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
-#, fuzzy
+#: src/theme.c:63 src/theme.c:81
 msgid "Green wins!"
-msgstr "%s a învins!"
+msgstr "Verde câștigă!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:73 src/theme.c:82
 msgid "Red’s turn"
-msgstr ""
+msgstr "Rândul lui roșu"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:82
 msgid "Green’s turn"
-msgstr ""
+msgstr "Rândul lui verde"
 
-#: ../src/theme.c:67
-#, fuzzy
+#: src/theme.c:67
 msgid "Blue and Red Marbles"
-msgstr "Bile colorate"
+msgstr "Bile albastre și roșii"
 
-#: ../src/theme.c:71
+#: src/theme.c:71
 msgid "Blue"
 msgstr "Albastru"
 
-#: ../src/theme.c:72
-#, fuzzy
+#: src/theme.c:72
 msgid "Blue wins!"
-msgstr "Negrul câștigă"
+msgstr "Albastrul câștigă!"
 
-#: ../src/theme.c:73
+#: src/theme.c:73
 msgid "Blue’s turn"
-msgstr ""
+msgstr "Rândul lui albastru"
 
-#: ../src/theme.c:76
-#, fuzzy
+#: src/theme.c:76
 msgid "Stars and Rings"
-msgstr "Se pornește %s"
+msgstr "Stele și inele"
