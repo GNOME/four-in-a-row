@@ -2,35 +2,34 @@
 # Copyright 2011 Free Software Foundation, Inc.
 # Aron Xu <aronxu@gnome.org>, 2011.
 # YunQiang Su <wzssyqa@gmail.com>, 2011, 2012.
+# Mingcong Bai <jeffbai@aosc.xyz>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
 "in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-07 23:53+0000\n"
-"PO-Revision-Date: 2016-12-10 14:54+0800\n"
-"Last-Translator: Mandy Wang <wangmychn@gmail.com>\n"
+"POT-Creation-Date: 2018-03-26 22:43+0000\n"
+"PO-Revision-Date: 2018-05-10 11:57-0500\n"
+"Last-Translator: Mingcong Bai <jeffbai@aosc.xyz>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
+#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
+#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
 msgid "Four-in-a-row"
 msgstr "四子连线"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "将四粒棋子排成一线以取胜"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -41,99 +40,106 @@ msgstr ""
 "(人或者计算机)连线成功。连线可以是横的，竖的或斜的。第一个将四个弹珠连成一条"
 "线的选手获胜。"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/four-in-a-row.appdata.xml.in:16
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr "四子连线有多个难度级别。如果您玩不下去，也可以获取提示。"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/four-in-a-row.appdata.xml.in:32
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/four-in-a-row.desktop.in:4
+#| msgid "Four-in-a-row"
+msgid "four-in-a-row"
+msgstr "four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;游戏;策略;逻辑;"
 
-#: ../data/four-in-a-row.ui.h:2
+#: data/four-in-a-row.ui:19
 msgid "Undo your most recent move"
 msgstr "撤销上一步。"
 
-#: ../data/four-in-a-row.ui.h:3
+#: data/four-in-a-row.ui:79
 msgid "_Hint"
 msgstr "提示(_H)"
 
-#: ../data/four-in-a-row.ui.h:4
+#: data/four-in-a-row.ui:83
 msgid "Receive a hint for your next move"
 msgstr "获取您下一步走法的提示"
 
-#: ../data/four-in-a-row.ui.h:5
+#: data/four-in-a-row.ui:98
 msgid "_Start Over"
 msgstr "重新开始(_S)"
 
-#: ../data/four-in-a-row.ui.h:6
+#: data/four-in-a-row.ui:102
 msgid "Start a new game"
 msgstr "开始新游戏"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#: data/org.gnome.four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "对手"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "0 代表玩家；1 至 3 代表相应的计算机玩家。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "主题编号"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "指定首选主题的数字。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "音效"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "是否播放事件声音。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
 msgid "Move left"
 msgstr "向左移动"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "左移的按键。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
 msgid "Move right"
 msgstr "向右移动"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "右移的按键。"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
 msgid "Drop marble"
 msgstr "落下小球"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "落下小球的按键。"
 
-#: ../src/games-controls.c:105
+#: src/games-controls.c:105
 msgid "This key is already in use."
 msgstr "按键已被占用。"
 
-#: ../src/games-controls.c:326
+#: src/games-controls.c:326
 msgid "Unknown Command"
 msgstr "未知命令"
 
-#: ../src/gfx.c:247
+#: src/gfx.c:247
 #, c-format
 msgid ""
 "Unable to load image:\n"
@@ -142,195 +148,196 @@ msgstr ""
 "无法载入图像：\n"
 "%s"
 
-#: ../src/main.c:476
+#: src/main.c:476
 msgid "It’s a draw!"
 msgstr "平局！"
 
-#: ../src/main.c:484
+#: src/main.c:484
 msgid "You win!"
 msgstr "您赢了！"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/main.c:486 src/main.c:502
 msgid "Your Turn"
 msgstr "轮到你走"
 
-#: ../src/main.c:489
+#: src/main.c:489
 msgid "I win!"
 msgstr "我赢了！"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/main.c:491 src/main.c:590
 msgid "I’m Thinking…"
 msgstr "我想想..."
 
-#: ../src/main.c:603
+#: src/main.c:603
 #, c-format
 msgid "Hint: Column %d"
 msgstr "提示：列 %d"
 
-#: ../src/main.c:631 ../src/main.c:635
+#: src/main.c:631 src/main.c:635
 msgid "You:"
 msgstr "您："
 
-#: ../src/main.c:632 ../src/main.c:634
+#: src/main.c:632 src/main.c:634
 msgid "Me:"
 msgstr "我："
 
-#: ../src/main.c:680
+#: src/main.c:680
 msgid "Scores"
 msgstr "得分"
 
-#: ../src/main.c:721
+#: src/main.c:721
 msgid "Drawn:"
 msgstr "平局："
 
-#: ../src/main.c:762
+#: src/main.c:762
 msgid "Connect four in a row to win."
 msgstr "连接四砖成一线即可取胜"
 
-#: ../src/main.c:765
+#: src/main.c:765
 msgid "translator-credits"
 msgstr ""
 "Yang Zhang <zyangmath@gmail.com>, 2007\n"
 "Ping Z <zpsigma@gmail.com>, 2007\n"
-"Xhacker Liu <liu.dongyuan@gmail.com>, 2010"
+"Xhacker Liu <liu.dongyuan@gmail.com>, 2010\n"
+"Mingcong Bai <jeffbai@aosc.xyz>, 2018"
 
-#: ../src/main.c:1130
+#: src/main.c:1130
 msgid "_Scores"
 msgstr "得分(_S)"
 
-#: ../src/main.c:1131
+#: src/main.c:1131
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
-#: ../src/main.c:1134
+#: src/main.c:1134
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../src/main.c:1135
+#: src/main.c:1135
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../src/main.c:1136
+#: src/main.c:1136
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: ../src/prefs.c:171
+#: src/prefs.c:171
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../src/prefs.c:193
+#: src/prefs.c:193
 msgid "Game"
 msgstr "游戏"
 
-#: ../src/prefs.c:196
+#: src/prefs.c:196
 msgid "Opponent:"
 msgstr "对手："
 
-#: ../src/prefs.c:207
+#: src/prefs.c:207
 msgid "Human"
 msgstr "人"
 
-#: ../src/prefs.c:211
+#: src/prefs.c:211
 msgid "Level one"
 msgstr "一级"
 
-#: ../src/prefs.c:215
+#: src/prefs.c:215
 msgid "Level two"
 msgstr "二级"
 
-#: ../src/prefs.c:219
+#: src/prefs.c:219
 msgid "Level three"
 msgstr "三级"
 
-#: ../src/prefs.c:225
+#: src/prefs.c:225
 msgid "_Theme:"
 msgstr "主题(_T)："
 
-#: ../src/prefs.c:238
+#: src/prefs.c:238
 msgid "E_nable sounds"
 msgstr "启用声音(_N)"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs.c:243
 msgid "Keyboard Controls"
 msgstr "键盘控制"
 
-#: ../src/theme.c:40
+#: src/theme.c:40
 msgid "High Contrast"
 msgstr "黑白"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Circle"
 msgstr "圈"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.c:44 src/theme.c:53
 msgid "Cross"
 msgstr "叉"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Circle wins!"
 msgstr "画圈那方获胜"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.c:45 src/theme.c:54
 msgid "Cross wins!"
 msgstr "画叉那方获胜"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Circle’s turn"
 msgstr "轮到画圈那方"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.c:46 src/theme.c:55
 msgid "Cross’s turn"
 msgstr "轮到画叉那方"
 
-#: ../src/theme.c:49
+#: src/theme.c:49
 msgid "High Contrast Inverse"
 msgstr "白黑"
 
-#: ../src/theme.c:58
+#: src/theme.c:58
 msgid "Red and Green Marbles"
 msgstr "红色和蓝色弹球"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:71 src/theme.c:80
 msgid "Red"
 msgstr "红色"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.c:62 src/theme.c:80
 msgid "Green"
 msgstr "绿"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:72 src/theme.c:81
 msgid "Red wins!"
 msgstr "红方获胜！"
 
-#: ../src/theme.c:63 ../src/theme.c:81
+#: src/theme.c:63 src/theme.c:81
 msgid "Green wins!"
 msgstr "绿方获胜！"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:73 src/theme.c:82
 msgid "Red’s turn"
 msgstr "轮到红方"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.c:64 src/theme.c:82
 msgid "Green’s turn"
 msgstr "轮到绿方"
 
-#: ../src/theme.c:67
+#: src/theme.c:67
 msgid "Blue and Red Marbles"
 msgstr "蓝色和红色弹球"
 
-#: ../src/theme.c:71
+#: src/theme.c:71
 msgid "Blue"
 msgstr "蓝色"
 
-#: ../src/theme.c:72
+#: src/theme.c:72
 msgid "Blue wins!"
 msgstr "黑方获胜！"
 
-#: ../src/theme.c:73
+#: src/theme.c:73
 msgid "Blue’s turn"
 msgstr "轮到蓝方"
 
-#: ../src/theme.c:76
+#: src/theme.c:76
 msgid "Stars and Rings"
 msgstr "星和圈"
