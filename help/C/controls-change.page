@@ -8,6 +8,7 @@
     <link type="seealso" xref="controls-default"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
+    <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -26,7 +27,8 @@
 
   <steps>
     <item>
-      <p>Select <guiseq><gui style="menu">Settings</gui>
+      <p>Open the application menu in the top bar and select
+      <guiseq><gui style="menu">Settings</gui>
       <gui style="menuitem">Preferences</gui>
       <gui style="menuitem">Keyboard Controls</gui></guiseq>.</p>
     </item>
