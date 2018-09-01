@@ -5,7 +5,7 @@
   <info>
     <link type="guide" xref="index#play"/>
 
-    <revision pkgversion="3.29" version="0.2" date="2018-09-01" status="final"/>
+    <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -14,7 +14,7 @@
       <email>safincrazy@gmail.com</email>
     </credit>
 
-    <desc> Start, play in fullscreen mode and quit a game of
+    <desc> Start, play and quit a game of
     <app>Four-in-a-row</app>.</desc>
   </info>
 
