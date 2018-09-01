@@ -6,6 +6,8 @@
     <link type="guide" xref="index#play"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
+    <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
+
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
     <credit type="author">
@@ -24,8 +26,8 @@
   <title>Scores</title>
   <p>The score in <app>Four-in-a-row</app> is recorded in terms of your wins,
   your opponent's wins and games that ended in a draw. To check the scores,
-  select <guiseq><gui style="menu">Game</gui>
-  <gui style="menuitem">Scores</gui></guiseq>. In the default theme:</p>
+  open the applicatoin menu in the top bar and select 
+  <gui style="menuitem">Scores</gui>. In the default theme:</p>
 
   <list>
     <item>
