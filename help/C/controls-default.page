@@ -8,6 +8,7 @@
     <link type="seealso" xref="controls-change"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
+    <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -21,8 +22,8 @@
 
   <title>Controls</title>
 
-  <p>You can use your mouse and click on a particular square in the game area
-  to drop your marble into that square. If you want to use the keyboard
+  <p>You can use your mouse and click on a particular row in the game area
+  to drop your marble into that row. If you want to use the keyboard
   instead, the default keys for <app>Four-in-a-row</app> are:</p>
 
   <list>
