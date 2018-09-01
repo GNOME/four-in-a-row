@@ -6,6 +6,7 @@
     <link type="guide" xref="index#preferences"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
+    <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -29,14 +30,13 @@
   <steps>
     <title>To change the level, or to play with a friend:</title>
     <item>
-      <p>Select <guiseq><gui style="menu">Settings</gui>
-      <gui style="menuitem">Preferences</gui>
-      <gui style="menuitem">Game</gui></guiseq>. You will see
-      <gui>Player One</gui> and <gui>Player Two</gui>.</p>
+      <p>Open the application menu in the top bar and select
+      <guiseq><gui style="menuitem">Preferences</gui>
+      <gui style="menuitem">Game</gui></guiseq>.</p>
     </item>
     <item>
-      <p>Choose <gui style="radiobutton">Human</gui> for both players if want to
-      play with a friend or family member.</p>
+      <p>Under <gui>Opponent</gui>, choose <gui style="radiobutton">Human</gui>
+      for both players if want to play with a friend or family member.</p>
       <p>Alternatively, choose the level at which the computer plays. Choose
       between <gui style="radiobutton">Level one</gui>,
       <gui style="radiobutton">Level two</gui> or
@@ -46,10 +46,10 @@
       difficult level.</p>
       <note style="tip">
 	<p>If you are playing with a friend or family member,
-	<gui>Player One</gui> gets to play first in the first game of
+	Player One gets to play first in the first game of
 	<app>Four-in-a-row</app>. In subsequent games, the chance to play first
-	is given alternately to each player. So, <gui>Player Two</gui> will get
-	to play first in the second game, <gui>Player One</gui> can play first
+	is given alternately to each player. So, Player Two will get
+	to play first in the second game, Player One can play first
 	in the third game and so on.</p>
       </note>
     </item>
