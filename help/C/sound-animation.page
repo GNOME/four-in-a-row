@@ -31,7 +31,7 @@
     <title>To disable sounds:</title>
     <item>
       <p>Open the application menu in the top bar and select
-      <gui style="menuitem">Preferences</gui>
+      <guiseq><gui style="menuitem">Preferences</gui>
       <gui style="menuitem">Game</gui></guiseq>.</p>
     </item>
     <item>
