@@ -28,8 +28,7 @@
   <steps>
     <item>
       <p>Open the application menu in the top bar and select
-      <guiseq><gui style="menu">Settings</gui>
-      <gui style="menuitem">Preferences</gui>
+      <guiseq><gui style="menu">Preferences</gui>
       <gui style="menuitem">Keyboard Controls</gui></guiseq>.</p>
     </item>
     <item>
