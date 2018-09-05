@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row-help\n"
-"POT-Creation-Date: 2018-09-01 12:33+0000\n"
-"PO-Revision-Date: 2018-09-01 19:09+0200\n"
+"POT-Creation-Date: 2018-09-05 08:33+0000\n"
+"PO-Revision-Date: 2018-09-05 18:12+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -59,10 +59,10 @@ msgstr "Aby użyć innego motywu:"
 #. (itstool) path: item/p
 #: C/appearance.page:28
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
 "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgstr ""
-"Wybierz <guiseq><gui style=\"menu\">Ustawienia</gui> <gui style=\"menuitem"
+"Otwórz menu programu na górnym pasku i wybierz <guiseq><gui style=\"menu"
 "\">Preferencje</gui> <gui style=\"menuitem\">Gra</gui></guiseq>."
 
 #. (itstool) path: item/p
@@ -214,15 +214,15 @@ msgstr ""
 #: C/controls-change.page:30
 msgid ""
 "Open the application menu in the top bar and select <guiseq><gui style=\"menu"
-"\">Settings</gui> <gui style=\"menuitem\">Preferences</gui> <gui style="
-"\"menuitem\">Keyboard Controls</gui></guiseq>."
+"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+"guiseq>."
 msgstr ""
 "Otwórz menu programu na górnym pasku i wybierz <guiseq><gui style=\"menu"
-"\">Ustawienia</gui> <gui style=\"menuitem\">Preferencje</gui> <gui style="
-"\"menuitem\">Klawisze sterujące</gui></guiseq>."
+"\">Preferencje</gui> <gui style=\"menuitem\">Klawisze sterujące</gui></"
+"guiseq>."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:36
+#: C/controls-change.page:35
 msgid ""
 "In the list, select the line you want to change, then click on the control. "
 "The line is highlighted and the label of the control changes to <gui>New "
@@ -232,12 +232,12 @@ msgstr ""
 "zostanie wyróżniony, a etykieta klawisza zmieni się na <gui>Nowy skrót…</gui>"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:41
+#: C/controls-change.page:40
 msgid "Press the key you want to use instead of the default key."
 msgstr "Naciśnij klawisz do użycia zamiast domyślnego."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:43
+#: C/controls-change.page:42
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
 "</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
@@ -248,7 +248,7 @@ msgstr ""
 "gdzieś indziej w polu <gui>Klawisze sterujące</gui>."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:51
+#: C/controls-change.page:50
 msgid ""
 "When you are playing with a friend or a family member, both players will use "
 "the same controls."
