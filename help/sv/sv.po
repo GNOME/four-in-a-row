@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row doc\n"
-"POT-Creation-Date: 2018-09-01 17:12+0000\n"
-"PO-Revision-Date: 2018-09-02 14:19+0200\n"
+"POT-Creation-Date: 2018-09-05 08:33+0000\n"
+"PO-Revision-Date: 2018-09-05 11:46+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -54,10 +54,10 @@ msgstr "Om du vill använda ett annat tema:"
 #. (itstool) path: item/p
 #: C/appearance.page:28
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
 "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgstr ""
-"Välj <guiseq><gui style=\"menu\">Inställningar</gui> <gui style=\"menuitem"
+"Öppna programmenyn i systemraden och välj <guiseq><gui style=\"menu"
 "\">Inställningar</gui> <gui style=\"menuitem\">Spel</gui></guiseq>."
 
 #. (itstool) path: item/p
@@ -210,15 +210,15 @@ msgstr ""
 #: C/controls-change.page:30
 msgid ""
 "Open the application menu in the top bar and select <guiseq><gui style=\"menu"
-"\">Settings</gui> <gui style=\"menuitem\">Preferences</gui> <gui style="
-"\"menuitem\">Keyboard Controls</gui></guiseq>."
+"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+"guiseq>."
 msgstr ""
 "Öppna programmenyn i systemraden och välj <guiseq><gui style=\"menu"
-"\">Inställningar</gui> <gui style=\"menuitem\">Inställningar</gui> <gui "
-"style=\"menuitem\">Tangentbordsstyrning</gui></guiseq>."
+"\">Inställningar</gui> <gui style=\"menuitem\">Tangentbordsstyrning</gui></"
+"guiseq>."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:36
+#: C/controls-change.page:35
 msgid ""
 "In the list, select the line you want to change, then click on the control. "
 "The line is highlighted and the label of the control changes to <gui>New "
@@ -229,13 +229,13 @@ msgstr ""
 "<gui>Ny accelerator…</gui>"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:41
+#: C/controls-change.page:40
 msgid "Press the key you want to use instead of the default key."
 msgstr ""
 "Tryck på tangenten som du vill använda i stället för standardtangenten."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:43
+#: C/controls-change.page:42
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
 "</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
@@ -246,7 +246,7 @@ msgstr ""
 "annanstans i <gui>Tangentbordsstyrning</gui>-rutan."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:51
+#: C/controls-change.page:50
 msgid ""
 "When you are playing with a friend or a family member, both players will use "
 "the same controls."
@@ -491,6 +491,22 @@ msgstr "Creative Commons Erkännande-DelaLika 3.0 Unported"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Det här verket är licensierat under licensen <_:link-1/>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+#~ msgstr ""
+#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui> <gui style=\"menuitem"
+#~ "\">Inställningar</gui> <gui style=\"menuitem\">Spel</gui></guiseq>."
+
+#~ msgid ""
+#~ "Open the application menu in the top bar and select <guiseq><gui style="
+#~ "\"menu\">Settings</gui> <gui style=\"menuitem\">Preferences</gui> <gui "
+#~ "style=\"menuitem\">Keyboard Controls</gui></guiseq>."
+#~ msgstr ""
+#~ "Öppna programmenyn i systemraden och välj <guiseq><gui style=\"menu"
+#~ "\">Inställningar</gui> <gui style=\"menuitem\">Inställningar</gui> <gui "
+#~ "style=\"menuitem\">Tangentbordsstyrning</gui></guiseq>."
 
 #~ msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
 #~ msgstr "Spela <app>Fyra-i-rad</app> i helskärmsläge"
