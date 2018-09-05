@@ -1,13 +1,13 @@
 # Czech translation of gnect help.
 # Copyright (C) 2009 the author(s) of gnome-games.
 # This file is distributed under the same license as the gnect help.
-# Marek Černocký <marek@manet.cz>, 2009, 2011, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2009, 2011, 2013, 2014, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"POT-Creation-Date: 2014-04-23 04:48+0000\n"
-"PO-Revision-Date: 2014-04-23 10:03+0200\n"
+"POT-Creation-Date: 2018-09-05 08:33+0000\n"
+"PO-Revision-Date: 2018-09-05 09:56+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -23,21 +23,21 @@ msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>, 2013"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:13 C/choose-opponent.page:13
-#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:12
-#: C/make-easy.page:13 C/scores.page:12 C/sound-animation.page:13
+#: C/appearance.page:13 C/basics.page:14 C/choose-opponent.page:14
+#: C/controls-change.page:16 C/controls-default.page:16 C/index.page:12
+#: C/make-easy.page:14 C/scores.page:14 C/sound-animation.page:14
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: info/desc
 #: C/appearance.page:17
 msgid "Use different themes to improve your gaming experience."
-msgstr "Používejte různé motivy k vylepšení zážitku ze hry."
+msgstr "Jak používat různé motivy k vylepšení zážitku ze hry."
 
 #. (itstool) path: page/title
 #: C/appearance.page:20
 msgid "Change the appearance of your gaming area"
-msgstr "Jak změnit vzhled hrací plochy"
+msgstr "Změna vzhledu hrací plochy"
 
 #. (itstool) path: page/p
 #: C/appearance.page:22
@@ -54,13 +54,13 @@ msgid "To use a different theme:"
 msgstr "Když chcet použít jiný motiv:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28 C/sound-animation.page:35 C/sound-animation.page:54
+#: C/appearance.page:28
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
 "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgstr ""
-"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
-"\">Předvolby</gui> <gui style=\"menuitem\">Hra</gui></guiseq>."
+"Otevřete nabídku aplikace na horní liště a vyberte <guiseq><gui style="
+"\"menuitem\">Předvolby</gui> <gui style=\"menuitem\">Hra</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
@@ -74,86 +74,63 @@ msgstr ""
 "ihned projeví."
 
 #. (itstool) path: info/desc
-#: C/basics.page:17
-msgid ""
-"Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
-msgstr ""
-"Spuštění hry, hraní přes celou obrazovku a ukončení hry <app>Čtyři-v-jedné-"
-"řadě</app>."
+#: C/basics.page:18
+msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
+msgstr "Jak spustit, hrát a ukončit hru <app>Čtyři-v-jedné-řadě</app>."
 
 #. (itstool) path: page/title
-#: C/basics.page:21
+#: C/basics.page:22
 msgid "Basic instructions"
 msgstr "Úvodní instrukce"
 
 #. (itstool) path: section/title
-#: C/basics.page:24
+#: C/basics.page:25
 msgid "Start a new game"
 msgstr "Spuštění hry"
 
 #. (itstool) path: section/p
-#: C/basics.page:26
+#: C/basics.page:27
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
-"a new game."
+"Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Pro spuštění hry vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style="
-"\"menuitem\">Nová</gui></guiseq> nebo zmáčkněte <keyseq><key>Ctrl</"
-"key><key>N</key></keyseq>."
+"Pro spuštění hry použijte tlačítko <gui style=\"button\">Nová</gui> nebo "
+"zmáčkněte <keyseq><key>Ctrl</key><key>N</key></keyseq>."
 
 #. (itstool) path: section/title
 #: C/basics.page:34
-msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
-msgstr "Hraní hry v režimu celé obrazovky"
-
-#. (itstool) path: section/p
-#: C/basics.page:36
-msgid ""
-"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-"fullscreen mode. You can return to the default screen size by pressing "
-"<key>F11</key> again."
-msgstr ""
-"Jestli chcete hrát v režimu celé obrazovky, vyberte <guiseq><gui style=\"menu"
-"\">Zobrazit</gui> <gui style=\"menuitem\">Celá obrazovka</gui></guiseq> nebo "
-"zmáčkněte <key>F11</key>. Opětovným zmáčknutím <key>F11</key> se vrátíte na "
-"původní velikost."
-
-#. (itstool) path: section/title
-#: C/basics.page:44
 msgid "Quit <app>Four-in-a-row</app>"
 msgstr "Ukončení hry"
 
 #. (itstool) path: section/p
-#: C/basics.page:46
+#: C/basics.page:36
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
+"Open the application menu in the top bar and select <gui style=\"menuitem"
+"\">Quit</gui> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
 "<app>Four-in-a-row</app> at any time."
 msgstr ""
-"Hru <app>Čtyři-v-jedné-řadě</app> můžete kdykoliv ukončit pomocí nabídky "
-"<guiseq><gui style=\"menu\">Hra</gui> <gui style=\"menuitem\">Ukončit</gui></"
-"guiseq> nebo zmáčknutím <keyseq><key>Ctrl</key><key>Q</key></keyseq>."
+"Kdykoliv chcete hru <app>Čtyři-v-jedné-řadě</app> ukončit, stačí otevřít "
+"nabídku aplikace na horní liště a vybrat <gui style=\"menuitem\">Ukončit</"
+"gui> nebo zmáčknout <keyseq><key>Ctrl</key><key>Q</key></keyseq>."
 
 #. (itstool) path: credit/name
-#: C/choose-opponent.page:17 C/sound-animation.page:17
+#: C/choose-opponent.page:18 C/sound-animation.page:18
 msgid "Michael Hill"
 msgstr "Michael Hill"
 
 #. (itstool) path: info/desc
-#: C/choose-opponent.page:21
+#: C/choose-opponent.page:22
 msgid "Change the level at which the computer plays or play with a friend."
 msgstr ""
-"Změňte úroveň, s jakou počítač hraje, nebo si zahrejte proti kamarádovi."
+"Jak změnit úroveň, s jakou počítač hraje, nebo si zahrát proti kamarádovi."
 
 #. (itstool) path: page/title
-#: C/choose-opponent.page:25
+#: C/choose-opponent.page:26
 msgid "Choose a different opponent"
-msgstr "Jak vybrat jiného protihráče"
+msgstr "Výběr jiného protihráče"
 
 #. (itstool) path: page/p
-#: C/choose-opponent.page:26
+#: C/choose-opponent.page:27
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at level one."
@@ -162,29 +139,27 @@ msgstr ""
 "hrající na úrovni jedna."
 
 #. (itstool) path: steps/title
-#: C/choose-opponent.page:30
+#: C/choose-opponent.page:31
 msgid "To change the level, or to play with a friend:"
 msgstr "Pokud chcete úroveň změnit nebo hrát s kamarádem:"
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:32
+#: C/choose-opponent.page:33 C/sound-animation.page:33
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You will "
-"see <gui>Player One</gui> and <gui>Player Two</gui>."
+"Open the application menu in the top bar and select <guiseq><gui style="
+"\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgstr ""
-"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
-"\">Předvolby</gui> <gui style=\"menuitem\">Hra</gui></guiseq>. Uvidíte "
-"<gui>Hráč 1</gui> a <gui>Hráč 2</gui>."
+"Otevřete nabídku aplikace na horní liště a vyberte <guiseq><gui style="
+"\"menuitem\">Předvolby</gui> <gui style=\"menuitem\">Hra</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:38
 msgid ""
-"Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
-"play with a friend or family member."
+"Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for "
+"both players if want to play with a friend or family member."
 msgstr ""
-"V případě, že chcete hrát proti kamarádovi nebo členovi rodiny, zvolte <gui "
-"style=\"radiobutton\">Člověk</gui>."
+"V případě, že chcete hrát proti kamarádovi nebo členovi rodiny, zvolte u "
+"položky <gui>Protihráč</gui> možnost <gui style=\"radiobutton\">Člověk</gui>."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:40
@@ -204,29 +179,28 @@ msgstr ""
 #. (itstool) path: note/p
 #: C/choose-opponent.page:48
 msgid ""
-"If you are playing with a friend or family member, <gui>Player One</gui> "
-"gets to play first in the first game of <app>Four-in-a-row</app>. In "
-"subsequent games, the chance to play first is given alternately to each "
-"player. So, <gui>Player Two</gui> will get to play first in the second game, "
-"<gui>Player One</gui> can play first in the third game and so on."
+"If you are playing with a friend or family member, Player One gets to play "
+"first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
+"the chance to play first is given alternately to each player. So, Player Two "
+"will get to play first in the second game, Player One can play first in the "
+"third game and so on."
 msgstr ""
-"Když hrajete proti kamarádovi nebo členu rodiny, <gui>Hráč 1</gui> začíná v "
-"první hře jako první. V další hrách se možnost hrát první pravidelně střídá. "
-"Tj. <gui>Hráč 2</gui> začíná první v druhé hře, <gui>Hráč 1</gui> první ve "
-"třetí hře atd."
+"Když hrajete proti kamarádovi nebo členu rodiny, hráč 1 začíná v první hře "
+"jako první. V další hrách se možnost hrát první pravidelně střídá. Tj. hráč "
+"2 začíná první v druhé hře, hráč 1 první ve třetí hře atd."
 
 #. (itstool) path: info/desc
-#: C/controls-change.page:19
+#: C/controls-change.page:20
 msgid "Set custom control keys."
-msgstr "Nastavte si vlastní ovládací klávesy."
+msgstr "Jak si nastavit vlastní ovládací klávesy."
 
 #. (itstool) path: page/title
-#: C/controls-change.page:22
+#: C/controls-change.page:23
 msgid "Change the default controls"
-msgstr "Jak změnit výchozí ovládání"
+msgstr "Změna výchozího ovládání"
 
 #. (itstool) path: page/p
-#: C/controls-change.page:24
+#: C/controls-change.page:25
 msgid ""
 "To change the <link xref=\"controls-default\">default controls</link> in "
 "<app>Four-in-a-row</app>:"
@@ -235,18 +209,18 @@ msgstr ""
 "link> ve hře <app>Čtyři-v-jedné-řadě</app>:"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:29
+#: C/controls-change.page:30
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
 "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
 "guiseq>."
 msgstr ""
-"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
-"\">Předvolby</gui> <gui style=\"menuitem\">Ovládání klávesnicí</gui></"
-"guiseq>."
+"Otevřete nabídku aplikace na horní liště a vyberte <guiseq><gui style="
+"\"menuitem\">Předvolby</gui> <gui style=\"menuitem\">Ovládání klávesnicí</gui>"
+"</guiseq>."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:34
+#: C/controls-change.page:35
 msgid ""
 "In the list, select the line you want to change, then click on the control. "
 "The line is highlighted and the label of the control changes to <gui>New "
@@ -257,12 +231,12 @@ msgstr ""
 "klávesová zkratka…</gui>"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:39
+#: C/controls-change.page:40
 msgid "Press the key you want to use instead of the default key."
 msgstr "Zmáčkněte klávesu, kterou chcete místo té výchozí používat."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:41
+#: C/controls-change.page:42
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
 "</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
@@ -274,7 +248,7 @@ msgstr ""
 "<gui>Ovládání klavesnicí</gui>."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:49
+#: C/controls-change.page:50
 msgid ""
 "When you are playing with a friend or a family member, both players will use "
 "the same controls."
@@ -283,38 +257,38 @@ msgstr ""
 "stejné ovládací klávesy."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:19
+#: C/controls-default.page:20
 msgid "Default controls for <app>Four-in-a-row</app>."
-msgstr "Výchozí ovládání hry <app>Čtyři-v-jedné-řadě</app>"
+msgstr "Jak se standardně ovládá hra <app>Čtyři-v-jedné-řadě</app>"
 
 #. (itstool) path: page/title
-#: C/controls-default.page:22
+#: C/controls-default.page:23
 msgid "Controls"
-msgstr "Jak hru ovládat"
+msgstr "Ovládání"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:24
+#: C/controls-default.page:25
 msgid ""
-"You can use your mouse and click on a particular square in the game area to "
-"drop your marble into that square. If you want to use the keyboard instead, "
-"the default keys for <app>Four-in-a-row</app> are:"
+"You can use your mouse and click on a particular row in the game area to "
+"drop your marble into that row. If you want to use the keyboard instead, the "
+"default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
-"Můžete používat myš a klikat na příslušná políčka v herní oblasti. Tím "
-"kuličku shodíte na dotyčný čtverec. Nebo místo myši můžete používat "
-"klávesnici. Výchozí klávesy ve hře <app>Čtyři-v-jedné-řadě</app> jsou:"
+"Můžete používat myš a klikat na příslušné řádky v herní oblasti. Tím kuličku "
+"shodíte na dotyčný řádek. Nebo místo myši můžete používat klávesnici. "
+"Výchozí klávesy ve hře <app>Čtyři-v-jedné-řadě</app> jsou:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:30
+#: C/controls-default.page:31
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key> pro posun kuličky doleva."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:33
+#: C/controls-default.page:34
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key> pro posun kuličky doprava."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:36
+#: C/controls-default.page:37
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> pro shození kuličky."
 
@@ -350,39 +324,39 @@ msgid "Preferences"
 msgstr "Předvolby"
 
 #. (itstool) path: info/desc
-#: C/make-easy.page:17
+#: C/make-easy.page:18
 msgid "Use hints or undo your wrong moves."
-msgstr "Používejte rady nebo vracejte zpět chybné tahy."
+msgstr "Jak používat rady a vracet zpět chybné tahy."
 
 #. (itstool) path: page/title
-#: C/make-easy.page:20
+#: C/make-easy.page:21
 msgid "Make your game a little easier"
-msgstr "Jak si hru usnadnit"
+msgstr "Usnědnění hry"
 
 #. (itstool) path: section/title
-#: C/make-easy.page:23
+#: C/make-easy.page:24
 msgid "Change your last move"
 msgstr "Změna vašeho posledního tahu"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:25
+#: C/make-easy.page:26
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
-"To undo your last move, select <guiseq><gui style=\"menu\">Game</gui> <gui "
-"style=\"menuitem\">Undo Move</gui></guiseq> or press <keyseq><key>Ctrl</"
-"key><key>Z</key></keyseq>. You can now drop your marble at a different "
-"square in the game area to change your move."
+"To undo your last move, press the <gui style=\"button\">Undo your most "
+"recent move</gui> button in the title bar or press <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. You can now drop your marble at a different row "
+"in the game area to change your move."
 msgstr ""
 "Jestliže počítač udělal vítězný tah, ať už proto, že váš poslední tah byl "
 "špatný nebo jste se jen překlepli, můžete svůj poslední tah vrátit a změnit "
-"jej. Pokud tak chcete učinit, vyberte <guiseq><gui style=\"menu\">Hra</gui> "
-"<gui style=\"menuitem\">Tah zpět</gui></guiseq> nebo zmáčkněte "
+"jej. Pokud tak chcete učinit, zmáčkněte tlačítko <gui style=\"button"
+"\">Vrátit zpět váš poslední tah</gui> na hlavičkové liště nebo zmáčkněte "
 "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Nyní můžete kuličku upustit na "
-"jiný čtverech a tah tak změnit."
+"jiný řádek a tah tak změnit."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:33
+#: C/make-easy.page:34
 msgid ""
 "You can undo all your moves starting from your current move until you reach "
 "a favourable state of the game, or until the beginning of your current game, "
@@ -393,77 +367,73 @@ msgstr ""
 "<keyseq><key>Ctrl</key><key>Z</key></keyseq> opakovaně."
 
 #. (itstool) path: section/title
-#: C/make-easy.page:41
+#: C/make-easy.page:42
 msgid "Use hints"
 msgstr "Použití rad"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:43
+#: C/make-easy.page:44
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
-"To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui style="
-"\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</key><key>H</"
-"key></keyseq>."
+"To use a hint, press <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 msgstr ""
 "Když si nejste jisti, jak byste měli táhnout, můžete využít radu. Když ji "
 "použijete, vaše kulička se přesune na vrchol sloupce, který je nejlepší "
 "volbou a dobrou strategií a bliká. V tomto sloupci pak můžet kuličku shodit. "
-"Pokud chcete radu, vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style="
-"\"menuitem\">Rada</gui></guiseq> nebo zmáčkněte <keyseq><key>Ctrl</"
-"key><key>H</key></keyseq>."
+"Pokud chcete radu, zmáčkněte <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:51
+#: C/make-easy.page:50
 msgid "There is no limit on the number of hints you can use in a game."
 msgstr "Počet rad, které můžete v jedné hře použít, není nijak omezen."
 
 #. (itstool) path: credit/name
-#: C/scores.page:17
+#: C/scores.page:19
 msgid "Anna Philips"
 msgstr "Anna Philips"
 
 #. (itstool) path: info/desc
-#: C/scores.page:21
+#: C/scores.page:23
 msgid "Keep track of your wins and losses."
-msgstr "Sledujte své výhry a prohry."
+msgstr "Jak sledovat své výhry a prohry."
 
 #. (itstool) path: page/title
-#: C/scores.page:24
+#: C/scores.page:26
 msgid "Scores"
 msgstr "Skóre"
 
 #. (itstool) path: page/p
-#: C/scores.page:25
+#: C/scores.page:27
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
-"select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-"\">Scores</gui></guiseq>. In the default theme:"
+"open the application menu in the top bar and select <gui style=\"menuitem"
+"\">Scores</gui>. In the default theme:"
 msgstr ""
 "Skóre ve hře <app>Čtyři-v-jedné-řadě</app> zaznamenává situace, kdy jste "
 "vyhráli, kdy vyhrál protihráč a kdy hra skončila remízou. Jestli se chcete "
-"na skóre podívat, vyberte <guiseq><gui style=\"menu\">Hra</gui> <gui style="
-"\"menuitem\">Skóre</gui></guiseq>. Ve výchozím motivu:"
+"na skóre podívat, otevřete nabídku aplikace na horní liště a vyberte <gui "
+"style=\"menuitem\">Skóre</gui>. Ve výchozím motivu:"
 
 #. (itstool) path: item/p
-#: C/scores.page:32
+#: C/scores.page:34
 msgid "<gui>Red</gui> displays the number of games you have won."
 msgstr "<gui>Červená</gui> údává počet her, které jste vyhráli."
 
 #. (itstool) path: item/p
-#: C/scores.page:35
+#: C/scores.page:37
 msgid "<gui>Green</gui> displays the number of games won by the opponent."
 msgstr "<gui>Zelená</gui> udává počet her, které vyhrál počítač."
 
 #. (itstool) path: item/p
-#: C/scores.page:38
+#: C/scores.page:40
 msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
 msgstr "<gui>Nerozhodně</gui> udává počet her, které skončily remízou."
 
 #. (itstool) path: note/p
-#: C/scores.page:43
+#: C/scores.page:45
 msgid ""
 "The labels to represent players shown in <app>Scores</app> change based on "
 "opponent and theme selected. If you have selected the varying levels of "
@@ -478,22 +448,17 @@ msgstr ""
 "člověku, jste vy a protihráč prezentováni barvou kuliček v aktuálním motivu."
 
 #. (itstool) path: info/desc
-#: C/sound-animation.page:21
-msgid "Play <app>Four-in-a-row</app> without sounds or animation."
-msgstr "Hrajte <app>Čtyři-v-jedné-řadě</app> bez zvuků a animací."
+#: C/sound-animation.page:22
+msgid "Play <app>Four-in-a-row</app> without sounds."
+msgstr "Jak hrát <app>Čtyři-v-jedné-řadě</app> bez zvuků a animací."
 
 #. (itstool) path: page/title
-#: C/sound-animation.page:24
-msgid "Disable sounds or animation"
-msgstr "Jak zakázat zvuky a animace"
+#: C/sound-animation.page:25
+msgid "Disable sounds"
+msgstr "Vypnutí zvuků"
 
-#. (itstool) path: section/title
+#. (itstool) path: page/p
 #: C/sound-animation.page:27
-msgid "Sounds"
-msgstr "Zvuky"
-
-#. (itstool) path: section/p
-#: C/sound-animation.page:29
 msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
@@ -502,41 +467,17 @@ msgstr ""
 "skončí hra."
 
 #. (itstool) path: steps/title
-#: C/sound-animation.page:33
+#: C/sound-animation.page:31
 msgid "To disable sounds:"
 msgstr "Pokud chcete zvuky zakázat:"
 
 #. (itstool) path: item/p
-#: C/sound-animation.page:40
+#: C/sound-animation.page:38
 msgid ""
 "Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
 "option again to enable the feature."
 msgstr ""
 "Zruště zaškrtnutí <gui style=\"checkbox\">Povolit zvuky</gui>. Opětovným "
-"zaškrtnutím funkci znovu povolíte."
-
-#. (itstool) path: section/title
-#: C/sound-animation.page:47
-msgid "Animation"
-msgstr "Animace"
-
-#. (itstool) path: section/p
-#: C/sound-animation.page:49
-msgid "Animation results in a more fluid movement of the marbles."
-msgstr "Díky animacím jsou pohyby kuliček plynulejší."
-
-#. (itstool) path: steps/title
-#: C/sound-animation.page:52
-msgid "To disable animation:"
-msgstr "Pokud chcete animace zakázat:"
-
-#. (itstool) path: item/p
-#: C/sound-animation.page:59
-msgid ""
-"Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
-"option again to enable the feature."
-msgstr ""
-"Zruště zaškrtnutí <gui style=\"checkbox\">Povolit animace</gui>. Opětovným "
 "zaškrtnutím funkci znovu povolíte."
 
 #. (itstool) path: p/link
@@ -548,3 +489,23 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Tato práce je vydána pod licencí <_:link-1/>"
+
+msgid ""
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+"fullscreen mode. You can return to the default screen size by pressing "
+"<key>F11</key> again."
+msgstr ""
+"Jestli chcete hrát v režimu celé obrazovky, vyberte <guiseq><gui style=\"menu"
+"\">Zobrazit</gui> <gui style=\"menuitem\">Celá obrazovka</gui></guiseq> nebo "
+"zmáčkněte <key>F11</key>. Opětovným zmáčknutím <key>F11</key> se vrátíte na "
+"původní velikost."
+
+msgid "Sounds"
+msgstr "Zvuky"
+
+msgid "Animation"
+msgstr "Animace"
+
+msgid "Animation results in a more fluid movement of the marbles."
+msgstr "Díky animacím jsou pohyby kuliček plynulejší."
