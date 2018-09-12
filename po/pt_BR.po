@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation of four-in-a-row.
-# Copyright (C) 1999-2015 Free Software Foundation, Inc.
+# Copyright (C) 1999-2018 Free Software Foundation, Inc.
 # This file is distributed under the same license as the four-in-a-row package.
 # Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999.
 # Cândida Nunes da Silva <candida@zaz.com.br>, 2000-2001.
@@ -21,15 +21,14 @@
 # Rodrigo Padula de Oliveira <contato@rodrigopadula.com>, 2011.
 # Flamarion Jorge <jorge.flamarion@gmail.com>, 2011.
 # Djavan Fagundes <djavan@comum.org>, 2012.
-# Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2015.
 # Fábio Nogueira <fnogueira@gnome.org>, 2014.
+# Enrico Nicoletto <liverig@gmail.com>, 2013-2015.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2013, 2014, 2016, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-02-01 00:17+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2018-06-10 15:02+0000\n"
 "PO-Revision-Date: 2018-02-07 08:06-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
@@ -44,11 +43,11 @@ msgstr ""
 #: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
 #: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
 msgid "Four-in-a-row"
-msgstr "Quatro-em-uma-linha"
+msgstr "Quatro em linha"
 
 #: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "Torne as linhas da mesma cor para vencer"
+msgstr "Crie linhas da mesma cor para vencer"
 
 #: data/four-in-a-row.appdata.xml.in:10
 msgid ""
@@ -57,8 +56,8 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
-"Um clássico da família, o objetivo do Quatro-em-uma-linha é criar uma linha "
-"de quatro de suas bolinhas enquanto tenta parar seu oponente (humano ou "
+"Um clássico de família, o objetivo do Quatro em linha é criar uma linha de "
+"quatro de suas peças enquanto tenta parar seu oponente (humano ou "
 "computador) na construção de uma linha dele ou dela. Uma linha pode ser "
 "horizontal, vertical ou diagonal. O primeiro jogador a conectar quatro em "
 "uma linha é o vencedor!"
@@ -68,8 +67,8 @@ msgid ""
 "Four-in-a-row features multiple difficulty levels. If you're having trouble, "
 "you can always ask for a hint."
 msgstr ""
-"Quatro-em-uma-linha possui múltiplos níveis de dificuldade. Se você está "
-"tendo dificuldade, você sempre pode solicitar uma dica."
+"Quatro em linha possui múltiplos níveis de dificuldade. Se você está tendo "
+"dificuldade, você sempre pode solicitar uma dica."
 
 #: data/four-in-a-row.appdata.xml.in:32
 msgid "The GNOME Project"
@@ -77,14 +76,13 @@ msgstr "O Projeto GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
 msgid "four-in-a-row"
 msgstr "four-in-a-row"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
-msgstr "jogo;game;estratégia;lógica;"
+msgstr "ligue 4;lig 4;jogo;game;estratégia;lógica;"
 
 #: data/four-in-a-row.ui:19
 msgid "Undo your most recent move"
@@ -131,11 +129,11 @@ msgstr "Som"
 
 #: data/org.gnome.four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
-msgstr "Reproduzir os sons dos eventos."
+msgstr "Se deve ou não reproduzir os sons dos eventos."
 
 #: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
 msgid "Move left"
-msgstr "Ir para esquerda"
+msgstr "Mover para esquerda"
 
 #: data/org.gnome.four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
@@ -143,7 +141,7 @@ msgstr "Tecla para mover à esquerda."
 
 #: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
 msgid "Move right"
-msgstr "Ir para a direita"
+msgstr "Mover para direita"
 
 #: data/org.gnome.four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
@@ -151,11 +149,11 @@ msgstr "Tecla para mover à direita."
 
 #: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
 msgid "Drop marble"
-msgstr "Soltar a bolinha"
+msgstr "Soltar a peça"
 
 #: data/org.gnome.four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
-msgstr "Tecla para soltar a bolinha."
+msgstr "Pressione uma tecla para soltar a peça."
 
 #: src/games-controls.c:105
 msgid "This key is already in use."
@@ -176,7 +174,7 @@ msgstr ""
 
 #: src/main.c:476
 msgid "It’s a draw!"
-msgstr "Empate!"
+msgstr "Empatou!"
 
 #: src/main.c:484
 msgid "You win!"
@@ -213,7 +211,7 @@ msgstr "Pontuações"
 
 #: src/main.c:721
 msgid "Drawn:"
-msgstr "Empatado:"
+msgstr "Empate(s):"
 
 #: src/main.c:762
 msgid "Connect four in a row to win."
@@ -236,7 +234,7 @@ msgstr ""
 "Felipe Borges <felipe10borges@gmail.com>\n"
 "Sérgio Cipolla <secipolla@gmail.com>\n"
 "Rodrigo Padula de Oliveira <contato@rodrigopadula.com>\n"
-"Rafael Ferreira <rafael.f.f1@gmail.com>"
+"Rafael Fontenelle <rafaelff@gnome.org>"
 
 #: src/main.c:1130
 msgid "_Scores"
@@ -297,7 +295,7 @@ msgstr "Habilitar _sons"
 #. keyboard tab
 #: src/prefs.c:243
 msgid "Keyboard Controls"
-msgstr "Controle por teclado"
+msgstr "Controles do teclado"
 
 #: src/theme.c:40
 msgid "High Contrast"
@@ -333,7 +331,7 @@ msgstr "Alto contraste inverso"
 
 #: src/theme.c:58
 msgid "Red and Green Marbles"
-msgstr "Bolinhas verde e vermelha"
+msgstr "Peças vermelha e verde"
 
 #: src/theme.c:62 src/theme.c:71 src/theme.c:80
 msgid "Red"
@@ -361,7 +359,7 @@ msgstr "Vez do verde"
 
 #: src/theme.c:67
 msgid "Blue and Red Marbles"
-msgstr "Bolinhas azul e vermelha"
+msgstr "Peças azul e vermelha"
 
 #: src/theme.c:71
 msgid "Blue"
