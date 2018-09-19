@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-09-01 17:12+0000\n"
-"PO-Revision-Date: 2018-09-01 23:03+0200\n"
+"POT-Creation-Date: 2018-09-05 08:33+0000\n"
+"PO-Revision-Date: 2018-09-19 09:02+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -57,12 +57,12 @@ msgstr "So verwenden Sie ein anderes Thema:"
 #. (itstool) path: item/p
 #: C/appearance.page:28
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
 "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgstr ""
-"Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui> <gui style="
-"\"menuitem\">Eigenschaften</gui> <gui style=\"menuitem\">Spiel</gui></"
-"guiseq>."
+"Öffnen Sie das Anwendungsmenü in der oberen Leiste und wählen Sie "
+"<guiseq><gui style=\"menuitem\">Einstellungen</gui> <gui style=\"menuitem"
+"\">Spiel</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
@@ -220,16 +220,15 @@ msgstr ""
 #: C/controls-change.page:30
 msgid ""
 "Open the application menu in the top bar and select <guiseq><gui style=\"menu"
-"\">Settings</gui> <gui style=\"menuitem\">Preferences</gui> <gui style="
-"\"menuitem\">Keyboard Controls</gui></guiseq>."
+"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+"guiseq>."
 msgstr ""
 "Öffnen Sie das Anwendungsmenü in der oberen Leiste und wählen Sie "
-"<guiseq><gui style=\"menu\">Einstellungen</gui> <gui style=\"menuitem"
-"\">Einstellungen</gui> <gui style=\"menuitem\">Tastatursteuerung</gui></"
-"guiseq>."
+"<guiseq><gui style=\"menuitem\">Einstellungen</gui> <gui style=\"menuitem"
+"\">Tastatursteuerung</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:36
+#: C/controls-change.page:35
 msgid ""
 "In the list, select the line you want to change, then click on the control. "
 "The line is highlighted and the label of the control changes to <gui>New "
@@ -240,14 +239,14 @@ msgstr ""
 "Steuerung wechselt in <gui>Neue Tastenkombination …</gui>"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:41
+#: C/controls-change.page:40
 msgid "Press the key you want to use instead of the default key."
 msgstr ""
 "Drücken Sie die Taste, die Sie anstelle der voreingestellten verwenden "
 "wollen."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:43
+#: C/controls-change.page:42
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
 "</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
@@ -259,7 +258,7 @@ msgstr ""
 "des Bereichs <gui>Tastatursteuerung</gui>."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:51
+#: C/controls-change.page:50
 msgid ""
 "When you are playing with a friend or a family member, both players will use "
 "the same controls."
