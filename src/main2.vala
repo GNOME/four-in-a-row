@@ -187,3 +187,12 @@ static void blink_tile (int r, int c, int t, int n) {
   anim = AnimID.BLINK;
   timeout = Timeout.add (SPEED_BLINK, on_animate);
 }
+
+void stop_anim ()
+{
+  if (timeout == 0)
+    return;
+  anim = AnimID.NONE;
+  Source.remove(timeout);
+  timeout = 0;
+}

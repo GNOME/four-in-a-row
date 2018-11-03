@@ -183,15 +183,7 @@ on_animate (gint c)
 
 
 
-static void
-stop_anim (void)
-{
-  if (timeout == 0)
-    return;
-  anim = ANIM_NONE;
-  g_source_remove (timeout);
-  timeout = 0;
-}
+
 
 static void
 game_init (void)
