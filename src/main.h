@@ -1,5 +1,6 @@
 /* main.h */
-
+#ifndef MAIN_H
+#define MAIN_H
 
 #define APPNAME "gnect"
 #define APPNAME_LONG N_("Four-in-a-row")
@@ -14,6 +15,8 @@
 #define SIZE_VSTR      53
 
 #define MAIN_PAGE           	0
+
+#include <gtk/gtk.h>
 
 typedef enum {
   MOVE_LEFT,
@@ -49,6 +52,14 @@ typedef enum {
   LEVEL_STRONG
 } LevelID;
 
+typedef enum {
+  ANIM_NONE,
+  ANIM_MOVE,
+  ANIM_DROP,
+  ANIM_BLINK,
+  ANIM_HINT
+} AnimID;
+
 extern PlayerID who_starts;
 
 gboolean player_active;
@@ -60,3 +71,5 @@ void on_dialog_close (GtkWidget * w, int response_id, gpointer data);
 void scorebox_update (void);
 void scorebox_reset (void);
 void set_status_message (const gchar * message);
+
+#endif

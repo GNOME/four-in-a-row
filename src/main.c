@@ -69,142 +69,25 @@ gint column;
 gint column_moveto;
 gint row;
 gint row_dropto;
-gint timeout;
+extern gint timeout;
 
 gint gboard[7][7];
 gchar vstr[SIZE_VSTR];
 gchar vlevel[] = "0abc";
 struct board *vboard;
 
-typedef enum {
-  ANIM_NONE,
-  ANIM_MOVE,
-  ANIM_DROP,
-  ANIM_BLINK,
-  ANIM_HINT
-} AnimID;
-
 AnimID anim;
 
-gint blink_r1, blink_c1;
-gint blink_r2, blink_c2;
-gint blink_t;
-gint blink_n;
-gboolean blink_on;
+extern gint blink_r1, blink_c1;
+extern gint blink_r2, blink_c2;
+extern gint blink_t;
+extern gint blink_n;
+extern gboolean blink_on;
 
 
 static void game_process_move (gint c);
 static void process_move2 (gint c);
 static void process_move3 (gint c);
-
-
-
-
-
-static void
-clear_board (void)
-{
-  gint r, c, i;
-
-  for (r = 0; r < 7; r++) {
-    for (c = 0; c < 7; c++) {
-      gboard[r][c] = TILE_CLEAR;
-    }
-  }
-
-  for (i = 0; i < SIZE_VSTR; i++)
-    vstr[i] = '\0';
-
-  vstr[0] = vlevel[LEVEL_WEAK];
-  vstr[1] = '0';
-  moves = 0;
-}
-
-
-
-static gint
-first_empty_row (gint c)
-{
-  gint r = 1;
-
-  while (r < 7 && gboard[r][c] == TILE_CLEAR)
-    r++;
-  return r - 1;
-}
-
-static gint
-get_n_human_players (void)
-{
-  if (p.level[PLAYER1] != LEVEL_HUMAN && p.level[PLAYER2] != LEVEL_HUMAN)
-    return 0;
-  if (p.level[PLAYER1] != LEVEL_HUMAN || p.level[PLAYER2] != LEVEL_HUMAN)
-    return 1;
-  return 2;
-}
-
-
-
-static gboolean
-is_player_human (void)
-{
-  return player == PLAYER1 ? p.level[PLAYER1] == LEVEL_HUMAN
-                           : p.level[PLAYER2] == LEVEL_HUMAN;
-}
-
-
-
-static void
-drop_marble (gint r, gint c)
-{
-  gint tile;
-  tile = player == PLAYER1 ? TILE_PLAYER1 : TILE_PLAYER2;
-
-  gboard[r][c] = tile;
-  gfx_draw_tile (r, c);
-
-  column = column_moveto = c;
-  row = row_dropto = r;
-}
-
-
-
-static void
-drop (void)
-{
-  gint tile;
-  tile = player == PLAYER1 ? TILE_PLAYER1 : TILE_PLAYER2;
-
-  gboard[row][column] = TILE_CLEAR;
-  gfx_draw_tile (row, column);
-
-  row++;
-  gboard[row][column] = tile;
-  gfx_draw_tile (row, column);
-}
-
-
-
-static void
-move (gint c)
-{
-  gboard[0][column] = TILE_CLEAR;
-  gfx_draw_tile (0, column);
-
-  column = c;
-  gboard[0][c] = player == PLAYER1 ? TILE_PLAYER1 : TILE_PLAYER2;
-
-  gfx_draw_tile (0, c);
-}
-
-static void
-move_cursor (gint c)
-{
-  move (c);
-  column = column_moveto = c;
-  row = row_dropto = 0;
-}
-
-
 
 static void
 draw_line (gint r1, gint c1, gint r2, gint c2, gint tile)
@@ -238,7 +121,7 @@ draw_line (gint r1, gint c1, gint r2, gint c2, gint tile)
 
 
 
-static gboolean
+gboolean
 on_animate (gint c)
 {
   if (anim == ANIM_NONE)
@@ -291,40 +174,14 @@ on_animate (gint c)
 
 
 
-static void
-blink_tile (gint r, gint c, gint t, gint n)
-{
-  if (timeout)
-    return;
-  blink_r1 = r;
-  blink_c1 = c;
-  blink_r2 = r;
-  blink_c2 = c;
-  blink_t = t;
-  blink_n = n;
-  blink_on = FALSE;
-  anim = ANIM_BLINK;
-  timeout = g_timeout_add (SPEED_BLINK, (GSourceFunc) on_animate, NULL);
-}
 
 
 
-static void
-swap_player (void)
-{
-  player = (player == PLAYER1) ? PLAYER2 : PLAYER1;
-  move_cursor (3);
-  prompt_player ();
-}
 
 
 
-void
-set_status_message (const gchar * message)
-{
-  if (message)
-    gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), message);
-}
+
+
 
 static void
 stop_anim (void)
@@ -392,13 +249,7 @@ game_reset (void)
 
 
 
-static void
-game_free (void)
-{
-  gfx_free ();
-}
-
-
+static void game_free (void);
 
 static void
 play_sound (SoundID id)
@@ -948,17 +799,10 @@ check_game_state (void)
 }
 
 static gint
-next_move (gint c)
-{
-  process_move (c);
-  return FALSE;
-}
+next_move (gint c);
 
 static void
-game_process_move (gint c)
-{
-  process_move (c);
-}
+game_process_move (gint c);
 
 void
 process_move (gint c)
@@ -1165,27 +1009,16 @@ create_app (GApplication *app, gpointer user_data)
 }
 
 static void
-activate (GApplication *app, gpointer user_data)
-{
-  if (!gtk_widget_is_visible (window)) {
-    gtk_widget_show_all (window);
-    gfx_refresh_pixmaps ();
-    gfx_draw_all ();
-    scorebox_update ();       /* update visible player descriptions */
-    prompt_player ();
-    game_reset ();
-  }
-}
+activate (GApplication *app, gpointer user_data);
 
 int
-main (int argc, char *argv[])
+main2 (int argc, char *argv[])
 {
   GOptionContext *context;
   gboolean retval;
   GError *error = NULL;
   gint app_retval;
 
-  setlocale (LC_ALL, "");
   bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);

@@ -1,4 +1,7 @@
 /* prefs.h */
+#ifndef PREFS_H
+#define PREFS_H
+#include <main.h>
 
 typedef struct _Prefs Prefs;
 struct _Prefs {
@@ -11,3 +14,4 @@ struct _Prefs {
 
 void prefs_init (void);
 void prefsbox_open (void);
+#endif

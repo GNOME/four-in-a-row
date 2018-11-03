@@ -7,14 +7,17 @@ four_in_a_row_SOURCES = main.h     \
                 gfx.h      \
                 gfx.c      \
                 prefs.h    \
-                prefs.c    \
                 theme.c    \
                 theme.h    \
                 games-controls.c \
                 games-controls.h \
+                games-controls2.vala \
                 rules.h \
                 $(ai_C) \
-                $(ai_HEADER)
+                main2.vala \
+                $(ai_HEADER)\
+	  	prefs.vala \
+	  	gfx2.vala
 
 four_in_a_row_CPPFLAGS = \
 	-I$(top_srcdir)
@@ -28,6 +31,10 @@ four_in_a_row_CFLAGS = \
 
 four_in_a_row_LDADD = \
 	$(FOUR_IN_A_ROW_LIBS)
+
+four_in_a_row_VALAFLAGS = --pkg gtk+-3.0 \
+			  --vapidir . \
+			  --pkg temp
 
 ai_VALA = ai.vala
 

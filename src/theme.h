@@ -1,6 +1,8 @@
 /* theme.h */
+#ifndef THEME_H
+#define THEME_H
 
-
+#include "main.h"
 
 typedef struct _Theme Theme;
 struct _Theme {
@@ -21,3 +23,5 @@ const gchar *theme_get_player (PlayerID who);
 const gchar *theme_get_player_win (PlayerID who);
 const gchar *theme_get_player_turn (PlayerID who);
 const gchar *theme_get_title (gint id);
+
+#endif
