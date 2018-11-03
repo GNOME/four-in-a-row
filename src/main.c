@@ -49,7 +49,7 @@ GtkWidget *window;
 GtkWidget *drawarea;
 GtkWidget *headerbar;
 GtkWidget *scorebox = NULL;
-static GtkApplication *application;
+GtkApplication *application;
 
 GtkWidget *label_name[3];
 GtkWidget *label_score[3];
@@ -58,17 +58,17 @@ GAction *new_game_action;
 GAction *undo_action;
 GAction *hint_action;
 
-PlayerID player;
-PlayerID winner;
-PlayerID who_starts;
-gboolean gameover;
-gboolean player_active;
-gint moves;
-gint score[3];
-gint column;
-gint column_moveto;
-gint row;
-gint row_dropto;
+extern PlayerID player;
+extern PlayerID winner;
+extern PlayerID who_starts;
+extern gboolean gameover;
+extern gboolean player_active;
+extern gint moves;
+extern gint score[3];
+extern gint column;
+extern gint column_moveto;
+extern gint row;
+extern gint row_dropto;
 extern gint timeout;
 
 gint gboard[7][7];
@@ -85,41 +85,21 @@ extern gint blink_n;
 extern gboolean blink_on;
 
 
-static void game_process_move (gint c);
-static void process_move2 (gint c);
-static void process_move3 (gint c);
-
-static void
-draw_line (gint r1, gint c1, gint r2, gint c2, gint tile)
-{
-  /* draw a line of 'tile' from r1,c1 to r2,c2 */
-
-  gboolean done = FALSE;
-  gint d_row = 0;
-  gint d_col = 0;
-
-  if (r1 < r2)
-    d_row = 1;
-  else if (r1 > r2)
-    d_row = -1;
-
-  if (c1 < c2)
-    d_col = 1;
-  else if (c1 > c2)
-    d_col = -1;
-
-  do {
-    done = (r1 == r2 && c1 == c2);
-    gboard[r1][c1] = tile;
-    gfx_draw_tile (r1, c1);
-    if (r1 != r2)
-      r1 += d_row;
-    if (c1 != c2)
-      c1 += d_col;
-  } while (!done);
-}
-
-
+void game_process_move (gint c);
+void process_move2 (gint c);
+void process_move3 (gint c);
+void game_free (void);
+gint next_move (gint c);
+void move (gint c);
+void drop ();
+void stop_anim ();
+void clear_board ();
+void move_cursor (gint c);
+gboolean is_player_human ();
+//void playgame ();
+int get_n_human_players();
+void on_game_undo (GSimpleAction *action, GVariant *parameter);
+void on_game_scores (GSimpleAction *action, GVariant *parameter);
 
 gboolean
 on_animate (gint c)
@@ -172,40 +152,6 @@ on_animate (gint c)
   return TRUE;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-static void
-game_init (void)
-{
-  g_random_set_seed ((guint) time (NULL));
-
-  anim = ANIM_NONE;
-  gameover = TRUE;
-  player_active = FALSE;
-  player = PLAYER1;
-  winner = NOBODY;
-  score[PLAYER1] = 0;
-  score[PLAYER2] = 0;
-  score[NOBODY] = 0;
-
-  who_starts = PLAYER2;     /* This gets reversed immediately. */
-
-  clear_board ();
-}
-
-
-
 void
 game_reset (void)
 {
@@ -239,11 +185,7 @@ game_reset (void)
   }
 }
 
-
-
-static void game_free (void);
-
-static void
+void
 play_sound (SoundID id)
 {
  const gchar *name = NULL;
@@ -358,14 +300,9 @@ prompt_player (void)
 
 
 
-static void
-on_game_new (GSimpleAction *action, GVariant *parameter, gpointer data)
-{
-  stop_anim ();
-  game_reset ();
-}
+void on_game_new (GSimpleAction *action, GVariant *parameter, gpointer data);
 
-static void
+void
 on_game_exit (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
 
@@ -373,50 +310,9 @@ on_game_exit (GSimpleAction *action, GVariant *parameter, gpointer data)
   g_application_quit (G_APPLICATION (application));
 }
 
-static void
-on_game_undo (GSimpleAction *action, GVariant *parameter, gpointer data)
-{
-  gint r, c;
-
-  if (timeout)
-    return;
-  c = vstr[moves] - '0' - 1;
-  r = first_empty_row (c) + 1;
-  vstr[moves] = '0';
-  vstr[moves + 1] = '\0';
-  moves--;
-
-  if (gameover) {
-    score[winner]--;
-    scorebox_update ();
-    gameover = FALSE;
-    prompt_player ();
-  } else {
-    swap_player ();
-  }
-  move_cursor (c);
-
-  gboard[r][c] = TILE_CLEAR;
-  gfx_draw_tile (r, c);
-
-  if (get_n_human_players () == 1 && !is_player_human ()) {
-    if (moves > 0) {
-      c = vstr[moves] - '0' - 1;
-      r = first_empty_row (c) + 1;
-      vstr[moves] = '0';
-      vstr[moves + 1] = '\0';
-      moves--;
-      swap_player ();
-      move_cursor (c);
-      gboard[r][c] = TILE_CLEAR;
-      gfx_draw_tile (r, c);
-    }
-  }
-}
 
 
-
-static void
+void
 on_game_hint (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   gchar *s;
@@ -510,74 +406,9 @@ scorebox_reset (void)
 
 
 
-static void
-on_game_scores (GSimpleAction *action, GVariant *parameter, gpointer data)
-{
-  GtkWidget *grid, *grid2, *icon;
 
-  if (scorebox != NULL) {
-    gtk_window_present (GTK_WINDOW (scorebox));
-    return;
-  }
 
-  scorebox = gtk_dialog_new_with_buttons (_("Scores"),
-                                          GTK_WINDOW (window),
-                                          GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_USE_HEADER_BAR,
-                                          NULL);
-
-  gtk_window_set_resizable (GTK_WINDOW (scorebox), FALSE);
-  gtk_container_set_border_width (GTK_CONTAINER (scorebox), 5);
-  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))), 2);
-
-  g_signal_connect (scorebox, "destroy",
-                    G_CALLBACK (gtk_widget_destroyed), &scorebox);
-
-  grid = gtk_grid_new ();
-  gtk_widget_set_halign (grid, GTK_ALIGN_CENTER);
-  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
-  gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_VERTICAL);
-  gtk_container_set_border_width (GTK_CONTAINER (grid), 5);
-
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (scorebox))),
-                      grid, TRUE, TRUE, 0);
-
-  grid2 = gtk_grid_new ();
-  gtk_container_add (GTK_CONTAINER (grid), grid2);
-  gtk_grid_set_column_spacing (GTK_GRID (grid2), 6);
-
-  label_name[PLAYER1] = gtk_label_new (NULL);
-  gtk_grid_attach (GTK_GRID (grid2), label_name[PLAYER1], 0, 0, 1, 1);
-  gtk_misc_set_alignment (GTK_MISC (label_name[PLAYER1]), 0, 0.5);
-
-  label_score[PLAYER1] = gtk_label_new (NULL);
-  gtk_grid_attach (GTK_GRID (grid2), label_score[PLAYER1], 1, 0, 1, 1);
-  gtk_misc_set_alignment (GTK_MISC (label_score[PLAYER1]), 1, 0.5);
-
-  label_name[PLAYER2] = gtk_label_new (NULL);
-  gtk_grid_attach (GTK_GRID (grid2), label_name[PLAYER2], 0, 1, 1, 1);
-  gtk_misc_set_alignment (GTK_MISC (label_name[PLAYER2]), 0, 0.5);
-
-  label_score[PLAYER2] = gtk_label_new (NULL);
-  gtk_grid_attach (GTK_GRID (grid2), label_score[PLAYER2], 1, 1, 1, 1);
-  gtk_misc_set_alignment (GTK_MISC (label_score[PLAYER2]), 1, 0.5);
-
-  label_name[NOBODY] = gtk_label_new (_("Drawn:"));
-  gtk_grid_attach (GTK_GRID (grid2), label_name[NOBODY], 0, 2, 1, 1);
-  gtk_misc_set_alignment (GTK_MISC (label_name[NOBODY]), 0, 0.5);
-
-  label_score[NOBODY] = gtk_label_new (NULL);
-  gtk_grid_attach (GTK_GRID (grid2), label_score[NOBODY], 1, 2, 1, 1);
-  gtk_misc_set_alignment (GTK_MISC (label_score[NOBODY]), 1, 0.5);
-
-  g_signal_connect (GTK_DIALOG (scorebox), "response",
-                    G_CALLBACK (on_dialog_close), NULL);
-
-  gtk_widget_show_all (scorebox);
-
-  scorebox_update ();
-}
-
-static void
+void
 on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   const gchar *authors[] = {"Tim Musson <trmusson@ihug.co.nz>",
@@ -612,7 +443,7 @@ on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
 }
 
 
-static void
+void
 on_help_contents (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   GError *error = NULL;
@@ -624,7 +455,7 @@ on_help_contents (GSimpleAction *action, GVariant *parameter, gpointer data)
 }
 
 
-static void
+void
 on_settings_preferences (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
   prefsbox_open ();
@@ -632,7 +463,7 @@ on_settings_preferences (GSimpleAction *action, GVariant *parameter, gpointer us
 
 
 
-static gboolean
+gboolean
 is_hline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   *r1 = *r2 = r;
@@ -648,7 +479,7 @@ is_hline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint *
 
 
 
-static gboolean
+gboolean
 is_vline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   *r1 = *r2 = r;
@@ -662,9 +493,7 @@ is_vline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint *
   return FALSE;
 }
 
-
-
-static gboolean
+gboolean
 is_dline1_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   /* upper left to lower right */
@@ -683,9 +512,7 @@ is_dline1_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint 
   return FALSE;
 }
 
-
-
-static gboolean
+gboolean
 is_dline2_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
 {
   /* upper right to lower left */
@@ -704,9 +531,7 @@ is_dline2_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint 
   return FALSE;
 }
 
-
-
-static gboolean
+gboolean
 is_line_at (PlayerID p, gint r, gint c)
 {
   gint r1, r2, c1, c2;
@@ -717,9 +542,7 @@ is_line_at (PlayerID p, gint r, gint c)
     is_dline2_at (p, r, c, &r1, &c1, &r2, &c2);
 }
 
-
-
-static void
+void
 blink_winner (gint n)
 {
   /* blink the winner's line(s) n times */
@@ -765,9 +588,7 @@ blink_winner (gint n)
   }
 }
 
-
-
-static void
+void
 check_game_state (void)
 {
   if (is_line_at (player, row, column)) {
@@ -790,11 +611,7 @@ check_game_state (void)
   }
 }
 
-static gint
-next_move (gint c);
 
-static void
-game_process_move (gint c);
 
 void
 process_move (gint c)
@@ -809,7 +626,7 @@ process_move (gint c)
   timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
 }
 
-static void
+void
 process_move2 (gint c)
 {
   gint r;
@@ -825,7 +642,7 @@ process_move2 (gint c)
   }
 }
 
-static void
+void
 process_move3 (gint c)
 {
   play_sound (SOUND_DROP);
@@ -852,23 +669,11 @@ process_move3 (gint c)
   }
 }
 
-static gint
-on_drawarea_resize (GtkWidget * w, GdkEventConfigure * e, gpointer data)
-{
-  gfx_resize (w);
+int on_drawarea_resize (GtkWidget * w, GdkEventConfigure * e, gpointer data);
 
-  return TRUE;
-}
+gboolean on_drawarea_draw (GtkWidget * w, cairo_t *cr, gpointer data);
 
-static gboolean
-on_drawarea_draw (GtkWidget * w, cairo_t *cr, gpointer data)
-{
-  gfx_expose (cr);
-
-  return FALSE;
-}
-
-static gboolean
+gboolean
 on_key_press (GtkWidget * w, GdkEventKey * e, gpointer data)
 {
   if ((player_active) || timeout ||
@@ -895,7 +700,7 @@ on_key_press (GtkWidget * w, GdkEventKey * e, gpointer data)
   return TRUE;
 }
 
-static gboolean
+gboolean
 on_button_press (GtkWidget * w, GdkEventButton * e, gpointer data)
 {
   gint x, y;
@@ -924,7 +729,7 @@ static const GActionEntry app_entries[] = {
   {"about", on_help_about, NULL, NULL, NULL}
 };
 
-static void
+void
 create_app (GApplication *app, gpointer user_data)
 {
   GtkWidget *frame;
@@ -1000,8 +805,7 @@ create_app (GApplication *app, gpointer user_data)
   g_simple_action_set_enabled (G_SIMPLE_ACTION (undo_action), FALSE);
 }
 
-static void
-activate (GApplication *app, gpointer user_data);
+void activate (GApplication *app, gpointer user_data);
 
 int
 main2 (int argc, char *argv[])

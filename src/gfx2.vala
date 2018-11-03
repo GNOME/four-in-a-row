@@ -1,5 +1,5 @@
 //using GETTTEXT_PACKAGE_CONTENT;
-static const string GETTEXT_PACKAGE2 = Config.GETTEXT_PACKAGE;
+const string GETTEXT_PACKAGE2 = Config.GETTEXT_PACKAGE;
 extern int boardsize;
 extern int tilesize;
 extern int offset[6];
