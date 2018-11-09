@@ -45,14 +45,14 @@
 extern Prefs p;
 
 GSettings *settings;
-GtkWidget *window;
+extern GtkWidget *window;
 GtkWidget *drawarea;
 GtkWidget *headerbar;
-GtkWidget *scorebox = NULL;
-GtkApplication *application;
+extern GtkWidget *scorebox;
+extern GtkApplication *application;
 
-GtkWidget *label_name[3];
-GtkWidget *label_score[3];
+extern GtkWidget *label_name[3];
+extern GtkWidget *label_score[3];
 
 GAction *new_game_action;
 GAction *undo_action;
@@ -71,12 +71,12 @@ extern gint row;
 extern gint row_dropto;
 extern gint timeout;
 
-gint gboard[7][7];
-gchar vstr[SIZE_VSTR];
+extern gint gboard[7][7];
+extern gchar vstr[SIZE_VSTR];
 gchar vlevel[] = "0abc";
 struct board *vboard;
 
-AnimID anim;
+extern AnimID anim;
 
 extern gint blink_r1, blink_c1;
 extern gint blink_r2, blink_c2;
@@ -100,6 +100,8 @@ gboolean is_player_human ();
 int get_n_human_players();
 void on_game_undo (GSimpleAction *action, GVariant *parameter);
 void on_game_scores (GSimpleAction *action, GVariant *parameter);
+void on_game_new (GSimpleAction *action, GVariant *parameter, gpointer data);
+void on_game_exit (GSimpleAction *action, GVariant *parameter, gpointer data);
 
 gboolean
 on_animate (gint c)
@@ -300,15 +302,7 @@ prompt_player (void)
 
 
 
-void on_game_new (GSimpleAction *action, GVariant *parameter, gpointer data);
 
-void
-on_game_exit (GSimpleAction *action, GVariant *parameter, gpointer data)
-{
-
-  stop_anim ();
-  g_application_quit (G_APPLICATION (application));
-}
 
 
 
@@ -393,21 +387,6 @@ scorebox_update (void)
   g_free (s);
 }
 
-
-
-void
-scorebox_reset (void)
-{
-  score[PLAYER1] = 0;
-  score[PLAYER2] = 0;
-  score[NOBODY] = 0;
-  scorebox_update ();
-}
-
-
-
-
-
 void
 on_help_about (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
@@ -459,87 +438,6 @@ void
 on_settings_preferences (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
   prefsbox_open ();
-}
-
-
-
-gboolean
-is_hline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
-{
-  *r1 = *r2 = r;
-  *c1 = *c2 = c;
-  while (*c1 > 0 && gboard[r][*c1 - 1] == p)
-    *c1 = *c1 - 1;
-  while (*c2 < 6 && gboard[r][*c2 + 1] == p)
-    *c2 = *c2 + 1;
-  if (*c2 - *c1 >= 3)
-    return TRUE;
-  return FALSE;
-}
-
-
-
-gboolean
-is_vline_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
-{
-  *r1 = *r2 = r;
-  *c1 = *c2 = c;
-  while (*r1 > 1 && gboard[*r1 - 1][c] == p)
-    *r1 = *r1 - 1;
-  while (*r2 < 6 && gboard[*r2 + 1][c] == p)
-    *r2 = *r2 + 1;
-  if (*r2 - *r1 >= 3)
-    return TRUE;
-  return FALSE;
-}
-
-gboolean
-is_dline1_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
-{
-  /* upper left to lower right */
-  *r1 = *r2 = r;
-  *c1 = *c2 = c;
-  while (*c1 > 0 && *r1 > 1 && gboard[*r1 - 1][*c1 - 1] == p) {
-    *r1 = *r1 - 1;
-    *c1 = *c1 - 1;
-  }
-  while (*c2 < 6 && *r2 < 6 && gboard[*r2 + 1][*c2 + 1] == p) {
-    *r2 = *r2 + 1;
-    *c2 = *c2 + 1;
-  }
-  if (*r2 - *r1 >= 3)
-    return TRUE;
-  return FALSE;
-}
-
-gboolean
-is_dline2_at (PlayerID p, gint r, gint c, gint * r1, gint * c1, gint * r2, gint * c2)
-{
-  /* upper right to lower left */
-  *r1 = *r2 = r;
-  *c1 = *c2 = c;
-  while (*c1 < 6 && *r1 > 1 && gboard[*r1 - 1][*c1 + 1] == p) {
-    *r1 = *r1 - 1;
-    *c1 = *c1 + 1;
-  }
-  while (*c2 > 0 && *r2 < 6 && gboard[*r2 + 1][*c2 - 1] == p) {
-    *r2 = *r2 + 1;
-    *c2 = *c2 - 1;
-  }
-  if (*r2 - *r1 >= 3)
-    return TRUE;
-  return FALSE;
-}
-
-gboolean
-is_line_at (PlayerID p, gint r, gint c)
-{
-  gint r1, r2, c1, c2;
-
-  return is_hline_at (p, r, c, &r1, &c1, &r2, &c2) ||
-    is_vline_at (p, r, c, &r1, &c1, &r2, &c2) ||
-    is_dline1_at (p, r, c, &r1, &c1, &r2, &c2) ||
-    is_dline2_at (p, r, c, &r1, &c1, &r2, &c2);
 }
 
 void
@@ -613,34 +511,9 @@ check_game_state (void)
 
 
 
-void
-process_move (gint c)
-{
-  if (timeout) {
-    g_timeout_add (SPEED_DROP, (GSourceFunc) next_move, GINT_TO_POINTER (c));
-    return;
-  }
 
-  column_moveto = c;
-  anim = ANIM_MOVE;
-  timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
-}
 
-void
-process_move2 (gint c)
-{
-  gint r;
 
-  r = first_empty_row (c);
-  if (r > 0) {
-    row = 0;
-    row_dropto = r;
-    anim = ANIM_DROP;
-    timeout = g_timeout_add (SPEED_DROP, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
-  } else {
-    play_sound (SOUND_COLUMN_FULL);
-  }
-}
 
 void
 process_move3 (gint c)

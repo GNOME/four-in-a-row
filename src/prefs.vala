@@ -1,5 +1,5 @@
 //public const int DEFAULT_THEME_ID = 0;
-extern int n_themes;
+//extern int n_themes;
 extern Settings settings;
 Gtk.Dialog? prefsbox = null;
 Gtk.ComboBox combobox;
@@ -16,7 +16,7 @@ const int DEFAULT_THEME_ID = 0;
 
 static int sane_theme_id (int val)
 {
-  if (val < 0 || val >= n_themes)
+  if (val < 0 || val >= theme.length)
     return DEFAULT_THEME_ID;
   return val;
 }
@@ -178,7 +178,7 @@ public void prefsbox_open ()
     grid.attach(label, 0, 1, 1, 1);
 
     combobox_theme = new Gtk.ComboBoxText();
-    for (int i = 0; i < n_themes; i++) {
+    for (int i = 0; i < theme.length; i++) {
         combobox_theme.append_text(_(theme_get_title(i)));
     }
     label.set_mnemonic_widget(combobox_theme);

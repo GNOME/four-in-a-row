@@ -7,7 +7,6 @@ four_in_a_row_SOURCES = main.h     \
                 gfx.h      \
                 gfx.c      \
                 prefs.h    \
-                theme.c    \
                 theme.h    \
                 games-controls.c \
                 games-controls.h \
@@ -17,7 +16,8 @@ four_in_a_row_SOURCES = main.h     \
                 main2.vala \
                 $(ai_HEADER)\
 	  	prefs.vala \
-	  	gfx2.vala
+	  	gfx2.vala \
+	  	theme.vala
 
 four_in_a_row_CPPFLAGS = \
 	-I$(top_srcdir)

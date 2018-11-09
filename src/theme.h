@@ -19,9 +19,9 @@ struct _Theme {
 };
 
 
-const gchar *theme_get_player (PlayerID who);
-const gchar *theme_get_player_win (PlayerID who);
-const gchar *theme_get_player_turn (PlayerID who);
-const gchar *theme_get_title (gint id);
+gchar *theme_get_player (PlayerID who);
+gchar *theme_get_player_win (PlayerID who);
+gchar *theme_get_player_turn (PlayerID who);
+gchar *theme_get_title (gint id);
 
 #endif

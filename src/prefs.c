@@ -2,6 +2,7 @@
  * generated from prefs.vala, do not modify */
 
 /*public const int DEFAULT_THEME_ID = 0;*/
+/*extern int n_themes;*/
 
 
 #include <glib.h>
@@ -13,8 +14,9 @@
 #include <config.h>
 #include <prefs.h>
 #include <gdk/gdk.h>
-#include <main.h>
+#include <theme.h>
 #include <glib/gi18n-lib.h>
+#include <main.h>
 #include <float.h>
 #include <math.h>
 
@@ -22,7 +24,6 @@
 #define _g_free0(var) (var = (g_free (var), NULL))
 
 
-extern gint n_themes;
 extern GSettings* settings;
 extern GtkDialog* prefsbox;
 GtkDialog* prefsbox = NULL;
@@ -53,14 +54,17 @@ static void _settings_changed_cb_g_settings_changed (GSettings* _sender,
                                               gpointer self);
 gboolean gfx_change_theme (void);
 void on_select_opponent (GtkComboBox* w);
+void scorebox_reset (void);
 void prefsbox_open (void);
 static void _on_select_opponent_gtk_combo_box_changed (GtkComboBox* _sender,
                                                 gpointer self);
+gchar* theme_get_title (gint id);
 static void _on_select_theme_gtk_combo_box_changed (GtkComboBox* _sender,
                                              gpointer self);
 static void _on_toggle_sound_gtk_toggle_button_toggled (GtkToggleButton* _sender,
                                                  gpointer self);
 
+extern const Theme theme[5];
 
 gint
 sane_theme_id (gint val)
@@ -70,9 +74,7 @@ sane_theme_id (gint val)
 	if (val < 0) {
 		_tmp0_ = TRUE;
 	} else {
-		gint _tmp1_;
-		_tmp1_ = n_themes;
-		_tmp0_ = val >= _tmp1_;
+		_tmp0_ = val >= G_N_ELEMENTS (theme);
 	}
 	if (_tmp0_) {
 		result = DEFAULT_THEME_ID;
@@ -389,23 +391,23 @@ prefsbox_open (void)
 	GtkGrid* _tmp71_;
 	GtkLabel* _tmp72_;
 	GtkComboBoxText* _tmp73_;
-	GtkLabel* _tmp82_;
-	GtkComboBoxText* _tmp83_;
-	GtkGrid* _tmp84_;
-	GtkComboBoxText* _tmp85_;
-	GtkCheckButton* _tmp86_;
-	GtkGrid* _tmp87_;
-	GtkCheckButton* _tmp88_;
-	GtkLabel* _tmp89_;
-	GtkComboBoxText* _tmp90_;
-	Prefs _tmp91_;
-	gint _tmp92_;
-	GtkCheckButton* _tmp93_;
-	Prefs _tmp94_;
-	gboolean _tmp95_;
-	GtkComboBoxText* _tmp96_;
-	GtkCheckButton* _tmp97_;
-	GtkDialog* _tmp98_;
+	GtkLabel* _tmp81_;
+	GtkComboBoxText* _tmp82_;
+	GtkGrid* _tmp83_;
+	GtkComboBoxText* _tmp84_;
+	GtkCheckButton* _tmp85_;
+	GtkGrid* _tmp86_;
+	GtkCheckButton* _tmp87_;
+	GtkLabel* _tmp88_;
+	GtkComboBoxText* _tmp89_;
+	Prefs _tmp90_;
+	gint _tmp91_;
+	GtkCheckButton* _tmp92_;
+	Prefs _tmp93_;
+	gboolean _tmp94_;
+	GtkComboBoxText* _tmp95_;
+	GtkCheckButton* _tmp96_;
+	GtkDialog* _tmp97_;
 	_tmp0_ = prefsbox;
 	if (_tmp0_ != NULL) {
 		GtkDialog* _tmp1_;
@@ -573,11 +575,10 @@ prefsbox_open (void)
 			_tmp74_ = TRUE;
 			while (TRUE) {
 				gint _tmp76_;
-				gint _tmp77_;
-				GtkComboBoxText* _tmp78_;
-				gint _tmp79_;
+				GtkComboBoxText* _tmp77_;
+				gint _tmp78_;
+				gchar* _tmp79_;
 				gchar* _tmp80_;
-				gchar* _tmp81_;
 				if (!_tmp74_) {
 					gint _tmp75_;
 					_tmp75_ = i;
@@ -585,50 +586,49 @@ prefsbox_open (void)
 				}
 				_tmp74_ = FALSE;
 				_tmp76_ = i;
-				_tmp77_ = n_themes;
-				if (!(_tmp76_ < _tmp77_)) {
+				if (!(_tmp76_ < G_N_ELEMENTS (theme))) {
 					break;
 				}
-				_tmp78_ = combobox_theme;
-				_tmp79_ = i;
-				_tmp80_ = theme_get_title (_tmp79_);
-				_tmp81_ = _tmp80_;
-				gtk_combo_box_text_append_text (_tmp78_, _ (_tmp81_));
-				_g_free0 (_tmp81_);
+				_tmp77_ = combobox_theme;
+				_tmp78_ = i;
+				_tmp79_ = theme_get_title (_tmp78_);
+				_tmp80_ = _tmp79_;
+				gtk_combo_box_text_append_text (_tmp77_, _ (_tmp80_));
+				_g_free0 (_tmp80_);
 			}
 		}
 	}
-	_tmp82_ = label;
-	_tmp83_ = combobox_theme;
-	gtk_label_set_mnemonic_widget (_tmp82_, (GtkWidget*) _tmp83_);
-	_tmp84_ = grid;
-	_tmp85_ = combobox_theme;
-	gtk_grid_attach (_tmp84_, (GtkWidget*) _tmp85_, 1, 1, 1, 1);
-	_tmp86_ = (GtkCheckButton*) gtk_check_button_new_with_mnemonic (_ ("E_nable sounds"));
-	g_object_ref_sink (_tmp86_);
+	_tmp81_ = label;
+	_tmp82_ = combobox_theme;
+	gtk_label_set_mnemonic_widget (_tmp81_, (GtkWidget*) _tmp82_);
+	_tmp83_ = grid;
+	_tmp84_ = combobox_theme;
+	gtk_grid_attach (_tmp83_, (GtkWidget*) _tmp84_, 1, 1, 1, 1);
+	_tmp85_ = (GtkCheckButton*) gtk_check_button_new_with_mnemonic (_ ("E_nable sounds"));
+	g_object_ref_sink (_tmp85_);
 	_g_object_unref0 (checkbutton_sound);
-	checkbutton_sound = _tmp86_;
-	_tmp87_ = grid;
-	_tmp88_ = checkbutton_sound;
-	gtk_grid_attach (_tmp87_, (GtkWidget*) _tmp88_, 0, 2, 2, 1);
-	_tmp89_ = (GtkLabel*) gtk_label_new_with_mnemonic (_ ("Keyboard Controls"));
-	g_object_ref_sink (_tmp89_);
+	checkbutton_sound = _tmp85_;
+	_tmp86_ = grid;
+	_tmp87_ = checkbutton_sound;
+	gtk_grid_attach (_tmp86_, (GtkWidget*) _tmp87_, 0, 2, 2, 1);
+	_tmp88_ = (GtkLabel*) gtk_label_new_with_mnemonic (_ ("Keyboard Controls"));
+	g_object_ref_sink (_tmp88_);
 	_g_object_unref0 (label);
-	label = _tmp89_;
-	_tmp90_ = combobox_theme;
-	_tmp91_ = p;
-	_tmp92_ = _tmp91_.theme_id;
-	gtk_combo_box_set_active ((GtkComboBox*) _tmp90_, _tmp92_);
-	_tmp93_ = checkbutton_sound;
-	_tmp94_ = p;
-	_tmp95_ = _tmp94_.do_sound;
-	gtk_toggle_button_set_active ((GtkToggleButton*) _tmp93_, _tmp95_);
-	_tmp96_ = combobox_theme;
-	g_signal_connect ((GtkComboBox*) _tmp96_, "changed", (GCallback) _on_select_theme_gtk_combo_box_changed, NULL);
-	_tmp97_ = checkbutton_sound;
-	g_signal_connect ((GtkToggleButton*) _tmp97_, "toggled", (GCallback) _on_toggle_sound_gtk_toggle_button_toggled, NULL);
-	_tmp98_ = prefsbox;
-	gtk_widget_show_all ((GtkWidget*) _tmp98_);
+	label = _tmp88_;
+	_tmp89_ = combobox_theme;
+	_tmp90_ = p;
+	_tmp91_ = _tmp90_.theme_id;
+	gtk_combo_box_set_active ((GtkComboBox*) _tmp89_, _tmp91_);
+	_tmp92_ = checkbutton_sound;
+	_tmp93_ = p;
+	_tmp94_ = _tmp93_.do_sound;
+	gtk_toggle_button_set_active ((GtkToggleButton*) _tmp92_, _tmp94_);
+	_tmp95_ = combobox_theme;
+	g_signal_connect ((GtkComboBox*) _tmp95_, "changed", (GCallback) _on_select_theme_gtk_combo_box_changed, NULL);
+	_tmp96_ = checkbutton_sound;
+	g_signal_connect ((GtkToggleButton*) _tmp96_, "toggled", (GCallback) _on_toggle_sound_gtk_toggle_button_toggled, NULL);
+	_tmp97_ = prefsbox;
+	gtk_widget_show_all ((GtkWidget*) _tmp97_);
 	_g_object_unref0 (model);
 	_g_object_unref0 (renderer);
 	_g_object_unref0 (label);

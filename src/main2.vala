@@ -4,22 +4,25 @@ using Gtk;
 
 const string jfasolfdas = Config.GETTEXT_PACKAGE;
 extern int main2(int argc, char** argv);
-extern Gtk.Window window;
-extern Gtk.Dialog? scorebox;
-extern Label label_name[3];
-extern Label label_score[3];
+Gtk.Application? application;
+Window window;
+Gtk.Dialog? scorebox = null;
+Label label_name[3];
+Label label_score[3];
 bool gameover;
 bool player_active;
 PlayerID player;
 PlayerID winner;
 PlayerID who_starts;
 int score[3];
-extern AnimID anim;
-extern char vstr[];
+AnimID anim;
+char vstr[SIZE_VSTR];
 extern char vlevel[];
 int moves;
 extern const int SIZE_VSTR;
 const int SPEED_BLINK = 150;
+const int SPEED_MOVE = 35;
+const int SPEED_DROP = 20;
 int column;
 int column_moveto;
 int row;
@@ -352,4 +355,120 @@ void on_game_scores (SimpleAction action, Variant parameter)
     scorebox.show_all();
 
     scorebox_update ();
+}
+
+void
+on_game_exit (SimpleAction action, Variant parameter)
+{
+  stop_anim ();
+  application.quit();
+}
+
+void
+process_move2 (int c)
+{
+  int r;
+
+  r = first_empty_row (c);
+  if (r > 0) {
+    row = 0;
+    row_dropto = r;
+    anim = AnimID.DROP;
+    timeout = Timeout.add(SPEED_DROP, on_animate, c);
+    //timeout = g_timeout_add (SPEED_DROP, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
+  } else {
+    play_sound (SoundID.COLUMN_FULL);
+  }
+}
+
+bool is_vline_at (PlayerID p, int r, int c, int * r1, int * c1, int * r2, int * c2)
+{
+  *r1 = *r2 = r;
+  *c1 = *c2 = c;
+  while (*r1 > 1 && gboard[*r1 - 1, c] == p)
+    *r1 = *r1 - 1;
+  while (*r2 < 6 && gboard[*r2 + 1, c] == p)
+    *r2 = *r2 + 1;
+  if (*r2 - *r1 >= 3)
+    return true;
+  return false;
+}
+
+bool is_dline1_at (PlayerID p, int r, int c, int * r1, int * c1, int * r2, int * c2) {
+  /* upper left to lower right */
+  *r1 = *r2 = r;
+  *c1 = *c2 = c;
+  while (*c1 > 0 && *r1 > 1 && gboard[*r1 - 1, *c1 - 1] == p) {
+    *r1 = *r1 - 1;
+    *c1 = *c1 - 1;
+  }
+  while (*c2 < 6 && *r2 < 6 && gboard[*r2 + 1, *c2 + 1] == p) {
+    *r2 = *r2 + 1;
+    *c2 = *c2 + 1;
+  }
+  if (*r2 - *r1 >= 3)
+    return true;
+  return false;
+}
+
+bool is_line_at (PlayerID p, int r, int c)
+{
+  int r1, r2, c1, c2;
+
+  return is_hline_at (p, r, c, &r1, &c1, &r2, &c2) ||
+    is_vline_at (p, r, c, &r1, &c1, &r2, &c2) ||
+    is_dline1_at (p, r, c, &r1, &c1, &r2, &c2) ||
+    is_dline2_at (p, r, c, &r1, &c1, &r2, &c2);
+}
+
+bool is_dline2_at (PlayerID p, int r, int c, int * r1, int * c1, int * r2, int * c2) {
+  /* upper right to lower left */
+  *r1 = *r2 = r;
+  *c1 = *c2 = c;
+  while (*c1 < 6 && *r1 > 1 && gboard[*r1 - 1, *c1 + 1] == p) {
+    *r1 = *r1 - 1;
+    *c1 = *c1 + 1;
+  }
+  while (*c2 > 0 && *r2 < 6 && gboard[*r2 + 1, *c2 - 1] == p) {
+    *r2 = *r2 + 1;
+    *c2 = *c2 - 1;
+  }
+  if (*r2 - *r1 >= 3)
+    return true;
+  return false;
+}
+
+bool is_hline_at (PlayerID p, int r, int c, int * r1, int * c1, int * r2, int * c2)
+{
+  *r1 = *r2 = r;
+  *c1 = *c2 = c;
+  while (*c1 > 0 && gboard[r, *c1 - 1] == p)
+    *c1 = *c1 - 1;
+  while (*c2 < 6 && gboard[r, *c2 + 1] == p)
+    *c2 = *c2 + 1;
+  if (*c2 - *c1 >= 3)
+    return true;
+  return false;
+}
+
+void scorebox_reset ()
+{
+  score[PlayerID.PLAYER1] = 0;
+  score[PlayerID.PLAYER2] = 0;
+  score[PlayerID.NOBODY] = 0;
+  scorebox_update ();
+}
+
+void process_move (int c)
+{
+    if (timeout != 0) {
+        //Timeout.add(SPEED_DROP, next_move, c.to_pointer());
+        //g_timeout_add (SPEED_DROP, (GSourceFunc) next_move, GINT_TO_POINTER (c));
+        return;
+    }
+
+    column_moveto = c;
+    anim = AnimID.MOVE;
+    //Timeout.add(SPEED_DROP, on_animate, c.to_pointer());
+    //timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
 }

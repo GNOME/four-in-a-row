@@ -8,10 +8,8 @@ extern Gdk.Pixbuf? pb_bground;
 extern Gdk.Pixbuf? pb_tileset;
 extern Gdk.Pixbuf? pb_tileset_raw;
 extern Gdk.Pixbuf? pb_bground_raw;
-extern Theme theme[];
-extern int[,] gboard;
-
-int gboard_length2 = 7;
+//extern Theme theme[];
+int[,] gboard;
 
 namespace Gfx{
     public int get_column (int xpos) {

@@ -8,16 +8,16 @@ struct Prefs {
 
 [CCode (cname = "Theme", cheader_filename="theme.h")]
 struct Theme {
-    const string title;
-    const string fname_tileset;
-    const string fname_bground;
+    public string title;
+    public string fname_tileset;
+    public string fname_bground;
     public string grid_color;
-    const string player1;
-    const string player2;
-    const string player1_win;
-    const string player2_win;
-    const string player1_turn;
-    const string player2_turn;
+    public string player1;
+    public string player2;
+    public string player1_win;
+    public string player2_win;
+    public string player1_turn;
+    public string player2_turn;
 }
 
 [CCode (cname = "AnimID", cprefix = "ANIM_", cheader_filename="main.h")]
@@ -63,8 +63,18 @@ public enum Move {
   DROP
 }
 
+[CCode (cname = "SoundID", cprefix = "SOUND_", cheader_filename="main.h")]
+public enum SoundID{
+  DROP,
+  I_WIN,
+  YOU_WIN,
+  PLAYER_WIN,
+  DRAWN_GAME,
+  COLUMN_FULL
+}
+
 void game_reset ();
-void process_move(int c);
+//void process_move(int c);
 void gfx_refresh_pixmaps();
 bool gfx_load_pixmaps();
 void gfx_paint_tile(Cairo.Context cr, int r, int c);
@@ -73,13 +83,12 @@ void gfx_paint_tile(Cairo.Context cr, int r, int c);
 void gfx_free ();
 void scorebox_update ();       /* update visible player descriptions */
 void prompt_player ();
-void scorebox_reset ();
-string theme_get_title(int i);
 void on_dialog_close(int response_id);
 bool on_animate();
 //static void settings_changed_cb (string key);
+void play_sound(SoundID id);
 
-[CCode (cprefix = "", lower_case_prefix = "", cheader_filename = "config.h")]
+[CCode (cprefix = "", cheader_filename = "config.h")]
 namespace Config {
     [CCode (cname = "GETTEXT_PACKAGE")]
     public const string GETTEXT_PACKAGE;
