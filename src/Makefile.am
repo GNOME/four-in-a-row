@@ -3,9 +3,9 @@ bin_PROGRAMS = four-in-a-row
 check_PROGRAMS = ai-test
 
 four_in_a_row_SOURCES = \
-		games-controls2.vala \
+		games-controls.vala \
 		ai.vala \
-		main2.vala \
+		main.vala \
 		prefs.vala \
 		gfx.vala \
 		theme.vala
