@@ -1,20 +1,33 @@
+struct Theme {
+	public string title;
+	public string fname_tileset;
+	public string fname_bground;
+	public string grid_color;
+	public string player1;
+	public string player2;
+	public string player1_win;
+	public string player2_win;
+	public string player1_turn;
+	public string player2_turn;
+}
+
 //extern Theme theme[];
 const string random_shit = Config.GETTEXT_PACKAGE;
 
 string theme_get_title (int id) {
-   return theme[id].title;
+	return theme[id].title;
 }
 
 string theme_get_player_turn (PlayerID who) {
-  if (who == PlayerID.PLAYER1)
-    return theme[p.theme_id].player1_turn;
-  return theme[p.theme_id].player2_turn;
+	if (who == PlayerID.PLAYER1)
+		return theme[p.theme_id].player1_turn;
+	return theme[p.theme_id].player2_turn;
 }
 
 string theme_get_player_win (PlayerID who) {
-  if (who == PlayerID.PLAYER1)
-    return theme[p.theme_id].player1_win;
-  return theme[p.theme_id].player2_win;
+	if (who == PlayerID.PLAYER1)
+		return theme[p.theme_id].player1_win;
+	return theme[p.theme_id].player2_win;
 }
 
 string theme_get_player (PlayerID who) {

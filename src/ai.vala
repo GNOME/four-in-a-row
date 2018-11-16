@@ -29,7 +29,7 @@ const int BOARD_COLUMNS = 7;
 enum Player { NONE, HUMAN, AI; }
 enum Difficulty { EASY, MEDIUM, HARD; }
 
-int playgame (string moves_until_now)
+public int playgame (string moves_until_now)
 {
     var t = new DecisionTree ();
     return t.playgame (moves_until_now);

@@ -1,6 +1,14 @@
 //public const int DEFAULT_THEME_ID = 0;
 //extern int n_themes;
-extern Settings settings;
+
+struct Prefs {
+  bool do_sound;
+  int theme_id;
+  Level level[2];
+  int keypress[3];
+}
+
+Settings settings;
 Gtk.Dialog? prefsbox = null;
 Gtk.ComboBox combobox;
 Gtk.ComboBoxText combobox_theme;
