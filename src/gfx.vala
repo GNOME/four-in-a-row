@@ -156,7 +156,7 @@ namespace Gfx{
 
 
 	cr.save();
-	//gdk_cairo_set_source_pixbuf (cr, pb_tileset, x - os, y);
+	Gdk.cairo_set_source_pixbuf (cr, pb_tileset, x - os, y);
 	cr.rectangle (x, y, tilesize, tilesize);
 
 	cr.clip();

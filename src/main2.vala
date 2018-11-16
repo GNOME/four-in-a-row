@@ -283,20 +283,20 @@ void drop () {
 }
 
 void move (int c) {
-  gboard[0, column] = Tile.CLEAR;
-  Gfx.draw_tile (0, column);
+	gboard[0, column] = Tile.CLEAR;
+	Gfx.draw_tile (0, column);
 
-  column = c;
-  gboard[0, c] = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
+	column = c;
+	gboard[0, c] = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
-  Gfx.draw_tile (0, c);
+	Gfx.draw_tile (0, c);
 }
 
 static void move_cursor (int c)
 {
-  move (c);
-  column = column_moveto = c;
-  row = row_dropto = 0;
+	move (c);
+	column = column_moveto = c;
+	row = row_dropto = 0;
 }
 
 void swap_player ()
@@ -568,8 +568,8 @@ void process_move (int c)
 
 	column_moveto = c;
 	anim = AnimID.MOVE;
-	//Timeout.add(SPEED_DROP, on_animate, c.to_pointer());
-	//timeout = g_timeout_add (SPEED_MOVE, (GSourceFunc) on_animate, GINT_TO_POINTER (c));
+	var temp = new Animate(c);
+	timeout = Timeout.add(SPEED_DROP, temp.exec);
 }
 
 void on_help_about (SimpleAction action, Variant? parameter)
