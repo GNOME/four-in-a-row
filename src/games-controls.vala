@@ -3,13 +3,13 @@ using Gtk;
 const string jjjj = Config.GETTEXT_PACKAGE;
 
 enum Columns {
-  CONFKEY_COLUMN = 0,
-  LABEL_COLUMN,
-  KEYCODE_COLUMN,
-  KEYMODS_COLUMN,
-  DEFAULT_KEYCODE_COLUMN,
-  DEFAULT_KEYMODS_COLUMN,
-  N_COLUMNS
+	CONFKEY_COLUMN = 0,
+	LABEL_COLUMN,
+	KEYCODE_COLUMN,
+	KEYMODS_COLUMN,
+	DEFAULT_KEYCODE_COLUMN,
+	DEFAULT_KEYMODS_COLUMN,
+	N_COLUMNS
 }
 
 public class GamesControlsList: Gtk.ScrolledWindow {
@@ -68,8 +68,7 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 		this.add(view);
 	}
 
-	void accel_cleared_cb (string path_string)
-	{
+	void accel_cleared_cb (string path_string) {
 		TreePath path;
 		TreeIter iter;
 		string conf_key = null;
@@ -95,9 +94,7 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 		settings.set_int(conf_key, default_keyval);
 	}
 
-	void accel_edited_cb (string path_string, uint keyval,
-		Gdk.ModifierType mask, uint hardware_keycode)
-	{
+	void accel_edited_cb (string path_string, uint keyval, Gdk.ModifierType mask, uint hardware_keycode) {
 		TreePath path;
 		TreeIter iter;
 		string conf_key = null;
@@ -148,8 +145,7 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 			settings.set_int (conf_key, (int)keyval);
 	}
 
-	void add_control (string conf_key, string? label,
-				uint default_keyval) {
+	void add_control (string conf_key, string? label, uint default_keyval) {
 		Gtk.TreeIter iter;
 		uint keyval;
 
@@ -169,7 +165,7 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 
 	}
 
-	void add_controls (string first_gconf_key, ...) {
+	public void add_controls (string first_gconf_key, ...) {
 		var args = va_list();
 		string? key;
 		string label;

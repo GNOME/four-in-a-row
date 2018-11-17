@@ -1,7 +1,4 @@
-//using GETTTEXT_PACKAGE_CONTENT;
-const string GETTEXT_PACKAGE2 = Config.GETTEXT_PACKAGE;
 Gtk.Widget drawarea;
-//extern Theme theme[];
 int[,] gboard;
 int boardsize = 0;
 int tilesize = 0;
@@ -16,7 +13,7 @@ namespace Gfx{
 	Gdk.Pixbuf pb_tileset;
 	Gdk.Pixbuf pb_bground;
 
-	public int get_column (int xpos) {
+	int get_column (int xpos) {
 		/* Derive column from pixel position */
 		int c = xpos / tilesize;
 		if (c > 6)
@@ -27,11 +24,11 @@ namespace Gfx{
 		return c;
 	}
 
-	public void draw_tile (int r, int c) {
+	void draw_tile (int r, int c) {
 		drawarea.queue_draw_area(c*tilesize, r*tilesize, tilesize, tilesize);
 	}
 
-	public void draw_all () {
+	void draw_all () {
 		drawarea.queue_draw_area(0, 0, boardsize, boardsize);
 	}
 
@@ -113,56 +110,56 @@ namespace Gfx{
 		cr.stroke();
 	}
 
-    void load_error (string fname) {
-	Gtk.MessageDialog dialog;
+	void load_error (string fname) {
+		Gtk.MessageDialog dialog;
 
-	dialog = new Gtk.MessageDialog(window, Gtk.DialogFlags.MODAL,
-	    Gtk.MessageType.WARNING, Gtk.ButtonsType.CLOSE,
-	dgettext(Config.GETTEXT_PACKAGE, "Unable to load image:\n%s"), fname);
+		dialog = new Gtk.MessageDialog(window, Gtk.DialogFlags.MODAL,
+			Gtk.MessageType.WARNING, Gtk.ButtonsType.CLOSE,
+		dgettext(Config.GETTEXT_PACKAGE, "Unable to load image:\n%s"), fname);
 
-	dialog.run();
-	dialog.destroy();
-    }
-
-    void paint_tile (Cairo.Context cr, int r, int c) {
-	int x = c * tilesize;
-	int y = r * tilesize;
-	int tile = gboard[r,c];
-	int os = 0;
-
-	if (tile == Tile.CLEAR && r != 0)
-	    return;
-
-	switch (tile) {
-	case Tile.PLAYER1:
-	    if (r == 0)
-		os = offset[Tile.PLAYER1_CURSOR];
-	    else
-		os = offset[Tile.PLAYER1];
-	    break;
-	case Tile.PLAYER2:
-	    if (r == 0)
-		os = offset[Tile.PLAYER2_CURSOR];
-	    else
-		os = offset[Tile.PLAYER2];
-	    break;
-	case Tile.CLEAR:
-	    if (r == 0)
-		os = offset[Tile.CLEAR_CURSOR];
-	    else
-		os = offset[Tile.CLEAR];
-	    break;
+		dialog.run();
+		dialog.destroy();
 	}
 
+	void paint_tile (Cairo.Context cr, int r, int c) {
+		int x = c * tilesize;
+		int y = r * tilesize;
+		int tile = gboard[r,c];
+		int os = 0;
 
-	cr.save();
-	Gdk.cairo_set_source_pixbuf (cr, pb_tileset, x - os, y);
-	cr.rectangle (x, y, tilesize, tilesize);
+		if (tile == Tile.CLEAR && r != 0)
+			return;
 
-	cr.clip();
-	cr.paint();
-	cr.restore();
-    }
+		switch (tile) {
+		case Tile.PLAYER1:
+			if (r == 0)
+				os = offset[Tile.PLAYER1_CURSOR];
+			else
+				os = offset[Tile.PLAYER1];
+			break;
+		case Tile.PLAYER2:
+			if (r == 0)
+				os = offset[Tile.PLAYER2_CURSOR];
+			else
+				os = offset[Tile.PLAYER2];
+			break;
+		case Tile.CLEAR:
+			if (r == 0)
+				os = offset[Tile.CLEAR_CURSOR];
+			else
+				os = offset[Tile.CLEAR];
+			break;
+		}
+
+
+		cr.save();
+		Gdk.cairo_set_source_pixbuf (cr, pb_tileset, x - os, y);
+		cr.rectangle (x, y, tilesize, tilesize);
+
+		cr.clip();
+		cr.paint();
+		cr.restore();
+	}
 
 	void refresh_pixmaps () {
 		/* scale the pixbufs */
@@ -172,89 +169,67 @@ namespace Gfx{
 
 
 
-bool load_pixmaps ()
-{
-	string fname;
-	Gdk.Pixbuf pb_tileset_tmp;
-	Gdk.Pixbuf pb_bground_tmp = null;
+	bool load_pixmaps () {
+		string fname;
+		Gdk.Pixbuf pb_tileset_tmp;
+		Gdk.Pixbuf pb_bground_tmp = null;
 
-	/* Try the theme pixmaps, fallback to the default and then give up */
-	while (true) {
-		fname = Path.build_filename (Config.DATA_DIRECTORY, theme[p.theme_id].fname_tileset, null);
-		try {
-			pb_tileset_tmp = new Gdk.Pixbuf.from_file (fname);
-		} catch (Error e) {
-			if (p.theme_id != 0) {
-				p.theme_id = 0;
-				continue;
-			} else {
+		/* Try the theme pixmaps, fallback to the default and then give up */
+		while (true) {
+			fname = Path.build_filename (Config.DATA_DIRECTORY, theme[p.theme_id].fname_tileset, null);
+			try {
+				pb_tileset_tmp = new Gdk.Pixbuf.from_file (fname);
+			} catch (Error e) {
+				if (p.theme_id != 0) {
+					p.theme_id = 0;
+					continue;
+				} else {
+					Gfx.load_error (fname);
+					return false;
+				}
+			}
+			break;
+		}
+
+		pb_tileset_raw = pb_tileset_tmp;
+
+		if (theme[p.theme_id].fname_bground != null) {
+			fname = Path.build_filename (Config.DATA_DIRECTORY, theme[p.theme_id].fname_bground, null);
+			try {
+				pb_bground_tmp = new Gdk.Pixbuf.from_file (fname);
+			} catch (Error e) {
 				Gfx.load_error (fname);
 				return false;
 			}
 		}
-		break;
-	}
 
-	pb_tileset_raw = pb_tileset_tmp;
+		/* If a separate background image wasn't supplied,
+		* derive the background image from the tile set
+		*/
+		if (pb_bground_tmp != null) {
+			pb_bground_raw = pb_bground_tmp;
+		} else {
+			int tilesize_raw;
+			int i, j;
 
-	if (theme[p.theme_id].fname_bground != null) {
-		fname = Path.build_filename (Config.DATA_DIRECTORY, theme[p.theme_id].fname_bground, null);
-		try {
-			pb_bground_tmp = new Gdk.Pixbuf.from_file (fname);
-		} catch (Error e) {
-			Gfx.load_error (fname);
-			return false;
-		}
-	}
+			tilesize_raw = pb_tileset_raw.get_height();
 
-	/* If a separate background image wasn't supplied,
-	* derive the background image from the tile set
-	*/
-	if (pb_bground_tmp != null) {
-		pb_bground_raw = pb_bground_tmp;
-	} else {
-		int tilesize_raw;
-		int i, j;
-
-		tilesize_raw = pb_tileset_raw.get_height();
-
-		pb_bground_raw = new Gdk.Pixbuf (Gdk.Colorspace.RGB, true, 8,
-			tilesize_raw * 7, tilesize_raw * 7);
-		for (i = 0; i < 7; i++) {
-			pb_tileset_raw.copy_area (tilesize_raw * 3, 0,
-				tilesize_raw, tilesize_raw,
-				pb_bground_raw, i * tilesize_raw, 0);
-			for (j = 1; j < 7; j++) {
-				pb_tileset_raw.copy_area (
-					tilesize_raw * 2, 0,
+			pb_bground_raw = new Gdk.Pixbuf (Gdk.Colorspace.RGB, true, 8,
+				tilesize_raw * 7, tilesize_raw * 7);
+			for (i = 0; i < 7; i++) {
+				pb_tileset_raw.copy_area (tilesize_raw * 3, 0,
 					tilesize_raw, tilesize_raw,
-					pb_bground_raw,
-					i * tilesize_raw, j * tilesize_raw);
+					pb_bground_raw, i * tilesize_raw, 0);
+				for (j = 1; j < 7; j++) {
+					pb_tileset_raw.copy_area (
+						tilesize_raw * 2, 0,
+						tilesize_raw, tilesize_raw,
+						pb_bground_raw,
+						i * tilesize_raw, j * tilesize_raw);
+				}
 			}
 		}
+
+		return true;
 	}
-
-	return true;
-}
-
-	void free ()
-	{
-		if (pb_tileset_raw != null) {
-			pb_tileset_raw.unref();
-			pb_tileset_raw = null;
-		}
-		if (pb_bground_raw != null) {
-			pb_bground_raw.unref();
-			pb_bground_raw = null;
-		}
-		if (pb_tileset != null) {
-			pb_tileset.unref();
-			pb_tileset = null;
-		}
-		if (pb_bground != null) {
-			pb_bground.unref();
-			pb_bground = null;
-		}
-	}
-
 }
