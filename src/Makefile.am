@@ -3,7 +3,7 @@ bin_PROGRAMS = four-in-a-row
 check_PROGRAMS = ai-test
 
 four_in_a_row_SOURCES = \
-		games-controls.vala \
+		games-controls-list.vala \
 		ai.vala \
 		main.vala \
 		prefs.vala \
