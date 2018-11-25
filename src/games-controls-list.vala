@@ -107,8 +107,8 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         }
 
         model.get(iter,
-            Columns.CONFKEY_COLUMN, conf_key,
-            Columns.DEFAULT_KEYCODE_COLUMN, default_keyval);
+                  Columns.CONFKEY_COLUMN, conf_key,
+                  Columns.DEFAULT_KEYCODE_COLUMN, default_keyval);
 
         if(conf_key == null)
             return;
