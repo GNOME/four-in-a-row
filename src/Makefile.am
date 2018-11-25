@@ -8,7 +8,8 @@ four_in_a_row_SOURCES = \
 		main.vala \
 		prefs.vala \
 		gfx.vala \
-		theme.vala
+		theme.vala \
+		config.vapi
 
 four_in_a_row_CPPFLAGS = \
 	-I$(top_srcdir)
@@ -27,9 +28,7 @@ four_in_a_row_LDADD = \
 four_in_a_row_VALAFLAGS = \
 		--pkg gtk+-3.0 \
 		--pkg libcanberra-gtk \
-		--pkg libcanberra \
-		--vapidir . \
-		--pkg temp
+		--pkg libcanberra
 
 ai_test_SOURCES = \
 	ai.vala \
