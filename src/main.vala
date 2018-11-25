@@ -141,7 +141,7 @@ void draw_line (int r1, int c1, int r2, int c2, int tile) {
     } while (!done);
 }
 
-public int main(string[] argv) {
+public int main (string[] argv) {
     gboard = new int[7,7];
     Intl.setlocale();
 
@@ -180,7 +180,7 @@ public int main(string[] argv) {
     return app_retval;
 }
 
-public void activate() {
+public void activate () {
     if (!window.is_visible()) {
         window.show_all();
         Gfx.refresh_pixmaps();
@@ -194,21 +194,21 @@ public void activate() {
 class NextMove {
     int c;
 
-    public NextMove(int c) {
+    public NextMove (int c) {
         this.c = c;
     }
 
-    public bool exec() {
+    public bool exec () {
         return next_move(c);
     }
 }
 
-public bool next_move(int c) {
+public bool next_move (int c) {
     process_move(c);
     return false;
 }
 
-public void game_process_move(int c) {
+public void game_process_move (int c) {
     process_move(c);
 }
 
@@ -721,11 +721,11 @@ void play_sound (SoundID id) {
 
 class Animate {
     int c;
-    public Animate(int c) {
+    public Animate (int c) {
         this.c = c;
     }
 
-    public bool exec() {
+    public bool exec () {
         return on_animate(c);
     }
 }

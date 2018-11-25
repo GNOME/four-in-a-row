@@ -44,7 +44,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
     Settings settings;
     ulong notify_handler_id;
 
-    public GamesControlsList(GLib.Settings settings) {
+    public GamesControlsList (GLib.Settings settings) {
         Gtk.CellRenderer label_renderer;
         Gtk.CellRendererAccel key_renderer;
         Gtk.TreeViewColumn column;
