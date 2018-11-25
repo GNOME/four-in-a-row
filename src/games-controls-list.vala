@@ -200,4 +200,34 @@ public class GamesControlsList : Gtk.ScrolledWindow {
             key = args.arg();
         }
     }
+
+    void settings_changed_cb (string key) {
+        Gtk.TreeIter iter;
+        bool valid;
+
+        /* find our gconf key in the list store and update it */
+        valid = model.get_iter_first(out iter);
+        while (valid) {
+            string conf_key;
+
+            model.get(iter, Columns.CONFKEY_COLUMN, out conf_key);
+
+            if (key == conf_key) {
+                uint keyval, default_keyval;
+
+                model.get(iter, Columns.DEFAULT_KEYCODE_COLUMN, out default_keyval);
+
+                keyval = settings.get_int(key);
+
+                store.set(iter,
+                          Columns.KEYCODE_COLUMN, keyval,
+                          Columns.KEYMODS_COLUMN, 0 /* FIXME? */);
+
+                break;
+            }
+
+            valid = store.iter_next(ref iter);
+        }
+    }
+
 }
