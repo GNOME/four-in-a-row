@@ -1,6 +1,8 @@
-using Gtk;
-
-const string jjjj = Config.GETTEXT_PACKAGE;
+/*
+ * Needed to force vala to include headers in the correct order.
+ * See https://gitlab.gnome.org/GNOME/vala/issues/98
+ */
+const string games_controls_gettext_package = Config.GETTEXT_PACKAGE;
 
 enum Columns {
 	CONFKEY_COLUMN = 0,
@@ -22,7 +24,7 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 
 	public GamesControlsList(GLib.Settings settings) {
 		Gtk.CellRenderer label_renderer;
-		CellRendererAccel key_renderer;
+		Gtk.CellRendererAccel key_renderer;
 		Gtk.TreeViewColumn column;
 
 		this.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -60,7 +62,7 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 		key_renderer.accel_edited.connect(this.accel_edited_cb);
 		key_renderer.accel_cleared.connect(this.accel_cleared_cb);
 
-		column = new TreeViewColumn.with_attributes("Key", key_renderer,
+		column = new Gtk.TreeViewColumn.with_attributes("Key", key_renderer,
 			"accel-key", Columns.KEYCODE_COLUMN,
 			"accel-mods", Columns.KEYMODS_COLUMN);
 
@@ -69,12 +71,12 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 	}
 
 	void accel_cleared_cb (string path_string) {
-		TreePath path;
-		TreeIter iter;
+		Gtk.TreePath path;
+		Gtk.TreeIter iter;
 		string conf_key = null;
 		int default_keyval = 0; //set to 0 to make valac happy
 
-		path = new TreePath.from_string (path_string);
+		path = new Gtk.TreePath.from_string (path_string);
 		if (path == null)
 			return;
 
@@ -95,14 +97,14 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 	}
 
 	void accel_edited_cb (string path_string, uint keyval, Gdk.ModifierType mask, uint hardware_keycode) {
-		TreePath path;
-		TreeIter iter;
+		Gtk.TreePath path;
+		Gtk.TreeIter iter;
 		string conf_key = null;
 		bool valid;
 		bool unused_key = true;
 
 
-		path = new TreePath.from_string (path_string);
+		path = new Gtk.TreePath.from_string (path_string);
 		if (path == null)
 			return;
 
@@ -124,10 +126,10 @@ public class GamesControlsList: Gtk.ScrolledWindow {
 				unused_key = false;
 
 				if (conf_key == actual_conf_key) {
-					var dialog = new MessageDialog.with_markup (window,
-						DialogFlags.DESTROY_WITH_PARENT,
-						MessageType.WARNING,
-						ButtonsType.OK,
+					var dialog = new Gtk.MessageDialog.with_markup (window,
+						Gtk.DialogFlags.DESTROY_WITH_PARENT,
+						Gtk.MessageType.WARNING,
+						Gtk.ButtonsType.OK,
 						"<span weight=\"bold\" size=\"larger\">%s</span>",
 						_("This key is already in use."));
 
