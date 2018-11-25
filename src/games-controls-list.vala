@@ -44,7 +44,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
     Settings settings;
     ulong notify_handler_id;
 
-    public GamesControlsList (GLib.Settings settings) {
+    public GamesControlsList(GLib.Settings settings) {
         Gtk.CellRenderer label_renderer;
         Gtk.CellRendererAccel key_renderer;
         Gtk.TreeViewColumn column;
@@ -92,17 +92,17 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         this.add(view);
     }
 
-    void accel_cleared_cb (string path_string) {
+    void accel_cleared_cb(string path_string) {
         Gtk.TreePath path;
         Gtk.TreeIter iter;
         string conf_key = null;
         int default_keyval = 0; //set to 0 to make valac happy
 
-        path = new Gtk.TreePath.from_string (path_string);
+        path = new Gtk.TreePath.from_string(path_string);
         if (path == null)
             return;
 
-        if (!model.get_iter (out iter, path)) {
+        if (!model.get_iter(out iter, path)) {
             return;
         }
 
@@ -118,7 +118,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         settings.set_int(conf_key, default_keyval);
     }
 
-    void accel_edited_cb (string path_string, uint keyval, Gdk.ModifierType mask, uint hardware_keycode) {
+    void accel_edited_cb(string path_string, uint keyval, Gdk.ModifierType mask, uint hardware_keycode) {
         Gtk.TreePath path;
         Gtk.TreeIter iter;
         string conf_key = null;
@@ -126,29 +126,29 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         bool unused_key = true;
 
 
-        path = new Gtk.TreePath.from_string (path_string);
+        path = new Gtk.TreePath.from_string(path_string);
         if (path == null)
             return;
 
-        if (!model.get_iter (out iter, path)) {
+        if (!model.get_iter(out iter, path)) {
             return;
         }
 
-        model.get (iter, Columns.CONFKEY_COLUMN, conf_key);
+        model.get(iter, Columns.CONFKEY_COLUMN, conf_key);
         if (conf_key == null)
             return;
 
-        valid = model.get_iter_first (out iter);
+        valid = model.get_iter_first(out iter);
         while (valid) {
             string actual_conf_key = null;
 
-            model.get (iter, Columns.CONFKEY_COLUMN, actual_conf_key);
+            model.get(iter, Columns.CONFKEY_COLUMN, actual_conf_key);
 
-            if (settings.get_int (actual_conf_key) == keyval){
+            if (settings.get_int(actual_conf_key) == keyval){
                 unused_key = false;
 
                 if (conf_key == actual_conf_key) {
-                    var dialog = new Gtk.MessageDialog.with_markup (window,
+                    var dialog = new Gtk.MessageDialog.with_markup(window,
                         Gtk.DialogFlags.DESTROY_WITH_PARENT,
                         Gtk.MessageType.WARNING,
                         Gtk.ButtonsType.OK,
@@ -160,16 +160,16 @@ public class GamesControlsList : Gtk.ScrolledWindow {
                 break;
             }
 
-            valid = store.iter_next (ref iter);
+            valid = store.iter_next(ref iter);
         }
 
         /* Note: the model is updated in the conf notification callback */
         /* FIXME: what to do with the modifiers? */
         if (unused_key)
-            settings.set_int (conf_key, (int)keyval);
+            settings.set_int(conf_key, (int)keyval);
     }
 
-    void add_control (string conf_key, string? label, uint default_keyval) {
+    void add_control(string conf_key, string? label, uint default_keyval) {
         Gtk.TreeIter iter;
         uint keyval;
 
@@ -189,7 +189,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
 
     }
 
-    public void add_controls (string first_gconf_key, ...) {
+    public void add_controls(string first_gconf_key, ...) {
         var args = va_list();
         string? key;
         string label;
@@ -199,7 +199,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         while (key != null) {
             label = args.arg();
             keyval = args.arg();
-            this.add_control (key, label, keyval);
+            this.add_control(key, label, keyval);
             key = args.arg();
         }
     }

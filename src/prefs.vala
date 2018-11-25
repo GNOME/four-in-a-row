@@ -44,13 +44,13 @@ const uint DEFAULT_KEY_DROP = Gdk.Key.Down;
 const int DEFAULT_THEME_ID = 0;
 
 
-static int sane_theme_id (int val) {
+static int sane_theme_id(int val) {
     if (val < 0 || val >= theme.length)
     return DEFAULT_THEME_ID;
     return val;
 }
 
-public int sane_player_level (int val) {
+public int sane_player_level(int val) {
     if (val < Level.HUMAN)
         return Level.HUMAN;
     if (val > Level.STRONG)
@@ -58,70 +58,70 @@ public int sane_player_level (int val) {
     return val;
 }
 
-public void on_select_theme (Gtk.ComboBox combo) {
-    int id = combo.get_active ();
-    settings.set_int ("theme-id", id);
+public void on_select_theme(Gtk.ComboBox combo) {
+    int id = combo.get_active();
+    settings.set_int("theme-id", id);
 }
 
-public void on_toggle_sound (Gtk.ToggleButton t) {
-    p.do_sound = t.get_active ();
-    settings.set_boolean ("sound", t.get_active());
+public void on_toggle_sound(Gtk.ToggleButton t) {
+    p.do_sound = t.get_active();
+    settings.set_boolean("sound", t.get_active());
 }
 
-void prefs_init () {
-    p.do_sound = settings.get_boolean ("sound");
+void prefs_init() {
+    p.do_sound = settings.get_boolean("sound");
     p.level[PlayerID.PLAYER1] = Level.HUMAN;	        /* Human. Always human. */
-    p.level[PlayerID.PLAYER2] = (Level) settings.get_int ("opponent");
-    p.keypress[Move.LEFT] = settings.get_int ("key-left");
-    p.keypress[Move.RIGHT] = settings.get_int ("key-right");
-    p.keypress[Move.DROP] = settings.get_int ("key-drop");
-    p.theme_id = settings.get_int ("theme-id");
+    p.level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
+    p.keypress[Move.LEFT] = settings.get_int("key-left");
+    p.keypress[Move.RIGHT] = settings.get_int("key-right");
+    p.keypress[Move.DROP] = settings.get_int("key-drop");
+    p.theme_id = settings.get_int("theme-id");
 
     settings.changed.connect(settings_changed_cb);
 
-    p.level[PlayerID.PLAYER1] = (Level) sane_player_level (p.level[PlayerID.PLAYER1]);
-    p.level[PlayerID.PLAYER2] = (Level) sane_player_level (p.level[PlayerID.PLAYER2]);
-    p.theme_id = sane_theme_id (p.theme_id);
+    p.level[PlayerID.PLAYER1] = (Level) sane_player_level(p.level[PlayerID.PLAYER1]);
+    p.level[PlayerID.PLAYER2] = (Level) sane_player_level(p.level[PlayerID.PLAYER2]);
+    p.theme_id = sane_theme_id(p.theme_id);
 }
 
-public void settings_changed_cb (string key) {
+public void settings_changed_cb(string key) {
     if (key == "sound") {
-        p.do_sound = settings.get_boolean ("sound");
-        ((Gtk.ToggleButton)checkbutton_sound).set_active (p.do_sound);
+        p.do_sound = settings.get_boolean("sound");
+        ((Gtk.ToggleButton)checkbutton_sound).set_active(p.do_sound);
     } else if (key == "key-left") {
-        p.keypress[Move.LEFT] = settings.get_int ( "key-left");
+        p.keypress[Move.LEFT] = settings.get_int( "key-left");
     } else if (key == "key-right") {
-        p.keypress[Move.RIGHT] = settings.get_int ( "key-right");
+        p.keypress[Move.RIGHT] = settings.get_int( "key-right");
     } else if (key == "key-drop") {
-        p.keypress[Move.DROP] = settings.get_int ( "key-drop");
+        p.keypress[Move.DROP] = settings.get_int( "key-drop");
     } else if (key == "theme-id") {
-        int val = sane_theme_id (settings.get_int ("theme-id"));
+        int val = sane_theme_id(settings.get_int("theme-id"));
         if (val != p.theme_id) {
             p.theme_id = val;
-            if (!Gfx.change_theme ())
+            if (!Gfx.change_theme())
                 return;
         if (prefsbox == null)
             return;
-        combobox_theme.set_active (p.theme_id);
+        combobox_theme.set_active(p.theme_id);
         }
     }
 }
 
-public void on_select_opponent (Gtk.ComboBox w) {
+public void on_select_opponent(Gtk.ComboBox w) {
     Gtk.TreeIter iter;
     int value;
 
-    w.get_active_iter (out iter);
-    w.get_model().get (iter, 1, out value);
+    w.get_active_iter(out iter);
+    w.get_model().get(iter, 1, out value);
 
     p.level[PlayerID.PLAYER2] = (Level)value;
-    settings.set_int ("opponent", value);
-    scorebox_reset ();
+    settings.set_int("opponent", value);
+    scorebox_reset();
     who_starts = PlayerID.PLAYER2;		/* This gets reversed in game_reset. */
-    game_reset ();
+    game_reset();
 }
 
-public void prefsbox_open () {
+public void prefsbox_open() {
     Gtk.Notebook notebook;
     Gtk.Grid grid;
     GamesControlsList controls_list;
@@ -132,11 +132,11 @@ public void prefsbox_open () {
     // gint i;
 
     if (prefsbox != null) {
-        prefsbox.present ();
+        prefsbox.present();
         return;
     }
 
-    prefsbox = new Gtk.Dialog.with_buttons (_("Preferences"),
+    prefsbox = new Gtk.Dialog.with_buttons(_("Preferences"),
                         window,
                         Gtk.DialogFlags.DESTROY_WITH_PARENT);
 
@@ -204,7 +204,7 @@ public void prefsbox_open () {
 
     /* keyboard tab */
 
-    label = new Gtk.Label.with_mnemonic (_("Keyboard Controls"));
+    label = new Gtk.Label.with_mnemonic(_("Keyboard Controls"));
 
     controls_list = new GamesControlsList(settings);
     controls_list.add_controls("key-left", _("Move left"), DEFAULT_KEY_LEFT,

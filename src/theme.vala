@@ -38,23 +38,23 @@ struct Theme {
  */
 const string theme_gettext_package = Config.GETTEXT_PACKAGE;
 
-string theme_get_title (int id) {
+string theme_get_title(int id) {
     return theme[id].title;
 }
 
-string theme_get_player_turn (PlayerID who) {
+string theme_get_player_turn(PlayerID who) {
     if (who == PlayerID.PLAYER1)
         return theme[p.theme_id].player1_turn;
     return theme[p.theme_id].player2_turn;
 }
 
-string theme_get_player_win (PlayerID who) {
+string theme_get_player_win(PlayerID who) {
     if (who == PlayerID.PLAYER1)
         return theme[p.theme_id].player1_win;
     return theme[p.theme_id].player2_win;
 }
 
-string theme_get_player (PlayerID who) {
+string theme_get_player(PlayerID who) {
     if (who == PlayerID.PLAYER1)
         return theme[p.theme_id].player1;
     return theme[p.theme_id].player2;
