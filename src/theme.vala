@@ -11,8 +11,7 @@ struct Theme {
 	public string player2_turn;
 }
 
-//extern Theme theme[];
-const string random_shit = Config.GETTEXT_PACKAGE;
+const string theme_gettext_package = Config.GETTEXT_PACKAGE;
 
 string theme_get_title (int id) {
 	return theme[id].title;

@@ -14,12 +14,12 @@ enum Columns {
 	N_COLUMNS
 }
 
-public class GamesControlsList: Gtk.ScrolledWindow {
+public class GamesControlsList : Gtk.ScrolledWindow {
 	Gtk.TreeModel model;
 	Gtk.ListStore store;
 	Gtk.TreeView view;
 
-	GLib.Settings settings;
+	Settings settings;
 	ulong notify_handler_id;
 
 	public GamesControlsList(GLib.Settings settings) {
