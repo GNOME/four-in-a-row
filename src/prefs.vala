@@ -128,7 +128,6 @@ public void prefsbox_open() {
     Gtk.CellRendererText renderer;
     Gtk.ListStore model;
     Gtk.TreeIter iter;
-    // gint i;
 
     if (prefsbox != null) {
         prefsbox.present();
@@ -218,10 +217,6 @@ public void prefsbox_open() {
     checkbutton_sound.set_active(p.do_sound);
 
     /* connect signals */
-
-    //prefsbox.response.connect(on_dialog_close);
-    // g_signal_connect (prefsbox, "response", G_CALLBACK (on_dialog_close),
-        //     &prefsbox);
 
     combobox_theme.changed.connect(on_select_theme);
 

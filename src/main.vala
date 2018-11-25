@@ -174,8 +174,6 @@ public int main(string[] argv) {
 
     var app_retval = application.run(argv);
 
-    //game_free();
-
     return app_retval;
 }
 
@@ -212,8 +210,6 @@ public void game_process_move(int c) {
 }
 
 public void game_init() {
-    //Random.set_seed ((uint) Linux.timegm(null));
-
     anim = AnimID.NONE;
     gameover = true;
     player_active = false;
@@ -401,9 +397,6 @@ void on_game_scores(SimpleAction action, Variant? parameter) {
     scorebox.set_border_width(5);
     scorebox.get_content_area().set_spacing(2);
 
-    // g_signal_connect (scorebox, "destroy",
-    //                   G_CALLBACK (gtk_widget_destroyed), &scorebox);
-
     grid = new Gtk.Grid();
     grid.set_halign(Gtk.Align.CENTER);
     grid.set_row_spacing(6);
@@ -445,8 +438,6 @@ void on_game_scores(SimpleAction action, Variant? parameter) {
     grid2.attach(label_score[PlayerID.NOBODY], 1, 0, 1, 1);
     label_score[PlayerID.NOBODY].set_xalign(0);
     label_score[PlayerID.NOBODY].set_yalign(0.5f);
-
-    //scorebox.response.connect(on_dialog_close);
 
     scorebox.show_all();
 
@@ -561,7 +552,8 @@ void process_move(int c) {
 void on_help_about(SimpleAction action, Variant? parameter) {
     const string authors[] = {"Tim Musson <trmusson@ihug.co.nz>",
         "David Neary <bolsh@gimp.org>",
-        "Nikhar Agrawal <nikharagrawal2006@gmail.com>"
+        "Nikhar Agrawal <nikharagrawal2006@gmail.com>",
+        "Jacob Humphrey <jacob.ryan.humphrey@gmail.com"
     };
 
     const string artists[] = { "Alan Horkan",
@@ -574,7 +566,7 @@ void on_help_about(SimpleAction action, Variant? parameter) {
     Gtk.show_about_dialog(window,
         name: _(Config.APPNAME_LONG),
         version: Config.VERSION,
-        copyright: "Copyright © 1999–2008 Tim Musson and David Neary\nCopyright © 2014 Michael Catanzaro",
+        copyright: "Copyright © 1999–2008 Tim Musson and David Neary\nCopyright © 2014 Michael Catanzaro\nCopyright © 2018 Jacob Humphrey",
         license_type: Gtk.License.GPL_2_0,
         comments: _("Connect four in a row to win"),
         authors: authors,
@@ -946,7 +938,6 @@ void create_app(GLib.Application app) {
 
     Gtk.Builder builder;
     Gtk.CssProvider css_provider;
-    //Error *error = NULL;
 
     Gtk.Window.set_default_icon_name("four-in-a-row");
 
@@ -965,7 +956,7 @@ void create_app(GLib.Application app) {
 
     window = (Gtk.Window) builder.get_object("fiar-window");
     window.application = application;
-    window.set_default_size(DEFAULT_WIDTH, DEFAULT_HEIGHT); // TODO save size & state
+    window.set_default_size(DEFAULT_WIDTH, DEFAULT_HEIGHT); /* TODO save size & state */
 
     headerbar = (Gtk.HeaderBar) builder.get_object("headerbar");
 
