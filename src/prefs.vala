@@ -31,6 +31,10 @@ Gtk.Dialog? prefsbox = null;
 Gtk.ComboBox combobox;
 Gtk.ComboBoxText combobox_theme;
 Gtk.CheckButton checkbutton_sound;
+/*
+ * Needed to force vala to include headers in the correct order.
+ * See https://gitlab.gnome.org/GNOME/vala/issues/98
+ */
 const string GETTEXT_PACKAGE_CONTENT = Config.GETTEXT_PACKAGE;
 Prefs p;
 
