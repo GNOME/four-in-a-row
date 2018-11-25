@@ -17,7 +17,6 @@
  * You should have received a copy of the GNU General Public License
  * along with Four-in-a-row.  If not, see <http://www.gnu.org/licenses/>. */
 
-
 /* Here NEG_INF is supposed to be the lowest possible int value. int.MIN
 MAX_HEURIST_VALUE is the maximum value that the heuristic functions can return.
 It is returned when AI wins. -1*MAX_HEURIST_VALUE is returned when Human wins

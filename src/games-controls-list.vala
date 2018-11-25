@@ -1,5 +1,5 @@
-/* -*- Mode: vala; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
-/* games-controls.vala
+/* -*- Mode: vala; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
+ * games-controls.vala
  *
  * Copyright © 2018 Jacob Humphrey
  *
@@ -18,7 +18,6 @@
  * You should have received a copy of the GNU General Public License
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
-
 
 /*
  * Needed to force vala to include headers in the correct order.
@@ -124,7 +123,6 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         string conf_key = null;
         bool valid;
         bool unused_key = true;
-
 
         path = new Gtk.TreePath.from_string(path_string);
         if (path == null)

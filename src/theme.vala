@@ -60,7 +60,6 @@ string theme_get_player(PlayerID who) {
     return theme[p.theme_id].player2;
 }
 
-
 const Theme theme[] = {
     {
         N_("High Contrast"),

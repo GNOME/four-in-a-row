@@ -43,7 +43,6 @@ const uint DEFAULT_KEY_RIGHT = Gdk.Key.Right;
 const uint DEFAULT_KEY_DROP = Gdk.Key.Down;
 const int DEFAULT_THEME_ID = 0;
 
-
 static int sane_theme_id(int val) {
     if (val < 0 || val >= theme.length)
     return DEFAULT_THEME_ID;

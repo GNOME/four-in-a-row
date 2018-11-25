@@ -19,7 +19,6 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 public enum AnimID {
     NONE,
     MOVE,
@@ -310,7 +309,6 @@ void swap_player() {
     move_cursor(3);
     prompt_player();
 }
-
 
 void set_status_message(string? message) {
     headerbar.set_title(message);
@@ -706,7 +704,6 @@ void play_sound(SoundID id) {
         return;
     }
 
-
     string filename, path;
 
     filename = name + ".ogg";
@@ -962,7 +959,6 @@ void create_app(GLib.Application app) {
         return;
     }
     Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
 
     builder = new Gtk.Builder.from_file(Config.DATA_DIRECTORY + "/four-in-a-row.ui");
 

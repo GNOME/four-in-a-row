@@ -19,7 +19,6 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 Gtk.Widget drawarea;
 int[,] gboard;
 int boardsize = 0;
@@ -173,7 +172,6 @@ namespace Gfx{
             break;
         }
 
-
         cr.save();
         Gdk.cairo_set_source_pixbuf(cr, pb_tileset, x - os, y);
         cr.rectangle(x, y, tilesize, tilesize);
@@ -188,8 +186,6 @@ namespace Gfx{
         pb_tileset = pb_tileset_raw.scale_simple(tilesize * 6, tilesize, Gdk.InterpType.BILINEAR);
         pb_bground = pb_bground_raw.scale_simple(boardsize, boardsize, Gdk.InterpType.BILINEAR);
     }
-
-
 
     bool load_pixmaps() {
         string fname;
