@@ -1,7 +1,3 @@
-using Config;
-using Intl;
-using Gtk;
-
 public enum AnimID {
 	NONE,
 	MOVE,
@@ -51,15 +47,14 @@ SimpleAction hint_action;
 SimpleAction undo_action;
 SimpleAction new_game_action;
 
-//const string jfasolfdas = Config.GETTEXT_PACKAGE;
 const string APPNAME_LONG = N_("Four-in-a-row");
 const int SIZE_VSTR = 53;
 
 Gtk.Application? application;
-Window window;
+Gtk.Window window;
 Gtk.Dialog? scorebox = null;
-Label label_name[3];
-Label label_score[3];
+Gtk.Label label_name[3];
+Gtk.Label label_score[3];
 bool gameover;
 bool player_active;
 PlayerID player;
@@ -126,19 +121,19 @@ void draw_line (int r1, int c1, int r2, int c2, int tile) {
 
 public int main(string[] argv) {
 	gboard = new int[7,7];
-	setlocale();
+	Intl.setlocale();
 
 	application = new Gtk.Application("org.gnome.four-in-a-row", 0);
 
-	bindtextdomain(Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
-	bind_textdomain_codeset(Config.GETTEXT_PACKAGE, "UTF-8");
-	textdomain(Config.GETTEXT_PACKAGE);
+	Intl.bindtextdomain(Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
+	Intl.bind_textdomain_codeset(Config.GETTEXT_PACKAGE, "UTF-8");
+	Intl.textdomain(Config.GETTEXT_PACKAGE);
 
 	application.startup.connect(create_app);
 	application.activate.connect(activate);
 
 	var context = new OptionContext();
-	context.add_group(get_option_group(true));
+	context.add_group(Gtk.get_option_group(true));
 	try {
 		context.parse(ref argv);
 	} catch (Error error) {
@@ -401,32 +396,32 @@ void on_game_scores (SimpleAction action, Variant? parameter) {
 	grid.add(grid2);
 	grid2.set_column_spacing(6);
 
-	label_name[PlayerID.PLAYER1] = new Label(null);
+	label_name[PlayerID.PLAYER1] = new Gtk.Label(null);
 	grid2.attach (label_name[PlayerID.PLAYER1], 0, 0, 1, 1);
 	label_name[PlayerID.PLAYER1].set_xalign(0);
 	label_name[PlayerID.PLAYER1].set_yalign(0.5f);
 
-	label_score[PlayerID.PLAYER1] = new Label(null);
+	label_score[PlayerID.PLAYER1] = new Gtk.Label(null);
 	grid2.attach (label_score[PlayerID.PLAYER1], 1, 0, 1, 1);
 	label_score[PlayerID.PLAYER1].set_xalign(0);
 	label_score[PlayerID.PLAYER1].set_yalign(0.5f);
 
-	label_name[PlayerID.PLAYER2] = new Label(null);
+	label_name[PlayerID.PLAYER2] = new Gtk.Label(null);
 	grid2.attach (label_name[PlayerID.PLAYER2], 0, 1, 1, 1);
 	label_name[PlayerID.PLAYER2].set_xalign(0);
 	label_name[PlayerID.PLAYER2].set_yalign(0.5f);
 
-	label_score[PlayerID.PLAYER2] = new Label(null);
+	label_score[PlayerID.PLAYER2] = new Gtk.Label(null);
 	grid2.attach (label_score[PlayerID.PLAYER2], 1, 0, 1, 1);
 	label_score[PlayerID.PLAYER2].set_xalign(0);
 	label_score[PlayerID.PLAYER2].set_yalign(0.5f);
 
-	label_name[PlayerID.NOBODY] = new Label(_("Drawn:"));
+	label_name[PlayerID.NOBODY] = new Gtk.Label(_("Drawn:"));
 	grid2.attach (label_name[PlayerID.NOBODY], 0, 2, 1, 1);
 	label_name[PlayerID.NOBODY].set_xalign(0);
 	label_name[PlayerID.NOBODY].set_yalign(0.5f);
 
-	label_score[PlayerID.NOBODY] = new Label(null);
+	label_score[PlayerID.NOBODY] = new Gtk.Label(null);
 	grid2.attach (label_score[PlayerID.NOBODY], 1, 0, 1, 1);
 	label_score[PlayerID.NOBODY].set_xalign(0);
 	label_score[PlayerID.NOBODY].set_yalign(0.5f);
@@ -762,7 +757,7 @@ bool on_animate (int c = 0) {
 	return true;
 }
 
-bool on_key_press (Widget  w, Gdk.EventKey  e) {
+bool on_key_press (Gtk.Widget  w, Gdk.EventKey  e) {
 	if ((player_active) || timeout != 0 ||
 			(e.keyval != p.keypress[Move.LEFT] &&
 			e.keyval != p.keypress[Move.RIGHT] &&
@@ -944,16 +939,16 @@ void create_app (GLib.Application app) {
 		stderr.printf("Could not load UI: %s\n", error.message);
 		return;
 	}
-	StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, STYLE_PROVIDER_PRIORITY_APPLICATION);
+	Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
 
-	builder = new Builder.from_file (Config.DATA_DIRECTORY + "/four-in-a-row.ui");
+	builder = new Gtk.Builder.from_file (Config.DATA_DIRECTORY + "/four-in-a-row.ui");
 
-	window = (Window) builder.get_object ("fiar-window");
+	window = (Gtk.Window) builder.get_object ("fiar-window");
 	window.application = application;
 	window.set_default_size(DEFAULT_WIDTH, DEFAULT_HEIGHT); // TODO save size & state
 
-	headerbar = (HeaderBar) builder.get_object ("headerbar");
+	headerbar = (Gtk.HeaderBar) builder.get_object ("headerbar");
 
 	application.add_action_entries(app_entries, application);
 	application.add_accelerator("<Primary>n", "app.new-game", null);
@@ -981,11 +976,11 @@ void create_app (GLib.Application app) {
 
 	frame = (Gtk.AspectFrame) builder.get_object("frame");
 
-	drawarea = new DrawingArea();
+	drawarea = new Gtk.DrawingArea();
 	/* set a min size to avoid pathological behavior of gtk when scaling down */
 	drawarea.set_size_request (350, 350);
-	drawarea.halign = Align.FILL;
-	drawarea.valign = Align.FILL;
+	drawarea.halign = Gtk.Align.FILL;
+	drawarea.valign = Gtk.Align.FILL;
 	frame.add(drawarea);
 
 	drawarea.events = Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK;
