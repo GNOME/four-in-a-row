@@ -55,7 +55,7 @@ public enum Move {
     DROP
 }
 
-public enum SoundID{
+public enum SoundID {
     DROP,
     I_WIN,
     YOU_WIN,
@@ -582,8 +582,7 @@ void on_help_about(SimpleAction action, Variant? parameter) {
         artists: artists,
         translator_credits: _("translator-credits"),
         logo_icon_name: "four-in-a-row",
-        website: "https://wiki.gnome.org/Apps/Four-in-a-row"
-        );
+        website: "https://wiki.gnome.org/Apps/Four-in-a-row");
 }
 
 void check_game_state() {
@@ -954,11 +953,13 @@ void create_app(GLib.Application app) {
     css_provider = new Gtk.CssProvider();
     try {
         css_provider.load_from_data("GtkButtonBox{-GtkButtonBox-child-internal-pad-x:0;}\0");
-    } catch (Error error){
+    } catch (Error error) {
         stderr.printf("Could not load UI: %s\n", error.message);
         return;
     }
-    Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+    Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
+                                             css_provider,
+                                             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     builder = new Gtk.Builder.from_file(Config.DATA_DIRECTORY + "/four-in-a-row.ui");
 
@@ -1001,7 +1002,9 @@ void create_app(GLib.Application app) {
     drawarea.valign = Gtk.Align.FILL;
     frame.add(drawarea);
 
-    drawarea.events = Gdk.EventMask.EXPOSURE_MASK | Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK;
+    drawarea.events = Gdk.EventMask.EXPOSURE_MASK |
+                      Gdk.EventMask.BUTTON_PRESS_MASK |
+                      Gdk.EventMask.BUTTON_RELEASE_MASK;
     drawarea.configure_event.connect(on_drawarea_resize);
     drawarea.draw.connect(on_drawarea_draw);
     drawarea.button_press_event.connect(on_button_press);

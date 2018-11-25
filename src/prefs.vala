@@ -69,7 +69,7 @@ public void on_toggle_sound(Gtk.ToggleButton t) {
 
 void prefs_init() {
     p.do_sound = settings.get_boolean("sound");
-    p.level[PlayerID.PLAYER1] = Level.HUMAN;	        /* Human. Always human. */
+    p.level[PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
     p.level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
     p.keypress[Move.LEFT] = settings.get_int("key-left");
     p.keypress[Move.RIGHT] = settings.get_int("key-right");
@@ -88,11 +88,11 @@ public void settings_changed_cb(string key) {
         p.do_sound = settings.get_boolean("sound");
         ((Gtk.ToggleButton)checkbutton_sound).set_active(p.do_sound);
     } else if (key == "key-left") {
-        p.keypress[Move.LEFT] = settings.get_int( "key-left");
+        p.keypress[Move.LEFT] = settings.get_int("key-left");
     } else if (key == "key-right") {
-        p.keypress[Move.RIGHT] = settings.get_int( "key-right");
+        p.keypress[Move.RIGHT] = settings.get_int("key-right");
     } else if (key == "key-drop") {
-        p.keypress[Move.DROP] = settings.get_int( "key-drop");
+        p.keypress[Move.DROP] = settings.get_int("key-drop");
     } else if (key == "theme-id") {
         int val = sane_theme_id(settings.get_int("theme-id"));
         if (val != p.theme_id) {
@@ -116,7 +116,7 @@ public void on_select_opponent(Gtk.ComboBox w) {
     p.level[PlayerID.PLAYER2] = (Level)value;
     settings.set_int("opponent", value);
     scorebox_reset();
-    who_starts = PlayerID.PLAYER2;		/* This gets reversed in game_reset. */
+    who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
     game_reset();
 }
 

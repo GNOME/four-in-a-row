@@ -25,7 +25,7 @@ int boardsize = 0;
 int tilesize = 0;
 int offset[6];
 
-namespace Gfx{
+namespace Gfx {
     /* unscaled pixbufs */
     Gdk.Pixbuf pb_tileset_raw;
     Gdk.Pixbuf pb_bground_raw;

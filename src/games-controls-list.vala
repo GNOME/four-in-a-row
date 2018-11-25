@@ -142,7 +142,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
 
             model.get(iter, Columns.CONFKEY_COLUMN, actual_conf_key);
 
-            if (settings.get_int(actual_conf_key) == keyval){
+            if (settings.get_int(actual_conf_key) == keyval) {
                 unused_key = false;
 
                 if (conf_key == actual_conf_key) {
@@ -182,8 +182,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
             Columns.KEYCODE_COLUMN, keyval,
             Columns.KEYMODS_COLUMN, 0,
             Columns.DEFAULT_KEYCODE_COLUMN, default_keyval,
-            Columns.DEFAULT_KEYMODS_COLUMN, 0
-            );
+            Columns.DEFAULT_KEYMODS_COLUMN, 0);
 
     }
 
