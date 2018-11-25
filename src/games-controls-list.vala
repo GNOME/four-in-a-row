@@ -109,7 +109,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
                   Columns.CONFKEY_COLUMN, conf_key,
                   Columns.DEFAULT_KEYCODE_COLUMN, default_keyval);
 
-        if(conf_key == null)
+        if (conf_key == null)
             return;
 
         /* Note: the model is updated in the conf notification callback */
