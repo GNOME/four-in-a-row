@@ -667,9 +667,10 @@ class FourInARow : Gtk.Application {
         Gtk.show_about_dialog(window,
             name: _(Config.APPNAME_LONG),
             version: Config.VERSION,
-            copyright: "Copyright © 1999–2008 Tim Musson and David Neary" +
-                       "Copyright © 2014 Michael Catanzaro\nCopyright © 2018 Jacob Humphrey",
-            license_type: Gtk.License.GPL_2_0,
+            copyright: "Copyright © 1999–2008 Tim Musson and David Neary\n" +
+                       "Copyright © 2014 Michael Catanzaro\n" +
+                       "Copyright © 2018 Jacob Humphrey",
+            license_type: Gtk.License.GPL_3_0,
             comments: _("Connect four in a row to win"),
             authors: authors,
             documenters: documenters,
@@ -752,7 +753,7 @@ class FourInARow : Gtk.Application {
         section.append(_("_About"), "app.about");
         section.append(_("_Quit"), "app.quit");
 
-        app_menu = app_menu;
+        this.app_menu = app_menu;
 
         frame = builder.get_object("frame") as Gtk.AspectFrame;
 
