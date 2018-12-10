@@ -19,22 +19,44 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-Gtk.Widget drawarea;
-int[,] gboard;
+
 int boardsize = 0;
 int tilesize = 0;
 int offset[6];
 
-namespace Gfx {
+class GameBoardView : Gtk.DrawingArea {
     /* unscaled pixbufs */
     Gdk.Pixbuf pb_tileset_raw;
     Gdk.Pixbuf pb_bground_raw;
-
     /* scaled pixbufs */
     Gdk.Pixbuf pb_tileset;
     Gdk.Pixbuf pb_bground;
+    //public Gtk.DrawingArea drawarea;
 
-    int get_column(int xpos) {
+    static Once<GameBoardView> _instance;
+    public static GameBoardView instance {
+        get {
+            return _instance.once(() => {return new GameBoardView();});
+        }
+    }
+
+    public GameBoardView() {
+        Object();
+        /* set a min size to avoid pathological behavior of gtk when scaling down */
+        set_size_request(350, 350);
+        halign = Gtk.Align.FILL;
+        valign = Gtk.Align.FILL;
+
+        events = Gdk.EventMask.EXPOSURE_MASK |
+                          Gdk.EventMask.BUTTON_PRESS_MASK |
+                          Gdk.EventMask.BUTTON_RELEASE_MASK;
+        configure_event.connect(resize);
+        draw.connect(expose);
+        //button_press_event.connect(button_press_event);
+        key_press_event.connect(this.on_key_press);
+    }
+
+    public int get_column(int xpos) {
         /* Derive column from pixel position */
         int c = xpos / tilesize;
         if (c > 6)
@@ -45,28 +67,19 @@ namespace Gfx {
         return c;
     }
 
-    void draw_tile(int r, int c) {
-        drawarea.queue_draw_area(c*tilesize, r*tilesize, tilesize, tilesize);
+    public void draw_tile(int r, int c) {
+        queue_draw_area(c*tilesize, r*tilesize, tilesize, tilesize);
     }
 
-    void draw_all() {
-        drawarea.queue_draw_area(0, 0, boardsize, boardsize);
+    public void draw_all() {
+        queue_draw_area(0, 0, boardsize, boardsize);
     }
 
-    bool change_theme() {
-        if (!Gfx.load_pixmaps())
-            return false;
-
-        Gfx.refresh_pixmaps();
-        draw_all();
-        return true;
-    }
-
-    void resize(Gtk.Widget w) {
+    public bool resize(Gdk.EventConfigure e) {
         int width, height;
 
-        width = w.get_allocated_width();
-        height = w.get_allocated_height();
+        width = get_allocated_width();
+        height = get_allocated_height();
 
         boardsize = int.min(width, height);
         tilesize = boardsize / 7;
@@ -78,11 +91,21 @@ namespace Gfx {
         offset[Tile.PLAYER1_CURSOR] = tilesize * 4;
         offset[Tile.PLAYER2_CURSOR] = tilesize * 5;
 
-        Gfx.refresh_pixmaps();
+        refresh_pixmaps();
         draw_all();
+        return true;
     }
 
-    void expose(Cairo.Context cr) {
+     public bool change_theme() {
+        if (!load_pixmaps())
+            return false;
+
+        refresh_pixmaps();
+        GameBoardView.instance.draw_all();
+        return true;
+    }
+
+    public bool expose(Cairo.Context cr) {
         int r, c;
 
         /* draw the background */
@@ -94,11 +117,12 @@ namespace Gfx {
 
         for (r = 0; r < 7; r++) {
             for (c = 0; c < 7; c++) {
-                Gfx.paint_tile(cr, r, c);
+                paint_tile(cr, r, c);
             }
         }
 
         draw_grid(cr);
+        return false;
     }
 
     void draw_grid(Cairo.Context cr) {
@@ -145,7 +169,7 @@ namespace Gfx {
     void paint_tile(Cairo.Context cr, int r, int c) {
         int x = c * tilesize;
         int y = r * tilesize;
-        int tile = gboard[r,c];
+        int tile = Board.instance.get(r, c);
         int os = 0;
 
         if (tile == Tile.CLEAR && r != 0)
@@ -181,13 +205,13 @@ namespace Gfx {
         cr.restore();
     }
 
-    void refresh_pixmaps() {
+    public void refresh_pixmaps() {
         /* scale the pixbufs */
         pb_tileset = pb_tileset_raw.scale_simple(tilesize * 6, tilesize, Gdk.InterpType.BILINEAR);
         pb_bground = pb_bground_raw.scale_simple(boardsize, boardsize, Gdk.InterpType.BILINEAR);
     }
 
-    bool load_pixmaps() {
+    public bool load_pixmaps() {
         string fname;
         Gdk.Pixbuf pb_tileset_tmp;
         Gdk.Pixbuf pb_bground_tmp = null;
@@ -202,7 +226,7 @@ namespace Gfx {
                     p.theme_id = 0;
                     continue;
                 } else {
-                    Gfx.load_error(fname);
+                    load_error(fname);
                     return false;
                 }
             }
@@ -216,7 +240,7 @@ namespace Gfx {
             try {
                 pb_bground_tmp = new Gdk.Pixbuf.from_file(fname);
             } catch (Error e) {
-                Gfx.load_error(fname);
+                load_error(fname);
                 return false;
             }
         }
@@ -250,4 +274,49 @@ namespace Gfx {
 
         return true;
     }
+
+    protected override bool button_press_event(Gdk.EventButton e) {
+        int x, y;
+        if (application.player_active) {
+            return false;
+        }
+
+        if (application.gameover && timeout == 0) {
+            application.blink_winner(2);
+        } else if (application.is_player_human() && timeout == 0) {
+            get_window().get_device_position(e.device, out x, out y, null);
+            application.game_process_move(GameBoardView.instance.get_column(x));
+        }
+
+        return true;
+    }
+
+    bool on_key_press(Gtk.Widget  w, Gdk.EventKey  e) {
+        if ((application.player_active) || timeout != 0 ||
+                (e.keyval != p.keypress[Move.LEFT] &&
+                e.keyval != p.keypress[Move.RIGHT] &&
+                e.keyval != p.keypress[Move.DROP])) {
+            return false;
+        }
+
+        if (application.gameover) {
+            application.blink_winner(2);
+            return true;
+        }
+
+        if (e.keyval == p.keypress[Move.LEFT] && column != 0) {
+            column_moveto--;
+            application.move_cursor(column_moveto);
+        } else if (e.keyval == p.keypress[Move.RIGHT] && column < 6) {
+            column_moveto++;
+            application.move_cursor(column_moveto);
+        } else if (e.keyval == p.keypress[Move.DROP]) {
+            application.game_process_move(column);
+        }
+        return true;
+    }
+
+
 }
+
+

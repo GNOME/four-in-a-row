@@ -9,6 +9,8 @@ four_in_a_row_SOURCES = \
 		prefs.vala \
 		gfx.vala \
 		theme.vala \
+		scorebox.vala \
+		game_board.vala \
 		config.vapi
 
 four_in_a_row_CPPFLAGS = \
