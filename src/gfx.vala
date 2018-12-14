@@ -50,10 +50,10 @@ class GameBoardView : Gtk.DrawingArea {
         events = Gdk.EventMask.EXPOSURE_MASK |
                           Gdk.EventMask.BUTTON_PRESS_MASK |
                           Gdk.EventMask.BUTTON_RELEASE_MASK;
-        configure_event.connect(resize);
-        draw.connect(expose);
+        //configure_event.connect(resize);
+        //draw.connect(expose);
         //button_press_event.connect(button_press_event);
-        key_press_event.connect(this.on_key_press);
+        //key_press_event.connect(this.on_key_press);
     }
 
     public int get_column(int xpos) {
@@ -75,7 +75,7 @@ class GameBoardView : Gtk.DrawingArea {
         queue_draw_area(0, 0, boardsize, boardsize);
     }
 
-    public bool resize(Gdk.EventConfigure e) {
+    protected override bool configure_event(Gdk.EventConfigure e) {
         int width, height;
 
         width = get_allocated_width();
@@ -105,7 +105,7 @@ class GameBoardView : Gtk.DrawingArea {
         return true;
     }
 
-    public bool expose(Cairo.Context cr) {
+    protected override bool draw(Cairo.Context cr) {
         int r, c;
 
         /* draw the background */
@@ -281,9 +281,9 @@ class GameBoardView : Gtk.DrawingArea {
             return false;
         }
 
-        if (application.gameover && timeout == 0) {
+        if (application.gameover && application.timeout == 0) {
             application.blink_winner(2);
-        } else if (application.is_player_human() && timeout == 0) {
+        } else if (application.is_player_human() && application.timeout == 0) {
             get_window().get_device_position(e.device, out x, out y, null);
             application.game_process_move(GameBoardView.instance.get_column(x));
         }
@@ -291,8 +291,8 @@ class GameBoardView : Gtk.DrawingArea {
         return true;
     }
 
-    bool on_key_press(Gtk.Widget  w, Gdk.EventKey  e) {
-        if ((application.player_active) || timeout != 0 ||
+    protected override bool key_press_event(Gdk.EventKey  e) {
+        if ((application.player_active) || application.timeout != 0 ||
                 (e.keyval != p.keypress[Move.LEFT] &&
                 e.keyval != p.keypress[Move.RIGHT] &&
                 e.keyval != p.keypress[Move.DROP])) {
@@ -304,19 +304,17 @@ class GameBoardView : Gtk.DrawingArea {
             return true;
         }
 
-        if (e.keyval == p.keypress[Move.LEFT] && column != 0) {
-            column_moveto--;
-            application.move_cursor(column_moveto);
-        } else if (e.keyval == p.keypress[Move.RIGHT] && column < 6) {
-            column_moveto++;
-            application.move_cursor(column_moveto);
+        if (e.keyval == p.keypress[Move.LEFT] && application.column != 0) {
+            application.column_moveto--;
+            application.move_cursor(application.column_moveto);
+        } else if (e.keyval == p.keypress[Move.RIGHT] && application.column < 6) {
+            application.column_moveto++;
+            application.move_cursor(application.column_moveto);
         } else if (e.keyval == p.keypress[Move.DROP]) {
-            application.game_process_move(column);
+            application.game_process_move(application.column);
         }
         return true;
     }
-
-
 }
 
 

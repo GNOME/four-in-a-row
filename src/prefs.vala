@@ -20,13 +20,20 @@
  */
 
 class Prefs {
-    public bool do_sound;
+    bool _do_sound;
+    public bool do_sound {
+        get {
+            return settings.get_boolean("sound");
+        }
+        private set {
+            settings.set_boolean("sound", value);
+        }
+    }
     public int theme_id;
     public Level level[2];
     public int keypress[3];
 
     public Prefs() {
-        do_sound = settings.get_boolean("sound");
         level[PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
         level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
         keypress[Move.LEFT] = settings.get_int("key-left");
@@ -49,7 +56,7 @@ class Prefs {
 
     public void settings_changed_cb(string key) {
         if (key == "sound") {
-            p.do_sound = settings.get_boolean("sound");
+            //p.do_sound = settings.get_boolean("sound");
             ((Gtk.ToggleButton)checkbutton_sound).set_active(p.do_sound);
         } else if (key == "key-left") {
             p.keypress[Move.LEFT] = settings.get_int("key-left");
@@ -76,6 +83,10 @@ class Prefs {
         if (level[PlayerID.PLAYER1] != Level.HUMAN || level[PlayerID.PLAYER2] != Level.HUMAN)
             return 1;
         return 2;
+    }
+
+    public void on_toggle_sound(Gtk.ToggleButton t) {
+        p.do_sound = t.get_active();
     }
 
 }
@@ -111,10 +122,6 @@ public void on_select_theme(Gtk.ComboBox combo) {
     settings.set_int("theme-id", id);
 }
 
-public void on_toggle_sound(Gtk.ToggleButton t) {
-    p.do_sound = t.get_active();
-    settings.set_boolean("sound", t.get_active());
-}
 
 public void on_select_opponent(Gtk.ComboBox w) {
     Gtk.TreeIter iter;
@@ -125,8 +132,8 @@ public void on_select_opponent(Gtk.ComboBox w) {
 
     p.level[PlayerID.PLAYER2] = (Level)value;
     settings.set_int("opponent", value);
-    scorebox.reset();
-    who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
+    Scorebox.instance.reset();
+    application.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
     application.game_reset();
 }
 
@@ -227,10 +234,10 @@ public void prefsbox_open() {
     checkbutton_sound.set_active(p.do_sound);
 
     /* connect signals */
-
+    prefsbox.response.connect(() => {prefsbox.hide();});
     combobox_theme.changed.connect(on_select_theme);
 
-    checkbutton_sound.toggled.connect(on_toggle_sound);
+    checkbutton_sound.toggled.connect(p.on_toggle_sound);
 
     prefsbox.show_all();
 }

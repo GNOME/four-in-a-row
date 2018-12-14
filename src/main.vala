@@ -76,6 +76,25 @@ public enum SoundID {
 class FourInARow : Gtk.Application {
     public bool gameover;
     public bool player_active;
+    PlayerID player;
+    PlayerID winner;
+    public PlayerID who_starts;
+    public int score[3];
+    static AnimID anim;
+    char vstr[53];
+    int moves;
+    public int column;
+    public int column_moveto;
+    int row;
+    int row_dropto;
+    int blink_r1 = 0;
+    int blink_c1 = 0;
+    int blink_r2 = 0;
+    int blink_c2 = 0;
+    int blink_t = 0;
+    int blink_n = 0;
+    bool blink_on = false;
+    public uint timeout = 0;
 
     const ActionEntry app_entries[] = {
         {"scores", on_game_scores},
@@ -215,7 +234,7 @@ class FourInARow : Gtk.Application {
             window.show_all();
             GameBoardView.instance.refresh_pixmaps();
             GameBoardView.instance.draw_all();
-            scorebox.update();       /* update visible player descriptions */
+            Scorebox.instance.update();       /* update visible player descriptions */
             prompt_player();
             game_reset();
         }
@@ -349,7 +368,7 @@ class FourInARow : Gtk.Application {
 
         if (gameover) {
             score[winner]++;
-            scorebox.update();
+            Scorebox.instance.update();
             prompt_player();
         } else {
             swap_player();
@@ -535,14 +554,8 @@ class FourInARow : Gtk.Application {
     }
 
     void on_game_scores(SimpleAction action, Variant? parameter) {
-        if (scorebox != null) {
-            scorebox.present();
+            Scorebox.instance.present();
             return;
-        }
-
-        scorebox = new Scorebox();
-        scorebox.show_all();
-        scorebox.update();
     }
 
     void on_game_exit(SimpleAction action, Variant? parameter) {
@@ -565,12 +578,12 @@ class FourInARow : Gtk.Application {
                 break;
             case AnimID.HINT:
             case AnimID.MOVE:
-                if (column < column_moveto) {
-                    application.move(column + 1);
-                } else if (column > column_moveto) {
-                    application.move(column - 1);
+                if (application.column < application.column_moveto) {
+                    application.move(application.column + 1);
+                } else if (application.column > application.column_moveto) {
+                    application.move(application.column - 1);
                 } else {
-                    timeout = 0;
+                    application.timeout = 0;
                     if (anim == AnimID.MOVE) {
                         anim = AnimID.NONE;
                         application.process_move2(c);
@@ -581,25 +594,26 @@ class FourInARow : Gtk.Application {
                 }
                 break;
             case AnimID.DROP:
-                if (row < row_dropto) {
+                if (application.row < application.row_dropto) {
                     application.drop();
                 } else {
                     anim = AnimID.NONE;
-                    timeout = 0;
+                    application.timeout = 0;
                     application.process_move3(c);
                     return false;
                 }
                 break;
             case AnimID.BLINK:
-                application.draw_line(blink_r1, blink_c1, blink_r2, blink_c2, blink_on ? blink_t
-                    : Tile.CLEAR);
-                blink_n--;
-                if (blink_n <= 0 && blink_on) {
+                application.draw_line(application.blink_r1, application.blink_c1,
+                                      application.blink_r2, application.blink_c2,
+                                      application.blink_on ? application.blink_t : Tile.CLEAR);
+                application.blink_n--;
+                if (application.blink_n <= 0 && application.blink_on) {
                     anim = AnimID.NONE;
-                    timeout = 0;
+                    application.timeout = 0;
                     return false;
                 }
-                blink_on = !blink_on;
+                application.blink_on = !application.blink_on;
                 break;
             }
             return true;
@@ -619,7 +633,7 @@ class FourInARow : Gtk.Application {
 
         if (gameover) {
             score[winner]--;
-            scorebox.update();
+            Scorebox.instance.update();
             gameover = false;
             prompt_player();
         } else {
@@ -772,27 +786,9 @@ SimpleAction new_game_action;
 
 FourInARow? application;
 Gtk.ApplicationWindow window;
-Scorebox? scorebox = null;
+//Scorebox? scorebox = null;
 
-PlayerID player;
-PlayerID winner;
-PlayerID who_starts;
-int score[3];
-AnimID anim;
-char vstr[53];
-int moves;
-int column;
-int column_moveto;
-int row;
-int row_dropto;
-int blink_r1 = 0;
-int blink_c1 = 0;
-int blink_r2 = 0;
-int blink_c2 = 0;
-int blink_t = 0;
-int blink_n = 0;
-bool blink_on = false;
-uint timeout = 0;
+
 
 public int main(string[] argv) {
     Intl.setlocale();
