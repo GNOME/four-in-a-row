@@ -79,6 +79,11 @@ class FourInARow : Gtk.Application {
     PlayerID player;
     PlayerID winner;
     public PlayerID who_starts;
+    /**
+     * socre:
+     *
+     * The scores for the current instance (Player 1, Player 2, Draw)
+     */
     public int score[3];
     static AnimID anim;
     char vstr[53];
