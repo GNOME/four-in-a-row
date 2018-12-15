@@ -75,7 +75,7 @@ public enum SoundID {
 FourInARow? application;
 Gtk.ApplicationWindow window;
 Settings settings;
-Prefs p;
+//Prefs p;
 
 public int main(string[] argv) {
     Intl.setlocale();
@@ -99,7 +99,7 @@ public int main(string[] argv) {
 
     Environment.set_application_name(_(APPNAME_LONG));
 
-    p = new Prefs();
+
     application.game_init();
 
     if (!GameBoardView.instance.load_pixmaps())

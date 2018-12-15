@@ -124,7 +124,7 @@ class GameBoardView : Gtk.DrawingArea {
         int i;
         Gdk.RGBA color = Gdk.RGBA();
 
-        color.parse(theme[p.theme_id].grid_color);
+        color.parse(theme[Prefs.instance.theme_id].grid_color);
         Gdk.cairo_set_source_rgba(cr, color);
         cr.set_operator(Cairo.Operator.SOURCE);
         cr.set_line_width(1);
@@ -212,12 +212,12 @@ class GameBoardView : Gtk.DrawingArea {
 
         /* Try the theme pixmaps, fallback to the default and then give up */
         while (true) {
-            fname = Path.build_filename(Config.DATA_DIRECTORY, theme[p.theme_id].fname_tileset, null);
+            fname = Path.build_filename(Config.DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_tileset, null);
             try {
                 pb_tileset_tmp = new Gdk.Pixbuf.from_file(fname);
             } catch (Error e) {
-                if (p.theme_id != 0) {
-                    p.theme_id = 0;
+                if (Prefs.instance.theme_id != 0) {
+                    Prefs.instance.theme_id = 0;
                     continue;
                 } else {
                     load_error(fname);
@@ -229,8 +229,8 @@ class GameBoardView : Gtk.DrawingArea {
 
         pb_tileset_raw = pb_tileset_tmp;
 
-        if (theme[p.theme_id].fname_bground != null) {
-            fname = Path.build_filename(Config.DATA_DIRECTORY, theme[p.theme_id].fname_bground, null);
+        if (theme[Prefs.instance.theme_id].fname_bground != null) {
+            fname = Path.build_filename(Config.DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_bground, null);
             try {
                 pb_bground_tmp = new Gdk.Pixbuf.from_file(fname);
             } catch (Error e) {

@@ -87,8 +87,8 @@ class FourInARow : Gtk.Application {
         gameover = false;
         prompt_player();
         if (!is_player_human()) {
-            vstr[0] = player == PLAYER1 ? vlevel[p.level[PlayerID.PLAYER1]]
-                : vlevel[p.level[PlayerID.PLAYER2]];
+            vstr[0] = player == PLAYER1 ? vlevel[Prefs.instance.level[PlayerID.PLAYER1]]
+                : vlevel[Prefs.instance.level[PlayerID.PLAYER2]];
             game_process_move(playgame((string)vstr) - 1);
         }
     }
@@ -215,7 +215,7 @@ class FourInARow : Gtk.Application {
     // }
 
     public void prompt_player() {
-        int players = p.get_n_human_players();
+        int players = Prefs.instance.get_n_human_players();
         bool human = is_player_human();
         string who;
         string str;
@@ -290,7 +290,7 @@ class FourInARow : Gtk.Application {
     public void play_sound(SoundID id) {
         string name;
 
-        if (!p.do_sound)
+        if (!Prefs.instance.do_sound)
             return;
 
         switch (id) {
@@ -343,8 +343,8 @@ class FourInARow : Gtk.Application {
         } else {
             swap_player();
             if (!is_player_human()) {
-                vstr[0] = player == PlayerID.PLAYER1 ? vlevel[p.level[PlayerID.PLAYER1]]
-                    : vlevel[p.level[PlayerID.PLAYER2]];
+                vstr[0] = player == PlayerID.PLAYER1 ? vlevel[Prefs.instance.level[PlayerID.PLAYER1]]
+                    : vlevel[Prefs.instance.level[PlayerID.PLAYER2]];
                 c = playgame((string)vstr) - 1;
                 if (c < 0)
                     gameover = true;
@@ -370,8 +370,8 @@ class FourInARow : Gtk.Application {
     }
 
     public bool is_player_human() {
-        return player == PLAYER1 ? p.level[PlayerID.PLAYER1] == Level.HUMAN
-            : p.level[PlayerID.PLAYER2] == Level.HUMAN;
+        return player == PLAYER1 ? Prefs.instance.level[PlayerID.PLAYER1] == Level.HUMAN
+            : Prefs.instance.level[PlayerID.PLAYER2] == Level.HUMAN;
     }
 
     public void process_move2(int c) {
@@ -618,7 +618,7 @@ class FourInARow : Gtk.Application {
         Board.instance.set(r, c, Tile.CLEAR);
         GameBoardView.instance.draw_tile(r, c);
 
-        if (p.get_n_human_players() == 1 && !is_player_human()) {
+        if (Prefs.instance.get_n_human_players() == 1 && !is_player_human()) {
             if (moves > 0) {
                 c = vstr[moves] - '0' - 1;
                 r = Board.instance.first_empty_row(c) + 1;
@@ -682,7 +682,7 @@ class FourInARow : Gtk.Application {
         if (Board.instance.is_line_at((Tile)player, row, column)) {
             gameover = true;
             winner = player;
-            switch (p.get_n_human_players()) {
+            switch (Prefs.instance.get_n_human_players()) {
             case 1:
                 play_sound(is_player_human() ? SoundID.YOU_WIN : SoundID.I_WIN);
                 break;
@@ -757,9 +757,9 @@ class FourInARow : Gtk.Application {
 
     bool on_key_press(Gdk.EventKey  e) {
         if ((player_active) || timeout != 0 ||
-                (e.keyval != p.keypress[Move.LEFT] &&
-                e.keyval != p.keypress[Move.RIGHT] &&
-                e.keyval != p.keypress[Move.DROP])) {
+                (e.keyval != Prefs.instance.keypress[Move.LEFT] &&
+                e.keyval != Prefs.instance.keypress[Move.RIGHT] &&
+                e.keyval != Prefs.instance.keypress[Move.DROP])) {
             return false;
         }
 
@@ -768,13 +768,13 @@ class FourInARow : Gtk.Application {
             return true;
         }
 
-        if (e.keyval == p.keypress[Move.LEFT] && column != 0) {
+        if (e.keyval == Prefs.instance.keypress[Move.LEFT] && column != 0) {
             column_moveto--;
             move_cursor(column_moveto);
-        } else if (e.keyval == p.keypress[Move.RIGHT] && column < 6) {
+        } else if (e.keyval == Prefs.instance.keypress[Move.RIGHT] && column < 6) {
             column_moveto++;
             move_cursor(column_moveto);
-        } else if (e.keyval == p.keypress[Move.DROP]) {
+        } else if (e.keyval == Prefs.instance.keypress[Move.DROP]) {
             game_process_move(column);
         }
         return true;

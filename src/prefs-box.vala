@@ -63,19 +63,19 @@ class PrefsBox : Gtk.Dialog {
         combobox.set_model(model);
         model.append(out iter);
         model.set(iter, 0, _("Human"), 1, Level.HUMAN);
-        if (p.level[PlayerID.PLAYER2] == Level.HUMAN)
+        if (Prefs.instance.level[PlayerID.PLAYER2] == Level.HUMAN)
             combobox.set_active_iter(iter);
         model.append(out iter);
         model.set(iter, 0, _("Level one"), 1, Level.WEAK);
-        if (p.level[PlayerID.PLAYER2] == Level.WEAK)
+        if (Prefs.instance.level[PlayerID.PLAYER2] == Level.WEAK)
             combobox.set_active_iter(iter);
         model.append(out iter);
         model.set(iter, 0, _("Level two"), 1, Level.MEDIUM);
-        if (p.level[PlayerID.PLAYER2] == Level.MEDIUM)
+        if (Prefs.instance.level[PlayerID.PLAYER2] == Level.MEDIUM)
             combobox.set_active_iter(iter);
         model.append(out iter);
         model.set(iter, 0, _("Level thre"), 1, Level.STRONG);
-        if (p.level[PlayerID.PLAYER2] == Level.STRONG)
+        if (Prefs.instance.level[PlayerID.PLAYER2] == Level.STRONG)
             combobox.set_active_iter(iter);
 
         combobox.changed.connect(on_select_opponent);
@@ -107,16 +107,16 @@ class PrefsBox : Gtk.Dialog {
         notebook.append_page(controls_list, label);
 
         /* fill in initial values */
-        combobox_theme.set_active(p.theme_id);
-        checkbutton_sound.set_active(p.do_sound);
+        combobox_theme.set_active(Prefs.instance.theme_id);
+        checkbutton_sound.set_active(Prefs.instance.do_sound);
 
         /* connect signals */
         combobox_theme.changed.connect(on_select_theme);
-        checkbutton_sound.toggled.connect(p.on_toggle_sound);
-        p.theme_changed.connect((theme_id) => {
+        checkbutton_sound.toggled.connect(Prefs.instance.on_toggle_sound);
+        Prefs.instance.theme_changed.connect((theme_id) => {
             combobox_theme.set_active(theme_id);
         });
-        p.sound_changed.connect((sound) => {
+        Prefs.instance.sound_changed.connect((sound) => {
             checkbutton_sound.set_active(sound);
         });
     }
@@ -138,7 +138,7 @@ class PrefsBox : Gtk.Dialog {
         w.get_active_iter(out iter);
         w.get_model().get(iter, 1, out value);
 
-        p.level[PlayerID.PLAYER2] = (Level)value;
+        Prefs.instance.level[PlayerID.PLAYER2] = (Level)value;
         settings.set_int("opponent", value);
         Scorebox.instance.reset();
         global::application.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */

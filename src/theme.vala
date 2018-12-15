@@ -44,20 +44,20 @@ string theme_get_title(int id) {
 
 string theme_get_player_turn(PlayerID who) {
     if (who == PlayerID.PLAYER1)
-        return theme[p.theme_id].player1_turn;
-    return theme[p.theme_id].player2_turn;
+        return theme[Prefs.instance.theme_id].player1_turn;
+    return theme[Prefs.instance.theme_id].player2_turn;
 }
 
 string theme_get_player_win(PlayerID who) {
     if (who == PlayerID.PLAYER1)
-        return theme[p.theme_id].player1_win;
-    return theme[p.theme_id].player2_win;
+        return theme[Prefs.instance.theme_id].player1_win;
+    return theme[Prefs.instance.theme_id].player2_win;
 }
 
 string theme_get_player(PlayerID who) {
     if (who == PlayerID.PLAYER1)
-        return theme[p.theme_id].player1;
-    return theme[p.theme_id].player2;
+        return theme[Prefs.instance.theme_id].player1;
+    return theme[Prefs.instance.theme_id].player2;
 }
 
 const Theme theme[] = {

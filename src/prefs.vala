@@ -33,6 +33,13 @@ class Prefs {
     public Level level[2];
     public int keypress[3];
 
+    static Once<Prefs> _instance;
+    public static Prefs instance { get {
+        return _instance.once(() => {
+            return new Prefs();
+        });
+    }}
+
     public Prefs() {
         level[PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
         level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
@@ -101,7 +108,7 @@ class Prefs {
     }
 
     public void on_toggle_sound(Gtk.ToggleButton t) {
-        p.do_sound = t.get_active();
+        do_sound = t.get_active();
     }
 
 }

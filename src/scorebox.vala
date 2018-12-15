@@ -102,8 +102,8 @@ class Scorebox : Gtk.Dialog {
      *
      * updates the scorebox with the latest scores
      */
-    public void update(int[] scores) {        if (p.get_n_human_players() == 1) {
-            if (p.level[PlayerID.PLAYER1] == Level.HUMAN) {
+    public void update(int[] scores) {        if (Prefs.instance.get_n_human_players() == 1) {
+            if (Prefs.instance.level[PlayerID.PLAYER1] == Level.HUMAN) {
                 label_name[PlayerID.PLAYER1].set_text(_("You:"));
 				label_name[PlayerID.PLAYER2].label = _("Me:");
             } else {
