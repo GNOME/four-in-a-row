@@ -16,7 +16,7 @@ class Scorebox : Gtk.Dialog {
             return _instance.once(() => {
                 var scorebox = new Scorebox();
                 //scorebox.show_all();
-                scorebox.update();
+                //scorebox.update();
                 return scorebox;
             });
         }
@@ -64,7 +64,7 @@ class Scorebox : Gtk.Dialog {
         label_name[PlayerID.PLAYER2].yalign = 0.5f;
 
         label_score[PlayerID.PLAYER2] = new Gtk.Label(null);
-        grid2.attach(label_score[PlayerID.PLAYER2], 1, 0, 1, 1);
+        grid2.attach(label_score[PlayerID.PLAYER2], 1, 1, 1, 1);
         label_score[PlayerID.PLAYER2].set_xalign(0);
         label_score[PlayerID.PLAYER2].set_yalign(0.5f);
 
@@ -74,7 +74,7 @@ class Scorebox : Gtk.Dialog {
         label_name[PlayerID.NOBODY].set_yalign(0.5f);
 
         label_score[PlayerID.NOBODY] = new Gtk.Label(null);
-        grid2.attach(label_score[PlayerID.NOBODY], 1, 0, 1, 1);
+        grid2.attach(label_score[PlayerID.NOBODY], 1, 2, 1, 1);
         label_score[PlayerID.NOBODY].set_xalign(0);
         label_score[PlayerID.NOBODY].set_yalign(0.5f);
         grid.show_all();
@@ -87,23 +87,25 @@ class Scorebox : Gtk.Dialog {
      *
      * updates the scorebox with the latest scores
      */
-    public void update() {
+    public void update(int[] scores) {
+		print("%i", p.get_n_human_players());
         if (p.get_n_human_players() == 1) {
             if (p.level[PlayerID.PLAYER1] == Level.HUMAN) {
-                label_score[PlayerID.PLAYER1].set_text(_("You:"));
-                label_score[PlayerID.PLAYER2].label = _("Me:");
+				print("hi");
+                label_name[PlayerID.PLAYER1].set_text(_("You:"));
+				label_name[PlayerID.PLAYER2].label = _("Me:");
             } else {
-                label_score[PlayerID.PLAYER2].set_text(_("You:"));
-                label_score[PlayerID.PLAYER1].label = _("Me:");
+                label_name[PlayerID.PLAYER2].set_text(_("You:"));
+                label_name[PlayerID.PLAYER1].label = _("Me:");
             }
         } else {
             label_name[PlayerID.PLAYER1].label = theme_get_player(PlayerID.PLAYER1);
             label_name[PlayerID.PLAYER2].label = theme_get_player(PlayerID.PLAYER2);
         }
-
-        label_score[PlayerID.PLAYER1].label = application.score[PlayerID.PLAYER1].to_string();
-        label_score[PlayerID.PLAYER2].label = application.score[PlayerID.PLAYER2].to_string();
-        label_score[PlayerID.NOBODY].label = application.score[PlayerID.NOBODY].to_string();
+		print("%i", scores[1]);
+        label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
+        label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();
+        label_score[PlayerID.NOBODY].label = scores[PlayerID.NOBODY].to_string();
 
     }
 
@@ -111,6 +113,6 @@ class Scorebox : Gtk.Dialog {
         application.score[PlayerID.PLAYER1] = 0;
         application.score[PlayerID.PLAYER2] = 0;
         application.score[PlayerID.NOBODY] = 0;
-        update();
+        //update();
     }
 }

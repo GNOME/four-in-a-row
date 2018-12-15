@@ -179,7 +179,7 @@ class FourInARow : Gtk.Application {
             window.show_all();
             GameBoardView.instance.refresh_pixmaps();
             GameBoardView.instance.draw_all();
-            Scorebox.instance.update();       /* update visible player descriptions */
+            Scorebox.instance.update(score);       /* update visible player descriptions */
             prompt_player();
             game_reset();
         }
@@ -313,7 +313,7 @@ class FourInARow : Gtk.Application {
 
         if (gameover) {
             score[winner]++;
-            Scorebox.instance.update();
+            Scorebox.instance.update(score);
             prompt_player();
         } else {
             swap_player();
@@ -582,7 +582,7 @@ class FourInARow : Gtk.Application {
 
         if (gameover) {
             score[winner]--;
-            Scorebox.instance.update();
+            Scorebox.instance.update(score);
             gameover = false;
             prompt_player();
         } else {
