@@ -111,4 +111,9 @@ class Scorebox : Gtk.Dialog {
         application.score[PlayerID.NOBODY] = 0;
         //update();
     }
+
+    public override bool delete_event(Gdk.EventAny event) {
+        hide();
+        return true;
+    }
 }
