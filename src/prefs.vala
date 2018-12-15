@@ -54,25 +54,40 @@ class Prefs {
             return val;
     }
 
+    /**
+     * theme_changed:
+     *
+     * emmited when the theme is changed
+     *
+     * @theme_id: The new theme_id
+     */
+    public signal void theme_changed(int theme_id);
+
+    /**
+     * sound_changed:
+     *
+     * emmited when the sound fx are enabled/disabled
+     *
+     * @sound: true if sound is enabled
+     */
+    public signal void sound_changed(bool sound);
+
     public void settings_changed_cb(string key) {
         if (key == "sound") {
-            //p.do_sound = settings.get_boolean("sound");
-            ((Gtk.ToggleButton)checkbutton_sound).set_active(p.do_sound);
+            sound_changed(do_sound);
         } else if (key == "key-left") {
-            p.keypress[Move.LEFT] = settings.get_int("key-left");
+            keypress[Move.LEFT] = settings.get_int("key-left");
         } else if (key == "key-right") {
-            p.keypress[Move.RIGHT] = settings.get_int("key-right");
+            keypress[Move.RIGHT] = settings.get_int("key-right");
         } else if (key == "key-drop") {
-            p.keypress[Move.DROP] = settings.get_int("key-drop");
+            keypress[Move.DROP] = settings.get_int("key-drop");
         } else if (key == "theme-id") {
             int val = sane_theme_id(settings.get_int("theme-id"));
-            if (val != p.theme_id) {
-                p.theme_id = val;
+            if (val != theme_id) {
+                theme_id = val;
                 if (!GameBoardView.instance.change_theme())
                     return;
-                if (prefsbox == null)
-                    return;
-                combobox_theme.set_active(p.theme_id);
+                theme_changed(theme_id);
             }
         }
     }
@@ -93,9 +108,8 @@ class Prefs {
 
 Settings settings;
 PrefsBox? prefsbox = null;
-Gtk.ComboBox combobox;
-Gtk.ComboBoxText combobox_theme;
-Gtk.CheckButton checkbutton_sound;
+
+
 /*
  * Needed to force vala to include headers in the correct order.
  * See https://gitlab.gnome.org/GNOME/vala/issues/98
@@ -116,28 +130,6 @@ public Level sane_player_level(Level val) {
         return Level.STRONG;
     return val;
 }
-
-public void on_select_theme(Gtk.ComboBox combo) {
-    int id = combo.get_active();
-    settings.set_int("theme-id", id);
-}
-
-
-public void on_select_opponent(Gtk.ComboBox w) {
-    Gtk.TreeIter iter;
-    int value;
-
-    w.get_active_iter(out iter);
-    w.get_model().get(iter, 1, out value);
-
-    p.level[PlayerID.PLAYER2] = (Level)value;
-    settings.set_int("opponent", value);
-    Scorebox.instance.reset();
-    application.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
-    application.game_reset();
-}
-
-
 
 public void prefsbox_open() {
     Gtk.Grid grid;

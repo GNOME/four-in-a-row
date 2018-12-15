@@ -19,7 +19,11 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 class PrefsBox : Gtk.Dialog {
-    public Gtk.Notebook notebook;
+    Gtk.Notebook notebook;
+    Gtk.ComboBox combobox;
+    Gtk.ComboBoxText combobox_theme;
+    Gtk.ToggleButton checkbutton_sound;
+
     public PrefsBox(Gtk.Window parent) {
         Gtk.Grid grid;
         GamesControlsList controls_list;
@@ -109,10 +113,35 @@ class PrefsBox : Gtk.Dialog {
         /* connect signals */
         combobox_theme.changed.connect(on_select_theme);
         checkbutton_sound.toggled.connect(p.on_toggle_sound);
+        p.theme_changed.connect((theme_id) => {
+            combobox_theme.set_active(theme_id);
+        });
+        p.sound_changed.connect((sound) => {
+            checkbutton_sound.set_active(sound);
+        });
     }
 
     protected override bool delete_event(Gdk.EventAny event) {
         hide();
         return true;
+    }
+
+    void on_select_theme(Gtk.ComboBox combo) {
+        int id = combo.get_active();
+        settings.set_int("theme-id", id);
+    }
+
+    void on_select_opponent(Gtk.ComboBox w) {
+        Gtk.TreeIter iter;
+        int value;
+
+        w.get_active_iter(out iter);
+        w.get_model().get(iter, 1, out value);
+
+        p.level[PlayerID.PLAYER2] = (Level)value;
+        settings.set_int("opponent", value);
+        Scorebox.instance.reset();
+        global::application.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
+        global::application.game_reset();
     }
 }
