@@ -235,6 +235,10 @@ public void prefsbox_open() {
 
     /* connect signals */
     prefsbox.response.connect(() => {prefsbox.hide();});
+    prefsbox.delete_event.connect((event) => {
+        prefsbox.hide();
+        return true;
+    });
     combobox_theme.changed.connect(on_select_theme);
 
     checkbutton_sound.toggled.connect(p.on_toggle_sound);
