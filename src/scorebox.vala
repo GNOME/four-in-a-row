@@ -24,19 +24,19 @@ class Scorebox : Gtk.Dialog {
     Gtk.Label label_score[3];
     public new FourInARow application;
 
-    static Once<Scorebox> _instance;
-    public static Scorebox instance {
-        get {
-            return _instance.once(() => {
-                var scorebox = new Scorebox();
+    // static Once<Scorebox> _instance;
+    // public static Scorebox insstance {
+    //     get {
+    //         return _instance.once(() => {
+    //             var scorebox = new Scorebox();
                 //scorebox.show_all();
                 //scorebox.update();
-                return scorebox;
-            });
-        }
-    }
+    //             return scorebox;
+    //         });
+    //     }
+    // }
 
-    Scorebox() {
+    public Scorebox(FourInARow application) {
         Object(title: _("Scores"),
                //parent: window,
                use_header_bar: 1,
@@ -94,7 +94,7 @@ class Scorebox : Gtk.Dialog {
         label_score[PlayerID.NOBODY].set_yalign(0.5f);
         grid.show_all();
 
-        application = global::application;
+        this.application = application;
     }
 
     /**
@@ -102,10 +102,11 @@ class Scorebox : Gtk.Dialog {
      *
      * updates the scorebox with the latest scores
      */
-    public void update(int[] scores) {        if (Prefs.instance.get_n_human_players() == 1) {
+    public void update(int[] scores) {
+        if (Prefs.instance.get_n_human_players() == 1) {
             if (Prefs.instance.level[PlayerID.PLAYER1] == Level.HUMAN) {
                 label_name[PlayerID.PLAYER1].set_text(_("You:"));
-				label_name[PlayerID.PLAYER2].label = _("Me:");
+                label_name[PlayerID.PLAYER2].label = _("Me:");
             } else {
                 label_name[PlayerID.PLAYER2].set_text(_("You:"));
                 label_name[PlayerID.PLAYER1].label = _("Me:");

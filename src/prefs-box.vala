@@ -140,7 +140,6 @@ class PrefsBox : Gtk.Dialog {
 
         Prefs.instance.level[PlayerID.PLAYER2] = (Level)value;
         Prefs.instance.settings.set_int("opponent", value);
-        Scorebox.instance.reset();
         global::application.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
         global::application.game_reset();
     }

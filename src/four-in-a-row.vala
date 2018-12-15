@@ -31,6 +31,7 @@ class FourInARow : Gtk.Application {
     PlayerID winner;
     public PlayerID who_starts;
     PrefsBox? prefsbox = null;
+    Scorebox scorebox;
     /**
      * socre:
      *
@@ -63,6 +64,8 @@ class FourInARow : Gtk.Application {
 
     public void game_reset() {
         stop_anim();
+
+        scorebox.reset();
 
         undo_action.set_enabled(false);
         hint_action.set_enabled(false);
@@ -204,7 +207,7 @@ class FourInARow : Gtk.Application {
             window.show_all();
             GameBoardView.instance.refresh_pixmaps();
             GameBoardView.instance.draw_all();
-            Scorebox.instance.update(score);       /* update visible player descriptions */
+            scorebox.update(score);       /* update visible player descriptions */
             prompt_player();
             game_reset();
         }
@@ -338,7 +341,7 @@ class FourInARow : Gtk.Application {
 
         if (gameover) {
             score[winner]++;
-            Scorebox.instance.update(score);
+            scorebox.update(score);
             prompt_player();
         } else {
             swap_player();
@@ -526,7 +529,7 @@ class FourInARow : Gtk.Application {
     }
 
     void on_game_scores(SimpleAction action, Variant? parameter) {
-            Scorebox.instance.present();
+            scorebox.present();
             return;
     }
 
@@ -607,7 +610,7 @@ class FourInARow : Gtk.Application {
 
         if (gameover) {
             score[winner]--;
-            Scorebox.instance.update(score);
+            scorebox.update(score);
             gameover = false;
             prompt_player();
         } else {
@@ -701,6 +704,7 @@ class FourInARow : Gtk.Application {
 
     protected override void startup() {
         base.startup();
+        scorebox = new Scorebox(this);
         Gtk.AspectFrame frame;
         GLib.Menu app_menu, section;
 
