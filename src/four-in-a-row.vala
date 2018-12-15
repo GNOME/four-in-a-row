@@ -27,6 +27,7 @@ class FourInARow : Gtk.Application {
     PlayerID player;
     PlayerID winner;
     public PlayerID who_starts;
+    PrefsBox? prefsbox = null;
     /**
      * socre:
      *
@@ -774,5 +775,15 @@ class FourInARow : Gtk.Application {
             game_process_move(column);
         }
         return true;
+    }
+
+    public void prefsbox_open() {
+        if (prefsbox != null) {
+            prefsbox.present();
+            return;
+        }
+
+        prefsbox = new PrefsBox(window);
+        prefsbox.show_all();
     }
 }

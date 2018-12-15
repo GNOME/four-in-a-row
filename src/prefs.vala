@@ -122,19 +122,4 @@ public Level sane_player_level(Level val) {
     return val;
 }
 
-public void prefsbox_open() {
-    Gtk.Grid grid;
-    GamesControlsList controls_list;
-    Gtk.Label label;
-    Gtk.CellRendererText renderer;
-    Gtk.ListStore model;
-    Gtk.TreeIter iter;
 
-    if (prefsbox != null) {
-        prefsbox.present();
-        return;
-    }
-
-    prefsbox = new PrefsBox(window);
-    prefsbox.show_all();
-}
