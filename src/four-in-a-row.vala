@@ -705,7 +705,7 @@ class FourInARow : Gtk.Application {
 
         Gtk.AspectFrame frame;
         GLib.Menu app_menu, section;
-
+        Gtk.MenuButton menu_button;
         Gtk.Builder builder;
         Gtk.CssProvider css_provider;
 
@@ -734,6 +734,8 @@ class FourInARow : Gtk.Application {
 
         add_actions();
 
+        menu_button = builder.get_object("menu_button") as Gtk.MenuButton;
+
         app_menu = new GLib.Menu();
         section = new GLib.Menu();
         app_menu.append_section(null, section);
@@ -742,10 +744,9 @@ class FourInARow : Gtk.Application {
         section = new GLib.Menu();
         app_menu.append_section(null, section);
         section.append(_("_Help"), "app.help");
-        section.append(_("_About"), "app.about");
-        section.append(_("_Quit"), "app.quit");
+        section.append(_("_About Four-In-A-Row"), "app.about");
 
-        this.app_menu = app_menu;
+        menu_button.menu_model = app_menu;
 
         frame = builder.get_object("frame") as Gtk.AspectFrame;
 
