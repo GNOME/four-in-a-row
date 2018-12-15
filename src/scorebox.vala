@@ -87,11 +87,8 @@ class Scorebox : Gtk.Dialog {
      *
      * updates the scorebox with the latest scores
      */
-    public void update(int[] scores) {
-		print("%i", p.get_n_human_players());
-        if (p.get_n_human_players() == 1) {
+    public void update(int[] scores) {        if (p.get_n_human_players() == 1) {
             if (p.level[PlayerID.PLAYER1] == Level.HUMAN) {
-				print("hi");
                 label_name[PlayerID.PLAYER1].set_text(_("You:"));
 				label_name[PlayerID.PLAYER2].label = _("Me:");
             } else {
@@ -102,7 +99,6 @@ class Scorebox : Gtk.Dialog {
             label_name[PlayerID.PLAYER1].label = theme_get_player(PlayerID.PLAYER1);
             label_name[PlayerID.PLAYER2].label = theme_get_player(PlayerID.PLAYER2);
         }
-		print("%i", scores[1]);
         label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
         label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();
         label_score[PlayerID.NOBODY].label = scores[PlayerID.NOBODY].to_string();
