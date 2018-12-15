@@ -4,9 +4,8 @@ data/four-in-a-row.appdata.xml.in
 data/four-in-a-row.desktop.in
 data/four-in-a-row.ui
 data/org.gnome.four-in-a-row.gschema.xml
-src/games-controls.c
-src/gfx.c
-src/main.c
-src/main.h
-src/prefs.c
-src/theme.c
+src/games-controls-list.vala
+src/gfx.vala
+src/main.vala
+src/prefs.vala
+src/theme.vala
