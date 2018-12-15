@@ -1,5 +1,5 @@
 /* -*- Mode: vala; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
-/* gfx.vala
+/* game-board-view.vala
  *
  * Copyright © 2018 Jacob Humphrey
  *

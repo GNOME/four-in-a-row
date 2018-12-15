@@ -2,26 +2,26 @@ bin_PROGRAMS = four-in-a-row
 
 check_PROGRAMS = ai-test
 
-four_in_a_row_SOURCES = \
-		games-controls-list.vala \
-		ai.vala \
-		main.vala \
-		prefs.vala \
-		gfx.vala \
-		theme.vala \
-		scorebox.vala \
-		game_board.vala \
-		config.vapi
+four_in_a_row_SOURCES = ai.vala \
+			config.vapi \
+			four-in-a-row.vala \
+			game-board-view.vala \
+			game-board.vala \
+			games-controls-list.vala \
+			main.vala \
+			prefs.vala \
+			scorebox.vala \
+			theme.vala 
 
 four_in_a_row_CPPFLAGS = \
-	-I$(top_srcdir)
+	-I$(top_srcdir) \
+	--include config.h
 
 four_in_a_row_CFLAGS = \
 	-DDATA_DIRECTORY=\"$(datadir)/four-in-a-row\" \
 	-DSOUND_DIRECTORY=\"$(datadir)/four-in-a-row/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
-	-DGETTEXT_PACKAGE=$GETTEXT_PACKAGE \
 	$(FOUR_IN_A_ROW_CFLAGS)
 
 four_in_a_row_LDADD = \
