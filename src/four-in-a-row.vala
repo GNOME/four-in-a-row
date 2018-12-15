@@ -33,6 +33,7 @@ class FourInARow : Gtk.Application {
     PrefsBox? prefsbox = null;
     Scorebox scorebox;
     GameBoardView game_board_view;
+    Board game_board;
     /**
      * socre:
      *
@@ -105,7 +106,7 @@ class FourInARow : Gtk.Application {
 
         blink_t = winner;
 
-        if (Board.instance.is_line_at((Tile)winner, row, column, out blink_r1,
+        if (game_board.is_line_at((Tile)winner, row, column, out blink_r1,
                                       out blink_c1, out blink_r2, out blink_c2)) {
             anim = AnimID.BLINK;
             blink_on = false;
@@ -177,7 +178,7 @@ class FourInARow : Gtk.Application {
 
         do {
             done = (r1 == r2 && c1 == c2);
-            Board.instance.set(r1, c1, (Tile) tile);
+            game_board.set(r1, c1, (Tile) tile);
             game_board_view.draw_tile(r1, c1);
             if (r1 != r2)
                 r1 += d_row;
@@ -197,7 +198,7 @@ class FourInARow : Gtk.Application {
         score[PlayerID.PLAYER1] = 0;
         score[PlayerID.PLAYER2] = 0;
         score[PlayerID.NOBODY] = 0;
-
+        game_board = new Board();
         who_starts = PlayerID.PLAYER2;     /* This gets reversed immediately. */
 
         clear_board();
@@ -378,7 +379,7 @@ class FourInARow : Gtk.Application {
     }
 
     public void process_move2(int c) {
-        int r = Board.instance.first_empty_row(c);
+        int r = game_board.first_empty_row(c);
         if (r > 0) {
             row = 0;
             row_dropto = r;
@@ -406,7 +407,7 @@ class FourInARow : Gtk.Application {
     void drop_marble(int r, int c) {
         Tile tile = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
-        Board.instance.set(r, c, tile);
+        game_board.set(r, c, tile);
         game_board_view.draw_tile(r, c);
 
         column = column_moveto = c;
@@ -416,20 +417,20 @@ class FourInARow : Gtk.Application {
     public void drop() {
         Tile tile = player == PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
-        Board.instance.set(row, column, Tile.CLEAR);
+        game_board.set(row, column, Tile.CLEAR);
         game_board_view.draw_tile(row, column);
 
         row++;
-        Board.instance.set(row, column, tile);
+        game_board.set(row, column, tile);
         game_board_view.draw_tile(row, column);
     }
 
     public void move(int c) {
-        Board.instance.set(0, column, Tile.CLEAR);
+        game_board.set(0, column, Tile.CLEAR);
         game_board_view.draw_tile(0, column);
 
         column = c;
-        Board.instance.set(0, c, player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2);
+        game_board.set(0, c, player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2);
 
         game_board_view.draw_tile(0, c);
     }
@@ -468,7 +469,7 @@ class FourInARow : Gtk.Application {
     }
 
     void clear_board() {
-        Board.instance.clear();
+        game_board.clear();
 
         for (var i = 0; i < SIZE_VSTR; i++)
             vstr[i] = '\0';
@@ -517,7 +518,7 @@ class FourInARow : Gtk.Application {
         var temp = new Animate(0, this);
         timeout = Timeout.add(SPEED_MOVE, temp.exec);
 
-        blink_tile(0, c, Board.instance[0, c], 6);
+        blink_tile(0, c, game_board[0, c], 6);
 
         s = _("Hint: Column ")+ (c + 1).to_string();
         set_status_message(s);
@@ -603,7 +604,7 @@ class FourInARow : Gtk.Application {
         if (timeout != 0)
             return;
         c = vstr[moves] - '0' - 1;
-        r = Board.instance.first_empty_row(c) + 1;
+        r = game_board.first_empty_row(c) + 1;
         vstr[moves] = '0';
         vstr[moves + 1] = '\0';
         moves--;
@@ -618,19 +619,19 @@ class FourInARow : Gtk.Application {
         }
         move_cursor(c);
 
-        Board.instance.set(r, c, Tile.CLEAR);
+        game_board.set(r, c, Tile.CLEAR);
         game_board_view.draw_tile(r, c);
 
         if (Prefs.instance.get_n_human_players() == 1 && !is_player_human()) {
             if (moves > 0) {
                 c = vstr[moves] - '0' - 1;
-                r = Board.instance.first_empty_row(c) + 1;
+                r = game_board.first_empty_row(c) + 1;
                 vstr[moves] = '0';
                 vstr[moves + 1] = '\0';
                 moves--;
                 swap_player();
                 move_cursor(c);
-                Board.instance.set(r, c, Tile.CLEAR);
+                game_board.set(r, c, Tile.CLEAR);
                 game_board_view.draw_tile(r, c);
             }
         }
@@ -682,7 +683,7 @@ class FourInARow : Gtk.Application {
     }
 
     void check_game_state() {
-        if (Board.instance.is_line_at((Tile)player, row, column)) {
+        if (game_board.is_line_at((Tile)player, row, column)) {
             gameover = true;
             winner = player;
             switch (Prefs.instance.get_n_human_players()) {
@@ -724,7 +725,7 @@ class FourInARow : Gtk.Application {
         Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
                                                  css_provider,
                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        game_board_view = new GameBoardView();
+        game_board_view = new GameBoardView(game_board);
         builder = new Gtk.Builder.from_file(Config.DATA_DIRECTORY + "/four-in-a-row.ui");
 
         window = builder.get_object("fiar-window") as Gtk.ApplicationWindow;

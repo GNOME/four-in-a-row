@@ -29,8 +29,9 @@ class GameBoardView : Gtk.DrawingArea {
     /* scaled pixbufs */
     Gdk.Pixbuf pb_tileset;
     Gdk.Pixbuf pb_bground;
+    Board game_board;
 
-    public GameBoardView() {
+    public GameBoardView(Board game_board) {
         /* set a min size to avoid pathological behavior of gtk when scaling down */
         set_size_request(350, 350);
         halign = Gtk.Align.FILL;
@@ -43,6 +44,7 @@ class GameBoardView : Gtk.DrawingArea {
             change_theme();
         });
         load_pixmaps();
+        this.game_board = game_board;
     }
 
     public int get_column(int xpos) {
@@ -158,7 +160,7 @@ class GameBoardView : Gtk.DrawingArea {
     void paint_tile(Cairo.Context cr, int r, int c) {
         int x = c * tilesize;
         int y = r * tilesize;
-        int tile = Board.instance.get(r, c);
+        int tile = game_board.get(r, c);
         int os = 0;
 
         if (tile == Tile.CLEAR && r != 0)

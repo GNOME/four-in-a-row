@@ -22,12 +22,6 @@
 class Board : Object {
     static Tile[,] gboard;
     const int BOARD_SIZE = 7;
-    static Once<Board> _instance;
-    public static Board instance {
-        get {
-            return _instance.once(() => {return new Board();});
-        }
-    }
 
     public Board() {
         gboard = new Tile[BOARD_SIZE, BOARD_SIZE];
