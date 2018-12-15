@@ -510,7 +510,7 @@ class FourInARow : Gtk.Application {
         var temp = new Animate(0, this);
         timeout = Timeout.add(SPEED_MOVE, temp.exec);
 
-        blink_tile(0, c, Board.instance.get(0, c), 6);
+        blink_tile(0, c, Board.instance[0, c], 6);
 
         s = _("Hint: Column ")+ (c + 1).to_string();
         set_status_message(s);

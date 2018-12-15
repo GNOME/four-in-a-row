@@ -106,16 +106,7 @@ class Prefs {
 
 }
 
-Settings settings;
-PrefsBox? prefsbox = null;
 
-
-/*
- * Needed to force vala to include headers in the correct order.
- * See https://gitlab.gnome.org/GNOME/vala/issues/98
- */
-const string GETTEXT_PACKAGE_CONTENT = Config.GETTEXT_PACKAGE;
-Prefs p;
 
 const uint DEFAULT_KEY_LEFT = Gdk.Key.Left;
 const uint DEFAULT_KEY_RIGHT = Gdk.Key.Right;

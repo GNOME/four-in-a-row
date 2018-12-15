@@ -81,7 +81,9 @@ SimpleAction new_game_action;
 FourInARow? application;
 Gtk.ApplicationWindow window;
 //Scorebox? scorebox = null;
-
+Settings settings;
+PrefsBox? prefsbox = null;
+Prefs p;
 
 
 public int main(string[] argv) {
