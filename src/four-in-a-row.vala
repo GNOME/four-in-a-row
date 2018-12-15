@@ -22,6 +22,9 @@
 const string APPNAME_LONG = "Four-in-a-row";
 
 class FourInARow : Gtk.Application {
+    SimpleAction hint_action;
+    SimpleAction undo_action;
+    SimpleAction new_game_action;
     public bool gameover;
     public bool player_active;
     PlayerID player;

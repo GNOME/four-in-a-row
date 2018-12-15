@@ -72,17 +72,10 @@ public enum SoundID {
     COLUMN_FULL
 }
 
-
-
-SimpleAction hint_action;
-SimpleAction undo_action;
-SimpleAction new_game_action;
-
 FourInARow? application;
 Gtk.ApplicationWindow window;
 Settings settings;
 Prefs p;
-
 
 public int main(string[] argv) {
     Intl.setlocale();
