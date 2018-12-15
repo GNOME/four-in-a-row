@@ -50,17 +50,17 @@ public class DecisionTree
     /* Initializes an empty board */
     public DecisionTree()
     {
-        for(int i = 0; i < BOARD_ROWS; i++)
-            for(int j = 0; j < BOARD_COLUMNS; j++)
+        for (int i = 0; i < BOARD_ROWS; i++)
+            for (int j = 0; j < BOARD_COLUMNS; j++)
                 board [i, j] = Player.NONE;
     }
 
     /* utility function for debugging purposes, prints a snapshot of current status of the board */
     public void print_board()
     {
-        for(int i = 0; i< BOARD_ROWS; i++)
+        for (int i = 0; i< BOARD_ROWS; i++)
         {
-            for(int j = 0; j < BOARD_COLUMNS; j++)
+            for (int j = 0; j < BOARD_COLUMNS; j++)
                 stdout.printf("%d\t", board [i, j]);
             stdout.printf("\n");
         }
@@ -72,11 +72,11 @@ public class DecisionTree
     private int negamax(int height, int alpha, int beta)
     {
         /* base case of recursive function, returns if we have reached the lowest depth of DecisionTree or the board if full */
-        if(height == 0 || board_full())
+        if (height == 0 || board_full())
         {
-            if(last_moving_player == Player.HUMAN)
+            if (last_moving_player == Player.HUMAN)
                 return heurist();
-            else if(last_moving_player == Player.AI)
+            else if (last_moving_player == Player.AI)
                 return -1 * heurist();
             else
                 return 0;
@@ -90,10 +90,10 @@ public class DecisionTree
            Initialized with -1 because we do not know the column number yet. */
         int next = -1;
 
-        for(int column = 0; column < BOARD_COLUMNS; column++)
+        for (int column = 0; column < BOARD_COLUMNS; column++)
         {
             /* make a move into the i'th column */
-            if(!move(column))
+            if (!move(column))
                 continue;
 
             /* victory() checks if making a move in the i'th column results in a victory for last_moving_player.
@@ -103,21 +103,21 @@ public class DecisionTree
 
             unmove(column);
 
-            if(temp > max)
+            if (temp > max)
             {
                 next = column;
                 max = temp;
             }
 
-            if(temp > alpha)
+            if (temp > alpha)
                 alpha = temp;
 
-            if(alpha >= beta)
+            if (alpha >= beta)
                 break;
         }
 
         /* If it's the root node, asign the value of next to next_move_in_column */
-        if(height == plies)
+        if (height == plies)
             next_move_in_column = next;
 
         return max;
@@ -128,7 +128,7 @@ public class DecisionTree
     {
         /* find the cell on which the last move was made */
         int row;
-        for(row = 0; row < BOARD_ROWS && board [row, column] == Player.NONE; row++);
+        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NONE; row++);
 
         return vertical_win(row, column) ||
                horizontal_win(row, column) ||
@@ -140,8 +140,8 @@ public class DecisionTree
     {
         int count = 0;
 
-        for(int k = i, l = j; k >= 0 && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k--, l++, count++);
-        for(int k = i + 1, l = j - 1; k < BOARD_ROWS && l >= 0 && board [k, l] == last_moving_player; k++, l--, count++);
+        for (int k = i, l = j; k >= 0 && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k--, l++, count++);
+        for (int k = i + 1, l = j - 1; k < BOARD_ROWS && l >= 0 && board [k, l] == last_moving_player; k++, l--, count++);
 
         return count >= 4;
     }
@@ -150,8 +150,8 @@ public class DecisionTree
     {
         int count = 0;
 
-        for(int k = i, l = j; k >= 0 && l >= 0 && board [k, l] == last_moving_player; k--, l--, count++);
-        for(int k = i + 1, l = j + 1; k < BOARD_ROWS && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k++, l++, count++);
+        for (int k = i, l = j; k >= 0 && l >= 0 && board [k, l] == last_moving_player; k--, l--, count++);
+        for (int k = i + 1, l = j + 1; k < BOARD_ROWS && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k++, l++, count++);
 
         return count >= 4;
     }
@@ -160,8 +160,8 @@ public class DecisionTree
     {
         int count = 0;
 
-        for(int k = j; k >= 0 && board [i, k] == last_moving_player; k--, count++);
-        for(int k = j + 1; k < BOARD_COLUMNS && board [i, k] == last_moving_player; k++, count++);
+        for (int k = j; k >= 0 && board [i, k] == last_moving_player; k--, count++);
+        for (int k = j + 1; k < BOARD_COLUMNS && board [i, k] == last_moving_player; k++, count++);
 
         return count >= 4;
     }
@@ -170,7 +170,7 @@ public class DecisionTree
     {
         int count = 0;
 
-        for(int k = i; k < BOARD_ROWS && board [k, j] == last_moving_player; k++, count++);
+        for (int k = i; k < BOARD_ROWS && board [k, j] == last_moving_player; k++, count++);
 
         return count >= 4;
     }
@@ -178,8 +178,8 @@ public class DecisionTree
     /* returns true if the board is full, false if not */
     private bool board_full()
     {
-        for(int i = 0 ; i < BOARD_COLUMNS ; i++)
-            if(board [0, i] == Player.NONE)
+        for (int i = 0 ; i < BOARD_COLUMNS ; i++)
+            if (board [0, i] == Player.NONE)
                 return false;
         return true;
     }
@@ -189,9 +189,9 @@ public class DecisionTree
     {
         /* find the cell on which to move */
         int row;
-        for(row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NONE; row--);
+        for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NONE; row--);
 
-        if(row < 0)
+        if (row < 0)
             return false;
 
         /* don't forget AI could make the first move */
@@ -208,7 +208,7 @@ public class DecisionTree
     {
         /* find the cell on which the last move was made */
         int row;
-        for(row = 0; row < BOARD_ROWS && board [row, column] == Player.NONE; row++);
+        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NONE; row++);
 
         board [row, column] = Player.NONE;
 
@@ -221,17 +221,17 @@ public class DecisionTree
         next_move_in_column = -1;
 
         /* AI will make the first move, nothing to add to the board */
-        if(vstr.length == 2) return;
+        if (vstr.length == 2) return;
 
         var move = vstr.length % 2 == 0 ? Player.AI : Player.HUMAN;
 
-        for(int i = 1; i < vstr.length - 1; i++)
+        for (int i = 1; i < vstr.length - 1; i++)
         {
             int column = int.parse(vstr [i].to_string()) - 1;
 
             /* find the cell on which the move is made */
             int row;
-            for(row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NONE; row--);
+            for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NONE; row--);
 
             board [row, column] = move;
 
@@ -251,15 +251,15 @@ public class DecisionTree
 
         bool player_wins = false;
         int i;
-        for(i = 0; i < BOARD_COLUMNS; i++)
+        for (i = 0; i < BOARD_COLUMNS; i++)
         {
-            if(!move(i))
+            if (!move(i))
                 continue;
 
             player_wins = victory(i);
             unmove(i);
 
-            if(player_wins)
+            if (player_wins)
                 break;
         }
 
@@ -281,13 +281,13 @@ public class DecisionTree
         /* if AI can win by making a move immediately, make that move;
            main.c has indexing beginning from 1 instead of 0, hence, we add 1 */
         int temp = immediate_win(Player.AI);
-        if(temp != -1)
+        if (temp != -1)
             return temp + 1;
 
         /* if HUMAN can win by making a move immediately,
            we make AI move in that column so as avoid loss */
         temp = immediate_win(Player.HUMAN);
-        if(temp != -1)
+        if (temp != -1)
             return temp + 1;
 
         /* call negamax tree on the current state of the board */
@@ -300,9 +300,9 @@ public class DecisionTree
     /* The evaluation function to be called when we have reached the maximum depth in the DecisionTree */
     private int heurist()
     {
-        if(level == Difficulty.EASY)
+        if (level == Difficulty.EASY)
             return heurist_easy();
-        else if(level == Difficulty.MEDIUM)
+        else if (level == Difficulty.MEDIUM)
             return heurist_medium();
         else
             return heurist_hard();
@@ -334,19 +334,19 @@ public class DecisionTree
 
         last_moving_player = p;
 
-        for(int j = 0; j < BOARD_COLUMNS; j++)
+        for (int j = 0; j < BOARD_COLUMNS; j++)
         {
-            for(int i = 0; i < BOARD_ROWS; i++)
+            for (int i = 0; i < BOARD_ROWS; i++)
             {
-                if(board [i, j] != Player.NONE)
+                if (board [i, j] != Player.NONE)
                     break;
 
-                if(all_adjacent_empty(i, j))
+                if (all_adjacent_empty(i, j))
                     continue;
 
                 board [i, j] = p;
 
-                if(victory(j))
+                if (victory(j))
                     count++;
 
                 board [i, j] = Player.NONE;
@@ -359,13 +359,13 @@ public class DecisionTree
     /* checks if all adjacent cells to board [i, j] are empty */
     private bool all_adjacent_empty(int i, int j)
     {
-        for(int k = -1 ; k <= 1; k++)
+        for (int k = -1 ; k <= 1; k++)
         {
-            for(int l = -1; l <= 1; l++)
+            for (int l = -1; l <= 1; l++)
             {
-                if(k == 0 && l == 0)
+                if (k == 0 && l == 0)
                     continue;
-                if(i + k >= 0 && i + k < BOARD_ROWS && j + l >= 0 && j + l < BOARD_COLUMNS && board [i + k, j + l] != Player.NONE)
+                if (i + k >= 0 && i + k < BOARD_ROWS && j + l >= 0 && j + l < BOARD_COLUMNS && board [i + k, j + l] != Player.NONE)
                     return false;
             }
         }
@@ -376,12 +376,12 @@ public class DecisionTree
     /* set the number of plies and the difficulty level */
     private void set_level(string vstr)
     {
-        if(vstr [0] == 'a')
+        if (vstr [0] == 'a')
         {
             level = Difficulty.EASY;
             plies = 4;
         }
-        else if(vstr [0] == 'b')
+        else if (vstr [0] == 'b')
         {
             level = Difficulty.MEDIUM;
             plies = 7;
@@ -400,11 +400,11 @@ public class DecisionTree
         update_board(vstr);
 
         int temp = immediate_win(Player.AI);
-        if(temp != -1)
+        if (temp != -1)
             return 1000;
 
         temp = immediate_win(Player.HUMAN);
-        if(temp != -1)
+        if (temp != -1)
             return temp + 1;
 
         negamax(plies, NEG_INF, -1 * NEG_INF);
