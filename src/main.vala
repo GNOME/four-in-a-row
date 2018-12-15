@@ -60,7 +60,7 @@ public enum Tile {
 public enum Move {
     LEFT,
     RIGHT,
-    DROP
+    //DROP
 }
 
 public enum SoundID {

@@ -747,7 +747,7 @@ class FourInARow : Gtk.Application {
 
         frame.add(GameBoardView.instance);
         GameBoardView.instance.column_clicked.connect(column_clicked_cb);
-        GameBoardView.instance.key_press_event.connect(on_key_press);
+        window.key_press_event.connect(on_key_press);
 
         hint_action.set_enabled(false);
         undo_action.set_enabled(false);
@@ -757,9 +757,9 @@ class FourInARow : Gtk.Application {
 
     bool on_key_press(Gdk.EventKey  e) {
         if ((player_active) || timeout != 0 ||
-                (e.keyval != Prefs.instance.keypress[Move.LEFT] &&
-                e.keyval != Prefs.instance.keypress[Move.RIGHT] &&
-                e.keyval != Prefs.instance.keypress[Move.DROP])) {
+                (e.keyval != Prefs.instance.keypress_left &&
+                e.keyval != Prefs.instance.keypress_right &&
+                e.keyval != Prefs.instance.keypress_drop)) {
             return false;
         }
 
@@ -768,13 +768,13 @@ class FourInARow : Gtk.Application {
             return true;
         }
 
-        if (e.keyval == Prefs.instance.keypress[Move.LEFT] && column != 0) {
+        if (e.keyval == Prefs.instance.keypress_left && column != 0) {
             column_moveto--;
             move_cursor(column_moveto);
-        } else if (e.keyval == Prefs.instance.keypress[Move.RIGHT] && column < 6) {
+        } else if (e.keyval == Prefs.instance.keypress_right && column < 6) {
             column_moveto++;
             move_cursor(column_moveto);
-        } else if (e.keyval == Prefs.instance.keypress[Move.DROP]) {
+        } else if (e.keyval == Prefs.instance.keypress_drop) {
             game_process_move(column);
         }
         return true;

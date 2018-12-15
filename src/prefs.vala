@@ -21,16 +21,19 @@
 
 class Prefs : Object {
     public bool do_sound{ get; set;}
+    int _theme_id;
     public int theme_id {
         get{
-            return settings.get_int("theme-id");
+            return sane_theme_id(_theme_id);
         }
         set{
-            settings.set_int("theme-id", value);
+            _theme_id = sane_theme_id(value);
         }
     }
     public Level level[2];
-    public int keypress[3];
+    public int keypress_drop { get; set; }
+    public int keypress_right { get; set; }
+    public int keypress_left { get; set; }
     public Settings settings;
 
     static Once<Prefs> _instance;
@@ -44,20 +47,24 @@ class Prefs : Object {
         settings = new GLib.Settings("org.gnome.four-in-a-row");
         level[PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
         level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
-        keypress[Move.LEFT] = settings.get_int("key-left");
-        keypress[Move.RIGHT] = settings.get_int("key-right");
-        keypress[Move.DROP] = settings.get_int("key-drop");
         theme_id = settings.get_int("theme-id");
 
         settings.changed.connect(settings_changed_cb);
         settings.bind("sound", this, "do_sound", SettingsBindFlags.DEFAULT);
+        settings.bind("theme-id", this, "theme-id", SettingsBindFlags.DEFAULT);
+        settings.bind("key-drop", this, "keypress_drop", SettingsBindFlags.DEFAULT);
+        settings.bind("key-right", this, "keypress_right", SettingsBindFlags.DEFAULT);
+        settings.bind("key-left", this, "keypress_left", SettingsBindFlags.DEFAULT);
 
         level[PlayerID.PLAYER1] = sane_player_level(level[PlayerID.PLAYER1]);
         level[PlayerID.PLAYER2] = sane_player_level(level[PlayerID.PLAYER2]);
         theme_id = sane_theme_id(theme_id);
+        notify["theme_id"].connect(() =>{
+            GameBoardView.instance.change_theme();
+        });
     }
 
-    int sane_theme_id(int val) {
+    static int sane_theme_id(int val) {
         if (val < 0 || val >= theme.length)
             return DEFAULT_THEME_ID;
             return val;
@@ -73,16 +80,10 @@ class Prefs : Object {
     public signal void theme_changed(int theme_id);
 
     public void settings_changed_cb(string key) {
-        if (key == "key-left") {
-            keypress[Move.LEFT] = settings.get_int("key-left");
-        } else if (key == "key-right") {
-            keypress[Move.RIGHT] = settings.get_int("key-right");
-        } else if (key == "key-drop") {
-            keypress[Move.DROP] = settings.get_int("key-drop");
-        } else if (key == "theme-id") {
+        if (key == "theme-id") {
             int val = sane_theme_id(settings.get_int("theme-id"));
             if (val != theme_id) {
-                theme_id = val;
+                 theme_id = val;
                 if (!GameBoardView.instance.change_theme())
                     return;
                 theme_changed(theme_id);
