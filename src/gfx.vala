@@ -19,12 +19,10 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-int boardsize = 0;
-int tilesize = 0;
-int offset[6];
-
 class GameBoardView : Gtk.DrawingArea {
+    int boardsize = 0;
+    int tilesize = 0;
+    int offset[6];
     /* unscaled pixbufs */
     Gdk.Pixbuf pb_tileset_raw;
     Gdk.Pixbuf pb_bground_raw;
@@ -50,10 +48,6 @@ class GameBoardView : Gtk.DrawingArea {
         events = Gdk.EventMask.EXPOSURE_MASK |
                           Gdk.EventMask.BUTTON_PRESS_MASK |
                           Gdk.EventMask.BUTTON_RELEASE_MASK;
-        //configure_event.connect(resize);
-        //draw.connect(expose);
-        //button_press_event.connect(button_press_event);
-        //key_press_event.connect(this.on_key_press);
     }
 
     public int get_column(int xpos) {
