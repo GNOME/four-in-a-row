@@ -59,9 +59,6 @@ class Prefs : Object {
         level[PlayerID.PLAYER1] = sane_player_level(level[PlayerID.PLAYER1]);
         level[PlayerID.PLAYER2] = sane_player_level(level[PlayerID.PLAYER2]);
         theme_id = sane_theme_id(theme_id);
-        notify["theme_id"].connect(() =>{
-            GameBoardView.instance.change_theme();
-        });
     }
 
     static int sane_theme_id(int val) {
@@ -84,8 +81,8 @@ class Prefs : Object {
             int val = sane_theme_id(settings.get_int("theme-id"));
             if (val != theme_id) {
                  theme_id = val;
-                if (!GameBoardView.instance.change_theme())
-                    return;
+                //if (!GameBoardView.instance.change_theme())
+                    //return;
                 theme_changed(theme_id);
             }
         }

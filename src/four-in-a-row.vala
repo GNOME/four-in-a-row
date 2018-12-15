@@ -32,6 +32,7 @@ class FourInARow : Gtk.Application {
     public PlayerID who_starts;
     PrefsBox? prefsbox = null;
     Scorebox scorebox;
+    GameBoardView game_board_view;
     /**
      * socre:
      *
@@ -84,7 +85,7 @@ class FourInARow : Gtk.Application {
 
         clear_board();
         set_status_message(null);
-        GameBoardView.instance.draw_all();
+        game_board_view.draw_all();
 
         move_cursor(column);
         gameover = false;
@@ -177,7 +178,7 @@ class FourInARow : Gtk.Application {
         do {
             done = (r1 == r2 && c1 == c2);
             Board.instance.set(r1, c1, (Tile) tile);
-            GameBoardView.instance.draw_tile(r1, c1);
+            game_board_view.draw_tile(r1, c1);
             if (r1 != r2)
                 r1 += d_row;
             if (c1 != c2)
@@ -205,8 +206,8 @@ class FourInARow : Gtk.Application {
     protected override void activate() {
         if (!window.is_visible()) {
             window.show_all();
-            GameBoardView.instance.refresh_pixmaps();
-            GameBoardView.instance.draw_all();
+            game_board_view.refresh_pixmaps();
+            game_board_view.draw_all();
             scorebox.update(score);       /* update visible player descriptions */
             prompt_player();
             game_reset();
@@ -368,7 +369,6 @@ class FourInARow : Gtk.Application {
         score[PlayerID.NOBODY] = 0;
 
         who_starts = PlayerID.PLAYER2;     /* This gets reversed immediately. */
-
         clear_board();
     }
 
@@ -407,7 +407,7 @@ class FourInARow : Gtk.Application {
         Tile tile = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
         Board.instance.set(r, c, tile);
-        GameBoardView.instance.draw_tile(r, c);
+        game_board_view.draw_tile(r, c);
 
         column = column_moveto = c;
         row = row_dropto = r;
@@ -417,21 +417,21 @@ class FourInARow : Gtk.Application {
         Tile tile = player == PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
         Board.instance.set(row, column, Tile.CLEAR);
-        GameBoardView.instance.draw_tile(row, column);
+        game_board_view.draw_tile(row, column);
 
         row++;
         Board.instance.set(row, column, tile);
-        GameBoardView.instance.draw_tile(row, column);
+        game_board_view.draw_tile(row, column);
     }
 
     public void move(int c) {
         Board.instance.set(0, column, Tile.CLEAR);
-        GameBoardView.instance.draw_tile(0, column);
+        game_board_view.draw_tile(0, column);
 
         column = c;
         Board.instance.set(0, c, player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2);
 
-        GameBoardView.instance.draw_tile(0, c);
+        game_board_view.draw_tile(0, c);
     }
 
     public void move_cursor(int c) {
@@ -619,7 +619,7 @@ class FourInARow : Gtk.Application {
         move_cursor(c);
 
         Board.instance.set(r, c, Tile.CLEAR);
-        GameBoardView.instance.draw_tile(r, c);
+        game_board_view.draw_tile(r, c);
 
         if (Prefs.instance.get_n_human_players() == 1 && !is_player_human()) {
             if (moves > 0) {
@@ -631,7 +631,7 @@ class FourInARow : Gtk.Application {
                 swap_player();
                 move_cursor(c);
                 Board.instance.set(r, c, Tile.CLEAR);
-                GameBoardView.instance.draw_tile(r, c);
+                game_board_view.draw_tile(r, c);
             }
         }
     }
@@ -704,6 +704,7 @@ class FourInARow : Gtk.Application {
 
     protected override void startup() {
         base.startup();
+
         scorebox = new Scorebox(this);
         Gtk.AspectFrame frame;
         GLib.Menu app_menu, section;
@@ -723,7 +724,7 @@ class FourInARow : Gtk.Application {
         Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
                                                  css_provider,
                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
+        game_board_view = new GameBoardView();
         builder = new Gtk.Builder.from_file(Config.DATA_DIRECTORY + "/four-in-a-row.ui");
 
         window = builder.get_object("fiar-window") as Gtk.ApplicationWindow;
@@ -749,8 +750,8 @@ class FourInARow : Gtk.Application {
 
         frame = builder.get_object("frame") as Gtk.AspectFrame;
 
-        frame.add(GameBoardView.instance);
-        GameBoardView.instance.column_clicked.connect(column_clicked_cb);
+        frame.add(game_board_view);
+        game_board_view.column_clicked.connect(column_clicked_cb);
         window.key_press_event.connect(on_key_press);
 
         hint_action.set_enabled(false);

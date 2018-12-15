@@ -98,9 +98,6 @@ public int main(string[] argv) {
 
     application.game_init();
 
-    if (!GameBoardView.instance.load_pixmaps())
-        return 1;
-
     var app_retval = application.run(argv);
 
     return app_retval;

@@ -29,17 +29,8 @@ class GameBoardView : Gtk.DrawingArea {
     /* scaled pixbufs */
     Gdk.Pixbuf pb_tileset;
     Gdk.Pixbuf pb_bground;
-    //public Gtk.DrawingArea drawarea;
-
-    static Once<GameBoardView> _instance;
-    public static GameBoardView instance {
-        get {
-            return _instance.once(() => {return new GameBoardView();});
-        }
-    }
 
     public GameBoardView() {
-        Object();
         /* set a min size to avoid pathological behavior of gtk when scaling down */
         set_size_request(350, 350);
         halign = Gtk.Align.FILL;
@@ -48,6 +39,10 @@ class GameBoardView : Gtk.DrawingArea {
         events = Gdk.EventMask.EXPOSURE_MASK |
                           Gdk.EventMask.BUTTON_PRESS_MASK |
                           Gdk.EventMask.BUTTON_RELEASE_MASK;
+        Prefs.instance.notify["theme_id"].connect(() =>{
+            change_theme();
+        });
+        load_pixmaps();
     }
 
     public int get_column(int xpos) {
@@ -95,7 +90,7 @@ class GameBoardView : Gtk.DrawingArea {
             return false;
 
         refresh_pixmaps();
-        instance.draw_all();
+        draw_all();
         return true;
     }
 
