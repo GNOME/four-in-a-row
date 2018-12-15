@@ -228,7 +228,6 @@ class PrefsBox : Gtk.Dialog {
         /* connect signals */
         combobox_theme.changed.connect(on_select_theme);
         checkbutton_sound.toggled.connect(p.on_toggle_sound);
-        //response.connect(() => {prefsbox.hide();});
     }
 
     protected override bool delete_event(Gdk.EventAny event) {
@@ -251,14 +250,5 @@ public void prefsbox_open() {
     }
 
     prefsbox = new PrefsBox(window);
-
-    /* connect signals */
-    // prefsbox.response.connect(() => {prefsbox.hide();});
-    // prefsbox.delete_event.connect((event) => {
-    //     prefsbox.hide();
-    //     return true;
-    // });
-
-
     prefsbox.show_all();
 }
