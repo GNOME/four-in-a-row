@@ -8,7 +8,7 @@ const string scorebox_gettext_package = Config.GETTEXT_PACKAGE;
 class Scorebox : Gtk.Dialog {
     Gtk.Label[] label_name;
     Gtk.Label label_score[3];
-    public FourInARow application;
+    public new FourInARow application;
 
     static Once<Scorebox> _instance;
     public static Scorebox instance {

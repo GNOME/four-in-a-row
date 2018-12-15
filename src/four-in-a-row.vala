@@ -81,7 +81,7 @@ class FourInARow : Gtk.Application {
             anim = AnimID.BLINK;
             blink_on = false;
             blink_n = n;
-            var temp = new Animate(0);
+            var temp = new Animate(0, this);
             timeout = Timeout.add(SPEED_BLINK,  temp.exec);
             while (timeout!=0)
                 Gtk.main_iteration();
@@ -323,7 +323,7 @@ class FourInARow : Gtk.Application {
                 c = playgame((string)vstr) - 1;
                 if (c < 0)
                     gameover = true;
-                var nm = new NextMove(c);
+                var nm = new NextMove(c, this);
                 Timeout.add(SPEED_DROP, nm.exec);
             }
         }
@@ -355,23 +355,23 @@ class FourInARow : Gtk.Application {
             row = 0;
             row_dropto = r;
             anim = AnimID.DROP;
-            var temp = new Animate(c);
+            var temp = new Animate(c, this);
             timeout = Timeout.add(SPEED_DROP, temp.exec);
         } else {
-            application.play_sound(SoundID.COLUMN_FULL);
+            play_sound(SoundID.COLUMN_FULL);
         }
     }
 
     public void process_move(int c) {
         if (timeout != 0) {
-            var temp = new Animate(c);
+            var temp = new Animate(c, this);
             Timeout.add(SPEED_DROP, temp.exec);
             return;
         }
 
         column_moveto = c;
         anim = AnimID.MOVE;
-        var temp = new Animate(c);
+        var temp = new Animate(c, this);
         timeout = Timeout.add(SPEED_DROP, temp.exec);
     }
 
@@ -418,9 +418,11 @@ class FourInARow : Gtk.Application {
 
     class NextMove {
         int c;
+		FourInARow application;
 
-        public NextMove(int c) {
+        public NextMove(int c, FourInARow application) {
             this.c = c;
+			this.application = application;
         }
 
         public bool exec() {
@@ -459,7 +461,7 @@ class FourInARow : Gtk.Application {
         blink_n = n;
         blink_on = false;
         anim = AnimID.BLINK;
-        var temp = new Animate(0);
+        var temp = new Animate(0, this);
         timeout = Timeout.add(SPEED_BLINK, temp.exec);
     }
 
@@ -475,7 +477,7 @@ class FourInARow : Gtk.Application {
         hint_action.set_enabled(false);
         undo_action.set_enabled(false);
 
-        application.set_status_message(_("I’m Thinking…"));
+        set_status_message(_("I’m Thinking…"));
 
         vstr[0] = vlevel[Level.STRONG];
         c = playgame((string)vstr) - 1;
@@ -484,15 +486,15 @@ class FourInARow : Gtk.Application {
         while (timeout != 0)
             Gtk.main_iteration();
         anim = AnimID.HINT;
-        var temp = new Animate(0);
+        var temp = new Animate(0, this);
         timeout = Timeout.add(SPEED_MOVE, temp.exec);
 
-        application.blink_tile(0, c, Board.instance.get(0, c), 6);
+        blink_tile(0, c, Board.instance.get(0, c), 6);
 
         s = _("Hint: Column ")+ (c + 1).to_string();
-        application.set_status_message(s);
+        set_status_message(s);
 
-        if (moves <= 0 || (moves == 1 && application.is_player_human()))
+        if (moves <= 0 || (moves == 1 && is_player_human()))
             undo_action.set_enabled(false);
         else
             undo_action.set_enabled(true);
@@ -510,8 +512,10 @@ class FourInARow : Gtk.Application {
 
     class Animate {
         int c;
-        public Animate(int c) {
+		FourInARow application;
+        public Animate(int c, FourInARow application) {
             this.c = c;
+			this.application = application;
         }
 
         public bool exec() {
@@ -589,7 +593,7 @@ class FourInARow : Gtk.Application {
         Board.instance.set(r, c, Tile.CLEAR);
         GameBoardView.instance.draw_tile(r, c);
 
-        if (p.get_n_human_players() == 1 && !application.is_player_human()) {
+        if (p.get_n_human_players() == 1 && !is_player_human()) {
             if (moves > 0) {
                 c = vstr[moves] - '0' - 1;
                 r = Board.instance.first_empty_row(c) + 1;

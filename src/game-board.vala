@@ -33,11 +33,11 @@ class Board : Object {
         gboard = new Tile[BOARD_SIZE, BOARD_SIZE];
     }
 
-    public void @set(int x, int y, Tile tile) {
+    public new void @set(int x, int y, Tile tile) {
         gboard[x,y] = tile;
     }
 
-    public Tile @get(int x, int y) {
+	public new Tile @get(int x, int y) {
         return gboard[x, y];
     }
 
