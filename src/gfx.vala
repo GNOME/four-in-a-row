@@ -101,7 +101,7 @@ class GameBoardView : Gtk.DrawingArea {
             return false;
 
         refresh_pixmaps();
-        GameBoardView.instance.draw_all();
+        instance.draw_all();
         return true;
     }
 
@@ -275,46 +275,23 @@ class GameBoardView : Gtk.DrawingArea {
         return true;
     }
 
+    /**
+     * column_clicked:
+     *
+     * emited when a column on the game board is clicked
+     *
+     * @column:
+     *
+     * Which column was clicked on
+     */
+    public signal bool column_clicked(int column);
+
     protected override bool button_press_event(Gdk.EventButton e) {
-        int x, y;
-        if (application.player_active) {
-            return false;
-        }
-
-        if (application.gameover && application.timeout == 0) {
-            application.blink_winner(2);
-        } else if (application.is_player_human() && application.timeout == 0) {
-            get_window().get_device_position(e.device, out x, out y, null);
-            application.game_process_move(GameBoardView.instance.get_column(x));
-        }
-
-        return true;
+        int x;
+        get_window().get_device_position(e.device, out x, null, null);
+        return column_clicked(get_column(x));
     }
 
-    protected override bool key_press_event(Gdk.EventKey  e) {
-        if ((application.player_active) || application.timeout != 0 ||
-                (e.keyval != p.keypress[Move.LEFT] &&
-                e.keyval != p.keypress[Move.RIGHT] &&
-                e.keyval != p.keypress[Move.DROP])) {
-            return false;
-        }
-
-        if (application.gameover) {
-            application.blink_winner(2);
-            return true;
-        }
-
-        if (e.keyval == p.keypress[Move.LEFT] && application.column != 0) {
-            application.column_moveto--;
-            application.move_cursor(application.column_moveto);
-        } else if (e.keyval == p.keypress[Move.RIGHT] && application.column < 6) {
-            application.column_moveto++;
-            application.move_cursor(application.column_moveto);
-        } else if (e.keyval == p.keypress[Move.DROP]) {
-            application.game_process_move(application.column);
-        }
-        return true;
-    }
 }
 
 

@@ -184,6 +184,19 @@ class FourInARow : Gtk.Application {
         add_action_entries(app_entries, this);
     }
 
+     bool column_clicked_cb(int column) {
+        if (player_active) {
+            return false;
+        }
+
+        if (gameover && timeout == 0) {
+            blink_winner(2);
+        } else if (is_player_human() && timeout == 0) {
+            game_process_move(column);
+        }
+        return true;
+    }
+
     void on_game_new(Variant? v) {
         stop_anim();
         game_reset();
@@ -777,12 +790,39 @@ class FourInARow : Gtk.Application {
         frame = builder.get_object("frame") as Gtk.AspectFrame;
 
         frame.add(GameBoardView.instance);
+        GameBoardView.instance.column_clicked.connect(column_clicked_cb);
+        GameBoardView.instance.key_press_event.connect(on_key_press);
 
         hint_action.set_enabled(false);
         undo_action.set_enabled(false);
     }
 
     Gtk.HeaderBar headerbar;
+
+    bool on_key_press(Gdk.EventKey  e) {
+        if ((player_active) || timeout != 0 ||
+                (e.keyval != p.keypress[Move.LEFT] &&
+                e.keyval != p.keypress[Move.RIGHT] &&
+                e.keyval != p.keypress[Move.DROP])) {
+            return false;
+        }
+
+        if (gameover) {
+            blink_winner(2);
+            return true;
+        }
+
+        if (e.keyval == p.keypress[Move.LEFT] && column != 0) {
+            column_moveto--;
+            move_cursor(column_moveto);
+        } else if (e.keyval == p.keypress[Move.RIGHT] && column < 6) {
+            column_moveto++;
+            move_cursor(column_moveto);
+        } else if (e.keyval == p.keypress[Move.DROP]) {
+            game_process_move(column);
+        }
+        return true;
+    }
 }
 
 SimpleAction hint_action;
