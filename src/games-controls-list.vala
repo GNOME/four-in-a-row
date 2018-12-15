@@ -146,7 +146,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
                 unused_key = false;
 
                 if (conf_key == actual_conf_key) {
-                    var dialog = new Gtk.MessageDialog.with_markup(window,
+                    var dialog = new Gtk.MessageDialog.with_markup(null,
                         Gtk.DialogFlags.DESTROY_WITH_PARENT,
                         Gtk.MessageType.WARNING,
                         Gtk.ButtonsType.OK,

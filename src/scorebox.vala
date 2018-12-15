@@ -36,7 +36,7 @@ class Scorebox : Gtk.Dialog {
     //     }
     // }
 
-    public Scorebox(FourInARow application) {
+    public Scorebox(Gtk.Window parent, FourInARow application) {
         Object(title: _("Scores"),
                //parent: window,
                use_header_bar: 1,
@@ -44,7 +44,7 @@ class Scorebox : Gtk.Dialog {
                resizable: false,
                border_width: 5);
         get_content_area().spacing = 2;
-        set_transient_for(window);
+        set_transient_for(parent);
 
         Gtk.Grid grid, grid2;
 

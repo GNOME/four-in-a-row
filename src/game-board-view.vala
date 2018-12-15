@@ -149,7 +149,7 @@ class GameBoardView : Gtk.DrawingArea {
     void load_error(string fname) {
         Gtk.MessageDialog dialog;
 
-        dialog = new Gtk.MessageDialog(window, Gtk.DialogFlags.MODAL,
+        dialog = new Gtk.MessageDialog(get_window() as Gtk.Window, Gtk.DialogFlags.MODAL,
             Gtk.MessageType.WARNING, Gtk.ButtonsType.CLOSE,
         dgettext(Config.GETTEXT_PACKAGE, "Unable to load image:\n%s"), fname);
 

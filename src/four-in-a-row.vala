@@ -34,6 +34,7 @@ class FourInARow : Gtk.Application {
     Scorebox scorebox;
     GameBoardView game_board_view;
     Board game_board;
+    Gtk.ApplicationWindow window;
     /**
      * socre:
      *
@@ -706,7 +707,7 @@ class FourInARow : Gtk.Application {
     protected override void startup() {
         base.startup();
 
-        scorebox = new Scorebox(this);
+
         Gtk.AspectFrame frame;
         GLib.Menu app_menu, section;
 
@@ -733,6 +734,8 @@ class FourInARow : Gtk.Application {
         window.set_default_size(DEFAULT_WIDTH, DEFAULT_HEIGHT); /* TODO save size & state */
 
         headerbar = builder.get_object("headerbar") as Gtk.HeaderBar;
+
+        scorebox = new Scorebox(window, this);
 
         add_actions();
 
@@ -792,7 +795,7 @@ class FourInARow : Gtk.Application {
             return;
         }
 
-        prefsbox = new PrefsBox(window);
+        prefsbox = new PrefsBox(window, this);
         prefsbox.show_all();
     }
 }

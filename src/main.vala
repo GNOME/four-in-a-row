@@ -72,14 +72,10 @@ public enum SoundID {
     COLUMN_FULL
 }
 
-FourInARow? application;
-Gtk.ApplicationWindow window;
-//Settings settings;
-
 public int main(string[] argv) {
     Intl.setlocale();
 
-    application = new FourInARow();
+    var application = new FourInARow();
 
     Intl.bindtextdomain(Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
     Intl.bind_textdomain_codeset(Config.GETTEXT_PACKAGE, "UTF-8");
