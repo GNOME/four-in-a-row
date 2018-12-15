@@ -31,7 +31,7 @@ class Board : Object {
         gboard[x,y] = tile;
     }
 
-	public new Tile @get(int x, int y) {
+    public new Tile @get(int x, int y) {
         return gboard[x, y];
     }
 

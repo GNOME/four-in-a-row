@@ -448,11 +448,11 @@ class FourInARow : Gtk.Application {
 
     class NextMove {
         int c;
-		FourInARow application;
+        FourInARow application;
 
         public NextMove(int c, FourInARow application) {
             this.c = c;
-			this.application = application;
+            this.application = application;
         }
 
         public bool exec() {
@@ -542,10 +542,10 @@ class FourInARow : Gtk.Application {
 
     class Animate {
         int c;
-		FourInARow application;
+        FourInARow application;
         public Animate(int c, FourInARow application) {
             this.c = c;
-			this.application = application;
+            this.application = application;
         }
 
         public bool exec() {
