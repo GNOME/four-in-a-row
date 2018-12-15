@@ -19,19 +19,19 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class Prefs {
-    bool _do_sound;
-    public bool do_sound {
-        get {
-            return settings.get_boolean("sound");
+class Prefs : Object {
+    public bool do_sound{ get; set;}
+    public int theme_id {
+        get{
+            return settings.get_int("theme-id");
         }
-        private set {
-            settings.set_boolean("sound", value);
+        set{
+            settings.set_int("theme-id", value);
         }
     }
-    public int theme_id;
     public Level level[2];
     public int keypress[3];
+    public Settings settings;
 
     static Once<Prefs> _instance;
     public static Prefs instance { get {
@@ -41,6 +41,7 @@ class Prefs {
     }}
 
     public Prefs() {
+        settings = new GLib.Settings("org.gnome.four-in-a-row");
         level[PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
         level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
         keypress[Move.LEFT] = settings.get_int("key-left");
@@ -49,6 +50,7 @@ class Prefs {
         theme_id = settings.get_int("theme-id");
 
         settings.changed.connect(settings_changed_cb);
+        settings.bind("sound", this, "do_sound", SettingsBindFlags.DEFAULT);
 
         level[PlayerID.PLAYER1] = sane_player_level(level[PlayerID.PLAYER1]);
         level[PlayerID.PLAYER2] = sane_player_level(level[PlayerID.PLAYER2]);
@@ -70,19 +72,8 @@ class Prefs {
      */
     public signal void theme_changed(int theme_id);
 
-    /**
-     * sound_changed:
-     *
-     * emmited when the sound fx are enabled/disabled
-     *
-     * @sound: true if sound is enabled
-     */
-    public signal void sound_changed(bool sound);
-
     public void settings_changed_cb(string key) {
-        if (key == "sound") {
-            sound_changed(do_sound);
-        } else if (key == "key-left") {
+        if (key == "key-left") {
             keypress[Move.LEFT] = settings.get_int("key-left");
         } else if (key == "key-right") {
             keypress[Move.RIGHT] = settings.get_int("key-right");

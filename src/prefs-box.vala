@@ -99,7 +99,7 @@ class PrefsBox : Gtk.Dialog {
         /* keyboard tab */
         label = new Gtk.Label.with_mnemonic(_("Keyboard Controls"));
 
-        controls_list = new GamesControlsList(settings);
+        controls_list = new GamesControlsList(Prefs.instance.settings);
         controls_list.add_controls("key-left", _("Move left"), DEFAULT_KEY_LEFT,
                        "key-right", _("Move right"), DEFAULT_KEY_RIGHT,
                        "key-drop", _("Drop marble"), DEFAULT_KEY_DROP);
@@ -116,8 +116,8 @@ class PrefsBox : Gtk.Dialog {
         Prefs.instance.theme_changed.connect((theme_id) => {
             combobox_theme.set_active(theme_id);
         });
-        Prefs.instance.sound_changed.connect((sound) => {
-            checkbutton_sound.set_active(sound);
+        Prefs.instance.notify["do_sound"].connect(() => {
+            checkbutton_sound.set_active(Prefs.instance.do_sound);
         });
     }
 
@@ -128,7 +128,7 @@ class PrefsBox : Gtk.Dialog {
 
     void on_select_theme(Gtk.ComboBox combo) {
         int id = combo.get_active();
-        settings.set_int("theme-id", id);
+        Prefs.instance.theme_id = id;
     }
 
     void on_select_opponent(Gtk.ComboBox w) {
@@ -139,7 +139,7 @@ class PrefsBox : Gtk.Dialog {
         w.get_model().get(iter, 1, out value);
 
         Prefs.instance.level[PlayerID.PLAYER2] = (Level)value;
-        settings.set_int("opponent", value);
+        Prefs.instance.settings.set_int("opponent", value);
         Scorebox.instance.reset();
         global::application.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
         global::application.game_reset();

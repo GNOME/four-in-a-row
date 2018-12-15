@@ -74,8 +74,7 @@ public enum SoundID {
 
 FourInARow? application;
 Gtk.ApplicationWindow window;
-Settings settings;
-//Prefs p;
+//Settings settings;
 
 public int main(string[] argv) {
     Intl.setlocale();
@@ -95,10 +94,7 @@ public int main(string[] argv) {
         return 1;
     }
 
-    settings = new GLib.Settings("org.gnome.four-in-a-row");
-
     Environment.set_application_name(_(APPNAME_LONG));
-
 
     application.game_init();
 
