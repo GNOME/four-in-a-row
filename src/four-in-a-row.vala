@@ -785,7 +785,7 @@ class FourInARow : Gtk.Application {
             return;
         }
 
-        prefsbox = new PrefsBox(window, this);
+        prefsbox = new PrefsBox(window);
         prefsbox.show_all();
     }
 }

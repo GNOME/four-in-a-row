@@ -23,9 +23,8 @@ class PrefsBox : Gtk.Dialog {
     Gtk.ComboBox combobox;
     Gtk.ComboBoxText combobox_theme;
     Gtk.ToggleButton checkbutton_sound;
-    FourInARow application;
 
-    public PrefsBox(Gtk.Window parent, FourInARow application) {
+    public PrefsBox(Gtk.Window parent) {
         Gtk.Grid grid;
         GamesControlsList controls_list;
         Gtk.Label label;
@@ -133,6 +132,7 @@ class PrefsBox : Gtk.Dialog {
     }
 
     void on_select_opponent(Gtk.ComboBox w) {
+        FourInARow app = (FourInARow)application;
         Gtk.TreeIter iter;
         int value;
 
@@ -141,7 +141,7 @@ class PrefsBox : Gtk.Dialog {
 
         Prefs.instance.level[PlayerID.PLAYER2] = (Level)value;
         Prefs.instance.settings.set_int("opponent", value);
-        application.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
-        application.game_reset();
+        app.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
+        app.game_reset();
     }
 }
