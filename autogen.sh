@@ -15,7 +15,7 @@ cd $srcdir
 # Use the style-checker as pre-commit and pre-applypatch hooks
 if [ -d $srcdir/.git ]; then
 	for HOOK in pre-commit pre-applypatch; do
-                if [ ! -L $srcdir/.git/hooks/$HOOK ]; then
+                if [ ! -L $srcdir/.git/hooks/style-checker ]; then
                         ln -s ../../../libgnome-games-support/style-checker \
                                 $srcdir/.git/hooks/style-checker && echo "Enabled $HOOK style checker."
                         echo $srcdir/.git/hooks/style-checker --no-whitespace-before-paren > $srcdir/.git/hooks/$HOOK
