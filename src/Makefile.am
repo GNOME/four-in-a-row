@@ -23,7 +23,8 @@ four_in_a_row_CFLAGS = \
 	-DSOUND_DIRECTORY=\"$(datadir)/four-in-a-row/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
-	$(FOUR_IN_A_ROW_CFLAGS)
+	$(FOUR_IN_A_ROW_CFLAGS) \
+	-w
 
 four_in_a_row_LDADD = \
 	$(FOUR_IN_A_ROW_LIBS)

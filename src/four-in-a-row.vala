@@ -405,16 +405,6 @@ class FourInARow : Gtk.Application {
         timeout = Timeout.add(SPEED_DROP, temp.exec);
     }
 
-    void drop_marble(int r, int c) {
-        Tile tile = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
-
-        game_board.set(r, c, tile);
-        game_board_view.draw_tile(r, c);
-
-        column = column_moveto = c;
-        row = row_dropto = r;
-    }
-
     public void drop() {
         Tile tile = player == PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
@@ -647,15 +637,17 @@ class FourInARow : Gtk.Application {
         const string authors[] = {"Tim Musson <trmusson@ihug.co.nz>",
             "David Neary <bolsh@gimp.org>",
             "Nikhar Agrawal <nikharagrawal2006@gmail.com>",
-            "Jacob Humphrey <jacob.ryan.humphrey@gmail.com"
+            "Jacob Humphrey <jacob.ryan.humphrey@gmail.com>",
+            null
         };
 
         const string artists[] = { "Alan Horkan",
             "Anatol Drlicek",
-            "Based on the Faenza icon theme by Matthieu James"
+            "Based on the Faenza icon theme by Matthieu James",
+            null
         };
 
-        const string documenters[] = {"Timothy Musson"};
+        const string documenters[] = {"Timothy Musson", null};
 
         Gtk.show_about_dialog(window,
             name: _(Config.APPNAME_LONG),
@@ -795,7 +787,7 @@ class FourInARow : Gtk.Application {
             return;
         }
 
-        prefsbox = new PrefsBox(window, this);
+        prefsbox = new PrefsBox(window);
         prefsbox.show_all();
     }
 }
