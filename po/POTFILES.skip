@@ -1,6 +1,5 @@
 src/four-in-a-row.c
 src/games-controls-list.c
-src/main.c
 src/prefs.c
 src/prefs-box.c
 src/scorebox.c
