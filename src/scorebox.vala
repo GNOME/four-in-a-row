@@ -45,6 +45,7 @@ class Scorebox : Gtk.Dialog {
                border_width: 5);
         get_content_area().spacing = 2;
         set_transient_for(parent);
+        modal = true;
 
         Gtk.Grid grid, grid2;
 

@@ -36,6 +36,7 @@ class PrefsBox : Gtk.Dialog {
             title: _("Preferences"),
             destroy_with_parent: true);
         set_transient_for(parent);
+        modal = true;
         border_width = 5;
         get_content_area().spacing = 2;
         notebook = new Gtk.Notebook();
