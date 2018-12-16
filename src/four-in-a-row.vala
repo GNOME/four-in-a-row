@@ -405,16 +405,6 @@ class FourInARow : Gtk.Application {
         timeout = Timeout.add(SPEED_DROP, temp.exec);
     }
 
-    void drop_marble(int r, int c) {
-        Tile tile = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
-
-        game_board.set(r, c, tile);
-        game_board_view.draw_tile(r, c);
-
-        column = column_moveto = c;
-        row = row_dropto = r;
-    }
-
     public void drop() {
         Tile tile = player == PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
