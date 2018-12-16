@@ -637,15 +637,17 @@ class FourInARow : Gtk.Application {
         const string authors[] = {"Tim Musson <trmusson@ihug.co.nz>",
             "David Neary <bolsh@gimp.org>",
             "Nikhar Agrawal <nikharagrawal2006@gmail.com>",
-            "Jacob Humphrey <jacob.ryan.humphrey@gmail.com"
+            "Jacob Humphrey <jacob.ryan.humphrey@gmail.com>",
+            null
         };
 
         const string artists[] = { "Alan Horkan",
             "Anatol Drlicek",
-            "Based on the Faenza icon theme by Matthieu James"
+            "Based on the Faenza icon theme by Matthieu James",
+            null
         };
 
-        const string documenters[] = {"Timothy Musson"};
+        const string documenters[] = {"Timothy Musson", null};
 
         Gtk.show_about_dialog(window,
             name: _(Config.APPNAME_LONG),
