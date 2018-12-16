@@ -6,7 +6,6 @@ data/four-in-a-row.ui
 data/org.gnome.four-in-a-row.gschema.xml
 src/four-in-a-row.vala
 src/games-controls-list.vala
-src/main.vala
 src/prefs.vala
 src/prefs-box.vala
 src/scorebox.vala

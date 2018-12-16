@@ -8,7 +8,6 @@ four_in_a_row_SOURCES = ai.vala \
 			game-board-view.vala \
 			game-board.vala \
 			games-controls-list.vala \
-			main.vala \
 			prefs-box.vala \
 			prefs.vala \
 			scorebox.vala \
