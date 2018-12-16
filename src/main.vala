@@ -57,12 +57,6 @@ public enum Tile {
     PLAYER2_CURSOR,
 }
 
-public enum Move {
-    LEFT,
-    RIGHT,
-    //DROP
-}
-
 public enum SoundID {
     DROP,
     I_WIN,

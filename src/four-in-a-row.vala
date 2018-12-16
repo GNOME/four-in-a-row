@@ -216,10 +216,6 @@ class FourInARow : Gtk.Application {
         }
     }
 
-    // protected override void startup() {
-    //     create_app(this);
-    // }
-
     public void prompt_player() {
         int players = Prefs.instance.get_n_human_players();
         bool human = is_player_human();

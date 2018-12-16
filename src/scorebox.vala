@@ -24,21 +24,8 @@ class Scorebox : Gtk.Dialog {
     Gtk.Label label_score[3];
     public new FourInARow application;
 
-    // static Once<Scorebox> _instance;
-    // public static Scorebox insstance {
-    //     get {
-    //         return _instance.once(() => {
-    //             var scorebox = new Scorebox();
-                //scorebox.show_all();
-                //scorebox.update();
-    //             return scorebox;
-    //         });
-    //     }
-    // }
-
     public Scorebox(Gtk.Window parent, FourInARow application) {
         Object(title: _("Scores"),
-               //parent: window,
                use_header_bar: 1,
                destroy_with_parent: true,
                resizable: false,
@@ -126,7 +113,6 @@ class Scorebox : Gtk.Dialog {
         application.score[PlayerID.PLAYER1] = 0;
         application.score[PlayerID.PLAYER2] = 0;
         application.score[PlayerID.NOBODY] = 0;
-        //update();
     }
 
     public override bool delete_event(Gdk.EventAny event) {

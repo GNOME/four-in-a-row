@@ -80,9 +80,7 @@ class Prefs : Object {
         if (key == "theme-id") {
             int val = sane_theme_id(settings.get_int("theme-id"));
             if (val != theme_id) {
-                 theme_id = val;
-                //if (!GameBoardView.instance.change_theme())
-                    //return;
+                theme_id = val;
                 theme_changed(theme_id);
             }
         }
