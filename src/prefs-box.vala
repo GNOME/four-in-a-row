@@ -76,7 +76,7 @@ class PrefsBox : Gtk.Dialog {
         if (Prefs.instance.level[PlayerID.PLAYER2] == Level.MEDIUM)
             combobox.set_active_iter(iter);
         model.append(out iter);
-        model.set(iter, 0, _("Level thre"), 1, Level.STRONG);
+        model.set(iter, 0, _("Level three"), 1, Level.STRONG);
         if (Prefs.instance.level[PlayerID.PLAYER2] == Level.STRONG)
             combobox.set_active_iter(iter);
 
