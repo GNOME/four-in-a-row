@@ -75,8 +75,6 @@ class FourInARow : Gtk.Application {
     public void game_reset() {
         stop_anim();
 
-        scorebox.reset();
-
         undo_action.set_enabled(false);
         hint_action.set_enabled(false);
 
