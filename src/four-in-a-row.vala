@@ -740,9 +740,9 @@ class FourInARow : Gtk.Application {
         section = new GLib.Menu();
         app_menu.append_section(null, section);
         section.append(_("_Scores"), "app.scores");
-        section.append(_("_Preferences"), "app.preferences");
         section = new GLib.Menu();
         app_menu.append_section(null, section);
+		section.append(_("_Preferences"), "app.preferences");
         section.append(_("_Help"), "app.help");
         section.append(_("_About Four-In-A-Row"), "app.about");
 
