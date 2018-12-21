@@ -21,5 +21,10 @@
       <foaf:mbox rdf:resource="mailto:mcatanzaro@gnome.org" />
       <gnome:userid>mcatanzaro</gnome:userid>
     </foaf:Person>
+    <foaf:Person>
+      <foaf:name>Jacob Humphrey</foaf:name>
+      <foaf:mbox rdf:resource="mailto:jacob.ryan.humphrey@gmail.com" />
+      <gnome:userid>KaKnife</gnome:userid>
+    </foaf:Person>
   </maintainer>
 </Project>
