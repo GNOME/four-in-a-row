@@ -10,10 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-02-01 00:17+0000\n"
-"PO-Revision-Date: 2018-02-02 22:56+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2018-12-17 20:06+0000\n"
+"PO-Revision-Date: 2018-12-28 11:42+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,10 +20,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.2\n"
 
 #: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
-#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
 msgid "Four-in-a-row"
 msgstr "Fyra-i-rad"
 
@@ -58,7 +57,6 @@ msgstr "GNOME-projektet"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
 msgid "four-in-a-row"
 msgstr "four-in-a-row"
 
@@ -67,23 +65,23 @@ msgstr "four-in-a-row"
 msgid "game;strategy;logic;"
 msgstr "spel;strategi;logik;"
 
-#: data/four-in-a-row.ui:19
+#: data/four-in-a-row.ui:22
 msgid "Undo your most recent move"
 msgstr "Ångra ditt senaste drag"
 
-#: data/four-in-a-row.ui:79
+#: data/four-in-a-row.ui:98
 msgid "_Hint"
 msgstr "_Tips"
 
-#: data/four-in-a-row.ui:83
+#: data/four-in-a-row.ui:104
 msgid "Receive a hint for your next move"
 msgstr "Få ett tips angående ditt nästa drag"
 
-#: data/four-in-a-row.ui:98
+#: data/four-in-a-row.ui:117
 msgid "_Start Over"
 msgstr "_Börja om"
 
-#: data/four-in-a-row.ui:102
+#: data/four-in-a-row.ui:123
 msgid "Start a new game"
 msgstr "Starta ett nytt spel"
 
@@ -113,7 +111,7 @@ msgstr "Ljud"
 msgid "Whether or not to play event sounds."
 msgstr "Huruvida händelseljud ska spelas eller inte."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Flytta vänster"
 
@@ -121,7 +119,7 @@ msgstr "Flytta vänster"
 msgid "Key press to move left."
 msgstr "Tangenttryck för att flytta till vänster."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Flytta höger"
 
@@ -129,7 +127,7 @@ msgstr "Flytta höger"
 msgid "Key press to move right."
 msgstr "Tangenttryck för att flytta till höger."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Släpp kula"
 
@@ -137,69 +135,35 @@ msgstr "Släpp kula"
 msgid "Key press to drop a marble."
 msgstr "Tangenttryck för att släppa en kula."
 
-#: src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "Denna tangent används redan."
-
-#: src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "Okänt kommando"
-
-#: src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"Kan inte läsa in bild:\n"
-"%s"
-
-#: src/main.c:476
+#: src/four-in-a-row.vala:250
 msgid "It’s a draw!"
 msgstr "Det är oavgjort!"
 
-#: src/main.c:484
+#: src/four-in-a-row.vala:258
 msgid "You win!"
 msgstr "Du vinner!"
 
-#: src/main.c:486 src/main.c:502
+#: src/four-in-a-row.vala:260 src/four-in-a-row.vala:276
 msgid "Your Turn"
 msgstr "Ditt drag"
 
-#: src/main.c:489
+#: src/four-in-a-row.vala:263
 msgid "I win!"
 msgstr "Jag vinner!"
 
-#: src/main.c:491 src/main.c:590
+#: src/four-in-a-row.vala:265 src/four-in-a-row.vala:503
 msgid "I’m Thinking…"
 msgstr "Jag tänker…"
 
-#: src/main.c:603
-#, c-format
-msgid "Hint: Column %d"
-msgstr "Tips: Kolumn %d"
+#: src/four-in-a-row.vala:517
+msgid "Hint: Column "
+msgstr "Tips: Kolumn "
 
-#: src/main.c:631 src/main.c:635
-msgid "You:"
-msgstr "Du:"
+#: src/four-in-a-row.vala:662
+msgid "Connect four in a row to win"
+msgstr "Koppla ihop fyra i en rad för att vinna"
 
-#: src/main.c:632 src/main.c:634
-msgid "Me:"
-msgstr "Jag:"
-
-#: src/main.c:680
-msgid "Scores"
-msgstr "Poäng"
-
-#: src/main.c:721
-msgid "Drawn:"
-msgstr "Oavgjort:"
-
-#: src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "Koppla ihop fyra i en rad för att vinna."
-
-#: src/main.c:765
+#: src/four-in-a-row.vala:666
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -212,143 +176,176 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/main.c:1130
+#: src/four-in-a-row.vala:742
 msgid "_Scores"
 msgstr "_Poänglista"
 
-#: src/main.c:1131
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: src/main.c:1134
+#: src/four-in-a-row.vala:746
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: src/main.c:1135
-msgid "_About"
-msgstr "_Om"
+#: src/four-in-a-row.vala:747
+msgid "_About Four-In-A-Row"
+msgstr "_Om Fyra-i-rad"
 
-#: src/main.c:1136
-msgid "_Quit"
-msgstr "A_vsluta"
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "Denna tangent används redan."
 
-#: src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "Okänt kommando"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: src/prefs.c:193
+#: src/prefs-box.vala:53
 msgid "Game"
 msgstr "Spel"
 
-#: src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
 msgstr "Motståndare:"
 
-#: src/prefs.c:207
+#: src/prefs-box.vala:67
 msgid "Human"
 msgstr "Mänsklig"
 
-#: src/prefs.c:211
+#: src/prefs-box.vala:71
 msgid "Level one"
 msgstr "Nivå ett"
 
-#: src/prefs.c:215
+#: src/prefs-box.vala:75
 msgid "Level two"
 msgstr "Nivå två"
 
-#: src/prefs.c:219
+#: src/prefs-box.vala:79
 msgid "Level three"
 msgstr "Nivå tre"
 
-#: src/prefs.c:225
+#: src/prefs-box.vala:86
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: src/prefs.c:238
+#: src/prefs-box.vala:98
 msgid "E_nable sounds"
 msgstr "Ak_tivera ljud"
 
 #. keyboard tab
-#: src/prefs.c:243
+#: src/prefs-box.vala:102
 msgid "Keyboard Controls"
 msgstr "Tangentbordsstyrning"
 
-#: src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "Poäng"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "Oavgjort:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "Du:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "Jag:"
+
+#: src/theme.vala:65
 msgid "High Contrast"
 msgstr "Hög kontrast"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
 msgstr "Cirkel"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
 msgstr "Kryss"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
 msgstr "Cirkel vinner!"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
 msgstr "Kryss vinner!"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
 msgstr "Cirkel vid draget"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
 msgstr "Kryss vid draget"
 
-#: src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
 msgstr "Hög kontrast inverterat"
 
-#: src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
 msgstr "Röda och gröna kulor"
 
-#: src/theme.c:62 src/theme.c:71 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "Röd"
 
-#: src/theme.c:62 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "Grön"
 
-#: src/theme.c:63 src/theme.c:72 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
 msgstr "Röd vinner!"
 
-#: src/theme.c:63 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
 msgstr "Grön vinner!"
 
-#: src/theme.c:64 src/theme.c:73 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
 msgstr "Röd vid draget"
 
-#: src/theme.c:64 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
 msgstr "Grön vid draget"
 
-#: src/theme.c:67
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
 msgstr "Blåa och röda kulor"
 
-#: src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "Blå"
 
-#: src/theme.c:72
+#: src/theme.vala:97
 msgid "Blue wins!"
 msgstr "Blå vinner!"
 
-#: src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
 msgstr "Blå vid draget"
 
-#: src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Stjärnor och ringar"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Kan inte läsa in bild:\n"
+#~ "%s"
+
+#~ msgid "_About"
+#~ msgstr "_Om"
+
+#~ msgid "_Quit"
+#~ msgstr "A_vsluta"
