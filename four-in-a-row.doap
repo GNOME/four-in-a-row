@@ -24,7 +24,7 @@
     <foaf:Person>
       <foaf:name>Jacob Humphrey</foaf:name>
       <foaf:mbox rdf:resource="mailto:jacob.ryan.humphrey@gmail.com" />
-      <gnome:userid>KaKnife</gnome:userid>
+      <gnome:userid>jhumphrey</gnome:userid>
     </foaf:Person>
   </maintainer>
 </Project>
