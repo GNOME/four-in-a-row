@@ -151,7 +151,7 @@ class GameBoardView : Gtk.DrawingArea {
 
         dialog = new Gtk.MessageDialog(get_window() as Gtk.Window, Gtk.DialogFlags.MODAL,
             Gtk.MessageType.WARNING, Gtk.ButtonsType.CLOSE,
-        dgettext(Config.GETTEXT_PACKAGE, "Unable to load image:\n%s"), fname);
+        dgettext(GETTEXT_PACKAGE, "Unable to load image:\n%s"), fname);
 
         dialog.run();
         dialog.destroy();
@@ -209,7 +209,7 @@ class GameBoardView : Gtk.DrawingArea {
 
         /* Try the theme pixmaps, fallback to the default and then give up */
         while (true) {
-            fname = Path.build_filename(Config.DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_tileset, null);
+            fname = Path.build_filename(DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_tileset, null);
             try {
                 pb_tileset_tmp = new Gdk.Pixbuf.from_file(fname);
             } catch (Error e) {
@@ -227,7 +227,7 @@ class GameBoardView : Gtk.DrawingArea {
         pb_tileset_raw = pb_tileset_tmp;
 
         if (theme[Prefs.instance.theme_id].fname_bground != null) {
-            fname = Path.build_filename(Config.DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_bground, null);
+            fname = Path.build_filename(DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_bground, null);
             try {
                 pb_bground_tmp = new Gdk.Pixbuf.from_file(fname);
             } catch (Error e) {

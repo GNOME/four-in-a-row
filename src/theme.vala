@@ -36,7 +36,7 @@ struct Theme {
  * Needed to force vala to include headers in the correct order.
  * See https://gitlab.gnome.org/GNOME/vala/issues/98
  */
-const string theme_gettext_package = Config.GETTEXT_PACKAGE;
+const string theme_gettext_package = GETTEXT_PACKAGE;
 
 string theme_get_title(int id) {
     return theme[id].title;

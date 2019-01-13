@@ -326,7 +326,7 @@ class FourInARow : Gtk.Application {
         string filename, path;
 
         filename = name + ".ogg";
-        path = Path.build_filename(Config.SOUND_DIRECTORY, filename);
+        path = Path.build_filename(SOUND_DIRECTORY, filename);
 
         CanberraGtk.context_get().play(
                 id,
@@ -651,8 +651,8 @@ class FourInARow : Gtk.Application {
         const string documenters[] = {"Timothy Musson", null};
 
         Gtk.show_about_dialog(window,
-            name: _(Config.APPNAME_LONG),
-            version: Config.VERSION,
+            name: _(APPNAME_LONG),
+            version: VERSION,
             copyright: "Copyright © 1999–2008 Tim Musson and David Neary\n" +
                        "Copyright © 2014 Michael Catanzaro\n" +
                        "Copyright © 2018 Jacob Humphrey",
@@ -662,7 +662,7 @@ class FourInARow : Gtk.Application {
             documenters: documenters,
             artists: artists,
             translator_credits: _("translator-credits"),
-            logo_icon_name: "four-in-a-row",
+            logo_icon_name: "org.gnome.four-in-a-row",
             website: "https://wiki.gnome.org/Apps/Four-in-a-row");
     }
 
@@ -707,7 +707,7 @@ class FourInARow : Gtk.Application {
         Gtk.Builder builder;
         Gtk.CssProvider css_provider;
 
-        Gtk.Window.set_default_icon_name("four-in-a-row");
+        Gtk.Window.set_default_icon_name("org.gnome.four-in-a-row");
 
         css_provider = new Gtk.CssProvider();
         try {
@@ -720,7 +720,7 @@ class FourInARow : Gtk.Application {
                                                  css_provider,
                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         game_board_view = new GameBoardView(game_board);
-        builder = new Gtk.Builder.from_file(Config.DATA_DIRECTORY + "/four-in-a-row.ui");
+        builder = new Gtk.Builder.from_file(DATA_DIRECTORY + "/four-in-a-row.ui");
 
         window = builder.get_object("fiar-window") as Gtk.ApplicationWindow;
         window.application = this;
@@ -838,9 +838,9 @@ public int main(string[] argv) {
 
     var application = new FourInARow();
 
-    Intl.bindtextdomain(Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
-    Intl.bind_textdomain_codeset(Config.GETTEXT_PACKAGE, "UTF-8");
-    Intl.textdomain(Config.GETTEXT_PACKAGE);
+    Intl.bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
+    Intl.bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+    Intl.textdomain(GETTEXT_PACKAGE);
 
     var context = new OptionContext();
     context.add_group(Gtk.get_option_group(true));

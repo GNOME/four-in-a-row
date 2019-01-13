@@ -23,7 +23,7 @@
  * Needed to force vala to include headers in the correct order.
  * See https://gitlab.gnome.org/GNOME/vala/issues/98
  */
-const string games_controls_gettext_package = Config.GETTEXT_PACKAGE;
+const string games_controls_gettext_package = GETTEXT_PACKAGE;
 
 enum Columns {
     CONFKEY_COLUMN = 0,
