@@ -44,7 +44,7 @@ class Prefs : Object {
     }}
 
     public Prefs() {
-        settings = new GLib.Settings("org.gnome.four-in-a-row");
+        settings = new GLib.Settings("org.gnome.Four-in-a-row");
         level[PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
         level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
         theme_id = settings.get_int("theme-id");
