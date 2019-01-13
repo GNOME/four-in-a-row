@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Michael Catanzaro -->
 <component type="desktop-application">
-  <id>org.gnome.four-in-a-row</id>
+  <id>org.gnome.Four-in-a-row</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Four-in-a-row</name>
@@ -26,7 +26,7 @@
   <provides>
     <id>four-in-a-row.desktop</id>
   </provides>
-  <launchable type="dekstop-id">org.gnome.four-in-a-row.desktop</launchable>
+  <launchable type="dekstop-id">org.gnome.Four-in-a-row.desktop</launchable>
   <url type="homepage">https://wiki.gnome.org/Apps/Four-in-a-row</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/four-in-a-row/issues</url>
   <url type="translate">https://wiki.gnome.org/TranslationProject</url>
