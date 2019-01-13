@@ -194,7 +194,7 @@ class FourInARow : Gtk.Application {
     }
 
     public FourInARow() {
-        Object(application_id: "org.gnome.four-in-a-row",
+        Object(application_id: "org.gnome.Four-in-a-row",
                flags: ApplicationFlags.FLAGS_NONE);
         anim = AnimID.NONE;
         gameover = true;
@@ -662,7 +662,7 @@ class FourInARow : Gtk.Application {
             documenters: documenters,
             artists: artists,
             translator_credits: _("translator-credits"),
-            logo_icon_name: "org.gnome.four-in-a-row",
+            logo_icon_name: "org.gnome.Four-in-a-row",
             website: "https://wiki.gnome.org/Apps/Four-in-a-row");
     }
 
@@ -707,7 +707,7 @@ class FourInARow : Gtk.Application {
         Gtk.Builder builder;
         Gtk.CssProvider css_provider;
 
-        Gtk.Window.set_default_icon_name("org.gnome.four-in-a-row");
+        Gtk.Window.set_default_icon_name("org.gnome.Four-in-a-row");
 
         css_provider = new Gtk.CssProvider();
         try {
