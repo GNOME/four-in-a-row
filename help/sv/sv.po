@@ -1,9 +1,12 @@
+# Daniel Nylander <po@danielnylander.se>, 2007, 2009.
 # Erik Sköldås <erik.skoldas@tele2.se>, 2015.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2018, 2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row doc\n"
-"POT-Creation-Date: 2018-09-05 08:33+0000\n"
-"PO-Revision-Date: 2018-09-05 11:46+0200\n"
+"POT-Creation-Date: 2019-01-20 20:50+0000\n"
+"PO-Revision-Date: 2019-01-23 21:52+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -11,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -23,7 +26,7 @@ msgstr ""
 #. (itstool) path: credit/name
 #: C/appearance.page:13 C/basics.page:14 C/choose-opponent.page:14
 #: C/controls-change.page:16 C/controls-default.page:16 C/index.page:12
-#: C/make-easy.page:14 C/scores.page:14 C/sound-animation.page:14
+#: C/make-easy.page:15 C/scores.page:14 C/sound-animation.page:14
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
@@ -322,22 +325,22 @@ msgid "Preferences"
 msgstr "Inställningar"
 
 #. (itstool) path: info/desc
-#: C/make-easy.page:18
+#: C/make-easy.page:19
 msgid "Use hints or undo your wrong moves."
 msgstr "Använda tips eller ångra feldrag."
 
 #. (itstool) path: page/title
-#: C/make-easy.page:21
+#: C/make-easy.page:22
 msgid "Make your game a little easier"
 msgstr "Gör ditt spel lite enklare"
 
 #. (itstool) path: section/title
-#: C/make-easy.page:24
+#: C/make-easy.page:25
 msgid "Change your last move"
 msgstr "Ändra ditt senaste drag"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:26
+#: C/make-easy.page:27
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
@@ -354,7 +357,7 @@ msgstr ""
 "spelområdet för att ändra ditt drag."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:34
+#: C/make-easy.page:35
 msgid ""
 "You can undo all your moves starting from your current move until you reach "
 "a favourable state of the game, or until the beginning of your current game, "
@@ -365,26 +368,27 @@ msgstr ""
 "att trycka <keyseq><key>Ctrl</key><key>Z</key></keyseq> upprepade gånger."
 
 #. (itstool) path: section/title
-#: C/make-easy.page:42
+#: C/make-easy.page:43
 msgid "Use hints"
 msgstr "Använda tips"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:44
+#: C/make-easy.page:45
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
-"To use a hint, press <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+"To use a hint, press <gui style=\"button\">Hint</gui> or <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
 msgstr ""
 "Om du är osäker på ditt nästa drag, kan du använda ett tips. När du använder "
 "ett tips, flyttar sig din kula till toppen av den kolumn som är det "
 "strategiskt bästa valet och blinkar. Du kan sedan släppa din kula i den "
-"kolumnen. För att använda ett tips, tryck <keyseq><key>Ctrl</key><key>H</"
-"key></keyseq>."
+"kolumnen. För att använda ett tips, tryck <gui style=\"button\">Tips</gui> "
+"eller <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:50
+#: C/make-easy.page:51
 msgid "There is no limit on the number of hints you can use in a game."
 msgstr ""
 "Det finns ingen gräns för hur många tips som du kan använda i ett spel."
