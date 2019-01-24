@@ -36,8 +36,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.el\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2018-06-10 15:02+0000\n"
-"PO-Revision-Date: 2018-09-08 11:51+0300\n"
+"POT-Creation-Date: 2019-01-23 20:56+0000\n"
+"PO-Revision-Date: 2019-01-24 23:06+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gnome.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
@@ -45,11 +45,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
-#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
 msgid "Four-in-a-row"
 msgstr "Τέσσερα στη σειρά"
 
@@ -84,7 +84,6 @@ msgstr "Το έργο GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
 msgid "four-in-a-row"
 msgstr "four-in-a-row"
 
@@ -93,23 +92,23 @@ msgstr "four-in-a-row"
 msgid "game;strategy;logic;"
 msgstr "παιχνίδι;στρατηγική;λογική;game;strategy;logic;"
 
-#: data/four-in-a-row.ui:19
+#: data/four-in-a-row.ui:22
 msgid "Undo your most recent move"
 msgstr "Αναίρεση της πιο προσφατής σας κίνησης"
 
-#: data/four-in-a-row.ui:79
+#: data/four-in-a-row.ui:98
 msgid "_Hint"
 msgstr "_Υπόδειξη"
 
-#: data/four-in-a-row.ui:83
+#: data/four-in-a-row.ui:104
 msgid "Receive a hint for your next move"
 msgstr "Λήψη υπόδειξης για την επόμενή σας κίνηση"
 
-#: data/four-in-a-row.ui:98
+#: data/four-in-a-row.ui:117
 msgid "_Start Over"
 msgstr "Εκκίνη_ση"
 
-#: data/four-in-a-row.ui:102
+#: data/four-in-a-row.ui:123
 msgid "Start a new game"
 msgstr "Εκκίνηση νέου παιχνιδιού"
 
@@ -141,7 +140,7 @@ msgstr "Ήχος"
 msgid "Whether or not to play event sounds."
 msgstr "Αν θα αναπαράγονται ή όχι οι ήχοι συμβάντων."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Μετακίνηση προς τα αριστερά"
 
@@ -149,7 +148,7 @@ msgstr "Μετακίνηση προς τα αριστερά"
 msgid "Key press to move left."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα αριστερά."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Μετακίνηση προς τα δεξιά"
 
@@ -157,7 +156,7 @@ msgstr "Μετακίνηση προς τα δεξιά"
 msgid "Key press to move right."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα δεξιά."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Ρίψη βώλων"
 
@@ -165,69 +164,35 @@ msgstr "Ρίψη βώλων"
 msgid "Key press to drop a marble."
 msgstr "Πάτημα πλήκτρου για να πέσει ένας βώλος."
 
-#: src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "Αυτό το κλειδί χρησιμοποιείται ήδη."
-
-#: src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "Άγνωστη εντολή"
-
-#: src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"Αδυναμία φόρτωσης εικόνας:\n"
-"%s"
-
-#: src/main.c:476
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "Ισοπαλία!"
 
-#: src/main.c:484
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "Κέρδισες!"
 
-#: src/main.c:486 src/main.c:502
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "Η σειρά σας"
 
-#: src/main.c:489
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "Κέρδισα!"
 
-#: src/main.c:491 src/main.c:590
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "Σκέφτομαι…"
 
-#: src/main.c:603
-#, c-format
-msgid "Hint: Column %d"
-msgstr "Υπόδειξη: Στήλη %d"
+#: src/four-in-a-row.vala:515
+msgid "Hint: Column "
+msgstr "Υπόδειξη: Στήλη"
 
-#: src/main.c:631 src/main.c:635
-msgid "You:"
-msgstr "Εσύ:"
+#: src/four-in-a-row.vala:660
+msgid "Connect four in a row to win"
+msgstr "Συνδέστε τέσσερα στη σειρά για να κερδίσετε"
 
-#: src/main.c:632 src/main.c:634
-msgid "Me:"
-msgstr "Εγώ:"
-
-#: src/main.c:680
-msgid "Scores"
-msgstr "Βαθμολογία"
-
-#: src/main.c:721
-msgid "Drawn:"
-msgstr "Ισοπαλία:"
-
-#: src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "Συνδέστε τέσσερα στη σειρά για να κερδίσετε."
-
-#: src/main.c:765
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -241,143 +206,176 @@ msgstr ""
 "Για περισστερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/main.c:1130
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "_Βαθμολογίες"
 
-#: src/main.c:1131
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "Π_ροτιμήσεις"
 
-#: src/main.c:1134
+#: src/four-in-a-row.vala:744
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: src/main.c:1135
-msgid "_About"
-msgstr "_Περί"
+#: src/four-in-a-row.vala:745
+msgid "_About Four-in-a-row"
+msgstr "_Περί Τέσσερα στη σειρά"
 
-#: src/main.c:1136
-msgid "_Quit"
-msgstr "Έ_ξοδος"
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "Αυτό το κλειδί χρησιμοποιείται ήδη."
 
-#: src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "Άγνωστη εντολή"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: src/prefs.c:193
+#: src/prefs-box.vala:53
 msgid "Game"
 msgstr "Παιχνίδι"
 
-#: src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
 msgstr "Αντίπαλος:"
 
-#: src/prefs.c:207
+#: src/prefs-box.vala:67
 msgid "Human"
 msgstr "Άνθρωπος"
 
-#: src/prefs.c:211
+#: src/prefs-box.vala:71
 msgid "Level one"
 msgstr "Πρώτο επίπεδο"
 
-#: src/prefs.c:215
+#: src/prefs-box.vala:75
 msgid "Level two"
 msgstr "Δεύτερο επίπεδο"
 
-#: src/prefs.c:219
+#: src/prefs-box.vala:79
 msgid "Level three"
 msgstr "Τρίτο επίπεδο"
 
-#: src/prefs.c:225
+#: src/prefs-box.vala:86
 msgid "_Theme:"
 msgstr "_Θέμα:"
 
-#: src/prefs.c:238
+#: src/prefs-box.vala:98
 msgid "E_nable sounds"
 msgstr "Ενε_ργοποίηση ήχων"
 
 #. keyboard tab
-#: src/prefs.c:243
+#: src/prefs-box.vala:102
 msgid "Keyboard Controls"
 msgstr "Συντομεύσεις πληκτρολογίου"
 
-#: src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "Βαθμολογία"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "Ισοπαλία:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "Εσύ:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "Εγώ:"
+
+#: src/theme.vala:65
 msgid "High Contrast"
 msgstr "Υψηλή Αντίθεση"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
 msgstr "Κύκλος"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
 msgstr "Σταυρός"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
 msgstr "Ο κύκλος κερδίζει!"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
 msgstr "Ο σταυρός κερδίζει!"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
 msgstr "Η σειρά του κύκλου"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
 msgstr "Η σειρά του σταυρού"
 
-#: src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
 msgstr "Αντιστροφή υψηλής αντίθεσης"
 
-#: src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
 msgstr "Κόκκινοι και πράσινοι βώλοι"
 
-#: src/theme.c:62 src/theme.c:71 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "Κόκκινο"
 
-#: src/theme.c:62 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "Πράσινο"
 
-#: src/theme.c:63 src/theme.c:72 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
 msgstr "Ο κόκκινος κερδίζει!"
 
-#: src/theme.c:63 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
 msgstr "Ο πράσινος κερδίζει!"
 
-#: src/theme.c:64 src/theme.c:73 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
 msgstr "Η σειρά του κόκκινου"
 
-#: src/theme.c:64 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
 msgstr "Η σειρά του πράσινου"
 
-#: src/theme.c:67
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
 msgstr "Γαλάζιοι και κόκκινοι βώλοι"
 
-#: src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "Γαλάζιο"
 
-#: src/theme.c:72
+#: src/theme.vala:97
 msgid "Blue wins!"
 msgstr "Ο μπλε κερδίζει!"
 
-#: src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
 msgstr "Η σειρά του μπλε"
 
-#: src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Αστέρια και δακτύλιοι"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Αδυναμία φόρτωσης εικόνας:\n"
+#~ "%s"
+
+#~ msgid "_About"
+#~ msgstr "_Περί"
+
+#~ msgid "_Quit"
+#~ msgstr "Έ_ξοδος"
