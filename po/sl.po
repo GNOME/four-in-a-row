@@ -11,10 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-02 20:05+0000\n"
-"PO-Revision-Date: 2018-03-06 21:45+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2018-12-16 21:52+0000\n"
+"PO-Revision-Date: 2019-01-25 18:04+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl_SI\n"
@@ -24,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
 #: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
@@ -174,7 +173,7 @@ msgstr "Zmagal sem!"
 
 #: src/main.c:491 src/main.c:590
 msgid "I’m Thinking…"
-msgstr "Preiskovanje možnosti ..."
+msgstr "Iskanje potez …"
 
 #: src/main.c:603
 #, c-format
