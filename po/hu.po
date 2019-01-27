@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2018-12-29 15:20+0000\n"
-"PO-Revision-Date: 2019-01-26 21:47+0100\n"
+"POT-Creation-Date: 2019-01-27 16:20+0000\n"
+"PO-Revision-Date: 2019-01-27 17:42+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -25,48 +25,11 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
 #: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Négyet egy sorba"
-
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
-msgid "Make lines of the same color to win"
-msgstr "Alkosson azonos színű sorokat a győzelemhez"
-
-#: data/four-in-a-row.appdata.xml.in:10
-msgid ""
-"A family classic, the objective of Four-in-a-row is to build a line of four "
-"of your marbles while trying to stop your opponent (human or computer) from "
-"building a line of his or her own. A line can be horizontal, vertical or "
-"diagonal. The first player to connect four in a row is the winner!"
-msgstr ""
-"Egy családi klasszikus, a Négyet egy sorba célja egy négy golyóból álló sor "
-"összeállítása, miközben megakadályozza ellenfelét (ember vagy számítógép) "
-"ugyanebben. A sor lehet vízszintes, függőleges vagy átlós. Aki elsőként "
-"összeköt négyet egy sorba, nyer!"
-
-#: data/four-in-a-row.appdata.xml.in:16
-msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
-"you can always ask for a hint."
-msgstr ""
-"A Négyet egy sorba több nehézségi szintet tartalmaz. Ha bajban van, bármikor "
-"kérhet tippet."
-
-#: data/four-in-a-row.appdata.xml.in:32
-msgid "The GNOME Project"
-msgstr "A GNOME projekt"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
-msgid "game;strategy;logic;"
-msgstr "játék;stratégia;logika;"
 
 #: data/four-in-a-row.ui:22
 msgid "Undo your most recent move"
@@ -88,11 +51,50 @@ msgstr "Újra_kezdés"
 msgid "Start a new game"
 msgstr "Új játék indítása"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
+msgid "Make lines of the same color to win"
+msgstr "Alkosson azonos színű sorokat a győzelemhez"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Egy családi klasszikus, a Négyet egy sorba célja egy négy golyóból álló sor "
+"összeállítása, miközben megakadályozza ellenfelét (ember vagy számítógép) "
+"ugyanebben. A sor lehet vízszintes, függőleges vagy átlós. Aki elsőként "
+"összeköt négyet egy sorba, nyer!"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"A Négyet egy sorba több nehézségi szintet tartalmaz. Ha bajban van, bármikor "
+"kérhet tippet."
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
+msgid "The GNOME Project"
+msgstr "A GNOME projekt"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
+msgid "game;strategy;logic;"
+msgstr "játék;stratégia;logika;"
+
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Ellenfél"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
@@ -100,75 +102,75 @@ msgstr ""
 "A nulla az ember, az egytől háromig terjedő értékek a számítógépes játékos "
 "szintjét jelentik."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "Témaazonosító"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "A kedvelt témát megadó szám."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Hang"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Legyen-e az eseményeknek hangjuk."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Lépés balra"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Billentyű a balra mozgáshoz."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Lépés jobbra"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Billentyű a jobbra mozgáshoz."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Üveggolyó leejtése"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Billentyű az üveggolyó leejtéséhez."
 
-#: src/four-in-a-row.vala:250
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "Döntetlen!"
 
-#: src/four-in-a-row.vala:258
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "Ön nyert!"
 
-#: src/four-in-a-row.vala:260 src/four-in-a-row.vala:276
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "Ön jön"
 
-#: src/four-in-a-row.vala:263
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "Én nyertem!"
 
-#: src/four-in-a-row.vala:265 src/four-in-a-row.vala:503
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "Gondolkodom…"
 
-#: src/four-in-a-row.vala:517
+#: src/four-in-a-row.vala:515
 msgid "Hint: Column "
 msgstr "Javaslat: oszlop "
 
-#: src/four-in-a-row.vala:662
+#: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
 msgstr "Kössön össze négyet egy sorba a győzelemhez"
 
-#: src/four-in-a-row.vala:666
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -179,19 +181,19 @@ msgstr ""
 "Tímár András <timar at gnome dot hu>\n"
 "Varga Szabolcs <shirokuma at shirokuma dot hu>"
 
-#: src/four-in-a-row.vala:742
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "_Pontszámok"
 
-#: src/four-in-a-row.vala:745
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "_Beállítások"
 
-#: src/four-in-a-row.vala:746
+#: src/four-in-a-row.vala:744
 msgid "_Help"
 msgstr "_Súgó"
 
-#: src/four-in-a-row.vala:747
+#: src/four-in-a-row.vala:745
 msgid "_About Four-in-a-row"
 msgstr "A Négyet egy sorba _névjegye"
 
