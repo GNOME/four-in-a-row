@@ -6,14 +6,14 @@
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
 # Chris Leonard <cjl@laptop.org>, 2012.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2008-2016, 2018, 2019.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2008-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2018-12-29 15:20+0000\n"
-"PO-Revision-Date: 2019-01-09 09:41+0100\n"
+"POT-Creation-Date: 2019-01-27 16:20+0000\n"
+"PO-Revision-Date: 2019-01-29 15:47+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -21,51 +21,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Gtranslator 3.31.0\n"
 "X-Project-Style: gnome\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
 #: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Cuatro en raya"
-
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
-msgid "Make lines of the same color to win"
-msgstr "Haga líneas del mismo color para ganar"
-
-#: data/four-in-a-row.appdata.xml.in:10
-msgid ""
-"A family classic, the objective of Four-in-a-row is to build a line of four "
-"of your marbles while trying to stop your opponent (human or computer) from "
-"building a line of his or her own. A line can be horizontal, vertical or "
-"diagonal. The first player to connect four in a row is the winner!"
-msgstr ""
-"Un clásico familiar, el objetivo de Cuatro en raya es construir una línea "
-"con sus cuatro canicas mientras intenta evitar su oponente (que puede ser "
-"humano o el propio equipo) haga la suya. Una línea puede ser horizontal, "
-"vertical o diagonal. El primer jugador en conseguir las cuatro en raya gana."
-
-#: data/four-in-a-row.appdata.xml.in:16
-msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
-"you can always ask for a hint."
-msgstr ""
-"Cuatro en raya tiene varios niveles de dificultad. Si tiene problemas, "
-"siempre puede pedir una pista."
-
-#: data/four-in-a-row.appdata.xml.in:32
-msgid "The GNOME Project"
-msgstr "El proyecto GNOME"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
-msgid "game;strategy;logic;"
-msgstr "juego;estrategia;lógica;"
 
 #: data/four-in-a-row.ui:22
 msgid "Undo your most recent move"
@@ -87,88 +50,126 @@ msgstr "_Iniciar"
 msgid "Start a new game"
 msgstr "Iniciar un juego nuevo"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
+msgid "Make lines of the same color to win"
+msgstr "Haga líneas del mismo color para ganar"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Un clásico familiar, el objetivo de Cuatro en raya es construir una línea "
+"con sus cuatro canicas mientras intenta evitar su oponente (que puede ser "
+"humano o el propio equipo) haga la suya. Una línea puede ser horizontal, "
+"vertical o diagonal. El primer jugador en conseguir las cuatro en raya gana."
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Cuatro en raya tiene varios niveles de dificultad. Si tiene problemas, "
+"siempre puede pedir una pista."
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
+msgid "The GNOME Project"
+msgstr "El proyecto GNOME"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+#| msgid "Four-in-a-row"
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
+msgid "game;strategy;logic;"
+msgstr "juego;estrategia;lógica;"
+
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Oponente"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr ""
 "Cero es humano, del uno al tres corresponde al nivel del jugador automático."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "ID de tema"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Un número que especifica el tema preferido."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Sonido"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Reproducir sonidos de evento."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Mover izquierda"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Tecla para izquierda."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Mover derecha"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Tecla para derecha."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Soltar canica"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Tecla para soltar canica."
 
-#: src/four-in-a-row.vala:250
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "Es un empate"
 
-#: src/four-in-a-row.vala:258
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "Usted gana"
 
-#: src/four-in-a-row.vala:260 src/four-in-a-row.vala:276
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "Su turno"
 
-#: src/four-in-a-row.vala:263
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "Gano yo"
 
-#: src/four-in-a-row.vala:265 src/four-in-a-row.vala:503
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "Estoy pensando…"
 
-#: src/four-in-a-row.vala:517
-#| msgid "Hint: Column %d"
+#: src/four-in-a-row.vala:515
 msgid "Hint: Column "
 msgstr "Pista: columna"
 
-#: src/four-in-a-row.vala:662
-#| msgid "Connect four in a row to win."
+#: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
 msgstr "Conecte cuatro fichas en una fila para ganar"
 
-#: src/four-in-a-row.vala:666
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2008-2016\n"
@@ -177,20 +178,19 @@ msgstr ""
 "Germán Poo Caamaño <gpoo@ubiobio.cl>\n"
 "Pablo Saratxaga <pablo@mandrakesoft.com>"
 
-#: src/four-in-a-row.vala:742
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "_Puntuación"
 
-#: src/four-in-a-row.vala:745
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "_Preferencias"
 
-#: src/four-in-a-row.vala:746
+#: src/four-in-a-row.vala:744
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: src/four-in-a-row.vala:747
-#| msgid "Four-in-a-row"
+#: src/four-in-a-row.vala:745
 msgid "_About Four-in-a-row"
 msgstr "_Acerca de Cuatro en raya"
 
@@ -338,6 +338,9 @@ msgstr "Turno de las azules"
 #: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Estrellas y anillos"
+
+#~ msgid "four-in-a-row"
+#~ msgstr "four-in-a-row"
 
 #~ msgid ""
 #~ "Unable to load image:\n"
