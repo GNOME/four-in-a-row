@@ -10,11 +10,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.ro\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-26 22:43+0000\n"
-"PO-Revision-Date: 2018-04-03 16:44+0300\n"
-"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2019-01-26 14:35+0000\n"
+"PO-Revision-Date: 2019-01-27 02:09+0200\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28 [at] gmail [dot] "
+"com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Launchpad-Export-Date: 2009-11-27 09:12+0000\n"
 
 #: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
-#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
 msgid "Four-in-a-row"
 msgstr "Patru-în-linie"
 
@@ -69,23 +69,23 @@ msgstr "four-in-a-row"
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;joc;strategie;logică;"
 
-#: data/four-in-a-row.ui:19
+#: data/four-in-a-row.ui:22
 msgid "Undo your most recent move"
 msgstr "Anulează cea mai recentă mutare"
 
-#: data/four-in-a-row.ui:79
+#: data/four-in-a-row.ui:98
 msgid "_Hint"
 msgstr "_Indiciu"
 
-#: data/four-in-a-row.ui:83
+#: data/four-in-a-row.ui:104
 msgid "Receive a hint for your next move"
 msgstr "Primește un indiciu pentru următoarea mutare"
 
-#: data/four-in-a-row.ui:98
+#: data/four-in-a-row.ui:117
 msgid "_Start Over"
 msgstr "Î_ncepe din nou"
 
-#: data/four-in-a-row.ui:102
+#: data/four-in-a-row.ui:123
 msgid "Start a new game"
 msgstr "Pornește un joc nou"
 
@@ -116,7 +116,7 @@ msgstr "Sunet"
 msgid "Whether or not to play event sounds."
 msgstr "Dacă se redau sau nu sunetele de evenimente."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
+#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Mută la stânga"
 
@@ -124,7 +124,7 @@ msgstr "Mută la stânga"
 msgid "Key press to move left."
 msgstr "Tasta pentru mișcare la stânga."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
+#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Mută la dreapta"
 
@@ -132,7 +132,7 @@ msgstr "Mută la dreapta"
 msgid "Key press to move right."
 msgstr "Tasta pentru mișcare la dreapta."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
+#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Eliberează piesa"
 
@@ -140,74 +140,40 @@ msgstr "Eliberează piesa"
 msgid "Key press to drop a marble."
 msgstr "Tasta apăsată pentru a elibera o piesă."
 
-#: src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "Această tastă este deja în uz."
-
-#: src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "Comandă necunoscută"
-
-#: src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"Nu s-a putut încărca imaginea:\n"
-"%s"
-
-#: src/main.c:476
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "Este remiză!"
 
-#: src/main.c:484
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "Ați câștigat!"
 
-#: src/main.c:486 src/main.c:502
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "Rândul tău"
 
-#: src/main.c:489
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "Am câștigat!"
 
-#: src/main.c:491 src/main.c:590
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "Mă gândesc…"
 
-#: src/main.c:603
-#, c-format
-msgid "Hint: Column %d"
-msgstr "Indiciu: coloana %d"
+#: src/four-in-a-row.vala:515
+msgid "Hint: Column "
+msgstr "Indiciu: coloana "
 
-#: src/main.c:631 src/main.c:635
-msgid "You:"
-msgstr "Tu:"
+#: src/four-in-a-row.vala:660
+msgid "Connect four in a row to win"
+msgstr "Conectați patru consecutiv pentru a câștiga"
 
-#: src/main.c:632 src/main.c:634
-msgid "Me:"
-msgstr "Eu:"
-
-#: src/main.c:680
-msgid "Scores"
-msgstr "Scoruri"
-
-#: src/main.c:721
-msgid "Drawn:"
-msgstr "Tras:"
-
-#: src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "Conectați patru consecutiv pentru a câștiga."
-
-#: src/main.c:765
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
 "Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
-"Florentina Mușat <florentina.musat.28@gmail.com>\n"
+"Florentina Mușat <florentina.musat.28 [at] gmail [dot] com>, 2019\n"
 "\n"
 "Launchpad Contributions:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
@@ -225,143 +191,176 @@ msgstr ""
 "  Mugurel Tudor https://launchpad.net/~mugurelu-gnome\n"
 "  leandrud https://launchpad.net/~leandrud"
 
-#: src/main.c:1130
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "_Scoruri"
 
-#: src/main.c:1131
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "_Preferințe"
 
-#: src/main.c:1134
+#: src/four-in-a-row.vala:744
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: src/main.c:1135
-msgid "_About"
-msgstr "_Despre"
+#: src/four-in-a-row.vala:745
+msgid "_About Four-in-a-row"
+msgstr "_Despre Patru-în-linie"
 
-#: src/main.c:1136
-msgid "_Quit"
-msgstr "_Ieșire"
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "Această tastă este deja în uz."
 
-#: src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "Comandă necunoscută"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "Preferințe"
 
-#: src/prefs.c:193
+#: src/prefs-box.vala:53
 msgid "Game"
 msgstr "Joc"
 
-#: src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
 msgstr "Oponent:"
 
-#: src/prefs.c:207
+#: src/prefs-box.vala:67
 msgid "Human"
 msgstr "Om"
 
-#: src/prefs.c:211
+#: src/prefs-box.vala:71
 msgid "Level one"
 msgstr "Nivelul unu"
 
-#: src/prefs.c:215
+#: src/prefs-box.vala:75
 msgid "Level two"
 msgstr "Nivelul doi"
 
-#: src/prefs.c:219
+#: src/prefs-box.vala:79
 msgid "Level three"
 msgstr "Nivelul trei"
 
-#: src/prefs.c:225
+#: src/prefs-box.vala:86
 msgid "_Theme:"
 msgstr "_Temă:"
 
-#: src/prefs.c:238
+#: src/prefs-box.vala:98
 msgid "E_nable sounds"
 msgstr "Activează su_netele"
 
 #. keyboard tab
-#: src/prefs.c:243
+#: src/prefs-box.vala:102
 msgid "Keyboard Controls"
 msgstr "Control tastatură"
 
-#: src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "Scoruri"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "Tras:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "Tu:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "Eu:"
+
+#: src/theme.vala:65
 msgid "High Contrast"
 msgstr "Contrast mare"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
 msgstr "Cerc"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
 msgstr "Plus"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
 msgstr "Cerc câștigă!"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
 msgstr "Plus câștigă!"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
 msgstr "Rândul lui cerc"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
 msgstr "Rândul lui plus"
 
-#: src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
 msgstr "Contrast mare inversat"
 
-#: src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
 msgstr "Bile roșii și verzi"
 
-#: src/theme.c:62 src/theme.c:71 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "Roșu"
 
-#: src/theme.c:62 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "Verde"
 
-#: src/theme.c:63 src/theme.c:72 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
 msgstr "Roșu câștigă!"
 
-#: src/theme.c:63 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
 msgstr "Verde câștigă!"
 
-#: src/theme.c:64 src/theme.c:73 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
 msgstr "Rândul lui roșu"
 
-#: src/theme.c:64 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
 msgstr "Rândul lui verde"
 
-#: src/theme.c:67
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
 msgstr "Bile albastre și roșii"
 
-#: src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "Albastru"
 
-#: src/theme.c:72
+#: src/theme.vala:97
 msgid "Blue wins!"
 msgstr "Albastrul câștigă!"
 
-#: src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
 msgstr "Rândul lui albastru"
 
-#: src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Stele și inele"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Nu s-a putut încărca imaginea:\n"
+#~ "%s"
+
+#~ msgid "_About"
+#~ msgstr "_Despre"
+
+#~ msgid "_Quit"
+#~ msgstr "_Ieșire"
