@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
-"POT-Creation-Date: 2019-01-26 14:35+0000\n"
-"PO-Revision-Date: 2019-01-27 18:37+0100\n"
+"POT-Creation-Date: 2019-01-30 22:26+0000\n"
+"PO-Revision-Date: 2019-02-02 09:02+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -331,6 +331,16 @@ msgstr "Játékmenet"
 msgid "Preferences"
 msgstr "Beállítások"
 
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Ez a munka a <_:link-1/> feltételei szerint használható."
+
 #. (itstool) path: info/desc
 #: C/make-easy.page:19
 msgid "Use hints or undo your wrong moves."
@@ -352,14 +362,14 @@ msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
 "To undo your last move, press the <gui style=\"button\">Undo your most "
-"recent move</gui> button in the title bar or press <keyseq><key>Ctrl</"
+"recent move</gui> button in the header bar or press <keyseq><key>Ctrl</"
 "key><key>Z</key></keyseq>. You can now drop your marble at a different row "
 "in the game area to change your move."
 msgstr ""
 "Ha a számítógép nyertes lépést tesz az utolsó lépése miatt vagy mert "
 "véletlenül rossz lépést tesz, akkor visszavonhatja az utolsó lépését és "
 "megváltoztathatja. Az utolsó lépés visszavonásához nyomja meg az <gui style="
-"\"button\">A legutóbbi lépés visszavonása</gui> gombot a címsávban, vagy "
+"\"button\">A legutóbbi lépés visszavonása</gui> gombot a fejlécsávban, vagy "
 "nyomja meg a <keyseq><key>Ctrl</key><key>Z</key></keyseq> kombinációt. Most "
 "bedobhatja az üveggolyóját egy másik sorba a játékterületen a lépése "
 "megváltoztatásához."
@@ -392,8 +402,8 @@ msgstr ""
 "Ha nem biztos a következő lépésében, akkor kérhet tippet. Ha tippet kér, "
 "akkor az üveggolyó a legjobb választást jelentő oszlop tetejére lesz "
 "mozgatva, és villog. Ekkor abba az oszlopba ejtheti az üveggolyót. A tipp "
-"kéréséhez nyomja meg a <gui style=\"button\">Tipp</gui> gombot vagy a <keyseq>"
-"<key>Ctrl</key><key>H</key></keyseq> kombinációt."
+"kéréséhez nyomja meg a <gui style=\"button\">Tipp</gui> gombot vagy a "
+"<keyseq><key>Ctrl</key><key>H</key></keyseq> kombinációt."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:51
@@ -491,14 +501,4 @@ msgid ""
 msgstr ""
 "Törölje a <gui style=\"checkbox\">Hangok bekapcsolása</gui> négyzetet. A "
 "funkció bekapcsolásához jelölje be újra a négyzetet."
-
-#. (itstool) path: p/link
-#: C/legal.xml:4
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Ez a munka a <_:link-1/> feltételei szerint használható."
 
