@@ -1,4 +1,3 @@
-
 four_in_a_row_tests = executable('four-in-a-row-tests', 
     [
         'ai.vala',
@@ -9,7 +8,9 @@ four_in_a_row_tests = executable('four-in-a-row-tests',
         glib_dependency
     ]
 )
-test('four-in-a-row-tests', four_in_a_row_tests)
+test('four-in-a-row-tests', 
+    four_in_a_row_tests,
+    timeout: 60)
 
 
 
