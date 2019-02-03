@@ -1,14 +1,14 @@
 # Polish translation for four-in-a-row help.
-# Copyright © 2017-2018 the four-in-a-row authors.
+# Copyright © 2017-2019 the four-in-a-row authors.
 # This file is distributed under the same license as the four-in-a-row help.
-# Piotr Drąg <piotrdrag@gmail.com>, 2017-2018.
-# Aviary.pl <community-poland@mozilla.org>, 2017-2018.
+# Piotr Drąg <piotrdrag@gmail.com>, 2017-2019.
+# Aviary.pl <community-poland@mozilla.org>, 2017-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row-help\n"
-"POT-Creation-Date: 2018-09-05 08:33+0000\n"
-"PO-Revision-Date: 2018-09-05 18:12+0200\n"
+"POT-Creation-Date: 2019-01-30 22:26+0000\n"
+"PO-Revision-Date: 2019-01-03 17:55+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -22,13 +22,13 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2017-2018\n"
-"Aviary.pl <community-poland@mozilla.org>, 2017-2018"
+"Piotr Drąg <piotrdrag@gmail.com>, 2017-2019\n"
+"Aviary.pl <community-poland@mozilla.org>, 2017-2019"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:13 C/basics.page:14 C/choose-opponent.page:14
 #: C/controls-change.page:16 C/controls-default.page:16 C/index.page:12
-#: C/make-easy.page:14 C/scores.page:14 C/sound-animation.page:14
+#: C/make-easy.page:15 C/scores.page:14 C/sound-animation.page:14
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
@@ -321,39 +321,49 @@ msgstr "Rozgrywka"
 msgid "Preferences"
 msgstr "Preferencje"
 
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Na warunkach licencji <_:link-1/>."
+
 #. (itstool) path: info/desc
-#: C/make-easy.page:18
+#: C/make-easy.page:19
 msgid "Use hints or undo your wrong moves."
 msgstr "Używanie podpowiedzi i cofanie złych ruchów."
 
 #. (itstool) path: page/title
-#: C/make-easy.page:21
+#: C/make-easy.page:22
 msgid "Make your game a little easier"
 msgstr "Ułatwianie sobie gry"
 
 #. (itstool) path: section/title
-#: C/make-easy.page:24
+#: C/make-easy.page:25
 msgid "Change your last move"
 msgstr "Zmiana ostatniego ruchu"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:26
+#: C/make-easy.page:27
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
 "To undo your last move, press the <gui style=\"button\">Undo your most "
-"recent move</gui> button in the title bar or press <keyseq><key>Ctrl</"
+"recent move</gui> button in the header bar or press <keyseq><key>Ctrl</"
 "key><key>Z</key></keyseq>. You can now drop your marble at a different row "
 "in the game area to change your move."
 msgstr ""
 "Kiedy komputer wygrywa dzięki ostatniemu ruchowi gracza, lub przypadkowo "
 "wykonano zły ruch, można cofnąć ostatni ruch i go zmienić. Aby to zrobić, "
 "kliknij przycisk <gui style=\"button\">Cofnij ostatni ruch</gui> na pasku "
-"tytułu lub naciśnij klawisze <keyseq><key>Ctrl</key><key>Z</key></keyseq>. "
+"nagłówka lub naciśnij klawisze <keyseq><key>Ctrl</key><key>Z</key></keyseq>. "
 "Teraz można upuścić kulkę w innym rzędzie."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:34
+#: C/make-easy.page:35
 msgid ""
 "You can undo all your moves starting from your current move until you reach "
 "a favourable state of the game, or until the beginning of your current game, "
@@ -364,25 +374,27 @@ msgstr ""
 "wielokrotnie."
 
 #. (itstool) path: section/title
-#: C/make-easy.page:42
+#: C/make-easy.page:43
 msgid "Use hints"
 msgstr "Używanie podpowiedzi"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:44
+#: C/make-easy.page:45
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
-"To use a hint, press <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+"To use a hint, press <gui style=\"button\">Hint</gui> or <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
 msgstr ""
 "W razie braku pewności co do następnego ruchu można użyć podpowiedzi. Po jej "
 "użyciu kulka zostaje przesunięta na górę kolumny, którą strategicznie "
 "najlepiej wybrać i zacznie migać. Wtedy można ją upuścić. Aby użyć "
-"podpowiedzi, naciśnij klawisze <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+"podpowiedzi, kliknij przycisk <gui style=\"button\">Podpowiedź</gui> lub "
+"naciśnij klawisze <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:50
+#: C/make-easy.page:51
 msgid "There is no limit on the number of hints you can use in a game."
 msgstr "Liczba podpowiedzi na grę nie jest ograniczona."
 
@@ -478,13 +490,3 @@ msgid ""
 msgstr ""
 "Odznacz opcję <gui style=\"checkbox\">Dźwięki</gui>. Zawsze można ją "
 "odznaczyć, aby włączyć je ponownie."
-
-#. (itstool) path: p/link
-#: C/legal.xml:4
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported"
-
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Na warunkach licencji <_:link-1/>."
