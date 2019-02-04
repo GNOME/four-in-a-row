@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2018-12-17 20:06+0000\n"
-"PO-Revision-Date: 2018-12-24 18:43+0100\n"
+"POT-Creation-Date: 2019-01-27 16:20+0000\n"
+"PO-Revision-Date: 2019-02-04 12:51+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -17,48 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
 #: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Fuarce 4"
-
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
-msgid "Make lines of the same color to win"
-msgstr "Cree des liniis dal stes colôr par vinci"
-
-#: data/four-in-a-row.appdata.xml.in:10
-msgid ""
-"A family classic, the objective of Four-in-a-row is to build a line of four "
-"of your marbles while trying to stop your opponent (human or computer) from "
-"building a line of his or her own. A line can be horizontal, vertical or "
-"diagonal. The first player to connect four in a row is the winner!"
-msgstr ""
-"Un classic zûc par fameis, l'obietîf di Fuarce 4 al è chel di creâ une rie "
-"di cuatri modons dal tô colôr intant che tu ciris di fermâ il to aversari "
-"(uman o calcoladôr). Une rie e pues jessi orizontâl, verticâl o diagonâl: "
-"cui che al rive par prin a metiju cuatri in linie al vinç!"
-
-#: data/four-in-a-row.appdata.xml.in:16
-msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
-"you can always ask for a hint."
-msgstr ""
-"Fuarce 4 al dispon di diviers nivei di dificoltât. Se tu sês in dificoltât "
-"tu puedis simpri domandâ un piçul aiût."
-
-#: data/four-in-a-row.appdata.xml.in:32
-msgid "The GNOME Project"
-msgstr "Il progjet GNOME"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
-msgid "game;strategy;logic;"
-msgstr "zûc;strategjie; logjiche;"
 
 #: data/four-in-a-row.ui:22
 msgid "Undo your most recent move"
@@ -80,89 +43,129 @@ msgstr "_Torne partî"
 msgid "Start a new game"
 msgstr "Tache une gnove partide"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
+msgid "Make lines of the same color to win"
+msgstr "Cree des liniis dal stes colôr par vinci"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Un classic zûc par fameis, l'obietîf di Fuarce 4 al è chel di creâ une rie "
+"di cuatri modons dal tô colôr intant che tu ciris di fermâ il to aversari "
+"(uman o calcoladôr). Une rie e pues jessi orizontâl, verticâl o diagonâl: "
+"cui che al rive par prin a metiju cuatri in linie al vinç!"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Fuarce 4 al dispon di diviers nivei di dificoltât. Se tu sês in dificoltât "
+"tu puedis simpri domandâ un piçul aiût."
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
+msgid "The GNOME Project"
+msgstr "Il progjet GNOME"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+#| msgid "Four-in-a-row"
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
+msgid "game;strategy;logic;"
+msgstr "zûc;strategjie; logjiche;"
+
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Aversari"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "Zero al è uman; di un a trê al corispuint il nivel dal computer."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "ID teme"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Un numar che al specifiche il teme preferît."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Sun"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Indiche riprodusi o no i events sonôrs."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Sposte a çampe"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Boton di scliçâ par spostâ a çampe."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Sposte a diestre"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Boton di scliçâ par spostâ a diestre."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Mole modon"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Boton di scliçâ par molâ il modon."
 
-#: src/four-in-a-row.vala:250
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "Paritât!"
 
-#: src/four-in-a-row.vala:258
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "Tu âs vinçût!"
 
-#: src/four-in-a-row.vala:260 src/four-in-a-row.vala:276
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "Il to turni"
 
-#: src/four-in-a-row.vala:263
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "O ai vinçût jo!"
 
-#: src/four-in-a-row.vala:265 src/four-in-a-row.vala:503
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "O stoi pensant..."
 
-#: src/four-in-a-row.vala:517
+#: src/four-in-a-row.vala:515
 msgid "Hint: Column "
 msgstr "Indizi: Colone "
 
-#: src/four-in-a-row.vala:662
+#: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
 msgstr "Leâ cuatri suntune rie par vinci"
 
-#: src/four-in-a-row.vala:666
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
 
-#: src/four-in-a-row.vala:742
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "_Risultâts"
 
@@ -170,12 +173,12 @@ msgstr "_Risultâts"
 msgid "_Preferences"
 msgstr "_Preferencis"
 
-#: src/four-in-a-row.vala:746
+#: src/four-in-a-row.vala:744
 msgid "_Help"
 msgstr "_Jutori"
 
-#: src/four-in-a-row.vala:747
-msgid "_About Four-In-A-Row"
+#: src/four-in-a-row.vala:745
+msgid "_About Four-in-a-row"
 msgstr "_Informazions su Fuarce 4"
 
 #: src/games-controls-list.vala:154
@@ -322,6 +325,9 @@ msgstr "Turni dal blu"
 #: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Stelis e anei"
+
+#~ msgid "four-in-a-row"
+#~ msgstr "four-in-a-row"
 
 #~ msgid ""
 #~ "Unable to load image:\n"
