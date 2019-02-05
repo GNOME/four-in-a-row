@@ -109,12 +109,6 @@ class Scorebox : Gtk.Dialog {
 
     }
 
-    public void reset() {
-        application.score[PlayerID.PLAYER1] = 0;
-        application.score[PlayerID.PLAYER2] = 0;
-        application.score[PlayerID.NOBODY] = 0;
-    }
-
     public override bool delete_event(Gdk.EventAny event) {
         hide();
         return true;
