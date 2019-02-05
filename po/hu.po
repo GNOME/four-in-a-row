@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-01-27 17:42+0100\n"
+"POT-Creation-Date: 2019-02-05 20:24+0000\n"
+"PO-Revision-Date: 2019-02-05 22:51+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -35,19 +35,19 @@ msgstr "Négyet egy sorba"
 msgid "Undo your most recent move"
 msgstr "A legutóbbi lépés visszavonása"
 
-#: data/four-in-a-row.ui:98
+#: data/four-in-a-row.ui:99
 msgid "_Hint"
 msgstr "_Javaslat"
 
-#: data/four-in-a-row.ui:104
+#: data/four-in-a-row.ui:105
 msgid "Receive a hint for your next move"
 msgstr "Javaslat a következő lépéshez"
 
-#: data/four-in-a-row.ui:117
+#: data/four-in-a-row.ui:118
 msgid "_Start Over"
 msgstr "Újra_kezdés"
 
-#: data/four-in-a-row.ui:123
+#: data/four-in-a-row.ui:124
 msgid "Start a new game"
 msgstr "Új játék indítása"
 
@@ -163,8 +163,9 @@ msgid "I’m Thinking…"
 msgstr "Gondolkodom…"
 
 #: src/four-in-a-row.vala:515
-msgid "Hint: Column "
-msgstr "Javaslat: oszlop "
+#, c-format
+msgid "Hint: Column %d"
+msgstr "Javaslat: %d. oszlop"
 
 #: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
