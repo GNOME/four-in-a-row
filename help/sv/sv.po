@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row doc\n"
-"POT-Creation-Date: 2019-01-20 20:50+0000\n"
-"PO-Revision-Date: 2019-01-23 21:52+0100\n"
+"POT-Creation-Date: 2019-01-30 22:26+0000\n"
+"PO-Revision-Date: 2019-02-05 19:19+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -324,6 +324,16 @@ msgstr "Spelets gång"
 msgid "Preferences"
 msgstr "Inställningar"
 
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Erkännande-DelaLika 3.0 Unported"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Det här verket är licensierat under licensen <_:link-1/>."
+
 #. (itstool) path: info/desc
 #: C/make-easy.page:19
 msgid "Use hints or undo your wrong moves."
@@ -345,16 +355,16 @@ msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
 "To undo your last move, press the <gui style=\"button\">Undo your most "
-"recent move</gui> button in the title bar or press <keyseq><key>Ctrl</"
+"recent move</gui> button in the header bar or press <keyseq><key>Ctrl</"
 "key><key>Z</key></keyseq>. You can now drop your marble at a different row "
 "in the game area to change your move."
 msgstr ""
 "När datorn gör ett vinnande drag på grund av ditt senaste drag eller när du "
 "av misstag gör ett felaktigt drag, kan du ångra ditt senaste drag och ändra "
 "det. För att ångra ditt senaste drag, klicka på knappen <gui style=\"button"
-"\">Ångra ditt senaste drag</gui> i namnlisten eller tryck <keyseq><key>Ctrl</"
-"key><key>Z</key></keyseq>. Du kan nu släppa din kula på en annan ruta i "
-"spelområdet för att ändra ditt drag."
+"\">Ångra ditt senaste drag</gui> i rubrikraden eller tryck "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Du kan nu släppa din kula på "
+"en annan ruta i spelområdet för att ändra ditt drag."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:35
@@ -485,16 +495,6 @@ msgid ""
 msgstr ""
 "Avmarkera <gui style=\"checkbox\">Aktivera ljud</gui>. Du kan markera "
 "alternativet igen för att aktivera funktionen."
-
-#. (itstool) path: p/link
-#: C/legal.xml:4
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Erkännande-DelaLika 3.0 Unported"
-
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Det här verket är licensierat under licensen <_:link-1/>."
 
 #~ msgid ""
 #~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
