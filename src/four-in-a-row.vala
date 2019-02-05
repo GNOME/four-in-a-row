@@ -512,7 +512,7 @@ class FourInARow : Gtk.Application {
 
         blink_tile(0, c, game_board[0, c], 6);
 
-        s = _("Hint: Column ")+ (c + 1).to_string();
+        s = _("Hint: Column %d").printf(c + 1);
         set_status_message(s);
 
         if (moves <= 0 || (moves == 1 && is_player_human()))
