@@ -1,3 +1,11 @@
+3.31.90 - February 4, 2019
+==========================
+
+- Game rewritten in Vala (Jacob Humphrey)
+- Switch to Meson build system (Bilal Elmoussaoui)
+- Add F10 accelerator to open menu (Jeremy Bicha)
+- Several improvements to user help (Andre Klapper)
+
 3.28.0 - March 10, 2018
 =======================
 
