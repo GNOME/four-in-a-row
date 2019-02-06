@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-01-29 15:47+0100\n"
+"POT-Creation-Date: 2019-02-05 20:24+0000\n"
+"PO-Revision-Date: 2019-02-06 10:21+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 3.31.0\n"
+"X-Generator: Gtranslator 3.31.90\n"
 "X-Project-Style: gnome\n"
 
 #: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
@@ -34,19 +34,19 @@ msgstr "Cuatro en raya"
 msgid "Undo your most recent move"
 msgstr "Deshacer el movimiento más reciente"
 
-#: data/four-in-a-row.ui:98
+#: data/four-in-a-row.ui:99
 msgid "_Hint"
 msgstr "_Sugerencia"
 
-#: data/four-in-a-row.ui:104
+#: data/four-in-a-row.ui:105
 msgid "Receive a hint for your next move"
 msgstr "Obtener una pista para el siguiente movimiento"
 
-#: data/four-in-a-row.ui:117
+#: data/four-in-a-row.ui:118
 msgid "_Start Over"
 msgstr "_Iniciar"
 
-#: data/four-in-a-row.ui:123
+#: data/four-in-a-row.ui:124
 msgid "Start a new game"
 msgstr "Iniciar un juego nuevo"
 
@@ -81,7 +81,6 @@ msgstr "El proyecto GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
 msgid "org.gnome.Four-in-a-row"
 msgstr "org.gnome.Four-in-a-row"
 
@@ -162,8 +161,10 @@ msgid "I’m Thinking…"
 msgstr "Estoy pensando…"
 
 #: src/four-in-a-row.vala:515
-msgid "Hint: Column "
-msgstr "Pista: columna"
+#, c-format
+#| msgid "Hint: Column "
+msgid "Hint: Column %d"
+msgstr "Pista: columna %d"
 
 #: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
