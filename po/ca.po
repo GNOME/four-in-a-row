@@ -6,227 +6,171 @@
 # Xavier Conde Rueda <xavi.conde@gmail.com>, 2004.
 # Jesús Corrius <jesus@softcatala.org>, 2005.
 # Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>, 2007.
-# Gil Forcada <gilforcada@guifi.net>, 2008, 2010, 2011, 2012, 2013, 2014.
+# Gil Forcada <gilforcada@guifi.net>, 2008, 2010, 2011, 2012, 2014.
 # Carles Ferrando <carles.ferrando@gmail.com>, 2010.
 # Jordi Serratosa <jordis@softcatala.cat>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/five-or-more/issues\n"
-"POT-Creation-Date: 2019-01-11 15:40+0000\n"
-"PO-Revision-Date: 2017-01-25 12:45+0100\n"
-"Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2019-02-06 19:28+0000\n"
+"PO-Revision-Date: 2017-08-27 08:50+0200\n"
+"Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.1\n"
 
-#: data/five-or-more-preferences.ui:13
-msgid "Preferences"
-msgstr "Preferències"
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
+msgid "Four-in-a-row"
+msgstr "Quatre en ratlla"
 
-#: data/five-or-more-preferences.ui:36
-msgid "Appearance"
-msgstr "Aparença"
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "Desfeu el vostre canvi més recent"
 
-#: data/five-or-more-preferences.ui:60
-msgid "_Theme:"
-msgstr "_Tema"
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "_Pista"
 
-#: data/five-or-more-preferences.ui:76
-msgid "balls"
-msgstr "boles"
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "Obtingueu una pista per al vostre proper moviment"
 
-#: data/five-or-more-preferences.ui:77
-msgid "shapes"
-msgstr "formes"
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "_Torna a començar"
 
-#: data/five-or-more-preferences.ui:78
-msgid "tango"
-msgstr "tango"
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "Comença una partida nova"
 
-#: data/five-or-more-preferences.ui:87
-msgid "B_ackground color:"
-msgstr "C_olor de fons:"
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
+msgid "Make lines of the same color to win"
+msgstr "Per guanyar feu línies del mateix color"
 
-#: data/five-or-more.ui:7
-msgid "_New Game"
-msgstr "Partida _nova"
-
-#: data/five-or-more.ui:13
-msgid "S_cores"
-msgstr "_Puntuacions"
-
-#: data/five-or-more.ui:19
-msgid "_Small"
-msgstr "_Petit"
-
-#: data/five-or-more.ui:24
-msgid "_Medium"
-msgstr "_Mitjà"
-
-#: data/five-or-more.ui:29
-msgid "_Large"
-msgstr "_Gran"
-
-#: data/five-or-more.ui:36
-msgid "_Preferences"
-msgstr "_Preferències"
-
-#: data/five-or-more.ui:40
-msgid "_Help"
-msgstr "_Ajuda"
-
-#: data/five-or-more.ui:45
-msgid "_About Five or More"
-msgstr "Quant al Cinc o més"
-
-#: data/five-or-more.ui:65 data/org.gnome.five-or-more.appdata.xml.in:7
-#: data/org.gnome.five-or-more.desktop.in:3 src/main.vala:74 src/main.vala:168
-msgid "Five or More"
-msgstr "Cinc o més"
-
-#
-#: data/five-or-more.ui:77
-msgid "Next:"
-msgstr "Següent:"
-
-#: data/org.gnome.five-or-more.appdata.xml.in:8
-#: data/org.gnome.five-or-more.desktop.in:4
-msgid "Remove colored balls from the board by forming lines"
-msgstr "Suprimiu les boles de colors del tauler formant línies"
-
-#: data/org.gnome.five-or-more.appdata.xml.in:10
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
-"Five or More is the GNOME port of a once-popular computer game. Align five "
-"or more objects of the same color into a line to cause them to disappear and "
-"score points. Earn many more points by lining up as many objects as possible "
-"before clearing them."
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
-"El Cinc o més és la versió del GNOME d'un joc d'ordinador que va ser "
-"popular. Alineeu cinc o més objectes del mateix color en una línia perquè "
-"desapareguin i aconseguir punts. Alineeu com més objectes millor per "
-"aconseguir encara més punts abans de netejar-los."
+"Un clàssic familiar, l'objectiu del Quatre en ratlla és construir una línia "
+"de quatre boles mentre s'intenta evitar que l'oponent (ja sigui humà o "
+"l'ordinador) faci la seva pròpia línia. Una línia pot ser horitzontal, "
+"vertical o en diagonal. El primer jugador que aconsegueixi posar quatre "
+"boles en línia guanya!"
 
-#: data/org.gnome.five-or-more.appdata.xml.in:16
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"More objects appear after every turn. Play for as long as possible, until "
-"the board is completely full!"
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
+"you can always ask for a hint."
 msgstr ""
-"A cada ronda apareixen més objectes. Jugueu tan com pugueu fins que "
-"s'empleni el tauler!"
+"El Quatre en ratlla té múltiples nivells de dificultat. Si no sabeu on tirar "
+"la bola, sempre podeu demanar una pista."
 
-#: data/org.gnome.five-or-more.appdata.xml.in:40
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
+
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.five-or-more.desktop.in:6
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "joc;estratègia;lògica;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.five-or-more.desktop.in:9
-msgid "org.gnome.five-or-more"
-msgstr "org.gnome.five-or-more"
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
+msgid "Opponent"
+msgstr "Oponent"
 
-#: data/org.gnome.five-or-more.gschema.xml:5
-msgid "Playing field size"
-msgstr "Mida del camp"
-
-#: data/org.gnome.five-or-more.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
-"Playing field size. 1=Small, 2=Medium, 3=Large. Any other value is invalid."
-msgstr ""
-"Mida del camp de joc. 1=Petit, 2=Mitjà, 3=Gran. Qualsevol altre valor es "
-"considera no vàlid."
+"Zero is human; one through three correspond to the level of the computer "
+"player."
+msgstr "0 és humà; d'1 a 3 correspon al nivell del jugador de l'ordinador."
 
-#: data/org.gnome.five-or-more.gschema.xml:10
-msgid "Ball style"
-msgstr "Estil de les boles"
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
+msgid "Theme ID"
+msgstr "Id. del tema"
 
-#: data/org.gnome.five-or-more.gschema.xml:11
-msgid "Ball style. The filename of the images to use for the balls."
-msgstr ""
-"Estil de les boles. El nom del fitxer de les imatges a utilitzar per a les "
-"boles."
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+msgid "A number specifying the preferred theme."
+msgstr "Un nombre que especifica el tema preferit."
 
-#: data/org.gnome.five-or-more.gschema.xml:15
-msgid "Background color"
-msgstr "Color de fons"
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
+msgid "Sound"
+msgstr "So"
 
-#: data/org.gnome.five-or-more.gschema.xml:16
-msgid "Background color. The hex specification of the background color."
-msgstr "L'especificació hexadecimal del color de fons."
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
+msgid "Whether or not to play event sounds."
+msgstr "Si s'han de reproduir els esdeveniments de so."
 
-#: data/org.gnome.five-or-more.gschema.xml:20
-msgid "Time between moves"
-msgstr "Retard entre moviments"
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+msgid "Move left"
+msgstr "Mou a l'esquerra"
 
-#: data/org.gnome.five-or-more.gschema.xml:21
-msgid "Time between moves in milliseconds."
-msgstr "Retard entre moviments en mil·lisegons."
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
+msgid "Key press to move left."
+msgstr "Tecla per moure a l'esquerra."
 
-#: data/org.gnome.five-or-more.gschema.xml:25
-msgid "Game score"
-msgstr "Puntuació del joc"
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+msgid "Move right"
+msgstr "Mou a la dreta"
 
-#: data/org.gnome.five-or-more.gschema.xml:26
-msgid "Game score from last saved session."
-msgstr "Puntuació del joc de la darrera sessió desada."
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
+msgid "Key press to move right."
+msgstr "Tecla per moure a la dreta."
 
-#: data/org.gnome.five-or-more.gschema.xml:30
-msgid "Game field"
-msgstr "Camp de joc"
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+msgid "Drop marble"
+msgstr "Deixa caure una bola"
 
-#: data/org.gnome.five-or-more.gschema.xml:31
-msgid "Game field from last saved session."
-msgstr "Camp de joc de la darrera sessió desada."
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
+msgid "Key press to drop a marble."
+msgstr "Tecla per deixar caure una bola."
 
-#: data/org.gnome.five-or-more.gschema.xml:35
-msgid "Game preview"
-msgstr "Previsualització del joc"
+#: src/four-in-a-row.vala:248
+msgid "It’s a draw!"
+msgstr "Empat!"
 
-#: data/org.gnome.five-or-more.gschema.xml:36
-msgid "Game preview from last saved session."
-msgstr "Previsualització del joc de la darrera sessió desada."
+#: src/four-in-a-row.vala:256
+msgid "You win!"
+msgstr "Heu guanyat!"
 
-#: data/org.gnome.five-or-more.gschema.xml:40
-msgid "Width of the window in pixels"
-msgstr "L'amplada, en píxels, de la finestra"
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
+msgid "Your Turn"
+msgstr "El vostre torn"
 
-#: data/org.gnome.five-or-more.gschema.xml:44
-msgid "Height of the window in pixels"
-msgstr "L'alçada, en píxels, de la finestra"
+#: src/four-in-a-row.vala:261
+msgid "I win!"
+msgstr "He guanyat!"
 
-#: data/org.gnome.five-or-more.gschema.xml:48
-msgid "true if the window is maximized"
-msgstr "«true» (cert) si la finestra està maximitzada"
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
+msgid "I’m Thinking…"
+msgstr "Hi estic pensant…"
 
-#: src/game.vala:94
-msgctxt "board size"
-msgid "Small"
-msgstr "Petit"
+#: src/four-in-a-row.vala:515
+#, c-format
+msgid "Hint: Column %d"
+msgstr "Suggeriment: columna %d"
 
-#: src/game.vala:95
-msgctxt "board size"
-msgid "Medium"
-msgstr "Mitjà"
+#: src/four-in-a-row.vala:660
+msgid "Connect four in a row to win"
+msgstr "Connecteu quatre boles en línia per guanyar"
 
-#: src/game.vala:96
-msgctxt "board size"
-msgid "Large"
-msgstr "Gran"
-
-#: src/main.vala:171
-msgid "GNOME port of the once-popular Color Lines game"
-msgstr "Adaptació per al GNOME de l'antic i popular joc Línies de color"
-
-#: src/main.vala:177
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "Jordi Vila <gnome@softcatala.net>\n"
@@ -234,115 +178,178 @@ msgstr ""
 "Xavier Conde <xaviconde@eresmas.com>\n"
 "Jesús Corrius <jesus@softcatala.org>\n"
 "Josep Puigdemont <josep.puigdemont@gmail.com>\n"
-"David Planella <david.planella@gmail.com>\n"
-"Jordi Mas <jmas@softcatala.org>"
+"David Planella <david.planella@gmail.com>"
 
-#: src/window.vala:50
-msgid "Match five objects of the same type in a row to score!"
-msgstr ""
-"Per puntuar, heu de fer coincidir en una fila cinc objectes del mateix color"
+#: src/four-in-a-row.vala:740
+msgid "_Scores"
+msgstr "Puntuacion_s"
 
-#: src/window.vala:51
-msgid "You can’t move there!"
-msgstr "Aquí no s'hi pot anar!"
+#: src/four-in-a-row.vala:743
+msgid "_Preferences"
+msgstr "_Preferències"
 
-#: src/window.vala:52
-msgid "Game Over!"
-msgstr "Fi del joc"
+#: src/four-in-a-row.vala:744
+msgid "_Help"
+msgstr "A_juda"
 
-#: src/window.vala:53
-#, c-format
-msgid "Score: %d"
-msgstr "Puntuació: %d"
+#: src/four-in-a-row.vala:745
+msgid "_About Four-in-a-row"
+msgstr "_En quant al Quatre en ratlla"
 
-#: src/window.vala:87
-msgid "Board Size: "
-msgstr "Mida del tauler: "
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "Aquesta clau ja està en ús."
 
-#: src/window.vala:159
-msgid "Are you sure you want to restart the game?"
-msgstr "Esteu segur que voleu reiniciar el joc?"
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "Ordre desconeguda"
 
-#: src/window.vala:161
-msgid "_Cancel"
-msgstr "_Cancel·la"
+#: src/prefs-box.vala:36
+msgid "Preferences"
+msgstr "Preferències"
 
-#: src/window.vala:162
-msgid "_Restart"
-msgstr "_Reinicia"
+#: src/prefs-box.vala:53
+msgid "Game"
+msgstr "Partida"
 
-#~ msgid "_Image:"
-#~ msgstr "_Imatges:"
+#: src/prefs-box.vala:56
+msgid "Opponent:"
+msgstr "Oponent:"
 
-#~ msgid "General"
-#~ msgstr "General"
+#: src/prefs-box.vala:67
+msgid "Human"
+msgstr "Humà"
 
-#~ msgid "_Use fast moves"
-#~ msgstr "_Utilitza moviments ràpids"
+#: src/prefs-box.vala:71
+msgid "Level one"
+msgstr "Primer nivell"
 
-#~ msgid "0"
-#~ msgstr "0"
+#: src/prefs-box.vala:75
+msgid "Level two"
+msgstr "Segon nivell"
 
-#~ msgid "Start a new puzzle"
-#~ msgstr "Comença un trencaclosques nou"
+#: src/prefs-box.vala:79
+msgid "Level three"
+msgstr "Tercer nivell"
 
-#~ msgid "About"
-#~ msgstr "Quant a"
+#: src/prefs-box.vala:86
+msgid "_Theme:"
+msgstr "_Tema:"
 
-#~ msgid "Quit"
-#~ msgstr "Surt"
+#: src/prefs-box.vala:98
+msgid "E_nable sounds"
+msgstr "_Habilita el so"
 
-#~ msgid "Could not load theme"
-#~ msgstr "No s'ha pogut carregar el tema"
+#. keyboard tab
+#: src/prefs-box.vala:102
+msgid "Keyboard Controls"
+msgstr "Controls del teclat"
+
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "Puntuacions"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "Empat:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "Vós:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "Jo:"
+
+#: src/theme.vala:65
+msgid "High Contrast"
+msgstr "Contrast alt"
+
+#: src/theme.vala:69 src/theme.vala:78
+msgid "Circle"
+msgstr "Cercle"
+
+#: src/theme.vala:69 src/theme.vala:78
+msgid "Cross"
+msgstr "Creu"
+
+#: src/theme.vala:70 src/theme.vala:79
+msgid "Circle wins!"
+msgstr "Guanya els cercles"
+
+#: src/theme.vala:70 src/theme.vala:79
+msgid "Cross wins!"
+msgstr "Guanyen les creus!"
+
+#: src/theme.vala:71 src/theme.vala:80
+msgid "Circle’s turn"
+msgstr "Torn pels cercles"
+
+#: src/theme.vala:71 src/theme.vala:80
+msgid "Cross’s turn"
+msgstr "Torn per les creus"
+
+#: src/theme.vala:74
+msgid "High Contrast Inverse"
+msgstr "Contrast alt invers"
+
+#: src/theme.vala:83
+msgid "Red and Green Marbles"
+msgstr "Boles vermelles i verdes"
+
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
+msgid "Red"
+msgstr "Vermell"
+
+#: src/theme.vala:87 src/theme.vala:105
+msgid "Green"
+msgstr "Verd"
+
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
+msgid "Red wins!"
+msgstr "Guanyen els vermells"
+
+#: src/theme.vala:88 src/theme.vala:106
+msgid "Green wins!"
+msgstr "Guanyen els verds"
+
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
+msgid "Red’s turn"
+msgstr "Torn pels vermells"
+
+#: src/theme.vala:89 src/theme.vala:107
+msgid "Green’s turn"
+msgstr "Torn pels verds"
+
+#: src/theme.vala:92
+msgid "Blue and Red Marbles"
+msgstr "Boles blaves i vermelles"
+
+#: src/theme.vala:96
+msgid "Blue"
+msgstr "Blau"
+
+#: src/theme.vala:97
+msgid "Blue wins!"
+msgstr "Guanyen els blaus"
+
+#: src/theme.vala:98
+msgid "Blue’s turn"
+msgstr "Torn pels blaus"
+
+#: src/theme.vala:101
+msgid "Stars and Rings"
+msgstr "Estrelles i anells"
 
 #~ msgid ""
-#~ "Unable to locate file:\n"
-#~ "%s\n"
-#~ "\n"
-#~ "The default theme will be loaded instead."
+#~ "Unable to load image:\n"
+#~ "%s"
 #~ msgstr ""
-#~ "No s'ha trobat el fitxer:\n"
-#~ "«%s»\n"
-#~ "\n"
-#~ "Es carregarà el tema per defecte en el seu lloc."
+#~ "No s'ha pogut carregar la imatge:\n"
+#~ "%s"
 
-#~ msgid ""
-#~ "Unable to locate file:\n"
-#~ "%s\n"
-#~ "\n"
-#~ "Please check that Five or More is installed correctly."
-#~ msgstr ""
-#~ "No s'ha pogut trobar el fitxer:\n"
-#~ "%s\n"
-#~ "\n"
-#~ "Comproveu la instal·lació del Cinc o més."
-
-#~ msgid "Five or More Scores"
-#~ msgstr "Puntuacions del Cinc o més"
-
-#~ msgid "_Board size:"
-#~ msgstr "_Mida del tauler:"
-
-#~ msgctxt "score-dialog"
-#~ msgid "Time"
-#~ msgstr "Temps"
-
-#~ msgctxt "score-dialog"
-#~ msgid "Score"
-#~ msgstr "Puntuació"
-
-#~ msgctxt "score-dialog"
-#~ msgid "%1$dm %2$ds"
-#~ msgstr "%1$d m %2$d s"
+#~ msgid "_About"
+#~ msgstr "_Quant a"
 
 #~ msgid "_Quit"
-#~ msgstr "_Surt"
-
-#~ msgid "_Undo"
-#~ msgstr "_Desfés"
-
-#~ msgid "_Close"
-#~ msgstr "_Tanca"
-
-#~ msgid "Date"
-#~ msgstr "Data"
+#~ msgstr "S_urt"
