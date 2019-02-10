@@ -194,7 +194,7 @@ msgstr "A_juda"
 
 #: src/four-in-a-row.vala:745
 msgid "_About Four-in-a-row"
-msgstr "_En quant al Quatre en ratlla"
+msgstr "_Quant al Quatre en ratlla"
 
 #: src/games-controls-list.vala:154
 msgid "This key is already in use."
