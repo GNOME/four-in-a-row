@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-02-05 20:24+0000\n"
-"PO-Revision-Date: 2019-02-06 10:21+0100\n"
+"POT-Creation-Date: 2019-02-06 19:28+0000\n"
+"PO-Revision-Date: 2019-02-11 10:16+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -68,8 +68,11 @@ msgstr ""
 "vertical o diagonal. El primer jugador en conseguir las cuatro en raya gana."
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:16
+#| msgid ""
+#| "Four-in-a-row features multiple difficulty levels. If you're having "
+#| "trouble, you can always ask for a hint."
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Cuatro en raya tiene varios niveles de dificultad. Si tiene problemas, "
@@ -162,7 +165,6 @@ msgstr "Estoy pensando…"
 
 #: src/four-in-a-row.vala:515
 #, c-format
-#| msgid "Hint: Column "
 msgid "Hint: Column %d"
 msgstr "Pista: columna %d"
 
