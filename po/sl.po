@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-01-24 21:07+0000\n"
-"PO-Revision-Date: 2019-01-25 18:20+0100\n"
+"POT-Creation-Date: 2019-02-09 10:08+0000\n"
+"PO-Revision-Date: 2019-02-09 20:31+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl_SI\n"
@@ -25,16 +25,38 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 2.1.1\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
 #: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Štiri v vrsto"
 
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "Razveljavi zadnjo potezo"
+
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "_Namig"
+
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "Namig za naslednjo potezo"
+
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "_Začni znova"
+
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "Začni novo igro"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "Za zmago čim hitreje sestavite vrstice iste barve"
 
-#: data/four-in-a-row.appdata.xml.in:10
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -46,51 +68,34 @@ msgstr ""
 "enako. Vrsta je lahko navpična, vodoravna ali diagonalna. Zmaga tisti, ki "
 "prvi postavi štiri v vrsto."
 
-#: data/four-in-a-row.appdata.xml.in:16
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
-msgstr "Igra ima več zahtevnostnih ravni, omogoča pa tudi namige."
+msgstr ""
+"Igra ima več zahtevnostnih ravni, omogoča pa tudi uporabo namigov v primeru "
+"težav."
 
-#: data/four-in-a-row.appdata.xml.in:32
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+#| msgid "Four-in-a-row"
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "igra;strategija;logika;"
 
-#: data/four-in-a-row.ui:22
-msgid "Undo your most recent move"
-msgstr "Razveljavi zadnjo potezo"
-
-#: data/four-in-a-row.ui:98
-msgid "_Hint"
-msgstr "_Namig"
-
-#: data/four-in-a-row.ui:104
-msgid "Receive a hint for your next move"
-msgstr "Namig za naslednjo potezo"
-
-#: data/four-in-a-row.ui:117
-msgid "_Start Over"
-msgstr "_Začni znova"
-
-#: data/four-in-a-row.ui:123
-msgid "Start a new game"
-msgstr "Začni novo igro"
-
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Nasprotnik"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
@@ -98,43 +103,43 @@ msgstr ""
 "Ničla je človek; števila od ena do tri pripadajo ravni računalniškega "
 "igralca."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "ID teme"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Številka, ki določa prednostno temo."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Zvok"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Ali naj se ob dogodkih predvajajo zvoki."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Premaknite se v levo"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Pritisk tipke za premik v levo."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Premaknite se v desno"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Pritisk tipke za premik v desno."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Izpusti kroglico"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Pritisk tipke za izpustitev kroglice."
 
@@ -159,8 +164,9 @@ msgid "I’m Thinking…"
 msgstr "Iskanje potez …"
 
 #: src/four-in-a-row.vala:515
-msgid "Hint: Column "
-msgstr "Namig: Stolpec "
+#, c-format
+msgid "Hint: Column %d"
+msgstr "Namig: stolpec %d"
 
 #: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
@@ -334,6 +340,9 @@ msgstr "Modri je na potezi"
 #: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Zvezdice in obroči"
+
+#~ msgid "four-in-a-row"
+#~ msgstr "four-in-a-row"
 
 #~ msgid ""
 #~ "Unable to load image:\n"
