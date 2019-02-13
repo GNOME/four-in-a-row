@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.ro\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-01-26 14:35+0000\n"
-"PO-Revision-Date: 2019-01-27 02:09+0200\n"
+"POT-Creation-Date: 2019-02-06 19:28+0000\n"
+"PO-Revision-Date: 2019-02-13 17:41+0100\n"
 "Last-Translator: Florentina Mușat <florentina.musat.28 [at] gmail [dot] "
 "com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
@@ -20,21 +20,44 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && n"
+"%100<=19) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.1\n"
 "X-Launchpad-Export-Date: 2009-11-27 09:12+0000\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
 #: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Patru-în-linie"
 
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "Anulează cea mai recentă mutare"
+
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "_Indiciu"
+
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "Primește un indiciu pentru următoarea mutare"
+
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "Î_ncepe din nou"
+
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "Pornește un joc nou"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "Creați linii de aceeași culoare pentru a câștiga"
 
-#: data/four-in-a-row.appdata.xml.in:10
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -47,96 +70,76 @@ msgstr ""
 "linie poate fi orizontală, verticală sau diagonală. Primul jucător care "
 "conectează patru în linie este câștigătorul!"
 
-#: data/four-in-a-row.appdata.xml.in:16
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Patru-în-linie deține niveluri multiple de dificultate. Dacă aveți probleme, "
 "puteți întotdeauna să solicitați un indiciu."
 
-#: data/four-in-a-row.appdata.xml.in:32
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "Proiectul GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;joc;strategie;logică;"
 
-#: data/four-in-a-row.ui:22
-msgid "Undo your most recent move"
-msgstr "Anulează cea mai recentă mutare"
-
-#: data/four-in-a-row.ui:98
-msgid "_Hint"
-msgstr "_Indiciu"
-
-#: data/four-in-a-row.ui:104
-msgid "Receive a hint for your next move"
-msgstr "Primește un indiciu pentru următoarea mutare"
-
-#: data/four-in-a-row.ui:117
-msgid "_Start Over"
-msgstr "Î_ncepe din nou"
-
-#: data/four-in-a-row.ui:123
-msgid "Start a new game"
-msgstr "Pornește un joc nou"
-
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Oponent"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr ""
 "Zero este uman, unu până la trei corespund nivelului jucătorului calculator."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "ID temă"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Un număr specificând tema preferată."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Sunet"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Dacă se redau sau nu sunetele de evenimente."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Mută la stânga"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Tasta pentru mișcare la stânga."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Mută la dreapta"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Tasta pentru mișcare la dreapta."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Eliberează piesa"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Tasta apăsată pentru a elibera o piesă."
 
@@ -161,8 +164,9 @@ msgid "I’m Thinking…"
 msgstr "Mă gândesc…"
 
 #: src/four-in-a-row.vala:515
-msgid "Hint: Column "
-msgstr "Indiciu: coloana "
+#, c-format
+msgid "Hint: Column %d"
+msgstr "Indiciu: coloana %d"
 
 #: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
@@ -174,6 +178,7 @@ msgstr ""
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
 "Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
 "Florentina Mușat <florentina.musat.28 [at] gmail [dot] com>, 2019\n"
+"Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2019\n"
 "\n"
 "Launchpad Contributions:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
@@ -351,6 +356,9 @@ msgstr "Rândul lui albastru"
 #: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Stele și inele"
+
+#~ msgid "four-in-a-row"
+#~ msgstr "four-in-a-row"
 
 #~ msgid ""
 #~ "Unable to load image:\n"
