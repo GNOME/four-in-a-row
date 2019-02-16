@@ -1,0 +1,544 @@
+# Alex <dragosdobritoiu666@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-02-16 15:03+0000\n"
+"PO-Revision-Date: 2019-02-16 20:42+0100\n"
+"Last-Translator: Alex <dragosdobritoiu666@gmail.com>\n"
+"Language-Team: -\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"MrAxel\n"
+"Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2019"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:13 C/basics.page:14 C/choose-opponent.page:14
+#: C/controls-change.page:16 C/controls-default.page:16 C/index.page:12
+#: C/make-easy.page:15 C/scores.page:14 C/sound-animation.page:14
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#. (itstool) path: info/desc
+#: C/appearance.page:17
+msgid "Use different themes to improve your gaming experience."
+msgstr "Folosiți diferite teme pentru a vă îmbunătăți experiența de joc."
+
+#. (itstool) path: page/title
+#: C/appearance.page:20
+msgid "Change the appearance of your gaming area"
+msgstr "Schimbați aspectul zonei de joc"
+
+#. (itstool) path: page/p
+#: C/appearance.page:22
+msgid ""
+"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
+"a black grid when you start a new game."
+msgstr ""
+"Implicit, <app>Patru-în-linie</app> folosește piese roșii și albastre închis "
+"pe o grilă neagră când începeți un nou joc."
+
+#. (itstool) path: steps/title
+#: C/appearance.page:26
+msgid "To use a different theme:"
+msgstr "Pentru a utiliza o temă diferită:"
+
+#. (itstool) path: item/p
+#: C/appearance.page:28
+msgid ""
+"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
+"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+msgstr ""
+"Deschideți meniul cu aplicații din bara de sus și selectați <guiseq><gui "
+"style=\"menu\">Preferințe</gui> <gui style=\"menuitem\">Joc</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:33
+msgid ""
+"Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
+"down menu to the right of <gui style=\"group\">Theme</gui>. The change will "
+"be reflected immediately in the game window."
+msgstr ""
+"Sub <gui>Aspect</gui>, alegeți tema dorită din meniul derulant din dreapta "
+"lui <gui style=\"group\">Temă</gui>. Modificarea va fi reflectată imediat în "
+"fereastra jocului."
+
+#. (itstool) path: info/desc
+#: C/basics.page:18
+msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
+msgstr "Pornirea, jocul și ieșirea dintr-un joc de <app>Patru-în-linie</app>."
+
+#. (itstool) path: page/title
+#: C/basics.page:22
+msgid "Basic instructions"
+msgstr "Instrucțiuni de bază"
+
+#. (itstool) path: section/title
+#: C/basics.page:25
+msgid "Start a new game"
+msgstr "Pornirea unui nou joc"
+
+#. (itstool) path: section/p
+#: C/basics.page:27
+msgid ""
+"Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq> to start a new game."
+msgstr ""
+"Apăsați <gui style=\"button\">Începe din nou</gui> sau apăsați "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> pentru a începe un nou joc."
+
+#. (itstool) path: section/title
+#: C/basics.page:34
+msgid "Quit <app>Four-in-a-row</app>"
+msgstr "Ieșirea din <app>Patru-în-linie</app>"
+
+#. (itstool) path: section/p
+#: C/basics.page:36
+msgid ""
+"Open the application menu in the top bar and select <gui style=\"menuitem"
+"\">Quit</gui> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
+"<app>Four-in-a-row</app> at any time."
+msgstr ""
+"Deschideți meniul cu aplicații din bara de sus și selectați <gui style="
+"\"menuitem\">Ieșire</gui> sau apăsați <keyseq><key>Ctrl</key><key>Q</key></"
+"keyseq> oricând pentru a ieși din <app>Patru-în-linie</app>."
+
+#. (itstool) path: credit/name
+#: C/choose-opponent.page:18 C/sound-animation.page:18
+msgid "Michael Hill"
+msgstr "Michael Hill"
+
+#. (itstool) path: info/desc
+#: C/choose-opponent.page:22
+msgid "Change the level at which the computer plays or play with a friend."
+msgstr "Schimbați nivelul la care calculatorul joacă sau jucați cu un prieten."
+
+#. (itstool) path: page/title
+#: C/choose-opponent.page:26
+msgid "Choose a different opponent"
+msgstr "Alegeți un oponent diferit"
+
+#. (itstool) path: page/p
+#: C/choose-opponent.page:27
+msgid ""
+"By default, your opponent in <app>Four-in-a-row</app> is the computer, "
+"playing at level one."
+msgstr ""
+"Implicit, oponentul dvs. în <app>Patru-în-linie</app> este calculatorul, "
+"jucând la nivelul unu."
+
+#. (itstool) path: steps/title
+#: C/choose-opponent.page:31
+msgid "To change the level, or to play with a friend:"
+msgstr "Pentru a schimba nivelul, sau să jucați cu un prieten:"
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:33 C/sound-animation.page:33
+msgid ""
+"Open the application menu in the top bar and select <guiseq><gui style="
+"\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+msgstr ""
+"Deschideți meniul cu aplicații din bara de sus și selectați <guiseq><gui "
+"style=\"menuitem\">Preferințe</gui> <gui style=\"menuitem\">Joc</gui></"
+"guiseq>."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:38
+msgid ""
+"Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for "
+"both players if want to play with a friend or family member."
+msgstr ""
+"La <gui>Adversar</gui>, alegeți <gui style=\"radiobutton\">Om</gui> pentru "
+"ambii jucători dacă doriți să jucați cu un prieten sau membru al familiei."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:40
+msgid ""
+"Alternatively, choose the level at which the computer plays. Choose between "
+"<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
+"two</gui> or <gui style=\"radiobutton\">Level three</gui>, where <gui style="
+"\"radiobutton\">Level one</gui> is the easiest level and <gui style="
+"\"radiobutton\">Level three</gui> is the most difficult level."
+msgstr ""
+"Alternativ, alegeți nivelul la care calculatorul joacă. Alegeți dintre <gui "
+"style=\"radiobutton\">Nivelul unu</gui>, <gui style=\"radiobutton\">Nivelul "
+"doi</gui> sau <gui style=\"radiobutton\">Nivelul trei</gui>, unde <gui style="
+"\"radiobutton\">Nivelul unu</gui> este cel mai ușor nivel iar <gui style="
+"\"radiobutton\">Nivelul trei</gui> este cel mai greu nivel."
+
+#. (itstool) path: note/p
+#: C/choose-opponent.page:48
+msgid ""
+"If you are playing with a friend or family member, Player One gets to play "
+"first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
+"the chance to play first is given alternately to each player. So, Player Two "
+"will get to play first in the second game, Player One can play first in the "
+"third game and so on."
+msgstr ""
+"Dacă jucați cu un prieten sau membru al familiei, Jucătorul unu va începe "
+"primul în primul joc de <app>Patru-în-linie</app>. În jocurile ulterioare, "
+"șansa de a juca primul e oferită alternativ fiecărui jucător. Deci, "
+"Jucătorul doi va avea de jucat primul în jocul al 2-lea, Jucătorul unu poate "
+"juca primul în al 3-lea joc și așa mai departe."
+
+#. (itstool) path: info/desc
+#: C/controls-change.page:20
+msgid "Set custom control keys."
+msgstr "Stabiliți taste de control personalizate."
+
+#. (itstool) path: page/title
+#: C/controls-change.page:23
+msgid "Change the default controls"
+msgstr "Schimbați controalele implicite"
+
+#. (itstool) path: page/p
+#: C/controls-change.page:25
+msgid ""
+"To change the <link xref=\"controls-default\">default controls</link> in "
+"<app>Four-in-a-row</app>:"
+msgstr ""
+"Pentru a schimba <link xref=\"controls-default\">controalele implicite</"
+"link> în <app>Patru-în-linie</app>:"
+
+#. (itstool) path: item/p
+#: C/controls-change.page:30
+msgid ""
+"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
+"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+"guiseq>."
+msgstr ""
+"Deschideți meniul aplicației din bara de sus și selectați <guiseq><gui style="
+"\"menu\">Preferințe</gui> <gui style=\"menuitem\">Controale de tastatură</"
+"gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:35
+msgid ""
+"In the list, select the line you want to change, then click on the control. "
+"The line is highlighted and the label of the control changes to <gui>New "
+"accelerator…</gui>"
+msgstr ""
+"Din listă, selectați linia pe care doriți s-o modificați, și apăsați pe "
+"control. Linia este evidențiată iar eticheta controlului se schimbă în "
+"<gui>Accelerator nou…</gui>"
+
+#. (itstool) path: item/p
+#: C/controls-change.page:40
+msgid "Press the key you want to use instead of the default key."
+msgstr "Apăsați tasta pe care doriți s-o folosiți în locul tastei implicite."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:42
+msgid ""
+"To keep the old setting, click again or right click on <gui>New accelerator…"
+"</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
+"Controls</gui> box."
+msgstr ""
+"Pentru a păstra vechea configurare, clic din nou sau apăsați clic dreapta pe "
+"<gui>Accelerator nou…</gui>, apăsați <key>Esc</key> sau clic oriunde în "
+"interiorul căsuței <gui>Controale de tastatură</gui>."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:50
+msgid ""
+"When you are playing with a friend or a family member, both players will use "
+"the same controls."
+msgstr ""
+"Când jucați cu un prieten sau membru al familiei, ambii jucători folosesc "
+"aceleași controale."
+
+#. (itstool) path: info/desc
+#: C/controls-default.page:20
+msgid "Default controls for <app>Four-in-a-row</app>."
+msgstr "Controalele implicite pentru <app>Patru-în-linie</app>."
+
+#. (itstool) path: page/title
+#: C/controls-default.page:23
+msgid "Controls"
+msgstr "Controale"
+
+#. (itstool) path: page/p
+#: C/controls-default.page:25
+msgid ""
+"You can use your mouse and click on a particular row in the game area to "
+"drop your marble into that row. If you want to use the keyboard instead, the "
+"default keys for <app>Four-in-a-row</app> are:"
+msgstr ""
+"Puteți folosi mausul apăsând pe un rând din zona de joc pentru a plasa piesa "
+"pe acel rând. Dacă doriți să folosiți tastatura, controalele implicite "
+"pentru <app>Patru-în-linie</app> sunt:"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:31
+msgid "<key>←</key> to move the marble to your left."
+msgstr "<key>←</key> pentru a muta piesa la stânga dvs."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:34
+msgid "<key>→</key> to move the marble to your right."
+msgstr "<key>→</key> pentru a muta piesa la dreapta dvs."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:37
+msgid "<key>↓</key> to drop the marble."
+msgstr "<key>↓</key> pentru a plasa piesa."
+
+#. (itstool) path: info/desc
+#: C/index.page:16
+msgid "Index"
+msgstr "Index"
+
+#. (itstool) path: page/title
+#: C/index.page:19
+msgid "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
+msgstr "<_:media-1/><span its:translate=\"yes\"> Patru-în-linie</span>"
+
+#. (itstool) path: page/p
+#: C/index.page:22
+msgid ""
+"<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
+"is to stack four of your marbles in a horizontal, vertical or diagonal line "
+"while stopping your opponent from doing the same with their marbles."
+msgstr ""
+"<app>Patru-în-linie</app> este un joc de strategie pentru GNOME. Scopul "
+"jocului este să acumulați patru piese într-o linie orizontală, verticală sau "
+"diagonală în timp ce opriți oponentul din a face același lucru cu piesele "
+"lui."
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "Game play"
+msgstr "Jocul în sine"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Preferences"
+msgstr "Preferințe"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Licența neadaptată Creative Commons Atribuire în condiții identice 3.0"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Această lucrare este licențiată sub <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/make-easy.page:19
+msgid "Use hints or undo your wrong moves."
+msgstr "Folosiți indicii sau anulați mutările greșite."
+
+#. (itstool) path: page/title
+#: C/make-easy.page:22
+msgid "Make your game a little easier"
+msgstr "Faceți jocul puțin mai ușor"
+
+#. (itstool) path: section/title
+#: C/make-easy.page:25
+msgid "Change your last move"
+msgstr "Schimbați ultima mutare"
+
+#. (itstool) path: section/p
+#: C/make-easy.page:27
+msgid ""
+"When the computer makes a winning move because of your last move or when you "
+"accidentally make the wrong move, you can undo your last move and change it. "
+"To undo your last move, press the <gui style=\"button\">Undo your most "
+"recent move</gui> button in the header bar or press <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. You can now drop your marble at a different row "
+"in the game area to change your move."
+msgstr ""
+"Când calculatorul face o mișcare câștigătoare din cauza ultimei mutări a "
+"dumneavoastră sau când din greșeală efectuați o mișcare greșită, puteți "
+"anula și modifica ultima mutare. Pentru a anula mutarea, apăsați butonul "
+"<gui style=\"button\">Anulează cea mai recentă mutare</gui> din bara de sus "
+"a aplicației sau apăsați <keyseq><key>Ctrl</key><key>Z</key></keyseq>. Acum "
+"puteți plasa piesa într-un rând diferit din zona de joc pentru a modifica "
+"mutarea."
+
+#. (itstool) path: note/p
+#: C/make-easy.page:35
+msgid ""
+"You can undo all your moves starting from your current move until you reach "
+"a favourable state of the game, or until the beginning of your current game, "
+"by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
+msgstr ""
+"Puteți anula toate mișcările începând de la mișcarea curentă până când "
+"ajungeți la un statut favorabil de joc, sau până la începutul jocului "
+"curent, apăsând <keyseq><key>Ctrl</key><key>Z</key></keyseq> în mod "
+"repetitiv."
+
+#. (itstool) path: section/title
+#: C/make-easy.page:43
+msgid "Use hints"
+msgstr "Folosirea indiciilor"
+
+#. (itstool) path: section/p
+#: C/make-easy.page:45
+msgid ""
+"If you are not sure of your next move, you can use a hint. When you use a "
+"hint, your marble moves to the top of the column that is the best choice, "
+"strategy-wise, and blinks. You can then drop your marble into that column. "
+"To use a hint, press <gui style=\"button\">Hint</gui> or <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
+msgstr ""
+"Dacă nu sunteți sigur de următoarea mișcare, puteți folosi un indiciu. Când "
+"folosiți un indiciu, piesa se va muta la capătul coloanei unde este cea mai "
+"bună alegere din punct de vedere strategic și va licări. Puteți plasa apoi "
+"piesa în acea coloană. Pentru a folosi un indiciu, apăsați <gui style="
+"\"button\">Indiciu</gui> sau <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+
+#. (itstool) path: note/p
+#: C/make-easy.page:51
+msgid "There is no limit on the number of hints you can use in a game."
+msgstr "Nu este o limită în numărul indiciilor pe care le poți folosi în joc."
+
+#. (itstool) path: credit/name
+#: C/scores.page:19
+msgid "Anna Philips"
+msgstr "Anna Philips"
+
+#. (itstool) path: info/desc
+#: C/scores.page:23
+msgid "Keep track of your wins and losses."
+msgstr "Urmăriți victoriile și înfrângerile."
+
+#. (itstool) path: page/title
+#: C/scores.page:26
+msgid "Scores"
+msgstr "Scoruri"
+
+#. (itstool) path: page/p
+#: C/scores.page:27
+msgid ""
+"The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
+"your opponent's wins and games that ended in a draw. To check the scores, "
+"open the application menu in the top bar and select <gui style=\"menuitem"
+"\">Scores</gui>. In the default theme:"
+msgstr ""
+"Scorul în <app>Patru-în-linie</app> este înregistrat în funcție de "
+"victoriile dumneavoastră, victoriile oponentului și jocuri care s-au "
+"finalizat în remiză. Pentru a verifică scorurile, deschideți meniul cu "
+"aplicații din bara de sus și selectați <gui style=\"menuitem\">Scoruri</"
+"gui>. În tema implicită:"
+
+#. (itstool) path: item/p
+#: C/scores.page:34
+msgid "<gui>Red</gui> displays the number of games you have won."
+msgstr "<gui>Roșu</gui> arată numărul jocurilor câștigate de dvs."
+
+#. (itstool) path: item/p
+#: C/scores.page:37
+msgid "<gui>Green</gui> displays the number of games won by the opponent."
+msgstr "<gui>Verde</gui> arată numărul jocurilor câștigate de oponent."
+
+#. (itstool) path: item/p
+#: C/scores.page:40
+msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
+msgstr "<gui>Drawn</gui> arată numărul jocurilor terminate în egal."
+
+#. (itstool) path: note/p
+#: C/scores.page:45
+msgid ""
+"The labels to represent players shown in <app>Scores</app> change based on "
+"opponent and theme selected. If you have selected the varying levels of "
+"computer as your opponent, then you will see the labels <gui>You</gui> and "
+"<gui>Me</gui>. If you are playing against another person, then the labels to "
+"represent you and the person will be the color of the marbles in the "
+"currently set theme."
+msgstr ""
+"Etichetele pentru a reprezenta jucătorii afișați la <app>Scoruri</app> se "
+"schimbă bazat pe oponent și tema selectată. Dacă ați selectat nivelele "
+"variate ale calculatorului ca oponent, atunci veți vedea etichetele <gui>Tu</"
+"gui> și <gui>Eu</gui>. Dacă jucați împotriva altei persoane, atunci "
+"etichetele ce vă reprezintă pe dvs și persoana oponentă vor fi culoarea "
+"piesei în tema configurată."
+
+#. (itstool) path: info/desc
+#: C/sound-animation.page:22
+msgid "Play <app>Four-in-a-row</app> without sounds."
+msgstr "Jucați <app>Patru-în-linie</app> fără sonor."
+
+#. (itstool) path: page/title
+#: C/sound-animation.page:25
+msgid "Disable sounds"
+msgstr "Dezactivarea sunetelor"
+
+#. (itstool) path: page/p
+#: C/sound-animation.page:27
+msgid ""
+"When sounds are enabled, you will hear something every time a marble is "
+"dropped, or when a game ends."
+msgstr ""
+"Când sunetele sunt activate, veți auzi câte ceva de fiecare dată când o "
+"piesă este plasată, sau un joc se sfârșește."
+
+#. (itstool) path: steps/title
+#: C/sound-animation.page:31
+msgid "To disable sounds:"
+msgstr "Pentru a dezactiva sunetele:"
+
+#. (itstool) path: item/p
+#: C/sound-animation.page:38
+msgid ""
+"Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
+"option again to enable the feature."
+msgstr ""
+"Debifați <gui style=\"checkbox\">Activează sunete</gui>. Puteți bifa "
+"opțiunea din nou pentru a activa sunetele."
+
+#~ msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
+#~ msgstr "Joacă <app>Four-în-a-row</app> în modul ecran complet"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+#~ "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+#~ "fullscreen mode. You can return to the default screen size by pressing "
+#~ "<key>F11</key> again."
+#~ msgstr ""
+#~ "Selectează <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+#~ "\">Fullscreen</gui></guiseq> sau apasă <key>F11</key pentru a juca jocul "
+#~ "tău în modul ecran complet. Poți să te întorci oricând la dimenziunea "
+#~ "ecranului normală apăsând <key>F11</key> iar."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You "
+#~ "will see <gui>Player One</gui> and <gui>Player Two</gui>."
+#~ msgstr ""
+#~ "Selectează <guiseq><gui style=\"menu\">Settings</gui> <gui style="
+#~ "\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
+#~ "guiseq>. O să vezi <gui>Player One</gui> și  <gui>Player Two</gui>."
+
+#~ msgid "Disable sounds or animation"
+#~ msgstr "Dezactivează sunetele sau animațiile."
+
+#~ msgid "Sounds"
+#~ msgstr "Sunete"
+
+#~ msgid "Animation"
+#~ msgstr "Animațiile"
+
+#~ msgid "Animation results in a more fluid movement of the marbles."
+#~ msgstr "Animațiile rezultă o mișcare mai fluidă a marmurii (marble)"
+
+#~ msgid "To disable animation:"
+#~ msgstr "Pentru a dezactiva animațiile"
+
+#~ msgid ""
+#~ "Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
+#~ "option again to enable the feature."
+#~ msgstr ""
+#~ "Debifează <gui style=\"checkbox\">Enable animation</gui>. Poți să "
+#~ "verifici opțiunea iar pentru a reactivă animațiile"
