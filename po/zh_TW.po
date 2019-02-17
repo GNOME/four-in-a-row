@@ -1,37 +1,59 @@
 # Chinese (Taiwan) translation of gnome-games.
 # Copyright (C) 1999-2006 Free Software Foundation, Inc.
 # (http://vegas.wcn.com.tw/21.shtml for blackjack terms)
+#
 # Fernando <bv1al@journalist.com.tw>, 1999.
 # Abel Cheung <abel@oaka.org>, 2001-2006.
 # Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2010.
 # Wei-Lun Chao <chaoweilun@gmail.com>, 2010.
-#
+# pan93412 <pan93412@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games 3.3.91\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-26 22:43+0000\n"
-"PO-Revision-Date: 2018-06-09 13:10+0800\n"
-"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
-"Language-Team: Chinese (traditional)\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2019-02-06 19:28+0000\n"
+"PO-Revision-Date: 2019-02-17 23:23+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Lokalize 18.12.2\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
-#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "四子連環棋"
 
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "取消您最後一次移動"
+
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "提示(_H)"
+
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "給下一步的提示"
+
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "重新開始(_S)"
+
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "開始另一局"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "將 4 粒棋子排成一直線"
 
-#: data/four-in-a-row.appdata.xml.in:10
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -42,160 +64,111 @@ msgstr ""
 "對手 (人類或電腦) 完成他(她)自己的連線。連線可以是水平、垂直或斜線。第一個將"
 "四個彈珠連成一直線的玩家就是勝利者！"
 
-#: data/four-in-a-row.appdata.xml.in:16
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
+#| msgid ""
+#| "Four-in-a-row features multiple difficulty levels. If you're having "
+#| "trouble, you can always ask for a hint."
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr "四子連環棋有多種難度等級。如果您遇到困難，可以隨時要求提示。"
 
-#: data/four-in-a-row.appdata.xml.in:32
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "GNOME 計畫"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
+#: data/org.gnome.Four-in-a-row.desktop.in:4
 #| msgid "Four-in-a-row"
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;遊戲;策略;邏輯;"
 
-#: data/four-in-a-row.ui:19
-msgid "Undo your most recent move"
-msgstr "取消您最後一次移動"
-
-#: data/four-in-a-row.ui:79
-msgid "_Hint"
-msgstr "提示(_H)"
-
-#: data/four-in-a-row.ui:83
-msgid "Receive a hint for your next move"
-msgstr "給下一步的提示"
-
-#: data/four-in-a-row.ui:98
-msgid "_Start Over"
-msgstr "重新開始(_S)"
-
-#: data/four-in-a-row.ui:102
-msgid "Start a new game"
-msgstr "開始另一局"
-
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "對手"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "0 是人類玩家；1 至 3 表示電腦玩家的棋力。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "佈景主題數字"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "一個數字，代表您想用的佈景主題。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "音效"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "是否以音效代表不同事件發生。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "向左移動"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "向左移所使用的按鍵。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "向右移動"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "向右移所使用的按鍵。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "放下棋子"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "放下棋子所使用的按鍵。"
 
-#: src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "這個設定鍵已經被使用。"
-
-#: src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "不明指令"
-
-#: src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"無法載入影像:\n"
-"%s"
-
-#: src/main.c:476
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "平手！"
 
-#: src/main.c:484
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "您贏了！"
 
-#: src/main.c:486 src/main.c:502
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "輸到您"
 
-#: src/main.c:489
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "我贏了！"
 
-#: src/main.c:491 src/main.c:590
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "我正在思考…"
 
-#: src/main.c:603
+#: src/four-in-a-row.vala:515
 #, c-format
 msgid "Hint: Column %d"
 msgstr "提示：第 %d 欄"
 
-#: src/main.c:631 src/main.c:635
-msgid "You:"
-msgstr "勝："
+#: src/four-in-a-row.vala:660
+#| msgid "Connect four in a row to win."
+msgid "Connect four in a row to win"
+msgstr "將四粒棋子排成一直線就能贏"
 
-#: src/main.c:632 src/main.c:634
-msgid "Me:"
-msgstr "負："
-
-#: src/main.c:680
-msgid "Scores"
-msgstr "分數"
-
-#: src/main.c:721
-msgid "Drawn:"
-msgstr "平手："
-
-#: src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "將四粒棋子排成一直線就能贏。"
-
-#: src/main.c:765
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -205,144 +178,182 @@ msgstr ""
 "Abel Cheung <abel@oaka.org>, 2001-07\n"
 "Fernando <bv1al@journalist.com.tw>, 1999"
 
-#: src/main.c:1130
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "分數(_S)"
 
-#: src/main.c:1131
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "偏好設定(_P)"
 
-#: src/main.c:1134
+#: src/four-in-a-row.vala:744
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: src/main.c:1135
-msgid "_About"
-msgstr "關於(_A)"
+#: src/four-in-a-row.vala:745
+#| msgid "Four-in-a-row"
+msgid "_About Four-in-a-row"
+msgstr "關於四子連環棋(_A)"
 
-#: src/main.c:1136
-msgid "_Quit"
-msgstr "結束(_Q)"
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "這個設定鍵已經被使用。"
 
-#: src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "不明指令"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: src/prefs.c:193
+#: src/prefs-box.vala:53
 msgid "Game"
 msgstr "遊戲"
 
-#: src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
 msgstr "對手："
 
-#: src/prefs.c:207
+#: src/prefs-box.vala:67
 msgid "Human"
 msgstr "人類"
 
-#: src/prefs.c:211
+#: src/prefs-box.vala:71
 msgid "Level one"
 msgstr "第一級"
 
-#: src/prefs.c:215
+#: src/prefs-box.vala:75
 msgid "Level two"
 msgstr "第二級"
 
-#: src/prefs.c:219
+#: src/prefs-box.vala:79
 msgid "Level three"
 msgstr "第三級"
 
-#: src/prefs.c:225
+#: src/prefs-box.vala:86
 msgid "_Theme:"
 msgstr "佈景主題(_T)："
 
-#: src/prefs.c:238
+#: src/prefs-box.vala:98
 msgid "E_nable sounds"
 msgstr "開啟音效(_N)"
 
 #. keyboard tab
-#: src/prefs.c:243
+#: src/prefs-box.vala:102
 msgid "Keyboard Controls"
 msgstr "鍵盤控制"
 
-#: src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "分數"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "平手："
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "勝："
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "負："
+
+#: src/theme.vala:65
 msgid "High Contrast"
 msgstr "高反差"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
 msgstr "圓形"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
 msgstr "十字"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
 msgstr "圓形贏了！"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
 msgstr "十字贏了！"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
 msgstr "圓形的回合"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
 msgstr "十字的回合"
 
-#: src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
 msgstr "高反差 + 反白"
 
-#: src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
 msgstr "紅色與綠色彈珠"
 
-#: src/theme.c:62 src/theme.c:71 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "紅"
 
-#: src/theme.c:62 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "綠"
 
-#: src/theme.c:63 src/theme.c:72 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
 msgstr "紅方贏了！"
 
-#: src/theme.c:63 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
 msgstr "綠方贏了！"
 
-#: src/theme.c:64 src/theme.c:73 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
 msgstr "紅方的回合"
 
-#: src/theme.c:64 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
 msgstr "綠方的回合"
 
 # (Abel) 隨便作的。
-#: src/theme.c:67
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
 msgstr "藍色與紅色彈珠"
 
-#: src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "藍"
 
-#: src/theme.c:72
+#: src/theme.vala:97
 msgid "Blue wins!"
 msgstr "藍方贏了！"
 
-#: src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
 msgstr "藍方的回合"
 
-#: src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "星星與圓環"
+
+#~| msgid "Four-in-a-row"
+#~ msgid "four-in-a-row"
+#~ msgstr "four-in-a-row"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "無法載入影像:\n"
+#~ "%s"
+
+#~ msgid "_About"
+#~ msgstr "關於(_A)"
+
+#~ msgid "_Quit"
+#~ msgstr "結束(_Q)"
