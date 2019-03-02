@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-02-16 15:03+0000\n"
-"PO-Revision-Date: 2019-02-16 20:42+0100\n"
+"POT-Creation-Date: 2019-03-02 20:44+0000\n"
+"PO-Revision-Date: 2019-03-02 21:59+0100\n"
 "Last-Translator: Alex <dragosdobritoiu666@gmail.com>\n"
 "Language-Team: -\n"
 "Language: ro\n"
@@ -22,9 +22,9 @@ msgstr ""
 "Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2019"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:14 C/choose-opponent.page:14
-#: C/controls-change.page:16 C/controls-default.page:16 C/index.page:12
-#: C/make-easy.page:15 C/scores.page:14 C/sound-animation.page:14
+#: C/appearance.page:13 C/basics.page:14 C/choose-opponent.page:15
+#: C/controls-change.page:17 C/controls-default.page:16 C/index.page:12
+#: C/make-easy.page:15 C/scores.page:14 C/sound-animation.page:15
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
@@ -55,22 +55,23 @@ msgstr "Pentru a utiliza o temă diferită:"
 #. (itstool) path: item/p
 #: C/appearance.page:28
 msgid ""
-"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem\">Game</"
+"gui></guiseq>."
 msgstr ""
-"Deschideți meniul cu aplicații din bara de sus și selectați <guiseq><gui "
-"style=\"menu\">Preferințe</gui> <gui style=\"menuitem\">Joc</gui></guiseq>."
+"Apăsați butonul meniu din colțul dreapta sus al ferestrei și selectați "
+"<guiseq><gui style=\"menu\">Preferințe</gui> <gui style=\"menuitem\">Joc</"
+"gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
 msgid ""
-"Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
-"down menu to the right of <gui style=\"group\">Theme</gui>. The change will "
-"be reflected immediately in the game window."
+"Pick the theme of your choice from the drop down menu to the right of <gui "
+"style=\"group\">Theme</gui>. The change will be reflected immediately in the "
+"game window."
 msgstr ""
-"Sub <gui>Aspect</gui>, alegeți tema dorită din meniul derulant din dreapta "
-"lui <gui style=\"group\">Temă</gui>. Modificarea va fi reflectată imediat în "
-"fereastra jocului."
+"Alegeți tema dorită din meniul derulant din dreapta lui <gui style=\"group"
+"\">Temă</gui>. Modificarea va fi reflectată imediat în fereastra jocului."
 
 #. (itstool) path: info/desc
 #: C/basics.page:18
@@ -113,22 +114,22 @@ msgstr ""
 "keyseq> oricând pentru a ieși din <app>Patru-în-linie</app>."
 
 #. (itstool) path: credit/name
-#: C/choose-opponent.page:18 C/sound-animation.page:18
+#: C/choose-opponent.page:19 C/sound-animation.page:19
 msgid "Michael Hill"
 msgstr "Michael Hill"
 
 #. (itstool) path: info/desc
-#: C/choose-opponent.page:22
+#: C/choose-opponent.page:23
 msgid "Change the level at which the computer plays or play with a friend."
 msgstr "Schimbați nivelul la care calculatorul joacă sau jucați cu un prieten."
 
 #. (itstool) path: page/title
-#: C/choose-opponent.page:26
+#: C/choose-opponent.page:27
 msgid "Choose a different opponent"
 msgstr "Alegeți un oponent diferit"
 
 #. (itstool) path: page/p
-#: C/choose-opponent.page:27
+#: C/choose-opponent.page:28
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at level one."
@@ -137,22 +138,23 @@ msgstr ""
 "jucând la nivelul unu."
 
 #. (itstool) path: steps/title
-#: C/choose-opponent.page:31
+#: C/choose-opponent.page:32
 msgid "To change the level, or to play with a friend:"
 msgstr "Pentru a schimba nivelul, sau să jucați cu un prieten:"
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:33 C/sound-animation.page:33
+#: C/choose-opponent.page:34 C/sound-animation.page:34
 msgid ""
-"Open the application menu in the top bar and select <guiseq><gui style="
-"\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
+"\">Game</gui></guiseq>."
 msgstr ""
-"Deschideți meniul cu aplicații din bara de sus și selectați <guiseq><gui "
-"style=\"menuitem\">Preferințe</gui> <gui style=\"menuitem\">Joc</gui></"
-"guiseq>."
+"Apăsați butonul meniu din colțul dreapta sus al ferestrei și selectați "
+"<guiseq><gui style=\"menuitem\">Preferințe</gui> <gui style=\"menuitem"
+"\">Joc</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:38
+#: C/choose-opponent.page:39
 msgid ""
 "Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for "
 "both players if want to play with a friend or family member."
@@ -161,7 +163,7 @@ msgstr ""
 "ambii jucători dacă doriți să jucați cu un prieten sau membru al familiei."
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:40
+#: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the level at which the computer plays. Choose between "
 "<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
@@ -176,7 +178,7 @@ msgstr ""
 "\"radiobutton\">Nivelul trei</gui> este cel mai greu nivel."
 
 #. (itstool) path: note/p
-#: C/choose-opponent.page:48
+#: C/choose-opponent.page:49
 msgid ""
 "If you are playing with a friend or family member, Player One gets to play "
 "first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
@@ -191,17 +193,17 @@ msgstr ""
 "juca primul în al 3-lea joc și așa mai departe."
 
 #. (itstool) path: info/desc
-#: C/controls-change.page:20
+#: C/controls-change.page:21
 msgid "Set custom control keys."
 msgstr "Stabiliți taste de control personalizate."
 
 #. (itstool) path: page/title
-#: C/controls-change.page:23
+#: C/controls-change.page:24
 msgid "Change the default controls"
 msgstr "Schimbați controalele implicite"
 
 #. (itstool) path: page/p
-#: C/controls-change.page:25
+#: C/controls-change.page:26
 msgid ""
 "To change the <link xref=\"controls-default\">default controls</link> in "
 "<app>Four-in-a-row</app>:"
@@ -210,18 +212,18 @@ msgstr ""
 "link> în <app>Patru-în-linie</app>:"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:30
+#: C/controls-change.page:31
 msgid ""
-"Open the application menu in the top bar and select <guiseq><gui style=\"menu"
-"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-"guiseq>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
+"\">Keyboard Controls</gui></guiseq>."
 msgstr ""
-"Deschideți meniul aplicației din bara de sus și selectați <guiseq><gui style="
-"\"menu\">Preferințe</gui> <gui style=\"menuitem\">Controale de tastatură</"
-"gui></guiseq>."
+"Apăsați butonul meniu din colțul dreapta sus al ferestrei și selectați "
+"<guiseq><gui style=\"menu\">Preferințe</gui> <gui style=\"menuitem"
+"\">Controale de tastatură</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:35
+#: C/controls-change.page:36
 msgid ""
 "In the list, select the line you want to change, then click on the control. "
 "The line is highlighted and the label of the control changes to <gui>New "
@@ -232,20 +234,18 @@ msgstr ""
 "<gui>Accelerator nou…</gui>"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:40
+#: C/controls-change.page:41
 msgid "Press the key you want to use instead of the default key."
 msgstr "Apăsați tasta pe care doriți s-o folosiți în locul tastei implicite."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:42
+#: C/controls-change.page:43
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
-"</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
-"Controls</gui> box."
+"</gui>, press <key>Esc</key>."
 msgstr ""
 "Pentru a păstra vechea configurare, clic din nou sau apăsați clic dreapta pe "
-"<gui>Accelerator nou…</gui>, apăsați <key>Esc</key> sau clic oriunde în "
-"interiorul căsuței <gui>Controale de tastatură</gui>."
+"<gui>Accelerator nou…</gui>, apăsați <key>Esc</key>."
 
 #. (itstool) path: note/p
 #: C/controls-change.page:50
@@ -466,17 +466,17 @@ msgstr ""
 "piesei în tema configurată."
 
 #. (itstool) path: info/desc
-#: C/sound-animation.page:22
+#: C/sound-animation.page:23
 msgid "Play <app>Four-in-a-row</app> without sounds."
 msgstr "Jucați <app>Patru-în-linie</app> fără sonor."
 
 #. (itstool) path: page/title
-#: C/sound-animation.page:25
+#: C/sound-animation.page:26
 msgid "Disable sounds"
 msgstr "Dezactivarea sunetelor"
 
 #. (itstool) path: page/p
-#: C/sound-animation.page:27
+#: C/sound-animation.page:28
 msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
@@ -485,12 +485,12 @@ msgstr ""
 "piesă este plasată, sau un joc se sfârșește."
 
 #. (itstool) path: steps/title
-#: C/sound-animation.page:31
+#: C/sound-animation.page:32
 msgid "To disable sounds:"
 msgstr "Pentru a dezactiva sunetele:"
 
 #. (itstool) path: item/p
-#: C/sound-animation.page:38
+#: C/sound-animation.page:39
 msgid ""
 "Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
 "option again to enable the feature."
