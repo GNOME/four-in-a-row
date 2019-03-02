@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-02-04 12:51+0100\n"
+"POT-Creation-Date: 2019-02-06 19:28+0000\n"
+"PO-Revision-Date: 2019-03-02 08:28+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:7
@@ -27,19 +27,19 @@ msgstr "Fuarce 4"
 msgid "Undo your most recent move"
 msgstr "Anule la tô ultime mosse"
 
-#: data/four-in-a-row.ui:98
+#: data/four-in-a-row.ui:99
 msgid "_Hint"
 msgstr "_Indizi"
 
-#: data/four-in-a-row.ui:104
+#: data/four-in-a-row.ui:105
 msgid "Receive a hint for your next move"
 msgstr "Ricêf un aiût pe tô prossime mosse"
 
-#: data/four-in-a-row.ui:117
+#: data/four-in-a-row.ui:118
 msgid "_Start Over"
 msgstr "_Torne partî"
 
-#: data/four-in-a-row.ui:123
+#: data/four-in-a-row.ui:124
 msgid "Start a new game"
 msgstr "Tache une gnove partide"
 
@@ -62,7 +62,7 @@ msgstr ""
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Fuarce 4 al dispon di diviers nivei di dificoltât. Se tu sês in dificoltât "
@@ -74,7 +74,6 @@ msgstr "Il progjet GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
 msgid "org.gnome.Four-in-a-row"
 msgstr "org.gnome.Four-in-a-row"
 
@@ -154,8 +153,9 @@ msgid "I’m Thinking…"
 msgstr "O stoi pensant..."
 
 #: src/four-in-a-row.vala:515
-msgid "Hint: Column "
-msgstr "Indizi: Colone "
+#, c-format
+msgid "Hint: Column %d"
+msgstr "Indizi: Colone %d"
 
 #: src/four-in-a-row.vala:660
 msgid "Connect four in a row to win"
