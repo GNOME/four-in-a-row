@@ -9,6 +9,7 @@
 
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
     <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
+    <revision pkgversion="3.31.90" version="0.3" date="2019-03-02" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -27,7 +28,7 @@
 
   <steps>
     <item>
-      <p>Open the application menu in the top bar and select
+      <p>Press the menu button in the top-right corner of the window and select
       <guiseq><gui style="menu">Preferences</gui>
       <gui style="menuitem">Keyboard Controls</gui></guiseq>.</p>
     </item>
@@ -40,8 +41,7 @@
       <p>Press the key you want to use instead of the default key.</p>
       <note style="tip">
         <p>To keep the old setting, click again or right click on
-        <gui>New accelerator…</gui>, press <key>Esc</key> or click anywhere else
-        inside the <gui>Keyboard Controls</gui> box.</p>
+        <gui>New accelerator…</gui>, press <key>Esc</key>.</p>
       </note>
     </item>
   </steps>
