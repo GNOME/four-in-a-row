@@ -10,7 +10,7 @@ four_in_a_row_tests = executable('four-in-a-row-tests',
 )
 test('four-in-a-row-tests', 
     four_in_a_row_tests,
-    timeout: 90)
+    timeout: 180)
 
 
 
