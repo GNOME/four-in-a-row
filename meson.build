@@ -1,5 +1,5 @@
 project('four-in-a-row', 'c', 'vala',
-    version: '3.31.92'
+    version: '3.32.0'
 )
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language: 'c')
