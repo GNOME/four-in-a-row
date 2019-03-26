@@ -4,10 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games 0\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-07 15:21+0000\n"
-"PO-Revision-Date: 2018-03-14 14:48+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2019-03-10 19:06+0000\n"
+"PO-Revision-Date: 2019-03-26 19:42+0100\n"
 "Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
 "net>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -20,16 +19,38 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-05-28 02:59+0000\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
-#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Četiri u nizu"
 
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "Poništi posljednji potez"
+
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "_Savjet"
+
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "Pokaži sljedeći potez"
+
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "_Pokreni ponovno"
+
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "Pokreni novu igru"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "Učinite redak od istih boja za pobjedu"
 
-#: data/four-in-a-row.appdata.xml.in:10
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -41,303 +62,286 @@ msgstr ""
 "računalo) da načini vlastiti redak. Redak može biti okomit, vodoravan ili "
 "dijagonalan. Prvi igrač koji poveže četiri kuglice u redku je pobjednik!"
 
-#: data/four-in-a-row.appdata.xml.in:16
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
 "Četiri u nizu sadrži više razina težine. Ako imate poteškoća, uvijek možete "
 "pitati za sljedeći potez."
 
-#: data/four-in-a-row.appdata.xml.in:32
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "GNOME projekt"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+msgid "org.gnome.Four-in-a-row"
+msgstr "org.gnome.Four-in-a-row"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "igra;strategija;logika;"
 
-#: data/four-in-a-row.ui:19
-msgid "Undo your most recent move"
-msgstr "Poništi posljednji potez"
-
-#: data/four-in-a-row.ui:79
-msgid "_Hint"
-msgstr "_Savjet"
-
-#: data/four-in-a-row.ui:83
-msgid "Receive a hint for your next move"
-msgstr "Pokaži sljedeći potez"
-
-#: data/four-in-a-row.ui:98
-msgid "_Start Over"
-msgstr "_Pokreni ponovno"
-
-#: data/four-in-a-row.ui:102
-msgid "Start a new game"
-msgstr "Pokreni novu igru"
-
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Protivnik"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "Nula je čovjek; a od jedan do tri razina računalnog protivnika."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "ID teme"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Broj koji određuje željenu temu."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Zvuk"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Treba li ili ne reproducirati zvukove događaja."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Pomakni lijevo"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Pritisni tipku za pomicanje u lijevo."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Pomakni desno"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Pritisni tipku za pomicanje u desno."
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Ispusti kuglicu"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Pritisni tipku za ispuštanje kuglice."
 
-#: src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "Ova tipka se već koristi."
-
-#: src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "Nepoznata naredba"
-
-#: src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"Nemoguće učitavanje slike:\n"
-"%s"
-
-#: src/main.c:476
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "To je crtež!"
 
-#: src/main.c:484
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "Vi ste pobjedili!"
 
-#: src/main.c:486 src/main.c:502
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "Vi ste na potezu"
 
-#: src/main.c:489
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "Pobijedio sam!"
 
-#: src/main.c:491 src/main.c:590
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "Razmišljam…"
 
-#: src/main.c:603
+#: src/four-in-a-row.vala:515
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Savjet: Stupac %d"
 
-#: src/main.c:631 src/main.c:635
-msgid "You:"
-msgstr "Vi:"
+#: src/four-in-a-row.vala:660
+msgid "Connect four in a row to win"
+msgstr "Povežite četiri u nizu za pobjedu"
 
-#: src/main.c:632 src/main.c:634
-msgid "Me:"
-msgstr "Ja:"
-
-#: src/main.c:680
-msgid "Scores"
-msgstr "Rezultati"
-
-#: src/main.c:721
-msgid "Drawn:"
-msgstr "Neriješeno:"
-
-#: src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "Povežite četiri u nizu za pobjedu."
-
-#: src/main.c:765
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  gogo https://launchpad.net/~trebelnik-stefina"
 
-#: src/main.c:1130
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "_Rezultati"
 
-#: src/main.c:1131
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "_Osobitosti"
 
-#: src/main.c:1134
+#: src/four-in-a-row.vala:744
 msgid "_Help"
 msgstr "_Priručnik"
 
-#: src/main.c:1135
-msgid "_About"
-msgstr "_O programu"
+#: src/four-in-a-row.vala:745
+msgid "_About Four-in-a-row"
+msgstr "_O Četiri u nizu"
 
-#: src/main.c:1136
-msgid "_Quit"
-msgstr "_Zatvori"
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "Ova tipka se već koristi."
 
-#: src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "Nepoznata naredba"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "Osobitosti"
 
-#: src/prefs.c:193
+#: src/prefs-box.vala:53
 msgid "Game"
 msgstr "Igra"
 
-#: src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
 msgstr "Protivnik:"
 
-#: src/prefs.c:207
+#: src/prefs-box.vala:67
 msgid "Human"
 msgstr "Čovjek"
 
-#: src/prefs.c:211
+#: src/prefs-box.vala:71
 msgid "Level one"
 msgstr "Razina 1"
 
-#: src/prefs.c:215
+#: src/prefs-box.vala:75
 msgid "Level two"
 msgstr "Razina 2"
 
-#: src/prefs.c:219
+#: src/prefs-box.vala:79
 msgid "Level three"
 msgstr "Razina 3"
 
-#: src/prefs.c:225
+#: src/prefs-box.vala:86
 msgid "_Theme:"
 msgstr "_Tema:"
 
-#: src/prefs.c:238
+#: src/prefs-box.vala:98
 msgid "E_nable sounds"
 msgstr "O_mogući zvukove"
 
 #. keyboard tab
-#: src/prefs.c:243
+#: src/prefs-box.vala:102
 msgid "Keyboard Controls"
 msgstr "Upravljanje tipkovnicom"
 
-#: src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "Rezultati"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "Neriješeno:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "Vi:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "Ja:"
+
+#: src/theme.vala:65
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
 msgstr "Krug"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
 msgstr "Križ"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
 msgstr "Krug je pobijedio!"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
 msgstr "Križ je pobijedio!"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
 msgstr "Krug je na potezu"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
 msgstr "Križ je na potezu"
 
-#: src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
 msgstr "Obrnuti visoki kontrast"
 
-#: src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
 msgstr "Crvena i zelena kuglica"
 
-#: src/theme.c:62 src/theme.c:71 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "Crvena"
 
-#: src/theme.c:62 src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "Zelena"
 
-#: src/theme.c:63 src/theme.c:72 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
 msgstr "Crveni je pobijedio!"
 
-#: src/theme.c:63 src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
 msgstr "Zeleni je pobijedio!"
 
-#: src/theme.c:64 src/theme.c:73 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
 msgstr "Crveni je na potezu"
 
-#: src/theme.c:64 src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
 msgstr "Zeleni je na potezu"
 
-#: src/theme.c:67
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
 msgstr "Plava i crvena kuglica"
 
-#: src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "Plava"
 
-#: src/theme.c:72
+#: src/theme.vala:97
 msgid "Blue wins!"
 msgstr "Plavi je pobijedio!"
 
-#: src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
 msgstr "Plavi je na potezu"
 
-#: src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Zvijezdice i prstenovi"
+
+#~ msgid "four-in-a-row"
+#~ msgstr "four-in-a-row"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Nemoguće učitavanje slike:\n"
+#~ "%s"
+
+#~ msgid "_About"
+#~ msgstr "_O programu"
+
+#~ msgid "_Quit"
+#~ msgstr "_Zatvori"
