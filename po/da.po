@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-02-06 19:28+0000\n"
+"POT-Creation-Date: 2019-03-26 18:43+0000\n"
 "PO-Revision-Date: 2019-02-13 00:05+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -81,11 +81,6 @@ msgstr ""
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Four-in-a-row.desktop.in:4
-msgid "org.gnome.Four-in-a-row"
-msgstr "org.gnome.Four-in-a-row"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Four-in-a-row.desktop.in:8
@@ -182,8 +177,9 @@ msgstr ""
 "Ole Laursen\n"
 "Ask Hjorth Larsen\n"
 "\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+"Dansk-gruppen\n"
+"Websted <http://dansk-gruppen.dk>\n"
+"E-mail <dansk@dansk-gruppen.dk>"
 
 #: src/four-in-a-row.vala:740
 msgid "_Scores"
@@ -346,6 +342,9 @@ msgstr "Blås tur"
 msgid "Stars and Rings"
 msgstr "Stjerner og ringe"
 
+#~ msgid "org.gnome.Four-in-a-row"
+#~ msgstr "org.gnome.Four-in-a-row"
+
 #~ msgid "four-in-a-row"
 #~ msgstr "four-in-a-row"
 
@@ -361,3 +360,4 @@ msgstr "Stjerner og ringe"
 
 #~ msgid "_Quit"
 #~ msgstr "_Afslut"
+
