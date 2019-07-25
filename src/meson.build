@@ -15,7 +15,6 @@ test('four-in-a-row-tests',
 
 
 sources = files(
-    'vapi/config.vapi',
     'ai.vala',
     'four-in-a-row.vala',
     'game-board-view.vala',
@@ -24,18 +23,18 @@ sources = files(
     'prefs-box.vala',
     'prefs.vala',
     'scorebox.vala',
-    'theme.vala'
+    'theme.vala',
+    'vapi/config.vapi'
 )
 
 executable(
     meson.project_name(),
     sources,
     dependencies: [
+        glib_dependency,
+        gsound_dependency,
         gtk_dependency,
-        rsvg_dependency,
-        canberra_dependency,
-        canberra_gtk3_dependency,
-        glib_dependency
+        rsvg_dependency
     ],
     c_args: [
         '-include', 'config.h'

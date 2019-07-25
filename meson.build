@@ -4,18 +4,20 @@ project('four-in-a-row', 'c', 'vala',
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language: 'c')
 
+# used to install help
 gnome = import('gnome')
+# used for internationalization
 i18n = import('i18n')
+# used to run post install script
 python3 = import('python3')
 
 application_id = 'org.gnome.Four-in-a-row'
 
 gio_dependency = dependency('gio-2.0', version: '>= 2.40.0')
 glib_dependency = dependency('glib-2.0', version: '>= 2.40.0')
+gsound_dependency = dependency('gsound', version: '>= 1.0.2')
 gtk_dependency = dependency('gtk+-3.0', version: '>= 3.13.2')
 rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.32.0')
-canberra_dependency = dependency('libcanberra')
-canberra_gtk3_dependency = dependency('libcanberra-gtk3', version: '>= 0.26')
 
 datadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 
