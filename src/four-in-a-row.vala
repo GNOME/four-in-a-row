@@ -43,7 +43,7 @@ class FourInARow : Gtk.Application {
     Board game_board;
     Gtk.ApplicationWindow window;
     /**
-     * socre:
+     * score:
      *
      * The scores for the current instance (Player 1, Player 2, Draw)
      */
@@ -752,9 +752,7 @@ class FourInARow : Gtk.Application {
         prefsbox.show_all();
     }
 
-    /*\
-    * * Sound
-    \*/
+    /* Sound-related methods */
 
     private GSound.Context sound_context;
     private SoundContextState sound_context_state = SoundContextState.INITIAL;
@@ -775,13 +773,12 @@ class FourInARow : Gtk.Application {
         ERRORED
     }
 
-    private void init_sound () {
-     // requires (sound_context_state == SoundContextState.INITIAL)
+    private void init_sound() {
         try {
-            sound_context = new GSound.Context ();
+            sound_context = new GSound.Context();
             sound_context_state = SoundContextState.WORKING;
         } catch (Error e) {
-            warning (e.message);
+            warning(e.message);
             sound_context_state = SoundContextState.ERRORED;
         }
     }
@@ -789,17 +786,16 @@ class FourInARow : Gtk.Application {
     private void play_sound(SoundID id) {
         if (Prefs.instance.do_sound) {
             if (sound_context_state == SoundContextState.INITIAL)
-                init_sound ();
+                init_sound();
             if (sound_context_state == SoundContextState.WORKING)
-                _play_sound (id, sound_context);
+                do_play_sound(id, sound_context);
         }
     }
 
-    private static void _play_sound(SoundID id, GSound.Context sound_context) {
-     // requires (sound_context_state == SoundContextState.WORKING)
+    private static void do_play_sound(SoundID id, GSound.Context sound_context) {
         string name, path;
 
-        switch (id) {
+        switch(id) {
         case SoundID.DROP:
             name = "slide";
             break;
@@ -826,10 +822,10 @@ class FourInARow : Gtk.Application {
         path = Path.build_filename(SOUND_DIRECTORY, name);
 
         try {
-            sound_context.play_simple (null, GSound.Attribute.MEDIA_NAME, name,
-                                             GSound.Attribute.MEDIA_FILENAME, path);
+            sound_context.play_simple(null, GSound.Attribute.MEDIA_NAME, name,
+                                            GSound.Attribute.MEDIA_FILENAME, path);
         } catch (Error e) {
-            warning (e.message);
+            warning(e.message);
         }
     }
 }
