@@ -27,12 +27,24 @@
     ],
     "modules": [
         {
+            "name" : "gsound",
+            "buildsystem" : "autotools",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gsound.git"
+                }
+            ]
+        },
+        {
             "name": "four-in-a-row",
             "buildsystem": "meson",
-            "sources": [{
-                "type": "git",
-                "url": "https://gitlab.gnome.org/GNOME/four-in-a-row.git"
-            }]
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/four-in-a-row.git"
+                }
+            ]
         }
     ]
 }

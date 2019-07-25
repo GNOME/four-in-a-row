@@ -294,47 +294,6 @@ class FourInARow : Gtk.Application {
         process_move(c);
     }
 
-    public void play_sound(SoundID id) {
-        string name;
-
-        if (!Prefs.instance.do_sound)
-            return;
-
-        switch (id) {
-        case SoundID.DROP:
-            name = "slide";
-            break;
-        case SoundID.I_WIN:
-            name = "reverse";
-            break;
-        case SoundID.YOU_WIN:
-            name = "bonus";
-            break;
-        case SoundID.PLAYER_WIN:
-            name = "bonus";
-            break;
-        case SoundID.DRAWN_GAME:
-            name = "reverse";
-            break;
-        case SoundID.COLUMN_FULL:
-            name = "bad";
-            break;
-        default:
-            return;
-        }
-
-        string filename, path;
-
-        filename = name + ".ogg";
-        path = Path.build_filename(SOUND_DIRECTORY, filename);
-
-        CanberraGtk.context_get().play(
-                id,
-                Canberra.PROP_MEDIA_NAME, name,
-                Canberra.PROP_MEDIA_FILENAME, path);
-
-    }
-
     public void process_move3(int c) {
         play_sound(SoundID.DROP);
 
@@ -792,6 +751,87 @@ class FourInARow : Gtk.Application {
         prefsbox = new PrefsBox(window);
         prefsbox.show_all();
     }
+
+    /*\
+    * * Sound
+    \*/
+
+    private GSound.Context sound_context;
+    private SoundContextState sound_context_state = SoundContextState.INITIAL;
+
+    private enum SoundID {
+        DROP,
+        I_WIN,
+        YOU_WIN,
+        PLAYER_WIN,
+        DRAWN_GAME,
+        COLUMN_FULL
+    }
+
+    private enum SoundContextState
+    {
+        INITIAL,
+        WORKING,
+        ERRORED
+    }
+
+    private void init_sound () {
+     // requires (sound_context_state == SoundContextState.INITIAL)
+        try {
+            sound_context = new GSound.Context ();
+            sound_context_state = SoundContextState.WORKING;
+        } catch (Error e) {
+            warning (e.message);
+            sound_context_state = SoundContextState.ERRORED;
+        }
+    }
+
+    private void play_sound(SoundID id) {
+        if (Prefs.instance.do_sound) {
+            if (sound_context_state == SoundContextState.INITIAL)
+                init_sound ();
+            if (sound_context_state == SoundContextState.WORKING)
+                _play_sound (id, sound_context);
+        }
+    }
+
+    private static void _play_sound(SoundID id, GSound.Context sound_context) {
+     // requires (sound_context_state == SoundContextState.WORKING)
+        string name, path;
+
+        switch (id) {
+        case SoundID.DROP:
+            name = "slide";
+            break;
+        case SoundID.I_WIN:
+            name = "reverse";
+            break;
+        case SoundID.YOU_WIN:
+            name = "bonus";
+            break;
+        case SoundID.PLAYER_WIN:
+            name = "bonus";
+            break;
+        case SoundID.DRAWN_GAME:
+            name = "reverse";
+            break;
+        case SoundID.COLUMN_FULL:
+            name = "bad";
+            break;
+        default:
+            return;
+        }
+
+        name += ".ogg";
+        path = Path.build_filename(SOUND_DIRECTORY, name);
+
+        try {
+            sound_context.play_simple (null, GSound.Attribute.MEDIA_NAME, name,
+                                             GSound.Attribute.MEDIA_FILENAME, path);
+        } catch (Error e) {
+            warning (e.message);
+        }
+    }
 }
 
 public enum AnimID {
@@ -822,15 +862,6 @@ public enum Tile {
     CLEAR_CURSOR,
     PLAYER1_CURSOR,
     PLAYER2_CURSOR,
-}
-
-public enum SoundID {
-    DROP,
-    I_WIN,
-    YOU_WIN,
-    PLAYER_WIN,
-    DRAWN_GAME,
-    COLUMN_FULL
 }
 
 public int main(string[] argv) {
