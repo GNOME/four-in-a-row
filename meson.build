@@ -19,6 +19,10 @@ gsound_dependency = dependency('gsound', version: '>= 1.0.2')
 gtk_dependency = dependency('gtk+-3.0', version: '>= 3.13.2')
 rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.32.0')
 
+appstream_util          = find_program('appstream-util',        required: false)
+desktop_file_validate   = find_program('desktop-file-validate', required: false)
+glib_compile_schema     = find_program('glib-compile-schemas',  required: true) # useful?
+
 datadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 
 conf = configuration_data ()
