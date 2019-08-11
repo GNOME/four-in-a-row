@@ -3,335 +3,328 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008-2014, 2015, 2016.
+# Asier Sarasua Garmendia  <asier.sarasua@gmail.com>, 2019.
+#
 msgid ""
-msgstr ""
-"Project-Id-Version: four-in-a-row master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 13:06+0000\n"
-"PO-Revision-Date: 2016-09-20 12:11+0100\n"
-"Last-Translator: dooteo <dooteo@zundan.com>\n"
-"Language-Team: Basque <librezale@librezale.org>\n"
+msgstr "Project-Id-Version: four-in-a-row master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2019-03-26 18:43+0000\n"
+"PO-Revision-Date: 2019-08-11 10:00+0100\n"
+"Last-Translator: Asier Sarasua Garmendia <asier.sarasua@gmail.com>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Lauko artzain-jokoa"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "Desegin zure azken mugimenduak"
+
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "_Iradokizuna"
+
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "Jaso argibidea zure hurrengo mugimendurako"
+
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "_Hasi hasieratik"
+
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "Hasi joko berria"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "Irabazteko, osatu kolore bereko ilarak"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
-msgstr ""
-"Lauko artzain-jokoaren helburua lerro batean zure lau puxtarri jartzea da "
-"zure aurkariak (gizakia edo ordenagailua) lerro bat osatu aurretik. Lerroa "
-"horizontala, bertikala edo zeharretakoa izan daiteke. Lerro batean lau "
-"puxtarri jartzea lortzen dituenak irabazten du."
+msgstr "Lauko artzain-jokoaren helburua lerro batean zure lau puxtarri jartzea da zure aurkariak (gizakia edo ordenagailua) lerro bat osatu aurretik. Lerroa horizontala, bertikala edo zeharretakoa izan daiteke. Lerro batean lau puxtarri jartzea lortzen dituenak irabazten du."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
-msgstr ""
-"Lauko artzain-jokoak zailtasunaren maila desberdinak ditu. Arazoak edukiz "
-"gero, argibide bat eska dezakezu."
+msgstr "Lauko artzain-jokoak zailtasun-maila desberdinak ditu. Arazoak edukiz gero, argibide bat eska dezakezu."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "GNOME proiektua"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "jokoa;estrategia;logika;"
 
-#: ../data/four-in-a-row.ui.h:2
-msgid "Undo your most recent move"
-msgstr "Desegin zure azken mugimendua"
-
-#: ../data/four-in-a-row.ui.h:3
-msgid "_Hint"
-msgstr "_Iradokizuna"
-
-#: ../data/four-in-a-row.ui.h:4
-msgid "Receive a hint for your next move"
-msgstr "Jaso argibidea zure hurrengo mugimendurako"
-
-#: ../data/four-in-a-row.ui.h:5
-msgid "_Start Over"
-msgstr "_Hasi hasieratik"
-
-#: ../data/four-in-a-row.ui.h:6
-msgid "Start a new game"
-msgstr "Beste joko bat hasten du"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "Aurkaria"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
-msgstr ""
-"Zero giza jokalaria da; batetik hirura ordenagailu-jokalariaren maila da."
+msgstr "Zero giza jokalaria da; batetik hirura ordenagailu-jokalariaren maila da."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "Gaiaren IDa"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
 msgstr "Gai hobetsia zehazten duen zenbakia."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Soinua"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "Gertaera-soinuak erreproduzituko diren ala ez adierazten du."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
 msgid "Move left"
 msgstr "Mugitu ezkerrera"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "Sakatu tekla ezkerrerantz joateko."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
 msgid "Move right"
 msgstr "Mugitu eskuinera"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "Sakatu tekla eskuinerantz joateko."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
 msgid "Drop marble"
 msgstr "Jaregin puxtarriari"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "Sakatu tekla puxtarriari jaregiteko."
 
-#: ../src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "Gako hau jadanik erabilita dago."
-
-#: ../src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "Komando ezezaguna"
-
-#: ../src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"Ezin da irudia kargatu:\n"
-"%s"
-
-#: ../src/main.c:476
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "Berdinketa!"
 
-#: ../src/main.c:484
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "Irabazi egin duzu!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "Zure txanda"
 
-#: ../src/main.c:489
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "Irabazi egin dut!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
 msgid "I’m Thinking…"
 msgstr "Pentsatzen…"
 
-#: ../src/main.c:603
+#: src/four-in-a-row.vala:515
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Iradokizuna: %d zutabea"
 
-#: ../src/main.c:631 ../src/main.c:635
-msgid "You:"
-msgstr "Zu:"
+#: src/four-in-a-row.vala:660
+msgid "Connect four in a row to win"
+msgstr "Lerrokatu lau errenkada batean irabazteko"
 
-#: ../src/main.c:632 ../src/main.c:634
-msgid "Me:"
-msgstr "Ni:"
-
-#: ../src/main.c:680
-msgid "Scores"
-msgstr "Puntuazioa"
-
-#: ../src/main.c:721
-msgid "Drawn:"
-msgstr "Berdinketa:"
-
-#: ../src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "Lerrokatu lau errenkada batean irabazteko."
-
-#: ../src/main.c:765
+#: src/four-in-a-row.vala:664
 msgid "translator-credits"
-msgstr "Hizkuntza Politikarako Sailburuordetza <hizkpol@ej-gv.es>"
+msgstr "Asier Sarasua Garmendia <asier.sarasua@gmail.com>"
 
-#: ../src/main.c:1130
+#: src/four-in-a-row.vala:740
 msgid "_Scores"
 msgstr "_Puntuazioak"
 
-#: ../src/main.c:1131
+#: src/four-in-a-row.vala:743
 msgid "_Preferences"
 msgstr "_Hobespenak"
 
-#: ../src/main.c:1134
+#: src/four-in-a-row.vala:744
 msgid "_Help"
-msgstr "La_guntza"
+msgstr "_Laguntza"
 
-#: ../src/main.c:1135
-msgid "_About"
-msgstr "Honi _buruz"
+#: src/four-in-a-row.vala:745
+msgid "_About Four-in-a-row"
+msgstr "Lauko artzain-jokoari _buruz"
 
-#: ../src/main.c:1136
-msgid "_Quit"
-msgstr "_Irten"
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "Gako hau jadanik erabilita dago."
 
-#: ../src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "Komando ezezaguna"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "Hobespenak"
 
-#: ../src/prefs.c:193
+#: src/prefs-box.vala:53
 msgid "Game"
 msgstr "Jokoa"
 
-#: ../src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
 msgstr "Aurkaria:"
 
-#: ../src/prefs.c:207
+#: src/prefs-box.vala:67
 msgid "Human"
 msgstr "Gizakia"
 
-#: ../src/prefs.c:211
+#: src/prefs-box.vala:71
 msgid "Level one"
 msgstr "1. maila"
 
-#: ../src/prefs.c:215
+#: src/prefs-box.vala:75
 msgid "Level two"
 msgstr "2. maila"
 
-#: ../src/prefs.c:219
+#: src/prefs-box.vala:79
 msgid "Level three"
 msgstr "3. maila"
 
-#: ../src/prefs.c:225
+#: src/prefs-box.vala:86
 msgid "_Theme:"
 msgstr "_Gaia:"
 
-#: ../src/prefs.c:238
+#: src/prefs-box.vala:98
 msgid "E_nable sounds"
 msgstr "_Gaitu soinuak"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs-box.vala:102
 msgid "Keyboard Controls"
 msgstr "Teklatuko kontrolak"
 
-#: ../src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "Puntuazioa"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "Berdinketa:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "Zu:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "Ni:"
+
+#: src/theme.vala:65
 msgid "High Contrast"
 msgstr "Kontraste handia"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
 msgstr "Zirkulua"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
 msgstr "Gurutzea"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
 msgstr "Zirkulua irabazle!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
 msgstr "Gurutzea irabazle!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
 msgstr "Zirkuluaren txanda"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
 msgstr "Gurutzearen txanda"
 
-#: ../src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
 msgstr "Kontraste handia alderantziz"
 
-#: ../src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
 msgstr "Puxtarri gorriak eta berdeak"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "Gorria"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "Berdea"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
 msgstr "Gorria irabazle!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
 msgstr "Berdea irabazle!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
 msgstr "Gorriaren txanda"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
 msgstr "Berdearen txanda"
 
-#: ../src/theme.c:67
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
 msgstr "Puxtarri urdinak eta gorriak"
 
-#: ../src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "Urdina"
 
-#: ../src/theme.c:72
+#: src/theme.vala:97
 msgid "Blue wins!"
 msgstr "Urdina irabazle!"
 
-#: ../src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
 msgstr "Urdinaren txanda"
 
-#: ../src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "Izarrak eta eraztunak"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Ezin da irudia kargatu:\n"
+#~ "%s"
+
+#~ msgid "_About"
+#~ msgstr "Honi _buruz"
+
+#~ msgid "_Quit"
+#~ msgstr "_Irten"
