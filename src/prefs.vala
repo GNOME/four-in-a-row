@@ -22,8 +22,6 @@
 private class Prefs : Object {
     private const int DEFAULT_THEME_ID = 0;
 
-    [CCode (notify = false)] internal bool do_sound{ internal get; internal set;}
-
     private int _theme_id;
     [CCode (notify = true)] internal int theme_id {
         get{
@@ -52,7 +50,6 @@ private class Prefs : Object {
         theme_id = settings.get_int("theme-id");
 
         settings.changed ["theme-id"].connect(theme_id_changed_cb);
-        settings.bind("sound", this, "do_sound", SettingsBindFlags.DEFAULT);
         settings.bind("theme-id", this, "theme-id", SettingsBindFlags.DEFAULT);
         settings.bind("key-drop", this, "keypress_drop", SettingsBindFlags.DEFAULT);
         settings.bind("key-right", this, "keypress_right", SettingsBindFlags.DEFAULT);
@@ -91,10 +88,6 @@ private class Prefs : Object {
         if (level[PlayerID.PLAYER1] != Level.HUMAN || level[PlayerID.PLAYER2] != Level.HUMAN)
             return 1;
         return 2;
-    }
-
-    internal inline void on_toggle_sound(Gtk.ToggleButton t) {
-        do_sound = t.get_active();
     }
 
     private static Level sane_player_level(Level val) {

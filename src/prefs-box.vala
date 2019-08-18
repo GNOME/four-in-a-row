@@ -30,7 +30,6 @@ private class PrefsBox : Dialog {
         Notebook notebook;
         ComboBox combobox;
         ComboBoxText combobox_theme;
-        ToggleButton checkbutton_sound;
 
         Grid grid;
         GamesControlsList controls_list;
@@ -105,9 +104,6 @@ private class PrefsBox : Dialog {
         label.set_mnemonic_widget(combobox_theme);
         grid.attach(combobox_theme, 1, 1, 1, 1);
 
-        checkbutton_sound = new CheckButton.with_mnemonic(_("E_nable sounds"));
-        grid.attach(checkbutton_sound, 0, 2, 2, 1);
-
         /* keyboard tab */
         label = new Label.with_mnemonic(_("Keyboard Controls"));
 
@@ -120,13 +116,10 @@ private class PrefsBox : Dialog {
 
         /* fill in initial values */
         combobox_theme.set_active(Prefs.instance.theme_id);
-        checkbutton_sound.set_active(Prefs.instance.do_sound);
 
         /* connect signals */
         combobox_theme.changed.connect(on_select_theme);
-        checkbutton_sound.toggled.connect(Prefs.instance.on_toggle_sound);
         Prefs.instance.theme_changed.connect((theme_id) => combobox_theme.set_active(theme_id));
-        Prefs.instance.notify["do_sound"].connect(() => checkbutton_sound.set_active(Prefs.instance.do_sound));
     }
 
     protected override bool delete_event(Gdk.EventAny event) {  // TODO use hide_on_delete (Gtk3) or hide-on-close (Gtk4) 2/2

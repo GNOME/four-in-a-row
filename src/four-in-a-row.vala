@@ -159,6 +159,8 @@ private class FourInARow : Gtk.Application {
     }
 
     private inline void add_actions() {
+        add_action (Prefs.instance.settings.create_action ("sound"));
+
         new_game_action = new SimpleAction("new-game", null);
         new_game_action.activate.connect(this.on_game_new);
         add_action(new_game_action);
@@ -709,19 +711,27 @@ private class FourInARow : Gtk.Application {
 
         add_actions();
 
-        menu_button = builder.get_object("menu_button") as Gtk.MenuButton;
+        menu_button = builder.get_object ("menu_button") as Gtk.MenuButton;
+        app_menu = new GLib.Menu ();
 
-        app_menu = new GLib.Menu();
-        section = new GLib.Menu();
-        app_menu.append_section(null, section);
-        section.append(_("_Scores"), "app.scores");
-        section = new GLib.Menu();
-        app_menu.append_section(null, section);
-        section.append(_("_Preferences"), "app.preferences");
-        section.append(_("_Help"), "app.help");
-        section.append(_("_About Four-in-a-row"), "app.about");
+        section = new GLib.Menu ();
+        section.append (_("Sound"), "app.sound");
+        section.freeze ();
+        app_menu.append_section (null, section);
 
-        menu_button.menu_model = app_menu;
+        section = new GLib.Menu ();
+        section.append (_("_Scores"), "app.scores");
+        section.freeze ();
+        app_menu.append_section (null, section);
+
+        section = new GLib.Menu ();
+        section.append (_("_Preferences"), "app.preferences");
+        section.append (_("_Help"), "app.help");
+        section.append (_("_About Four-in-a-row"), "app.about");
+        section.freeze ();
+        app_menu.append_section (null, section);
+
+        menu_button.set_menu_model (app_menu);
 
         frame = builder.get_object("frame") as Gtk.AspectFrame;
 
@@ -801,12 +811,14 @@ private class FourInARow : Gtk.Application {
         }
     }
 
-    private void play_sound(SoundID id) {
-        if (Prefs.instance.do_sound) {
+    private void play_sound (SoundID id)
+    {
+        if (Prefs.instance.settings.get_boolean ("sound"))
+        {
             if (sound_context_state == SoundContextState.INITIAL)
-                init_sound();
+                init_sound ();
             if (sound_context_state == SoundContextState.WORKING)
-                do_play_sound(id, sound_context);
+                do_play_sound (id, sound_context);
         }
     }
 
