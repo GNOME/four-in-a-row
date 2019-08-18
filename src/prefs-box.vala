@@ -53,7 +53,9 @@ class PrefsBox : Gtk.Dialog {
         label = new Gtk.Label(_("Game"));
         notebook.append_page(grid, label);
 
-        label = new Gtk.Label(_("Opponent:"));
+        label = new Gtk.Label(_("Opponent:"));  // TODO add a mnemonic, like for _Theme:
+        label.set_xalign((float)0.0);
+        label.set_yalign((float)0.5);
         label.set_hexpand(true);
         grid.attach(label,0,0 ,1, 1);
 
@@ -86,6 +88,7 @@ class PrefsBox : Gtk.Dialog {
         label = new Gtk.Label.with_mnemonic(_("_Theme:"));
         label.set_xalign((float)0.0);
         label.set_yalign((float)0.5);
+        label.set_hexpand(true);
         grid.attach(label, 0, 1, 1, 1);
 
         combobox_theme = new Gtk.ComboBoxText();
