@@ -40,7 +40,7 @@ class GameBoardView : Gtk.DrawingArea {
         events = Gdk.EventMask.EXPOSURE_MASK |
                           Gdk.EventMask.BUTTON_PRESS_MASK |
                           Gdk.EventMask.BUTTON_RELEASE_MASK;
-        Prefs.instance.notify["theme_id"].connect(() =>{
+        Prefs.instance.theme_changed.connect(() =>{
             change_theme();
         });
         load_pixmaps();

@@ -49,7 +49,7 @@ class Prefs : Object {
         level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
         theme_id = settings.get_int("theme-id");
 
-        settings.changed.connect(settings_changed_cb);
+        settings.changed ["theme-id"].connect(theme_id_changed_cb);
         settings.bind("sound", this, "do_sound", SettingsBindFlags.DEFAULT);
         settings.bind("theme-id", this, "theme-id", SettingsBindFlags.DEFAULT);
         settings.bind("key-drop", this, "keypress_drop", SettingsBindFlags.DEFAULT);
@@ -76,14 +76,11 @@ class Prefs : Object {
      */
     public signal void theme_changed(int theme_id);
 
-    public void settings_changed_cb(string key) {
-        if (key == "theme-id") {
-            int val = sane_theme_id(settings.get_int("theme-id"));
-            if (val != theme_id) {
-                theme_id = val;
-                theme_changed(theme_id);
-            }
-        }
+    private void theme_id_changed_cb (string key) {
+        int val = sane_theme_id(settings.get_int("theme-id"));
+        if (val != theme_id)
+            theme_id = val;
+        theme_changed(theme_id);
     }
 
     public int get_n_human_players() {
