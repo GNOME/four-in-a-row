@@ -92,7 +92,7 @@ class FourInARow : Gtk.Application {
 
         clear_board();
         set_status_message(null);
-        game_board_view.draw_all();
+        game_board_view.queue_draw();
 
         move_cursor(column);
         gameover = false;
@@ -214,7 +214,7 @@ class FourInARow : Gtk.Application {
         if (!window.is_visible()) {
             window.show_all();
             game_board_view.refresh_pixmaps();
-            game_board_view.draw_all();
+            game_board_view.queue_draw();
             scorebox.update(score);       /* update visible player descriptions */
             prompt_player();
             game_reset();

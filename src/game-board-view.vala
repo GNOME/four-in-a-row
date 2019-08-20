@@ -47,7 +47,7 @@ class GameBoardView : Gtk.DrawingArea {
         this.game_board = game_board;
     }
 
-    public int get_column(int xpos) {
+    private int get_column(int xpos) {
         /* Derive column from pixel position */
         int c = xpos / tilesize;
         if (c > 6)
@@ -59,21 +59,19 @@ class GameBoardView : Gtk.DrawingArea {
     }
 
     public void draw_tile(int r, int c) {
-        queue_draw_area(c*tilesize, r*tilesize, tilesize, tilesize);
+        queue_draw_area(c*tilesize + board_x, r*tilesize + board_y, tilesize, tilesize);
     }
 
-    public void draw_all() {
-        queue_draw_area(0, 0, boardsize, boardsize);
-    }
-
+    private int board_x;
+    private int board_y;
     protected override bool configure_event(Gdk.EventConfigure e) {
-        int width, height;
-
-        width = get_allocated_width();
-        height = get_allocated_height();
-
-        boardsize = int.min(width, height);
-        tilesize = boardsize / 7;
+        int allocated_width  = get_allocated_width ();
+        int allocated_height = get_allocated_height ();
+        int size = int.min (allocated_width, allocated_height);
+        tilesize = size / 7;
+        boardsize = tilesize * 7;
+        board_x = (allocated_width  - boardsize) / 2;
+        board_y = (allocated_height - boardsize) / 2;
 
         offset[Tile.PLAYER1] = 0;
         offset[Tile.PLAYER2] = tilesize;
@@ -83,7 +81,7 @@ class GameBoardView : Gtk.DrawingArea {
         offset[Tile.PLAYER2_CURSOR] = tilesize * 5;
 
         refresh_pixmaps();
-        draw_all();
+        queue_draw();
         return true;
     }
 
@@ -92,7 +90,7 @@ class GameBoardView : Gtk.DrawingArea {
             return false;
 
         refresh_pixmaps();
-        draw_all();
+        queue_draw();
         return true;
     }
 
@@ -101,6 +99,7 @@ class GameBoardView : Gtk.DrawingArea {
 
         /* draw the background */
         cr.save();
+        cr.translate(board_x, board_y);
         Gdk.cairo_set_source_pixbuf(cr, pb_bground, 0, 0);
         cr.rectangle(0, 0, boardsize, boardsize);
         cr.paint();
@@ -112,7 +111,10 @@ class GameBoardView : Gtk.DrawingArea {
             }
         }
 
+        cr.save();
+        cr.translate(board_x, board_y);
         draw_grid(cr);
+        cr.restore();
         return false;
     }
 
@@ -158,8 +160,8 @@ class GameBoardView : Gtk.DrawingArea {
     }
 
     void paint_tile(Cairo.Context cr, int r, int c) {
-        int x = c * tilesize;
-        int y = r * tilesize;
+        int x = c * tilesize + board_x;
+        int y = r * tilesize + board_y;
         int tile = game_board.get(r, c);
         int os = 0;
 
