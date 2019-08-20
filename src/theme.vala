@@ -40,7 +40,7 @@ private struct Theme {
 private const string theme_gettext_package = GETTEXT_PACKAGE;
 
 private static string theme_get_title(int id) {
-    return theme[id].title;
+    return _(theme [id].title); // FIXME this gettext call feels horrible
 }
 
 private static string theme_get_player_turn(PlayerID who) {

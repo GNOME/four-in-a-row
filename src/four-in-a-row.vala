@@ -160,6 +160,7 @@ private class FourInARow : Gtk.Application {
 
     private inline void add_actions() {
         add_action (Prefs.instance.settings.create_action ("sound"));
+        add_action (Prefs.instance.settings.create_action ("theme-id"));
 
         new_game_action = new SimpleAction("new-game", null);
         new_game_action.activate.connect(this.on_game_new);
@@ -714,7 +715,16 @@ private class FourInARow : Gtk.Application {
         menu_button = builder.get_object ("menu_button") as Gtk.MenuButton;
         app_menu = new GLib.Menu ();
 
+        GLib.Menu appearance_menu = new GLib.Menu ();
+        for (uint8 i = 0; i < theme.length; i++)     // TODO default theme
+            appearance_menu.append (theme_get_title (i), @"app.theme-id($i)");
+        appearance_menu.freeze ();
+
         section = new GLib.Menu ();
+        /* Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt) */
+        section.append_submenu (_("A_ppearance"), (!) appearance_menu);
+
+
         section.append (_("Sound"), "app.sound");
         section.freeze ();
         app_menu.append_section (null, section);
@@ -731,6 +741,7 @@ private class FourInARow : Gtk.Application {
         section.freeze ();
         app_menu.append_section (null, section);
 
+        app_menu.freeze ();
         menu_button.set_menu_model (app_menu);
 
         frame = builder.get_object("frame") as Gtk.AspectFrame;

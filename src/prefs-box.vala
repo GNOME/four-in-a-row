@@ -29,7 +29,6 @@ private class PrefsBox : Dialog {
     internal PrefsBox(Window parent) {
         Notebook notebook;
         ComboBox combobox;
-        ComboBoxText combobox_theme;
 
         Grid grid;
         GamesControlsList controls_list;
@@ -59,7 +58,7 @@ private class PrefsBox : Dialog {
         label = new Label(_("Game"));
         notebook.append_page(grid, label);
 
-        label = new Label(_("Opponent:"));  // TODO add a mnemonic, like for _Theme:
+        label = new Label(_("Opponent:"));  // TODO add a mnemonic?
         label.set_xalign((float)0.0);
         label.set_yalign((float)0.5);
         label.set_hexpand(true);
@@ -91,19 +90,6 @@ private class PrefsBox : Dialog {
         combobox.changed.connect(on_select_opponent);
         grid.attach(combobox, 1, 0, 1, 1);
 
-        label = new Label.with_mnemonic(_("_Theme:"));
-        label.set_xalign((float)0.0);
-        label.set_yalign((float)0.5);
-        label.set_hexpand(true);
-        grid.attach(label, 0, 1, 1, 1);
-
-        combobox_theme = new ComboBoxText();
-        for (int i = 0; i < theme.length; i++) {
-            combobox_theme.append_text(_(theme_get_title(i)));
-        }
-        label.set_mnemonic_widget(combobox_theme);
-        grid.attach(combobox_theme, 1, 1, 1, 1);
-
         /* keyboard tab */
         label = new Label.with_mnemonic(_("Keyboard Controls"));
 
@@ -113,23 +99,11 @@ private class PrefsBox : Dialog {
                                    "key-drop",  _("Drop marble"),   DEFAULT_KEY_DROP);
         controls_list.border_width = 12;
         notebook.append_page(controls_list, label);
-
-        /* fill in initial values */
-        combobox_theme.set_active(Prefs.instance.theme_id);
-
-        /* connect signals */
-        combobox_theme.changed.connect(on_select_theme);
-        Prefs.instance.theme_changed.connect((theme_id) => combobox_theme.set_active(theme_id));
     }
 
     protected override bool delete_event(Gdk.EventAny event) {  // TODO use hide_on_delete (Gtk3) or hide-on-close (Gtk4) 2/2
         hide();
         return true;
-    }
-
-    private static inline void on_select_theme(ComboBox combobox) {
-        int id = combobox.get_active();
-        Prefs.instance.theme_id = id;
     }
 
     private inline void on_select_opponent(ComboBox combobox) {

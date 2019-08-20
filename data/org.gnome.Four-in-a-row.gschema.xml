@@ -7,6 +7,7 @@
     </key>
     <key name="theme-id" type="i">
       <default>4</default>
+      <range min="0" max="4"/>
       <summary>Theme ID</summary>
       <description>A number specifying the preferred theme.</description>
     </key>
