@@ -20,8 +20,8 @@
  */
 
 private class GameBoardView : Gtk.DrawingArea {
-    private int boardsize = 0;
-    private int tilesize = 0;
+    private int board_size = 0;
+    private int tile_size = 0;
     private int offset[6];
     /* unscaled pixbufs */
     private Gdk.Pixbuf pb_tileset_raw;
@@ -37,9 +37,9 @@ private class GameBoardView : Gtk.DrawingArea {
         halign = Gtk.Align.FILL;
         valign = Gtk.Align.FILL;
 
-        events = Gdk.EventMask.EXPOSURE_MASK |
-                          Gdk.EventMask.BUTTON_PRESS_MASK |
-                          Gdk.EventMask.BUTTON_RELEASE_MASK;
+        events = Gdk.EventMask.EXPOSURE_MASK
+               | Gdk.EventMask.BUTTON_PRESS_MASK
+               | Gdk.EventMask.BUTTON_RELEASE_MASK;
         Prefs.instance.theme_changed.connect(() => change_theme());
         load_pixmaps();
         this.game_board = game_board;
@@ -47,7 +47,7 @@ private class GameBoardView : Gtk.DrawingArea {
 
     private inline int get_column(int xpos) {
         /* Derive column from pixel position */
-        int c = xpos / tilesize;
+        int c = xpos / tile_size;
         if (c > 6)
             c = 6;
         if (c < 0)
@@ -57,7 +57,7 @@ private class GameBoardView : Gtk.DrawingArea {
     }
 
     internal inline void draw_tile(int r, int c) {
-        queue_draw_area(c*tilesize + board_x, r*tilesize + board_y, tilesize, tilesize);
+        queue_draw_area(c*tile_size + board_x, r*tile_size + board_y, tile_size, tile_size);
     }
 
     private int board_x;
@@ -66,17 +66,17 @@ private class GameBoardView : Gtk.DrawingArea {
         int allocated_width  = get_allocated_width ();
         int allocated_height = get_allocated_height ();
         int size = int.min (allocated_width, allocated_height);
-        tilesize = size / 7;
-        boardsize = tilesize * 7;
-        board_x = (allocated_width  - boardsize) / 2;
-        board_y = (allocated_height - boardsize) / 2;
+        tile_size = size / 7;
+        board_size = tile_size * 7;
+        board_x = (allocated_width  - board_size) / 2;
+        board_y = (allocated_height - board_size) / 2;
 
         offset[Tile.PLAYER1] = 0;
-        offset[Tile.PLAYER2] = tilesize;
-        offset[Tile.CLEAR] = tilesize * 2;
-        offset[Tile.CLEAR_CURSOR] = tilesize * 3;
-        offset[Tile.PLAYER1_CURSOR] = tilesize * 4;
-        offset[Tile.PLAYER2_CURSOR] = tilesize * 5;
+        offset[Tile.PLAYER2] = tile_size;
+        offset[Tile.CLEAR] = tile_size * 2;
+        offset[Tile.CLEAR_CURSOR] = tile_size * 3;
+        offset[Tile.PLAYER1_CURSOR] = tile_size * 4;
+        offset[Tile.PLAYER2_CURSOR] = tile_size * 5;
 
         refresh_pixmaps();
         queue_draw();
@@ -99,7 +99,7 @@ private class GameBoardView : Gtk.DrawingArea {
         cr.save();
         cr.translate(board_x, board_y);
         Gdk.cairo_set_source_pixbuf(cr, pb_bground, 0, 0);
-        cr.rectangle(0, 0, boardsize, boardsize);
+        cr.rectangle(0, 0, board_size, board_size);
         cr.paint();
         cr.restore();
 
@@ -131,17 +131,17 @@ private class GameBoardView : Gtk.DrawingArea {
 
         /* draw the grid on the background pixmap */
         for (i = 1; i < 7; i++) {
-            cr.move_to(i * tilesize + 0.5, 0);
-            cr.line_to(i * tilesize + 0.5, boardsize);
-            cr.move_to(0, i * tilesize + 0.5);
-            cr.line_to(boardsize, i * tilesize + 0.5);
+            cr.move_to(i * tile_size + 0.5, 0);
+            cr.line_to(i * tile_size + 0.5, board_size);
+            cr.move_to(0, i * tile_size + 0.5);
+            cr.line_to(board_size, i * tile_size + 0.5);
         }
         cr.stroke();
 
         /* Draw separator line at the top */
         cr.set_dash(null, 0);
-        cr.move_to(0, tilesize + 0.5);
-        cr.line_to(boardsize, tilesize + 0.5);
+        cr.move_to(0, tile_size + 0.5);
+        cr.line_to(board_size, tile_size + 0.5);
 
         cr.stroke();
     }
@@ -158,8 +158,8 @@ private class GameBoardView : Gtk.DrawingArea {
     }
 
     private inline void paint_tile(Cairo.Context cr, int r, int c) {
-        int x = c * tilesize + board_x;
-        int y = r * tilesize + board_y;
+        int x = c * tile_size + board_x;
+        int y = r * tile_size + board_y;
         int tile = game_board [r, c];
         int os = 0;
 
@@ -189,7 +189,7 @@ private class GameBoardView : Gtk.DrawingArea {
 
         cr.save();
         Gdk.cairo_set_source_pixbuf(cr, pb_tileset, x - os, y);
-        cr.rectangle(x, y, tilesize, tilesize);
+        cr.rectangle(x, y, tile_size, tile_size);
 
         cr.clip();
         cr.paint();
@@ -198,8 +198,8 @@ private class GameBoardView : Gtk.DrawingArea {
 
     internal void refresh_pixmaps() {
         /* scale the pixbufs */
-        pb_tileset = pb_tileset_raw.scale_simple(tilesize * 6, tilesize, Gdk.InterpType.BILINEAR);
-        pb_bground = pb_bground_raw.scale_simple(boardsize, boardsize, Gdk.InterpType.BILINEAR);
+        pb_tileset = pb_tileset_raw.scale_simple(tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
+        pb_bground = pb_bground_raw.scale_simple(board_size, board_size, Gdk.InterpType.BILINEAR);
     }
 
     private bool load_pixmaps() {
@@ -242,23 +242,23 @@ private class GameBoardView : Gtk.DrawingArea {
         if (pb_bground_tmp != null) {
             pb_bground_raw = pb_bground_tmp;
         } else {
-            int tilesize_raw;
+            int raw_tile_size;
             int i, j;
 
-            tilesize_raw = pb_tileset_raw.get_height();
+            raw_tile_size = pb_tileset_raw.get_height();
 
             pb_bground_raw = new Gdk.Pixbuf(Gdk.Colorspace.RGB, true, 8,
-                tilesize_raw * 7, tilesize_raw * 7);
+                raw_tile_size * 7, raw_tile_size * 7);
             for (i = 0; i < 7; i++) {
-                pb_tileset_raw.copy_area(tilesize_raw * 3, 0,
-                    tilesize_raw, tilesize_raw,
-                    pb_bground_raw, i * tilesize_raw, 0);
+                pb_tileset_raw.copy_area(raw_tile_size * 3, 0,
+                    raw_tile_size, raw_tile_size,
+                    pb_bground_raw, i * raw_tile_size, 0);
                 for (j = 1; j < 7; j++) {
                     pb_tileset_raw.copy_area(
-                        tilesize_raw * 2, 0,
-                        tilesize_raw, tilesize_raw,
+                        raw_tile_size * 2, 0,
+                        raw_tile_size, raw_tile_size,
                         pb_bground_raw,
-                        i * tilesize_raw, j * tilesize_raw);
+                        i * raw_tile_size, j * raw_tile_size);
                 }
             }
         }
