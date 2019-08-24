@@ -18,19 +18,26 @@
  * You should have received a copy of the GNU General Public License
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
-class PrefsBox : Gtk.Dialog {
-    Gtk.Notebook notebook;
-    Gtk.ComboBox combobox;
-    Gtk.ComboBoxText combobox_theme;
-    Gtk.ToggleButton checkbutton_sound;
 
-    public PrefsBox(Gtk.Window parent) {
-        Gtk.Grid grid;
+using Gtk;
+
+private class PrefsBox : Dialog {
+    private const uint DEFAULT_KEY_LEFT = Gdk.Key.Left;
+    private const uint DEFAULT_KEY_RIGHT = Gdk.Key.Right;
+    private const uint DEFAULT_KEY_DROP = Gdk.Key.Down;
+
+    internal PrefsBox(Window parent) {
+        Notebook notebook;
+        ComboBox combobox;
+        ComboBoxText combobox_theme;
+        ToggleButton checkbutton_sound;
+
+        Grid grid;
         GamesControlsList controls_list;
-        Gtk.Label label;
-        Gtk.CellRendererText renderer;
+        Label label;
+        CellRendererText renderer;
         Gtk.ListStore model;
-        Gtk.TreeIter iter;
+        TreeIter iter;
 
         Object(
             title: _("Preferences"),
@@ -40,74 +47,74 @@ class PrefsBox : Gtk.Dialog {
         modal = true;
         border_width = 5;
         get_content_area().spacing = 2;
-        notebook = new Gtk.Notebook();
+        notebook = new Notebook();
         notebook.set_border_width(5);
         get_content_area().pack_start(notebook, true, true, 0);
 
         /* game tab */
-        grid = new Gtk.Grid();
+        grid = new Grid();
         grid.set_row_spacing(6);
         grid.set_column_spacing(12);
         grid.set_border_width(12);
 
-        label = new Gtk.Label(_("Game"));
+        label = new Label(_("Game"));
         notebook.append_page(grid, label);
 
-        label = new Gtk.Label(_("Opponent:"));  // TODO add a mnemonic, like for _Theme:
+        label = new Label(_("Opponent:"));  // TODO add a mnemonic, like for _Theme:
         label.set_xalign((float)0.0);
         label.set_yalign((float)0.5);
         label.set_hexpand(true);
         grid.attach(label,0,0 ,1, 1);
 
-        combobox = new Gtk.ComboBox();
-        renderer = new Gtk.CellRendererText();
+        combobox = new ComboBox();
+        renderer = new CellRendererText();
         combobox.pack_start(renderer, true);
         combobox.add_attribute(renderer, "text", 0);
         model = new Gtk.ListStore(2, typeof(string), typeof(int));
         combobox.set_model(model);
         model.append(out iter);
-        model.set(iter, 0, _("Human"), 1, Level.HUMAN);
+        model.@set(iter, 0, _("Human"), 1, Level.HUMAN);
         if (Prefs.instance.level[PlayerID.PLAYER2] == Level.HUMAN)
             combobox.set_active_iter(iter);
         model.append(out iter);
-        model.set(iter, 0, _("Level one"), 1, Level.WEAK);
+        model.@set(iter, 0, _("Level one"), 1, Level.WEAK);
         if (Prefs.instance.level[PlayerID.PLAYER2] == Level.WEAK)
             combobox.set_active_iter(iter);
         model.append(out iter);
-        model.set(iter, 0, _("Level two"), 1, Level.MEDIUM);
+        model.@set(iter, 0, _("Level two"), 1, Level.MEDIUM);
         if (Prefs.instance.level[PlayerID.PLAYER2] == Level.MEDIUM)
             combobox.set_active_iter(iter);
         model.append(out iter);
-        model.set(iter, 0, _("Level three"), 1, Level.STRONG);
+        model.@set(iter, 0, _("Level three"), 1, Level.STRONG);
         if (Prefs.instance.level[PlayerID.PLAYER2] == Level.STRONG)
             combobox.set_active_iter(iter);
 
         combobox.changed.connect(on_select_opponent);
         grid.attach(combobox, 1, 0, 1, 1);
 
-        label = new Gtk.Label.with_mnemonic(_("_Theme:"));
+        label = new Label.with_mnemonic(_("_Theme:"));
         label.set_xalign((float)0.0);
         label.set_yalign((float)0.5);
         label.set_hexpand(true);
         grid.attach(label, 0, 1, 1, 1);
 
-        combobox_theme = new Gtk.ComboBoxText();
+        combobox_theme = new ComboBoxText();
         for (int i = 0; i < theme.length; i++) {
             combobox_theme.append_text(_(theme_get_title(i)));
         }
         label.set_mnemonic_widget(combobox_theme);
         grid.attach(combobox_theme, 1, 1, 1, 1);
 
-        checkbutton_sound = new Gtk.CheckButton.with_mnemonic(_("E_nable sounds"));
+        checkbutton_sound = new CheckButton.with_mnemonic(_("E_nable sounds"));
         grid.attach(checkbutton_sound, 0, 2, 2, 1);
 
         /* keyboard tab */
-        label = new Gtk.Label.with_mnemonic(_("Keyboard Controls"));
+        label = new Label.with_mnemonic(_("Keyboard Controls"));
 
         controls_list = new GamesControlsList(Prefs.instance.settings);
-        controls_list.add_controls("key-left", _("Move left"), DEFAULT_KEY_LEFT,
-                       "key-right", _("Move right"), DEFAULT_KEY_RIGHT,
-                       "key-drop", _("Drop marble"), DEFAULT_KEY_DROP);
+        controls_list.add_controls("key-left",  _("Move left"),     DEFAULT_KEY_LEFT,
+                                   "key-right", _("Move right"),    DEFAULT_KEY_RIGHT,
+                                   "key-drop",  _("Drop marble"),   DEFAULT_KEY_DROP);
         controls_list.border_width = 12;
         notebook.append_page(controls_list, label);
 
@@ -118,34 +125,30 @@ class PrefsBox : Gtk.Dialog {
         /* connect signals */
         combobox_theme.changed.connect(on_select_theme);
         checkbutton_sound.toggled.connect(Prefs.instance.on_toggle_sound);
-        Prefs.instance.theme_changed.connect((theme_id) => {
-            combobox_theme.set_active(theme_id);
-        });
-        Prefs.instance.notify["do_sound"].connect(() => {
-            checkbutton_sound.set_active(Prefs.instance.do_sound);
-        });
+        Prefs.instance.theme_changed.connect((theme_id) => combobox_theme.set_active(theme_id));
+        Prefs.instance.notify["do_sound"].connect(() => checkbutton_sound.set_active(Prefs.instance.do_sound));
     }
 
-    protected override bool delete_event(Gdk.EventAny event) {
+    protected override bool delete_event(Gdk.EventAny event) {  // TODO use hide_on_delete (Gtk3) or hide-on-close (Gtk4) 2/2
         hide();
         return true;
     }
 
-    void on_select_theme(Gtk.ComboBox combo) {
-        int id = combo.get_active();
+    private static inline void on_select_theme(ComboBox combobox) {
+        int id = combobox.get_active();
         Prefs.instance.theme_id = id;
     }
 
-    void on_select_opponent(Gtk.ComboBox w) {
+    private inline void on_select_opponent(ComboBox combobox) {
         FourInARow app = (FourInARow)application;
-        Gtk.TreeIter iter;
-        int value;
+        TreeIter iter;
+        int iter_value;
 
-        w.get_active_iter(out iter);
-        w.get_model().get(iter, 1, out value);
+        combobox.get_active_iter(out iter);
+        combobox.get_model().@get(iter, 1, out iter_value);
 
-        Prefs.instance.level[PlayerID.PLAYER2] = (Level)value;
-        Prefs.instance.settings.set_int("opponent", value);
+        Prefs.instance.level[PlayerID.PLAYER2] = (Level)iter_value;
+        Prefs.instance.settings.set_int("opponent", iter_value);
         app.who_starts = PlayerID.PLAYER2; /* This gets reversed in game_reset. */
         app.game_reset();
     }

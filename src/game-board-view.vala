@@ -19,19 +19,19 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class GameBoardView : Gtk.DrawingArea {
-    int boardsize = 0;
-    int tilesize = 0;
-    int offset[6];
+private class GameBoardView : Gtk.DrawingArea {
+    private int boardsize = 0;
+    private int tilesize = 0;
+    private int offset[6];
     /* unscaled pixbufs */
-    Gdk.Pixbuf pb_tileset_raw;
-    Gdk.Pixbuf pb_bground_raw;
+    private Gdk.Pixbuf pb_tileset_raw;
+    private Gdk.Pixbuf pb_bground_raw;
     /* scaled pixbufs */
-    Gdk.Pixbuf pb_tileset;
-    Gdk.Pixbuf pb_bground;
-    Board game_board;
+    private Gdk.Pixbuf pb_tileset;
+    private Gdk.Pixbuf pb_bground;
+    private Board game_board;
 
-    public GameBoardView(Board game_board) {
+    internal GameBoardView(Board game_board) {
         /* set a min size to avoid pathological behavior of gtk when scaling down */
         set_size_request(350, 350);
         halign = Gtk.Align.FILL;
@@ -40,14 +40,12 @@ class GameBoardView : Gtk.DrawingArea {
         events = Gdk.EventMask.EXPOSURE_MASK |
                           Gdk.EventMask.BUTTON_PRESS_MASK |
                           Gdk.EventMask.BUTTON_RELEASE_MASK;
-        Prefs.instance.theme_changed.connect(() =>{
-            change_theme();
-        });
+        Prefs.instance.theme_changed.connect(() => change_theme());
         load_pixmaps();
         this.game_board = game_board;
     }
 
-    private int get_column(int xpos) {
+    private inline int get_column(int xpos) {
         /* Derive column from pixel position */
         int c = xpos / tilesize;
         if (c > 6)
@@ -58,7 +56,7 @@ class GameBoardView : Gtk.DrawingArea {
         return c;
     }
 
-    public void draw_tile(int r, int c) {
+    internal inline void draw_tile(int r, int c) {
         queue_draw_area(c*tilesize + board_x, r*tilesize + board_y, tilesize, tilesize);
     }
 
@@ -85,7 +83,7 @@ class GameBoardView : Gtk.DrawingArea {
         return true;
     }
 
-     public bool change_theme() {
+    private inline bool change_theme() {
         if (!load_pixmaps())
             return false;
 
@@ -118,7 +116,7 @@ class GameBoardView : Gtk.DrawingArea {
         return false;
     }
 
-    void draw_grid(Cairo.Context cr) {
+    private inline void draw_grid(Cairo.Context cr) {
         const double dashes[] = { 4.0, 4.0 };
         int i;
         Gdk.RGBA color = Gdk.RGBA();
@@ -142,13 +140,13 @@ class GameBoardView : Gtk.DrawingArea {
 
         /* Draw separator line at the top */
         cr.set_dash(null, 0);
-        cr.move_to(0, tilesize+0.5);
-        cr.line_to(boardsize, tilesize +0.5);
+        cr.move_to(0, tilesize + 0.5);
+        cr.line_to(boardsize, tilesize + 0.5);
 
         cr.stroke();
     }
 
-    void load_error(string fname) {
+    private void load_error(string fname) {
         Gtk.MessageDialog dialog;
 
         dialog = new Gtk.MessageDialog(get_window() as Gtk.Window, Gtk.DialogFlags.MODAL,
@@ -159,10 +157,10 @@ class GameBoardView : Gtk.DrawingArea {
         dialog.destroy();
     }
 
-    void paint_tile(Cairo.Context cr, int r, int c) {
+    private inline void paint_tile(Cairo.Context cr, int r, int c) {
         int x = c * tilesize + board_x;
         int y = r * tilesize + board_y;
-        int tile = game_board.get(r, c);
+        int tile = game_board [r, c];
         int os = 0;
 
         if (tile == Tile.CLEAR && r != 0)
@@ -198,13 +196,13 @@ class GameBoardView : Gtk.DrawingArea {
         cr.restore();
     }
 
-    public void refresh_pixmaps() {
+    internal void refresh_pixmaps() {
         /* scale the pixbufs */
         pb_tileset = pb_tileset_raw.scale_simple(tilesize * 6, tilesize, Gdk.InterpType.BILINEAR);
         pb_bground = pb_bground_raw.scale_simple(boardsize, boardsize, Gdk.InterpType.BILINEAR);
     }
 
-    public bool load_pixmaps() {
+    private bool load_pixmaps() {
         string fname;
         Gdk.Pixbuf pb_tileset_tmp;
         Gdk.Pixbuf pb_bground_tmp = null;
@@ -277,14 +275,11 @@ class GameBoardView : Gtk.DrawingArea {
      *
      * Which column was clicked on
      */
-    public signal bool column_clicked(int column);
+    internal signal bool column_clicked(int column);
 
     protected override bool button_press_event(Gdk.EventButton e) {
         int x;
         get_window().get_device_position(e.device, out x, null, null);
         return column_clicked(get_column(x));
     }
-
 }
-
-

@@ -19,7 +19,7 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-struct Theme {
+private struct Theme {
     public string title;
     public string fname_tileset;
     public string fname_bground;
@@ -35,32 +35,33 @@ struct Theme {
 /*
  * Needed to force vala to include headers in the correct order.
  * See https://gitlab.gnome.org/GNOME/vala/issues/98
+ * Cannot reproduce 08/2019, but the bug is not closed (2/2).
  */
-const string theme_gettext_package = GETTEXT_PACKAGE;
+private const string theme_gettext_package = GETTEXT_PACKAGE;
 
-string theme_get_title(int id) {
+private static string theme_get_title(int id) {
     return theme[id].title;
 }
 
-string theme_get_player_turn(PlayerID who) {
+private static string theme_get_player_turn(PlayerID who) {
     if (who == PlayerID.PLAYER1)
         return theme[Prefs.instance.theme_id].player1_turn;
     return theme[Prefs.instance.theme_id].player2_turn;
 }
 
-string theme_get_player_win(PlayerID who) {
+private static string theme_get_player_win(PlayerID who) {
     if (who == PlayerID.PLAYER1)
         return theme[Prefs.instance.theme_id].player1_win;
     return theme[Prefs.instance.theme_id].player2_win;
 }
 
-string theme_get_player(PlayerID who) {
+private static string theme_get_player(PlayerID who) {
     if (who == PlayerID.PLAYER1)
         return theme[Prefs.instance.theme_id].player1;
     return theme[Prefs.instance.theme_id].player2;
 }
 
-const Theme theme[] = {
+private const Theme theme[] = {
     {
         N_("High Contrast"),
         "tileset_50x50_hcontrast.svg",

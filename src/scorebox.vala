@@ -19,70 +19,70 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class Scorebox : Gtk.Dialog {
-    Gtk.Label[] label_name;
-    Gtk.Label label_score[3];
-    public new FourInARow application;
+using Gtk;
 
-    public Scorebox(Gtk.Window parent, FourInARow application) {
+private class Scorebox : Dialog {
+    private Label[] label_name;
+    private Label[] label_score;
+
+    internal Scorebox(Window parent, FourInARow application) {
         Object(title: _("Scores"),
                use_header_bar: 1,
                destroy_with_parent: true,
                resizable: false,
-               border_width: 5);
+               border_width: 5,
+               application: application);
         get_content_area().spacing = 2;
         set_transient_for(parent);
         modal = true;
 
-        Gtk.Grid grid, grid2;
+        Grid grid, grid2;
 
-        label_name = new Gtk.Label[3];
-        label_score = new Gtk.Label[3];
+        label_name = new Label[3];
+        label_score = new Label[3];
 
-        grid = new Gtk.Grid();
-        grid.halign = Gtk.Align.CENTER;
+        grid = new Grid();
+        grid.halign = Align.CENTER;
         grid.row_spacing = 6;
-        grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.orientation = Orientation.VERTICAL;
         grid.border_width = 5;
 
         get_content_area().pack_start(grid);
 
-        grid2 = new Gtk.Grid();
+        grid2 = new Grid();
         grid.add(grid2);
         grid2.column_spacing = 6;
 
-        label_name[PlayerID.PLAYER1] = new Gtk.Label(null);
+        label_name[PlayerID.PLAYER1] = new Label(null);
         grid2.attach(label_name[PlayerID.PLAYER1], 0, 0, 1, 1);
         label_name[PlayerID.PLAYER1].xalign = 0;
         label_name[PlayerID.PLAYER1].yalign = 0.5f;
 
-        label_score[PlayerID.PLAYER1] = new Gtk.Label(null);
+        label_score[PlayerID.PLAYER1] = new Label(null);
         grid2.attach(label_score[PlayerID.PLAYER1], 1, 0, 1, 1);
         label_score[PlayerID.PLAYER1].xalign = 0;
         label_score[PlayerID.PLAYER1].yalign = 0.5f;
 
-        label_name[PlayerID.PLAYER2] = new Gtk.Label(null);
+        label_name[PlayerID.PLAYER2] = new Label(null);
         grid2.attach(label_name[PlayerID.PLAYER2], 0, 1, 1, 1);
         label_name[PlayerID.PLAYER2].xalign = 0;
         label_name[PlayerID.PLAYER2].yalign = 0.5f;
 
-        label_score[PlayerID.PLAYER2] = new Gtk.Label(null);
+        label_score[PlayerID.PLAYER2] = new Label(null);
         grid2.attach(label_score[PlayerID.PLAYER2], 1, 1, 1, 1);
         label_score[PlayerID.PLAYER2].set_xalign(0);
         label_score[PlayerID.PLAYER2].set_yalign(0.5f);
 
-        label_name[PlayerID.NOBODY] = new Gtk.Label(_("Drawn:"));
+        label_name[PlayerID.NOBODY] = new Label(_("Drawn:"));
         grid2.attach(label_name[PlayerID.NOBODY], 0, 2, 1, 1);
         label_name[PlayerID.NOBODY].set_xalign(0);
         label_name[PlayerID.NOBODY].set_yalign(0.5f);
 
-        label_score[PlayerID.NOBODY] = new Gtk.Label(null);
+        label_score[PlayerID.NOBODY] = new Label(null);
         grid2.attach(label_score[PlayerID.NOBODY], 1, 2, 1, 1);
         label_score[PlayerID.NOBODY].set_xalign(0);
         label_score[PlayerID.NOBODY].set_yalign(0.5f);
         grid.show_all();
-
-        this.application = application;
     }
 
     /**
@@ -90,9 +90,12 @@ class Scorebox : Gtk.Dialog {
      *
      * updates the scorebox with the latest scores
      */
-    public void update(int[] scores) {
+    internal void update(int[] scores) {
         if (Prefs.instance.get_n_human_players() == 1) {
-            if (Prefs.instance.level[PlayerID.PLAYER1] == Level.HUMAN) {
+            if (Prefs.instance.level[PlayerID.PLAYER1] == Level.HUMAN) {    // FIXME shouldn't it be Player1&Player2?
+
+
+
                 label_name[PlayerID.PLAYER1].set_text(_("You:"));
                 label_name[PlayerID.PLAYER2].label = _("Me:");
             } else {
@@ -105,11 +108,11 @@ class Scorebox : Gtk.Dialog {
         }
         label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
         label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();
-        label_score[PlayerID.NOBODY].label = scores[PlayerID.NOBODY].to_string();
+        label_score[PlayerID.NOBODY].label  = scores[PlayerID.NOBODY].to_string();
 
     }
 
-    public override bool delete_event(Gdk.EventAny event) {
+    protected override bool delete_event(Gdk.EventAny event) {  // TODO use hide_on_delete (Gtk3) or hide-on-close (Gtk4) 1/2
         hide();
         return true;
     }

@@ -17,25 +17,26 @@
  * You should have received a copy of the GNU General Public License
  * along with Four-in-a-row.  If not, see <http://www.gnu.org/licenses/>. */
 
-/* Here NEG_INF is supposed to be the lowest possible int value. int.MIN
-MAX_HEURIST_VALUE is the maximum value that the heuristic functions can return.
-It is returned when AI wins. -1*MAX_HEURIST_VALUE is returned when Human wins
-MAX_HEURIST_VALUE < NEG_INF/plies */
-const int NEG_INF = -100000;
-const int MAX_HEURIST_VALUE = 10000;
-const int BOARD_ROWS = 6;
-const int BOARD_COLUMNS = 7;
-enum Player { NONE, HUMAN, AI; }
-enum Difficulty { EASY, MEDIUM, HARD; }
+private enum Player { NONE, HUMAN, AI; }
+private enum Difficulty { EASY, MEDIUM, HARD; }
 
-public int playgame(string moves_until_now)
+private int playgame(string moves_until_now)
 {
-    var t = new DecisionTree();
+    DecisionTree t = new DecisionTree();
     return t.playgame(moves_until_now);
 }
 
-public class DecisionTree
+private class DecisionTree
 {
+    /* Here NEG_INF is supposed to be the lowest possible int value. int.MIN
+    MAX_HEURIST_VALUE is the maximum value that the heuristic functions can return.
+    It is returned when AI wins. -1*MAX_HEURIST_VALUE is returned when Human wins
+    MAX_HEURIST_VALUE < NEG_INF/plies */
+    private const int NEG_INF = -100000;
+    private const int MAX_HEURIST_VALUE = 10000;
+    private const int BOARD_ROWS = 6;
+    private const int BOARD_COLUMNS = 7;
+
     /* to mantain the status of the board, to be used by the heuristic function, the top left cell is [0, 0] */
     private Player[,] board = new Player [BOARD_ROWS, BOARD_COLUMNS];
     /* plies - depth of the DecisionTree */
@@ -48,7 +49,7 @@ public class DecisionTree
     private Difficulty level;
 
     /* Initializes an empty board */
-    public DecisionTree()
+    internal DecisionTree()
     {
         for (int i = 0; i < BOARD_ROWS; i++)
             for (int j = 0; j < BOARD_COLUMNS; j++)
@@ -56,7 +57,7 @@ public class DecisionTree
     }
 
     /* utility function for debugging purposes, prints a snapshot of current status of the board */
-    public void print_board()
+    internal void print_board()
     {
         for (int i = 0; i< BOARD_ROWS; i++)
         {
@@ -136,7 +137,7 @@ public class DecisionTree
                backward_diagonal_win(row, column);
     }
 
-    private bool forward_diagonal_win(int i, int j)
+    private inline bool forward_diagonal_win(int i, int j)
     {
         int count = 0;
 
@@ -146,7 +147,7 @@ public class DecisionTree
         return count >= 4;
     }
 
-    private bool backward_diagonal_win(int i, int j)
+    private inline bool backward_diagonal_win(int i, int j)
     {
         int count = 0;
 
@@ -156,7 +157,7 @@ public class DecisionTree
         return count >= 4;
     }
 
-    private bool horizontal_win(int i, int j)
+    private inline bool horizontal_win(int i, int j)
     {
         int count = 0;
 
@@ -166,7 +167,7 @@ public class DecisionTree
         return count >= 4;
     }
 
-    private bool vertical_win(int i, int j)
+    private inline bool vertical_win(int i, int j)
     {
         int count = 0;
 
@@ -195,7 +196,7 @@ public class DecisionTree
             return false;
 
         /* don't forget AI could make the first move */
-        var player = last_moving_player != Player.AI ? Player.AI : Player.HUMAN;
+        Player player = last_moving_player != Player.AI ? Player.AI : Player.HUMAN;
         board [row, column] = player;
         last_moving_player = player;
 
@@ -216,14 +217,14 @@ public class DecisionTree
     }
 
     /* vstr is the sequence of moves made until now. We update DecisionTree::board to reflect these sequence of moves. */
-    public void update_board(string vstr)
+    private void update_board(string vstr)
     {
         next_move_in_column = -1;
 
         /* AI will make the first move, nothing to add to the board */
         if (vstr.length == 2) return;
 
-        var move = vstr.length % 2 == 0 ? Player.AI : Player.HUMAN;
+        Player move = vstr.length % 2 == 0 ? Player.AI : Player.HUMAN;
 
         for (int i = 1; i < vstr.length - 1; i++)
         {
@@ -270,7 +271,7 @@ public class DecisionTree
     }
 
     /* returns the column number in which the next move has to be made. Returns -1 if the board is full. */
-    public int playgame(string vstr)
+    internal int playgame(string vstr)
     {
         /* set the Difficulty level */
         set_level(vstr);
@@ -320,8 +321,8 @@ public class DecisionTree
 
     private int heurist_hard()
     {
-        var count = count_3_in_a_row(Player.AI) - count_3_in_a_row(Player.HUMAN);
-        return count == 0 ? Random.int_range(1, 49) : count * 100;
+        int count = count_3_in_a_row(Player.AI) - count_3_in_a_row(Player.HUMAN);
+        return count == 0 ? (int) Random.int_range(1, 49) : count * 100;
     }
 
     /* Count the number of threes in a row for Player P. It counts all those 3 which have an empty cell in the vicinity to make it
@@ -357,7 +358,7 @@ public class DecisionTree
     }
 
     /* checks if all adjacent cells to board [i, j] are empty */
-    private bool all_adjacent_empty(int i, int j)
+    private inline bool all_adjacent_empty(int i, int j)
     {
         for (int k = -1 ; k <= 1; k++)
         {
@@ -394,7 +395,7 @@ public class DecisionTree
     }
 
     /* utility function for testing purposes */
-    public int playandcheck(string vstr)
+    internal int playandcheck(string vstr)
     {
         set_level(vstr);
         update_board(vstr);
@@ -412,4 +413,3 @@ public class DecisionTree
         return next_move_in_column + 1;
     }
 }
-

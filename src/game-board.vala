@@ -19,31 +19,31 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class Board : Object {
-    static Tile[,] gboard;
-    const int BOARD_SIZE = 7;
+private class Board : Object {
+    private static Tile[,] gboard;
+    private const int BOARD_SIZE = 7;
 
-    public Board() {
+    internal Board() {
         gboard = new Tile[BOARD_SIZE, BOARD_SIZE];
     }
 
-    public new void @set(int x, int y, Tile tile) {
-        gboard[x,y] = tile;
+    internal new void @set(int x, int y, Tile tile) {
+        gboard[x, y] = tile;
     }
 
-    public new Tile @get(int x, int y) {
+    internal new Tile @get(int x, int y) {
         return gboard[x, y];
     }
 
-    public void clear() {
-        for (var r = 0; r < BOARD_SIZE; r++) {
-            for (var c = 0; c < BOARD_SIZE; c++) {
+    internal void clear() {
+        for (int r = 0; r < BOARD_SIZE; r++) {
+            for (int c = 0; c < BOARD_SIZE; c++) {
                 gboard[r, c] = Tile.CLEAR;
             }
         }
     }
 
-    public int first_empty_row(int c) {
+    internal int first_empty_row(int c) {
         int r = 1;
 
         while (r < BOARD_SIZE && gboard[r, c] == Tile.CLEAR)
@@ -51,7 +51,22 @@ class Board : Object {
         return r - 1;
     }
 
-    bool is_hline_at(Tile p, int r, int c, out int r1, out int c1, out int r2, out int c2) {
+    /*\
+    * * check if there is a line passing by a given point
+    \*/
+
+    internal bool is_line_at(Tile p, int r, int c,
+                             out int r1 = null, out int c1 = null,
+                             out int r2 = null, out int c2 = null) {
+        return is_hline_at (p, r, c, out r1, out c1, out r2, out c2) ||
+               is_vline_at (p, r, c, out r1, out c1, out r2, out c2) ||
+               is_dline1_at(p, r, c, out r1, out c1, out r2, out c2) ||
+               is_dline2_at(p, r, c, out r1, out c1, out r2, out c2);
+    }
+
+    private inline bool is_hline_at(Tile p, int r, int c,
+                                    out int r1, out int c1,
+                                    out int r2, out int c2) {
         r1 = r;
         r2 = r;
         c1 = c;
@@ -65,39 +80,35 @@ class Board : Object {
         return false;
     }
 
-    public bool is_line_at(Tile p, int r, int c, out int r1 = null,
-                           out int c1 = null, out int r2 = null, out int c2 = null) {
-        return is_hline_at(p, r, c, out r1, out c1, out r2, out c2) ||
-            is_vline_at(p, r, c, out r1, out c1, out r2, out c2) ||
-            is_dline1_at(p, r, c, out r1, out c1, out r2, out c2) ||
-            is_dline2_at(p, r, c, out r1, out c1, out r2, out c2);
-    }
-
-    bool is_vline_at(Tile p, int r, int c, out int r1 , out int c1, out int r2, out int c2) {
+    private inline bool is_vline_at(Tile p, int r, int c,
+                                    out int r1 , out int c1,
+                                    out int r2, out int c2) {
         r1 = r;
         r2 = r;
         c1 = c;
         c2 = c;
-        while (r1 > 1 && get(r1 - 1, c) == p)
+        while (r1 > 1 && @get(r1 - 1, c) == p)
             r1 = r1 - 1;
-        while (r2 < 6 && get(r2 + 1, c) == p)
+        while (r2 < 6 && @get(r2 + 1, c) == p)
             r2 = r2 + 1;
         if (r2 - r1 >= 3)
             return true;
         return false;
     }
 
-    bool is_dline1_at(Tile p, int r, int c, out int r1, out int c1, out int r2, out int c2) {
+    private inline bool is_dline1_at(Tile p, int r, int c,
+                                     out int r1, out int c1,
+                                     out int r2, out int c2) {
         /* upper left to lower right */
         r1 = r;
         r2 = r;
         c1 = c;
         c2 = c;
-        while (c1 > 0 && r1 > 1 && get(r1 - 1, c1 - 1) == p) {
+        while (c1 > 0 && r1 > 1 && @get(r1 - 1, c1 - 1) == p) {
             r1 = r1 - 1;
             c1 = c1 - 1;
         }
-        while (c2 < 6 && r2 < 6 && get(r2 + 1, c2 + 1) == p) {
+        while (c2 < 6 && r2 < 6 && @get(r2 + 1, c2 + 1) == p) {
             r2 = r2 + 1;
             c2 = c2 + 1;
         }
@@ -106,17 +117,19 @@ class Board : Object {
         return false;
     }
 
-    bool is_dline2_at(Tile p, int r, int c, out int r1, out int c1, out int r2, out int c2) {
+    private inline bool is_dline2_at(Tile p, int r, int c,
+                                     out int r1, out int c1,
+                                     out int r2, out int c2) {
         /* upper right to lower left */
         r1 = r;
         r2 = r;
         c1 = c;
         c2 = c;
-        while (c1 < 6 && r1 > 1 && get(r1 - 1, c1 + 1) == p) {
+        while (c1 < 6 && r1 > 1 && @get(r1 - 1, c1 + 1) == p) {
             r1 = r1 - 1;
             c1 = c1 + 1;
         }
-        while (c2 > 0 && r2 < 6 && get(r2 + 1, c2 - 1) == p) {
+        while (c2 > 0 && r2 < 6 && @get(r2 + 1, c2 - 1) == p) {
             r2 = r2 + 1;
             c2 = c2 - 1;
         }

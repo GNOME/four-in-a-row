@@ -19,41 +19,43 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Gtk;
+
 /*
  * Needed to force vala to include headers in the correct order.
  * See https://gitlab.gnome.org/GNOME/vala/issues/98
+ * Cannot reproduce 08/2019, but the bug is not closed (1/2).
  */
-const string games_controls_gettext_package = GETTEXT_PACKAGE;
+private const string games_controls_gettext_package = GETTEXT_PACKAGE;
 
-enum Columns {
-    CONFKEY_COLUMN = 0,
-    LABEL_COLUMN,
-    KEYCODE_COLUMN,
-    KEYMODS_COLUMN,
-    DEFAULT_KEYCODE_COLUMN,
-    DEFAULT_KEYMODS_COLUMN,
-    N_COLUMNS
-}
+private class GamesControlsList : ScrolledWindow {
+    private enum Columns {
+        CONFKEY_COLUMN = 0,
+        LABEL_COLUMN,
+        KEYCODE_COLUMN,
+        KEYMODS_COLUMN,
+        DEFAULT_KEYCODE_COLUMN,
+        DEFAULT_KEYMODS_COLUMN,
+        N_COLUMNS
+    }
 
-public class GamesControlsList : Gtk.ScrolledWindow {
-    Gtk.TreeModel model;
-    Gtk.ListStore store;
-    Gtk.TreeView view;
+    private TreeModel model;
+    private Gtk.ListStore store;
+    private TreeView view;
 
-    Settings settings;
-    ulong notify_handler_id;
+    private GLib.Settings settings;
+    private ulong notify_handler_id;
 
-    public GamesControlsList(GLib.Settings settings) {
-        Gtk.CellRenderer label_renderer;
-        Gtk.CellRendererAccel key_renderer;
-        Gtk.TreeViewColumn column;
+    internal GamesControlsList(GLib.Settings settings) {
+        CellRenderer label_renderer;
+        CellRendererAccel key_renderer;
+        TreeViewColumn column;
 
-        this.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        this.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-        this.shadow_type = Gtk.ShadowType.IN;
+        this.hscrollbar_policy = PolicyType.NEVER;
+        this.vscrollbar_policy = PolicyType.AUTOMATIC;
+        this.shadow_type = ShadowType.IN;
         this.settings = settings;
-        notify_handler_id = settings.changed
-            .connect(settings_changed_cb);
+        notify_handler_id = settings.changed.connect(settings_changed_cb);
 
         store = new Gtk.ListStore(Columns.N_COLUMNS,
             Type.STRING,
@@ -64,26 +66,26 @@ public class GamesControlsList : Gtk.ScrolledWindow {
             Type.UINT);
 
         model = store;
-        view = new Gtk.TreeView.with_model(model);
+        view = new TreeView.with_model(model);
 
         view.headers_visible = false;
         view.enable_search = false;
 
-        label_renderer = new Gtk.CellRendererText();
-        column = new Gtk.TreeViewColumn.with_attributes("Control", label_renderer,
+        label_renderer = new CellRendererText();
+        column = new TreeViewColumn.with_attributes("Control", label_renderer,
             "text", Columns.LABEL_COLUMN);
 
         view.append_column(column);
 
-        key_renderer = new Gtk.CellRendererAccel();
+        key_renderer = new CellRendererAccel();
 
         key_renderer.editable = true;
-        key_renderer.accel_mode = Gtk.CellRendererAccelMode.OTHER;
+        key_renderer.accel_mode = CellRendererAccelMode.OTHER;
 
         key_renderer.accel_edited.connect(this.accel_edited_cb);
         key_renderer.accel_cleared.connect(this.accel_cleared_cb);
 
-        column = new Gtk.TreeViewColumn.with_attributes("Key", key_renderer,
+        column = new TreeViewColumn.with_attributes("Key", key_renderer,
             "accel-key", Columns.KEYCODE_COLUMN,
             "accel-mods", Columns.KEYMODS_COLUMN);
 
@@ -91,13 +93,13 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         this.add(view);
     }
 
-    void accel_cleared_cb(string path_string) {
-        Gtk.TreePath path;
-        Gtk.TreeIter iter;
+    private inline void accel_cleared_cb(string path_string) {
+        TreePath path;
+        TreeIter iter;
         string conf_key = null;
         int default_keyval = 0; //set to 0 to make valac happy
 
-        path = new Gtk.TreePath.from_string(path_string);
+        path = new TreePath.from_string(path_string);
         if (path == null)
             return;
 
@@ -105,9 +107,9 @@ public class GamesControlsList : Gtk.ScrolledWindow {
             return;
         }
 
-        model.get(iter,
-                  Columns.CONFKEY_COLUMN, conf_key,
-                  Columns.DEFAULT_KEYCODE_COLUMN, default_keyval);
+        model.@get(iter,
+                   Columns.CONFKEY_COLUMN, conf_key,
+                   Columns.DEFAULT_KEYCODE_COLUMN, default_keyval);
 
         if (conf_key == null)
             return;
@@ -117,14 +119,14 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         settings.set_int(conf_key, default_keyval);
     }
 
-    void accel_edited_cb(string path_string, uint keyval, Gdk.ModifierType mask, uint hardware_keycode) {
-        Gtk.TreePath path;
-        Gtk.TreeIter iter;
+    private inline void accel_edited_cb(string path_string, uint keyval, Gdk.ModifierType mask, uint hardware_keycode) {
+        TreePath path;
+        TreeIter iter;
         string conf_key = null;
         bool valid;
         bool unused_key = true;
 
-        path = new Gtk.TreePath.from_string(path_string);
+        path = new TreePath.from_string(path_string);
         if (path == null)
             return;
 
@@ -132,7 +134,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
             return;
         }
 
-        model.get(iter, Columns.CONFKEY_COLUMN, conf_key);
+        model.@get(iter, Columns.CONFKEY_COLUMN, conf_key);
         if (conf_key == null)
             return;
 
@@ -140,16 +142,16 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         while (valid) {
             string actual_conf_key = null;
 
-            model.get(iter, Columns.CONFKEY_COLUMN, actual_conf_key);
+            model.@get(iter, Columns.CONFKEY_COLUMN, actual_conf_key);
 
             if (settings.get_int(actual_conf_key) == keyval) {
                 unused_key = false;
 
                 if (conf_key == actual_conf_key) {
-                    var dialog = new Gtk.MessageDialog.with_markup(null,
-                        Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                        Gtk.MessageType.WARNING,
-                        Gtk.ButtonsType.OK,
+                    MessageDialog dialog = new MessageDialog.with_markup(null,
+                        DialogFlags.DESTROY_WITH_PARENT,
+                        MessageType.WARNING,
+                        ButtonsType.OK,
                         "<span weight=\"bold\" size=\"larger\">%s</span>",
                         _("This key is already in use."));
 
@@ -167,8 +169,8 @@ public class GamesControlsList : Gtk.ScrolledWindow {
             settings.set_int(conf_key, (int)keyval);
     }
 
-    void add_control(string conf_key, string? label, uint default_keyval) {
-        Gtk.TreeIter iter;
+    private void add_control(string conf_key, string? label, uint default_keyval) {
+        TreeIter iter;
         uint keyval;
 
         if (label == null)
@@ -186,7 +188,7 @@ public class GamesControlsList : Gtk.ScrolledWindow {
 
     }
 
-    public void add_controls(string first_gconf_key, ...) {
+    internal inline void add_controls(string first_gconf_key, ...) {
         var args = va_list();
         string? key;
         string label;
@@ -201,8 +203,8 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         }
     }
 
-    void settings_changed_cb (string key) {
-        Gtk.TreeIter iter;
+    private inline void settings_changed_cb (string key) {
+        TreeIter iter;
         bool valid;
 
         /* find our gconf key in the list store and update it */
@@ -210,24 +212,22 @@ public class GamesControlsList : Gtk.ScrolledWindow {
         while (valid) {
             string conf_key;
 
-            model.get(iter, Columns.CONFKEY_COLUMN, out conf_key);
+            model.@get(iter, Columns.CONFKEY_COLUMN, out conf_key);
 
             if (key == conf_key) {
                 uint keyval, default_keyval;
 
-                model.get(iter, Columns.DEFAULT_KEYCODE_COLUMN, out default_keyval);
+                model.@get(iter, Columns.DEFAULT_KEYCODE_COLUMN, out default_keyval);
 
                 keyval = settings.get_int(key);
 
-                store.set(iter,
-                          Columns.KEYCODE_COLUMN, keyval,
-                          Columns.KEYMODS_COLUMN, 0 /* FIXME? */);
-
+                store.@set(iter,
+                           Columns.KEYCODE_COLUMN, keyval,
+                           Columns.KEYMODS_COLUMN, 0 /* FIXME? */);
                 break;
             }
 
             valid = store.iter_next(ref iter);
         }
     }
-
 }
