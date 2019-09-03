@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2019-03-03 11:55+0000\n"
+"POT-Creation-Date: 2019-08-28 10:54+0000\n"
 "PO-Revision-Date: 2019-08-28 11:50+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
@@ -58,24 +58,17 @@ msgstr "Para usar un tema diferente:"
 
 #. (itstool) path: item/p
 #: C/appearance.page:28
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#| "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem\">Game</"
 "gui></guiseq>."
 msgstr ""
 "Pulse el botón del menú en la esquina superior derecha de la ventana y elija "
-"<gui style=\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Juego</"
+"<guiseq><gui style=\"menu\">Preferencias</gui> <gui style=\"menuitem\">Juego</"
 "gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
-#| msgid ""
-#| "Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
-#| "down menu to the right of <gui style=\"group\">Theme</gui>. The change "
-#| "will be reflected immediately in the game window."
 msgid ""
 "Pick the theme of your choice from the drop down menu to the right of <gui "
 "style=\"group\">Theme</gui>. The change will be reflected immediately in the "
@@ -87,9 +80,6 @@ msgstr ""
 
 #. (itstool) path: info/desc
 #: C/basics.page:19
-#| msgid ""
-#| "Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</"
-#| "app>."
 msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
 msgstr "Empezar, jugar y salir de una partida de <app>Cuatro en raya</app>."
 
@@ -105,15 +95,11 @@ msgstr "Iniciar un juego nuevo"
 
 #. (itstool) path: section/p
 #: C/basics.page:28
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
-#| "keyseq> to start a new game."
 msgid ""
 "Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
 "key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Pulse <gui style=\"button\">Empezar</gui></guiseq> o pulse "
+"Pulse <gui style=\"button\">Empezar</gui> o pulse "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> para empezar una partida nueva."
 
 #. (itstool) path: section/title
@@ -123,10 +109,6 @@ msgstr "Salir de <app>Cuatro en raya</app>"
 
 #. (itstool) path: section/p
 #: C/basics.page:37
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">Quit</gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></"
-#| "keyseq> to quit <app>Four-in-a-row</app> at any time."
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-in-a-"
 "row</app> at any time."
@@ -165,23 +147,17 @@ msgstr "Para cambiar el nivel o para jugar con un amigo:"
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:34 C/sound-animation.page:34
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#| "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
 "\">Game</gui></guiseq>."
 msgstr ""
 "Pulse el botón del menú en la esquina superior derecha de la ventana y elija "
-"<gui style=\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Juego</"
+"<guiseq><gui style=\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Juego</"
 "gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:39
-#| msgid ""
-#| "Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
-#| "play with a friend or family member."
 msgid ""
 "Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for "
 "both players if want to play with a friend or family member."
@@ -206,12 +182,6 @@ msgstr ""
 
 #. (itstool) path: note/p
 #: C/choose-opponent.page:49
-#| msgid ""
-#| "If you are playing with a friend or family member, <gui>Player One</gui> "
-#| "gets to play first in the first game of <app>Four-in-a-row</app>. In "
-#| "subsequent games, the chance to play first is given alternately to each "
-#| "player. So, <gui>Player Two</gui> will get to play first in the second "
-#| "game, <gui>Player One</gui> can play first in the third game and so on."
 msgid ""
 "If you are playing with a friend or family member, Player One gets to play "
 "first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
@@ -246,17 +216,13 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/controls-change.page:31
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#| "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-#| "guiseq>."
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
 "\">Keyboard Controls</gui></guiseq>."
 msgstr ""
 "Pulse el botón del menú en la esquina superior derecha de la ventana y elija "
-"<gui style=\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Controles "
+"<guiseq><gui style=\"menuitem\">Preferencias</gui> <gui style=\"menuitem\">Controles "
 "del teclado</gui></guiseq>."
 
 #. (itstool) path: item/p
@@ -277,10 +243,6 @@ msgstr "Pulse la tecla que quiere usar en lugar de la tecla predeterminada."
 
 #. (itstool) path: note/p
 #: C/controls-change.page:43
-#| msgid ""
-#| "To keep the old setting, click again or right click on <gui>New "
-#| "accelerator…</gui>, press <key>Esc</key> or click anywhere else inside "
-#| "the <gui>Keyboard Controls</gui> box."
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
 "</gui>, press <key>Esc</key>."
@@ -309,10 +271,6 @@ msgstr "Controles"
 
 #. (itstool) path: page/p
 #: C/controls-default.page:25
-#| msgid ""
-#| "You can use your mouse and click on a particular square in the game area "
-#| "to drop your marble into that square. If you want to use the keyboard "
-#| "instead, the default keys for <app>Four-in-a-row</app> are:"
 msgid ""
 "You can use your mouse and click on a particular row in the game area to "
 "drop your marble into that row. If you want to use the keyboard instead, the "
@@ -395,13 +353,6 @@ msgstr "Cambiar su último movimiento"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:27
-#| msgid ""
-#| "When the computer makes a winning move because of your last move or when "
-#| "you accidentally make the wrong move, you can undo your last move and "
-#| "change it. To undo your last move, select <guiseq><gui style=\"menu"
-#| "\">Game</gui> <gui style=\"menuitem\">Undo Move</gui></guiseq> or press "
-#| "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your "
-#| "marble at a different square in the game area to change your move."
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
@@ -413,7 +364,7 @@ msgstr ""
 "Cuando el equipo hace un movimiento ganador debido a su último movimiento o "
 "cuando hace un movimiento incorrecto por error, puede deshacer el último "
 "movimiento y cambiarlo. Para deshacer su último movimiento, pulse el botón "
-"<gui style=\"button\">Deshacer el último movimiento</gui></guiseq> o pulse "
+"<gui style=\"button\">Deshacer el último movimiento</gui> o pulse "
 "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Ahora puede soltar la canica "
 "en otra casilla del área de juego para cambiar su movimiento."
 
@@ -435,13 +386,6 @@ msgstr "Usar pistas"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:45
-#| msgid ""
-#| "If you are not sure of your next move, you can use a hint. When you use a "
-#| "hint, your marble moves to the top of the column that is the best choice, "
-#| "strategy-wise, and blinks. You can then drop your marble into that "
-#| "column. To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui "
-#| "style=\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</"
-#| "key><key>H</key></keyseq>."
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
@@ -453,7 +397,7 @@ msgstr ""
 "una pista, su canica se mueve a la parte superior de la columna que es su "
 "mejor opción a nivel de estrategia y parpadea. Entonces puede soltar la "
 "canica en esa columna. Para usar una pista, pulse <gui style=\"button"
-"\">Pista</gui></guiseq> o pulse <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+"\">Pista</gui> o pulse <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:51
@@ -477,11 +421,6 @@ msgstr "Puntuación"
 
 #. (itstool) path: page/p
 #: C/scores.page:28
-#| msgid ""
-#| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
-#| "your opponent's wins and games that ended in a draw. To check the scores, "
-#| "select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">Scores</gui></guiseq>. In the default theme:"
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
@@ -491,7 +430,7 @@ msgstr ""
 "La puntuación en <app>Cuatro en raya</app> se guarda el términos de sus "
 "victorias, las victorias de su oponente y las partidas empatadas. Para ver "
 "la puntuación, pulse en el botón del menú en la esquina superior derecha y "
-"elija <gui style=\"menuitem\">Puntuación</gui></guiseq>. En el tema "
+"elija <gui style=\"menuitem\">Puntuación</gui>. En el tema "
 "predeterminado:"
 
 #. (itstool) path: item/p
@@ -530,13 +469,11 @@ msgstr ""
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:23
-#| msgid "Play <app>Four-in-a-row</app> without sounds or animation."
 msgid "Play <app>Four-in-a-row</app> without sounds."
 msgstr "Jugar a <app>Cuatro en raya</app> sin sonidos."
 
 #. (itstool) path: page/title
 #: C/sound-animation.page:26
-#| msgid "To disable sounds:"
 msgid "Disable sounds"
 msgstr "Desactivar los sonidos"
 
