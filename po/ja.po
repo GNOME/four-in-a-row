@@ -1,22 +1,23 @@
 # gnome-games ja.po.
-# Copyright (C) 1998-2010 Free Software Foundation, Inc.
+# Copyright (C) 1998-2019 Free Software Foundation, Inc.
 # Yukihiro Nakai <Nakai@technologist.com>, 1998.
 # Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>, 1999.
 # Yuusuke Tahara <tahara@gnome.gr.jp>, 2000.
-# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2002, 2010.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2001-2009.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2002, 2010.
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
 # Shushi KUROSE <md81bird@hitaki.net>, 2012.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2016.
+# sicklylife <translation@sicklylife.jp>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
 "POT-Creation-Date: 2019-03-26 18:43+0000\n"
-"PO-Revision-Date: 2016-01-12 00:21+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
+"PO-Revision-Date: 2019-09-08 18:00+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -68,10 +69,6 @@ msgstr ""
 "つ並べた方が勝ちです。"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:16
-#, fuzzy
-#| msgid ""
-#| "Four-in-a-row features multiple difficulty levels. If you're having "
-#| "trouble, you can always ask for a hint."
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
@@ -81,7 +78,7 @@ msgstr ""
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
-msgstr ""
+msgstr "The GNOME Project"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Four-in-a-row.desktop.in:8
@@ -166,27 +163,27 @@ msgid "Hint: Column %d"
 msgstr "ヒント: %d列目"
 
 #: src/four-in-a-row.vala:660
-#, fuzzy
-#| msgid "Connect four in a row to win."
 msgid "Connect four in a row to win"
-msgstr "石を4つ並べると勝ちです。"
+msgstr "石を4つ並べると勝ちです"
 
 #: src/four-in-a-row.vala:664
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
-"佐藤 暁 <ss@gnome.gr.jp>\n"
-"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
 "草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
-"Yuusuke Tahara <tahara@gnome.gr.jp>\n"
-"Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\n"
-"Yukihiro Nakai <Nakai@technologist.com>\n"
+"佐藤 暁 <ss@gnome.gr.jp>\n"
+"日本 GNOME ユーザー会 <http://www.gnome.gr.jp>\n"
 "松澤 二郎 <jmatsuzawa@gnome.org>\n"
-"日本GNOMEユーザー会 <http://www.gnome.gr.jp>"
+"Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\n"
+"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
+"Shushi KUROSE <md81bird@hitaki.net>\n"
+"sicklylife <translation@sicklylife.jp>\n"
+"Yukihiro Nakai <Nakai@technologist.com>\n"
+"Yuusuke Tahara <tahara@gnome.gr.jp>"
 
 #: src/four-in-a-row.vala:740
 msgid "_Scores"
-msgstr "スコア(_S)"
+msgstr "得点(_S)"
 
 #: src/four-in-a-row.vala:743
 msgid "_Preferences"
@@ -197,10 +194,8 @@ msgid "_Help"
 msgstr "ヘルプ(_H)"
 
 #: src/four-in-a-row.vala:745
-#, fuzzy
-#| msgid "Four-in-a-row"
 msgid "_About Four-in-a-row"
-msgstr "四目並べ"
+msgstr "四目並べについて(_A)"
 
 #: src/games-controls-list.vala:154
 msgid "This key is already in use."
@@ -253,7 +248,7 @@ msgstr "キーボード操作"
 
 #: src/scorebox.vala:28
 msgid "Scores"
-msgstr "スコア"
+msgstr "得点"
 
 #: src/scorebox.vala:74
 msgid "Drawn:"
