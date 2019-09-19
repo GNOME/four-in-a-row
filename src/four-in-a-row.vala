@@ -681,15 +681,9 @@ private class FourInARow : Gtk.Application {
     protected override void startup() {
         base.startup();
 
-        Gtk.AspectFrame frame;
-        GLib.Menu app_menu, section;
-        Gtk.MenuButton menu_button;
-        Gtk.Builder builder;
-        Gtk.CssProvider css_provider;
-
         Gtk.Window.set_default_icon_name("org.gnome.Four-in-a-row");
 
-        css_provider = new Gtk.CssProvider();
+        Gtk.CssProvider css_provider = new Gtk.CssProvider();
         try {
             css_provider.load_from_data("GtkButtonBox {-GtkButtonBox-child-internal-pad-x:0;}\0");
         } catch (Error error) {
@@ -700,7 +694,7 @@ private class FourInARow : Gtk.Application {
                                                  css_provider,
                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         game_board_view = new GameBoardView(game_board);
-        builder = new Gtk.Builder.from_file(DATA_DIRECTORY + "/four-in-a-row.ui");
+        Gtk.Builder builder = new Gtk.Builder.from_resource("/org/gnome/Four-in-a-row/ui/four-in-a-row.ui");
 
         window = builder.get_object("fiar-window") as Gtk.ApplicationWindow;
         window.application = this;
@@ -712,15 +706,16 @@ private class FourInARow : Gtk.Application {
 
         add_actions();
 
-        menu_button = builder.get_object ("menu_button") as Gtk.MenuButton;
-        app_menu = new GLib.Menu ();
+        /* hamburger button */
+        Gtk.MenuButton menu_button = builder.get_object ("menu_button") as Gtk.MenuButton;
+        GLib.Menu app_menu = new GLib.Menu ();
 
         GLib.Menu appearance_menu = new GLib.Menu ();
         for (uint8 i = 0; i < theme.length; i++)     // TODO default theme
             appearance_menu.append (theme_get_title (i), @"app.theme-id($i)");
         appearance_menu.freeze ();
 
-        section = new GLib.Menu ();
+        GLib.Menu section = new GLib.Menu ();
         /* Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt) */
         section.append_submenu (_("A_ppearance"), (!) appearance_menu);
 
@@ -744,7 +739,7 @@ private class FourInARow : Gtk.Application {
         app_menu.freeze ();
         menu_button.set_menu_model (app_menu);
 
-        frame = builder.get_object("frame") as Gtk.AspectFrame;
+        Gtk.AspectFrame frame = builder.get_object("frame") as Gtk.AspectFrame;
 
         frame.add(game_board_view);
         game_board_view.column_clicked.connect(column_clicked_cb);

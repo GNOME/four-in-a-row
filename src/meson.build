@@ -1,4 +1,6 @@
-four_in_a_row_tests = executable('four-in-a-row-tests', 
+# Tests
+four_in_a_row_tests = executable(
+    'four-in-a-row-tests',
     [
         'ai.vala',
         'test-ai.vala'
@@ -8,11 +10,12 @@ four_in_a_row_tests = executable('four-in-a-row-tests',
         glib_dependency
     ]
 )
-test('four-in-a-row-tests', 
+test('four-in-a-row-tests',
     four_in_a_row_tests,
     timeout: 180)
 
-
+# Application
+resources = gnome.compile_resources (meson.project_name(), 'four-in-a-row.gresource.xml')
 
 sources = files(
     'ai.vala',
@@ -29,7 +32,7 @@ sources = files(
 
 executable(
     meson.project_name(),
-    sources,
+    sources + resources,
     dependencies: [
         glib_dependency,
         gsound_dependency,

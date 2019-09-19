@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/Four-in-a-row/ui">
+    <file preprocess="xml-stripblanks" compressed="true" alias="four-in-a-row.ui">../data/ui/four-in-a-row.ui</file>
+  </gresource>
+</gresources>

@@ -53,8 +53,7 @@ install_data(
         'themes/tileset_50x50_faenza-gnect-icon.svg',
         'themes/tileset_50x50_hcinverse.svg',
         'themes/tileset_50x50_hcontrast.svg',
-        'bg_toplight.png',
-        'four-in-a-row.ui'
+        'bg_toplight.png'
     ],
     install_dir: datadir
 )
