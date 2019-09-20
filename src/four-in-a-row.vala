@@ -19,39 +19,30 @@
  * along with GNOME Four-in-a-row. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Gtk;
+
 private const int SIZE_VSTR = 53;
 private const int SPEED_BLINK = 150;
 private const int SPEED_MOVE = 35;
 private const int SPEED_DROP = 20;
-private const char vlevel[] = {'0','a','b','c','\0'};
+private const char vlevel [] = { '0','a','b','c','\0' };
 private const int DEFAULT_WIDTH = 495;
 private const int DEFAULT_HEIGHT = 435;
 private const string APPNAME_LONG = "Four-in-a-row";
 
-private class FourInARow : Gtk.Application {
-    private static int main(string[] argv) {
-        Intl.setlocale();
+private class FourInARow : Gtk.Application
+{
+    private static int main (string [] args)
+    {
+        Intl.setlocale ();
+        Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+        Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        Intl.textdomain (GETTEXT_PACKAGE);
 
-        var application = new FourInARow();
+        Environment.set_application_name (_(APPNAME_LONG));
+        Window.set_default_icon_name ("org.gnome.Four-in-a-row");
 
-        Intl.bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
-        Intl.bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
-        Intl.textdomain(GETTEXT_PACKAGE);
-
-        var context = new OptionContext();
-        context.add_group(Gtk.get_option_group(true));
-        try {
-            context.parse(ref argv);
-        } catch (Error error) {
-            print("%s", error.message);
-            return 1;
-        }
-
-        Environment.set_application_name(_(APPNAME_LONG));
-
-        var app_retval = application.run(argv);
-
-        return app_retval;
+        return new FourInARow ().run (args);
     }
 
     private enum AnimID {
@@ -74,15 +65,15 @@ private class FourInARow : Gtk.Application {
     private Scorebox scorebox;
     private GameBoardView game_board_view;
     private Board game_board;
-    private Gtk.ApplicationWindow window;
+    private ApplicationWindow window;
     /**
      * score:
      *
      * The scores for the current instance (Player 1, Player 2, Draw)
      */
-    private int score[3];
+    private int score [3];
     private static AnimID anim;
-    private char vstr[53];
+    private char vstr [53];
     private int moves;
     private int column;
     private int column_moveto;
@@ -97,22 +88,23 @@ private class FourInARow : Gtk.Application {
     private bool blink_on = false;
     private uint timeout = 0;
 
-    private const ActionEntry app_entries[] = { // see also add_actions()
-        {"scores", on_game_scores},
-        {"quit", on_game_exit},
-        {"preferences", on_settings_preferences},
-        {"help", on_help_contents},
-        {"about", on_help_about}
+    private const GLib.ActionEntry app_entries [] =  // see also add_actions()
+    {
+        { "scores", on_game_scores },
+        { "quit", on_game_exit },
+        { "preferences", on_settings_preferences },
+        { "help", on_help_contents },
+        { "about", on_help_about }
     };
 
-    internal void game_reset() {
-        stop_anim();
+    internal void game_reset ()
+    {
+        stop_anim ();
 
-        undo_action.set_enabled(false);
-        hint_action.set_enabled(false);
+        undo_action.set_enabled (false);
+        hint_action.set_enabled (false);
 
-        who_starts = (who_starts == PlayerID.PLAYER1)
-            ? PlayerID.PLAYER2 : PlayerID.PLAYER1;
+        who_starts = (who_starts == PlayerID.PLAYER1) ? PlayerID.PLAYER2 : PlayerID.PLAYER1;
         player = who_starts;
 
         gameover = true;
@@ -123,85 +115,88 @@ private class FourInARow : Gtk.Application {
         row = 0;
         row_dropto = 0;
 
-        clear_board();
-        set_status_message(null);
-        game_board_view.queue_draw();
+        clear_board ();
+        set_status_message (null);
+        game_board_view.queue_draw ();
 
-        move_cursor(column);
+        move_cursor (column);
         gameover = false;
-        prompt_player();
-        if (!is_player_human()) {
-            vstr[0] = player == PLAYER1 ? vlevel[Prefs.instance.level[PlayerID.PLAYER1]]
-                : vlevel[Prefs.instance.level[PlayerID.PLAYER2]];
-            game_process_move(playgame((string)vstr) - 1);
+        prompt_player ();
+        if (!is_player_human ())
+        {
+            vstr [0] = player == PLAYER1 ? vlevel [Prefs.instance.level [PlayerID.PLAYER1]]
+                                         : vlevel [Prefs.instance.level [PlayerID.PLAYER2]];
+            game_process_move (playgame ((string) vstr) - 1);
         }
     }
 
-    private void blink_winner(int n) {
-        /* blink the winner's line(s) n times */
-
+    private void blink_winner (int n)   /* blink the winner's line(s) n times */
+    {
         if (winner == NOBODY)
             return;
 
         blink_t = winner;
 
-        if (game_board.is_line_at((Tile)winner, row, column, out blink_r1,
-                                      out blink_c1, out blink_r2, out blink_c2)) {
+        if (game_board.is_line_at ((Tile) winner, row, column,
+                               out blink_r1, out blink_c1,
+                               out blink_r2, out blink_c2))
+        {
             anim = AnimID.BLINK;
             blink_on = false;
             blink_n = n;
-            var temp = new Animate(0, this);
-            timeout = Timeout.add(SPEED_BLINK,  temp.exec);
-            while (timeout!=0)
-                Gtk.main_iteration();
+            var temp = new Animate (0, this);
+            timeout = Timeout.add (SPEED_BLINK, temp.exec);
+            while (timeout != 0)
+                main_iteration ();
         }
-
     }
 
-    private inline void add_actions() {
+    private inline void add_actions ()
+    {
         add_action (Prefs.instance.settings.create_action ("sound"));
         add_action (Prefs.instance.settings.create_action ("theme-id"));
 
-        new_game_action = new SimpleAction("new-game", null);
-        new_game_action.activate.connect(this.on_game_new);
-        add_action(new_game_action);
+        new_game_action = new SimpleAction ("new-game", null);
+        new_game_action.activate.connect (on_game_new);
+        add_action (new_game_action);
 
-        hint_action = new SimpleAction("hint", null);
-        hint_action.activate.connect(this.on_game_hint);
-        add_action(hint_action);
+        hint_action = new SimpleAction ("hint", null);
+        hint_action.activate.connect (on_game_hint);
+        add_action (hint_action);
 
-        undo_action = new SimpleAction("undo-move", null);
-        undo_action.activate.connect(on_game_undo);
-        add_action(undo_action);
+        undo_action = new SimpleAction ("undo-move", null);
+        undo_action.activate.connect (on_game_undo);
+        add_action (undo_action);
 
-        set_accels_for_action("app.new-game", {"<Primary>n"});
-        set_accels_for_action("app.hint", {"<Primary>h"});
-        set_accels_for_action("app.undo-move", {"<Primary>z"});
-        set_accels_for_action("app.quit", {"<Primary>q"});
-        set_accels_for_action("app.contents", {"F1"});
+        set_accels_for_action ("app.new-game",  { "<Primary>n" });
+        set_accels_for_action ("app.hint",      { "<Primary>h" });
+        set_accels_for_action ("app.undo-move", { "<Primary>z" });
+        set_accels_for_action ("app.quit",      { "<Primary>q" });
+        set_accels_for_action ("app.contents",  {          "F1"});
 
-        add_action_entries(app_entries, this);
+        add_action_entries (app_entries, this);
     }
 
-     private inline bool column_clicked_cb(int column) {
-        if (player_active) {
+    private inline bool column_clicked_cb (int column)
+    {
+        if (player_active)
             return false;
-        }
 
-        if (gameover && timeout == 0) {
-            blink_winner(2);
-        } else if (is_player_human() && timeout == 0) {
-            game_process_move(column);
-        }
+        if (gameover && timeout == 0)
+            blink_winner (2);
+        else if (is_player_human () && timeout == 0)
+            game_process_move (column);
         return true;
     }
 
-    private inline void on_game_new(Variant? v) {
-        stop_anim();
-        game_reset();
+    private inline void on_game_new (/* SimpleAction action, Variant? variant */)
+    {
+        stop_anim ();
+        game_reset ();
     }
 
-    private inline void draw_line(int r1, int c1, int r2, int c2, int tile) {
+    private inline void draw_line (int r1, int c1, int r2, int c2, int tile)
+    {
         /* draw a line of 'tile' from r1,c1 to r2,c2 */
 
         bool done = false;
@@ -218,241 +213,279 @@ private class FourInARow : Gtk.Application {
         else if (c1 > c2)
             d_col = -1;
 
-        do {
+        do
+        {
             done = (r1 == r2 && c1 == c2);
-            game_board[r1, c1] = (Tile)tile;
-            game_board_view.draw_tile(r1, c1);
+            game_board[r1, c1] = (Tile) tile;
+            game_board_view.draw_tile (r1, c1);
             if (r1 != r2)
                 r1 += d_row;
             if (c1 != c2)
                 c1 += d_col;
-        } while (!done);
+        }
+        while (!done);
     }
 
-    private FourInARow() {
-        Object(application_id: "org.gnome.Four-in-a-row",
-               flags: ApplicationFlags.FLAGS_NONE);
+    private FourInARow ()
+    {
+        Object (application_id: "org.gnome.Four-in-a-row", flags: ApplicationFlags.FLAGS_NONE);
         anim = AnimID.NONE;
         gameover = true;
         player_active = false;
         player = PlayerID.PLAYER1;
         winner = PlayerID.NOBODY;
-        score[PlayerID.PLAYER1] = 0;
-        score[PlayerID.PLAYER2] = 0;
-        score[PlayerID.NOBODY] = 0;
-        game_board = new Board();
+        score [PlayerID.PLAYER1] = 0;
+        score [PlayerID.PLAYER2] = 0;
+        score [PlayerID.NOBODY]  = 0;
+        game_board = new Board ();
         who_starts = PlayerID.PLAYER2;     /* This gets reversed immediately. */
 
-        clear_board();
+        clear_board ();
     }
 
-    protected override void activate() {
-        if (!window.is_visible()) {
-            window.show_all();
-            game_board_view.refresh_pixmaps();
-            game_board_view.queue_draw();
-            scorebox.update(score);       /* update visible player descriptions */
-            prompt_player();
-            game_reset();
-        }
+    protected override void activate ()
+    {
+        if (window.is_visible ())
+            return;
+
+        window.show_all ();
+        game_board_view.refresh_pixmaps ();
+        game_board_view.queue_draw ();
+        scorebox.update (score);    /* update visible player descriptions */
+        prompt_player ();
+        game_reset ();
     }
 
-    private void prompt_player() {
-        int players = Prefs.instance.get_n_human_players();
-        bool human = is_player_human();
+    private void prompt_player ()
+    {
+        int players = Prefs.instance.get_n_human_players ();
+        bool human = is_player_human ();
         string who;
         string str;
 
-        hint_action.set_enabled(human && !gameover);
+        hint_action.set_enabled (human && !gameover);
 
-        switch (players) {
-        case 0:
-            undo_action.set_enabled(false);
-            break;
-        case 1:
-            undo_action.set_enabled((human && moves >1) || (!human && gameover));
-            break;
-        case 2:
-            undo_action.set_enabled(moves > 0);
-            break;
+        switch (players)
+        {
+            case 0:
+                undo_action.set_enabled (false);
+                break;
+            case 1:
+                undo_action.set_enabled ((human && moves >1) || (!human && gameover));
+                break;
+            case 2:
+                undo_action.set_enabled (moves > 0);
+                break;
         }
 
-        if (gameover && winner == PlayerID.NOBODY) {
-            if (score[PlayerID.NOBODY] == 0)
-                set_status_message(null);
+        if (gameover && winner == PlayerID.NOBODY)
+        {
+            if (score [PlayerID.NOBODY] == 0)
+                set_status_message (null);
             else
-                set_status_message(_("It’s a draw!"));
+                set_status_message (_("It’s a draw!"));
             return;
         }
 
-        switch (players) {
-        case 1:
-            if (human) {
-                if (gameover)
-                    set_status_message(_("You win!"));
+        switch (players)
+        {
+            case 1:
+                if (human)
+                {
+                    if (gameover)
+                        set_status_message (_("You win!"));
+                    else
+                        set_status_message (_("Your Turn"));
+                }
                 else
-                    set_status_message(_("Your Turn"));
-            } else {
+                {
+                    if (gameover)
+                        set_status_message (_("I win!"));
+                    else
+                        set_status_message (_("I’m Thinking…"));
+                }
+                break;
+
+            case 2:
+            case 0:
                 if (gameover)
-                    set_status_message(_("I win!"));
+                {
+                    who = player == PLAYER1 ? theme_get_player_win (PlayerID.PLAYER1)
+                                            : theme_get_player_win (PlayerID.PLAYER2);
+                    str = _(who);
+                }
+                else if (player_active)
+                {
+                    set_status_message (_("Your Turn"));
+                    return;
+                }
                 else
-                    set_status_message(_("I’m Thinking…"));
-            }
-            break;
-        case 2:
-        case 0:
+                {
+                    who = player == PLAYER1 ? theme_get_player_turn (PlayerID.PLAYER1)
+                                            : theme_get_player_turn (PlayerID.PLAYER2);
+                    str = _(who);
+                }
 
-            if (gameover) {
-                who = player == PLAYER1 ? theme_get_player_win(PlayerID.PLAYER1)
-                    : theme_get_player_win(PlayerID.PLAYER2);
-                str =  _(who);
-            } else if (player_active) {
-                set_status_message(_("Your Turn"));
-                return;
-            } else {
-                who = player == PLAYER1 ? theme_get_player_turn(PlayerID.PLAYER1)
-                    : theme_get_player_turn(PlayerID.PLAYER2);
-                str =  _(who);
-            }
-
-            set_status_message(str);
-            break;
+                set_status_message (str);
+                break;
         }
     }
 
-    private void swap_player() {
+    private void swap_player ()
+    {
         player = (player == PlayerID.PLAYER1) ? PlayerID.PLAYER2 : PlayerID.PLAYER1;
-        move_cursor(3);
-        prompt_player();
+        move_cursor (3);
+        prompt_player ();
     }
 
-    private void game_process_move(int c) {
-        process_move(c);
+    private void game_process_move (int c)
+    {
+        process_move (c);
     }
 
-    private void process_move3(int c) {
-        play_sound(SoundID.DROP);
+    private void process_move3 (int c)
+    {
+        play_sound (SoundID.DROP);
 
-        vstr[++moves] = '1' + (char)c;
-        vstr[moves + 1] = '0';
+        vstr [++moves] = '1' + (char) c;
+        vstr [moves + 1] = '0';
 
-        check_game_state();
+        check_game_state ();
 
-        if (gameover) {
-            score[winner]++;
-            scorebox.update(score);
-            prompt_player();
-        } else {
-            swap_player();
-            if (!is_player_human()) {
-                vstr[0] = player == PlayerID.PLAYER1 ? vlevel[Prefs.instance.level[PlayerID.PLAYER1]]
-                    : vlevel[Prefs.instance.level[PlayerID.PLAYER2]];
-                c = playgame((string)vstr) - 1;
+        if (gameover)
+        {
+            score [winner]++;
+            scorebox.update (score);
+            prompt_player ();
+        }
+        else
+        {
+            swap_player ();
+            if (!is_player_human ())
+            {
+                vstr [0] = player == PlayerID.PLAYER1 ? vlevel [Prefs.instance.level [PlayerID.PLAYER1]]
+                                                      : vlevel [Prefs.instance.level [PlayerID.PLAYER2]];
+                c = playgame ((string) vstr) - 1;
                 if (c < 0)
                     gameover = true;
-                var nm = new NextMove(c, this);
-                Timeout.add(SPEED_DROP, nm.exec);
+                var nm = new NextMove (c, this);
+                Timeout.add (SPEED_DROP, nm.exec);
             }
         }
     }
 
-    private bool is_player_human() {
-        return player == PLAYER1 ? Prefs.instance.level[PlayerID.PLAYER1] == Level.HUMAN
-            : Prefs.instance.level[PlayerID.PLAYER2] == Level.HUMAN;
+    private bool is_player_human ()
+    {
+        return player == PLAYER1 ? Prefs.instance.level [PlayerID.PLAYER1] == Level.HUMAN
+                                 : Prefs.instance.level [PlayerID.PLAYER2] == Level.HUMAN;
     }
 
-    private void process_move2(int c) {
-        int r = game_board.first_empty_row(c);
-        if (r > 0) {
+    private void process_move2 (int c)
+    {
+        int r = game_board.first_empty_row (c);
+        if (r > 0)
+        {
             row = 0;
             row_dropto = r;
             anim = AnimID.DROP;
-            var temp = new Animate(c, this);
-            timeout = Timeout.add(SPEED_DROP, temp.exec);
-        } else {
-            play_sound(SoundID.COLUMN_FULL);
+            var temp = new Animate (c, this);
+            timeout = Timeout.add (SPEED_DROP, temp.exec);
         }
+        else
+            play_sound (SoundID.COLUMN_FULL);
     }
 
-    private void process_move(int c) {
-        if (timeout != 0) {
-            var temp = new Animate(c, this);
-            Timeout.add(SPEED_DROP, temp.exec);
+    private void process_move (int c)
+    {
+        if (timeout != 0)
+        {
+            var temp = new Animate (c, this);
+            Timeout.add (SPEED_DROP, temp.exec);
             return;
         }
 
         column_moveto = c;
         anim = AnimID.MOVE;
-        var temp = new Animate(c, this);
-        timeout = Timeout.add(SPEED_DROP, temp.exec);
+        var temp = new Animate (c, this);
+        timeout = Timeout.add (SPEED_DROP, temp.exec);
     }
 
-    private inline void drop() {
+    private inline void drop ()
+    {
         Tile tile = player == PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
-        game_board[row, column] = Tile.CLEAR;
-        game_board_view.draw_tile(row, column);
+        game_board [row, column] = Tile.CLEAR;
+        game_board_view.draw_tile (row, column);
 
         row++;
-        game_board[row, column] = tile;
-        game_board_view.draw_tile(row, column);
+        game_board [row, column] = tile;
+        game_board_view.draw_tile (row, column);
     }
 
-    private inline void move(int c) {
-        game_board[0, column] = Tile.CLEAR;
-        game_board_view.draw_tile(0, column);
+    private inline void move (int c)
+    {
+        game_board [0, column] = Tile.CLEAR;
+        game_board_view.draw_tile (0, column);
 
         column = c;
-        game_board[0, c] = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
+        game_board [0, c] = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
 
-        game_board_view.draw_tile(0, c);
+        game_board_view.draw_tile (0, c);
     }
 
-    private void move_cursor(int c) {
-        move(c);
+    private void move_cursor (int c)
+    {
+        move (c);
         column = column_moveto = c;
         row = row_dropto = 0;
     }
 
-    private void set_status_message(string? message) {
-        headerbar.set_title(message);
+    private void set_status_message (string? message)
+    {
+        headerbar.set_title (message);
     }
 
-    private class NextMove {
+    private class NextMove
+    {
         int c;
         FourInARow application;
 
-        internal NextMove(int c, FourInARow application) {
+        internal NextMove (int c, FourInARow application)
+        {
             this.c = c;
             this.application = application;
         }
 
-        internal bool exec() {
-            application.process_move(c);
+        internal bool exec ()
+        {
+            application.process_move (c);
             return false;
         }
     }
 
-    private void stop_anim() {
+    private void stop_anim ()
+    {
         if (timeout == 0)
             return;
         anim = AnimID.NONE;
-        Source.remove(timeout);
+        Source.remove (timeout);
         timeout = 0;
     }
 
-    private void clear_board() {
-        game_board.clear();
+    private void clear_board ()
+    {
+        game_board.clear ();
 
         for (var i = 0; i < SIZE_VSTR; i++)
-            vstr[i] = '\0';
+            vstr [i] = '\0';
 
-        vstr[0] = vlevel[Level.WEAK];
-        vstr[1] = '0';
+        vstr [0] = vlevel [Level.WEAK];
+        vstr [1] = '0';
         moves = 0;
     }
 
-    private inline void blink_tile(int r, int c, int t, int n) {
+    private inline void blink_tile (int r, int c, int t, int n)
+    {
         if (timeout != 0)
             return;
         blink_r1 = r;
@@ -463,11 +496,12 @@ private class FourInARow : Gtk.Application {
         blink_n = n;
         blink_on = false;
         anim = AnimID.BLINK;
-        var temp = new Animate(0, this);
-        timeout = Timeout.add(SPEED_BLINK, temp.exec);
+        var temp = new Animate (0, this);
+        timeout = Timeout.add (SPEED_BLINK, temp.exec);
     }
 
-    private inline void on_game_hint(SimpleAction action, Variant? parameter) {
+    private inline void on_game_hint (/* SimpleAction action, Variant? parameter */)
+    {
         string s;
         int c;
 
@@ -476,90 +510,100 @@ private class FourInARow : Gtk.Application {
         if (gameover)
             return;
 
-        hint_action.set_enabled(false);
-        undo_action.set_enabled(false);
+        hint_action.set_enabled (false);
+        undo_action.set_enabled (false);
 
-        set_status_message(_("I’m Thinking…"));
+        set_status_message (_("I’m Thinking…"));
 
-        vstr[0] = vlevel[Level.STRONG];
-        c = playgame((string)vstr) - 1;
+        vstr [0] = vlevel [Level.STRONG];
+        c = playgame ((string) vstr) - 1;
 
         column_moveto = c;
         while (timeout != 0)
-            Gtk.main_iteration();
+            main_iteration ();
         anim = AnimID.HINT;
-        var temp = new Animate(0, this);
-        timeout = Timeout.add(SPEED_MOVE, temp.exec);
+        var temp = new Animate (0, this);
+        timeout = Timeout.add (SPEED_MOVE, temp.exec);
 
-        blink_tile(0, c, game_board[0, c], 6);
+        blink_tile (0, c, game_board [0, c], 6);
 
-        s = _("Hint: Column %d").printf(c + 1);
-        set_status_message(s);
+        s = _("Hint: Column %d").printf (c + 1);
+        set_status_message (s);
 
-        if (moves <= 0 || (moves == 1 && is_player_human()))
-            undo_action.set_enabled(false);
+        if (moves <= 0 || (moves == 1 && is_player_human ()))
+            undo_action.set_enabled (false);
         else
-            undo_action.set_enabled(true);
+            undo_action.set_enabled (true);
     }
 
-    private inline void on_game_scores(SimpleAction action, Variant? parameter) {
-        scorebox.present();
+    private inline void on_game_scores (/* SimpleAction action, Variant? parameter */)
+    {
+        scorebox.present ();
         return;
     }
 
-    private inline void on_game_exit(SimpleAction action, Variant? parameter) {
-        stop_anim();
-        quit();
+    private inline void on_game_exit (/* SimpleAction action, Variant? parameter */)
+    {
+        stop_anim ();
+        quit ();
     }
 
-    private class Animate {
+    private class Animate
+    {
         int c;
         FourInARow application;
-        internal Animate(int c, FourInARow application) {
+        internal Animate (int c, FourInARow application)
+        {
             this.c = c;
             this.application = application;
         }
 
-        internal bool exec() {
-            switch (anim) {
+        internal bool exec ()
+        {
+            switch (anim)
+            {
                 case AnimID.NONE:
                     return false;
 
                 case AnimID.HINT:
                 case AnimID.MOVE:
-                    if (application.column < application.column_moveto) {
-                        application.move(application.column + 1);
-                    } else if (application.column > application.column_moveto) {
-                        application.move(application.column - 1);
-                    } else {
+                    if (application.column < application.column_moveto)
+                        application.move (application.column + 1);
+                    else if (application.column > application.column_moveto)
+                        application.move (application.column - 1);
+                    else
+                    {
                         application.timeout = 0;
-                        if (anim == AnimID.MOVE) {
+                        if (anim == AnimID.MOVE)
+                        {
                             anim = AnimID.NONE;
-                            application.process_move2(c);
-                        } else {
-                            anim = AnimID.NONE;
+                            application.process_move2 (c);
                         }
+                        else
+                            anim = AnimID.NONE;
                         return false;
                     }
                     return true;
 
                 case AnimID.DROP:
-                    if (application.row < application.row_dropto) {
-                        application.drop();
-                    } else {
+                    if (application.row < application.row_dropto)
+                        application.drop ();
+                    else
+                    {
                         anim = AnimID.NONE;
                         application.timeout = 0;
-                        application.process_move3(c);
+                        application.process_move3 (c);
                         return false;
                     }
                     return true;
 
                 case AnimID.BLINK:
-                    application.draw_line(application.blink_r1, application.blink_c1,
-                                          application.blink_r2, application.blink_c2,
-                                          application.blink_on ? application.blink_t : Tile.CLEAR);
+                    application.draw_line (application.blink_r1, application.blink_c1,
+                                           application.blink_r2, application.blink_c2,
+                                           application.blink_on ? application.blink_t : Tile.CLEAR);
                     application.blink_n--;
-                    if (application.blink_n <= 0 && application.blink_on) {
+                    if (application.blink_n <= 0 && application.blink_on)
+                    {
                         anim = AnimID.NONE;
                         application.timeout = 0;
                         return false;
@@ -572,72 +616,76 @@ private class FourInARow : Gtk.Application {
         }
     }
 
-    private inline void on_game_undo(SimpleAction action, Variant? parameter) {
-        int r, c;
-
+    private inline void on_game_undo (SimpleAction action, Variant? parameter)
+    {
         if (timeout != 0)
             return;
-        c = vstr[moves] - '0' - 1;
-        r = game_board.first_empty_row(c) + 1;
-        vstr[moves] = '0';
-        vstr[moves + 1] = '\0';
+
+        int c = vstr [moves] - '0' - 1;
+        int r = game_board.first_empty_row (c) + 1;
+        vstr [moves] = '0';
+        vstr [moves + 1] = '\0';
         moves--;
 
-        if (gameover) {
-            score[winner]--;
-            scorebox.update(score);
+        if (gameover)
+        {
+            score [winner]--;
+            scorebox.update (score);
             gameover = false;
-            prompt_player();
-        } else {
-            swap_player();
+            prompt_player ();
         }
-        move_cursor(c);
+        else
+            swap_player ();
+        move_cursor (c);
 
-        game_board[r, c] = Tile.CLEAR;
-        game_board_view.draw_tile(r, c);
+        game_board [r, c] = Tile.CLEAR;
+        game_board_view.draw_tile (r, c);
 
-        if (Prefs.instance.get_n_human_players() == 1 && !is_player_human()) {
-            if (moves > 0) {
-                c = vstr[moves] - '0' - 1;
-                r = game_board.first_empty_row(c) + 1;
-                vstr[moves] = '0';
-                vstr[moves + 1] = '\0';
-                moves--;
-                swap_player();
-                move_cursor(c);
-                game_board[r, c] = Tile.CLEAR;
-                game_board_view.draw_tile(r, c);
-            }
+        if (Prefs.instance.get_n_human_players () == 1
+         && !is_player_human ()
+         && moves > 0)
+        {
+            c = vstr [moves] - '0' - 1;
+            r = game_board.first_empty_row (c) + 1;
+            vstr [moves] = '0';
+            vstr [moves + 1] = '\0';
+            moves--;
+            swap_player ();
+            move_cursor (c);
+            game_board [r, c] = Tile.CLEAR;
+            game_board_view.draw_tile (r, c);
         }
     }
 
-    private inline void on_settings_preferences(SimpleAction action, Variant? parameter) {
-        prefsbox_open();
+    private inline void on_settings_preferences (/* SimpleAction action, Variant? parameter */)
+    {
+        prefsbox_open ();
     }
 
-    private inline void on_help_about(SimpleAction action, Variant? parameter) {
-        const string authors[] = {"Tim Musson <trmusson@ihug.co.nz>",
+    private inline void on_help_about (SimpleAction action, Variant? parameter)
+    {
+        const string authors [] = {
+            "Tim Musson <trmusson@ihug.co.nz>",
             "David Neary <bolsh@gimp.org>",
             "Nikhar Agrawal <nikharagrawal2006@gmail.com>",
-            "Jacob Humphrey <jacob.ryan.humphrey@gmail.com>",
-            null
+            "Jacob Humphrey <jacob.ryan.humphrey@gmail.com>"
         };
 
-        const string artists[] = { "Alan Horkan",
+        const string artists [] = {
+            "Alan Horkan",
             "Anatol Drlicek",
-            "Based on the Faenza icon theme by Matthieu James",
-            null
+            "Based on the Faenza icon theme by Matthieu James"
         };
 
-        const string documenters[] = {"Timothy Musson", null};
+        const string documenters[] = { "Timothy Musson" };
 
-        Gtk.show_about_dialog(window,
+        show_about_dialog (window,
             name: _(APPNAME_LONG),
             version: VERSION,
             copyright: "Copyright © 1999–2008 Tim Musson and David Neary\n" +
                        "Copyright © 2014 Michael Catanzaro\n" +
                        "Copyright © 2018 Jacob Humphrey",
-            license_type: Gtk.License.GPL_3_0,
+            license_type: License.GPL_3_0,
             comments: _("Connect four in a row to win"),
             authors: authors,
             documenters: documenters,
@@ -647,67 +695,70 @@ private class FourInARow : Gtk.Application {
             website: "https://wiki.gnome.org/Apps/Four-in-a-row");
     }
 
-    private inline void on_help_contents(SimpleAction action, Variant? parameter) {
+    private inline void on_help_contents (/* SimpleAction action, Variant? parameter */)
+    {
         try {
-            Gtk.show_uri_on_window(window,
-                "help:four-in-a-row",
-                Gtk.get_current_event_time());
-        } catch(Error error) {
-            warning("Failed to show help: %s", error.message);
+            show_uri_on_window (window, "help:four-in-a-row", get_current_event_time ());
+        } catch (Error error) {
+            warning ("Failed to show help: %s", error.message);
         }
     }
 
-    private inline void check_game_state() {
-        if (game_board.is_line_at((Tile)player, row, column)) {
+    private inline void check_game_state ()
+    {
+        if (game_board.is_line_at ((Tile) player, row, column))
+        {
             gameover = true;
             winner = player;
-            switch (Prefs.instance.get_n_human_players()) {
-            case 1:
-                play_sound(is_player_human() ? SoundID.YOU_WIN : SoundID.I_WIN);
-                break;
-            case 0:
-            case 2:
-                play_sound(SoundID.PLAYER_WIN);
-                break;
+            switch (Prefs.instance.get_n_human_players ())
+            {
+                case 1:
+                    play_sound (is_player_human () ? SoundID.YOU_WIN : SoundID.I_WIN);
+                    break;
+                case 0:
+                case 2:
+                    play_sound (SoundID.PLAYER_WIN);
+                    break;
             }
-            blink_winner(6);
-        } else if (moves == 42) {
+            blink_winner (6);
+        }
+        else if (moves == 42)
+        {
             gameover = true;
             winner = NOBODY;
-            play_sound(SoundID.DRAWN_GAME);
+            play_sound (SoundID.DRAWN_GAME);
         }
     }
 
-    protected override void startup() {
-        base.startup();
+    protected override void startup ()
+    {
+        base.startup ();
 
-        Gtk.Window.set_default_icon_name("org.gnome.Four-in-a-row");
-
-        Gtk.CssProvider css_provider = new Gtk.CssProvider();
+        CssProvider css_provider = new CssProvider ();
         try {
-            css_provider.load_from_data("GtkButtonBox {-GtkButtonBox-child-internal-pad-x:0;}\0");
+            css_provider.load_from_data ("GtkButtonBox {-GtkButtonBox-child-internal-pad-x:0;}\0");
         } catch (Error error) {
-            stderr.printf("Could not load UI: %s\n", error.message);
+            stderr.printf ("Could not load UI: %s\n", error.message);
             return;
         }
-        Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
-                                                 css_provider,
-                                                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        game_board_view = new GameBoardView(game_board);
-        Gtk.Builder builder = new Gtk.Builder.from_resource("/org/gnome/Four-in-a-row/ui/four-in-a-row.ui");
+        StyleContext.add_provider_for_screen (Gdk.Screen.get_default (),
+                                              css_provider,
+                                              STYLE_PROVIDER_PRIORITY_APPLICATION);
+        game_board_view = new GameBoardView (game_board);
+        Builder builder = new Builder.from_resource ("/org/gnome/Four-in-a-row/ui/four-in-a-row.ui");
 
-        window = builder.get_object("fiar-window") as Gtk.ApplicationWindow;
+        window = (ApplicationWindow) builder.get_object ("fiar-window");
         window.application = this;
-        window.set_default_size(DEFAULT_WIDTH, DEFAULT_HEIGHT); /* TODO save size & state */
+        window.set_default_size (DEFAULT_WIDTH, DEFAULT_HEIGHT); /* TODO save size & state */
 
-        headerbar = builder.get_object("headerbar") as Gtk.HeaderBar;
+        headerbar = (HeaderBar) builder.get_object ("headerbar");
 
-        scorebox = new Scorebox(window, this);
+        scorebox = new Scorebox (window, this);
 
-        add_actions();
+        add_actions ();
 
         /* hamburger button */
-        Gtk.MenuButton menu_button = builder.get_object ("menu_button") as Gtk.MenuButton;
+        MenuButton menu_button = (MenuButton) builder.get_object ("menu_button");
         GLib.Menu app_menu = new GLib.Menu ();
 
         GLib.Menu appearance_menu = new GLib.Menu ();
@@ -718,7 +769,6 @@ private class FourInARow : Gtk.Application {
         GLib.Menu section = new GLib.Menu ();
         /* Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt) */
         section.append_submenu (_("A_ppearance"), (!) appearance_menu);
-
 
         section.append (_("Sound"), "app.sound");
         section.freeze ();
@@ -739,51 +789,60 @@ private class FourInARow : Gtk.Application {
         app_menu.freeze ();
         menu_button.set_menu_model (app_menu);
 
+        /* various */
         Gtk.AspectFrame frame = builder.get_object("frame") as Gtk.AspectFrame;
 
-        frame.add(game_board_view);
-        game_board_view.column_clicked.connect(column_clicked_cb);
-        window.key_press_event.connect(on_key_press);
+        frame.add (game_board_view);
+        game_board_view.column_clicked.connect (column_clicked_cb);
+        window.key_press_event.connect (on_key_press);
 
-        hint_action.set_enabled(false);
-        undo_action.set_enabled(false);
+        hint_action.set_enabled (false);
+        undo_action.set_enabled (false);
     }
 
-    private Gtk.HeaderBar headerbar;
+    private HeaderBar headerbar;
 
-    private inline bool on_key_press(Gdk.EventKey e) {
-        if ((player_active) || timeout != 0 ||
-                (e.keyval != Prefs.instance.keypress_left &&
-                e.keyval != Prefs.instance.keypress_right &&
-                e.keyval != Prefs.instance.keypress_drop)) {
+    private inline bool on_key_press (Gdk.EventKey e)
+    {
+        if (player_active
+         || timeout != 0
+         || (e.keyval != Prefs.instance.keypress_left
+          && e.keyval != Prefs.instance.keypress_right
+          && e.keyval != Prefs.instance.keypress_drop))
             return false;
-        }
 
-        if (gameover) {
-            blink_winner(2);
+        if (gameover)
+        {
+            blink_winner (2);
             return true;
         }
 
-        if (e.keyval == Prefs.instance.keypress_left && column != 0) {
+        if (e.keyval == Prefs.instance.keypress_left && column != 0)
+        {
             column_moveto--;
-            move_cursor(column_moveto);
-        } else if (e.keyval == Prefs.instance.keypress_right && column < 6) {
-            column_moveto++;
-            move_cursor(column_moveto);
-        } else if (e.keyval == Prefs.instance.keypress_drop) {
-            game_process_move(column);
+            move_cursor (column_moveto);
         }
+        else if (e.keyval == Prefs.instance.keypress_right && column < 6)
+        {
+            column_moveto++;
+            move_cursor (column_moveto);
+        }
+        else if (e.keyval == Prefs.instance.keypress_drop)
+            game_process_move (column);
+
         return true;
     }
 
-    private inline void prefsbox_open() {
-        if (prefsbox != null) {
-            prefsbox.present();
+    private inline void prefsbox_open ()
+    {
+        if (prefsbox != null)
+        {
+            prefsbox.present ();
             return;
         }
 
-        prefsbox = new PrefsBox(window);
-        prefsbox.show_all();
+        prefsbox = new PrefsBox (window);
+        prefsbox.show_all ();
     }
 
     /* Sound-related methods */
@@ -797,22 +856,22 @@ private class FourInARow : Gtk.Application {
         YOU_WIN,
         PLAYER_WIN,
         DRAWN_GAME,
-        COLUMN_FULL
+        COLUMN_FULL;
     }
 
-    private enum SoundContextState
-    {
+    private enum SoundContextState {
         INITIAL,
         WORKING,
-        ERRORED
+        ERRORED;
     }
 
-    private inline void init_sound() {
+    private inline void init_sound ()
+    {
         try {
-            sound_context = new GSound.Context();
+            sound_context = new GSound.Context ();
             sound_context_state = SoundContextState.WORKING;
         } catch (Error e) {
-            warning(e.message);
+            warning (e.message);
             sound_context_state = SoundContextState.ERRORED;
         }
     }
@@ -828,10 +887,11 @@ private class FourInARow : Gtk.Application {
         }
     }
 
-    private static void do_play_sound(SoundID id, GSound.Context sound_context) {
-        string name, path;
+    private static void do_play_sound (SoundID id, GSound.Context sound_context)
+    {
+        string name;
 
-        switch(id) {
+        switch (id) {
         case SoundID.DROP:
             name = "slide";
             break;
@@ -855,11 +915,11 @@ private class FourInARow : Gtk.Application {
         }
 
         name += ".ogg";
-        path = Path.build_filename(SOUND_DIRECTORY, name);
+        string path = Path.build_filename (SOUND_DIRECTORY, name);
 
         try {
-            sound_context.play_simple(null, GSound.Attribute.MEDIA_NAME, name,
-                                            GSound.Attribute.MEDIA_FILENAME, path);
+            sound_context.play_simple (null, GSound.Attribute.MEDIA_NAME, name,
+                                             GSound.Attribute.MEDIA_FILENAME, path);
         } catch (Error e) {
             warning(e.message);
         }
@@ -869,14 +929,14 @@ private class FourInARow : Gtk.Application {
 private enum PlayerID {
     PLAYER1 = 0,
     PLAYER2,
-    NOBODY
+    NOBODY;
 }
 
 private enum Level {
     HUMAN,
     WEAK,
     MEDIUM,
-    STRONG
+    STRONG;
 }
 
 private enum Tile {
@@ -885,5 +945,5 @@ private enum Tile {
     CLEAR,
     CLEAR_CURSOR,
     PLAYER1_CURSOR,
-    PLAYER2_CURSOR,
+    PLAYER2_CURSOR;
 }
