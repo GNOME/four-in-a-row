@@ -5,17 +5,16 @@
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005, 2006.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005.
 # Farzaneh Sarafraz <farzaneh@farsiweb.info>, 2006.
-# Danial Behzadi <dani.behzi@gmail.com>, 2012.
+# Danial Behzadi <dani.behzi@gmail.com>, 2012., 2018, 2019.
 # Arash Mousavi <mousavi.arash@gmail.com>, 2012, 2013, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games HEAD\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-28 06:51+0000\n"
-"PO-Revision-Date: 2017-10-01 00:46+0330\n"
-"Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2019-09-10 06:40+0000\n"
+"PO-Revision-Date: 2019-09-24 14:41+0000\n"
+"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -23,20 +22,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
-msgstr "چهار-در-یک-ردیف"
+msgstr "چهارتا در یک ردیف"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "برگردان آخرین حرکتان"
+
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "_راهنمایی"
+
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "گرفتن راهنمایی برای حرکت بعدی‌تان"
+
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "_شروع از اول"
+
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "شروع یک بازی جدید"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "برای بردن خطوطی از یک رنگ ایجاد کنید"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -48,297 +67,278 @@ msgstr ""
 "کامپیوتر) از ساختن ردیف خود متوقف کنید. یک خط می‌تواند عمودی، افقی یا قطری "
 "باشد. اولین بازیکنی که ردیف را بسازد برنده است!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
-"چهار-در-یک-ردیف شامل چند مرحله دشواری است. اگر به مشکلی برخوردید، می‌توانید "
-"همیشه راهنمایی بگیرید."
+"چهارتا در یک ردیف شامل چند سطح دشواری است. اگر به مشکلی برخوردید، همیشه "
+"می‌توانید راهنمایی بگیرید."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
-msgstr "پروژه گنوم"
+msgstr "پروژهٔ گنوم"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;بازی;استراتژی;منطق;"
 
-#: ../data/four-in-a-row.ui.h:2
-msgid "Undo your most recent move"
-msgstr "برگردانِ آخرین حرکت"
-
-#: ../data/four-in-a-row.ui.h:3
-msgid "_Hint"
-msgstr "_راهنمایی"
-
-#: ../data/four-in-a-row.ui.h:4
-msgid "Receive a hint for your next move"
-msgstr "گرفتن راهنمایی برای حرکت بعدی‌تان"
-
-#: ../data/four-in-a-row.ui.h:5
-msgid "_Start Over"
-msgstr "_شروع از اول"
-
-#: ../data/four-in-a-row.ui.h:6
-msgid "Start a new game"
-msgstr "شروع بازی جدید"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
 msgstr "حریف"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr "صفر انسان است؛ یک تا سه برابر با سطح بازیکن کامپیوتری است."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
-msgstr "شناسه‌ی تم"
+msgstr "شناسهٔ زمینه"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
-msgstr "عدد مشخص کننده‌ی تم ترجیح داده شده."
+msgstr "عدد مشخص کنندهٔ زمینه ترجیح داده شده."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "صدا"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
 msgstr "این که صدای رویدادهای پخش شود یا نه."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:108
 msgid "Move left"
 msgstr "جابه‌جایی به چپ"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
 msgstr "فشردن کلید برای جابه‌جایی به چپ."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:109
 msgid "Move right"
 msgstr "جابه‌جایی به راست"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
 msgstr "فشردن کلید برای جابه‌جایی به راست."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:110
 msgid "Drop marble"
 msgstr "انداختن تیله"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
 msgstr "فشردن کلید برای انداختن تیله."
 
-#: ../src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "این کلید از قبل در استفاده است."
-
-#: ../src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "فرمان نامعلوم"
-
-#: ../src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"بار کردن تصویر ممکن نیست:\n"
-"%s"
-
-#: ../src/main.c:476
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "مساوی شد!"
 
-#: ../src/main.c:484
+#: src/four-in-a-row.vala:256
 msgid "You win!"
 msgstr "شما بردید!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
 msgstr "نوبت شما"
 
-#: ../src/main.c:489
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "من بُردم!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:460
 msgid "I’m Thinking…"
 msgstr "دارم فکر میکنم…"
 
-#: ../src/main.c:603
+#: src/four-in-a-row.vala:474
 #, c-format
 msgid "Hint: Column %d"
 msgstr "راهنمایی: ستون %Id"
 
-#: ../src/main.c:631 ../src/main.c:635
-msgid "You:"
-msgstr "شما:"
+#: src/four-in-a-row.vala:619
+msgid "Connect four in a row to win"
+msgstr "چهار مورد را ردیف کنید تا برنده شوید"
 
-#: ../src/main.c:632 ../src/main.c:634
-msgid "Me:"
-msgstr "من:"
-
-#: ../src/main.c:680
-msgid "Scores"
-msgstr "امتیازها"
-
-#: ../src/main.c:721
-msgid "Drawn:"
-msgstr "مساوی:"
-
-#: ../src/main.c:762
-msgid "Connect four in a row to win."
-msgstr "چهار مورد را ردیف کنید تا برنده شوید."
-
-#: ../src/main.c:765
+#: src/four-in-a-row.vala:623
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>\n"
 "دانیال بهزادی <dani.behzi@gmail.com>"
 
-#: ../src/main.c:1130
+#: src/four-in-a-row.vala:699
 msgid "_Scores"
 msgstr "امتیا_زها"
 
-#: ../src/main.c:1131
+#: src/four-in-a-row.vala:702
 msgid "_Preferences"
 msgstr "_ترجیحات"
 
-#: ../src/main.c:1134
+#: src/four-in-a-row.vala:703
 msgid "_Help"
 msgstr "_راهنما"
 
-#: ../src/main.c:1135
-msgid "_About"
-msgstr "_درباره"
+#: src/four-in-a-row.vala:704
+msgid "_About Four-in-a-row"
+msgstr "دربارهٔ چهارتا در یک ردیف"
 
-#: ../src/main.c:1136
-msgid "_Quit"
-msgstr "_خروج"
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "این کلید از قبل در استفاده است."
 
-#: ../src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "فرمان نامعلوم"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "ترجیحات"
 
-#: ../src/prefs.c:193
+#: src/prefs-box.vala:53
 msgid "Game"
 msgstr "بازی"
 
-#: ../src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
 msgstr "حریف:"
 
-#: ../src/prefs.c:207
+#: src/prefs-box.vala:69
 msgid "Human"
 msgstr "انسان"
 
-#: ../src/prefs.c:211
+#: src/prefs-box.vala:73
 msgid "Level one"
 msgstr "سطح یک"
 
-#: ../src/prefs.c:215
+#: src/prefs-box.vala:77
 msgid "Level two"
 msgstr "سطح دو"
 
-#: ../src/prefs.c:219
+#: src/prefs-box.vala:81
 msgid "Level three"
 msgstr "سطح سه"
 
-#: ../src/prefs.c:225
+#: src/prefs-box.vala:88
 msgid "_Theme:"
-msgstr "_تم:"
+msgstr "_زمینه:"
 
-#: ../src/prefs.c:238
+#: src/prefs-box.vala:101
 msgid "E_nable sounds"
 msgstr "ب_ه کار انداختن صداها"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs-box.vala:105
 msgid "Keyboard Controls"
 msgstr "کنترل‌های صفحه‌کلید"
 
-#: ../src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "امتیازها"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "مساوی:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "شما:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "من:"
+
+#: src/theme.vala:65
 msgid "High Contrast"
 msgstr "سایه‌روشن بالا"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
 msgstr "دایره"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
 msgstr "به‌علاوه"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
 msgstr "دایره برنده است!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
 msgstr "ضربدر برنده شد!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
 msgstr "نوبت دایره"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
 msgstr "نوبت ضربدر"
 
-#: ../src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
 msgstr "سایه‌روشن بالا معکوس"
 
-#: ../src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
 msgstr "تیله‌های قرمز و سبز"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "قرمز"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "سبز"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
 msgstr "قرمز برنده شد!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
 msgstr "سبز برنده شد!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
 msgstr "نوبت قرمز"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
 msgstr "نوبت سبز"
 
-#: ../src/theme.c:67
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
 msgstr "تیله‌های آبی و قرمز"
 
-#: ../src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "آبی"
 
-#: ../src/theme.c:72
+#: src/theme.vala:97
 msgid "Blue wins!"
 msgstr "آبی برنده است!"
 
-#: ../src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
 msgstr "نوبت آبی"
 
-#: ../src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
 msgstr "ستاره‌ها و حلقه‌ها"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "بار کردن تصویر ممکن نیست:\n"
+#~ "%s"
+
+#~ msgid "_About"
+#~ msgstr "_درباره"
+
+#~ msgid "_Quit"
+#~ msgstr "_خروج"
