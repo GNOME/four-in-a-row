@@ -17,7 +17,7 @@
    You should have received a copy of the GNU General Public License along
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 -->
-<svg width="300" height="50">
+<svg width="300" height="50" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <rect id="square" x="0" y="0" width="50" height="50" fill="black" stroke-width="0"/>
     <g id="nought" fill="none" stroke="white" stroke-linecap="round">

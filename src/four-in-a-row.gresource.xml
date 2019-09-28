@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
+  <gresource prefix="/org/gnome/Four-in-a-row/images">
+    <file preprocess="xml-stripblanks" compressed="true" alias="tileset_50x50_faenza-glines-icon1.svg">../data/themes/tileset_50x50_faenza-glines-icon1.svg</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="tileset_50x50_faenza-glines-icon2.svg">../data/themes/tileset_50x50_faenza-glines-icon2.svg</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="tileset_50x50_faenza-gnect-icon.svg">../data/themes/tileset_50x50_faenza-gnect-icon.svg</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="tileset_50x50_hcinverse.svg">../data/themes/tileset_50x50_hcinverse.svg</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="tileset_50x50_hcontrast.svg">../data/themes/tileset_50x50_hcontrast.svg</file>
+    <file alias="bg_toplight.png">../data/bg_toplight.png</file>
+  </gresource>
   <gresource prefix="/org/gnome/Four-in-a-row/ui">
     <file preprocess="xml-stripblanks" compressed="true" alias="four-in-a-row.ui">../data/ui/four-in-a-row.ui</file>
   </gresource>

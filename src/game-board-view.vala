@@ -208,9 +208,9 @@ private class GameBoardView : Gtk.DrawingArea {
 
         /* Try the theme pixmaps, fallback to the default and then give up */
         while (true) {
-            fname = Path.build_filename(DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_tileset, null);
+            fname = "/org/gnome/Four-in-a-row/images/" + theme[Prefs.instance.theme_id].fname_tileset;
             try {
-                pb_tileset_tmp = new Gdk.Pixbuf.from_file(fname);
+                pb_tileset_tmp = new Gdk.Pixbuf.from_resource(fname);
             } catch (Error e) {
                 if (Prefs.instance.theme_id != 0) {
                     Prefs.instance.theme_id = 0;
@@ -226,9 +226,9 @@ private class GameBoardView : Gtk.DrawingArea {
         pb_tileset_raw = pb_tileset_tmp;
 
         if (theme[Prefs.instance.theme_id].fname_bground != null) {
-            fname = Path.build_filename(DATA_DIRECTORY, theme[Prefs.instance.theme_id].fname_bground, null);
+            fname = "/org/gnome/Four-in-a-row/images/" + theme[Prefs.instance.theme_id].fname_bground;
             try {
-                pb_bground_tmp = new Gdk.Pixbuf.from_file(fname);
+                pb_bground_tmp = new Gdk.Pixbuf.from_resource(fname);
             } catch (Error e) {
                 load_error(fname);
                 return false;

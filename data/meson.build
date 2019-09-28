@@ -46,17 +46,6 @@ install_data(
   '@0@.gschema.xml'.format(application_id),
   install_dir : join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
-install_data(
-    [
-        'themes/tileset_50x50_faenza-glines-icon1.svg',
-        'themes/tileset_50x50_faenza-glines-icon2.svg',
-        'themes/tileset_50x50_faenza-gnect-icon.svg',
-        'themes/tileset_50x50_hcinverse.svg',
-        'themes/tileset_50x50_hcontrast.svg',
-        'bg_toplight.png'
-    ],
-    install_dir: datadir
-)
 
 install_data(
     [
