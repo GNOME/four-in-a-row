@@ -23,14 +23,18 @@ appstream_util          = find_program('appstream-util',        required: false)
 desktop_file_validate   = find_program('desktop-file-validate', required: false)
 glib_compile_schema     = find_program('glib-compile-schemas',  required: true) # useful?
 
-datadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
+localedir   = join_paths(get_option('prefix'), get_option('localedir'))
+datadir     = join_paths(get_option('prefix'), get_option('datadir'))
+bindir      = join_paths(get_option('prefix'), get_option('bindir'))
+pkgdatadir  = join_paths(datadir, meson.project_name())
+soundsdir   = join_paths(pkgdatadir, 'sounds')
 
 conf = configuration_data ()
 conf.set_quoted('VERSION', meson.project_version())
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
-conf.set_quoted('SOUND_DIRECTORY', join_paths(datadir, 'sounds'))
-conf.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
-conf.set_quoted('DATA_DIRECTORY', datadir)
+conf.set_quoted('SOUND_DIRECTORY', soundsdir)
+conf.set_quoted('LOCALEDIR', localedir)
+conf.set_quoted('DATA_DIRECTORY', pkgdatadir)
 
 configure_file(output: 'config.h', configuration: conf)
 config_h_dir = include_directories('.')
