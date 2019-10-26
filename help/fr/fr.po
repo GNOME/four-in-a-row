@@ -7,19 +7,22 @@
 # Bruno Brouard <annoa.b@gmail.com>, 2008-2011, 2012.
 # Serge Gariépy <sergeg66@gmail.com>, 2013.
 # Alain Lojewski <allomervan@gmail.com>, 2013.
+# Charles Monzat <charles.monzat@numericable.fr>, 2018 -2019.
+# Guillaume Bernard <associations@guillaume-bernard.fr>, 2019
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect documentation\n"
-"POT-Creation-Date: 2014-09-06 16:51+0000\n"
-"PO-Revision-Date: 2014-09-07 00:17+0200\n"
-"Last-Translator: Alain Lojewski <allomervan@gmail.com>\n"
-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"POT-Creation-Date: 2019-03-03 11:55+0000\n"
+"PO-Revision-Date: 2019-03-16 20:35+0100\n"
+"Last-Translator: Charles Monzat <charles.monzat@numericable.fr>\n"
+"Language-Team: français <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 2.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -29,24 +32,26 @@ msgstr ""
 "Claude Paroz <claude@2xlibre.net>, 2007\n"
 "Bruno Brouard <annoa.b@gmail.com>, 2008,2011-12\n"
 "Serge Gariépy <sergeg66@gmail.com>, 2013\n"
-"Alain Lojewski <allomervan@gmail.com>, 2013"
+"Alain Lojewski <allomervan@gmail.com>, 2013\n"
+"Charles Monzat <charles.monzat@free.fr>, 2018-2019\n"
+"Guillaume Bernard <associations@guillaume-bernard.fr>, 2019"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:13 C/choose-opponent.page:13
-#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:12
-#: C/make-easy.page:13 C/scores.page:12 C/sound-animation.page:13
+#: C/appearance.page:13 C/basics.page:15 C/choose-opponent.page:15
+#: C/controls-change.page:17 C/controls-default.page:16 C/index.page:12
+#: C/make-easy.page:15 C/scores.page:15 C/sound-animation.page:15
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: info/desc
 #: C/appearance.page:17
 msgid "Use different themes to improve your gaming experience."
-msgstr "Utiliser différents thèmes pour améliorer votre expérience du jeux."
+msgstr "Utiliser différents thèmes pour améliorer votre expérience de jeu."
 
 #. (itstool) path: page/title
 #: C/appearance.page:20
 msgid "Change the appearance of your gaming area"
-msgstr "Changer l'apparence de votre grille"
+msgstr "Changer l’apparence de votre grille"
 
 #. (itstool) path: page/p
 #: C/appearance.page:22
@@ -55,7 +60,7 @@ msgid ""
 "a black grid when you start a new game."
 msgstr ""
 "Par défaut, <app>Quatre-à-la-suite</app> met en jeu des billes rouges et "
-"bleues sur une grille noire au début d'une nouvelle partie."
+"bleues sur une grille noire au début d’une nouvelle partie."
 
 #. (itstool) path: steps/title
 #: C/appearance.page:26
@@ -63,139 +68,117 @@ msgid "To use a different theme:"
 msgstr "Pour changer de thème :"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28 C/sound-animation.page:35 C/sound-animation.page:54
+#: C/appearance.page:28
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem\">Game</"
+"gui></guiseq>."
 msgstr ""
-"Sélectionnez <guiseq><gui style=\"menu\">Paramètres</gui> <gui style="
-"\"menuitem\">Préférences</gui> <gui style=\"menuitem\">Jeu</gui></guiseq>."
+"Appuyez sur le bouton du menu dans le coin supérieur droit de la fenêtre et "
+"sélectionnez <guiseq><gui style=\"menu\">Préférences</gui> <gui style="
+"\"menuitem\">Jeu</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
 msgid ""
-"Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
-"down menu to the right of <gui style=\"group\">Theme</gui>. The change will "
-"be reflected immediately in the game window."
+"Pick the theme of your choice from the drop down menu to the right of <gui "
+"style=\"group\">Theme</gui>. The change will be reflected immediately in the "
+"game window."
 msgstr ""
-"Sous <gui>Apparence</gui>, choisissez un thème dans le menu déroulant à "
-"droite de <gui style=\"group\">Thème</gui>. Le changement apparaît "
-"immédiatement dans la fenêtre du jeu."
+"Choisissez un thème dans le menu déroulant à droite de <gui style=\"group"
+"\">Thème</gui>. Le changement apparaît immédiatement dans la fenêtre du jeu."
 
 #. (itstool) path: info/desc
-#: C/basics.page:17
-msgid ""
-"Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
-msgstr ""
-"Démarrer, jouer en mode plein écran et quitter une partie de <app>Quatre-à-"
-"la-suite</app>."
+#: C/basics.page:19
+msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
+msgstr "Démarrer, jouer et quitter une partie de <app>Quatre-à-la-suite</app>."
 
 #. (itstool) path: page/title
-#: C/basics.page:21
+#: C/basics.page:23
 msgid "Basic instructions"
 msgstr "Les bases du jeu"
 
 #. (itstool) path: section/title
-#: C/basics.page:24
+#: C/basics.page:26
 msgid "Start a new game"
 msgstr "Commencer une nouvelle partie"
 
 #. (itstool) path: section/p
-#: C/basics.page:26
+#: C/basics.page:28
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
-"a new game."
+"Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Sélectionnez <guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem"
-"\">Nouveau</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>N</"
-"key></keyseq> pour commencer une nouvelle partie."
+"Cliquez sur <gui style=\"button\">Recommencer</gui> ou appuyez sur "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> pour commencer une nouvelle "
+"partie."
 
 #. (itstool) path: section/title
-#: C/basics.page:34
-msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
-msgstr "Jouer à <app>Quatre-à-la-suite</app> en mode plein écran"
-
-#. (itstool) path: section/p
-#: C/basics.page:36
-msgid ""
-"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-"fullscreen mode. You can return to the default screen size by pressing "
-"<key>F11</key> again."
-msgstr ""
-"Choisissez <guiseq><gui style=\"menu\">Affichage</gui> <gui style=\"menuitem"
-"\">Plein écran</gui></guiseq> ou appuyez sur <key>F11</key> pour jouer en "
-"mode plein écran. Vous pouvez revenir à l'écran par défaut en appuyant sur "
-"<key>F11</key> à nouveau."
-
-#. (itstool) path: section/title
-#: C/basics.page:44
+#: C/basics.page:35
 msgid "Quit <app>Four-in-a-row</app>"
 msgstr "Quitter <app>Quatre-à-la-suite</app>"
 
 #. (itstool) path: section/p
-#: C/basics.page:46
+#: C/basics.page:37
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
-"<app>Four-in-a-row</app> at any time."
+"Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-in-a-"
+"row</app> at any time."
 msgstr ""
-"Choisissez <guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem"
-"\">Quitter</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>Q</"
-"key></keyseq> pour quitter <app>Quatre-à-la-suite</app> à tout moment."
+"Appuyez sur <keyseq><key>Ctrl</key><key>Q</key></keyseq> pour quitter "
+"<app>Quatre-à-la-suite</app> à tout moment."
 
 #. (itstool) path: credit/name
-#: C/choose-opponent.page:17 C/sound-animation.page:17
+#: C/choose-opponent.page:19 C/sound-animation.page:19
 msgid "Michael Hill"
 msgstr "Michael Hill"
 
 #. (itstool) path: info/desc
-#: C/choose-opponent.page:21
+#: C/choose-opponent.page:23
 msgid "Change the level at which the computer plays or play with a friend."
-msgstr "Changer le niveau auquel l'ordinateur joue ou jouer avec un ami."
+msgstr "Changer le niveau auquel l’ordinateur joue ou jouer avec un ami."
 
 #. (itstool) path: page/title
-#: C/choose-opponent.page:25
+#: C/choose-opponent.page:27
 msgid "Choose a different opponent"
-msgstr "Choix d'un autre adversaire"
+msgstr "Choix d’un autre adversaire"
 
 #. (itstool) path: page/p
-#: C/choose-opponent.page:26
+#: C/choose-opponent.page:28
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at level one."
 msgstr ""
 "Par défaut, votre adversaire dans <app>Quatre-à-la-suite</app> est "
-"l'ordinateur jouant au niveau un."
+"l’ordinateur jouant au niveau un."
 
 #. (itstool) path: steps/title
-#: C/choose-opponent.page:30
+#: C/choose-opponent.page:32
 msgid "To change the level, or to play with a friend:"
 msgstr "Pour changer de niveau, ou pour jouer avec un ami :"
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:32
+#: C/choose-opponent.page:34 C/sound-animation.page:34
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You will "
-"see <gui>Player One</gui> and <gui>Player Two</gui>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
+"\">Game</gui></guiseq>."
 msgstr ""
-"Choisissez <guiseq><gui style=\"menu\">Paramètres</gui> <gui style=\"menuitem"
-"\">Préferences</gui> <gui style=\"menuitem\">Jeu</gui></guiseq>. Vous allez "
-"voir <gui>Joueur 1</gui> et <gui>Joueur 2</gui>."
+"Appuyez sur le bouton du menu dans le coin supérieur droit de la fenêtre et "
+"sélectionnez <guiseq><gui style=\"menuitem\">Préférences</gui> <gui style="
+"\"menuitem\">Jeu</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:38
+#: C/choose-opponent.page:39
 msgid ""
-"Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
-"play with a friend or family member."
+"Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for "
+"both players if want to play with a friend or family member."
 msgstr ""
-"Choisissez <gui style=\"radiobutton\">Humain</gui> pour les deux joueurs si "
-"vous voulez jouer avec un ami ou un membre de votre famille."
+"Sous <gui>Adversaire</gui>, choisissez <gui style=\"radiobutton\">Humain</"
+"gui> pour les deux joueurs si vous voulez jouer avec un ami ou un membre de "
+"votre famille."
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:40
+#: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the level at which the computer plays. Choose between "
 "<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
@@ -203,40 +186,39 @@ msgid ""
 "\"radiobutton\">Level one</gui> is the easiest level and <gui style="
 "\"radiobutton\">Level three</gui> is the most difficult level."
 msgstr ""
-"Pour modifier le niveau auquel l'ordinateur joue, cochez <gui style="
-"\"radiobutton\">Niveau un</gui>, <gui style=\"radiobutton\">Niveau deux</"
-"gui> ou <gui style=\"radiobutton\">Niveau trois</gui>. Le <gui style="
+"Pour modifier le niveau auquel l’ordinateur joue, choisissez entre <gui "
+"style=\"radiobutton\">Niveau un</gui>, <gui style=\"radiobutton\">Niveau "
+"deux</gui> ou <gui style=\"radiobutton\">Niveau trois</gui>. Le <gui style="
 "\"radiobutton\">Niveau un</gui> est le plus facile et le <gui style="
 "\"radiobutton\">Niveau trois</gui> est le plus difficile."
 
 #. (itstool) path: note/p
-#: C/choose-opponent.page:48
+#: C/choose-opponent.page:49
 msgid ""
-"If you are playing with a friend or family member, <gui>Player One</gui> "
-"gets to play first in the first game of <app>Four-in-a-row</app>. In "
-"subsequent games, the chance to play first is given alternately to each "
-"player. So, <gui>Player Two</gui> will get to play first in the second game, "
-"<gui>Player One</gui> can play first in the third game and so on."
+"If you are playing with a friend or family member, Player One gets to play "
+"first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
+"the chance to play first is given alternately to each player. So, Player Two "
+"will get to play first in the second game, Player One can play first in the "
+"third game and so on."
 msgstr ""
-"Si vous jouez avec un ami ou un membre de votre famille, <gui>Joueur 1</gui> "
-"joue le premier dans la première partie de <app>Quatre-à-la-suite</app>. "
-"Pendant les parties suivantes, la chance de jouer le premier est donnée "
-"alternativement à chaque joueur. Ainsi, <gui>Joueur 2</gui> jouera le "
-"premier dans la seconde partie, <gui>Joueur 1</gui> peut jouer le premier "
-"dans la troisième partie et ainsi de suite."
+"Si vous jouez avec un ami ou un membre de votre famille, Joueur 1 joue le "
+"premier dans la première partie de <app>Quatre-à-la-suite</app>. Pendant les "
+"parties suivantes, la chance de jouer le premier est donnée alternativement "
+"à chaque joueur. Ainsi, Joueur 2 jouera le premier dans la seconde partie, "
+"Joueur 1 peut jouer le premier dans la troisième partie et ainsi de suite."
 
 #. (itstool) path: info/desc
-#: C/controls-change.page:19
+#: C/controls-change.page:21
 msgid "Set custom control keys."
 msgstr "Attribuer des commandes personnalisées aux touches du clavier."
 
 #. (itstool) path: page/title
-#: C/controls-change.page:22
+#: C/controls-change.page:24
 msgid "Change the default controls"
 msgstr "Modification des commandes par défaut"
 
 #. (itstool) path: page/p
-#: C/controls-change.page:24
+#: C/controls-change.page:26
 msgid ""
 "To change the <link xref=\"controls-default\">default controls</link> in "
 "<app>Four-in-a-row</app>:"
@@ -245,47 +227,45 @@ msgstr ""
 "link> dans <app>Quatre-à-la-suite</app> :"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:29
+#: C/controls-change.page:31
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-"guiseq>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
+"\">Keyboard Controls</gui></guiseq>."
 msgstr ""
-"Sélectionnez <guiseq><gui style=\"menu\">Paramètres</gui> <gui style="
-"\"menuitem\">Préférences</gui> <gui style=\"menuitem\">Commandes au clavier</"
-"gui></guiseq>."
+"Appuyez sur le bouton du menu dans le coin supérieur droit de la fenêtre et "
+"sélectionnez <guiseq><gui style=\"menu\">Préférences</gui> <gui style="
+"\"menuitem\">Commandes au clavier</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:34
+#: C/controls-change.page:36
 msgid ""
 "In the list, select the line you want to change, then click on the control. "
 "The line is highlighted and the label of the control changes to <gui>New "
 "accelerator…</gui>"
 msgstr ""
 "Dans la liste, choisissez la ligne que vous voulez modifier, puis cliquez "
-"sur la commande. La ligne passe en surbrillance et l'étiquette de la "
+"sur la commande. La ligne passe en surbrillance et l’étiquette de la "
 "commande devient <gui>Nouveau raccourci…</gui>"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:39
+#: C/controls-change.page:41
 msgid "Press the key you want to use instead of the default key."
 msgstr ""
 "Appuyez sur la touche que vous voulez utiliser à la place de la touche par "
 "défaut."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:41
+#: C/controls-change.page:43
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
-"</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
-"Controls</gui> box."
+"</gui>, press <key>Esc</key>."
 msgstr ""
 "Pour revenir en arrière, cliquez à nouveau ou faites un clic droit sur "
-"<gui>Nouveau raccourci…</gui>, appuyez sur <key>Échap</key> ou cliquez "
-"n'importe ou dans la fenêtre de <gui>Commandes au clavier</gui>."
+"<gui>Nouveau raccourci…</gui>, appuyez sur <key>Échap</key>."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:49
+#: C/controls-change.page:50
 msgid ""
 "When you are playing with a friend or a family member, both players will use "
 "the same controls."
@@ -294,38 +274,38 @@ msgstr ""
 "utilisent les mêmes commandes."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:19
+#: C/controls-default.page:20
 msgid "Default controls for <app>Four-in-a-row</app>."
 msgstr "Commandes par défaut pour <app>Quatre-à-la-suite</app>."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:22
+#: C/controls-default.page:23
 msgid "Controls"
 msgstr "Commandes"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:24
+#: C/controls-default.page:25
 msgid ""
-"You can use your mouse and click on a particular square in the game area to "
-"drop your marble into that square. If you want to use the keyboard instead, "
-"the default keys for <app>Four-in-a-row</app> are:"
+"You can use your mouse and click on a particular row in the game area to "
+"drop your marble into that row. If you want to use the keyboard instead, the "
+"default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
 "Pour déposer votre bille dans un carré, cliquez dessus avec votre souris. Si "
 "vous voulez utiliser votre clavier à la place, les touches par défaut pour "
 "<app>Quatre-à-la-suite</app> sont :"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:30
+#: C/controls-default.page:31
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key> pour déplacer la bille vers la gauche."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:33
+#: C/controls-default.page:34
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key> pour déplacer la bille vers la droite."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:36
+#: C/controls-default.page:37
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> pour déposer la bille."
 
@@ -348,7 +328,7 @@ msgid ""
 msgstr ""
 "<app>Quatre-à-la-suite</app> est un jeu de stratégie pour GNOME. Le but du "
 "jeu consiste à aligner quatre de vos billes horizontalement, verticalement "
-"ou en diagonale tout en empêchant votre adversaire d'en faire autant avec "
+"ou en diagonale tout en empêchant votre adversaire d’en faire autant avec "
 "les siennes."
 
 #. (itstool) path: section/title
@@ -361,124 +341,136 @@ msgstr "Le jeu"
 msgid "Preferences"
 msgstr "Préférences"
 
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr ""
+"Creative Commons Paternité-Partage des Conditions Initiales à l’Identique "
+"3.0 Unported"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Cette œuvre est distribuée sous licence <_:link-1/>."
+
 #. (itstool) path: info/desc
-#: C/make-easy.page:17
+#: C/make-easy.page:19
 msgid "Use hints or undo your wrong moves."
 msgstr "Utiliser les astuces ou annuler vos mauvais coups."
 
 #. (itstool) path: page/title
-#: C/make-easy.page:20
+#: C/make-easy.page:22
 msgid "Make your game a little easier"
 msgstr "Rendre votre jeu un peu plus facile"
 
 #. (itstool) path: section/title
-#: C/make-easy.page:23
+#: C/make-easy.page:25
 msgid "Change your last move"
 msgstr "Changement de votre dernier coup"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:25
+#: C/make-easy.page:27
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
-"To undo your last move, select <guiseq><gui style=\"menu\">Game</gui> <gui "
-"style=\"menuitem\">Undo Move</gui></guiseq> or press <keyseq><key>Ctrl</"
-"key><key>Z</key></keyseq>. You can now drop your marble at a different "
-"square in the game area to change your move."
+"To undo your last move, press the <gui style=\"button\">Undo your most "
+"recent move</gui> button in the header bar or press <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. You can now drop your marble at a different row "
+"in the game area to change your move."
 msgstr ""
-"Lorsque l'ordinateur fait un coup gagnant en raison de votre dernière action "
+"Lorsque l’ordinateur fait un coup gagnant en raison de votre dernière action "
 "ou lorsque vous avez malencontreusement fait un mauvais choix, vous pouvez "
 "annuler votre dernière action et la modifier. Pour annuler votre dernier "
-"coup, choisissez <guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem"
-"\">Annuler le coup</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</"
+"coup, cliquez sur le bouton <gui style=\"button\">Annuler votre plus récente "
+"action</gui> situé dans la barre d’en-tête ou appuyez sur <keyseq><key>Ctrl</"
 "key><key>Z</key></keyseq>. Déposez ensuite votre bille dans un autre carré "
 "de la grille."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:33
+#: C/make-easy.page:35
 msgid ""
 "You can undo all your moves starting from your current move until you reach "
 "a favourable state of the game, or until the beginning of your current game, "
 "by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
 msgstr ""
-"Vous pouvez annuler tous les coups précédent votre coup actuel jusqu'à "
-"atteindre un état favorable du jeu, ou jusqu'au début de la partie en cours "
-"en appuyant sur  <keyseq><key>Ctrl</key><key>Z</key></keyseq> à répétion."
+"Vous pouvez annuler tous les coups précédant votre coup actuel jusqu’à "
+"atteindre un état favorable du jeu, ou jusqu’au début de la partie en cours "
+"en appuyant sur <keyseq><key>Ctrl</key><key>Z</key></keyseq> à répétition."
 
 #. (itstool) path: section/title
-#: C/make-easy.page:41
+#: C/make-easy.page:43
 msgid "Use hints"
 msgstr "Utilisation des astuces"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:43
+#: C/make-easy.page:45
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
-"To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui style="
-"\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</key><key>H</"
-"key></keyseq>."
+"To use a hint, press <gui style=\"button\">Hint</gui> or <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
 msgstr ""
-"Si vous n'êtes pas certain de votre prochain coup, vous pouvez utiliser une "
-"astuce. Quand vous utilisez une astuce, votre bille se positionne au dessus "
+"Si vous n’êtes pas certain de votre prochain coup, vous pouvez utiliser une "
+"astuce. Quand vous utilisez une astuce, votre bille se positionne au-dessus "
 "de la colonne qui est le choix le plus judicieux et elle clignote. Déposez "
-"alors votre bille dans cette colonne. Pour utiliser une astuce, choisissez "
-"<guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem\">Astuce</gui></"
-"guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+"alors votre bille dans cette colonne. Pour utiliser une astuce, appuyez sur "
+"<gui style=\"button\">Astuce</gui> ou sur <keyseq><key>Ctrl</key><key>H</"
+"key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:51
 msgid "There is no limit on the number of hints you can use in a game."
 msgstr ""
-"Il n'y a aucune limite au nombre d'astuces que vous pouvez utiliser pendant "
+"Il n’y a aucune limite au nombre d’astuces que vous pouvez utiliser pendant "
 "une partie."
 
 #. (itstool) path: credit/name
-#: C/scores.page:17
+#: C/scores.page:20
 msgid "Anna Philips"
 msgstr "Anna Philips"
 
 #. (itstool) path: info/desc
-#: C/scores.page:21
+#: C/scores.page:24
 msgid "Keep track of your wins and losses."
-msgstr "Enregistrer vos victoires et vos défaites. "
+msgstr "Enregistrer vos victoires et vos défaites."
 
 #. (itstool) path: page/title
-#: C/scores.page:24
+#: C/scores.page:27
 msgid "Scores"
 msgstr "Les scores"
 
 #. (itstool) path: page/p
-#: C/scores.page:25
+#: C/scores.page:28
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
-"select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-"\">Scores</gui></guiseq>. In the default theme:"
+"press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "Le tableau des scores dans <app>Quatre-à-la-suite</app> enregistre vos "
 "victoires, les victoires de votre adversaire et les parties nulles. Pour "
-"afficher les scores, faites <guiseq><gui style=\"menu\">Jeu</gui> <gui style="
-"\"menuitem\">Scores</gui></guiseq>. Dans le thème par défaut :"
+"afficher les scores, appuyez sur le menu dans le coin supérieur droit de la "
+"fenêtre et sélectionnez <gui style=\"menuitem\">Scores</gui>. Dans le thème "
+"par défaut :"
 
 #. (itstool) path: item/p
-#: C/scores.page:32
+#: C/scores.page:35
 msgid "<gui>Red</gui> displays the number of games you have won."
 msgstr "<gui>Rouge</gui> affiche le nombre de parties que vous avez gagné."
 
 #. (itstool) path: item/p
-#: C/scores.page:35
+#: C/scores.page:38
 msgid "<gui>Green</gui> displays the number of games won by the opponent."
-msgstr "<gui>Vert</gui> affiche le nombre de parties gagnées par l'adversaire."
+msgstr "<gui>Vert</gui> affiche le nombre de parties gagnées par l’adversaire."
 
 #. (itstool) path: item/p
-#: C/scores.page:38
+#: C/scores.page:41
 msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
 msgstr "<gui>Nul</gui> affiche le nombre de parties nulles."
 
 #. (itstool) path: note/p
-#: C/scores.page:43
+#: C/scores.page:46
 msgid ""
 "The labels to represent players shown in <app>Scores</app> change based on "
 "opponent and theme selected. If you have selected the varying levels of "
@@ -487,113 +479,43 @@ msgid ""
 "represent you and the person will be the color of the marbles in the "
 "currently set theme."
 msgstr ""
-"Les libellé décrivant les joueurs affichés dans les <app>scores</app> "
-"changent selon l'adversaire et le thème sélectionné. Si vous avez "
-"sélectionner comme adversaire l'ordinateur, vous verrez les libellés "
+"Les libellés décrivant les joueurs affichés dans les <app>scores</app> "
+"changent selon l’adversaire et le thème sélectionné. Si vous avez "
+"sélectionné l’ordinateur comme adversaire, vous verrez les libellés "
 "<gui>Vous</gui> et <gui>Moi</gui>. Si vous jouez contre une autre personne, "
 "les libellés vous représentant seront la couleur des billes du thème "
 "sélectionné."
 
 #. (itstool) path: info/desc
-#: C/sound-animation.page:21
-msgid "Play <app>Four-in-a-row</app> without sounds or animation."
-msgstr "Jouer à <app>Quatre-à-la-suite</app> sans sons ni animation."
+#: C/sound-animation.page:23
+msgid "Play <app>Four-in-a-row</app> without sounds."
+msgstr "Jouer à <app>Quatre-à-la-suite</app> sans les sons."
 
 #. (itstool) path: page/title
-#: C/sound-animation.page:24
-msgid "Disable sounds or animation"
-msgstr "Désactivation des sons ou de l'animation"
+#: C/sound-animation.page:26
+msgid "Disable sounds"
+msgstr "Désactiver les sons"
 
-#. (itstool) path: section/title
-#: C/sound-animation.page:27
-msgid "Sounds"
-msgstr "Les sons"
-
-#. (itstool) path: section/p
-#: C/sound-animation.page:29
+#. (itstool) path: page/p
+#: C/sound-animation.page:28
 msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
 msgstr ""
-"Quand les sons sont activés, vous entendez quelque-chose chaque fois qu'une "
-"bille est déposée, ou qu'une partie se termine."
+"Quand les sons sont activés, vous entendez quelque chose chaque fois qu’une "
+"bille est déposée, ou qu’une partie se termine."
 
 #. (itstool) path: steps/title
-#: C/sound-animation.page:33
+#: C/sound-animation.page:32
 msgid "To disable sounds:"
 msgstr "Pour désactiver les sons :"
 
 #. (itstool) path: item/p
-#: C/sound-animation.page:40
+#: C/sound-animation.page:39
 msgid ""
 "Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
 "option again to enable the feature."
 msgstr ""
 "Décochez <gui style=\"checkbox\">Activer les sons</gui>. Vous pouvez cocher "
-"à nouveau l'option pour activer la fonction."
+"à nouveau l’option pour activer la fonction."
 
-#. (itstool) path: section/title
-#: C/sound-animation.page:47
-msgid "Animation"
-msgstr "L'animation"
-
-#. (itstool) path: section/p
-#: C/sound-animation.page:49
-msgid "Animation results in a more fluid movement of the marbles."
-msgstr "L'animation produit un mouvement plus fluide des billes."
-
-#. (itstool) path: steps/title
-#: C/sound-animation.page:52
-msgid "To disable animation:"
-msgstr "Pour désactiver l'animation :"
-
-#. (itstool) path: item/p
-#: C/sound-animation.page:59
-msgid ""
-"Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
-"option again to enable the feature."
-msgstr ""
-"Décocher <gui style=\"checkbox\">Activer les animations</gui>. Vous pouvez "
-"cocher à nouveau l'option pour activer la fonction."
-
-#. (itstool) path: p/link
-#: C/legal.xml:4
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr ""
-"Creative Commons Paternité-Partage des Conditions Initiales à l'Identique "
-"3.0 Unported."
-
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Cette œuvre est distribuée sous licence <_:link-1/>."
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
-#~ msgstr ""
-#~ "external ref='figures/logo.png' md5='88c47a548de8979ce6e6ea169b1e904f'"
-
-#~ msgid ""
-#~ "<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height="
-#~ "\"22\"> </media> Four-in-a-row"
-#~ msgstr ""
-#~ "<media type=\"image\" src=\"figures/logo.png\" width=\"22\" height="
-#~ "\"22\"> </media> Quatre-à-la-suite"
-
-#~ msgid "If you are playing against a friend, the number next to:"
-#~ msgstr "Si vous jouez  contre un ami, le nombre à côté de :"
-
-#~ msgid ""
-#~ "<gui>Red</gui> displays the number of games won by the player who was "
-#~ "controlling the red marbles."
-#~ msgstr ""
-#~ "<gui>Rouge</gui> affiche le nombre de parties gagnées par le joueur qui "
-#~ "jouait avec les billes rouges."
-
-#~ msgid ""
-#~ "<gui>Blue</gui> displays the number of games won by the player who was "
-#~ "controlling the blue marbles."
-#~ msgstr ""
-#~ "<gui>Bleu</gui> affiche le nombre de parties gagnées par le joueur qui "
-#~ "jouait avec les billes bleues."
