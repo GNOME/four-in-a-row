@@ -68,6 +68,6 @@ install_data(
         'sounds/reverse.ogg',
         'sounds/slide.ogg'
     ],
-    install_dir: join_paths(datadir, 'sounds')
+    install_dir: soundsdir
 )
 subdir('icons')
