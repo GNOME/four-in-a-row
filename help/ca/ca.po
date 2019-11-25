@@ -1,0 +1,495 @@
+# Translators:
+# Jaume Jorba. Correu particular <jaume.jorba@gmail.com>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-11-02 23:45+0000\n"
+"PO-Revision-Date: 2019-11-19 06:20+0000\n"
+"Last-Translator: Jaume Jorba <jaume.jorba@gmail.com>, 2019\n"
+"Language-Team: Catalan (https://www.transifex.com/softcatala/teams/62837/ca/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Jaume Jorba <jaume.jorba@gmail.com>, 2019"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:13 C/basics.page:15 C/choose-opponent.page:15
+#: C/controls-change.page:17 C/controls-default.page:16 C/index.page:12
+#: C/make-easy.page:15 C/scores.page:15 C/sound-animation.page:15
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#. (itstool) path: info/desc
+#: C/appearance.page:17
+msgid "Use different themes to improve your gaming experience."
+msgstr "Utilitzeu diferents temes per millorar la vostra experiència de joc."
+
+#. (itstool) path: page/title
+#: C/appearance.page:20
+msgid "Change the appearance of your gaming area"
+msgstr "Canvia l'aparença de la vostra àrea de joc"
+
+#. (itstool) path: page/p
+#: C/appearance.page:22
+msgid ""
+"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against"
+" a black grid when you start a new game."
+msgstr ""
+"De forma predeterminada, <app>Quatre en ratlla</app> utilitza boles "
+"vermelles i blaves contra una graella negra quan s'inicia una nova partida."
+
+#. (itstool) path: steps/title
+#: C/appearance.page:26
+msgid "To use a different theme:"
+msgstr "Per utilitzar un tema diferent:"
+
+#. (itstool) path: item/p
+#: C/appearance.page:28
+msgid ""
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui "
+"style=\"menuitem\">Game</gui></guiseq>."
+msgstr ""
+"Premeu el botó menú a la part superior dreta de la finestra i seleccioneu "
+"<guiseq><gui style=\"menu\">Preferències</gui> <gui "
+"style=\"menuitem\">Joc</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:33
+msgid ""
+"Pick the theme of your choice from the drop down menu to the right of <gui "
+"style=\"group\">Theme</gui>. The change will be reflected immediately in the"
+" game window."
+msgstr ""
+"Trieu un tema seleccionant-lo del menú desplegable a la dreta de <gui "
+"style=\"group\">Tema</gui>. El canvi es reflectirà immediatament a la "
+"finestra del joc."
+
+#. (itstool) path: info/desc
+#: C/basics.page:19
+msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
+msgstr "Iniciar juga i surt del joc <app>Quatre en ratlla</app>."
+
+#. (itstool) path: page/title
+#: C/basics.page:23
+msgid "Basic instructions"
+msgstr "Instruccions bàsiques"
+
+#. (itstool) path: section/title
+#: C/basics.page:26
+msgid "Start a new game"
+msgstr "Iniciar una nova partida"
+
+#. (itstool) path: section/p
+#: C/basics.page:28
+msgid ""
+"Press <gui style=\"button\">Start Over</gui> or press "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
+msgstr ""
+"Premeu <gui style=\"button\">Reiniciar</gui> o premeu "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> per començar una partida nova."
+
+#. (itstool) path: section/title
+#: C/basics.page:35
+msgid "Quit <app>Four-in-a-row</app>"
+msgstr "Sortir <app>Quatre en ratlla</app>"
+
+#. (itstool) path: section/p
+#: C/basics.page:37
+msgid ""
+"Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-"
+"in-a-row</app> at any time."
+msgstr ""
+"Premeu <keyseq><key>Ctrl</key><key>Q</key></keyseq> per sortir <app>Quatre-"
+"en-ratlla</app> en qualsevol moment."
+
+#. (itstool) path: credit/name
+#: C/choose-opponent.page:19 C/sound-animation.page:19
+msgid "Michael Hill"
+msgstr "Michael Hill"
+
+#. (itstool) path: info/desc
+#: C/choose-opponent.page:23
+msgid "Change the level at which the computer plays or play with a friend."
+msgstr "Canviar el nivell amb el que l'ordinador juga o juga amb un amic."
+
+#. (itstool) path: page/title
+#: C/choose-opponent.page:27
+msgid "Choose a different opponent"
+msgstr "Triar un adversari diferent"
+
+#. (itstool) path: page/p
+#: C/choose-opponent.page:28
+msgid ""
+"By default, your opponent in <app>Four-in-a-row</app> is the computer, "
+"playing at level one."
+msgstr ""
+"Predeterminadament, el vostre oponent <app>Quatre en ratlla</app> és "
+"l'ordinador, que juga a nivell 1."
+
+#. (itstool) path: steps/title
+#: C/choose-opponent.page:32
+msgid "To change the level, or to play with a friend:"
+msgstr "Per canviar el nivell, o per jugar amb un amic:"
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:34 C/sound-animation.page:34
+msgid ""
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui "
+"style=\"menuitem\">Game</gui></guiseq>."
+msgstr ""
+"Premeu el botó de menú a la part superior dreta de la finestra i seleccioneu"
+" <guiseq><gui style=\"menuitem\">Preferències</gui> <gui "
+"style=\"menuitem\">Joc</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:39
+msgid ""
+"Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for"
+" both players if want to play with a friend or family member."
+msgstr ""
+"A <gui>Oponent</gui>, trieu <gui style=\"radiobutton\">Humà</gui> per ambdós"
+" jugadors si voleu jugar amb un amic o un familiar."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:41
+msgid ""
+"Alternatively, choose the level at which the computer plays. Choose between "
+"<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level"
+" two</gui> or <gui style=\"radiobutton\">Level three</gui>, where <gui "
+"style=\"radiobutton\">Level one</gui> is the easiest level and <gui "
+"style=\"radiobutton\">Level three</gui> is the most difficult level."
+msgstr ""
+"També podeu triar el nivell al qual juga l'ordinador. Trieu entre <gui "
+"style=\"radiobutton\">Nivell 1</gui>, <gui style=\"radiobutton\">Nivell "
+"2</gui> o <gui style=\"radiobutton\">Nivell 3</gui>, on el <gui "
+"style=\"radiobutton\">Nivell 1</gui> és el més senzill i el <gui "
+"style=\"radiobutton\">Nivell 3</gui> és el més difícil."
+
+#. (itstool) path: note/p
+#: C/choose-opponent.page:49
+msgid ""
+"If you are playing with a friend or family member, Player One gets to play "
+"first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
+"the chance to play first is given alternately to each player. So, Player Two"
+" will get to play first in the second game, Player One can play first in the"
+" third game and so on."
+msgstr ""
+"Si esteu jugant amb un amic o membre de la família, el jugador un jugarà "
+"primer el primer joc de <app>Quatre en ratlla</app>. En els jocs posteriors,"
+" la possibilitat de jugar primer es dóna alternativament a cada jugador. Per"
+" tant, el jugador dos arribarà a jugar primer al segon joc; el jugador "
+"primer pot jugar primer al tercer joc, etc."
+
+#. (itstool) path: info/desc
+#: C/controls-change.page:21
+msgid "Set custom control keys."
+msgstr "Personalitzar el comportament predefinit de les tecles."
+
+#. (itstool) path: page/title
+#: C/controls-change.page:24
+msgid "Change the default controls"
+msgstr "Canviar els controls per defecte"
+
+#. (itstool) path: page/p
+#: C/controls-change.page:26
+msgid ""
+"To change the <link xref=\"controls-default\">default controls</link> in "
+"<app>Four-in-a-row</app>:"
+msgstr ""
+"Per canviar els <link xref=\"controls-default\">controls "
+"predeterminats</link> a <app>Quatre en ratlla</app>:"
+
+#. (itstool) path: item/p
+#: C/controls-change.page:31
+msgid ""
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui "
+"style=\"menuitem\">Keyboard Controls</gui></guiseq>."
+msgstr ""
+"Premeu el botó menú a la part superior dreta de la finestra i seleccioneu "
+"<guiseq><gui style=\"menu\">Preferències</gui> <gui "
+"style=\"menuitem\">Controls per teclat</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:36
+msgid ""
+"In the list, select the line you want to change, then click on the control. "
+"The line is highlighted and the label of the control changes to <gui>New "
+"accelerator…</gui>"
+msgstr ""
+"A la llista, seleccioneu la línia que voleu canviar i, a continuació, feu "
+"clic al control. La línia està ressaltada i l'etiqueta del control canvia a "
+"<gui>Nova drecera…</gui>"
+
+#. (itstool) path: item/p
+#: C/controls-change.page:41
+msgid "Press the key you want to use instead of the default key."
+msgstr ""
+"Premeu la tecla que voleu utilitzar en lloc de la tecla predeterminada."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:43
+msgid ""
+"To keep the old setting, click again or right click on <gui>New "
+"accelerator…</gui>, press <key>Esc</key>."
+msgstr ""
+"Per mantenir la configuració antiga, feu clic de nou o feu clic dret "
+"sobre<gui>Nova drecera…</gui>,i premeu <key>Esc</key>."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:50
+msgid ""
+"When you are playing with a friend or a family member, both players will use"
+" the same controls."
+msgstr ""
+"Quan jugueu amb un amic o un membre de la família, ambdós jugadors faran "
+"servir els mateixos controls."
+
+#. (itstool) path: info/desc
+#: C/controls-default.page:20
+msgid "Default controls for <app>Four-in-a-row</app>."
+msgstr "Controls predeterminats <app>Quatre en ratlla</app>."
+
+#. (itstool) path: page/title
+#: C/controls-default.page:23
+msgid "Controls"
+msgstr "Controls"
+
+#. (itstool) path: page/p
+#: C/controls-default.page:25
+msgid ""
+"You can use your mouse and click on a particular row in the game area to "
+"drop your marble into that row. If you want to use the keyboard instead, the"
+" default keys for <app>Four-in-a-row</app> are:"
+msgstr ""
+"Podeu fer servir el ratolí i fer clic sobre una fila en concret a l'àrea de "
+"joc per deixar la bola en la fila. Si voleu utilitzar el teclat en canvi, "
+"les tecles predeterminades són <app>Quatre en ratlla</app>:"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:31
+msgid "<key>←</key> to move the marble to your left."
+msgstr "<key>←</key> per moure una bala cap a l'esquerra"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:34
+msgid "<key>→</key> to move the marble to your right."
+msgstr "<key>→</key> per moure una bala cap a la dreta."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:37
+msgid "<key>↓</key> to drop the marble."
+msgstr "<key>↓</key> per arrossegar una bala."
+
+#. (itstool) path: info/desc
+#: C/index.page:16
+msgid "Index"
+msgstr "Índex"
+
+#. (itstool) path: page/title
+#: C/index.page:19
+msgid "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
+msgstr "<_:media-1/><span its:translate=\"yes\"> Quatre en ratlla</span>"
+
+#. (itstool) path: page/p
+#: C/index.page:22
+msgid ""
+"<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
+"is to stack four of your marbles in a horizontal, vertical or diagonal line "
+"while stopping your opponent from doing the same with their marbles."
+msgstr ""
+"<app>Quatre en ratlla</app> és un joc d'estratègia per a GNOME. L'objectiu "
+"del joc és apilar quatre de les seves boles en una línia horitzontal, "
+"vertical o diagonal, mentre que l'oponent ha de fer el mateix amb les seves "
+"boles."
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "Game play"
+msgstr "Jugar"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Preferences"
+msgstr "Preferències"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Atribució Compartir Igual 3.0 Llicència no portada"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Aquest treball està llicenciat sota <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/make-easy.page:19
+msgid "Use hints or undo your wrong moves."
+msgstr "Utilitzeu consells o anul·leu els moviments incorrectes."
+
+#. (itstool) path: page/title
+#: C/make-easy.page:22
+msgid "Make your game a little easier"
+msgstr "Fer el joc una mica més fàcil"
+
+#. (itstool) path: section/title
+#: C/make-easy.page:25
+msgid "Change your last move"
+msgstr "Canvieu el vostra darrer moviment"
+
+#. (itstool) path: section/p
+#: C/make-easy.page:27
+msgid ""
+"When the computer makes a winning move because of your last move or when you"
+" accidentally make the wrong move, you can undo your last move and change "
+"it. To undo your last move, press the <gui style=\"button\">Undo your most "
+"recent move</gui> button in the header bar or press "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble "
+"at a different row in the game area to change your move."
+msgstr ""
+"Quan l'ordinador fa un moviment guanyador a causa del vostre darrer moviment"
+" o quan accidentalment feu un moviment equivocat, pot desfer-lo i canviar-"
+"lo. Per desfer l'última jugada, premi el </gui> botó a la capçalera o premi "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Ara pot moure la seva bola a "
+"una fila diferent de l'àrea de joc per tal de canviar el seu moviment."
+
+#. (itstool) path: note/p
+#: C/make-easy.page:35
+msgid ""
+"You can undo all your moves starting from your current move until you reach "
+"a favourable state of the game, or until the beginning of your current game,"
+" by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
+msgstr ""
+"Podeu desfer tots els vostres moviments a partir del moviment actual fins "
+"que arribeu a un estat de joc favorable o fins al començament del joc, "
+"prement <keyseq><key>Ctrl</key><key>Z</key></keyseq> repetidament."
+
+#. (itstool) path: section/title
+#: C/make-easy.page:43
+msgid "Use hints"
+msgstr "Utilitza suggeriments"
+
+#. (itstool) path: section/p
+#: C/make-easy.page:45
+msgid ""
+"If you are not sure of your next move, you can use a hint. When you use a "
+"hint, your marble moves to the top of the column that is the best choice, "
+"strategy-wise, and blinks. You can then drop your marble into that column. "
+"To use a hint, press <gui style=\"button\">Hint</gui> or "
+"<keyseq><key>Ctrl</key><key>H</key></keyseq>."
+msgstr ""
+"Si no esteu segur del següent moviment, podeu utilitzar un suggeriment. Quan"
+" l'utilitzeu, la vostra bola es desplaça a la part superior de la columna "
+"amb la millor opció, strategy-wise i parpelleja. A continuació, podeu deixar"
+" caure la bola en aquella columna. Per utilitzar un suggeriment, premeu <gui"
+" style=\"button\">Suggeriment</gui> o "
+"<keyseq><key>Ctrl</key><key>H</key></keyseq>."
+
+#. (itstool) path: note/p
+#: C/make-easy.page:51
+msgid "There is no limit on the number of hints you can use in a game."
+msgstr "No hi ha límit en el nombre de suggeriments que podeu utilitzar."
+
+#. (itstool) path: credit/name
+#: C/scores.page:20
+msgid "Anna Philips"
+msgstr "Anna Philips"
+
+#. (itstool) path: info/desc
+#: C/scores.page:24
+msgid "Keep track of your wins and losses."
+msgstr "Feu un seguiment de les vostres victòries i derrotes."
+
+#. (itstool) path: page/title
+#: C/scores.page:27
+msgid "Scores"
+msgstr "Marcadors"
+
+#. (itstool) path: page/p
+#: C/scores.page:28
+msgid ""
+"The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
+"your opponent's wins and games that ended in a draw. To check the scores, "
+"press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
+msgstr ""
+"El marcador a <app>Quatre en ratlla</app> es registra en termes de "
+"victòries, de victòries del rival i de jocs que han acabat en taules. Per "
+"comprovar les puntuacions, premeu el botó de menú a l'extrem superior dret "
+"de la finestra i seleccioneu <gui style=\"menuitem\">Marcadors</gui>. Al "
+"tema predeterminat:"
+
+#. (itstool) path: item/p
+#: C/scores.page:35
+msgid "<gui>Red</gui> displays the number of games you have won."
+msgstr "<gui>Vermell</gui> mostra el nombre de jocs que heu guanyat."
+
+#. (itstool) path: item/p
+#: C/scores.page:38
+msgid "<gui>Green</gui> displays the number of games won by the opponent."
+msgstr "<gui>Verd</gui> mostra el nombre de jocs que heu perdut. "
+
+#. (itstool) path: item/p
+#: C/scores.page:41
+msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
+msgstr "<gui>Taules</gui> mostra el nombre de partides acabades en taules."
+
+#. (itstool) path: note/p
+#: C/scores.page:46
+msgid ""
+"The labels to represent players shown in <app>Scores</app> change based on "
+"opponent and theme selected. If you have selected the varying levels of "
+"computer as your opponent, then you will see the labels <gui>You</gui> and "
+"<gui>Me</gui>. If you are playing against another person, then the labels to"
+" represent you and the person will be the color of the marbles in the "
+"currently set theme."
+msgstr ""
+"Les etiquetes que representen els jugadors que es mostren a "
+"<app>Marcadors</app> canvien segons l'oponent i tema seleccionat. Si heu "
+"seleccionat els diferents nivells de l'ordinador com a oponent, veureu les "
+"etiquetes <gui>Vostè</gui> i <gui>Jo</gui>. Si esteu jugant contra una altra"
+" persona, aleshores les etiquetes que us representin tindran el color de les"
+" boles al tema actualment establert."
+
+#. (itstool) path: info/desc
+#: C/sound-animation.page:23
+msgid "Play <app>Four-in-a-row</app> without sounds."
+msgstr "Jugar a <app>Quatre en ratlla</app> sense so."
+
+#. (itstool) path: page/title
+#: C/sound-animation.page:26
+msgid "Disable sounds"
+msgstr "Inhabilitar el so"
+
+#. (itstool) path: page/p
+#: C/sound-animation.page:28
+msgid ""
+"When sounds are enabled, you will hear something every time a marble is "
+"dropped, or when a game ends."
+msgstr ""
+"Quan els sons estan activats, sentireu alguna cosa cada cop que es caigui "
+"una bola o quan s'acabi un joc."
+
+#. (itstool) path: steps/title
+#: C/sound-animation.page:32
+msgid "To disable sounds:"
+msgstr "Per desactivar el so:"
+
+#. (itstool) path: item/p
+#: C/sound-animation.page:39
+msgid ""
+"Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
+"option again to enable the feature."
+msgstr ""
+"Desmarqueu <gui style=\"checkbox\">Habilita el so</gui>. Podeu tornar a marcar"
+" l'opció per activar la funcionalitat de nou."
