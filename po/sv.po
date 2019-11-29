@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-02-06 19:28+0000\n"
-"PO-Revision-Date: 2019-02-07 22:19+0100\n"
+"POT-Creation-Date: 2019-09-27 22:19+0000\n"
+"PO-Revision-Date: 2019-11-29 14:41+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,31 +20,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
-#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/ui/four-in-a-row.ui:8 data/ui/four-in-a-row.ui:13
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:7
 #: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
 msgstr "Fyra-i-rad"
 
-#: data/four-in-a-row.ui:22
+#: data/ui/four-in-a-row.ui:22
 msgid "Undo your most recent move"
 msgstr "Ångra ditt senaste drag"
 
-#: data/four-in-a-row.ui:99
+#: data/ui/four-in-a-row.ui:99
 msgid "_Hint"
 msgstr "_Tips"
 
-#: data/four-in-a-row.ui:105
+#: data/ui/four-in-a-row.ui:105
 msgid "Receive a hint for your next move"
 msgstr "Få ett tips angående ditt nästa drag"
 
-#: data/four-in-a-row.ui:118
+#: data/ui/four-in-a-row.ui:118
 msgid "_Start Over"
 msgstr "_Börja om"
 
-#: data/four-in-a-row.ui:124
+#: data/ui/four-in-a-row.ui:124
 msgid "Start a new game"
 msgstr "Starta ett nytt spel"
 
@@ -77,12 +77,6 @@ msgstr ""
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
-msgid "org.gnome.Four-in-a-row"
-msgstr "org.gnome.Four-in-a-row"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
@@ -98,76 +92,76 @@ msgid ""
 "player."
 msgstr "Noll är mänsklig, ett till tre motsvarar nivån för datorspelaren."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "Theme ID"
 msgstr "Tema-ID"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:11
+#: data/org.gnome.Four-in-a-row.gschema.xml:12
 msgid "A number specifying the preferred theme."
 msgstr "Ett tal som anger det tema som föredras."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:15
+#: data/org.gnome.Four-in-a-row.gschema.xml:16 src/four-in-a-row.vala:773
 msgid "Sound"
 msgstr "Ljud"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:16
+#: data/org.gnome.Four-in-a-row.gschema.xml:17
 msgid "Whether or not to play event sounds."
 msgstr "Huruvida händelseljud ska spelas eller inte."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#: data/org.gnome.Four-in-a-row.gschema.xml:21 src/prefs-box.vala:97
 msgid "Move left"
 msgstr "Flytta vänster"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:21
+#: data/org.gnome.Four-in-a-row.gschema.xml:22
 msgid "Key press to move left."
 msgstr "Tangenttryck för att flytta till vänster."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#: data/org.gnome.Four-in-a-row.gschema.xml:26 src/prefs-box.vala:98
 msgid "Move right"
 msgstr "Flytta höger"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:26
+#: data/org.gnome.Four-in-a-row.gschema.xml:27
 msgid "Key press to move right."
 msgstr "Tangenttryck för att flytta till höger."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#: data/org.gnome.Four-in-a-row.gschema.xml:31 src/prefs-box.vala:99
 msgid "Drop marble"
 msgstr "Släpp kula"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:31
+#: data/org.gnome.Four-in-a-row.gschema.xml:32
 msgid "Key press to drop a marble."
 msgstr "Tangenttryck för att släppa en kula."
 
-#: src/four-in-a-row.vala:248
+#: src/four-in-a-row.vala:286
 msgid "It’s a draw!"
 msgstr "Det är oavgjort!"
 
-#: src/four-in-a-row.vala:256
+#: src/four-in-a-row.vala:296
 msgid "You win!"
 msgstr "Du vinner!"
 
-#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
+#: src/four-in-a-row.vala:298 src/four-in-a-row.vala:319
 msgid "Your Turn"
 msgstr "Ditt drag"
 
-#: src/four-in-a-row.vala:261
+#: src/four-in-a-row.vala:303
 msgid "I win!"
 msgstr "Jag vinner!"
 
-#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
+#: src/four-in-a-row.vala:305 src/four-in-a-row.vala:516
 msgid "I’m Thinking…"
 msgstr "Jag tänker…"
 
-#: src/four-in-a-row.vala:515
+#: src/four-in-a-row.vala:530
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Tips: Kolumn %d"
 
-#: src/four-in-a-row.vala:660
+#: src/four-in-a-row.vala:689
 msgid "Connect four in a row to win"
 msgstr "Koppla ihop fyra i en rad för att vinna"
 
-#: src/four-in-a-row.vala:664
+#: src/four-in-a-row.vala:693
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -180,166 +174,174 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/four-in-a-row.vala:740
+#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:771
+msgid "A_ppearance"
+msgstr "_Utseende"
+
+#: src/four-in-a-row.vala:778
 msgid "_Scores"
 msgstr "_Poänglista"
 
-#: src/four-in-a-row.vala:743
+#: src/four-in-a-row.vala:783
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: src/four-in-a-row.vala:744
+#: src/four-in-a-row.vala:784
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: src/four-in-a-row.vala:745
+#: src/four-in-a-row.vala:785
 msgid "_About Four-in-a-row"
 msgstr "_Om Fyra-i-rad"
 
-#: src/games-controls-list.vala:154
+#: src/games-controls-list.vala:156
 msgid "This key is already in use."
 msgstr "Denna tangent används redan."
 
-#: src/games-controls-list.vala:175
+#: src/games-controls-list.vala:177
 msgid "Unknown Command"
 msgstr "Okänt kommando"
 
-#: src/prefs-box.vala:36
+#: src/prefs-box.vala:41
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: src/prefs-box.vala:53
+#: src/prefs-box.vala:58
 msgid "Game"
 msgstr "Spel"
 
-#: src/prefs-box.vala:56
+#: src/prefs-box.vala:61
 msgid "Opponent:"
 msgstr "Motståndare:"
 
-#: src/prefs-box.vala:67
+#: src/prefs-box.vala:74
 msgid "Human"
 msgstr "Mänsklig"
 
-#: src/prefs-box.vala:71
+#: src/prefs-box.vala:78
 msgid "Level one"
 msgstr "Nivå ett"
 
-#: src/prefs-box.vala:75
+#: src/prefs-box.vala:82
 msgid "Level two"
 msgstr "Nivå två"
 
-#: src/prefs-box.vala:79
+#: src/prefs-box.vala:86
 msgid "Level three"
 msgstr "Nivå tre"
 
-#: src/prefs-box.vala:86
-msgid "_Theme:"
-msgstr "_Tema:"
-
-#: src/prefs-box.vala:98
-msgid "E_nable sounds"
-msgstr "Ak_tivera ljud"
-
 #. keyboard tab
-#: src/prefs-box.vala:102
+#: src/prefs-box.vala:94
 msgid "Keyboard Controls"
 msgstr "Tangentbordsstyrning"
 
-#: src/scorebox.vala:28
+#: src/scorebox.vala:29
 msgid "Scores"
 msgstr "Poäng"
 
-#: src/scorebox.vala:74
+#: src/scorebox.vala:76
 msgid "Drawn:"
 msgstr "Oavgjort:"
 
-#: src/scorebox.vala:96 src/scorebox.vala:99
+#. FIXME shouldn't it be Player1&Player2?
+#: src/scorebox.vala:99 src/scorebox.vala:102
 msgid "You:"
 msgstr "Du:"
 
-#: src/scorebox.vala:97 src/scorebox.vala:100
+#: src/scorebox.vala:100 src/scorebox.vala:103
 msgid "Me:"
 msgstr "Jag:"
 
-#: src/theme.vala:65
+#: src/theme.vala:66
 msgid "High Contrast"
 msgstr "Hög kontrast"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle"
 msgstr "Cirkel"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross"
 msgstr "Kryss"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle wins!"
 msgstr "Cirkel vinner!"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross wins!"
 msgstr "Kryss vinner!"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:72 src/theme.vala:81
 msgid "Circle’s turn"
 msgstr "Cirkel vid draget"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:72 src/theme.vala:81
 msgid "Cross’s turn"
 msgstr "Kryss vid draget"
 
-#: src/theme.vala:74
+#: src/theme.vala:75
 msgid "High Contrast Inverse"
 msgstr "Hög kontrast inverterat"
 
-#: src/theme.vala:83
+#: src/theme.vala:84
 msgid "Red and Green Marbles"
 msgstr "Röda och gröna kulor"
 
-#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red"
 msgstr "Röd"
 
-#: src/theme.vala:87 src/theme.vala:105
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green"
 msgstr "Grön"
 
-#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red wins!"
 msgstr "Röd vinner!"
 
-#: src/theme.vala:88 src/theme.vala:106
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green wins!"
 msgstr "Grön vinner!"
 
-#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
+#: src/theme.vala:90 src/theme.vala:99 src/theme.vala:108
 msgid "Red’s turn"
 msgstr "Röd vid draget"
 
-#: src/theme.vala:89 src/theme.vala:107
+#: src/theme.vala:90 src/theme.vala:108
 msgid "Green’s turn"
 msgstr "Grön vid draget"
 
-#: src/theme.vala:92
+#: src/theme.vala:93
 msgid "Blue and Red Marbles"
 msgstr "Blåa och röda kulor"
 
-#: src/theme.vala:96
+#: src/theme.vala:97
 msgid "Blue"
 msgstr "Blå"
 
-#: src/theme.vala:97
+#: src/theme.vala:98
 msgid "Blue wins!"
 msgstr "Blå vinner!"
 
-#: src/theme.vala:98
+#: src/theme.vala:99
 msgid "Blue’s turn"
 msgstr "Blå vid draget"
 
-#: src/theme.vala:101
+#: src/theme.vala:102
 msgid "Stars and Rings"
 msgstr "Stjärnor och ringar"
+
+#~| msgid "Four-in-a-row"
+#~ msgid "org.gnome.Four-in-a-row"
+#~ msgstr "org.gnome.Four-in-a-row"
+
+#~ msgid "_Theme:"
+#~ msgstr "_Tema:"
+
+#~ msgid "E_nable sounds"
+#~ msgstr "Ak_tivera ljud"
 
 #~ msgid "four-in-a-row"
 #~ msgstr "four-in-a-row"
