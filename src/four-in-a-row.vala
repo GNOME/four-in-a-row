@@ -142,7 +142,7 @@ class FourInARow : Gtk.Application {
         set_accels_for_action("app.hint", {"<Primary>h"});
         set_accels_for_action("app.undo-move", {"<Primary>z"});
         set_accels_for_action("app.quit", {"<Primary>q"});
-        set_accels_for_action("app.contents", {"F1"});
+        set_accels_for_action("app.help", {"F1"});
 
         add_action_entries(app_entries, this);
     }
