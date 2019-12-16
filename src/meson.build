@@ -22,6 +22,7 @@ sources = files(
     'four-in-a-row.vala',
     'game-board-view.vala',
     'game-board.vala',
+    'game-window.vala',
     'games-controls-list.vala',
     'prefs-box.vala',
     'prefs.vala',

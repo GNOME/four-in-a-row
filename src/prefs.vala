@@ -23,8 +23,6 @@ private class Prefs : Object
     internal Settings settings;
 
     [CCode (notify = true)]  internal int theme_id       { internal get; internal set; }
-
-    internal Level level [2];
     [CCode (notify = false)] internal int keypress_drop  { internal get; internal set; }
     [CCode (notify = false)] internal int keypress_right { internal get; internal set; }
     [CCode (notify = false)] internal int keypress_left  { internal get; internal set; }
@@ -37,22 +35,10 @@ private class Prefs : Object
     internal Prefs ()
     {
         settings = new GLib.Settings ("org.gnome.Four-in-a-row");
-        level [PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
-        level [PlayerID.PLAYER2] = (Level) settings.get_int ("opponent");
 
         settings.bind ("theme-id",  this, "theme-id",       SettingsBindFlags.DEFAULT);
         settings.bind ("key-drop",  this, "keypress_drop",  SettingsBindFlags.DEFAULT);
         settings.bind ("key-right", this, "keypress_right", SettingsBindFlags.DEFAULT);
         settings.bind ("key-left",  this, "keypress_left",  SettingsBindFlags.DEFAULT);
-    }
-
-    internal int get_n_human_players ()
-    {
-        if (level [PlayerID.PLAYER1] != Level.HUMAN && level [PlayerID.PLAYER2] != Level.HUMAN)
-            assert_not_reached ();
-        if (level [PlayerID.PLAYER1] != Level.HUMAN || level [PlayerID.PLAYER2] != Level.HUMAN)
-            return 1;
-        else
-            return 2;
     }
 }

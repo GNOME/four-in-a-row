@@ -89,24 +89,28 @@ private class Scorebox : Dialog {
      *
      * updates the scorebox with the latest scores
      */
-    internal void update(int[] scores) {
-        if (Prefs.instance.get_n_human_players() == 1) {
-            if (Prefs.instance.level[PlayerID.PLAYER1] == Level.HUMAN) {    // FIXME shouldn't it be Player1&Player2?
+    internal void update(int[] scores, bool one_player_game) {
+        if (one_player_game) {
+            if (scores[PlayerID.PLAYER1] >= scores[PlayerID.PLAYER2]) {
+                label_name[0].set_text(_("You:"));
+                label_name[1].set_text(_("Me:"));
 
-
-
-                label_name[PlayerID.PLAYER1].set_text(_("You:"));
-                label_name[PlayerID.PLAYER2].label = _("Me:");
+                label_score[0].label = scores[PlayerID.PLAYER1].to_string();
+                label_score[1].label = scores[PlayerID.PLAYER2].to_string();
             } else {
-                label_name[PlayerID.PLAYER2].set_text(_("You:"));
-                label_name[PlayerID.PLAYER1].label = _("Me:");
+                label_name[0].set_text(_("Me:"));
+                label_name[1].set_text(_("You:"));
+
+                label_score[0].label = scores[1].to_string();
+                label_score[1].label = scores[0].to_string();
             }
         } else {
-            label_name[PlayerID.PLAYER1].label = theme_get_player(PlayerID.PLAYER1);
-            label_name[PlayerID.PLAYER2].label = theme_get_player(PlayerID.PLAYER2);
+            label_name[0].label = theme_get_player(PlayerID.PLAYER1);    // FIXME missing ":" at end
+            label_name[1].label = theme_get_player(PlayerID.PLAYER2);    // idem
+
+            label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
+            label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();
         }
-        label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
-        label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();
         label_score[PlayerID.NOBODY].label  = scores[PlayerID.NOBODY].to_string();
 
     }

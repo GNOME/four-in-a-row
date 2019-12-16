@@ -1,36 +1,88 @@
 <schemalist>
+  <enum id="org.gnome.Four-in-a-row.first-player">
+    <value value="0" nick="human"/>
+    <value value="1" nick="computer"/>
+  </enum>
+
   <schema id="org.gnome.Four-in-a-row" path="/org/gnome/Four-in-a-row/" gettext-domain="four-in-a-row">
-    <key name="opponent" type="i">
-      <range min="0" max="3"/>
+    <key name="first-player" enum="org.gnome.Four-in-a-row.first-player">
+      <default>'human'</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player' -->
+      <summary>Who starts</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player' -->
+      <description>Specifies who will start the next one-player game. Ignored for two-player games.</description>
+    </key>
+    <key name="num-players" type="i">
       <default>1</default>
+      <range min="1" max="2" />
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players' -->
+      <summary>Number of players</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players' -->
+    </key>
+    <key name="opponent" type="i">
+      <range min="1" max="3"/>
+      <default>1</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent' -->
       <summary>Opponent</summary>
-      <description>Zero is human; one through three correspond to the level of the computer player.</description>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent' -->
+      <description>From 1, the easiest, to 3, the hardest. Ignored for two-player games.</description>
     </key>
     <key name="theme-id" type="i">
       <default>4</default>
       <range min="0" max="4"/>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id' -->
       <summary>Theme ID</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id' -->
       <description>A number specifying the preferred theme.</description>
     </key>
     <key name="sound" type="b">
       <default>true</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound' -->
       <summary>Sound</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound' -->
       <description>Whether or not to play event sounds.</description>
     </key>
     <key name="key-left" type="i">
       <default>65361</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left' -->
       <summary>Move left</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left' -->
       <description>Key press to move left.</description>
     </key>
     <key name="key-right" type="i">
       <default>65363</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right' -->
       <summary>Move right</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right' -->
       <description>Key press to move right.</description>
     </key>
     <key name="key-drop" type="i">
       <default>65364</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop' -->
       <summary>Drop marble</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop' -->
       <description>Key press to drop a marble.</description>
+    </key>
+    <key name="window-width" type="i">
+      <default>675</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width' -->
+      <summary>The width of the window</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width' -->
+      <description>The width of the main window in pixels.</description>
+    </key>
+    <key name="window-height" type="i">
+      <default>550</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height' -->
+      <summary>The height of the window</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height' -->
+      <description>The height of the main window in pixels.</description>
+    </key>
+    <key name="window-is-maximized" type="b">
+      <default>false</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized' -->
+      <summary>A flag to enable maximized mode</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized' -->
+      <description>If “true”, the main window starts in maximized mode.</description>
     </key>
   </schema>
 </schemalist>

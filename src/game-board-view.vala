@@ -46,7 +46,7 @@ private class GameBoardView : Gtk.DrawingArea {
 
     private inline int get_column(int xpos) {
         /* Derive column from pixel position */
-        int c = xpos / tile_size;
+        int c = (xpos - board_x) / tile_size;
         if (c > 6)
             c = 6;
         if (c < 0)

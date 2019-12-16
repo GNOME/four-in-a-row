@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   This file is part of GNOME Four-in-a-row.
+
+   Copyright 2015, 2019 Arnaud Bonatti
+
+   GNOME Four-in-a-row is free software: you can redistribute it and/or
+   modify it under the terms of the GNU General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   GNOME Four-in-a-row is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<interface>
+  <requires lib="gtk+" version="3.12"/>
+  <object class="GtkBox" id="new-game-screen">
+    <property name="orientation">vertical</property>
+    <property name="visible">True</property>
+    <property name="homogeneous">True</property>
+    <property name="valign">fill</property>
+    <property name="spacing">18</property>
+    <property name="margin-bottom">25</property><!-- TODO better -->
+    <property name="height-request">263</property>
+    <property name="width-request">400</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="visible">True</property>
+        <property name="spacing">6</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="halign">start</property>
+            <!-- Translators: when configuring a new game, header of the row for choosing the number of players -->
+            <property name="label" translatable="yes">Players</property>
+            <style>
+              <class name="bold-label"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkModelButton">
+                <property name="visible">True</property>
+                <property name="use_underline">True</property>
+                <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
+                <property name="text" translatable="yes">_One</property>
+                <property name="action-name">app.num-players</property>
+                <property name="action-target">1</property>
+                <property name="iconic">True</property>
+                <property name="centered">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkModelButton">
+                <property name="visible">True</property>
+                <property name="use_underline">True</property>
+                <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
+                <property name="text" translatable="yes">_Two</property>
+                <property name="action-name">app.num-players</property>
+                <property name="action-target">2</property>
+                <property name="iconic">True</property>
+                <property name="centered">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="visible">True</property>
+        <property name="spacing">6</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="halign">start</property>
+            <!-- Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence -->
+            <property name="label" translatable="yes">Difficulty</property>
+            <style>
+              <class name="bold-label"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="difficulty-box">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkModelButton">
+                <property name="visible">True</property>
+                <property name="use_underline">True</property>
+                <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt) -->
+                <property name="text" translatable="yes">_Easy</property>
+                <property name="action-name">app.opponent</property>
+                <property name="action-target">1</property>
+                <property name="iconic">True</property>
+                <property name="centered">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkModelButton">
+                <property name="visible">True</property>
+                <property name="use_underline">True</property>
+                <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt) -->
+                <property name="text" translatable="yes">_Medium</property>
+                <property name="action-name">app.opponent</property>
+                <property name="action-target">2</property>
+                <property name="iconic">True</property>
+                <property name="centered">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkModelButton">
+                <property name="visible">True</property>
+                <property name="use_underline">True</property>
+                <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt) -->
+                <property name="text" translatable="yes">_Hard</property>
+                <property name="action-name">app.opponent</property>
+                <property name="action-target">3</property>
+                <property name="iconic">True</property>
+                <property name="centered">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="visible">True</property>
+        <property name="spacing">6</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="halign">start</property>
+            <!-- Translators: when configuring a new game, header of the row for choosing whether to start or not -->
+            <property name="label" translatable="yes">Game start</property>
+            <style>
+              <class name="bold-label"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="start-box">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkModelButton">
+                <property name="visible">True</property>
+                <property name="use_underline">True</property>
+                <!-- Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt) -->
+                <property name="text" translatable="yes">Play _first</property>
+                <property name="action-name">app.first-player</property>
+                <property name="action-target">'human'</property>
+                <property name="iconic">True</property>
+                <property name="centered">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkModelButton">
+                <property name="visible">True</property>
+                <property name="use_underline">True</property>
+                <!-- Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt) -->
+                <property name="text" translatable="yes">Play _second</property>
+                <property name="action-name">app.first-player</property>
+                <property name="action-target">'computer'</property>
+                <property name="iconic">True</property>
+                <property name="centered">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
