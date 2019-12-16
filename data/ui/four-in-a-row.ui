@@ -18,31 +18,31 @@
 <interface>
   <requires lib="gtk+" version="3.12"/>
   <object class="GtkApplicationWindow" id="fiar-window">
-    <property name="can_focus">False</property>
-    <property name="border_width">25</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">25</property>
     <property name="title" translatable="yes">Four-in-a-row</property>
     <child type="titlebar">
       <object class="GtkHeaderBar" id="headerbar">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="title" translatable="yes">Four-in-a-row</property>
-        <property name="show_close_button">True</property>
+        <property name="show-close-button">True</property>
         <child>
           <object class="GtkButton">
             <property name="visible">True</property>
             <property name="sensitive">False</property>
-            <property name="can_focus">True</property>
-            <property name="focus_on_click">False</property>
-            <property name="receives_default">False</property>
-            <property name="tooltip_text" translatable="yes">Undo your most recent move</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">False</property>
+            <property name="tooltip-text" translatable="yes">Undo your most recent move</property>
             <property name="valign">center</property>
-            <property name="action_name">app.undo-move</property>
+            <property name="action-name">app.undo-move</property>
             <child>
               <object class="GtkImage">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="icon_name">edit-undo-symbolic</property>
-                <property name="icon_size">1</property>
+                <property name="can-focus">False</property>
+                <property name="icon-name">edit-undo-symbolic</property>
+                <property name="icon-size">1</property>
               </object>
             </child>
             <style>
@@ -53,20 +53,20 @@
         <child>
           <object class="GtkMenuButton" id="menu_button">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
             <accelerator key="F10" signal="activate"/>
             <child>
               <object class="GtkImage">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="icon_name">open-menu-symbolic</property>
-                <property name="icon_size">1</property>
+                <property name="can-focus">False</property>
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="icon-size">1</property>
               </object>
             </child>
           </object>
           <packing>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">1</property>
           </packing>
         </child>
@@ -75,23 +75,23 @@
     <child>
       <object class="GtkAspectFrame">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label_xalign">0</property>
-        <property name="shadow_type">none</property>
+        <property name="can-focus">False</property>
+        <property name="label-xalign">0</property>
+        <property name="shadow-type">none</property>
         <property name="ratio">1.3999999761581421</property>
-        <property name="obey_child">False</property>
+        <property name="obey-child">False</property>
         <child>
           <object class="GtkBox">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
+            <property name="can-focus">False</property>
             <property name="spacing">25</property>
             <child>
               <object class="GtkAspectFrame" id="frame">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label_xalign">0</property>
-                <property name="shadow_type">none</property>
-                <property name="obey_child">False</property>
+                <property name="can-focus">False</property>
+                <property name="label-xalign">0</property>
+                <property name="shadow-type">none</property>
+                <property name="obey-child">False</property>
                 <child>
                   <placeholder/>
                 </child>
@@ -105,22 +105,22 @@
             <child>
               <object class="GtkButtonBox">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="valign">end</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkButton">
                     <property name="label" translatable="yes">_Hint</property>
-                    <property name="width_request">120</property>
-                    <property name="height_request">60</property>
+                    <property name="width-request">120</property>
+                    <property name="height-request">60</property>
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="receives_default">False</property>
-                    <property name="tooltip_text" translatable="yes">Receive a hint for your next move</property>
+                    <property name="can-focus">False</property>
+                    <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Receive a hint for your next move</property>
                     <property name="valign">center</property>
-                    <property name="action_name">app.hint</property>
-                    <property name="use_underline">True</property>
+                    <property name="action-name">app.hint</property>
+                    <property name="use-underline">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -131,20 +131,20 @@
                 <child>
                   <object class="GtkButton">
                     <property name="label" translatable="yes">_Start Over</property>
-                    <property name="width_request">120</property>
-                    <property name="height_request">60</property>
+                    <property name="width-request">120</property>
+                    <property name="height-request">60</property>
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="receives_default">False</property>
-                    <property name="tooltip_text" translatable="yes">Start a new game</property>
+                    <property name="can-focus">False</property>
+                    <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Start a new game</property>
                     <property name="valign">center</property>
-                    <property name="action_name">app.new-game</property>
-                    <property name="use_underline">True</property>
+                    <property name="action-name">app.new-game</property>
+                    <property name="use-underline">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="pack_type">end</property>
+                    <property name="pack-type">end</property>
                     <property name="position">1</property>
                   </packing>
                 </child>
@@ -152,7 +152,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="pack_type">end</property>
+                <property name="pack-type">end</property>
                 <property name="position">1</property>
               </packing>
             </child>
