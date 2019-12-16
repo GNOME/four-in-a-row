@@ -44,9 +44,6 @@ private class Prefs : Object
         settings.bind ("key-drop",  this, "keypress_drop",  SettingsBindFlags.DEFAULT);
         settings.bind ("key-right", this, "keypress_right", SettingsBindFlags.DEFAULT);
         settings.bind ("key-left",  this, "keypress_left",  SettingsBindFlags.DEFAULT);
-
-        level [PlayerID.PLAYER1] = sane_player_level (level [PlayerID.PLAYER1]);
-        level [PlayerID.PLAYER2] = sane_player_level (level [PlayerID.PLAYER2]);
     }
 
     internal int get_n_human_players ()
@@ -57,14 +54,5 @@ private class Prefs : Object
             return 1;
         else
             return 2;
-    }
-
-    private static Level sane_player_level (Level val)
-    {
-        if (val < Level.HUMAN)
-            return Level.HUMAN;
-        if (val > Level.STRONG)
-            return Level.STRONG;
-        return val;
     }
 }
