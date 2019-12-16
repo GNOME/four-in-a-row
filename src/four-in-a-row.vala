@@ -52,32 +52,42 @@ private class FourInARow : Gtk.Application
         HINT
     }
 
+    // actions
     private SimpleAction hint_action;
     private SimpleAction undo_action;
     private SimpleAction new_game_action;
+
+    // game status
     private bool gameover;
     private bool player_active;
     private PlayerID player;
     private PlayerID winner;
     internal PlayerID who_starts;
-    private PrefsBox? prefsbox = null;
-    private Scorebox scorebox;
-    private GameBoardView game_board_view;
-    private Board game_board;
-    private ApplicationWindow window;
     /**
      * score:
      *
      * The scores for the current instance (Player 1, Player 2, Draw)
      */
     private int score [3];
-    private static AnimID anim;
+
+    // widgets
+    private PrefsBox? prefsbox = null;
+    private Scorebox scorebox;
+    private GameBoardView game_board_view;
+    private Board game_board;
+    private ApplicationWindow window;
+    private Button unfullscreen_button;
+
+    // game state
     private char vstr [53];
     private int moves;
     private int column;
     private int column_moveto;
     private int row;
     private int row_dropto;
+
+    // animation
+    private static AnimID anim;
     private int blink_r1 = 0;
     private int blink_c1 = 0;
     private int blink_r2 = 0;
@@ -89,11 +99,12 @@ private class FourInARow : Gtk.Application
 
     private const GLib.ActionEntry app_entries [] =  // see also add_actions()
     {
-        { "scores", on_game_scores },
-        { "quit", on_game_exit },
-        { "preferences", on_settings_preferences },
-        { "help", on_help_contents },
-        { "about", on_help_about }
+        { "unfullscreen",   on_unfullscreen         },
+        { "scores",         on_game_scores          },
+        { "quit",           on_game_exit            },
+        { "preferences",    on_settings_preferences },
+        { "help",           on_help_contents        },
+        { "about",          on_help_about           }
     };
 
     internal void game_reset ()
@@ -247,7 +258,7 @@ private class FourInARow : Gtk.Application
         if (window.is_visible ())
             return;
 
-        window.show_all ();
+        window.show ();
         game_board_view.refresh_pixmaps ();
         game_board_view.queue_draw ();
         scorebox.update (score);    /* update visible player descriptions */
@@ -541,6 +552,24 @@ private class FourInARow : Gtk.Application
         return;
     }
 
+    private bool window_is_fullscreen = false;
+    private bool window_state_event_cb (Gdk.EventWindowState event)
+    {
+        bool window_was_fullscreen = window_is_fullscreen;
+        if ((event.changed_mask & Gdk.WindowState.FULLSCREEN) != 0)
+            window_is_fullscreen = (event.new_window_state & Gdk.WindowState.FULLSCREEN) != 0;
+        if (window_was_fullscreen && !window_is_fullscreen)
+            unfullscreen_button.hide ();
+        else if (!window_was_fullscreen && window_is_fullscreen)
+            unfullscreen_button.show ();
+        return false;
+    }
+
+    private inline void on_unfullscreen (/* SimpleAction action, Variant? parameter */)
+    {
+        window.unfullscreen ();
+    }
+
     private inline void on_game_exit (/* SimpleAction action, Variant? parameter */)
     {
         stop_anim ();
@@ -734,22 +763,21 @@ private class FourInARow : Gtk.Application
         base.startup ();
 
         CssProvider css_provider = new CssProvider ();
-        try {
-            css_provider.load_from_data ("GtkButtonBox {-GtkButtonBox-child-internal-pad-x:0;}\0");
-        } catch (Error error) {
-            stderr.printf ("Could not load UI: %s\n", error.message);
-            return;
-        }
-        StyleContext.add_provider_for_screen (Gdk.Screen.get_default (),
-                                              css_provider,
-                                              STYLE_PROVIDER_PRIORITY_APPLICATION);
+        css_provider.load_from_resource ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css");
+        Gdk.Screen? gdk_screen = Gdk.Screen.get_default ();
+        if (gdk_screen != null) // else..?
+            StyleContext.add_provider_for_screen ((!) gdk_screen, css_provider, STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         game_board_view = new GameBoardView (game_board);
+        game_board_view.show ();
         Builder builder = new Builder.from_resource ("/org/gnome/Four-in-a-row/ui/four-in-a-row.ui");
 
         window = (ApplicationWindow) builder.get_object ("fiar-window");
         window.application = this;
+        window.window_state_event.connect (window_state_event_cb);
         window.set_default_size (DEFAULT_WIDTH, DEFAULT_HEIGHT); /* TODO save size & state */
 
+        unfullscreen_button = (Button) builder.get_object ("unfullscreen_button");
         headerbar = (HeaderBar) builder.get_object ("headerbar");
 
         scorebox = new Scorebox (window, this);

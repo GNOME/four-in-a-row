@@ -9,6 +9,7 @@
     <file alias="bg_toplight.png">../data/bg_toplight.png</file>
   </gresource>
   <gresource prefix="/org/gnome/Four-in-a-row/ui">
+    <file alias="four-in-a-row.css">../data/four-in-a-row.css</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="four-in-a-row.ui">../data/ui/four-in-a-row.ui</file>
   </gresource>
 </gresources>
