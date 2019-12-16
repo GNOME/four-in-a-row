@@ -39,7 +39,7 @@ private class GameBoardView : Gtk.DrawingArea {
         events = Gdk.EventMask.EXPOSURE_MASK
                | Gdk.EventMask.BUTTON_PRESS_MASK
                | Gdk.EventMask.BUTTON_RELEASE_MASK;
-        Prefs.instance.theme_changed.connect(() => change_theme());
+        Prefs.instance.notify ["theme-id"].connect(() => change_theme());
         load_pixmaps();
         this.game_board = game_board;
     }
@@ -212,13 +212,11 @@ private class GameBoardView : Gtk.DrawingArea {
             try {
                 pb_tileset_tmp = new Gdk.Pixbuf.from_resource(fname);
             } catch (Error e) {
-                if (Prefs.instance.theme_id != 0) {
-                    Prefs.instance.theme_id = 0;
-                    continue;
-                } else {
+                if (Prefs.instance.theme_id == 0)
                     load_error(fname);
-                    return false;
-                }
+                else
+                    Prefs.instance.theme_id = 0;
+                return false;
             }
             break;
         }

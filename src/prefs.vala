@@ -18,78 +18,49 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-private class Prefs : Object {
-    private const int DEFAULT_THEME_ID = 0;
+private class Prefs : Object
+{
+    internal Settings settings;
 
-    private int _theme_id;
-    [CCode (notify = true)] internal int theme_id {
-        get{
-            return sane_theme_id(_theme_id);
-        }
-        set{
-            _theme_id = sane_theme_id(value);
-        }
-    }
+    [CCode (notify = true)]  internal int theme_id       { internal get; internal set; }
 
-    internal Level level[2];
+    internal Level level [2];
     [CCode (notify = false)] internal int keypress_drop  { internal get; internal set; }
     [CCode (notify = false)] internal int keypress_right { internal get; internal set; }
     [CCode (notify = false)] internal int keypress_left  { internal get; internal set; }
-    internal Settings settings;
 
     private static Once<Prefs> _instance;
     [CCode (notify = false)] internal static Prefs instance { internal get {
-        return _instance.once(() => { return new Prefs(); });
+        return _instance.once(() => { return new Prefs (); });
     }}
 
-    internal Prefs() {
-        settings = new GLib.Settings("org.gnome.Four-in-a-row");
-        level[PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
-        level[PlayerID.PLAYER2] = (Level) settings.get_int("opponent");
-        theme_id = settings.get_int("theme-id");
+    internal Prefs ()
+    {
+        settings = new GLib.Settings ("org.gnome.Four-in-a-row");
+        level [PlayerID.PLAYER1] = Level.HUMAN; /* Human. Always human. */
+        level [PlayerID.PLAYER2] = (Level) settings.get_int ("opponent");
 
-        settings.changed ["theme-id"].connect(theme_id_changed_cb);
-        settings.bind("theme-id", this, "theme-id", SettingsBindFlags.DEFAULT);
-        settings.bind("key-drop", this, "keypress_drop", SettingsBindFlags.DEFAULT);
-        settings.bind("key-right", this, "keypress_right", SettingsBindFlags.DEFAULT);
-        settings.bind("key-left", this, "keypress_left", SettingsBindFlags.DEFAULT);
+        settings.bind ("theme-id",  this, "theme-id",       SettingsBindFlags.DEFAULT);
+        settings.bind ("key-drop",  this, "keypress_drop",  SettingsBindFlags.DEFAULT);
+        settings.bind ("key-right", this, "keypress_right", SettingsBindFlags.DEFAULT);
+        settings.bind ("key-left",  this, "keypress_left",  SettingsBindFlags.DEFAULT);
 
-        level[PlayerID.PLAYER1] = sane_player_level(level[PlayerID.PLAYER1]);
-        level[PlayerID.PLAYER2] = sane_player_level(level[PlayerID.PLAYER2]);
-        theme_id = sane_theme_id(theme_id);
+        level [PlayerID.PLAYER1] = sane_player_level (level [PlayerID.PLAYER1]);
+        level [PlayerID.PLAYER2] = sane_player_level (level [PlayerID.PLAYER2]);
     }
 
-    private static int sane_theme_id(int val) {
-        if (val < 0 || val >= theme.length)
-            return DEFAULT_THEME_ID;
-        return val;
-    }
-
-    /**
-     * theme_changed:
-     *
-     * emmited when the theme is changed
-     *
-     * @theme_id: The new theme_id
-     */
-    internal signal void theme_changed(int theme_id);
-
-    private inline void theme_id_changed_cb (string key) {
-        int val = sane_theme_id(settings.get_int("theme-id"));
-        if (val != theme_id)
-            theme_id = val;
-        theme_changed(theme_id);
-    }
-
-    internal int get_n_human_players() {
-        if (level[PlayerID.PLAYER1] != Level.HUMAN && level[PlayerID.PLAYER2] != Level.HUMAN)
-            return 0;
-        if (level[PlayerID.PLAYER1] != Level.HUMAN || level[PlayerID.PLAYER2] != Level.HUMAN)
+    internal int get_n_human_players ()
+    {
+        if (level [PlayerID.PLAYER1] != Level.HUMAN && level [PlayerID.PLAYER2] != Level.HUMAN)
+            assert_not_reached ();
+        if (level [PlayerID.PLAYER1] != Level.HUMAN || level [PlayerID.PLAYER2] != Level.HUMAN)
             return 1;
-        return 2;
+        else
+            return 2;
     }
 
-    private static Level sane_player_level(Level val) {
+    private static Level sane_player_level (Level val)
+    {
         if (val < Level.HUMAN)
             return Level.HUMAN;
         if (val > Level.STRONG)
