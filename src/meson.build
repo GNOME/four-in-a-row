@@ -43,7 +43,8 @@ executable(
     ],
     vala_args: [
         '--target-glib', '2.44',
-        '--vapidir', join_paths(meson.current_source_dir(), 'vapi')
+        '--vapidir', join_paths(meson.current_source_dir(), 'vapi'),
+        '--enable-experimental-non-null'
     ],
     install: true,
     install_dir: get_option('bindir')

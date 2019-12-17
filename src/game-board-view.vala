@@ -197,14 +197,18 @@ private class GameBoardView : Gtk.DrawingArea {
 
     internal void refresh_pixmaps() {
         /* scale the pixbufs */
-        pb_tileset = pb_tileset_raw.scale_simple(tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
-        pb_bground = pb_bground_raw.scale_simple(board_size, board_size, Gdk.InterpType.BILINEAR);
+        Gdk.Pixbuf? pb_tileset_tmp = pb_tileset_raw.scale_simple(tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
+        Gdk.Pixbuf? pb_bground_tmp = pb_bground_raw.scale_simple(board_size, board_size, Gdk.InterpType.BILINEAR);
+        if (pb_tileset_tmp == null || pb_bground_tmp == null)
+            assert_not_reached ();
+        pb_tileset = (!) pb_tileset_tmp;
+        pb_bground = (!) pb_bground_tmp;
     }
 
     private bool load_pixmaps() {
         string fname;
         Gdk.Pixbuf pb_tileset_tmp;
-        Gdk.Pixbuf pb_bground_tmp = null;
+        Gdk.Pixbuf? pb_bground_tmp = null;
 
         /* Try the theme pixmaps, fallback to the default and then give up */
         while (true) {
@@ -224,7 +228,7 @@ private class GameBoardView : Gtk.DrawingArea {
         pb_tileset_raw = pb_tileset_tmp;
 
         if (theme[Prefs.instance.theme_id].fname_bground != null) {
-            fname = "/org/gnome/Four-in-a-row/images/" + theme[Prefs.instance.theme_id].fname_bground;
+            fname = "/org/gnome/Four-in-a-row/images/" + ((!) theme[Prefs.instance.theme_id].fname_bground);
             try {
                 pb_bground_tmp = new Gdk.Pixbuf.from_resource(fname);
             } catch (Error e) {
@@ -237,7 +241,7 @@ private class GameBoardView : Gtk.DrawingArea {
         * derive the background image from the tile set
         */
         if (pb_bground_tmp != null) {
-            pb_bground_raw = pb_bground_tmp;
+            pb_bground_raw = (!) pb_bground_tmp;
         } else {
             int raw_tile_size;
             int i, j;
@@ -276,7 +280,10 @@ private class GameBoardView : Gtk.DrawingArea {
 
     protected override bool button_press_event(Gdk.EventButton e) {
         int x;
-        get_window().get_device_position(e.device, out x, null, null);
+        Gdk.Window? window = get_window();
+        if (window == null)
+            assert_not_reached ();
+        ((!) window).get_device_position(e.device, out x, null, null);
         return column_clicked(get_column(x));
     }
 }

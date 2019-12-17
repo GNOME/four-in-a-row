@@ -74,7 +74,7 @@ private static inline void test_forward_diagonal_win ()
 /* Tests if the AI makes moves so as to take up immediate backward diagonal wins.*/
 private static inline void test_backward_diagonal_win ()
 {
-    assert (playgame ("5422327343142110") == 1);
+    assert (playgame ("5422327343142110") == 1);    // TODO no "a"?
     assert (playgame ("a1415113315143220") == 2);
     assert (playgame ("a547323452213345110") == 1);
     assert (playgame ("a4256424426621271412117175776343330") == 3);

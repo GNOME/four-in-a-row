@@ -21,7 +21,7 @@
 private struct Theme {
     public string title;
     public string fname_tileset;
-    public string fname_bground;
+    public string? fname_bground;
     public string grid_color;
     public string player1;
     public string player2;
