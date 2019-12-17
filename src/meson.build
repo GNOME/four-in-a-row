@@ -23,8 +23,6 @@ sources = files(
     'game-board-view.vala',
     'game-board.vala',
     'game-window.vala',
-    'games-controls-list.vala',
-    'prefs-box.vala',
     'prefs.vala',
     'scorebox.vala',
     'theme.vala',

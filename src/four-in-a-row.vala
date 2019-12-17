@@ -73,7 +73,6 @@ private class FourInARow : Gtk.Application
     private bool reset_score = false;
 
     // widgets
-    private PrefsBox? prefsbox = null;
     private Scorebox scorebox;
     private GameBoardView game_board_view;
     private Board game_board;
@@ -102,7 +101,6 @@ private class FourInARow : Gtk.Application
     {
         { "scores",         on_game_scores          },
         { "quit",           on_game_exit            },
-        { "preferences",    on_settings_preferences },
         { "help",           on_help_contents        },
         { "about",          on_help_about           }
     };
@@ -675,11 +673,6 @@ private class FourInARow : Gtk.Application
         }
     }
 
-    private inline void on_settings_preferences (/* SimpleAction action, Variant? parameter */)
-    {
-        prefsbox_open ();
-    }
-
     private inline void on_help_about (SimpleAction action, Variant? parameter)
     {
         const string authors [] = {
@@ -774,7 +767,6 @@ private class FourInARow : Gtk.Application
         app_menu.append_section (null, section);
 
         section = new GLib.Menu ();
-        section.append (_("_Preferences"), "app.preferences");
         section.append (_("_Help"), "app.help");
         section.append (_("_About Four-in-a-row"), "app.about");
         section.freeze ();
@@ -861,18 +853,6 @@ private class FourInARow : Gtk.Application
             game_process_move (column);
 
         return true;
-    }
-
-    private inline void prefsbox_open ()
-    {
-        if (prefsbox != null)
-        {
-            prefsbox.present ();
-            return;
-        }
-
-        prefsbox = new PrefsBox (window);
-        prefsbox.show_all ();
     }
 
     /* Sound-related methods */
