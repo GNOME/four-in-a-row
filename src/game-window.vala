@@ -49,12 +49,11 @@ private class GameWindow : ApplicationWindow
     private Button? start_game_button = null;
     [GtkChild] private Button new_game_button;
     [GtkChild] private Button back_button;
+    [GtkChild] private Button game_button;
     [GtkChild] private Button unfullscreen_button;
 
-    [GtkChild] private Box controls_box;
     [GtkChild] private Box game_box;
     [GtkChild] private Box new_game_box;
-    [GtkChild] private Box side_box;
 
     private Widget view;
 
@@ -117,45 +116,6 @@ private class GameWindow : ApplicationWindow
         view.halign = Align.FILL;
         view.can_focus = true;
         view.show ();
-
-        /* add controls */
-        if (GameWindowFlags.SHOW_UNDO in flags)
-        {
-            Box history_box = new Box (Orientation.HORIZONTAL, 0);
-            history_box.get_style_context ().add_class ("linked");
-
-            Button undo_button = new Button.from_icon_name ("edit-undo-symbolic", Gtk.IconSize.BUTTON);
-            undo_button.action_name = "ui.undo";
-            /* Translators: during a game, tooltip text of the Undo button */
-            undo_button.set_tooltip_text (_("Undo your most recent move"));
-            undo_button.valign = Align.CENTER;
-            undo_button.show ();
-            history_box.pack_start (undo_button, true, true, 0);
-
-            /* if (GameWindowFlags.SHOW_REDO in flags)
-            {
-                Button redo_button = new Button.from_icon_name ("edit-redo-symbolic", Gtk.IconSize.BUTTON);
-                redo_button.action_name = "app.redo";
-                / Translators: during a game, tooltip text of the Redo button /
-                redo_button.set_tooltip_text (_("Redo your most recent undone move"));
-                redo_button.valign = Align.CENTER;
-                redo_button.show ();
-                history_box.pack_start (redo_button, true, true, 0);
-            } */
-
-            history_box.show ();
-            controls_box.pack_start (history_box, true, true, 0);
-        }
-        /* if (GameWindowFlags.SHOW_HINT in flags)
-        {
-            Button hint_button = new Button.from_icon_name ("dialog-question-symbolic", Gtk.IconSize.BUTTON);
-            hint_button.action_name = "app.hint";
-            / Translators: during a game, tooltip text of the Hint button /
-            hint_button.set_tooltip_text (_("Receive a hint for your next move"));
-            hint_button.valign = Align.CENTER;
-            hint_button.show ();
-            controls_box.pack_start (hint_button, true, true, 0);
-        } */
 
         /* start or not */
         if (start_now)
@@ -255,11 +215,6 @@ private class GameWindow : ApplicationWindow
     * * Some internal calls
     \*/
 
-    internal void add_to_sidebox (Widget widget)
-    {
-        side_box.pack_start (widget, false, false, 0);
-    }
-
     internal void cannot_undo_more ()
     {
         undo_action.set_enabled (false);
@@ -292,7 +247,7 @@ private class GameWindow : ApplicationWindow
     internal void allow_hint (bool allow)
     {
         string? stack_child = stack.get_visible_child_name ();
-        if (stack_child == null || (!) stack_child != "frame")
+        if (stack_child == null || (!) stack_child != "game-box")
             return;
         hint_action.set_enabled (allow);
     }
@@ -300,7 +255,7 @@ private class GameWindow : ApplicationWindow
     internal void allow_undo (bool allow)
     {
         string? stack_child = stack.get_visible_child_name ();
-        if (stack_child == null || (!) stack_child != "frame")
+        if (stack_child == null || (!) stack_child != "game-box")
             return;
         undo_action.set_enabled (allow);
     }
@@ -315,7 +270,8 @@ private class GameWindow : ApplicationWindow
         headerbar.set_title (program_name);
 
         stack.set_visible_child_name ("start-box");
-        controls_box.hide ();
+        game_button.hide ();
+        new_game_button.hide ();
 
         if (!game_finished && back_button.visible)
             back_button.grab_focus ();
@@ -327,9 +283,10 @@ private class GameWindow : ApplicationWindow
     {
         headerbar.set_title (last_subtitle);
 
-        stack.set_visible_child_name ("frame");
+        stack.set_visible_child_name ("game-box");
         back_button.hide ();        // TODO transition?
-        controls_box.show ();
+        game_button.show ();
+        new_game_button.show ();
 
         if (game_finished)
             new_game_button.grab_focus ();
@@ -344,7 +301,7 @@ private class GameWindow : ApplicationWindow
     private void new_game_cb ()
     {
         string? stack_child = stack.get_visible_child_name ();
-        if (stack_child == null || (!) stack_child != "frame")
+        if (stack_child == null || (!) stack_child != "game-box")
             return;
 
         wait ();
@@ -392,7 +349,7 @@ private class GameWindow : ApplicationWindow
     }
 
     /*\
-    * * Controls_box actions
+    * * Game menu actions
     \*/
 
     private void undo_cb ()
@@ -400,7 +357,7 @@ private class GameWindow : ApplicationWindow
         string? stack_child = stack.get_visible_child_name ();
         if (stack_child == null)
             return;
-        if ((!) stack_child != "frame")
+        if ((!) stack_child != "game-box")
         {
             if (back_action.get_enabled ())
                 back_cb ();
@@ -418,7 +375,7 @@ private class GameWindow : ApplicationWindow
 /*    private void redo_cb ()
     {
         string? stack_child = stack.get_visible_child_name ();
-        if (stack_child == null || (!) stack_child != "frame")
+        if (stack_child == null || (!) stack_child != "game-box")
             return;
 
         if (!back_button.is_focus)
@@ -430,7 +387,7 @@ private class GameWindow : ApplicationWindow
     private void hint_cb ()
     {
         string? stack_child = stack.get_visible_child_name ();
-        if (stack_child == null || (!) stack_child != "frame")
+        if (stack_child == null || (!) stack_child != "game-box")
             return;
         hint ();
     }

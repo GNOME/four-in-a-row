@@ -17,6 +17,20 @@
 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
+  <menu id="game-menu">
+    <section>
+      <item>
+        <!-- Translators: during a game, entry in the game menu, for undoing the last move -->
+        <attribute name="label" translatable="yes">_Undo last move</attribute>
+        <attribute name="action">ui.undo</attribute>
+      </item>
+      <item>
+        <!-- Translators: during a game, entry in the game menu, for suggesting where to play -->
+        <attribute name="label" translatable="yes">_Hint</attribute>
+        <attribute name="action">ui.hint</attribute>
+      </item>
+    </section>
+  </menu>
   <template class="GameWindow" parent="GtkApplicationWindow">
     <!-- <initial-focus name="view"/> -->
     <child type="titlebar">
@@ -24,10 +38,21 @@
         <property name="visible">True</property>
         <property name="show-close-button">True</property>
         <child>
-          <object class="GtkBox" id="controls_box">
-            <property name="visible">False</property>
-            <property name="orientation">horizontal</property>
+          <object class="GtkButton" id="new_game_button">
+            <property name="visible">True</property>
+            <property name="use-underline">True</property>
+            <!-- Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt) -->
+            <property name="label" translatable="yes">_New Game</property>
+            <property name="halign">fill</property>
+            <property name="valign">center</property>
+            <property name="action-name">ui.new-game</property>
+            <!-- Translators: during a game, tooltip text of the New Game button -->
+            <property name="tooltip-text" translatable="yes">Start a new game</property>
           </object>
+          <packing>
+            <property name="pack-type">start</property>
+            <property name="position">0</property>
+          </packing>
         </child>
         <child>
           <object class="GtkButton" id="back_button">
@@ -50,6 +75,30 @@
               </object>
             </child>
           </object>
+          <packing>
+            <property name="pack-type">start</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="game_button">
+            <property name="visible">True</property>
+            <property name="valign">center</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="menu-model">game-menu</property>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="icon-name">pan-down-symbolic</property>
+                <property name="icon-size">1</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="pack-type">end</property>
+            <property name="position">1</property>
+          </packing>
         </child>
         <child>
           <object class="GtkMenuButton" id="info_button">
@@ -95,77 +144,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkAspectFrame">
+              <object class="GtkBox" id="game_box">
                 <property name="visible">True</property>
-                <property name="shadow-type">GTK_SHADOW_NONE</property>
-                <property name="obey-child">false</property>
-                <property name="ratio">1.4</property>
-                <property name="margin">25</property>
-                <child>
-                  <object class="GtkBox" id="game_box">
-                    <property name="visible">True</property>
-                    <property name="orientation">horizontal</property>
-                    <property name="spacing">25</property>
-                    <child>
-                      <object class="GtkBox" id="side_box">
-                        <property name="visible">True</property>
-                        <property name="orientation">vertical</property>
-                        <property name="spacing">6</property>
-                        <child>
-                          <object class="GtkButton" id="new_game_button">
-                            <property name="visible">True</property>
-                            <property name="use-underline">True</property>
-                            <!-- Translators: during a game, label of the Start Over button (with a mnemonic that appears pressing Alt) -->
-                            <property name="label" translatable="yes">_Start Over</property>
-                            <property name="halign">fill</property>
-                            <property name="valign">center</property>
-                            <property name="action-name">ui.new-game</property>
-                            <!-- Translators: during a game, tooltip text of the Start Over button -->
-                            <property name="tooltip-text" translatable="yes">Start a new game</property>
-                            <property name="width-request">120</property>
-                            <property name="height-request">60</property>
-                          </object>
-                          <packing>
-                            <property name="pack-type">end</property>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="hint_button">
-                            <property name="visible">True</property>
-                            <property name="use-underline">True</property>
-                            <!-- Translators: during a game, label of the Hint button (with a mnemonic that appears pressing Alt) -->
-                            <property name="label" translatable="yes">_Hint</property>
-                            <property name="halign">fill</property>
-                            <property name="valign">center</property>
-                            <property name="action-name">ui.hint</property>
-                            <!-- Translators: during a game, tooltip text of the Hint button -->
-                            <property name="tooltip-text" translatable="yes">Suggest a play</property>
-                            <property name="width-request">120</property>
-                            <property name="height-request">60</property>
-                          </object>
-                          <packing>
-                            <property name="pack-type">end</property>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="pack-type">end</property>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="padding">0</property>
-                      </packing>
-                    </child>
-                  </object>
-                </child>
+                <property name="orientation">horizontal</property>
+                <property name="spacing">25</property>
+                <style>
+                  <class name="game-box"/>
+                </style>
               </object>
               <packing>
-                <property name="name">frame</property>
+                <property name="name">game-box</property>
               </packing>
             </child>
           </object>

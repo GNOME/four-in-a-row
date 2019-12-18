@@ -24,3 +24,5 @@ button.unfullscreen-button {
 GtkButtonBox {
   -GtkButtonBox-child-internal-pad-x:0;
 }
+
+.game-box { padding:1.5rem; }

@@ -781,7 +781,7 @@ private class FourInARow : Gtk.Application
                                  Prefs.instance.settings.get_int ("window-height"),
                                  Prefs.instance.settings.get_boolean ("window-is-maximized"),
                                  /* start_now */ true,
-                                 GameWindowFlags.SHOW_UNDO | GameWindowFlags.SHOW_START_BUTTON,
+                                 GameWindowFlags.SHOW_START_BUTTON,
                                  (Box) builder.get_object ("new-game-screen"),
                                  game_board_view,
                                  app_menu);
