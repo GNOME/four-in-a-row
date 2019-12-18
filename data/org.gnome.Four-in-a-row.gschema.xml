@@ -63,6 +63,9 @@
       <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop' -->
       <description>Key press to drop a marble.</description>
     </key>
+  </schema>
+
+  <schema id="org.gnome.Four-in-a-row.Lib" gettext-domain="four-in-a-row">
     <key name="window-width" type="i">
       <default>675</default>
       <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width' -->

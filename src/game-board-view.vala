@@ -31,8 +31,6 @@ private class GameBoardView : Gtk.DrawingArea {
     private Board game_board;
 
     internal GameBoardView(Board game_board) {
-        /* set a min size to avoid pathological behavior of gtk when scaling down */
-        set_size_request(350, 350);
         halign = Gtk.Align.FILL;
         valign = Gtk.Align.FILL;
 

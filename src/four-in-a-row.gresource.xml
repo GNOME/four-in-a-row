@@ -10,6 +10,7 @@
   </gresource>
   <gresource prefix="/org/gnome/Four-in-a-row/ui">
     <file alias="four-in-a-row.css">../data/four-in-a-row.css</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="adaptative-window.ui">../data/ui/adaptative-window.ui</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="fiar-screens.ui">../data/ui/fiar-screens.ui</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="game-window.ui">../data/ui/four-in-a-row.ui</file>
   </gresource>

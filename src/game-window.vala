@@ -29,7 +29,7 @@ private enum GameWindowFlags {
 }
 
 [GtkTemplate (ui = "/org/gnome/Four-in-a-row/ui/game-window.ui")]
-private class GameWindow : ApplicationWindow
+private class GameWindow : AdaptativeWindow
 {
     /* settings */
     private bool window_is_tiled;
@@ -66,8 +66,12 @@ private class GameWindow : ApplicationWindow
  // internal signal void redo ();
     internal signal void hint ();
 
-    internal GameWindow (string? css_resource, string name, int width, int height, bool maximized, bool start_now, GameWindowFlags flags, Box new_game_screen, Widget _view, GLib.Menu app_menu)
+    internal GameWindow (string? css_resource, string name, bool start_now, GameWindowFlags flags, Box new_game_screen, Widget _view, GLib.Menu app_menu)
     {
+        Object (window_title: name,
+                specific_css_class_or_empty: "",
+                schema_path: "/org/gnome/Four-in-a-row/");
+
         if (css_resource != null)
         {
             CssProvider css_provider = new CssProvider ();
@@ -86,21 +90,16 @@ private class GameWindow : ApplicationWindow
         headerbar.set_title (name);
         info_button.set_menu_model (app_menu);
 
-        set_default_size (width, height);
-        if (maximized)
-            maximize ();
-
-        size_allocate.connect (size_allocate_cb);
-        window_state_event.connect (window_state_event_cb);
-
         /* add widgets */
         new_game_box.pack_start (new_game_screen, true, true, 0);
+        add_adaptative_child ((AdaptativeWidget) new_game_screen);
         if (GameWindowFlags.SHOW_START_BUTTON in flags)
         {
             /* Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt) */
             Button _start_game_button = new Button.with_mnemonic (_("_Start Game"));
-            _start_game_button.width_request = 222;
-            _start_game_button.height_request = 60;
+//            _start_game_button.width_request = 222;
+//            _start_game_button.height_request = 60;
+            _start_game_button.get_style_context ().add_class ("start-game-button");
             _start_game_button.halign = Align.CENTER;
             _start_game_button.set_action_name ("ui.start-game");
             /* Translators: when configuring a new game, tooltip text of the blue Start button */
@@ -168,47 +167,14 @@ private class GameWindow : ApplicationWindow
     * * Window events
     \*/
 
-    private void size_allocate_cb ()
+    protected override void on_fullscreen ()
     {
-        if (window_is_maximized || window_is_tiled || window_is_fullscreen)
-            return;
-        get_size (out window_width, out window_height);
+        unfullscreen_button.show ();
     }
 
-    private bool window_state_event_cb (Gdk.EventWindowState event)
+    protected override void on_unfullscreen ()
     {
-        if ((event.changed_mask & Gdk.WindowState.MAXIMIZED) != 0)
-            window_is_maximized = (event.new_window_state & Gdk.WindowState.MAXIMIZED) != 0;
-
-        /* fullscreen: saved as maximized */
-        bool window_was_fullscreen = window_is_fullscreen;
-        if ((event.changed_mask & Gdk.WindowState.FULLSCREEN) != 0)
-            window_is_fullscreen = (event.new_window_state & Gdk.WindowState.FULLSCREEN) != 0;
-        if (window_was_fullscreen && !window_is_fullscreen)
-            unfullscreen_button.hide ();
-        else if (!window_was_fullscreen && window_is_fullscreen)
-            unfullscreen_button.show ();
-
-        /* tiled: not saved, but should not change saved window size */
-        Gdk.WindowState tiled_state = Gdk.WindowState.TILED
-                                    | Gdk.WindowState.TOP_TILED
-                                    | Gdk.WindowState.BOTTOM_TILED
-                                    | Gdk.WindowState.LEFT_TILED
-                                    | Gdk.WindowState.RIGHT_TILED;
-        if ((event.changed_mask & tiled_state) != 0)
-            window_is_tiled = (event.new_window_state & tiled_state) != 0;
-
-        return false;
-    }
-
-    internal void shutdown (GLib.Settings settings)
-    {
-        settings.delay ();
-        settings.set_int ("window-width", window_width);
-        settings.set_int ("window-height", window_height);
-        settings.set_boolean ("window-is-maximized", window_is_maximized || window_is_fullscreen);
-        settings.apply ();
-        destroy ();
+        unfullscreen_button.hide ();
     }
 
     /*\

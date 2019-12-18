@@ -25,4 +25,52 @@ GtkButtonBox {
   -GtkButtonBox-child-internal-pad-x:0;
 }
 
-.game-box { padding:1.5rem; }
+.extra-thin-window.thin-window button.new-game-button { padding-left:12px; padding-right:12px; transition: padding 0 ease;
+/* hack: fix the double spacing around the centerwidget box, on extra-thin window */
+                                                        margin-right:-12px; }
+/*\
+* * board generics; TODO move in game-window.css
+\*/
+
+                               .game-box                { transition:padding 0.3s; padding:1.5rem; }
+                  .thin-window .game-box                {                          padding:1.0rem; }
+.extra-thin-window.thin-window .game-box,
+                  .flat-window .game-box                {                          padding:0.5rem; }
+.extra-flat-window.flat-window .game-box                {                          padding:0.4rem; }
+
+/*\
+* * start-game button; TODO move in game-window.css
+\*/
+
+                               button.start-game-button { margin-top:1.5rem; margin-bottom:0.5rem;
+                                               transition:margin-top 0 ease, margin-bottom 0 ease; }
+                  .flat-window button.start-game-button { margin-top:0.5rem;                       }
+.extra-flat-window.flat-window button.start-game-button { margin-top:  0rem; margin-bottom:0.4rem; }
+
+.extra-thin-window             button.start-game-button { margin-top:1.0rem; }
+
+/*\
+* * options buttons
+\*/
+
+.extra-flat-window button.start-game-button {
+  min-height:2rem;
+}
+                   button.start-game-button {
+  min-height:3rem;
+  min-width:11rem;
+
+  transition:min-height          0.3s ease 0.01s;
+}
+
+/*\
+* * labels' tweaks
+\*/
+
+label.bold-label {
+  font-weight: bold;
+}
+
+/*\
+* * the end
+\*/

@@ -18,11 +18,13 @@ test('four-in-a-row-tests',
 resources = gnome.compile_resources (meson.project_name(), 'four-in-a-row.gresource.xml')
 
 sources = files(
+    'adaptative-window.vala',
     'ai.vala',
     'four-in-a-row.vala',
     'game-board-view.vala',
     'game-board.vala',
     'game-window.vala',
+    'new-game-screen.vala',
     'prefs.vala',
     'scorebox.vala',
     'theme.vala',

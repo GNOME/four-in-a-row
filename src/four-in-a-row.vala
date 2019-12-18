@@ -77,6 +77,7 @@ private class FourInARow : Gtk.Application
     private GameBoardView game_board_view;
     private Board game_board;
     private GameWindow window;
+    private NewGameScreen new_game_screen;
 
     // game state
     private char vstr [53];
@@ -99,6 +100,7 @@ private class FourInARow : Gtk.Application
 
     private const GLib.ActionEntry app_entries [] =  // see also add_actions()
     {
+        { "game-type",      null,           "s", "'dark'", change_game_type },
         { "scores",         on_game_scores          },
         { "quit",           on_game_exit            },
         { "help",           on_help_contents        },
@@ -181,11 +183,13 @@ private class FourInARow : Gtk.Application
 
     private inline void add_actions ()
     {
-        add_action (Prefs.instance.settings.create_action ("sound"));
-        add_action (Prefs.instance.settings.create_action ("theme-id"));
-        add_action (Prefs.instance.settings.create_action ("num-players"));
-        add_action (Prefs.instance.settings.create_action ("first-player"));
-        add_action (Prefs.instance.settings.create_action ("opponent"));
+        GLib.Settings settings = Prefs.instance.settings;
+
+        add_action (settings.create_action ("sound"));
+        add_action (settings.create_action ("theme-id"));
+        add_action (settings.create_action ("num-players"));
+        add_action (settings.create_action ("first-player"));
+        add_action (settings.create_action ("opponent"));
 
         set_accels_for_action ("ui.new-game",           {        "<Primary>n"       });
         set_accels_for_action ("ui.start-game",         { "<Shift><Primary>n"       });
@@ -199,6 +203,63 @@ private class FourInARow : Gtk.Application
         set_accels_for_action ("app.about",             {          "<Shift>F1"      });
 
         add_action_entries (app_entries, this);
+
+        game_type_action = (SimpleAction) lookup_action ("game-type");
+
+        settings.changed ["first-player"].connect (() => {
+                if (settings.get_int ("num-players") == 2)
+                    return;
+                if (settings.get_string ("first-player") == "human")
+                    game_type_action.set_state (new Variant.string ("human"));
+                else
+                    game_type_action.set_state (new Variant.string ("computer"));
+            });
+
+        settings.changed ["num-players"].connect (() => {
+                bool solo = settings.get_int ("num-players") == 1;
+                new_game_screen.update_sensitivity (solo);
+                reset_score = true;
+                if (!solo)
+                    game_type_action.set_state (new Variant.string ("two"));
+                else if (settings.get_string ("first-player") == "human")
+                    game_type_action.set_state (new Variant.string ("human"));
+                else
+                    game_type_action.set_state (new Variant.string ("computer"));
+                if (solo)
+                    last_first_player = PlayerID.NOBODY;
+            });
+        bool solo = settings.get_int ("num-players") == 1;
+        new_game_screen.update_sensitivity (solo);
+
+        if (settings.get_int ("num-players") == 2)
+            game_type_action.set_state (new Variant.string ("two"));
+        else if (settings.get_string ("first-player") == "human")
+            game_type_action.set_state (new Variant.string ("human"));
+        else
+            game_type_action.set_state (new Variant.string ("computer"));
+
+        settings.changed ["opponent"].connect (() => {
+                if (settings.get_int ("num-players") != 1)
+                    return;
+                reset_score = true;
+            });
+    }
+
+    private SimpleAction game_type_action;
+    private void change_game_type (SimpleAction action, Variant? gvariant)
+        requires (gvariant != null)
+    {
+        string type = ((!) gvariant).get_string ();
+//        game_type_action.set_state ((!) gvariant);
+        switch (type)
+        {
+            case "human"    : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
+                              Prefs.instance.settings.set_string ("first-player", "human");                                      return;
+            case "computer" : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
+                              Prefs.instance.settings.set_string ("first-player", "computer");                                   return;
+            case "two"      : Prefs.instance.settings.set_int    ("num-players", 2); new_game_screen.update_sensitivity (false); return;
+            default: assert_not_reached ();
+        }
     }
 
     private inline bool column_clicked_cb (int column)
@@ -275,12 +336,6 @@ private class FourInARow : Gtk.Application
         scorebox.update (score, one_player_game);    /* update visible player descriptions */
         prompt_player ();
         game_reset ();
-    }
-
-    protected override void shutdown ()
-    {
-        window.shutdown (Prefs.instance.settings);
-        base.shutdown ();
     }
 
     private void prompt_player ()
@@ -741,7 +796,8 @@ private class FourInARow : Gtk.Application
         base.startup ();
 
         /* UI parts */
-        Builder builder = new Builder.from_resource ("/org/gnome/Four-in-a-row/ui/fiar-screens.ui");
+        new_game_screen = new NewGameScreen ();
+        new_game_screen.show ();
 
         game_board_view = new GameBoardView (game_board);
         game_board_view.show ();
@@ -777,38 +833,15 @@ private class FourInARow : Gtk.Application
         /* Window */
         window = new GameWindow ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
                                  PROGRAM_NAME,
-                                 Prefs.instance.settings.get_int ("window-width"),
-                                 Prefs.instance.settings.get_int ("window-height"),
-                                 Prefs.instance.settings.get_boolean ("window-is-maximized"),
                                  /* start_now */ true,
                                  GameWindowFlags.SHOW_START_BUTTON,
-                                 (Box) builder.get_object ("new-game-screen"),
+                                 (Box) new_game_screen,
                                  game_board_view,
                                  app_menu);
 
         scorebox = new Scorebox (window, this);
 
         add_actions ();
-
-        Widget level_box = (Widget) (!) builder.get_object ("difficulty-box");
-        Widget start_box = (Widget) (!) builder.get_object ("start-box");
-        Prefs.instance.settings.changed ["num-players"].connect (() => {
-                bool solo = Prefs.instance.settings.get_int ("num-players") == 1;
-                level_box.sensitive = solo;
-                start_box.sensitive = solo;
-                reset_score = true;
-                if (solo)
-                    last_first_player = PlayerID.NOBODY;
-            });
-        bool solo = Prefs.instance.settings.get_int ("num-players") == 1;
-        level_box.sensitive = solo;
-        start_box.sensitive = solo;
-
-        Prefs.instance.settings.changed ["opponent"].connect (() => {
-                if (Prefs.instance.settings.get_int ("num-players") != 1)
-                    return;
-                reset_score = true;
-            });
 
         /* various */
         game_board_view.column_clicked.connect (column_clicked_cb);

@@ -31,7 +31,7 @@
       </item>
     </section>
   </menu>
-  <template class="GameWindow" parent="GtkApplicationWindow">
+  <template class="GameWindow" parent="AdaptativeWindow">
     <!-- <initial-focus name="view"/> -->
     <child type="titlebar">
       <object class="GtkHeaderBar" id="headerbar">
@@ -129,15 +129,16 @@
             <property name="visible">True</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkBox" id="new_game_box">
-                <property name="orientation">vertical</property>
+              <object class="GtkScrolledWindow">
                 <property name="visible">True</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="margin">25</property>
-                <property name="width-request">350</property>
-                <property name="height-request">350</property>
-                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkBox" id="new_game_box">
+                    <property name="orientation">vertical</property>
+                    <property name="visible">True</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="name">start-box</property>
@@ -147,7 +148,6 @@
               <object class="GtkBox" id="game_box">
                 <property name="visible">True</property>
                 <property name="orientation">horizontal</property>
-                <property name="spacing">25</property>
                 <style>
                   <class name="game-box"/>
                 </style>
