@@ -42,17 +42,6 @@ private class GameBoardView : Gtk.DrawingArea {
         this.game_board = game_board;
     }
 
-    private inline int get_column(int xpos) {
-        /* Derive column from pixel position */
-        int c = (xpos - board_x) / tile_size;
-        if (c > 6)
-            c = 6;
-        if (c < 0)
-            c = 0;
-
-        return c;
-    }
-
     internal inline void draw_tile(int r, int c) {
         queue_draw_area(c*tile_size + board_x, r*tile_size + board_y, tile_size, tile_size);
     }
@@ -278,10 +267,27 @@ private class GameBoardView : Gtk.DrawingArea {
 
     protected override bool button_press_event(Gdk.EventButton e) {
         int x;
+        int y;
         Gdk.Window? window = get_window();
         if (window == null)
             assert_not_reached ();
-        ((!) window).get_device_position(e.device, out x, null, null);
-        return column_clicked(get_column(x));
+        ((!) window).get_device_position(e.device, out x, out y, null);
+
+        int col;
+        if (get_column(x, y, out col))
+            return column_clicked(col);
+        else
+            return false;
+    }
+    private inline bool get_column(int x, int y, out int col) {
+        col = (x - board_x) / tile_size;
+        if (x < board_x || y < board_y || col < 0 || col > 6)
+            return false;
+
+        int row = (y - board_y) / tile_size;
+        if (row < 0 || row > 6)
+            return false;
+
+        return true;
     }
 }
