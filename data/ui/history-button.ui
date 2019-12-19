@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   This file is part of GNOME Four-in-a-row.
+
+   Copyright © 2019 Arnaud Bonatti
+
+   GNOME Four-in-a-row is free software: you can redistribute it and/or
+   modify it under the terms of the GNU General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   GNOME Four-in-a-row is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<interface>
+  <requires lib="gtk+" version="3.12"/>
+  <menu id="game-menu">
+    <section>
+      <item>
+        <!-- Translators: during a game, entry in the game menu, for undoing the last move -->
+        <attribute name="label" translatable="yes">_Undo last move</attribute>
+        <attribute name="action">ui.undo</attribute>
+      </item>
+      <item>
+        <!-- Translators: during a game, entry in the game menu, for suggesting where to play -->
+        <attribute name="label" translatable="yes">_Hint</attribute>
+        <attribute name="action">ui.hint</attribute>
+      </item>
+    </section>
+  </menu>
+  <template class="HistoryButton" parent="GtkMenuButton">
+    <property name="visible">True</property>
+    <property name="valign">center</property>
+    <property name="can-focus">True</property>
+    <property name="focus-on-click">False</property>
+    <property name="menu-model">game-menu</property>
+  </template>
+</interface>

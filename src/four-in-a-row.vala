@@ -830,6 +830,8 @@ private class FourInARow : Gtk.Application
 
         app_menu.freeze ();
 
+        MenuButton history_button = new HistoryButton (/* direction: down */ false);
+
         /* Window */
         window = new GameWindow ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
                                  PROGRAM_NAME,
@@ -837,7 +839,8 @@ private class FourInARow : Gtk.Application
                                  GameWindowFlags.SHOW_START_BUTTON,
                                  (Box) new_game_screen,
                                  game_board_view,
-                                 app_menu);
+                                 app_menu,
+                                 history_button);
 
         scorebox = new Scorebox (window, this);
 

@@ -13,5 +13,6 @@
     <file preprocess="xml-stripblanks" compressed="true" alias="adaptative-window.ui">../data/ui/adaptative-window.ui</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="fiar-screens.ui">../data/ui/fiar-screens.ui</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="game-window.ui">../data/ui/four-in-a-row.ui</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="history-button.ui">../data/ui/history-button.ui</file>
   </gresource>
 </gresources>

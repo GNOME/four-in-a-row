@@ -24,6 +24,7 @@ sources = files(
     'game-board-view.vala',
     'game-board.vala',
     'game-window.vala',
+    'history-button.vala',
     'new-game-screen.vala',
     'prefs.vala',
     'scorebox.vala',

@@ -49,13 +49,13 @@ private class GameWindow : AdaptativeWindow
     private Button? start_game_button = null;
     [GtkChild] private Button new_game_button;
     [GtkChild] private Button back_button;
-    [GtkChild] private Button game_button;
     [GtkChild] private Button unfullscreen_button;
 
     [GtkChild] private Box game_box;
     [GtkChild] private Box new_game_box;
 
     private Widget view;
+    private Widget? game_widget;
 
     /* signals */
     internal signal void play ();
@@ -66,7 +66,7 @@ private class GameWindow : AdaptativeWindow
  // internal signal void redo ();
     internal signal void hint ();
 
-    internal GameWindow (string? css_resource, string name, bool start_now, GameWindowFlags flags, Box new_game_screen, Widget _view, GLib.Menu app_menu)
+    internal GameWindow (string? css_resource, string name, bool start_now, GameWindowFlags flags, Box new_game_screen, Widget _view, GLib.Menu app_menu, Widget? _game_widget)
     {
         Object (window_title: name,
                 specific_css_class_or_empty: "",
@@ -82,6 +82,7 @@ private class GameWindow : AdaptativeWindow
         }
 
         view = _view;
+        game_widget = _game_widget;
 
         /* window config */
         install_ui_action_entries ();
@@ -91,6 +92,12 @@ private class GameWindow : AdaptativeWindow
         info_button.set_menu_model (app_menu);
 
         /* add widgets */
+        if (game_widget != null)
+        {
+            headerbar.pack_end ((!) game_widget);
+            add_adaptative_child ((AdaptativeWidget) (!) game_widget);
+        }
+
         new_game_box.pack_start (new_game_screen, true, true, 0);
         add_adaptative_child ((AdaptativeWidget) new_game_screen);
         if (GameWindowFlags.SHOW_START_BUTTON in flags)
@@ -236,7 +243,8 @@ private class GameWindow : AdaptativeWindow
         headerbar.set_title (program_name);
 
         stack.set_visible_child_name ("start-box");
-        game_button.hide ();
+        if (game_widget != null)
+            ((!) game_widget).hide ();
         new_game_button.hide ();
 
         if (!game_finished && back_button.visible)
@@ -251,7 +259,8 @@ private class GameWindow : AdaptativeWindow
 
         stack.set_visible_child_name ("game-box");
         back_button.hide ();        // TODO transition?
-        game_button.show ();
+        if (game_widget != null)
+            ((!) game_widget).show ();
         new_game_button.show ();
 
         if (game_finished)

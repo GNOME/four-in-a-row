@@ -17,20 +17,6 @@
 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
-  <menu id="game-menu">
-    <section>
-      <item>
-        <!-- Translators: during a game, entry in the game menu, for undoing the last move -->
-        <attribute name="label" translatable="yes">_Undo last move</attribute>
-        <attribute name="action">ui.undo</attribute>
-      </item>
-      <item>
-        <!-- Translators: during a game, entry in the game menu, for suggesting where to play -->
-        <attribute name="label" translatable="yes">_Hint</attribute>
-        <attribute name="action">ui.hint</attribute>
-      </item>
-    </section>
-  </menu>
   <template class="GameWindow" parent="AdaptativeWindow">
     <!-- <initial-focus name="view"/> -->
     <child type="titlebar">
@@ -77,26 +63,6 @@
           </object>
           <packing>
             <property name="pack-type">start</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkMenuButton" id="game_button">
-            <property name="visible">True</property>
-            <property name="valign">center</property>
-            <property name="can-focus">True</property>
-            <property name="focus-on-click">False</property>
-            <property name="menu-model">game-menu</property>
-            <child>
-              <object class="GtkImage">
-                <property name="visible">True</property>
-                <property name="icon-name">pan-down-symbolic</property>
-                <property name="icon-size">1</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="pack-type">end</property>
             <property name="position">1</property>
           </packing>
         </child>

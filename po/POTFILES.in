@@ -2,10 +2,12 @@
 # Please keep this file in alphabetical order.
 data/ui/fiar-screens.ui
 data/ui/four-in-a-row.ui
+data/ui/history-button.ui
 data/org.gnome.Four-in-a-row.appdata.xml.in
 data/org.gnome.Four-in-a-row.desktop.in
 data/org.gnome.Four-in-a-row.gschema.xml
 src/four-in-a-row.vala
+src/history-button.vala
 src/new-game-screen.vala
 src/prefs.vala
 src/scorebox.vala
