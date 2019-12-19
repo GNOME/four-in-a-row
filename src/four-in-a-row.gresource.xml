@@ -17,4 +17,7 @@
     <file preprocess="xml-stripblanks" compressed="true" alias="game-actionbar-placeholder.ui">../data/ui/game-actionbar-placeholder.ui</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="history-button.ui">../data/ui/history-button.ui</file>
   </gresource>
+  <gresource prefix="/org/gnome/Four-in-a-row/gtk">
+    <file preprocess="xml-stripblanks" alias="help-overlay.ui">../data/ui/help-overlay.ui</file>
+  </gresource>
 </gresources>

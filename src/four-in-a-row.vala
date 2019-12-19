@@ -155,17 +155,21 @@ private class FourInARow : Gtk.Application
         app_menu.append_section (null, section);
 
         section = new GLib.Menu ();
-        /* Translators: hamburger menu entry; opens the Scores dialog */
+        /* Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt) */
         section.append (_("_Scores"), "app.scores");
         section.freeze ();
         app_menu.append_section (null, section);
 
         section = new GLib.Menu ();
-        /* Translators: hamburger menu entry; opens the application help */
+        /* Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt) */
+        section.append (_("_Keyboard Shortcuts"), "win.show-help-overlay");
+
+
+        /* Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt) */
         section.append (_("_Help"), "app.help");
 
 
-        /* Translators: hamburger menu entry; opens the About dialog */
+        /* Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt) */
         section.append (_("_About Four-in-a-row"), "app.about");
         section.freeze ();
         app_menu.append_section (null, section);

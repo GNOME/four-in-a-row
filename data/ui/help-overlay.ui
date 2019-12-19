@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   This file is part of GNOME Four-in-a-row.
+
+   Copyright © 2019 Arnaud Bonatti
+
+   GNOME Four-in-a-row is free software: you can redistribute it and/or
+   modify it under the terms of the GNU General Public License as published
+   by the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   GNOME Four-in-a-row is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<interface domain="iagno">
+  <requires lib="gtk+" version="3.12"/>
+  <object class="GtkShortcutsWindow" id="help_overlay">
+    <child>
+      <object class="GtkShortcutsSection">
+        <property name="visible">True</property>
+        <property name="max-height">8</property>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">True</property>
+            <!-- Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"... -->
+            <property name="title" translatable="yes" context="shortcut window">During a game</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "During a game" -->
+                <property name="title" translatable="yes" context="shortcut window">New game</property>
+                <property name="accelerator">&lt;Primary&gt;n</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "During a game" -->
+                <property name="title" translatable="yes" context="shortcut window">Undo last move</property>
+                <property name="accelerator">&lt;Primary&gt;z</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "During a game" -->
+                <property name="title" translatable="yes" context="shortcut window">Show a hint</property>
+                <property name="accelerator">&lt;Primary&gt;h</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">True</property>
+            <!-- Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down -->
+            <property name="title" translatable="yes" context="shortcut window">Play with keyboard</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play -->
+                <property name="title" translatable="yes" context="shortcut window">Select where to play</property>
+                <property name="accelerator">Left Right</property>
+              </object>
+            </child>
+            <child><!-- TODO make visible -->
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">False</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column -->
+                <property name="title" translatable="yes" context="shortcut window">Select the given column</property>
+                <property name="accelerator">1...7</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile -->
+                <property name="title" translatable="yes" context="shortcut window">Play in selected column</property>
+                <property name="accelerator">Down</property><!-- TODO Return space -->
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">True</property>
+            <!-- Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game -->
+            <property name="title" translatable="yes" context="shortcut window">During game selection</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game -->
+                <property name="title" translatable="yes" context="shortcut window">Start new game</property>
+                <property name="accelerator">&lt;Primary&gt;&lt;Shift&gt;n</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any -->
+                <property name="title" translatable="yes" context="shortcut window">Go back</property>
+                <property name="accelerator">Escape</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="visible">True</property>
+            <!-- Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"... -->
+            <property name="title" translatable="yes" context="shortcut window">Generic</property>
+            <child><!-- TODO make visible -->
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">False</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
+                <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
+                <property name="accelerator">&lt;Primary&gt;question &lt;Primary&gt;F1</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
+                <property name="title" translatable="yes" context="shortcut window">Help</property>
+                <property name="accelerator">F1</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
+                <property name="title" translatable="yes" context="shortcut window">About</property>
+                <property name="accelerator">&lt;Shift&gt;F1</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
+                <property name="title" translatable="yes" context="shortcut window">Quit</property>
+                <property name="accelerator">&lt;Primary&gt;q</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
