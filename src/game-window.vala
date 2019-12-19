@@ -29,7 +29,7 @@ private enum GameWindowFlags {
 }
 
 [GtkTemplate (ui = "/org/gnome/Four-in-a-row/ui/game-window.ui")]
-private class GameWindow : AdaptativeWindow
+private class GameWindow : AdaptativeWindow, AdaptativeWidget
 {
     /* settings */
     private bool window_is_tiled;
@@ -44,6 +44,7 @@ private class GameWindow : AdaptativeWindow
 
     /* private widgets */
     [GtkChild] private HeaderBar headerbar;
+    [GtkChild] private Overlay overlay;
     [GtkChild] private Stack stack;
 
     private Button? start_game_button = null;
@@ -55,7 +56,8 @@ private class GameWindow : AdaptativeWindow
     [GtkChild] private Box new_game_box;
 
     private Widget view;
-    private Widget? game_widget;
+    private Widget? game_widget_1;
+    private GameActionBar actionbar;
 
     /* signals */
     internal signal void play ();
@@ -66,7 +68,7 @@ private class GameWindow : AdaptativeWindow
  // internal signal void redo ();
     internal signal void hint ();
 
-    internal GameWindow (string? css_resource, string name, bool start_now, GameWindowFlags flags, Box new_game_screen, Widget _view, GLib.Menu app_menu, Widget? _game_widget)
+    internal GameWindow (string? css_resource, string name, bool start_now, GameWindowFlags flags, Box new_game_screen, Widget _view, GLib.Menu app_menu, Widget? _game_widget_1, Widget? game_widget_2)
     {
         Object (window_title: name,
                 specific_css_class_or_empty: "",
@@ -82,24 +84,31 @@ private class GameWindow : AdaptativeWindow
         }
 
         view = _view;
-        game_widget = _game_widget;
+        game_widget_1 = _game_widget_1;
 
         /* window config */
         install_ui_action_entries ();
         program_name = name;
         set_title (name);
-        headerbar.set_title (name);
+        if (!is_extra_thin)
+            headerbar.set_title (name);
         info_button.set_menu_model (app_menu);
 
         /* add widgets */
-        if (game_widget != null)
+        if (game_widget_1 != null)
         {
-            headerbar.pack_end ((!) game_widget);
-            add_adaptative_child ((AdaptativeWidget) (!) game_widget);
+            headerbar.pack_end ((!) game_widget_1);
+            add_adaptative_child ((AdaptativeWidget) (!) game_widget_1);
         }
+        actionbar = new GameActionBar (name, game_widget_2, /* show actionbar */ start_now);
+        actionbar.show ();
+        actionbar.valign = Align.END;
+        overlay.add_overlay (actionbar);
 
         new_game_box.pack_start (new_game_screen, true, true, 0);
         add_adaptative_child ((AdaptativeWidget) new_game_screen);
+        add_adaptative_child ((AdaptativeWidget) actionbar);
+        add_adaptative_child ((AdaptativeWidget) this);
         if (GameWindowFlags.SHOW_START_BUTTON in flags)
         {
             /* Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt) */
@@ -202,8 +211,16 @@ private class GameWindow : AdaptativeWindow
 
     internal void set_subtitle (string? subtitle)
     {
-        headerbar.set_title (subtitle);
+        if (!is_extra_thin)
+            headerbar.set_title (subtitle);
         last_subtitle = subtitle;
+        if (subtitle == null)
+            actionbar.set_visibility (false);
+        else
+        {
+            actionbar.update_title ((!) subtitle);
+            actionbar.set_visibility (true);
+        }
     }
 
     internal void finish_game ()
@@ -234,17 +251,48 @@ private class GameWindow : AdaptativeWindow
     }
 
     /*\
+    * * adaptative stuff
+    \*/
+
+    private bool is_extra_thin = false;
+    protected override void set_window_size (AdaptativeWidget.WindowSize new_size)
+    {
+        bool _is_extra_thin = AdaptativeWidget.WindowSize.is_extra_thin (new_size);
+        if (_is_extra_thin == is_extra_thin)
+            return;
+        is_extra_thin = _is_extra_thin;
+
+        if (is_extra_thin)
+        {
+            headerbar.set_title (null);
+            if (game_widget_1 != null)
+                ((!) game_widget_1).hide ();
+        }
+        else
+        {
+            if (game_widget_1 != null)
+                ((!) game_widget_1).show ();
+            if (stack.get_visible_child_name () == "start-box")
+                headerbar.set_title (program_name);
+            else
+                headerbar.set_title (last_subtitle);
+        }
+    }
+
+    /*\
     * * Showing the Stack
     \*/
 
     private string? last_subtitle = null;
     private void show_new_game_screen ()
     {
-        headerbar.set_title (program_name);
+        if (!is_extra_thin)
+            headerbar.set_title (program_name);
+        actionbar.set_visibility (false);
 
         stack.set_visible_child_name ("start-box");
-        if (game_widget != null)
-            ((!) game_widget).hide ();
+        if (game_widget_1 != null)
+            ((!) game_widget_1).hide ();
         new_game_button.hide ();
 
         if (!game_finished && back_button.visible)
@@ -255,12 +303,15 @@ private class GameWindow : AdaptativeWindow
 
     private void show_view ()
     {
-        headerbar.set_title (last_subtitle);
+        if (!is_extra_thin)
+            headerbar.set_title (last_subtitle);
+        actionbar.set_visibility (true);
 
         stack.set_visible_child_name ("game-box");
         back_button.hide ();        // TODO transition?
-        if (game_widget != null)
-            ((!) game_widget).show ();
+        if (game_widget_1 != null
+         && stack.get_visible_child_name () == "start-box")
+            ((!) game_widget_1).show ();
         new_game_button.show ();
 
         if (game_finished)

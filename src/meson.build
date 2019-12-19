@@ -21,6 +21,7 @@ sources = files(
     'adaptative-window.vala',
     'ai.vala',
     'four-in-a-row.vala',
+    'game-actionbar.vala',
     'game-board-view.vala',
     'game-board.vala',
     'game-window.vala',

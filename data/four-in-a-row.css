@@ -36,6 +36,7 @@ GtkButtonBox {
                   .thin-window .game-box                {                          padding:1.0rem; }
 .extra-thin-window.thin-window .game-box,
                   .flat-window .game-box                {                          padding:0.5rem; }
+.extra-thin-window.thin-window .game-box                {                          padding-bottom:calc(0.5rem+47px); } /* FIXME hackish, height of the actionbar using MySettings(TM)... */
 .extra-flat-window.flat-window .game-box                {                          padding:0.4rem; }
 
 /*\
@@ -48,6 +49,21 @@ GtkButtonBox {
 .extra-flat-window.flat-window button.start-game-button { margin-top:  0rem; margin-bottom:0.4rem; }
 
 .extra-thin-window             button.start-game-button { margin-top:1.0rem; }
+
+label.game-name-label:dir(ltr) {
+  margin-left : 12px;
+}
+label.game-name-label:dir(rtl) {
+  margin-right: 12px;
+}
+
+/* the actionbar is in an overlay... */
+actionbar {
+  background-color:@theme_bg_color;
+}
+actionbar:backdrop {
+  background-color:@theme_unfocused_bg_color;
+}
 
 /*\
 * * options buttons
