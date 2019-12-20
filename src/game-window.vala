@@ -105,9 +105,14 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         actionbar.valign = Align.END;
         overlay.add_overlay (actionbar);
 
+        GameActionBarPlaceHolder actionbar_placeholder = new GameActionBarPlaceHolder (actionbar);
+        actionbar_placeholder.show ();
+        game_box.pack_end (actionbar_placeholder, /* expand */ false, /* fill */ true, /* padding */ 0);
+
         new_game_box.pack_start (new_game_screen, true, true, 0);
         add_adaptative_child ((AdaptativeWidget) new_game_screen);
         add_adaptative_child ((AdaptativeWidget) actionbar);
+        add_adaptative_child ((AdaptativeWidget) actionbar_placeholder);
         add_adaptative_child ((AdaptativeWidget) this);
         if (GameWindowFlags.SHOW_START_BUTTON in flags)
         {

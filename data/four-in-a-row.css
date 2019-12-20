@@ -36,7 +36,6 @@ GtkButtonBox {
                   .thin-window .game-box                {                          padding:1.0rem; }
 .extra-thin-window.thin-window .game-box,
                   .flat-window .game-box                {                          padding:0.5rem; }
-.extra-thin-window.thin-window .game-box                {                          padding-bottom:calc(0.5rem+47px); } /* FIXME hackish, height of the actionbar using MySettings(TM)... */
 .extra-flat-window.flat-window .game-box                {                          padding:0.4rem; }
 
 /*\
