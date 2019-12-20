@@ -277,7 +277,8 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         {
             if (game_widget_1 != null)
                 ((!) game_widget_1).show ();
-            if (stack.get_visible_child_name () == "start-box")
+            string? panel_name = stack.get_visible_child_name ();
+            if (panel_name != null && (!) panel_name == "start-box")
                 headerbar.set_title (program_name);
             else
                 headerbar.set_title (last_subtitle);
