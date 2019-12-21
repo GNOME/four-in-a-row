@@ -58,6 +58,7 @@ private class FourInARow : Gtk.Application
      */
     private int [] score = { 0, 0, 0 };
     private bool reset_score = true;
+    private uint playgame_timeout = 0;
 
     // widgets
     private Scorebox scorebox;
@@ -294,6 +295,11 @@ private class FourInARow : Gtk.Application
     internal void game_reset ()
     {
         stop_anim ();
+        if (playgame_timeout != 0)
+        {
+            Source.remove (playgame_timeout);
+            playgame_timeout = 0;
+        }
 
         window.allow_undo (false);
         window.allow_hint (false);
@@ -339,7 +345,11 @@ private class FourInARow : Gtk.Application
         if (!is_player_human ())
         {
             vstr [0] = vlevel [ai_level];
-            Timeout.add (COMPUTER_INITIAL_DELAY, () => { process_move (playgame ((string) vstr) - 1); return Source.REMOVE; });
+            playgame_timeout = Timeout.add (COMPUTER_INITIAL_DELAY, () => {
+                    process_move (playgame ((string) vstr) - 1);
+                    playgame_timeout = 0;
+                    return Source.REMOVE;
+                });
         }
     }
 
@@ -480,13 +490,14 @@ private class FourInARow : Gtk.Application
             swap_player ();
             if (!is_player_human ())
             {
-                Timeout.add (COMPUTER_MOVE_DELAY, () => {
+                playgame_timeout = Timeout.add (COMPUTER_MOVE_DELAY, () => {
                         vstr [0] = vlevel [ai_level];
                         c = playgame ((string) vstr) - 1;
                         if (c < 0)
                             gameover = true;
                         var nm = new NextMove (c, this);
                         Timeout.add (SPEED_DROP, nm.exec);
+                        playgame_timeout = 0;
                         return Source.REMOVE;
                     });
             }
