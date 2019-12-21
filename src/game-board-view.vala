@@ -18,34 +18,44 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-private class GameBoardView : Gtk.DrawingArea {
-    private int board_size = 0;
-    private int tile_size = 0;
-    private int offset[6];
-    /* unscaled pixbufs */
-    private Gdk.Pixbuf pb_tileset_raw;
-    private Gdk.Pixbuf pb_bground_raw;
-    /* scaled pixbufs */
-    private Gdk.Pixbuf pb_tileset;
-    private Gdk.Pixbuf pb_bground;
-    private Board game_board;
+private class GameBoardView : Gtk.DrawingArea
+{
+    [CCode (notify = false)] public Board game_board { private get; protected construct; }
 
-    internal GameBoardView(Board game_board) {
+    internal GameBoardView (Board game_board)
+    {
+        Object (game_board: game_board);
+    }
+
+    construct
+    {
         events = Gdk.EventMask.EXPOSURE_MASK
                | Gdk.EventMask.BUTTON_PRESS_MASK
                | Gdk.EventMask.BUTTON_RELEASE_MASK;
-        Prefs.instance.notify ["theme-id"].connect(() => change_theme());
-        load_pixmaps();
-        this.game_board = game_board;
+        Prefs.instance.notify ["theme-id"].connect (change_theme);
+        load_pixmaps ();
     }
 
-    internal inline void draw_tile(int r, int c) {
-        queue_draw_area(c*tile_size + board_x, r*tile_size + board_y, tile_size, tile_size);
-    }
+    /*\
+    * * drawing variables
+    \*/
 
+    private int board_size = 0;
+    private int tile_size = 0;
+    private int offset [6];
     private int board_x;
     private int board_y;
-    protected override bool configure_event(Gdk.EventConfigure e) {
+
+    internal inline void draw_tile (int row, int col)
+    {
+        queue_draw_area (/* start */ col * tile_size + board_x,
+                                     row * tile_size + board_y,
+                         /* size  */ tile_size,
+                                     tile_size);
+    }
+
+    protected override bool configure_event (Gdk.EventConfigure e)
+    {
         int allocated_width  = get_allocated_width ();
         int allocated_height = get_allocated_height ();
         int size = int.min (allocated_width, allocated_height);
@@ -54,14 +64,14 @@ private class GameBoardView : Gtk.DrawingArea {
         board_x = (allocated_width  - board_size) / 2;
         board_y = (allocated_height - board_size) / 2;
 
-        offset[Tile.PLAYER1] = 0;
-        offset[Tile.PLAYER2] = tile_size;
-        offset[Tile.CLEAR] = tile_size * 2;
-        offset[Tile.CLEAR_CURSOR] = tile_size * 3;
-        offset[Tile.PLAYER1_CURSOR] = tile_size * 4;
-        offset[Tile.PLAYER2_CURSOR] = tile_size * 5;
+        offset [Tile.PLAYER1]        = 0;
+        offset [Tile.PLAYER2]        = tile_size;
+        offset [Tile.CLEAR]          = tile_size * 2;
+        offset [Tile.CLEAR_CURSOR]   = tile_size * 3;
+        offset [Tile.PLAYER1_CURSOR] = tile_size * 4;
+        offset [Tile.PLAYER2_CURSOR] = tile_size * 5;
 
-        refresh_pixmaps();
+        refresh_pixmaps ();
         return true;
     }
 
@@ -69,102 +79,108 @@ private class GameBoardView : Gtk.DrawingArea {
     * * drawing
     \*/
 
-    protected override bool draw(Cairo.Context cr) {
-        int r, c;
+    protected override bool draw (Cairo.Context cr)
+    {
+        /* background */
+        cr.save ();
+        cr.translate (board_x, board_y);
+        Gdk.cairo_set_source_pixbuf (cr, pb_bground, 0.0, 0.0);
+        cr.rectangle (0.0, 0.0, board_size, board_size);
+        cr.paint ();
+        cr.restore ();
 
-        /* draw the background */
-        cr.save();
-        cr.translate(board_x, board_y);
-        Gdk.cairo_set_source_pixbuf(cr, pb_bground, 0, 0);
-        cr.rectangle(0, 0, board_size, board_size);
-        cr.paint();
-        cr.restore();
+        /* tiles */
+        for (uint8 row = 0; row < 7; row++)
+            for (uint8 col = 0; col < 7; col++)
+                paint_tile (cr, row, col);
 
-        for (r = 0; r < 7; r++) {
-            for (c = 0; c < 7; c++) {
-                paint_tile(cr, r, c);
-            }
-        }
+        /* grid */
+        cr.save ();
+        cr.translate (board_x, board_y);
+        draw_grid (cr);
+        cr.restore ();
 
-        cr.save();
-        cr.translate(board_x, board_y);
-        draw_grid(cr);
-        cr.restore();
         return false;
     }
 
-    private inline void draw_grid(Cairo.Context cr) {
-        const double dashes[] = { 4.0, 4.0 };
-        int i;
-        Gdk.RGBA color = Gdk.RGBA();
-
-        color.parse(theme[Prefs.instance.theme_id].grid_color);
-        Gdk.cairo_set_source_rgba(cr, color);
-        cr.set_operator(Cairo.Operator.SOURCE);
-        cr.set_line_width(1);
-        cr.set_line_cap(Cairo.LineCap.BUTT);
-        cr.set_line_join(Cairo.LineJoin.MITER);
-        cr.set_dash(dashes, 0);
-
-        /* draw the grid on the background pixmap */
-        for (i = 1; i < 7; i++) {
-            cr.move_to(i * tile_size + 0.5, 0);
-            cr.line_to(i * tile_size + 0.5, board_size);
-            cr.move_to(0, i * tile_size + 0.5);
-            cr.line_to(board_size, i * tile_size + 0.5);
-        }
-        cr.stroke();
-
-        /* Draw separator line at the top */
-        cr.set_dash(null, 0);
-        cr.move_to(0, tile_size + 0.5);
-        cr.line_to(board_size, tile_size + 0.5);
-
-        cr.stroke();
-    }
-
-    private inline void paint_tile(Cairo.Context cr, int r, int c) {
-        int x = c * tile_size + board_x;
-        int y = r * tile_size + board_y;
-        int tile = game_board [r, c];
-        int os = 0;
-
-        if (tile == Tile.CLEAR && r != 0)
+    private inline void paint_tile (Cairo.Context cr, uint8 row, uint8 col)
+    {
+        int tile = game_board [row, col];
+        if (tile == Tile.CLEAR && row != 0)
             return;
 
-        switch (tile) {
-        case Tile.PLAYER1:
-            if (r == 0)
-                os = offset[Tile.PLAYER1_CURSOR];
-            else
-                os = offset[Tile.PLAYER1];
-            break;
-        case Tile.PLAYER2:
-            if (r == 0)
-                os = offset[Tile.PLAYER2_CURSOR];
-            else
-                os = offset[Tile.PLAYER2];
-            break;
-        case Tile.CLEAR:
-            if (r == 0)
-                os = offset[Tile.CLEAR_CURSOR];
-            else
-                os = offset[Tile.CLEAR];
-            break;
+        int os = 0;
+        if (row == 0)
+            switch (tile)
+            {
+                case Tile.PLAYER1 : os = offset [Tile.PLAYER1_CURSOR]; break;
+                case Tile.PLAYER2 : os = offset [Tile.PLAYER2_CURSOR]; break;
+                case Tile.CLEAR   : os = offset [Tile.CLEAR_CURSOR];   break;
+            }
+        else
+            switch (tile)
+            {
+                case Tile.PLAYER1 : os = offset [Tile.PLAYER1]; break;
+                case Tile.PLAYER2 : os = offset [Tile.PLAYER2]; break;
+                case Tile.CLEAR   : assert_not_reached ();
+            }
+
+        cr.save ();
+        int x = col * tile_size + board_x;
+        int y = row * tile_size + board_y;
+        Gdk.cairo_set_source_pixbuf (cr, pb_tileset, x - os, y);
+        cr.rectangle (x, y, tile_size, tile_size);
+
+        cr.clip ();
+        cr.paint ();
+        cr.restore ();
+    }
+
+    private inline void draw_grid (Cairo.Context cr)
+    {
+        const double dashes [] = { 4.0, 4.0 };
+        Gdk.RGBA color = Gdk.RGBA ();
+
+        color.parse (theme [Prefs.instance.theme_id].grid_color);
+        Gdk.cairo_set_source_rgba (cr, color);
+        cr.set_operator (Cairo.Operator.SOURCE);
+        cr.set_line_width (1.0);
+        cr.set_line_cap (Cairo.LineCap.BUTT);
+        cr.set_line_join (Cairo.LineJoin.MITER);
+        cr.set_dash (dashes, /* offset */ 0.0);
+
+        /* draw the grid on the background pixmap */
+        for (uint8 i = 1; i < 7; i++)
+        {
+            double line_offset = i * tile_size + 0.5;
+            // vertical lines
+            cr.move_to (line_offset, 0.0        );
+            cr.line_to (line_offset, board_size );
+            // horizontal lines
+            cr.move_to (0.0        , line_offset);
+            cr.line_to (board_size , line_offset);
         }
+        cr.stroke ();
 
-        cr.save();
-        Gdk.cairo_set_source_pixbuf(cr, pb_tileset, x - os, y);
-        cr.rectangle(x, y, tile_size, tile_size);
+        /* Draw separator line at the top */
+        cr.set_dash (null, /* offset */ 0.0);
+        cr.move_to (0.0, tile_size + 0.5);
+        cr.line_to (board_size, tile_size + 0.5);
 
-        cr.clip();
-        cr.paint();
-        cr.restore();
+        cr.stroke ();
     }
 
     /*\
     * * pixmaps
     \*/
+
+    /* unscaled pixbufs */
+    private Gdk.Pixbuf pb_tileset_raw;
+    private Gdk.Pixbuf pb_bground_raw;
+
+    /* scaled pixbufs */
+    private Gdk.Pixbuf pb_tileset;
+    private Gdk.Pixbuf pb_bground;
 
     private inline void change_theme ()
     {
@@ -244,23 +260,26 @@ private class GameBoardView : Gtk.DrawingArea {
      *
      * Which column was clicked on
      */
-    internal signal bool column_clicked(int column);
+    internal signal bool column_clicked (int column);
 
-    protected override bool button_press_event(Gdk.EventButton e) {
+    protected override bool button_press_event (Gdk.EventButton e)
+    {
         int x;
         int y;
-        Gdk.Window? window = get_window();
+        Gdk.Window? window = get_window ();
         if (window == null)
             assert_not_reached ();
-        ((!) window).get_device_position(e.device, out x, out y, null);
+        ((!) window).get_device_position (e.device, out x, out y, null);
 
         int col;
-        if (get_column(x, y, out col))
-            return column_clicked(col);
+        if (get_column (x, y, out col))
+            return column_clicked (col);
         else
             return false;
     }
-    private inline bool get_column(int x, int y, out int col) {
+
+    private inline bool get_column (int x, int y, out int col)
+    {
         col = (x - board_x) / tile_size;
         if (x < board_x || y < board_y || col < 0 || col > 6)
             return false;
