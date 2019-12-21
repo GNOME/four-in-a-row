@@ -41,7 +41,6 @@ private class FourInARow : Gtk.Application
 
     // game status
     private bool gameover = true;
-    private bool player_active = false;
     private PlayerID player = PlayerID.PLAYER1;
     private PlayerID winner = PlayerID.NOBODY;
     private PlayerID last_first_player = PlayerID.NOBODY;
@@ -289,7 +288,6 @@ private class FourInARow : Gtk.Application
         }
 
         gameover = true;
-        player_active = false;
         winner = NOBODY;
         column = 3;
         column_moveto = 3;
@@ -365,8 +363,6 @@ private class FourInARow : Gtk.Application
     private void prompt_player ()
     {
         bool human = is_player_human ();
-        string who;
-        string str;
 
         window.allow_hint (human && !gameover);
 
@@ -403,25 +399,15 @@ private class FourInARow : Gtk.Application
         }
         else
         {
+            string who;
             if (gameover)
-            {
                 who = player == PLAYER1 ? theme_get_player_win (PlayerID.PLAYER1)
                                         : theme_get_player_win (PlayerID.PLAYER2);
-                str = _(who);
-            }
-            else if (player_active)
-            {
-                set_status_message (_("Your Turn"));
-                return;
-            }
             else
-            {
                 who = player == PLAYER1 ? theme_get_player_turn (PlayerID.PLAYER1)
                                         : theme_get_player_turn (PlayerID.PLAYER2);
-                str = _(who);
-            }
 
-            set_status_message (str);
+            set_status_message (_(who));
         }
     }
 
@@ -804,8 +790,7 @@ private class FourInARow : Gtk.Application
 
     private inline bool on_key_press (Gdk.EventKey e)
     {
-        if (player_active
-         || timeout != 0
+        if (timeout != 0
          || (e.keyval != Prefs.instance.keypress_left
           && e.keyval != Prefs.instance.keypress_right
           && e.keyval != Prefs.instance.keypress_drop))
@@ -835,9 +820,6 @@ private class FourInARow : Gtk.Application
 
     private inline bool column_clicked_cb (int column)
     {
-        if (player_active)
-            return false;
-
         if (gameover && timeout == 0)
             blink_winner (2);
         else if (is_player_human () && timeout == 0)
