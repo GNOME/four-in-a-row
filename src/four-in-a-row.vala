@@ -331,7 +331,6 @@ private class FourInARow : Gtk.Application
             return;
 
         window.show ();
-        game_board_view.refresh_pixmaps ();
         game_board_view.queue_draw ();
         scorebox.update (score, one_player_game);    /* update visible player descriptions */
         prompt_player ();

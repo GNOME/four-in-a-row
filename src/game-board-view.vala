@@ -62,7 +62,6 @@ private class GameBoardView : Gtk.DrawingArea {
         offset[Tile.PLAYER2_CURSOR] = tile_size * 5;
 
         refresh_pixmaps();
-        queue_draw();
         return true;
     }
 
@@ -70,7 +69,6 @@ private class GameBoardView : Gtk.DrawingArea {
         load_pixmaps();
 
         refresh_pixmaps();
-        queue_draw();
         return true;
     }
 
@@ -167,14 +165,25 @@ private class GameBoardView : Gtk.DrawingArea {
         cr.restore();
     }
 
-    internal void refresh_pixmaps() {
-        /* scale the pixbufs */
-        Gdk.Pixbuf? pb_tileset_tmp = pb_tileset_raw.scale_simple(tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
-        Gdk.Pixbuf? pb_bground_tmp = pb_bground_raw.scale_simple(board_size, board_size, Gdk.InterpType.BILINEAR);
-        if (pb_tileset_tmp == null || pb_bground_tmp == null)
+    /*\
+    * * pixmaps
+    \*/
+
+    private void refresh_pixmaps ()
+    {
+        Gdk.Pixbuf? tmp_pixbuf;
+
+        tmp_pixbuf = pb_tileset_raw.scale_simple (tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
+        if (tmp_pixbuf == null)
             assert_not_reached ();
-        pb_tileset = (!) pb_tileset_tmp;
-        pb_bground = (!) pb_bground_tmp;
+        pb_tileset = (!) tmp_pixbuf;
+
+        tmp_pixbuf = pb_bground_raw.scale_simple (board_size, board_size, Gdk.InterpType.BILINEAR);
+        if (tmp_pixbuf == null)
+            assert_not_reached ();
+        pb_bground = (!) tmp_pixbuf;
+
+        queue_draw ();
     }
 
     private void load_pixmaps ()
@@ -218,6 +227,10 @@ private class GameBoardView : Gtk.DrawingArea {
                                           i * raw_tile_size, j * raw_tile_size);
         }
     }
+
+    /*\
+    * * mouse play
+    \*/
 
     /**
      * column_clicked:
