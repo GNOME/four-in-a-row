@@ -31,9 +31,6 @@ private class GameBoardView : Gtk.DrawingArea {
     private Board game_board;
 
     internal GameBoardView(Board game_board) {
-        halign = Gtk.Align.FILL;
-        valign = Gtk.Align.FILL;
-
         events = Gdk.EventMask.EXPOSURE_MASK
                | Gdk.EventMask.BUTTON_PRESS_MASK
                | Gdk.EventMask.BUTTON_RELEASE_MASK;
@@ -198,18 +195,15 @@ private class GameBoardView : Gtk.DrawingArea {
         Gdk.Pixbuf? pb_bground_tmp = null;
 
         /* Try the theme pixmaps, fallback to the default and then give up */
-        while (true) {
-            fname = "/org/gnome/Four-in-a-row/images/" + theme[Prefs.instance.theme_id].fname_tileset;
-            try {
-                pb_tileset_tmp = new Gdk.Pixbuf.from_resource(fname);
-            } catch (Error e) {
-                if (Prefs.instance.theme_id == 0)
-                    load_error(fname);
-                else
-                    Prefs.instance.theme_id = 0;
-                return false;
-            }
-            break;
+        fname = "/org/gnome/Four-in-a-row/images/" + theme[Prefs.instance.theme_id].fname_tileset;
+        try {
+            pb_tileset_tmp = new Gdk.Pixbuf.from_resource(fname);
+        } catch (Error e) {
+            if (Prefs.instance.theme_id == 0)
+                load_error(fname);
+            else
+                Prefs.instance.theme_id = 0;
+            return false;
         }
 
         pb_tileset_raw = pb_tileset_tmp;
