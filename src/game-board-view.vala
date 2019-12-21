@@ -67,8 +67,7 @@ private class GameBoardView : Gtk.DrawingArea {
     }
 
     private inline bool change_theme() {
-        if (!load_pixmaps())
-            return false;
+        load_pixmaps();
 
         refresh_pixmaps();
         queue_draw();
@@ -129,17 +128,6 @@ private class GameBoardView : Gtk.DrawingArea {
         cr.stroke();
     }
 
-    private void load_error(string fname) {
-        Gtk.MessageDialog dialog;
-
-        dialog = new Gtk.MessageDialog(get_window() as Gtk.Window, Gtk.DialogFlags.MODAL,
-            Gtk.MessageType.WARNING, Gtk.ButtonsType.CLOSE,
-        dgettext(GETTEXT_PACKAGE, "Unable to load image:\n%s"), fname);
-
-        dialog.run();
-        dialog.destroy();
-    }
-
     private inline void paint_tile(Cairo.Context cr, int r, int c) {
         int x = c * tile_size + board_x;
         int y = r * tile_size + board_y;
@@ -189,21 +177,17 @@ private class GameBoardView : Gtk.DrawingArea {
         pb_bground = (!) pb_bground_tmp;
     }
 
-    private bool load_pixmaps() {
+    private void load_pixmaps() {
         string fname;
         Gdk.Pixbuf pb_tileset_tmp;
         Gdk.Pixbuf? pb_bground_tmp = null;
 
-        /* Try the theme pixmaps, fallback to the default and then give up */
         fname = "/org/gnome/Four-in-a-row/images/" + theme[Prefs.instance.theme_id].fname_tileset;
         try {
             pb_tileset_tmp = new Gdk.Pixbuf.from_resource(fname);
         } catch (Error e) {
-            if (Prefs.instance.theme_id == 0)
-                load_error(fname);
-            else
-                Prefs.instance.theme_id = 0;
-            return false;
+            critical(e.message);
+            assert_not_reached ();
         }
 
         pb_tileset_raw = pb_tileset_tmp;
@@ -213,8 +197,8 @@ private class GameBoardView : Gtk.DrawingArea {
             try {
                 pb_bground_tmp = new Gdk.Pixbuf.from_resource(fname);
             } catch (Error e) {
-                load_error(fname);
-                return false;
+                critical(e.message);
+                assert_not_reached ();
             }
         }
 
@@ -244,8 +228,6 @@ private class GameBoardView : Gtk.DrawingArea {
                 }
             }
         }
-
-        return true;
     }
 
     /**
