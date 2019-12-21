@@ -268,7 +268,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         }
         else
         {
-            if (game_widget_1 != null)
+            if (game_widget_1 != null && (!) stack.get_visible_child_name () == "game-box")
                 ((!) game_widget_1).show ();
             string? panel_name = stack.get_visible_child_name ();
             if (panel_name != null && (!) panel_name == "start-box")
@@ -308,8 +308,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
         stack.set_visible_child_name ("game-box");
         back_button.hide ();        // TODO transition?
-        if (game_widget_1 != null
-         && stack.get_visible_child_name () == "start-box")
+        if (game_widget_1 != null && !is_extra_thin)
             ((!) game_widget_1).show ();
         new_game_button.show ();
 
