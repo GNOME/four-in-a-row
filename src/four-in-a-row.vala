@@ -164,6 +164,7 @@ private class FourInARow : Gtk.Application
                                  history_button_2);
 
         scorebox = new Scorebox (window, this);
+        scorebox.update (score, one_player_game);    /* update visible player descriptions */
 
         add_actions ();
 
@@ -177,6 +178,9 @@ private class FourInARow : Gtk.Application
 
         window.allow_hint (false);
         window.allow_undo (false);
+
+        prompt_player ();
+        game_reset ();
 
         add_window (window);
     }
@@ -246,14 +250,7 @@ private class FourInARow : Gtk.Application
 
     protected override void activate ()
     {
-        if (window.is_visible ())
-            return;
-
-        window.show ();
-        game_board_view.queue_draw ();
-        scorebox.update (score, one_player_game);    /* update visible player descriptions */
-        prompt_player ();
-        game_reset ();
+        window.present ();
     }
 
     /*\
