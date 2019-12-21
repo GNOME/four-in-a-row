@@ -177,56 +177,45 @@ private class GameBoardView : Gtk.DrawingArea {
         pb_bground = (!) pb_bground_tmp;
     }
 
-    private void load_pixmaps() {
-        string fname;
-        Gdk.Pixbuf pb_tileset_tmp;
-        Gdk.Pixbuf? pb_bground_tmp = null;
+    private void load_pixmaps ()
+    {
+        load_image (theme [Prefs.instance.theme_id].fname_tileset, out pb_tileset_raw);
 
-        fname = "/org/gnome/Four-in-a-row/images/" + theme[Prefs.instance.theme_id].fname_tileset;
-        try {
-            pb_tileset_tmp = new Gdk.Pixbuf.from_resource(fname);
-        } catch (Error e) {
-            critical(e.message);
+        if (theme [Prefs.instance.theme_id].fname_bground != null)
+            load_image ((!) theme [Prefs.instance.theme_id].fname_bground, out pb_bground_raw);
+        else
+            create_background ();
+    }
+    private static void load_image (string image_name, out Gdk.Pixbuf pixbuf)
+    {
+        string image_resource = "/org/gnome/Four-in-a-row/images/" + image_name;
+        try
+        {
+            pixbuf = new Gdk.Pixbuf.from_resource (image_resource);
+        }
+        catch (Error e)
+        {
+            critical (e.message);
             assert_not_reached ();
         }
+    }
+    private inline void create_background ()
+    {
+        int raw_tile_size = pb_tileset_raw.get_height ();
 
-        pb_tileset_raw = pb_tileset_tmp;
+        pb_bground_raw = new Gdk.Pixbuf (Gdk.Colorspace.RGB, /* alpha */ true, /* bits per sample */ 8, raw_tile_size * 7, raw_tile_size * 7);
+        for (int i = 0; i < 7; i++)
+        {
+            pb_tileset_raw.copy_area (raw_tile_size * 3, 0,
+                                      raw_tile_size, raw_tile_size,
+                                      pb_bground_raw,
+                                      i * raw_tile_size, 0);
 
-        if (theme[Prefs.instance.theme_id].fname_bground != null) {
-            fname = "/org/gnome/Four-in-a-row/images/" + ((!) theme[Prefs.instance.theme_id].fname_bground);
-            try {
-                pb_bground_tmp = new Gdk.Pixbuf.from_resource(fname);
-            } catch (Error e) {
-                critical(e.message);
-                assert_not_reached ();
-            }
-        }
-
-        /* If a separate background image wasn't supplied,
-        * derive the background image from the tile set
-        */
-        if (pb_bground_tmp != null) {
-            pb_bground_raw = (!) pb_bground_tmp;
-        } else {
-            int raw_tile_size;
-            int i, j;
-
-            raw_tile_size = pb_tileset_raw.get_height();
-
-            pb_bground_raw = new Gdk.Pixbuf(Gdk.Colorspace.RGB, true, 8,
-                raw_tile_size * 7, raw_tile_size * 7);
-            for (i = 0; i < 7; i++) {
-                pb_tileset_raw.copy_area(raw_tile_size * 3, 0,
-                    raw_tile_size, raw_tile_size,
-                    pb_bground_raw, i * raw_tile_size, 0);
-                for (j = 1; j < 7; j++) {
-                    pb_tileset_raw.copy_area(
-                        raw_tile_size * 2, 0,
-                        raw_tile_size, raw_tile_size,
-                        pb_bground_raw,
-                        i * raw_tile_size, j * raw_tile_size);
-                }
-            }
+            for (int j = 1; j < 7; j++)
+                pb_tileset_raw.copy_area (raw_tile_size * 2, 0,
+                                          raw_tile_size, raw_tile_size,
+                                          pb_bground_raw,
+                                          i * raw_tile_size, j * raw_tile_size);
         }
     }
 
