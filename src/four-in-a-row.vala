@@ -463,6 +463,8 @@ private class FourInARow : Gtk.Application
             score [winner]++;
             scorebox.update (score, one_player_game);
             prompt_player ();
+            if (winner != PlayerID.NOBODY)
+                blink_winner (6);
         }
         else
         {
@@ -489,7 +491,6 @@ private class FourInARow : Gtk.Application
             else
                 play_sound (SoundID.PLAYER_WIN);
             window.allow_hint (false);
-            blink_winner (6);
         }
         else if (moves == 42)
         {
