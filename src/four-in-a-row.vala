@@ -21,19 +21,15 @@
 
 using Gtk;
 
-private const int SIZE_VSTR = 53;
-private const int SPEED_BLINK = 150;
-private const int SPEED_MOVE = 35;
-private const int SPEED_DROP = 20;
-private const char vlevel [] = { '0','a','b','c' };
-private const int DEFAULT_WIDTH = 495;
-private const int DEFAULT_HEIGHT = 435;
-private const string APPNAME_LONG = "Four-in-a-row";
-
 private class FourInARow : Gtk.Application
 {
     /* Translators: application name, as used in the window manager, the window title, the about dialog... */
     private const string PROGRAM_NAME = _("Four-in-a-row");
+    private const int SIZE_VSTR = 53;
+    private const int SPEED_BLINK = 150;
+    private const int SPEED_MOVE = 35;
+    private const int SPEED_DROP = 20;
+    private const char vlevel [] = { '0','a','b','c' };
 
     private static int main (string [] args)
     {
@@ -42,7 +38,7 @@ private class FourInARow : Gtk.Application
         Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
         Intl.textdomain (GETTEXT_PACKAGE);
 
-        Environment.set_application_name (_(APPNAME_LONG));
+        Environment.set_application_name (PROGRAM_NAME);
         Window.set_default_icon_name ("org.gnome.Four-in-a-row");
 
         return new FourInARow ().run (args);
@@ -57,11 +53,12 @@ private class FourInARow : Gtk.Application
     }
 
     // game status
-    private bool gameover;
-    private bool player_active;
-    private PlayerID player;
-    private PlayerID winner;
+    private bool gameover = true;
+    private bool player_active = false;
+    private PlayerID player = PlayerID.PLAYER1;
+    private PlayerID winner = PlayerID.NOBODY;
     private PlayerID last_first_player = PlayerID.NOBODY;
+    private Board game_board = new Board ();
     private bool one_player_game;
     private int ai_level;
     /**
@@ -69,13 +66,12 @@ private class FourInARow : Gtk.Application
      *
      * The scores for the current instance (Player 1, Player 2, Draw)
      */
-    private int score [3];
+    private int [] score = { 0, 0, 0 };
     private bool reset_score = false;
 
     // widgets
     private Scorebox scorebox;
     private GameBoardView game_board_view;
-    private Board game_board;
     private GameWindow window;
     private NewGameScreen new_game_screen;
 
@@ -88,7 +84,7 @@ private class FourInARow : Gtk.Application
     private int row_dropto;
 
     // animation
-    private static AnimID anim;
+    private static AnimID anim = AnimID.NONE;
     private int blink_r1 = 0;
     private int blink_c1 = 0;
     private int blink_r2 = 0;
@@ -314,13 +310,6 @@ private class FourInARow : Gtk.Application
     private FourInARow ()
     {
         Object (application_id: "org.gnome.Four-in-a-row", flags: ApplicationFlags.FLAGS_NONE);
-        anim = AnimID.NONE;
-        gameover = true;
-        player_active = false;
-        player = PlayerID.PLAYER1;
-        winner = PlayerID.NOBODY;
-        score = { 0, 0, 0 };
-        game_board = new Board ();
 
         clear_board ();
     }
@@ -740,7 +729,7 @@ private class FourInARow : Gtk.Application
         const string documenters[] = { "Timothy Musson" };
 
         show_about_dialog (window,
-            name: _(APPNAME_LONG),
+            name: PROGRAM_NAME,
             version: VERSION,
             copyright: "Copyright © 1999–2008 Tim Musson and David Neary\n" +
                        "Copyright © 2014 Michael Catanzaro\n" +
