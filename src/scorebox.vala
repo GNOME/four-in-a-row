@@ -25,6 +25,7 @@ private class Scorebox : Dialog {
     private Label[] label_score;
 
     internal Scorebox(Window parent, FourInARow application) {
+        /* Translators: title of the Scores dialog; plural noun */
         Object(title: _("Scores"),
                use_header_bar: 1,
                destroy_with_parent: true,
@@ -72,6 +73,7 @@ private class Scorebox : Dialog {
         label_score[PlayerID.PLAYER2].set_xalign(0);
         label_score[PlayerID.PLAYER2].set_yalign(0.5f);
 
+        /* Translators: in the Scores dialog, label of the line where is indicated the number of tie games */
         label_name[PlayerID.NOBODY] = new Label(_("Drawn:"));
         grid2.attach(label_name[PlayerID.NOBODY], 0, 2, 1, 1);
         label_name[PlayerID.NOBODY].set_xalign(0);
@@ -92,13 +94,19 @@ private class Scorebox : Dialog {
     internal void update(int[] scores, bool one_player_game) {
         if (one_player_game) {
             if (scores[PlayerID.PLAYER1] >= scores[PlayerID.PLAYER2]) {
+                /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player */
                 label_name[0].set_text(_("You:"));
+
+                /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player */
                 label_name[1].set_text(_("Me:"));
 
                 label_score[0].label = scores[PlayerID.PLAYER1].to_string();
                 label_score[1].label = scores[PlayerID.PLAYER2].to_string();
             } else {
+                /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player */
                 label_name[0].set_text(_("Me:"));
+
+                /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player */
                 label_name[1].set_text(_("You:"));
 
                 label_score[0].label = scores[1].to_string();

@@ -67,6 +67,7 @@ private static string theme_get_player (PlayerID who)
 
 private const Theme theme [] = {
     {
+        /* Translators: name of a black-on-white theme, for helping people with visual misabilities */
         N_("High Contrast"),
         "tileset_50x50_hcontrast.svg",
         null,
@@ -76,6 +77,7 @@ private const Theme theme [] = {
         N_("Circle’s turn"),    N_("Cross’s turn")
     },
     {
+        /* Translators: name of a white-on-black theme, for helping people with visual misabilities */
         N_("High Contrast Inverse"),
         "tileset_50x50_hcinverse.svg",
         null,
@@ -85,6 +87,7 @@ private const Theme theme [] = {
         N_("Circle’s turn"),    N_("Cross’s turn")
     },
     {
+        /* Translators: name of a red-versus-green theme */
         N_("Red and Green Marbles"),
         "tileset_50x50_faenza-glines-icon1.svg",
         "bg_toplight.png",
@@ -94,6 +97,7 @@ private const Theme theme [] = {
         N_("Red’s turn"),       N_("Green’s turn")
     },
     {
+        /* Translators: name of a blue-versus-red theme */
         N_("Blue and Red Marbles"),
         "tileset_50x50_faenza-glines-icon2.svg",
         "bg_toplight.png",
@@ -103,6 +107,7 @@ private const Theme theme [] = {
         N_("Blue’s turn"),      N_("Red’s turn")
     },
     {
+        /* Translators: name of a red-versus-green theme with drawing on the tiles */
         N_("Stars and Rings"),
         "tileset_50x50_faenza-gnect-icon.svg",
         "bg_toplight.png",

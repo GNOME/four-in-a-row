@@ -131,17 +131,24 @@ private class FourInARow : Gtk.Application
         /* Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt) */
         section.append_submenu (_("A_ppearance"), (!) appearance_menu);
 
-        section.append (_("Sound"), "app.sound");
+
+        /* Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt) */
+        section.append (_("_Sound"), "app.sound");
         section.freeze ();
         app_menu.append_section (null, section);
 
         section = new GLib.Menu ();
+        /* Translators: hamburger menu entry; opens the Scores dialog */
         section.append (_("_Scores"), "app.scores");
         section.freeze ();
         app_menu.append_section (null, section);
 
         section = new GLib.Menu ();
+        /* Translators: hamburger menu entry; opens the application help */
         section.append (_("_Help"), "app.help");
+
+
+        /* Translators: hamburger menu entry; opens the About dialog */
         section.append (_("_About Four-in-a-row"), "app.about");
         section.freeze ();
         app_menu.append_section (null, section);
@@ -376,6 +383,7 @@ private class FourInARow : Gtk.Application
             if (score [PlayerID.NOBODY] == 0)
                 set_status_message (null);
             else
+                /* Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie */
                 set_status_message (_("It’s a draw!"));
             return;
         }
@@ -385,15 +393,19 @@ private class FourInARow : Gtk.Application
             if (human)
             {
                 if (gameover)
+                    /* Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won */
                     set_status_message (_("You win!"));
                 else
+                    /* Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn */
                     set_status_message (_("Your Turn"));
             }
             else
             {
                 if (gameover)
+                    /* Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won */
                     set_status_message (_("I win!"));
                 else
+                    /* Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn */
                     set_status_message (_("I’m Thinking…"));
             }
         }
@@ -687,6 +699,7 @@ private class FourInARow : Gtk.Application
         window.allow_hint (false);
         window.allow_undo (false);
 
+        /* Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested */
         set_status_message (_("I’m Thinking…"));
 
         vstr [0] = vlevel [/* strong */ 3];
@@ -701,6 +714,7 @@ private class FourInARow : Gtk.Application
 
         blink_tile (0, c, game_board [0, c], 6);
 
+        /* Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column */
         s = _("Hint: Column %d").printf (c + 1);
         set_status_message (s);
 
@@ -833,32 +847,70 @@ private class FourInARow : Gtk.Application
 
     private inline void on_help_about (/* SimpleAction action, Variant? parameter */)
     {
-        const string authors [] = {
-            "Tim Musson <trmusson@ihug.co.nz>",
-            "David Neary <bolsh@gimp.org>",
-            "Nikhar Agrawal <nikharagrawal2006@gmail.com>",
-            "Jacob Humphrey <jacob.ryan.humphrey@gmail.com>"
+        string [] authors = {
+            /* Translators: in the About dialog, name of an author of the game */
+            _("Tim Musson") + " <trmusson@ihug.co.nz>",
+
+
+            /* Translators: in the About dialog, name of an author of the game */
+            _("David Neary") + " <bolsh@gimp.org>",
+
+
+            /* Translators: in the About dialog, name of an author of the game */
+            _("Nikhar Agrawal") + " <nikharagrawal2006@gmail.com>",
+
+
+            /* Translators: in the About dialog, name of an author of the game */
+            _("Jacob Humphrey") + " <jacob.ryan.humphrey@gmail.com>",
+
+
+            /* Translators: in the About dialog, name of an author of the game */
+            _("Arnaud Bonatti") + " <arnaud.bonatti@gmail.com>"
         };
 
-        const string artists [] = {
-            "Alan Horkan",
-            "Anatol Drlicek",
-            "Based on the Faenza icon theme by Matthieu James"
+        string [] artists = {
+            /* Translators: in the About dialog, name of a theme designer */
+            _("Alan Horkan"),
+
+
+            /* Translators: in the About dialog, name of a theme designer */
+            _("Anatol Drlicek"),
+
+
+            /* Translators: in the About dialog, indication about some themes origin */
+            _("Based on the Faenza icon theme by Matthieu James")
         };
 
-        const string documenters[] = { "Timothy Musson" };
+        /* Translators: in the About dialog, name of a documenter */
+        string [] documenters = { _("Timothy Musson") };
+
+
+        /* Translators: text crediting a maintainer, in the about dialog text */
+        string copyright = _("Copyright \xc2\xa9 1999-2008 – Tim Musson and David Neary") + "\n"
+
+
+        /* Translators: text crediting a maintainer, in the about dialog text */
+                         + _("Copyright \xc2\xa9 2014 – Michael Catanzaro") + "\n"
+
+
+        /* Translators: text crediting a maintainer, in the about dialog text */
+                         + _("Copyright \xc2\xa9 2018 – Jacob Humphrey") + "\n"
+
+
+        /* Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end */
+                         + _("Copyright \xc2\xa9 %u-%u – Arnaud Bonatti").printf (2019, 2020);
 
         show_about_dialog (window,
             name: PROGRAM_NAME,
             version: VERSION,
-            copyright: "Copyright © 1999–2008 Tim Musson and David Neary\n" +
-                       "Copyright © 2014 Michael Catanzaro\n" +
-                       "Copyright © 2018 Jacob Humphrey",
+            copyright: copyright,
             license_type: License.GPL_3_0,
+            /* Translators: about dialog text, introducing the game */
             comments: _("Connect four in a row to win"),
             authors: authors,
             documenters: documenters,
             artists: artists,
+            /* Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally! */
             translator_credits: _("translator-credits"),
             logo_icon_name: "org.gnome.Four-in-a-row",
             website: "https://wiki.gnome.org/Apps/Four-in-a-row");
