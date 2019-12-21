@@ -27,7 +27,6 @@ sources = files(
     'game-window.vala',
     'history-button.vala',
     'new-game-screen.vala',
-    'prefs.vala',
     'scorebox.vala',
     'theme.vala',
     'vapi/config.vapi'

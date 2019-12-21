@@ -23,6 +23,8 @@ using Gtk;
 
 private class FourInARow : Gtk.Application
 {
+    private GLib.Settings settings = new GLib.Settings ("org.gnome.Four-in-a-row");
+
     /* Translators: application name, as used in the window manager, the window title, the about dialog... */
     private const string PROGRAM_NAME = _("Four-in-a-row");
     private const int SIZE_VSTR = 53;
@@ -53,7 +55,7 @@ private class FourInARow : Gtk.Application
      * The scores for the current instance (Player 1, Player 2, Draw)
      */
     private int [] score = { 0, 0, 0 };
-    private bool reset_score = false;
+    private bool reset_score = true;
 
     // widgets
     private Scorebox scorebox;
@@ -79,6 +81,13 @@ private class FourInARow : Gtk.Application
     private int blink_n = 0;
     private bool blink_on = false;
     private uint timeout = 0;
+
+    /* settings */
+    [CCode (notify = false)] internal int   keypress_drop   { private get; internal set; }
+    [CCode (notify = false)] internal int   keypress_right  { private get; internal set; }
+    [CCode (notify = false)] internal int   keypress_left   { private get; internal set; }
+    [CCode (notify = false)] internal bool  sound_on        { private get; internal set; }
+    [CCode (notify = false)] private  int   theme_id        { private get; private  set; }
 
     private const GLib.ActionEntry app_entries [] =  // see also add_actions()
     {
@@ -113,11 +122,17 @@ private class FourInARow : Gtk.Application
     {
         base.startup ();
 
+        settings.bind ("key-drop",  this, "keypress-drop",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.bind ("key-right", this, "keypress-right", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.bind ("key-left",  this, "keypress-left",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.bind ("sound",     this, "sound-on",       SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+
         /* UI parts */
         new_game_screen = new NewGameScreen ();
         new_game_screen.show ();
 
-        game_board_view = new GameBoardView (game_board);
+        game_board_view = new GameBoardView (game_board, settings.get_int ("theme-id"));
+        settings.bind ("theme-id", game_board_view, "theme-id", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
         game_board_view.show ();
 
         GLib.Menu app_menu = new GLib.Menu ();
@@ -170,7 +185,13 @@ private class FourInARow : Gtk.Application
                                  history_button_2);
 
         scorebox = new Scorebox (window, this);
-        scorebox.update (score, one_player_game);    /* update visible player descriptions */
+        settings.bind ("theme-id", scorebox, "theme-id", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.changed ["theme-id"].connect (() => {
+                scorebox.update (score, one_player_game);
+                theme_id = settings.get_int ("theme-id");
+                prompt_player ();
+            });
+        theme_id = settings.get_int ("theme-id");
 
         add_actions ();
 
@@ -192,8 +213,6 @@ private class FourInARow : Gtk.Application
     }
     private inline void add_actions ()
     {
-        GLib.Settings settings = Prefs.instance.settings;
-
         add_action (settings.create_action ("sound"));
         add_action (settings.create_action ("theme-id"));
         add_action (settings.create_action ("num-players"));
@@ -270,7 +289,7 @@ private class FourInARow : Gtk.Application
         window.allow_undo (false);
         window.allow_hint (false);
 
-        one_player_game = Prefs.instance.settings.get_int ("num-players") == 1;
+        one_player_game = settings.get_int ("num-players") == 1;
         if (reset_score)
         {
             score = { 0, 0, 0 };
@@ -279,9 +298,9 @@ private class FourInARow : Gtk.Application
         }
         if (one_player_game)
         {
-            player = Prefs.instance.settings.get_string ("first-player") == "computer" ? PlayerID.PLAYER2 : PlayerID.PLAYER1;
-            Prefs.instance.settings.set_string ("first-player", player == PlayerID.PLAYER1 ? "computer" : "human");
-            ai_level = Prefs.instance.settings.get_int ("opponent");
+            player = settings.get_string ("first-player") == "computer" ? PlayerID.PLAYER2 : PlayerID.PLAYER1;
+            settings.set_string ("first-player", player == PlayerID.PLAYER1 ? "computer" : "human");
+            ai_level = settings.get_int ("opponent");
         }
         else
         {
@@ -413,11 +432,11 @@ private class FourInARow : Gtk.Application
         {
             string who;
             if (gameover)
-                who = player == PLAYER1 ? theme_get_player_win (PlayerID.PLAYER1)
-                                        : theme_get_player_win (PlayerID.PLAYER2);
+                who = player == PLAYER1 ? theme_get_player_win (PlayerID.PLAYER1, theme_id)
+                                        : theme_get_player_win (PlayerID.PLAYER2, theme_id);
             else
-                who = player == PLAYER1 ? theme_get_player_turn (PlayerID.PLAYER1)
-                                        : theme_get_player_turn (PlayerID.PLAYER2);
+                who = player == PLAYER1 ? theme_get_player_turn (PlayerID.PLAYER1, theme_id)
+                                        : theme_get_player_turn (PlayerID.PLAYER2, theme_id);
 
             set_status_message (_(who));
         }
@@ -777,11 +796,11 @@ private class FourInARow : Gtk.Application
 //        game_type_action.set_state ((!) gvariant);
         switch (type)
         {
-            case "human"    : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
-                              Prefs.instance.settings.set_string ("first-player", "human");                                      return;
-            case "computer" : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
-                              Prefs.instance.settings.set_string ("first-player", "computer");                                   return;
-            case "two"      : Prefs.instance.settings.set_int    ("num-players", 2); new_game_screen.update_sensitivity (false); return;
+            case "human"    : settings.set_int      ("num-players", 1); new_game_screen.update_sensitivity (true);
+                              settings.set_string   ("first-player", "human");                                      return;
+            case "computer" : settings.set_int      ("num-players", 1); new_game_screen.update_sensitivity (true);
+                              settings.set_string   ("first-player", "computer");                                   return;
+            case "two"      : settings.set_int      ("num-players", 2); new_game_screen.update_sensitivity (false); return;
             default: assert_not_reached ();
         }
     }
@@ -805,9 +824,9 @@ private class FourInARow : Gtk.Application
     private inline bool on_key_press (Gdk.EventKey e)
     {
         if (timeout != 0
-         || (e.keyval != Prefs.instance.keypress_left
-          && e.keyval != Prefs.instance.keypress_right
-          && e.keyval != Prefs.instance.keypress_drop))
+         || (e.keyval != keypress_left
+          && e.keyval != keypress_right
+          && e.keyval != keypress_drop))
             return false;
 
         if (gameover)
@@ -816,17 +835,17 @@ private class FourInARow : Gtk.Application
             return true;
         }
 
-        if (e.keyval == Prefs.instance.keypress_left && column != 0)
+        if (e.keyval == keypress_left && column != 0)
         {
             column_moveto--;
             move_cursor (column_moveto);
         }
-        else if (e.keyval == Prefs.instance.keypress_right && column < 6)
+        else if (e.keyval == keypress_right && column < 6)
         {
             column_moveto++;
             move_cursor (column_moveto);
         }
-        else if (e.keyval == Prefs.instance.keypress_drop)
+        else if (e.keyval == keypress_drop)
             process_move (column);
 
         return true;
@@ -960,7 +979,7 @@ private class FourInARow : Gtk.Application
 
     private void play_sound (SoundID id)
     {
-        if (Prefs.instance.settings.get_boolean ("sound"))
+        if (sound_on)
         {
             if (sound_context_state == SoundContextState.INITIAL)
                 init_sound ();

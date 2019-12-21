@@ -44,25 +44,25 @@ private static string theme_get_title (int id)
     return _(theme [id].title); // FIXME this gettext call feels horrible
 }
 
-private static string theme_get_player_turn (PlayerID who)
+private static string theme_get_player_turn (PlayerID who, int theme_id)
 {
     if (who == PlayerID.PLAYER1)
-        return theme [Prefs.instance.theme_id].player1_turn;
-    return theme [Prefs.instance.theme_id].player2_turn;
+        return theme [theme_id].player1_turn;
+    return theme [theme_id].player2_turn;
 }
 
-private static string theme_get_player_win (PlayerID who)
+private static string theme_get_player_win (PlayerID who, int theme_id)
 {
     if (who == PlayerID.PLAYER1)
-        return theme [Prefs.instance.theme_id].player1_win;
-    return theme [Prefs.instance.theme_id].player2_win;
+        return theme [theme_id].player1_win;
+    return theme [theme_id].player2_win;
 }
 
-private static string theme_get_player (PlayerID who)
+private static string theme_get_player (PlayerID who, int theme_id)
 {
     if (who == PlayerID.PLAYER1)
-        return theme [Prefs.instance.theme_id].player1;
-    return theme [Prefs.instance.theme_id].player2;
+        return theme [theme_id].player1;
+    return theme [theme_id].player2;
 }
 
 private const Theme theme [] = {

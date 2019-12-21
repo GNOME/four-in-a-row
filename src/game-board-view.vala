@@ -22,9 +22,20 @@ private class GameBoardView : Gtk.DrawingArea
 {
     [CCode (notify = false)] public Board game_board { private get; protected construct; }
 
-    internal GameBoardView (Board game_board)
+    private int _theme_id = 0;
+    [CCode (notify = false)] public int theme_id
     {
-        Object (game_board: game_board);
+        private get { return _theme_id; }
+        internal construct set
+        {
+            _theme_id = value;
+            change_theme ();
+        }
+    }
+
+    internal GameBoardView (Board game_board, int theme_id)
+    {
+        Object (game_board: game_board, theme_id: theme_id);
     }
 
     construct
@@ -32,7 +43,6 @@ private class GameBoardView : Gtk.DrawingArea
         events = Gdk.EventMask.EXPOSURE_MASK
                | Gdk.EventMask.BUTTON_PRESS_MASK
                | Gdk.EventMask.BUTTON_RELEASE_MASK;
-        Prefs.instance.notify ["theme-id"].connect (change_theme);
         load_pixmaps ();
     }
 
@@ -141,7 +151,7 @@ private class GameBoardView : Gtk.DrawingArea
         const double dashes [] = { 4.0, 4.0 };
         Gdk.RGBA color = Gdk.RGBA ();
 
-        color.parse (theme [Prefs.instance.theme_id].grid_color);
+        color.parse (theme [theme_id].grid_color);
         Gdk.cairo_set_source_rgba (cr, color);
         cr.set_operator (Cairo.Operator.SOURCE);
         cr.set_line_width (1.0);
@@ -190,6 +200,9 @@ private class GameBoardView : Gtk.DrawingArea
 
     private void refresh_pixmaps ()
     {
+        if (tile_size == 0) // happens at game start
+            return;
+
         Gdk.Pixbuf? tmp_pixbuf;
 
         tmp_pixbuf = pb_tileset_raw.scale_simple (tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
@@ -207,10 +220,10 @@ private class GameBoardView : Gtk.DrawingArea
 
     private void load_pixmaps ()
     {
-        load_image (theme [Prefs.instance.theme_id].fname_tileset, out pb_tileset_raw);
+        load_image (theme [theme_id].fname_tileset, out pb_tileset_raw);
 
-        if (theme [Prefs.instance.theme_id].fname_bground != null)
-            load_image ((!) theme [Prefs.instance.theme_id].fname_bground, out pb_bground_raw);
+        if (theme [theme_id].fname_bground != null)
+            load_image ((!) theme [theme_id].fname_bground, out pb_bground_raw);
         else
             create_background ();
     }

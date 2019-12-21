@@ -21,6 +21,8 @@
 using Gtk;
 
 private class Scorebox : Dialog {
+    [CCode (notify = false)] internal int theme_id { private get; internal set; }
+
     private Label[] label_name;
     private Label[] label_score;
 
@@ -113,8 +115,8 @@ private class Scorebox : Dialog {
                 label_score[1].label = scores[0].to_string();
             }
         } else {
-            label_name[0].label = theme_get_player(PlayerID.PLAYER1);    // FIXME missing ":" at end
-            label_name[1].label = theme_get_player(PlayerID.PLAYER2);    // idem
+            label_name[0].label = theme_get_player(PlayerID.PLAYER1, theme_id);    // FIXME missing ":" at end
+            label_name[1].label = theme_get_player(PlayerID.PLAYER2, theme_id);    // idem
 
             label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
             label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();
