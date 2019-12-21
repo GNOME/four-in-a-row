@@ -31,19 +31,6 @@ private class FourInARow : Gtk.Application
     private const int SPEED_DROP = 20;
     private const char vlevel [] = { '0','a','b','c' };
 
-    private static int main (string [] args)
-    {
-        Intl.setlocale ();
-        Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
-        Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-        Intl.textdomain (GETTEXT_PACKAGE);
-
-        Environment.set_application_name (PROGRAM_NAME);
-        Window.set_default_icon_name ("org.gnome.Four-in-a-row");
-
-        return new FourInARow ().run (args);
-    }
-
     private enum AnimID {
         NONE,
         MOVE,
@@ -102,6 +89,176 @@ private class FourInARow : Gtk.Application
         { "help",           on_help_contents        },
         { "about",          on_help_about           }
     };
+
+    private static int main (string [] args)
+    {
+        Intl.setlocale ();
+        Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+        Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        Intl.textdomain (GETTEXT_PACKAGE);
+
+        Environment.set_application_name (PROGRAM_NAME);
+        Window.set_default_icon_name ("org.gnome.Four-in-a-row");
+
+        return new FourInARow ().run (args);
+    }
+
+    private FourInARow ()
+    {
+        Object (application_id: "org.gnome.Four-in-a-row", flags: ApplicationFlags.FLAGS_NONE);
+
+        clear_board ();
+    }
+
+    protected override void startup ()
+    {
+        base.startup ();
+
+        /* UI parts */
+        new_game_screen = new NewGameScreen ();
+        new_game_screen.show ();
+
+        game_board_view = new GameBoardView (game_board);
+        game_board_view.show ();
+
+        GLib.Menu app_menu = new GLib.Menu ();
+
+        GLib.Menu appearance_menu = new GLib.Menu ();
+        for (uint8 i = 0; i < theme.length; i++)     // TODO default theme
+            appearance_menu.append (theme_get_title (i), @"app.theme-id($i)");
+        appearance_menu.freeze ();
+
+        GLib.Menu section = new GLib.Menu ();
+        /* Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt) */
+        section.append_submenu (_("A_ppearance"), (!) appearance_menu);
+
+        section.append (_("Sound"), "app.sound");
+        section.freeze ();
+        app_menu.append_section (null, section);
+
+        section = new GLib.Menu ();
+        section.append (_("_Scores"), "app.scores");
+        section.freeze ();
+        app_menu.append_section (null, section);
+
+        section = new GLib.Menu ();
+        section.append (_("_Help"), "app.help");
+        section.append (_("_About Four-in-a-row"), "app.about");
+        section.freeze ();
+        app_menu.append_section (null, section);
+
+        app_menu.freeze ();
+
+        MenuButton history_button_1 = new HistoryButton (/* direction: down */ false);
+        MenuButton history_button_2 = new HistoryButton (/* direction: up   */ true);
+
+        /* Window */
+        window = new GameWindow ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
+                                 PROGRAM_NAME,
+                                 /* start_now */ true,
+                                 GameWindowFlags.SHOW_START_BUTTON,
+                                 (Box) new_game_screen,
+                                 game_board_view,
+                                 app_menu,
+                                 history_button_1,
+                                 history_button_2);
+
+        scorebox = new Scorebox (window, this);
+
+        add_actions ();
+
+        /* various */
+        game_board_view.column_clicked.connect (column_clicked_cb);
+        window.key_press_event.connect (on_key_press);
+
+        window.play.connect (on_game_new);
+        window.undo.connect (on_game_undo);
+        window.hint.connect (on_game_hint);
+
+        window.allow_hint (false);
+        window.allow_undo (false);
+
+        add_window (window);
+    }
+    private inline void add_actions ()
+    {
+        GLib.Settings settings = Prefs.instance.settings;
+
+        add_action (settings.create_action ("sound"));
+        add_action (settings.create_action ("theme-id"));
+        add_action (settings.create_action ("num-players"));
+        add_action (settings.create_action ("first-player"));
+        add_action (settings.create_action ("opponent"));
+
+        set_accels_for_action ("ui.new-game",           {        "<Primary>n"       });
+        set_accels_for_action ("ui.start-game",         { "<Shift><Primary>n"       });
+        set_accels_for_action ("app.quit",              {        "<Primary>q"       });
+        set_accels_for_action ("ui.hint",               {        "<Primary>h"       });
+        set_accels_for_action ("ui.undo",               {        "<Primary>z"       });
+     // set_accels_for_action ("ui.redo",               { "<Shift><Primary>z"       });
+        set_accels_for_action ("ui.back",               {                 "Escape"  });
+        set_accels_for_action ("ui.toggle-hamburger",   {                 "F10"     });
+        set_accels_for_action ("app.help",              {                 "F1"      });
+        set_accels_for_action ("app.about",             {          "<Shift>F1"      });
+
+        add_action_entries (app_entries, this);
+
+        game_type_action = (SimpleAction) lookup_action ("game-type");
+
+        settings.changed ["first-player"].connect (() => {
+                if (settings.get_int ("num-players") == 2)
+                    return;
+                if (settings.get_string ("first-player") == "human")
+                    game_type_action.set_state (new Variant.string ("human"));
+                else
+                    game_type_action.set_state (new Variant.string ("computer"));
+            });
+
+        settings.changed ["num-players"].connect (() => {
+                bool solo = settings.get_int ("num-players") == 1;
+                new_game_screen.update_sensitivity (solo);
+                reset_score = true;
+                if (!solo)
+                    game_type_action.set_state (new Variant.string ("two"));
+                else if (settings.get_string ("first-player") == "human")
+                    game_type_action.set_state (new Variant.string ("human"));
+                else
+                    game_type_action.set_state (new Variant.string ("computer"));
+                if (solo)
+                    last_first_player = PlayerID.NOBODY;
+            });
+        bool solo = settings.get_int ("num-players") == 1;
+        new_game_screen.update_sensitivity (solo);
+
+        if (settings.get_int ("num-players") == 2)
+            game_type_action.set_state (new Variant.string ("two"));
+        else if (settings.get_string ("first-player") == "human")
+            game_type_action.set_state (new Variant.string ("human"));
+        else
+            game_type_action.set_state (new Variant.string ("computer"));
+
+        settings.changed ["opponent"].connect (() => {
+                if (settings.get_int ("num-players") != 1)
+                    return;
+                reset_score = true;
+            });
+    }
+
+    protected override void activate ()
+    {
+        if (window.is_visible ())
+            return;
+
+        window.show ();
+        game_board_view.queue_draw ();
+        scorebox.update (score, one_player_game);    /* update visible player descriptions */
+        prompt_player ();
+        game_reset ();
+    }
+
+    /*\
+    * * various
+    \*/
 
     internal void game_reset ()
     {
@@ -177,105 +334,6 @@ private class FourInARow : Gtk.Application
         }
     }
 
-    private inline void add_actions ()
-    {
-        GLib.Settings settings = Prefs.instance.settings;
-
-        add_action (settings.create_action ("sound"));
-        add_action (settings.create_action ("theme-id"));
-        add_action (settings.create_action ("num-players"));
-        add_action (settings.create_action ("first-player"));
-        add_action (settings.create_action ("opponent"));
-
-        set_accels_for_action ("ui.new-game",           {        "<Primary>n"       });
-        set_accels_for_action ("ui.start-game",         { "<Shift><Primary>n"       });
-        set_accels_for_action ("app.quit",              {        "<Primary>q"       });
-        set_accels_for_action ("ui.hint",               {        "<Primary>h"       });
-        set_accels_for_action ("ui.undo",               {        "<Primary>z"       });
-     // set_accels_for_action ("ui.redo",               { "<Shift><Primary>z"       });
-        set_accels_for_action ("ui.back",               {                 "Escape"  });
-        set_accels_for_action ("ui.toggle-hamburger",   {                 "F10"     });
-        set_accels_for_action ("app.help",              {                 "F1"      });
-        set_accels_for_action ("app.about",             {          "<Shift>F1"      });
-
-        add_action_entries (app_entries, this);
-
-        game_type_action = (SimpleAction) lookup_action ("game-type");
-
-        settings.changed ["first-player"].connect (() => {
-                if (settings.get_int ("num-players") == 2)
-                    return;
-                if (settings.get_string ("first-player") == "human")
-                    game_type_action.set_state (new Variant.string ("human"));
-                else
-                    game_type_action.set_state (new Variant.string ("computer"));
-            });
-
-        settings.changed ["num-players"].connect (() => {
-                bool solo = settings.get_int ("num-players") == 1;
-                new_game_screen.update_sensitivity (solo);
-                reset_score = true;
-                if (!solo)
-                    game_type_action.set_state (new Variant.string ("two"));
-                else if (settings.get_string ("first-player") == "human")
-                    game_type_action.set_state (new Variant.string ("human"));
-                else
-                    game_type_action.set_state (new Variant.string ("computer"));
-                if (solo)
-                    last_first_player = PlayerID.NOBODY;
-            });
-        bool solo = settings.get_int ("num-players") == 1;
-        new_game_screen.update_sensitivity (solo);
-
-        if (settings.get_int ("num-players") == 2)
-            game_type_action.set_state (new Variant.string ("two"));
-        else if (settings.get_string ("first-player") == "human")
-            game_type_action.set_state (new Variant.string ("human"));
-        else
-            game_type_action.set_state (new Variant.string ("computer"));
-
-        settings.changed ["opponent"].connect (() => {
-                if (settings.get_int ("num-players") != 1)
-                    return;
-                reset_score = true;
-            });
-    }
-
-    private SimpleAction game_type_action;
-    private void change_game_type (SimpleAction action, Variant? gvariant)
-        requires (gvariant != null)
-    {
-        string type = ((!) gvariant).get_string ();
-//        game_type_action.set_state ((!) gvariant);
-        switch (type)
-        {
-            case "human"    : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
-                              Prefs.instance.settings.set_string ("first-player", "human");                                      return;
-            case "computer" : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
-                              Prefs.instance.settings.set_string ("first-player", "computer");                                   return;
-            case "two"      : Prefs.instance.settings.set_int    ("num-players", 2); new_game_screen.update_sensitivity (false); return;
-            default: assert_not_reached ();
-        }
-    }
-
-    private inline bool column_clicked_cb (int column)
-    {
-        if (player_active)
-            return false;
-
-        if (gameover && timeout == 0)
-            blink_winner (2);
-        else if (is_player_human () && timeout == 0)
-            process_move (column);
-        return true;
-    }
-
-    private inline void on_game_new (/* SimpleAction action, Variant? variant */)
-    {
-        stop_anim ();
-        game_reset ();
-    }
-
     private inline void draw_line (int r1, int c1, int r2, int c2, int tile)
     {
         /* draw a line of 'tile' from r1,c1 to r2,c2 */
@@ -305,25 +363,6 @@ private class FourInARow : Gtk.Application
                 c1 += d_col;
         }
         while (!done);
-    }
-
-    private FourInARow ()
-    {
-        Object (application_id: "org.gnome.Four-in-a-row", flags: ApplicationFlags.FLAGS_NONE);
-
-        clear_board ();
-    }
-
-    protected override void activate ()
-    {
-        if (window.is_visible ())
-            return;
-
-        window.show ();
-        game_board_view.queue_draw ();
-        scorebox.update (score, one_player_game);    /* update visible player descriptions */
-        prompt_player ();
-        game_reset ();
     }
 
     private void prompt_player ()
@@ -423,6 +462,26 @@ private class FourInARow : Gtk.Application
                 var nm = new NextMove (c, this);
                 Timeout.add (SPEED_DROP, nm.exec);
             }
+        }
+    }
+    private inline void check_game_state ()
+    {
+        if (game_board.is_line_at ((Tile) player, row, column))
+        {
+            gameover = true;
+            winner = player;
+            if (one_player_game)
+                play_sound (is_player_human () ? SoundID.YOU_WIN : SoundID.I_WIN);
+            else
+                play_sound (SoundID.PLAYER_WIN);
+            window.allow_hint (false);
+            blink_winner (6);
+        }
+        else if (moves == 42)
+        {
+            gameover = true;
+            winner = NOBODY;
+            play_sound (SoundID.DRAWN_GAME);
         }
     }
 
@@ -533,7 +592,7 @@ private class FourInARow : Gtk.Application
         for (var i = 0; i < SIZE_VSTR; i++)
             vstr [i] = '\0';
 
-        vstr [0] = vlevel [Level.WEAK];
+        vstr [0] = vlevel [/* weak */ 1];
         vstr [1] = '0';
         moves = 0;
     }
@@ -552,54 +611,6 @@ private class FourInARow : Gtk.Application
         anim = AnimID.BLINK;
         var temp = new Animate (0, this);
         timeout = Timeout.add (SPEED_BLINK, temp.exec);
-    }
-
-    private inline void on_game_hint (/* SimpleAction action, Variant? parameter */)
-    {
-        string s;
-        int c;
-
-        if (timeout != 0)
-            return;
-        if (gameover)
-            return;
-
-        window.allow_hint (false);
-        window.allow_undo (false);
-
-        set_status_message (_("I’m Thinking…"));
-
-        vstr [0] = vlevel [Level.STRONG];
-        c = playgame ((string) vstr) - 1;
-
-        column_moveto = c;
-        while (timeout != 0)
-            main_iteration ();
-        anim = AnimID.HINT;
-        var temp = new Animate (0, this);
-        timeout = Timeout.add (SPEED_MOVE, temp.exec);
-
-        blink_tile (0, c, game_board [0, c], 6);
-
-        s = _("Hint: Column %d").printf (c + 1);
-        set_status_message (s);
-
-        if (moves <= 0 || (moves == 1 && is_player_human ()))
-            window.allow_undo (false);
-        else
-            window.allow_undo (true);
-    }
-
-    private inline void on_game_scores (/* SimpleAction action, Variant? parameter */)
-    {
-        scorebox.present ();
-        return;
-    }
-
-    private inline void on_game_exit (/* SimpleAction action, Variant? parameter */)
-    {
-        stop_anim ();
-        quit ();
     }
 
     private class Animate
@@ -670,6 +681,52 @@ private class FourInARow : Gtk.Application
         }
     }
 
+    /*\
+    * * game window callbacks
+    \*/
+
+    private inline void on_game_new ()
+    {
+        stop_anim ();
+        game_reset ();
+    }
+
+    private inline void on_game_hint ()
+    {
+        string s;
+        int c;
+
+        if (timeout != 0)
+            return;
+        if (gameover)
+            return;
+
+        window.allow_hint (false);
+        window.allow_undo (false);
+
+        set_status_message (_("I’m Thinking…"));
+
+        vstr [0] = vlevel [/* strong */ 3];
+        c = playgame ((string) vstr) - 1;
+
+        column_moveto = c;
+        while (timeout != 0)
+            main_iteration ();
+        anim = AnimID.HINT;
+        var temp = new Animate (0, this);
+        timeout = Timeout.add (SPEED_MOVE, temp.exec);
+
+        blink_tile (0, c, game_board [0, c], 6);
+
+        s = _("Hint: Column %d").printf (c + 1);
+        set_status_message (s);
+
+        if (moves <= 0 || (moves == 1 && is_player_human ()))
+            window.allow_undo (false);
+        else
+            window.allow_undo (true);
+    }
+
     private inline void on_game_undo ()
     {
         if (timeout != 0)
@@ -711,7 +768,91 @@ private class FourInARow : Gtk.Application
         }
     }
 
-    private inline void on_help_about (SimpleAction action, Variant? parameter)
+    /*\
+    * * actions
+    \*/
+
+    private SimpleAction game_type_action;
+    private void change_game_type (SimpleAction action, Variant? gvariant)
+        requires (gvariant != null)
+    {
+        string type = ((!) gvariant).get_string ();
+//        game_type_action.set_state ((!) gvariant);
+        switch (type)
+        {
+            case "human"    : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
+                              Prefs.instance.settings.set_string ("first-player", "human");                                      return;
+            case "computer" : Prefs.instance.settings.set_int    ("num-players", 1); new_game_screen.update_sensitivity (true);
+                              Prefs.instance.settings.set_string ("first-player", "computer");                                   return;
+            case "two"      : Prefs.instance.settings.set_int    ("num-players", 2); new_game_screen.update_sensitivity (false); return;
+            default: assert_not_reached ();
+        }
+    }
+
+    private inline void on_game_scores (/* SimpleAction action, Variant? parameter */)
+    {
+        scorebox.present ();
+        return;
+    }
+
+    private inline void on_game_exit (/* SimpleAction action, Variant? parameter */)
+    {
+        stop_anim ();
+        quit ();
+    }
+
+    /*\
+    * * game interaction
+    \*/
+
+    private inline bool on_key_press (Gdk.EventKey e)
+    {
+        if (player_active
+         || timeout != 0
+         || (e.keyval != Prefs.instance.keypress_left
+          && e.keyval != Prefs.instance.keypress_right
+          && e.keyval != Prefs.instance.keypress_drop))
+            return false;
+
+        if (gameover)
+        {
+            blink_winner (2);
+            return true;
+        }
+
+        if (e.keyval == Prefs.instance.keypress_left && column != 0)
+        {
+            column_moveto--;
+            move_cursor (column_moveto);
+        }
+        else if (e.keyval == Prefs.instance.keypress_right && column < 6)
+        {
+            column_moveto++;
+            move_cursor (column_moveto);
+        }
+        else if (e.keyval == Prefs.instance.keypress_drop)
+            process_move (column);
+
+        return true;
+    }
+
+    private inline bool column_clicked_cb (int column)
+    {
+        if (player_active)
+            return false;
+
+        if (gameover && timeout == 0)
+            blink_winner (2);
+        else if (is_player_human () && timeout == 0)
+            process_move (column);
+        return true;
+    }
+
+    /*\
+    * * help and about
+    \*/
+
+    private inline void on_help_about (/* SimpleAction action, Variant? parameter */)
     {
         const string authors [] = {
             "Tim Musson <trmusson@ihug.co.nz>",
@@ -753,130 +894,9 @@ private class FourInARow : Gtk.Application
         }
     }
 
-    private inline void check_game_state ()
-    {
-        if (game_board.is_line_at ((Tile) player, row, column))
-        {
-            gameover = true;
-            winner = player;
-            if (one_player_game)
-                play_sound (is_player_human () ? SoundID.YOU_WIN : SoundID.I_WIN);
-            else
-                play_sound (SoundID.PLAYER_WIN);
-            window.allow_hint (false);
-            blink_winner (6);
-        }
-        else if (moves == 42)
-        {
-            gameover = true;
-            winner = NOBODY;
-            play_sound (SoundID.DRAWN_GAME);
-        }
-    }
-
-    protected override void startup ()
-    {
-        base.startup ();
-
-        /* UI parts */
-        new_game_screen = new NewGameScreen ();
-        new_game_screen.show ();
-
-        game_board_view = new GameBoardView (game_board);
-        game_board_view.show ();
-
-        GLib.Menu app_menu = new GLib.Menu ();
-
-        GLib.Menu appearance_menu = new GLib.Menu ();
-        for (uint8 i = 0; i < theme.length; i++)     // TODO default theme
-            appearance_menu.append (theme_get_title (i), @"app.theme-id($i)");
-        appearance_menu.freeze ();
-
-        GLib.Menu section = new GLib.Menu ();
-        /* Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt) */
-        section.append_submenu (_("A_ppearance"), (!) appearance_menu);
-
-        section.append (_("Sound"), "app.sound");
-        section.freeze ();
-        app_menu.append_section (null, section);
-
-        section = new GLib.Menu ();
-        section.append (_("_Scores"), "app.scores");
-        section.freeze ();
-        app_menu.append_section (null, section);
-
-        section = new GLib.Menu ();
-        section.append (_("_Help"), "app.help");
-        section.append (_("_About Four-in-a-row"), "app.about");
-        section.freeze ();
-        app_menu.append_section (null, section);
-
-        app_menu.freeze ();
-
-        MenuButton history_button_1 = new HistoryButton (/* direction: down */ false);
-        MenuButton history_button_2 = new HistoryButton (/* direction: up   */ true);
-
-        /* Window */
-        window = new GameWindow ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
-                                 PROGRAM_NAME,
-                                 /* start_now */ true,
-                                 GameWindowFlags.SHOW_START_BUTTON,
-                                 (Box) new_game_screen,
-                                 game_board_view,
-                                 app_menu,
-                                 history_button_1,
-                                 history_button_2);
-
-        scorebox = new Scorebox (window, this);
-
-        add_actions ();
-
-        /* various */
-        game_board_view.column_clicked.connect (column_clicked_cb);
-        window.key_press_event.connect (on_key_press);
-
-        window.play.connect (on_game_new);
-        window.undo.connect (on_game_undo);
-        window.hint.connect (on_game_hint);
-
-        window.allow_hint (false);
-        window.allow_undo (false);
-
-        add_window (window);
-    }
-
-    private inline bool on_key_press (Gdk.EventKey e)
-    {
-        if (player_active
-         || timeout != 0
-         || (e.keyval != Prefs.instance.keypress_left
-          && e.keyval != Prefs.instance.keypress_right
-          && e.keyval != Prefs.instance.keypress_drop))
-            return false;
-
-        if (gameover)
-        {
-            blink_winner (2);
-            return true;
-        }
-
-        if (e.keyval == Prefs.instance.keypress_left && column != 0)
-        {
-            column_moveto--;
-            move_cursor (column_moveto);
-        }
-        else if (e.keyval == Prefs.instance.keypress_right && column < 6)
-        {
-            column_moveto++;
-            move_cursor (column_moveto);
-        }
-        else if (e.keyval == Prefs.instance.keypress_drop)
-            process_move (column);
-
-        return true;
-    }
-
-    /* Sound-related methods */
+    /*\
+    * * sound
+    \*/
 
     private GSound.Context sound_context;
     private SoundContextState sound_context_state = SoundContextState.INITIAL;
@@ -961,13 +981,6 @@ private enum PlayerID {
     PLAYER1 = 0,
     PLAYER2,
     NOBODY;
-}
-
-private enum Level {
-    HUMAN,
-    WEAK,
-    MEDIUM,
-    STRONG;
 }
 
 private enum Tile {
