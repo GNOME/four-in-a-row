@@ -32,6 +32,8 @@ private class FourInARow : Gtk.Application
     private const int SPEED_MOVE = 35;
     private const int SPEED_DROP = 20;
     private const char vlevel [] = { '0','a','b','c' };
+    private const uint COMPUTER_INITIAL_DELAY = 1200;
+    private const uint COMPUTER_MOVE_DELAY = 600;
 
     private enum AnimID {
         NONE,
@@ -330,7 +332,7 @@ private class FourInARow : Gtk.Application
         if (!is_player_human ())
         {
             vstr [0] = vlevel [ai_level];
-            process_move (playgame ((string) vstr) - 1);
+            Timeout.add (COMPUTER_INITIAL_DELAY, () => { process_move (playgame ((string) vstr) - 1); return Source.REMOVE; });
         }
     }
 
@@ -471,12 +473,15 @@ private class FourInARow : Gtk.Application
             swap_player ();
             if (!is_player_human ())
             {
-                vstr [0] = vlevel [ai_level];
-                c = playgame ((string) vstr) - 1;
-                if (c < 0)
-                    gameover = true;
-                var nm = new NextMove (c, this);
-                Timeout.add (SPEED_DROP, nm.exec);
+                Timeout.add (COMPUTER_MOVE_DELAY, () => {
+                        vstr [0] = vlevel [ai_level];
+                        c = playgame ((string) vstr) - 1;
+                        if (c < 0)
+                            gameover = true;
+                        var nm = new NextMove (c, this);
+                        Timeout.add (SPEED_DROP, nm.exec);
+                        return Source.REMOVE;
+                    });
             }
         }
     }
@@ -825,6 +830,7 @@ private class FourInARow : Gtk.Application
     private inline bool on_key_press (Gdk.EventKey e)
     {
         if (timeout != 0
+         || !is_player_human ()
          || (e.keyval != keypress_left
           && e.keyval != keypress_right
           && e.keyval != keypress_drop))
