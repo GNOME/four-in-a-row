@@ -156,7 +156,7 @@ private class FourInARow : Gtk.Application
         if (!is_player_human ())
         {
             vstr [0] = vlevel [ai_level];
-            game_process_move (playgame ((string) vstr) - 1);
+            process_move (playgame ((string) vstr) - 1);
         }
     }
 
@@ -270,7 +270,7 @@ private class FourInARow : Gtk.Application
         if (gameover && timeout == 0)
             blink_winner (2);
         else if (is_player_human () && timeout == 0)
-            game_process_move (column);
+            process_move (column);
         return true;
     }
 
@@ -406,11 +406,6 @@ private class FourInARow : Gtk.Application
         player = (player == PlayerID.PLAYER1) ? PlayerID.PLAYER2 : PlayerID.PLAYER1;
         move_cursor (3);
         prompt_player ();
-    }
-
-    private void game_process_move (int c)
-    {
-        process_move (c);
     }
 
     private void process_move3 (int c)
@@ -888,7 +883,7 @@ private class FourInARow : Gtk.Application
             move_cursor (column_moveto);
         }
         else if (e.keyval == Prefs.instance.keypress_drop)
-            game_process_move (column);
+            process_move (column);
 
         return true;
     }
