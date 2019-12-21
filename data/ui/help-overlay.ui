@@ -68,9 +68,9 @@
                 <property name="accelerator">Left Right</property>
               </object>
             </child>
-            <child><!-- TODO make visible -->
+            <child>
               <object class="GtkShortcutsShortcut">
-                <property name="visible">False</property>
+                <property name="visible">True</property>
                 <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column -->
                 <property name="title" translatable="yes" context="shortcut window">Select the given column</property>
                 <property name="accelerator">1...7</property>
@@ -81,7 +81,7 @@
                 <property name="visible">True</property>
                 <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile -->
                 <property name="title" translatable="yes" context="shortcut window">Play in selected column</property>
-                <property name="accelerator">Down</property><!-- TODO Return space -->
+                <property name="accelerator">Down Return space</property>
               </object>
             </child>
           </object>
@@ -114,9 +114,9 @@
             <property name="visible">True</property>
             <!-- Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"... -->
             <property name="title" translatable="yes" context="shortcut window">Generic</property>
-            <child><!-- TODO make visible -->
+            <child>
               <object class="GtkShortcutsShortcut">
-                <property name="visible">False</property>
+                <property name="visible">True</property>
                 <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
                 <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
                 <property name="accelerator">&lt;Primary&gt;question &lt;Primary&gt;F1</property>

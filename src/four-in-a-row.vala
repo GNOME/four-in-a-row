@@ -64,6 +64,8 @@ private class FourInARow : Gtk.Application
     private GameBoardView game_board_view;
     private GameWindow window;
     private NewGameScreen new_game_screen;
+    private MenuButton history_button_1;
+    private MenuButton history_button_2;
 
     // game state
     private char vstr [53];
@@ -176,8 +178,8 @@ private class FourInARow : Gtk.Application
 
         app_menu.freeze ();
 
-        MenuButton history_button_1 = new HistoryButton (/* direction: down */ false);
-        MenuButton history_button_2 = new HistoryButton (/* direction: up   */ true);
+        history_button_1 = new HistoryButton (/* direction: down */ false);
+        history_button_2 = new HistoryButton (/* direction: up   */ true);
 
         /* Window */
         window = new GameWindow ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
@@ -203,7 +205,8 @@ private class FourInARow : Gtk.Application
 
         /* various */
         game_board_view.column_clicked.connect (column_clicked_cb);
-        window.key_press_event.connect (on_key_press);
+        window.key_press_event.connect (on_key_press_event);
+        game_board_view.key_press_event.connect (on_key_press);
 
         window.play.connect (on_game_new);
         window.undo.connect (on_game_undo);
@@ -233,8 +236,8 @@ private class FourInARow : Gtk.Application
      // set_accels_for_action ("ui.redo",               { "<Shift><Primary>z"       });
         set_accels_for_action ("ui.back",               {                 "Escape"  });
         set_accels_for_action ("ui.toggle-hamburger",   {                 "F10"     });
-        set_accels_for_action ("app.help",              {                 "F1"      });
-        set_accels_for_action ("app.about",             {          "<Shift>F1"      });
+     // set_accels_for_action ("app.help",              {                 "F1"      });
+     // set_accels_for_action ("app.about",             {          "<Shift>F1"      });
 
         add_action_entries (app_entries, this);
 
@@ -831,13 +834,37 @@ private class FourInARow : Gtk.Application
     * * game interaction
     \*/
 
-    private inline bool on_key_press (Gdk.EventKey e)
+    private inline bool on_key_press_event (Gdk.EventKey event)
+    {
+        string name = (!) (Gdk.keyval_name (event.keyval) ?? "");
+
+        if (name == "F1") // TODO fix dance done with the F1 & <Primary>F1 shortcuts that show help overlay
+        {
+            window.close_hamburger ();
+            history_button_1.active = false;
+            history_button_2.active = false;
+            if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0)
+                return false;                           // help overlay
+            if ((event.state & Gdk.ModifierType.SHIFT_MASK) == 0)
+            {
+                on_help_contents ();
+                return false;
+            }
+            on_help_about ();
+            return true;
+        }
+
+        return false;
+    }
+
+    private inline bool on_key_press (Gdk.EventKey event)
     {
         if (timeout != 0
-         || !is_player_human ()
-         || (e.keyval != keypress_left
-          && e.keyval != keypress_right
-          && e.keyval != keypress_drop))
+         || (!gameover && !is_player_human ()))
+            return false;
+
+        string key = (!) (Gdk.keyval_name (event.keyval) ?? "");
+        if (key == "" || key == "Tab")
             return false;
 
         if (gameover)
@@ -846,18 +873,24 @@ private class FourInARow : Gtk.Application
             return true;
         }
 
-        if (e.keyval == keypress_left && column != 0)
+        if (key == "Left" || event.keyval == keypress_left)
         {
+            if (column <= 0)
+                return false;
             column_moveto--;
             move_cursor (column_moveto);
         }
-        else if (e.keyval == keypress_right && column < 6)
+        else if (key == "Right" || event.keyval == keypress_right)
         {
+            if (column >= 6)
+                return false;
             column_moveto++;
             move_cursor (column_moveto);
         }
-        else if (e.keyval == keypress_drop)
+        else if (key == "space" || key == "Return" || key == "KP_Enter" || key == "Down" || event.keyval == keypress_drop)
             process_move (column);
+        else if (key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6" || key == "7")
+            process_move (int.parse (key) - 1);
 
         return true;
     }

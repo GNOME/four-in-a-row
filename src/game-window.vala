@@ -31,13 +31,6 @@ private enum GameWindowFlags {
 [GtkTemplate (ui = "/org/gnome/Four-in-a-row/ui/game-window.ui")]
 private class GameWindow : AdaptativeWindow, AdaptativeWidget
 {
-    /* settings */
-    private bool window_is_tiled;
-    private bool window_is_maximized;
-    private bool window_is_fullscreen;
-    private int window_width;
-    private int window_height;
-
     private bool game_finished = false;
 
     private string program_name = "";
@@ -433,5 +426,10 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     private void toggle_hamburger (/* SimpleAction action, Variant? variant */)
     {
         info_button.active = !info_button.active;
+    }
+
+    internal void close_hamburger () // TODO manage also the HistoryButton here?
+    {
+        info_button.active = false;
     }
 }
