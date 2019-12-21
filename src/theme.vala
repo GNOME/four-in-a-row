@@ -18,7 +18,8 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-private struct Theme {
+private struct Theme
+{
     public string title;
     public string fname_tileset;
     public string? fname_bground;
@@ -38,72 +39,76 @@ private struct Theme {
  */
 private const string theme_gettext_package = GETTEXT_PACKAGE;
 
-private static string theme_get_title(int id) {
+private static string theme_get_title (int id)
+{
     return _(theme [id].title); // FIXME this gettext call feels horrible
 }
 
-private static string theme_get_player_turn(PlayerID who) {
+private static string theme_get_player_turn (PlayerID who)
+{
     if (who == PlayerID.PLAYER1)
-        return theme[Prefs.instance.theme_id].player1_turn;
-    return theme[Prefs.instance.theme_id].player2_turn;
+        return theme [Prefs.instance.theme_id].player1_turn;
+    return theme [Prefs.instance.theme_id].player2_turn;
 }
 
-private static string theme_get_player_win(PlayerID who) {
+private static string theme_get_player_win (PlayerID who)
+{
     if (who == PlayerID.PLAYER1)
-        return theme[Prefs.instance.theme_id].player1_win;
-    return theme[Prefs.instance.theme_id].player2_win;
+        return theme [Prefs.instance.theme_id].player1_win;
+    return theme [Prefs.instance.theme_id].player2_win;
 }
 
-private static string theme_get_player(PlayerID who) {
+private static string theme_get_player (PlayerID who)
+{
     if (who == PlayerID.PLAYER1)
-        return theme[Prefs.instance.theme_id].player1;
-    return theme[Prefs.instance.theme_id].player2;
+        return theme [Prefs.instance.theme_id].player1;
+    return theme [Prefs.instance.theme_id].player2;
 }
 
-private const Theme theme[] = {
+private const Theme theme [] = {
     {
         N_("High Contrast"),
         "tileset_50x50_hcontrast.svg",
         null,
         "#000000",
-        N_("Circle"), N_("Cross"),
-        N_("Circle wins!"), N_("Cross wins!"),
-        N_("Circle’s turn"), N_("Cross’s turn")
+        N_("Circle"),           N_("Cross"),
+        N_("Circle wins!"),     N_("Cross wins!"),
+        N_("Circle’s turn"),    N_("Cross’s turn")
     },
     {
         N_("High Contrast Inverse"),
         "tileset_50x50_hcinverse.svg",
         null,
         "#FFFFFF",
-        N_("Circle"), N_("Cross"),
-        N_("Circle wins!"), N_("Cross wins!"),
-        N_("Circle’s turn"), N_("Cross’s turn")
+        N_("Circle"),           N_("Cross"),
+        N_("Circle wins!"),     N_("Cross wins!"),
+        N_("Circle’s turn"),    N_("Cross’s turn")
     },
     {
         N_("Red and Green Marbles"),
         "tileset_50x50_faenza-glines-icon1.svg",
         "bg_toplight.png",
         "#727F8C",
-        N_("Red"), N_("Green"),
-        N_("Red wins!"), N_("Green wins!"),
-        N_("Red’s turn"), N_("Green’s turn")
+        N_("Red"),              N_("Green"),
+        N_("Red wins!"),        N_("Green wins!"),
+        N_("Red’s turn"),       N_("Green’s turn")
     },
     {
         N_("Blue and Red Marbles"),
         "tileset_50x50_faenza-glines-icon2.svg",
         "bg_toplight.png",
         "#727F8C",
-        N_("Blue"), N_("Red"),
-        N_("Blue wins!"), N_("Red wins!"),
-        N_("Blue’s turn"), N_("Red’s turn")
+        N_("Blue"),             N_("Red"),
+        N_("Blue wins!"),       N_("Red wins!"),
+        N_("Blue’s turn"),      N_("Red’s turn")
     },
     {
         N_("Stars and Rings"),
         "tileset_50x50_faenza-gnect-icon.svg",
         "bg_toplight.png",
         "#727F8C",
-        N_("Red"), N_("Green"),
-        N_("Red wins!"), N_("Green wins!"),
-        N_("Red’s turn"), N_("Green’s turn")
+        N_("Red"),              N_("Green"),
+        N_("Red wins!"),        N_("Green wins!"),
+        N_("Red’s turn"),       N_("Green’s turn")
     }
 };
