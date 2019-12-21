@@ -65,12 +65,9 @@ private class GameBoardView : Gtk.DrawingArea {
         return true;
     }
 
-    private inline bool change_theme() {
-        load_pixmaps();
-
-        refresh_pixmaps();
-        return true;
-    }
+    /*\
+    * * drawing
+    \*/
 
     protected override bool draw(Cairo.Context cr) {
         int r, c;
@@ -168,6 +165,12 @@ private class GameBoardView : Gtk.DrawingArea {
     /*\
     * * pixmaps
     \*/
+
+    private inline void change_theme ()
+    {
+        load_pixmaps ();
+        refresh_pixmaps ();
+    }
 
     private void refresh_pixmaps ()
     {
