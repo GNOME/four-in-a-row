@@ -19,25 +19,10 @@
 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
-  <menu id="game-menu">
-    <section>
-      <item>
-        <!-- Translators: during a game, entry in the game menu, for undoing the last move -->
-        <attribute name="label" translatable="yes">_Undo last move</attribute>
-        <attribute name="action">ui.undo</attribute>
-      </item>
-      <item>
-        <!-- Translators: during a game, entry in the game menu, for suggesting where to play -->
-        <attribute name="label" translatable="yes">_Hint</attribute>
-        <attribute name="action">ui.hint</attribute>
-      </item>
-    </section>
-  </menu>
   <template class="HistoryButton" parent="GtkMenuButton">
     <property name="visible">True</property>
     <property name="valign">center</property>
     <property name="can-focus">True</property>
     <property name="focus-on-click">False</property>
-    <property name="menu-model">game-menu</property>
   </template>
 </interface>

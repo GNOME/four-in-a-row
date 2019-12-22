@@ -23,8 +23,9 @@ using Gtk;
 [GtkTemplate (ui = "/org/gnome/Four-in-a-row/ui/history-button.ui")]
 private class HistoryButton : MenuButton, AdaptativeWidget
 {
-    internal HistoryButton (bool invert_arrow)
+    internal HistoryButton (ref GLib.Menu menu, bool invert_arrow)
     {
+        set_menu_model (menu);
         if (invert_arrow)
             set_direction (ArrowType.UP);
     }
