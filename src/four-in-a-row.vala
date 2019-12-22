@@ -362,9 +362,9 @@ private class FourInARow : Gtk.Application
         {
             anim = AnimID.BLINK;
             blink_on = false;
-            blink_n = n;
+            blink_n = 2 * n;
             blink_line = 0;
-            var temp = new Animate (0, this, n);
+            var temp = new Animate (0, this, 2 * n);
             timeout = Timeout.add (SPEED_BLINK, temp.exec);
             while (timeout != 0)
                 main_iteration ();
@@ -484,7 +484,7 @@ private class FourInARow : Gtk.Application
             scorebox.update (score, one_player_game);
             prompt_player ();
             if (winner != PlayerID.NOBODY)
-                blink_winner (6);
+                blink_winner (3);
         }
         else
         {
