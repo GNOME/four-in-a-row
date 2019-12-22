@@ -875,7 +875,7 @@ private class FourInARow : Gtk.Application
             return false;
 
         string key = (!) (Gdk.keyval_name (event.keyval) ?? "");
-        if (key == "" || key == "Tab")
+        if (key == "" || key == "Tab" || event.is_modifier == 1)
             return false;
 
         if (gameover)
