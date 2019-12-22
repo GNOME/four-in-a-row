@@ -54,13 +54,36 @@ private class Board : Object {
     * * check if there is a line passing by a given point
     \*/
 
-    internal bool is_line_at(Tile p, int r, int c,
-                             out int r1 = null, out int c1 = null,
-                             out int r2 = null, out int c2 = null) {
-        return is_hline_at (p, r, c, out r1, out c1, out r2, out c2) ||
-               is_vline_at (p, r, c, out r1, out c1, out r2, out c2) ||
-               is_dline1_at(p, r, c, out r1, out c1, out r2, out c2) ||
-               is_dline2_at(p, r, c, out r1, out c1, out r2, out c2);
+    internal bool is_line_at(Tile tile, int row, int col, out int [,] lines = null) {
+        uint8 n_lines = 0;
+        int [,] lines_tmp = new int [4, 4];
+
+        if (is_hline_at (tile, row, col, out lines_tmp [0, 0],
+                                         out lines_tmp [0, 1],
+                                         out lines_tmp [0, 2],
+                                         out lines_tmp [0, 3]))
+            n_lines++;
+        if (is_vline_at (tile, row, col, out lines_tmp [n_lines, 0],
+                                         out lines_tmp [n_lines, 1],
+                                         out lines_tmp [n_lines, 2],
+                                         out lines_tmp [n_lines, 3]))
+            n_lines++;
+        if (is_dline1_at(tile, row, col, out lines_tmp [n_lines, 0],
+                                         out lines_tmp [n_lines, 1],
+                                         out lines_tmp [n_lines, 2],
+                                         out lines_tmp [n_lines, 3]))
+            n_lines++;
+        if (is_dline2_at(tile, row, col, out lines_tmp [n_lines, 0],
+                                         out lines_tmp [n_lines, 1],
+                                         out lines_tmp [n_lines, 2],
+                                         out lines_tmp [n_lines, 3]))
+            n_lines++;
+
+        lines = new int [n_lines, 4];
+        for (int x = 0; x < n_lines; x++)
+            for (int y = 0; y < 4; y++)
+                lines [x, y] = lines_tmp [x, y];
+        return n_lines != 0;
     }
 
     private inline bool is_hline_at(Tile p, int r, int c,

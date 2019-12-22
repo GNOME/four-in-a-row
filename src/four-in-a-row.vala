@@ -78,10 +78,8 @@ private class FourInARow : Gtk.Application
 
     // animation
     private static AnimID anim = AnimID.NONE;
-    private int blink_r1 = 0;
-    private int blink_c1 = 0;
-    private int blink_r2 = 0;
-    private int blink_c2 = 0;
+    private int [,] blink_lines = {{}};
+    private uint8 blink_line = 0;   // index of currenly blinking line in blink_lines
     private int blink_t = 0;
     private int blink_n = 0;
     private bool blink_on = false;
@@ -360,14 +358,13 @@ private class FourInARow : Gtk.Application
 
         blink_t = winner;
 
-        if (game_board.is_line_at ((Tile) winner, row, column,
-                               out blink_r1, out blink_c1,
-                               out blink_r2, out blink_c2))
+        if (game_board.is_line_at ((Tile) winner, row, column, out blink_lines))
         {
             anim = AnimID.BLINK;
             blink_on = false;
             blink_n = n;
-            var temp = new Animate (0, this);
+            blink_line = 0;
+            var temp = new Animate (0, this, n);
             timeout = Timeout.add (SPEED_BLINK, temp.exec);
             while (timeout != 0)
                 main_iteration ();
@@ -379,18 +376,22 @@ private class FourInARow : Gtk.Application
         /* draw a line of 'tile' from r1,c1 to r2,c2 */
 
         bool done = false;
-        int d_row = 0;
-        int d_col = 0;
+        int d_row;
+        int d_col;
 
         if (r1 < r2)
             d_row = 1;
         else if (r1 > r2)
             d_row = -1;
+        else
+            d_row = 0;
 
         if (c1 < c2)
             d_col = 1;
         else if (c1 > c2)
             d_col = -1;
+        else
+            d_col = 0;
 
         do
         {
@@ -635,30 +636,30 @@ private class FourInARow : Gtk.Application
         moves = 0;
     }
 
-    private inline void blink_tile (int r, int c, int t, int n)
+    private inline void blink_tile (int row, int col, int t, int n)
     {
         if (timeout != 0)
             return;
-        blink_r1 = r;
-        blink_c1 = c;
-        blink_r2 = r;
-        blink_c2 = c;
+        blink_lines = {{ row, col, row, col }};
+        blink_line = 0;
         blink_t = t;
         blink_n = n;
         blink_on = false;
         anim = AnimID.BLINK;
-        var temp = new Animate (0, this);
+        var temp = new Animate (0, this, n);
         timeout = Timeout.add (SPEED_BLINK, temp.exec);
     }
 
     private class Animate
     {
-        int c;
-        FourInARow application;
-        internal Animate (int c, FourInARow application)
+        private int c;
+        private FourInARow application;
+        private int blink_n_times;
+        internal Animate (int c, FourInARow application, int blink_n_times = 0)
         {
             this.c = c;
             this.application = application;
+            this.blink_n_times = blink_n_times;
         }
 
         internal bool exec ()
@@ -701,15 +702,25 @@ private class FourInARow : Gtk.Application
                     return true;
 
                 case AnimID.BLINK:
-                    application.draw_line (application.blink_r1, application.blink_c1,
-                                           application.blink_r2, application.blink_c2,
-                                           application.blink_on ? application.blink_t : Tile.CLEAR);
+                    application.draw_line (/* row 1 */ application.blink_lines [application.blink_line, 0],
+                                           /* col 1 */ application.blink_lines [application.blink_line, 1],
+                                           /* row 2 */ application.blink_lines [application.blink_line, 2],
+                                           /* col 2 */ application.blink_lines [application.blink_line, 3],
+                                           /* tile */  application.blink_on ? application.blink_t : Tile.CLEAR);
                     application.blink_n--;
                     if (application.blink_n <= 0 && application.blink_on)
                     {
-                        anim = AnimID.NONE;
-                        application.timeout = 0;
-                        return false;
+                        if (application.blink_line >= application.blink_lines.length [0] - 1)
+                        {
+                            anim = AnimID.NONE;
+                            application.timeout = 0;
+                            return false;
+                        }
+                        else
+                        {
+                            application.blink_line++;
+                            application.blink_n += blink_n_times;
+                        }
                     }
                     application.blink_on = !application.blink_on;
                     return true;
