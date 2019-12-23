@@ -650,10 +650,10 @@ private class FourInARow : Gtk.Application
         blink_lines = {{ row, col, row, col }};
         blink_line = 0;
         blink_t = tile;
-        blink_n = n;
+        blink_n = 2 * n;
         blink_on = false;
         anim = AnimID.BLINK;
-        var temp = new Animate (0, this, n);
+        var temp = new Animate (0, this, 2 * n);
         timeout = Timeout.add (SPEED_BLINK, temp.exec);
     }
 
@@ -777,7 +777,7 @@ private class FourInARow : Gtk.Application
         var temp = new Animate (0, this);
         timeout = Timeout.add (SPEED_MOVE, temp.exec);
 
-        blink_tile (0, c, game_board [0, c], 6);
+        blink_tile (0, c, game_board [0, c], 3);
 
         /* Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column */
         s = _("Hint: Column %d").printf (c + 1);
