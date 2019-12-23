@@ -93,7 +93,7 @@ private class Scorebox : Dialog {
      *
      * updates the scorebox with the latest scores
      */
-    internal void update(int[] scores, bool one_player_game) {
+    internal void update(uint[] scores, bool one_player_game) {
         if (one_player_game) {
             if (scores[PlayerID.PLAYER1] >= scores[PlayerID.PLAYER2]) {
                 /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player */
@@ -115,8 +115,8 @@ private class Scorebox : Dialog {
                 label_score[1].label = scores[0].to_string();
             }
         } else {
-            label_name[0].label = theme_get_player(PlayerID.PLAYER1, theme_id);    // FIXME missing ":" at end
-            label_name[1].label = theme_get_player(PlayerID.PLAYER2, theme_id);    // idem
+            label_name[0].label = theme_get_player(PlayerID.PLAYER1, (uint8) theme_id);    // FIXME missing ":" at end
+            label_name[1].label = theme_get_player(PlayerID.PLAYER2, (uint8) theme_id);    // idem
 
             label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
             label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();

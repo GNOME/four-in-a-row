@@ -27,7 +27,7 @@ private class FourInARow : Gtk.Application
 
     /* Translators: application name, as used in the window manager, the window title, the about dialog... */
     private const string PROGRAM_NAME = _("Four-in-a-row");
-    private const int SIZE_VSTR = 53;
+    private const uint8 SIZE_VSTR = 53;
     private const int SPEED_BLINK = 150;
     private const int SPEED_MOVE = 35;
     private const int SPEED_DROP = 20;
@@ -50,13 +50,13 @@ private class FourInARow : Gtk.Application
     private PlayerID last_first_player = PlayerID.NOBODY;
     private Board game_board = new Board ();
     private bool one_player_game;
-    private int ai_level;
+    private uint8 ai_level;
     /**
      * score:
      *
      * The scores for the current instance (Player 1, Player 2, Draw)
      */
-    private int [] score = { 0, 0, 0 };
+    private uint [] score = { 0, 0, 0 };
     private bool reset_score = true;
     private uint playgame_timeout = 0;
 
@@ -69,19 +69,19 @@ private class FourInARow : Gtk.Application
     private MenuButton history_button_2;
 
     // game state
-    private char vstr [53];
-    private int moves;
-    private int column;
-    private int column_moveto;
-    private int row;
-    private int row_dropto;
+    private char vstr [/* SIZE_VSTR */ 53];
+    private uint8 moves;
+    private uint8 column;
+    private uint8 column_moveto;
+    private uint8 row;
+    private uint8 row_dropto;
 
     // animation
     private static AnimID anim = AnimID.NONE;
-    private int [,] blink_lines = {{}};
+    private uint8 [,] blink_lines = {{}};
     private uint8 blink_line = 0;   // index of currenly blinking line in blink_lines
-    private int blink_t = 0;
-    private int blink_n = 0;
+    private Tile blink_t = Tile.PLAYER1;    // garbage
+    private uint8 blink_n = 0;
     private bool blink_on = false;
     private uint timeout = 0;
 
@@ -90,7 +90,7 @@ private class FourInARow : Gtk.Application
     [CCode (notify = false)] internal int   keypress_right  { private get; internal set; }
     [CCode (notify = false)] internal int   keypress_left   { private get; internal set; }
     [CCode (notify = false)] internal bool  sound_on        { private get; internal set; }
-    [CCode (notify = false)] private  int   theme_id        { private get; private  set; }
+    private uint8 theme_id;
 
     private const GLib.ActionEntry app_entries [] =  // see also add_actions()
     {
@@ -195,10 +195,10 @@ private class FourInARow : Gtk.Application
         settings.bind ("theme-id", scorebox, "theme-id", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
         settings.changed ["theme-id"].connect (() => {
                 scorebox.update (score, one_player_game);
-                theme_id = settings.get_int ("theme-id");
+                theme_id = (uint8) settings.get_int ("theme-id");
                 prompt_player ();
             });
-        theme_id = settings.get_int ("theme-id");
+        theme_id = (uint8) settings.get_int ("theme-id");
 
         add_actions ();
 
@@ -313,7 +313,7 @@ private class FourInARow : Gtk.Application
         {
             player = settings.get_string ("first-player") == "computer" ? PlayerID.PLAYER2 : PlayerID.PLAYER1;
             settings.set_string ("first-player", player == PlayerID.PLAYER1 ? "computer" : "human");
-            ai_level = settings.get_int ("opponent");
+            ai_level = (uint8) settings.get_int ("opponent");
         }
         else
         {
@@ -344,19 +344,25 @@ private class FourInARow : Gtk.Application
         {
             vstr [0] = vlevel [ai_level];
             playgame_timeout = Timeout.add (COMPUTER_INITIAL_DELAY, () => {
-                    process_move (playgame ((string) vstr) - 1);
+                    int c = playgame ((string) vstr) - 1;
+                    if (c > 6)
+                        assert_not_reached ();
+                    if (c < 0)
+                        return Source.REMOVE;
+                    process_move ((uint8) c);
                     playgame_timeout = 0;
                     return Source.REMOVE;
                 });
         }
     }
 
-    private void blink_winner (int n)   /* blink the winner's line(s) n times */
+    private void blink_winner (uint8 n)   /* blink the winner's line(s) n times */
+     // requires (n < 128)
     {
         if (winner == NOBODY)
             return;
 
-        blink_t = winner;
+        blink_t = (Tile) winner;    // FIXME converting a PlayerID in Tile, bad
 
         if (game_board.is_line_at ((Tile) winner, row, column, out blink_lines))
         {
@@ -371,32 +377,31 @@ private class FourInARow : Gtk.Application
         }
     }
 
-    private inline void draw_line (int r1, int c1, int r2, int c2, int tile)
+    private inline void draw_line (uint8 _r1, uint8 _c1, uint8 _r2, uint8 _c2, int tile)
     {
         /* draw a line of 'tile' from r1,c1 to r2,c2 */
 
         bool done = false;
-        int d_row;
-        int d_col;
+        int8 d_row;
+        int8 d_col;
 
-        if (r1 < r2)
-            d_row = 1;
-        else if (r1 > r2)
-            d_row = -1;
-        else
-            d_row = 0;
+        int8 r1 = (int8) _r1;
+        int8 c1 = (int8) _c1;
+        int8 r2 = (int8) _r2;
+        int8 c2 = (int8) _c2;
 
-        if (c1 < c2)
-            d_col = 1;
-        else if (c1 > c2)
-            d_col = -1;
-        else
-            d_col = 0;
+        if (r1 < r2)        d_row =  1;
+        else if (r1 > r2)   d_row = -1;
+        else                d_row =  0;
+
+        if (c1 < c2)        d_col =  1;
+        else if (c1 > c2)   d_col = -1;
+        else                d_col =  0;
 
         do
         {
             done = (r1 == r2 && c1 == c2);
-            game_board[r1, c1] = (Tile) tile;
+            game_board [r1, c1] = (Tile) tile;
             game_board_view.draw_tile (r1, c1);
             if (r1 != r2)
                 r1 += d_row;
@@ -413,7 +418,7 @@ private class FourInARow : Gtk.Application
         window.allow_hint (human && !gameover);
 
         if (one_player_game)
-            window.allow_undo ((human && moves >1) || (!human && gameover));
+            window.allow_undo ((human && moves > 1) || (!human && gameover));
         else
             window.allow_undo (moves > 0);
 
@@ -469,7 +474,7 @@ private class FourInARow : Gtk.Application
         prompt_player ();
     }
 
-    private void process_move3 (int c)
+    private void process_move3 (uint8 c)
     {
         play_sound (SoundID.DROP);
 
@@ -493,10 +498,12 @@ private class FourInARow : Gtk.Application
             {
                 playgame_timeout = Timeout.add (COMPUTER_MOVE_DELAY, () => {
                         vstr [0] = vlevel [ai_level];
-                        c = playgame ((string) vstr) - 1;
-                        if (c < 0)
+                        int col = playgame ((string) vstr) - 1;
+                        if (col < 0)
                             gameover = true;
-                        var nm = new NextMove (c, this);
+                        else if (col > 6)
+                            assert_not_reached ();
+                        var nm = new NextMove ((uint8) col, this);
                         Timeout.add (SPEED_DROP, nm.exec);
                         playgame_timeout = 0;
                         return Source.REMOVE;
@@ -532,10 +539,10 @@ private class FourInARow : Gtk.Application
             return true;
     }
 
-    private void process_move2 (int c)
+    private void process_move2 (uint8 c)
     {
-        int r = game_board.first_empty_row (c);
-        if (r > 0)
+        uint8 r = game_board.first_empty_row (c);
+        if (r != 0)
         {
             row = 0;
             row_dropto = r;
@@ -547,7 +554,7 @@ private class FourInARow : Gtk.Application
             play_sound (SoundID.COLUMN_FULL);
     }
 
-    private void process_move (int c)
+    private void process_move (uint8 c)
     {
         if (timeout != 0)
         {
@@ -574,7 +581,7 @@ private class FourInARow : Gtk.Application
         game_board_view.draw_tile (row, column);
     }
 
-    private inline void move (int c)
+    private inline void move (uint8 c)
     {
         game_board [0, column] = Tile.CLEAR;
         game_board_view.draw_tile (0, column);
@@ -585,7 +592,7 @@ private class FourInARow : Gtk.Application
         game_board_view.draw_tile (0, c);
     }
 
-    private void move_cursor (int c)
+    private void move_cursor (uint8 c)
     {
         move (c);
         column = column_moveto = c;
@@ -599,10 +606,10 @@ private class FourInARow : Gtk.Application
 
     private class NextMove
     {
-        int c;
-        FourInARow application;
+        private uint8 c;
+        private FourInARow application;
 
-        internal NextMove (int c, FourInARow application)
+        internal NextMove (uint8 c, FourInARow application)
         {
             this.c = c;
             this.application = application;
@@ -628,7 +635,7 @@ private class FourInARow : Gtk.Application
     {
         game_board.clear ();
 
-        for (var i = 0; i < SIZE_VSTR; i++)
+        for (uint8 i = 0; i < SIZE_VSTR; i++)
             vstr [i] = '\0';
 
         vstr [0] = vlevel [/* weak */ 1];
@@ -636,13 +643,13 @@ private class FourInARow : Gtk.Application
         moves = 0;
     }
 
-    private inline void blink_tile (int row, int col, int t, int n)
+    private inline void blink_tile (uint8 row, uint8 col, Tile tile, uint8 n)
     {
         if (timeout != 0)
             return;
         blink_lines = {{ row, col, row, col }};
         blink_line = 0;
-        blink_t = t;
+        blink_t = tile;
         blink_n = n;
         blink_on = false;
         anim = AnimID.BLINK;
@@ -652,10 +659,11 @@ private class FourInARow : Gtk.Application
 
     private class Animate
     {
-        private int c;
+        private uint8 c;
         private FourInARow application;
-        private int blink_n_times;
-        internal Animate (int c, FourInARow application, int blink_n_times = 0)
+        private uint8 blink_n_times;
+
+        internal Animate (uint8 c, FourInARow application, uint8 blink_n_times = 0)
         {
             this.c = c;
             this.application = application;
@@ -708,7 +716,7 @@ private class FourInARow : Gtk.Application
                                            /* col 2 */ application.blink_lines [application.blink_line, 3],
                                            /* tile */  application.blink_on ? application.blink_t : Tile.CLEAR);
                     application.blink_n--;
-                    if (application.blink_n <= 0 && application.blink_on)
+                    if (application.blink_n == 0 && application.blink_on)
                     {
                         if (application.blink_line >= application.blink_lines.length [0] - 1)
                         {
@@ -743,7 +751,7 @@ private class FourInARow : Gtk.Application
     private inline void on_game_hint ()
     {
         string s;
-        int c;
+        uint8 c;
 
         if (timeout != 0)
             return;
@@ -757,7 +765,10 @@ private class FourInARow : Gtk.Application
         set_status_message (_("I’m Thinking…"));
 
         vstr [0] = vlevel [/* strong */ 3];
-        c = playgame ((string) vstr) - 1;
+        int _c = playgame ((string) vstr) - 1;
+        if (_c < 0 || _c > 6)
+            assert_not_reached ();
+        c = (uint8) _c;
 
         column_moveto = c;
         while (timeout != 0)
@@ -783,8 +794,8 @@ private class FourInARow : Gtk.Application
         if (timeout != 0)
             return;
 
-        int c = vstr [moves] - '0' - 1;
-        int r = game_board.first_empty_row (c) + 1;
+        uint8 c = vstr [moves] - '0' - 1;
+        uint8 r = game_board.first_empty_row (c) + 1;
         vstr [moves] = '0';
         vstr [moves + 1] = '\0';
         moves--;
@@ -897,7 +908,7 @@ private class FourInARow : Gtk.Application
 
         if (key == "Left" || event.keyval == keypress_left)
         {
-            if (column <= 0)
+            if (column == 0)
                 return false;
             column_moveto--;
             move_cursor (column_moveto);
@@ -912,12 +923,12 @@ private class FourInARow : Gtk.Application
         else if (key == "space" || key == "Return" || key == "KP_Enter" || key == "Down" || event.keyval == keypress_drop)
             process_move (column);
         else if (key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6" || key == "7")
-            process_move (int.parse (key) - 1);
+            process_move ((uint8) int.parse (key) - 1);
 
         return true;
     }
 
-    private inline bool column_clicked_cb (int column)
+    private inline bool column_clicked_cb (uint8 column)
     {
         if (gameover && timeout == 0)
             blink_winner (2);
@@ -1093,12 +1104,14 @@ private class FourInARow : Gtk.Application
     }
 }
 
+// WARNING PlayerID and Tile should be synced
 private enum PlayerID {
     PLAYER1 = 0,
     PLAYER2,
     NOBODY;
 }
 
+// WARNING PlayerID and Tile should be synced
 private enum Tile {
     PLAYER1 = 0,
     PLAYER2,

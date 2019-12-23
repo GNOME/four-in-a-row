@@ -18,45 +18,50 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-private class Board : Object {
-    private static Tile[,] gboard;
-    private const int BOARD_SIZE = 7;
+private class Board : Object
+{
+    private static Tile [,] gboard;
+    private const uint8 BOARD_SIZE = 7;
 
-    internal Board() {
-        gboard = new Tile[BOARD_SIZE, BOARD_SIZE];
+    internal Board ()
+    {
+        gboard = new Tile [BOARD_SIZE, BOARD_SIZE];
     }
 
-    internal new void @set(int x, int y, Tile tile) {
-        gboard[x, y] = tile;
+    internal new void @set (uint8 x, uint8 y, Tile tile)
+    {
+        gboard [x, y] = tile;
     }
 
-    internal new Tile @get(int x, int y) {
-        return gboard[x, y];
+    internal new Tile @get (uint8 x, uint8 y)
+    {
+        return gboard [x, y];
     }
 
-    internal void clear() {
-        for (int r = 0; r < BOARD_SIZE; r++) {
-            for (int c = 0; c < BOARD_SIZE; c++) {
-                gboard[r, c] = Tile.CLEAR;
-            }
-        }
+    internal void clear ()
+    {
+        for (uint8 row = 0; row < BOARD_SIZE; row++)
+            for (uint8 col = 0; col < BOARD_SIZE; col++)
+                gboard [row, col] = Tile.CLEAR;
     }
 
-    internal int first_empty_row(int c) {
-        int r = 1;
+    internal uint8 first_empty_row (uint8 col)
+    {
+        uint8 row = 1;
 
-        while (r < BOARD_SIZE && gboard[r, c] == Tile.CLEAR)
-            r++;
-        return r - 1;
+        while (row < BOARD_SIZE && gboard [row, col] == Tile.CLEAR)
+            row++;
+        return row - 1;
     }
 
     /*\
     * * check if there is a line passing by a given point
     \*/
 
-    internal bool is_line_at(Tile tile, int row, int col, out int [,] lines = null) {
+    internal bool is_line_at (Tile tile, uint8 row, uint8 col, out uint8 [,] lines = null)
+    {
         uint8 n_lines = 0;
-        int [,] lines_tmp = new int [4, 4];
+        uint8 [,] lines_tmp = new uint8 [4, 4];
 
         if (is_hline_at (tile, row, col, out lines_tmp [0, 0],
                                          out lines_tmp [0, 1],
@@ -79,84 +84,86 @@ private class Board : Object {
                                          out lines_tmp [n_lines, 3]))
             n_lines++;
 
-        lines = new int [n_lines, 4];
-        for (int x = 0; x < n_lines; x++)
-            for (int y = 0; y < 4; y++)
+        lines = new uint8 [n_lines, 4];
+        for (uint8 x = 0; x < n_lines; x++)
+            for (uint8 y = 0; y < 4; y++)
                 lines [x, y] = lines_tmp [x, y];
         return n_lines != 0;
     }
 
-    private inline bool is_hline_at(Tile p, int r, int c,
-                                    out int r1, out int c1,
-                                    out int r2, out int c2) {
-        r1 = r;
-        r2 = r;
-        c1 = c;
-        c2 = c;
-        while (c1 > 0 && gboard[r, c1 - 1] == p)
-            c1 = c1 - 1;
-        while (c2 < 6 && gboard[r, c2 + 1] == p)
-            c2 = c2 + 1;
-        if (c2 - c1 >= 3)
+    private inline bool is_hline_at (Tile tile,     uint8 row,       uint8 col,
+                                                out uint8 row_1, out uint8 col_1,
+                                                out uint8 row_2, out uint8 col_2)
+    {
+        row_1 = row;
+        row_2 = row;
+        col_1 = col;
+        col_2 = col;
+        while (col_1 > 0 && gboard [row, col_1 - 1] == tile)
+            col_1 = col_1 - 1;
+        while (col_2 < 6 && gboard [row, col_2 + 1] == tile)
+            col_2 = col_2 + 1;
+        if (col_2 - col_1 >= 3)
             return true;
         return false;
     }
 
-    private inline bool is_vline_at(Tile p, int r, int c,
-                                    out int r1 , out int c1,
-                                    out int r2, out int c2) {
-        r1 = r;
-        r2 = r;
-        c1 = c;
-        c2 = c;
-        while (r1 > 1 && @get(r1 - 1, c) == p)
-            r1 = r1 - 1;
-        while (r2 < 6 && @get(r2 + 1, c) == p)
-            r2 = r2 + 1;
-        if (r2 - r1 >= 3)
-            return true;
-        return false;
+    private inline bool is_vline_at (Tile tile,     uint8 row,       uint8 col,
+                                                out uint8 row_1, out uint8 col_1,
+                                                out uint8 row_2, out uint8 col_2)
+    {
+        row_1 = row;
+        row_2 = row;
+        col_1 = col;
+        col_2 = col;
+        while (row_1 > 1 && gboard [row_1 - 1, col] == tile)
+            row_1 = row_1 - 1;
+        while (row_2 < 6 && gboard [row_2 + 1, col] == tile)
+            row_2 = row_2 + 1;
+        return row_2 - row_1 >= 3;
     }
 
-    private inline bool is_dline1_at(Tile p, int r, int c,
-                                     out int r1, out int c1,
-                                     out int r2, out int c2) {
+    private inline bool is_dline1_at (Tile tile,     uint8 row,       uint8 col,
+                                                 out uint8 row_1, out uint8 col_1,
+                                                 out uint8 row_2, out uint8 col_2)
+    {
         /* upper left to lower right */
-        r1 = r;
-        r2 = r;
-        c1 = c;
-        c2 = c;
-        while (c1 > 0 && r1 > 1 && @get(r1 - 1, c1 - 1) == p) {
-            r1 = r1 - 1;
-            c1 = c1 - 1;
+        row_1 = row;
+        row_2 = row;
+        col_1 = col;
+        col_2 = col;
+        while (col_1 > 0 && row_1 > 1 && gboard [row_1 - 1, col_1 - 1] == tile)
+        {
+            row_1 = row_1 - 1;
+            col_1 = col_1 - 1;
         }
-        while (c2 < 6 && r2 < 6 && @get(r2 + 1, c2 + 1) == p) {
-            r2 = r2 + 1;
-            c2 = c2 + 1;
+        while (col_2 < 6 && row_2 < 6 && gboard [row_2 + 1, col_2 + 1] == tile)
+        {
+            row_2 = row_2 + 1;
+            col_2 = col_2 + 1;
         }
-        if (r2 - r1 >= 3)
-            return true;
-        return false;
+        return row_2 - row_1 >= 3;
     }
 
-    private inline bool is_dline2_at(Tile p, int r, int c,
-                                     out int r1, out int c1,
-                                     out int r2, out int c2) {
+    private inline bool is_dline2_at (Tile tile,     uint8 row,       uint8 col,
+                                                 out uint8 row_1, out uint8 col_1,
+                                                 out uint8 row_2, out uint8 col_2)
+    {
         /* upper right to lower left */
-        r1 = r;
-        r2 = r;
-        c1 = c;
-        c2 = c;
-        while (c1 < 6 && r1 > 1 && @get(r1 - 1, c1 + 1) == p) {
-            r1 = r1 - 1;
-            c1 = c1 + 1;
+        row_1 = row;
+        row_2 = row;
+        col_1 = col;
+        col_2 = col;
+        while (col_1 < 6 && row_1 > 1 && gboard [row_1 - 1, col_1 + 1] == tile)
+        {
+            row_1 = row_1 - 1;
+            col_1 = col_1 + 1;
         }
-        while (c2 > 0 && r2 < 6 && @get(r2 + 1, c2 - 1) == p) {
-            r2 = r2 + 1;
-            c2 = c2 - 1;
+        while (col_2 > 0 && row_2 < 6 && gboard [row_2 + 1, col_2 - 1] == tile)
+        {
+            row_2 = row_2 + 1;
+            col_2 = col_2 - 1;
         }
-        if (r2 - r1 >= 3)
-            return true;
-        return false;
+        return row_2 - row_1 >= 3;
     }
 }

@@ -39,30 +39,33 @@ private struct Theme
  */
 private const string theme_gettext_package = GETTEXT_PACKAGE;
 
-private static string theme_get_title (int id)
+private static string theme_get_title (uint8 id)
 {
     return _(theme [id].title); // FIXME this gettext call feels horrible
 }
 
-private static string theme_get_player_turn (PlayerID who, int theme_id)
+private static string theme_get_player_turn (PlayerID who, uint8 theme_id)
 {
     if (who == PlayerID.PLAYER1)
         return theme [theme_id].player1_turn;
-    return theme [theme_id].player2_turn;
+    else
+        return theme [theme_id].player2_turn;
 }
 
-private static string theme_get_player_win (PlayerID who, int theme_id)
+private static string theme_get_player_win (PlayerID who, uint8 theme_id)
 {
     if (who == PlayerID.PLAYER1)
         return theme [theme_id].player1_win;
-    return theme [theme_id].player2_win;
+    else
+        return theme [theme_id].player2_win;
 }
 
-private static string theme_get_player (PlayerID who, int theme_id)
+private static string theme_get_player (PlayerID who, uint8 theme_id)
 {
     if (who == PlayerID.PLAYER1)
         return theme [theme_id].player1;
-    return theme [theme_id].player2;
+    else
+        return theme [theme_id].player2;
 }
 
 private const Theme theme [] = {

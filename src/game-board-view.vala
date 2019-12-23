@@ -273,7 +273,7 @@ private class GameBoardView : Gtk.DrawingArea
      *
      * Which column was clicked on
      */
-    internal signal bool column_clicked (int column);
+    internal signal bool column_clicked (uint8 column);
 
     protected override bool button_press_event (Gdk.EventButton e)
     {
@@ -284,18 +284,22 @@ private class GameBoardView : Gtk.DrawingArea
             assert_not_reached ();
         ((!) window).get_device_position (e.device, out x, out y, null);
 
-        int col;
+        uint8 col;
         if (get_column (x, y, out col))
             return column_clicked (col);
         else
             return false;
     }
 
-    private inline bool get_column (int x, int y, out int col)
+    private inline bool get_column (int x, int y, out uint8 col)
     {
-        col = (x - board_x) / tile_size;
-        if (x < board_x || y < board_y || col < 0 || col > 6)
+        int _col = (x - board_x) / tile_size;
+        if (x < board_x || y < board_y || _col < 0 || _col > 6)
+        {
+            col = 0;
             return false;
+        }
+        col = (uint8) _col;
 
         int row = (y - board_y) / tile_size;
         if (row < 0 || row > 6)
