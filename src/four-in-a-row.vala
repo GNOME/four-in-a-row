@@ -21,6 +21,12 @@
 
 using Gtk;
 
+private const uint8 BOARD_COLUMNS = 7;
+private const uint8 BOARD_COLUMNS_MINUS_ONE = 6;
+private const uint8 BOARD_ROWS = 6;
+private const uint8 BOARD_ROWS_PLUS_ONE = 7;
+private const uint8 BOARD_SIZE = 7; // as long as that is needed, impossible to have n_rows != n_cols - 1
+
 private class FourInARow : Gtk.Application
 {
     private GLib.Settings settings = new GLib.Settings ("org.gnome.Four-in-a-row");
@@ -345,7 +351,7 @@ private class FourInARow : Gtk.Application
             vstr [0] = vlevel [ai_level];
             playgame_timeout = Timeout.add (COMPUTER_INITIAL_DELAY, () => {
                     int c = playgame ((string) vstr) - 1;
-                    if (c > 6)
+                    if (c > BOARD_COLUMNS_MINUS_ONE)
                         assert_not_reached ();
                     if (c < 0)
                         return Source.REMOVE;
@@ -501,7 +507,7 @@ private class FourInARow : Gtk.Application
                         int col = playgame ((string) vstr) - 1;
                         if (col < 0)
                             gameover = true;
-                        else if (col > 6)
+                        else if (col > BOARD_COLUMNS_MINUS_ONE)
                             assert_not_reached ();
                         var nm = new NextMove ((uint8) col, this);
                         Timeout.add (SPEED_DROP, nm.exec);
@@ -766,7 +772,7 @@ private class FourInARow : Gtk.Application
 
         vstr [0] = vlevel [/* strong */ 3];
         int _c = playgame ((string) vstr) - 1;
-        if (_c < 0 || _c > 6)
+        if (_c < 0 || _c > BOARD_COLUMNS_MINUS_ONE)
             assert_not_reached ();
         c = (uint8) _c;
 
@@ -777,7 +783,7 @@ private class FourInARow : Gtk.Application
         var temp = new Animate (0, this);
         timeout = Timeout.add (SPEED_MOVE, temp.exec);
 
-        blink_tile (0, c, game_board [0, c], 3);
+        blink_tile (0, c, game_board [0, c], /* blink n times */ 3);
 
         /* Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column */
         s = _("Hint: Column %d").printf (c + 1);
@@ -915,7 +921,7 @@ private class FourInARow : Gtk.Application
         }
         else if (key == "Right" || event.keyval == keypress_right)
         {
-            if (column >= 6)
+            if (column >= BOARD_COLUMNS_MINUS_ONE)
                 return false;
             column_moveto++;
             move_cursor (column_moveto);
