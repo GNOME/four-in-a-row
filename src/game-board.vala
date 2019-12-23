@@ -102,9 +102,7 @@ private class Board : Object
             col_1 = col_1 - 1;
         while (col_2 < BOARD_ROWS && gboard [row, col_2 + 1] == tile)
             col_2 = col_2 + 1;
-        if (col_2 - col_1 >= 3)
-            return true;
-        return false;
+        return col_2 - col_1 >= 3;
     }
 
     private inline bool is_vline_at (PlayerID tile,     uint8 row,       uint8 col,
