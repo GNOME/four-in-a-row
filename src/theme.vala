@@ -26,6 +26,8 @@ private struct Theme
     public string grid_color;
     public string player1;
     public string player2;
+    public string player1_with_colon;
+    public string player2_with_colon;
     public string player1_win;
     public string player2_win;
     public string player1_turn;
@@ -41,7 +43,7 @@ private const string theme_gettext_package = GETTEXT_PACKAGE;
 
 private static string theme_get_title (uint8 id)
 {
-    return _(theme [id].title); // FIXME this gettext call feels horrible
+    return _(theme [id].title); // FIXME this gettext call feels horrible 1/5
 }
 
 private static string theme_get_player_turn (Player who, uint8 theme_id)
@@ -60,12 +62,22 @@ private static string theme_get_player_win (Player who, uint8 theme_id)
         return theme [theme_id].player2_win;
 }
 
-private static string theme_get_player (Player who, uint8 theme_id)
+private static string theme_get_player (Player who, uint8 theme_id, bool with_colon)
 {
-    if (who == Player.HUMAN)
-        return theme [theme_id].player1;
+    if (with_colon)
+    {
+        if (who == Player.HUMAN)
+            return _(theme [theme_id].player1_with_colon);  // FIXME this gettext call feels horrible 2/5
+        else
+            return _(theme [theme_id].player2_with_colon);  // FIXME this gettext call feels horrible 3/5
+    }
     else
-        return theme [theme_id].player2;
+    {
+        if (who == Player.HUMAN)
+            return _(theme [theme_id].player1);             // FIXME this gettext call feels horrible 4/5
+        else
+            return _(theme [theme_id].player2);             // FIXME this gettext call feels horrible 5/5
+    }
 }
 
 private const Theme theme [] = {
@@ -76,6 +88,7 @@ private const Theme theme [] = {
         null,
         "#000000",
         N_("Circle"),           N_("Cross"),
+        N_("Circle:"),          N_("Cross:"),
         N_("Circle wins!"),     N_("Cross wins!"),
         N_("Circle’s turn"),    N_("Cross’s turn")
     },
@@ -86,6 +99,7 @@ private const Theme theme [] = {
         null,
         "#FFFFFF",
         N_("Circle"),           N_("Cross"),
+        N_("Circle:"),          N_("Cross:"),
         N_("Circle wins!"),     N_("Cross wins!"),
         N_("Circle’s turn"),    N_("Cross’s turn")
     },
@@ -96,6 +110,7 @@ private const Theme theme [] = {
         "bg_toplight.png",
         "#727F8C",
         N_("Red"),              N_("Green"),
+        N_("Red:"),             N_("Green:"),
         N_("Red wins!"),        N_("Green wins!"),
         N_("Red’s turn"),       N_("Green’s turn")
     },
@@ -106,6 +121,7 @@ private const Theme theme [] = {
         "bg_toplight.png",
         "#727F8C",
         N_("Blue"),             N_("Red"),
+        N_("Blue:"),            N_("Red:"),
         N_("Blue wins!"),       N_("Red wins!"),
         N_("Blue’s turn"),      N_("Red’s turn")
     },
@@ -116,6 +132,7 @@ private const Theme theme [] = {
         "bg_toplight.png",
         "#727F8C",
         N_("Red"),              N_("Green"),
+        N_("Red:"),             N_("Green:"),
         N_("Red wins!"),        N_("Green wins!"),
         N_("Red’s turn"),       N_("Green’s turn")
     }

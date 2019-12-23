@@ -117,14 +117,14 @@ private class Scorebox : Dialog {
             }
         } else {
             if (scores[Player.HUMAN] >= scores[Player.OPPONENT]) {
-                label_name_top.label = theme_get_player(Player.HUMAN,    (uint8) theme_id);    // FIXME missing ":" at end
-                label_name_mid.label = theme_get_player(Player.OPPONENT, (uint8) theme_id);    // idem
+                label_name_top.label = theme_get_player(Player.HUMAN,    (uint8) theme_id, /* with colon */ true);
+                label_name_mid.label = theme_get_player(Player.OPPONENT, (uint8) theme_id, /* with colon */ true);
 
                 label_score_top.label = scores[Player.HUMAN].to_string();
                 label_score_mid.label = scores[Player.OPPONENT].to_string();
             } else {
-                label_name_top.label = theme_get_player(Player.OPPONENT, (uint8) theme_id);    // FIXME missing ":" at end
-                label_name_mid.label = theme_get_player(Player.HUMAN,    (uint8) theme_id);    // idem
+                label_name_top.label = theme_get_player(Player.OPPONENT, (uint8) theme_id, /* with colon */ true);
+                label_name_mid.label = theme_get_player(Player.HUMAN,    (uint8) theme_id, /* with colon */ true);
 
                 label_score_top.label = scores[Player.OPPONENT].to_string();
                 label_score_mid.label = scores[Player.HUMAN].to_string();
