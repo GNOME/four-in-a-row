@@ -21,6 +21,7 @@
 
 using Gtk;
 
+// if you want to play, update also the two const in ai.vala
 private const uint8 BOARD_COLUMNS = 7;
 private const uint8 BOARD_COLUMNS_MINUS_ONE = 6;
 private const uint8 BOARD_ROWS = 6;
@@ -34,9 +35,9 @@ private class FourInARow : Gtk.Application
     /* Translators: application name, as used in the window manager, the window title, the about dialog... */
     private const string PROGRAM_NAME = _("Four-in-a-row");
     private const uint8 SIZE_VSTR = 53;
-    private const int SPEED_BLINK = 150;
-    private const int SPEED_MOVE = 35;
-    private const int SPEED_DROP = 20;
+    private const uint SPEED_BLINK = 150;
+    private const uint SPEED_MOVE = 35;
+    private const uint SPEED_DROP = 20;
     private const char vlevel [] = { '0','a','b','c' };
     private const uint COMPUTER_INITIAL_DELAY = 1200;
     private const uint COMPUTER_MOVE_DELAY = 600;
