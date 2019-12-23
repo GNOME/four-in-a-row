@@ -1,6 +1,6 @@
 src/four-in-a-row.c
+src/game-window.c
 src/history-button.c
 src/new-game-screen.c
-src/prefs.c
 src/scorebox.c
 src/theme.c
