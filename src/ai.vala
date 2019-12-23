@@ -18,7 +18,6 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-private enum Player { NONE, HUMAN, AI; }
 private enum Difficulty { EASY, MEDIUM, HARD; }
 
 private int playgame(string moves_until_now)
@@ -42,8 +41,8 @@ private class DecisionTree
     private Player[,] board = new Player [BOARD_ROWS, BOARD_COLUMNS];
     /* plies - depth of the DecisionTree */
     private int plies = 8;
-    /* last_moving_player - The player who made the last move, set to Player.NONE if no one has made a move yet */
-    private Player last_moving_player = Player.NONE;
+    /* last_moving_player - The player who made the last move, set to Player.NOBODY if no one has made a move yet */
+    private Player last_moving_player = Player.NOBODY;
     /* next_move_in_column - stores the column number in which next move is to be made */
     private int next_move_in_column = -1;
     /* stores the difficulty level of the game */
@@ -54,7 +53,7 @@ private class DecisionTree
     {
         for (int i = 0; i < BOARD_ROWS; i++)
             for (int j = 0; j < BOARD_COLUMNS; j++)
-                board [i, j] = Player.NONE;
+                board [i, j] = Player.NOBODY;
     }
 
     /* utility function for debugging purposes, prints a snapshot of current status of the board */
@@ -78,7 +77,7 @@ private class DecisionTree
         {
             if (last_moving_player == Player.HUMAN)
                 return heurist();
-            else if (last_moving_player == Player.AI)
+            else if (last_moving_player == Player.OPPONENT)
                 return -1 * heurist();
             else
                 return 0;
@@ -130,7 +129,7 @@ private class DecisionTree
     {
         /* find the cell on which the last move was made */
         int row;
-        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NONE; row++);
+        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NOBODY; row++);
 
         return vertical_win(row, column) ||
                horizontal_win(row, column) ||
@@ -181,7 +180,7 @@ private class DecisionTree
     private bool board_full()
     {
         for (int i = 0 ; i < BOARD_COLUMNS ; i++)
-            if (board [0, i] == Player.NONE)
+            if (board [0, i] == Player.NOBODY)
                 return false;
         return true;
     }
@@ -191,13 +190,13 @@ private class DecisionTree
     {
         /* find the cell on which to move */
         int row;
-        for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NONE; row--);
+        for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
 
         if (row < 0)
             return false;
 
         /* don't forget AI could make the first move */
-        Player player = last_moving_player != Player.AI ? Player.AI : Player.HUMAN;
+        Player player = last_moving_player != Player.OPPONENT ? Player.OPPONENT : Player.HUMAN;
         board [row, column] = player;
         last_moving_player = player;
 
@@ -206,15 +205,15 @@ private class DecisionTree
 
     /* unmove the last move made in the column'th column */
     private void unmove(int column)
-        requires(last_moving_player != Player.NONE)
+        requires(last_moving_player != Player.NOBODY)
     {
         /* find the cell on which the last move was made */
         int row;
-        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NONE; row++);
+        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NOBODY; row++);
 
-        board [row, column] = Player.NONE;
+        board [row, column] = Player.NOBODY;
 
-        last_moving_player = last_moving_player == Player.AI ? Player.HUMAN : Player.AI;
+        last_moving_player = last_moving_player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT;
     }
 
     /* vstr is the sequence of moves made until now. We update DecisionTree::board to reflect these sequence of moves. */
@@ -225,7 +224,7 @@ private class DecisionTree
         /* AI will make the first move, nothing to add to the board */
         if (vstr.length == 2) return;
 
-        Player move = vstr.length % 2 == 0 ? Player.AI : Player.HUMAN;
+        Player move = vstr.length % 2 == 0 ? Player.OPPONENT : Player.HUMAN;
 
         for (int i = 1; i < vstr.length - 1; i++)
         {
@@ -233,23 +232,23 @@ private class DecisionTree
 
             /* find the cell on which the move is made */
             int row;
-            for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NONE; row--);
+            for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
 
             board [row, column] = move;
 
-            move = move == Player.HUMAN ? Player.AI : Player.HUMAN;
+            move = move == Player.HUMAN ? Player.OPPONENT : Player.HUMAN;
         }
 
         last_moving_player = Player.HUMAN;
     }
 
-    /* Check for immediate win of AI/HUMAN. It checks the current state of the board. Returns -1 if no immediate win for Player P.
+    /* Check for immediate win of HUMAN or OPPONENT. It checks the current state of the board. Returns -1 if no immediate win for Player P.
        Otherwise returns the column number in which Player P should move to win. */
     private int immediate_win(Player p)
     {
         Player old_last_moving_player = last_moving_player;
 
-        last_moving_player = p == Player.AI ? Player.HUMAN : Player.AI;
+        last_moving_player = p == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT;
 
         bool player_wins = false;
         int i;
@@ -282,7 +281,7 @@ private class DecisionTree
 
         /* if AI can win by making a move immediately, make that move;
            main.c has indexing beginning from 1 instead of 0, hence, we add 1 */
-        int temp = immediate_win(Player.AI);
+        int temp = immediate_win(Player.OPPONENT);
         if (temp != -1)
             return temp + 1;
 
@@ -322,7 +321,7 @@ private class DecisionTree
 
     private int heurist_hard()
     {
-        int count = count_3_in_a_row(Player.AI) - count_3_in_a_row(Player.HUMAN);
+        int count = count_3_in_a_row(Player.OPPONENT) - count_3_in_a_row(Player.HUMAN);
         return count == 0 ? (int) Random.int_range(1, 49) : count * 100;
     }
 
@@ -340,7 +339,7 @@ private class DecisionTree
         {
             for (int i = 0; i < BOARD_ROWS; i++)
             {
-                if (board [i, j] != Player.NONE)
+                if (board [i, j] != Player.NOBODY)
                     break;
 
                 if (all_adjacent_empty(i, j))
@@ -351,7 +350,7 @@ private class DecisionTree
                 if (victory(j))
                     count++;
 
-                board [i, j] = Player.NONE;
+                board [i, j] = Player.NOBODY;
             }
         }
         last_moving_player = old_last_moving_player;
@@ -367,7 +366,7 @@ private class DecisionTree
             {
                 if (k == 0 && l == 0)
                     continue;
-                if (i + k >= 0 && i + k < BOARD_ROWS && j + l >= 0 && j + l < BOARD_COLUMNS && board [i + k, j + l] != Player.NONE)
+                if (i + k >= 0 && i + k < BOARD_ROWS && j + l >= 0 && j + l < BOARD_COLUMNS && board [i + k, j + l] != Player.NOBODY)
                     return false;
             }
         }
@@ -401,7 +400,7 @@ private class DecisionTree
         set_level(vstr);
         update_board(vstr);
 
-        int temp = immediate_win(Player.AI);
+        int temp = immediate_win(Player.OPPONENT);
         if (temp != -1)
             return 1000;
 

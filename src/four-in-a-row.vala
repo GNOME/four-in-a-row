@@ -52,9 +52,9 @@ private class FourInARow : Gtk.Application
 
     // game status
     private bool gameover = true;
-    private PlayerID player = PlayerID.NOBODY;
-    private PlayerID winner = PlayerID.NOBODY;
-    private PlayerID last_first_player = PlayerID.NOBODY;
+    private Player player = Player.NOBODY;
+    private Player winner = Player.NOBODY;
+    private Player last_first_player = Player.NOBODY;
     private Board game_board = new Board ();
     private bool one_player_game;
     private uint8 ai_level;
@@ -86,7 +86,7 @@ private class FourInARow : Gtk.Application
     private static AnimID anim = AnimID.NONE;
     private uint8 [,] blink_lines = {{}};
     private uint8 blink_line = 0;   // index of currenly blinking line in blink_lines
-    private PlayerID blink_t = PlayerID.NOBODY;    // garbage
+    private Player blink_t = Player.NOBODY;    // garbage
     private uint8 blink_n = 0;
     private bool blink_on = false;
     private uint timeout = 0;
@@ -265,19 +265,19 @@ private class FourInARow : Gtk.Application
                     if (settings.get_string ("first-player") == "human")
                     {
                         game_type_action.set_state (new Variant.string ("human"));
-                        last_first_player = PlayerID.HUMAN;
+                        last_first_player = Player.HUMAN;
                     }
                     else
                     {
                         game_type_action.set_state (new Variant.string ("computer"));
-                        last_first_player = PlayerID.OPPONENT;
+                        last_first_player = Player.OPPONENT;
                     }
                 }
                 else
                 {
                     new_game_screen.update_sensitivity (false);
                     game_type_action.set_state (new Variant.string ("two"));
-                    last_first_player = PlayerID.NOBODY;
+                    last_first_player = Player.NOBODY;
                 }
             });
         bool solo = settings.get_int ("num-players") == 1;
@@ -288,19 +288,19 @@ private class FourInARow : Gtk.Application
             if (settings.get_string ("first-player") == "human")
             {
                 game_type_action.set_state (new Variant.string ("human"));
-                last_first_player = PlayerID.HUMAN;
+                last_first_player = Player.HUMAN;
             }
             else
             {
                 game_type_action.set_state (new Variant.string ("computer"));
-                last_first_player = PlayerID.OPPONENT;
+                last_first_player = Player.OPPONENT;
             }
         }
         else
         {
             new_game_screen.update_sensitivity (false);
             game_type_action.set_state (new Variant.string ("two"));
-            last_first_player = PlayerID.NOBODY;
+            last_first_player = Player.NOBODY;
         }
     }
 
@@ -335,9 +335,9 @@ private class FourInARow : Gtk.Application
 
             if (one_player_game)
             {
-                player = settings.get_string ("first-player") == "computer" ? PlayerID.OPPONENT : PlayerID.HUMAN;
+                player = settings.get_string ("first-player") == "computer" ? Player.OPPONENT : Player.HUMAN;
                 // we keep inverting that, because it would be surprising that all people use the "next round" thing
-                settings.set_string ("first-player", player == PlayerID.HUMAN ? "computer" : "human");
+                settings.set_string ("first-player", player == Player.HUMAN ? "computer" : "human");
                 ai_level = (uint8) settings.get_int ("opponent");
             }
             else
@@ -377,9 +377,9 @@ private class FourInARow : Gtk.Application
     {
         switch (last_first_player)
         {
-            case PlayerID.HUMAN   : player = PlayerID.OPPONENT; break;
-            case PlayerID.OPPONENT:
-            case PlayerID.NOBODY  : player = PlayerID.HUMAN; break;
+            case Player.HUMAN   : player = Player.OPPONENT; break;
+            case Player.OPPONENT:
+            case Player.NOBODY  : player = Player.HUMAN; break;
         }
         last_first_player = player;
     }
@@ -387,7 +387,7 @@ private class FourInARow : Gtk.Application
     private void blink_winner (uint8 n)   /* blink the winner's line(s) n times */
      // requires (n < 128)
     {
-        if (winner == PlayerID.NOBODY)
+        if (winner == Player.NOBODY)
             return;
 
         blink_t = winner;
@@ -405,7 +405,7 @@ private class FourInARow : Gtk.Application
         }
     }
 
-    private inline void draw_line (uint8 _r1, uint8 _c1, uint8 _r2, uint8 _c2, PlayerID owner)
+    private inline void draw_line (uint8 _r1, uint8 _c1, uint8 _r2, uint8 _c2, Player owner)
     {
         /* draw a line of 'tile' from r1,c1 to r2,c2 */
 
@@ -451,9 +451,9 @@ private class FourInARow : Gtk.Application
         else
             window.allow_undo (moves > 0);
 
-        if (gameover && winner == PlayerID.NOBODY)
+        if (gameover && winner == Player.NOBODY)
         {
-            if (score [PlayerID.NOBODY] == 0)
+            if (score [Player.NOBODY] == 0)
                 set_status_message (null);
             else
                 /* Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie */
@@ -486,11 +486,11 @@ private class FourInARow : Gtk.Application
         {
             string who;
             if (gameover)
-                who = player == HUMAN ? theme_get_player_win  (PlayerID.HUMAN,    theme_id)
-                                      : theme_get_player_win  (PlayerID.OPPONENT, theme_id);
+                who = player == HUMAN ? theme_get_player_win  (Player.HUMAN,    theme_id)
+                                      : theme_get_player_win  (Player.OPPONENT, theme_id);
             else
-                who = player == HUMAN ? theme_get_player_turn (PlayerID.HUMAN,    theme_id)
-                                      : theme_get_player_turn (PlayerID.OPPONENT, theme_id);
+                who = player == HUMAN ? theme_get_player_turn (Player.HUMAN,    theme_id)
+                                      : theme_get_player_turn (Player.OPPONENT, theme_id);
 
             set_status_message (_(who));
         }
@@ -498,7 +498,7 @@ private class FourInARow : Gtk.Application
 
     private void swap_player ()
     {
-        player = (player == PlayerID.HUMAN) ? PlayerID.OPPONENT : PlayerID.HUMAN;
+        player = (player == Player.HUMAN) ? Player.OPPONENT : Player.HUMAN;
         move_cursor (3);
         prompt_player ();
     }
@@ -517,7 +517,7 @@ private class FourInARow : Gtk.Application
             score [winner]++;
             scorebox.update (score, one_player_game);
             prompt_player ();
-            if (winner != PlayerID.NOBODY)
+            if (winner != Player.NOBODY)
                 blink_winner (3);
         }
         else
@@ -563,7 +563,7 @@ private class FourInARow : Gtk.Application
     private bool is_player_human ()
     {
         if (one_player_game)
-            return player == PlayerID.HUMAN;
+            return player == Player.HUMAN;
         else
             return true;
     }
@@ -600,9 +600,9 @@ private class FourInARow : Gtk.Application
 
     private inline void drop ()
     {
-        PlayerID tile = player == PlayerID.HUMAN ? PlayerID.HUMAN : PlayerID.OPPONENT;
+        Player tile = player == Player.HUMAN ? Player.HUMAN : Player.OPPONENT;
 
-        game_board [row, column] = PlayerID.NOBODY;
+        game_board [row, column] = Player.NOBODY;
         game_board_view.draw_tile (row, column);
 
         row++;
@@ -612,11 +612,11 @@ private class FourInARow : Gtk.Application
 
     private inline void move (uint8 c)
     {
-        game_board [0, column] = PlayerID.NOBODY;
+        game_board [0, column] = Player.NOBODY;
         game_board_view.draw_tile (0, column);
 
         column = c;
-        game_board [0, c] = player == PlayerID.HUMAN ? PlayerID.HUMAN : PlayerID.OPPONENT;
+        game_board [0, c] = player == Player.HUMAN ? Player.HUMAN : Player.OPPONENT;
 
         game_board_view.draw_tile (0, c);
     }
@@ -672,7 +672,7 @@ private class FourInARow : Gtk.Application
         moves = 0;
     }
 
-    private inline void blink_tile (uint8 row, uint8 col, PlayerID tile, uint8 n)
+    private inline void blink_tile (uint8 row, uint8 col, Player tile, uint8 n)
     {
         if (timeout != 0)
             return;
@@ -743,7 +743,7 @@ private class FourInARow : Gtk.Application
                                            /* col 1 */ application.blink_lines [application.blink_line, 1],
                                            /* row 2 */ application.blink_lines [application.blink_line, 2],
                                            /* col 2 */ application.blink_lines [application.blink_line, 3],
-                                           /* tile */  application.blink_on ? application.blink_t : PlayerID.NOBODY);
+                                           /* tile */  application.blink_on ? application.blink_t : Player.NOBODY);
                     application.blink_n--;
                     if (application.blink_n == 0 && application.blink_on)
                     {
@@ -840,7 +840,7 @@ private class FourInARow : Gtk.Application
             swap_player ();
         move_cursor (c);
 
-        game_board [r, c] = PlayerID.NOBODY;
+        game_board [r, c] = Player.NOBODY;
         game_board_view.draw_tile (r, c);
 
         if (one_player_game
@@ -854,7 +854,7 @@ private class FourInARow : Gtk.Application
             moves--;
             swap_player ();
             move_cursor (c);
-            game_board [r, c] = PlayerID.NOBODY;
+            game_board [r, c] = Player.NOBODY;
             game_board_view.draw_tile (r, c);
         }
     }
@@ -1170,7 +1170,7 @@ private class FourInARow : Gtk.Application
         else
             round_section.append (_("_Give Up"), "app.give-up");
 
-        if (score [PlayerID.HUMAN] + score [PlayerID.OPPONENT] + score [PlayerID.NOBODY] == 0)
+        if (score [Player.HUMAN] + score [Player.OPPONENT] + score [Player.NOBODY] == 0)
             return;
         /* Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt) */
         round_section.append (_("_Scores"), "app.scores");
@@ -1178,10 +1178,10 @@ private class FourInARow : Gtk.Application
 
     private inline void on_give_up (/* SimpleAction action, Variant? parameter */)
     {
-        if (player == PlayerID.HUMAN)
-            score [PlayerID.OPPONENT]++;
-        else if (player == PlayerID.OPPONENT)
-            score [PlayerID.HUMAN]++;
+        if (player == Player.HUMAN)
+            score [Player.OPPONENT]++;
+        else if (player == Player.OPPONENT)
+            score [Player.HUMAN]++;
         else
             assert_not_reached ();
         scorebox.update (score, one_player_game);
@@ -1193,10 +1193,4 @@ private class FourInARow : Gtk.Application
     {
         game_reset (/* reload settings */ false);
     }
-}
-
-private enum PlayerID {
-    HUMAN,
-    OPPONENT,
-    NOBODY;
 }

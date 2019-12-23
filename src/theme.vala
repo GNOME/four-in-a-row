@@ -44,25 +44,25 @@ private static string theme_get_title (uint8 id)
     return _(theme [id].title); // FIXME this gettext call feels horrible
 }
 
-private static string theme_get_player_turn (PlayerID who, uint8 theme_id)
+private static string theme_get_player_turn (Player who, uint8 theme_id)
 {
-    if (who == PlayerID.HUMAN)
+    if (who == Player.HUMAN)
         return theme [theme_id].player1_turn;
     else
         return theme [theme_id].player2_turn;
 }
 
-private static string theme_get_player_win (PlayerID who, uint8 theme_id)
+private static string theme_get_player_win (Player who, uint8 theme_id)
 {
-    if (who == PlayerID.HUMAN)
+    if (who == Player.HUMAN)
         return theme [theme_id].player1_win;
     else
         return theme [theme_id].player2_win;
 }
 
-private static string theme_get_player (PlayerID who, uint8 theme_id)
+private static string theme_get_player (Player who, uint8 theme_id)
 {
-    if (who == PlayerID.HUMAN)
+    if (who == Player.HUMAN)
         return theme [theme_id].player1;
     else
         return theme [theme_id].player2;

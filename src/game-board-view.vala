@@ -124,24 +124,24 @@ private class GameBoardView : Gtk.DrawingArea
 
     private inline void paint_tile (Cairo.Context cr, uint8 row, uint8 col)
     {
-        PlayerID tile = game_board [row, col];
-        if (tile == PlayerID.NOBODY && row != 0)
+        Player tile = game_board [row, col];
+        if (tile == Player.NOBODY && row != 0)
             return;
 
         int os = 0;
         if (row == 0)
             switch (tile)
             {
-                case PlayerID.HUMAN   : os = offset [Tile.PLAYER1_CURSOR]; break;
-                case PlayerID.OPPONENT: os = offset [Tile.PLAYER2_CURSOR]; break;
-                case PlayerID.NOBODY  : os = offset [Tile.CLEAR_CURSOR];   break;
+                case Player.HUMAN   : os = offset [Tile.PLAYER1_CURSOR]; break;
+                case Player.OPPONENT: os = offset [Tile.PLAYER2_CURSOR]; break;
+                case Player.NOBODY  : os = offset [Tile.CLEAR_CURSOR];   break;
             }
         else
             switch (tile)
             {
-                case PlayerID.HUMAN   : os = offset [Tile.PLAYER1]; break;
-                case PlayerID.OPPONENT: os = offset [Tile.PLAYER2]; break;
-                case PlayerID.NOBODY  : assert_not_reached ();
+                case Player.HUMAN   : os = offset [Tile.PLAYER1]; break;
+                case Player.OPPONENT: os = offset [Tile.PLAYER2]; break;
+                case Player.NOBODY  : assert_not_reached ();
             }
 
         cr.save ();

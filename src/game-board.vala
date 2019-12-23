@@ -20,19 +20,19 @@
 
 private class Board : Object
 {
-    private static PlayerID [,] gboard;
+    private static Player [,] gboard;
 
     internal Board ()
     {
-        gboard = new PlayerID [BOARD_COLUMNS, BOARD_ROWS_PLUS_ONE];
+        gboard = new Player [BOARD_COLUMNS, BOARD_ROWS_PLUS_ONE];
     }
 
-    internal new void @set (uint8 x, uint8 y, PlayerID tile)
+    internal new void @set (uint8 x, uint8 y, Player tile)
     {
         gboard [x, y] = tile;
     }
 
-    internal new PlayerID @get (uint8 x, uint8 y)
+    internal new Player @get (uint8 x, uint8 y)
     {
         return gboard [x, y];
     }
@@ -41,14 +41,14 @@ private class Board : Object
     {
         for (uint8 row = 0; row < BOARD_ROWS_PLUS_ONE; row++)
             for (uint8 col = 0; col < BOARD_COLUMNS; col++)
-                gboard [row, col] = PlayerID.NOBODY;
+                gboard [row, col] = Player.NOBODY;
     }
 
     internal uint8 first_empty_row (uint8 col)
     {
         uint8 row = 1;
 
-        while (row < BOARD_ROWS_PLUS_ONE && gboard [row, col] == PlayerID.NOBODY)
+        while (row < BOARD_ROWS_PLUS_ONE && gboard [row, col] == Player.NOBODY)
             row++;
         return row - 1;
     }
@@ -57,7 +57,7 @@ private class Board : Object
     * * check if there is a line passing by a given point
     \*/
 
-    internal bool is_line_at (PlayerID tile, uint8 row, uint8 col, out uint8 [,] lines = null)
+    internal bool is_line_at (Player tile, uint8 row, uint8 col, out uint8 [,] lines = null)
     {
         uint8 n_lines = 0;
         uint8 [,] lines_tmp = new uint8 [4, 4];
@@ -90,9 +90,9 @@ private class Board : Object
         return n_lines != 0;
     }
 
-    private inline bool is_hline_at (PlayerID tile,     uint8 row,       uint8 col,
-                                                    out uint8 row_1, out uint8 col_1,
-                                                    out uint8 row_2, out uint8 col_2)
+    private inline bool is_hline_at (Player tile,     uint8 row,       uint8 col,
+                                                  out uint8 row_1, out uint8 col_1,
+                                                  out uint8 row_2, out uint8 col_2)
     {
         row_1 = row;
         row_2 = row;
@@ -105,9 +105,9 @@ private class Board : Object
         return col_2 - col_1 >= 3;
     }
 
-    private inline bool is_vline_at (PlayerID tile,     uint8 row,       uint8 col,
-                                                    out uint8 row_1, out uint8 col_1,
-                                                    out uint8 row_2, out uint8 col_2)
+    private inline bool is_vline_at (Player tile,     uint8 row,       uint8 col,
+                                                  out uint8 row_1, out uint8 col_1,
+                                                  out uint8 row_2, out uint8 col_2)
     {
         row_1 = row;
         row_2 = row;
@@ -120,9 +120,9 @@ private class Board : Object
         return row_2 - row_1 >= 3;
     }
 
-    private inline bool is_dline1_at (PlayerID tile,     uint8 row,       uint8 col,
-                                                     out uint8 row_1, out uint8 col_1,
-                                                     out uint8 row_2, out uint8 col_2)
+    private inline bool is_dline1_at (Player tile,     uint8 row,       uint8 col,
+                                                   out uint8 row_1, out uint8 col_1,
+                                                   out uint8 row_2, out uint8 col_2)
     {
         /* upper left to lower right */
         row_1 = row;
@@ -142,9 +142,9 @@ private class Board : Object
         return row_2 - row_1 >= 3;
     }
 
-    private inline bool is_dline2_at (PlayerID tile,     uint8 row,       uint8 col,
-                                                     out uint8 row_1, out uint8 col_1,
-                                                     out uint8 row_2, out uint8 col_2)
+    private inline bool is_dline2_at (Player tile,     uint8 row,       uint8 col,
+                                                   out uint8 row_1, out uint8 col_1,
+                                                   out uint8 row_2, out uint8 col_2)
     {
         /* upper right to lower left */
         row_1 = row;

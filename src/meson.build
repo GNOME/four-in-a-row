@@ -3,6 +3,7 @@ four_in_a_row_tests = executable(
     'four-in-a-row-tests',
     [
         'ai.vala',
+        'player.vala',
         'test-ai.vala'
     ],
     dependencies: [
@@ -27,6 +28,7 @@ sources = files(
     'game-window.vala',
     'history-button.vala',
     'new-game-screen.vala',
+    'player.vala',
     'scorebox.vala',
     'theme.vala',
     'vapi/config.vapi'
