@@ -132,15 +132,15 @@ private class GameBoardView : Gtk.DrawingArea
         if (row == 0)
             switch (tile)
             {
-                case PlayerID.PLAYER1 : os = offset [Tile.PLAYER1_CURSOR]; break;
-                case PlayerID.PLAYER2 : os = offset [Tile.PLAYER2_CURSOR]; break;
+                case PlayerID.HUMAN   : os = offset [Tile.PLAYER1_CURSOR]; break;
+                case PlayerID.OPPONENT: os = offset [Tile.PLAYER2_CURSOR]; break;
                 case PlayerID.NOBODY  : os = offset [Tile.CLEAR_CURSOR];   break;
             }
         else
             switch (tile)
             {
-                case PlayerID.PLAYER1 : os = offset [Tile.PLAYER1]; break;
-                case PlayerID.PLAYER2 : os = offset [Tile.PLAYER2]; break;
+                case PlayerID.HUMAN   : os = offset [Tile.PLAYER1]; break;
+                case PlayerID.OPPONENT: os = offset [Tile.PLAYER2]; break;
                 case PlayerID.NOBODY  : assert_not_reached ();
             }
 

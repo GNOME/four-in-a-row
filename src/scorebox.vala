@@ -55,25 +55,25 @@ private class Scorebox : Dialog {
         grid.add(grid2);
         grid2.column_spacing = 6;
 
-        label_name[PlayerID.PLAYER1] = new Label(null);
-        grid2.attach(label_name[PlayerID.PLAYER1], 0, 0, 1, 1);
-        label_name[PlayerID.PLAYER1].xalign = 0;
-        label_name[PlayerID.PLAYER1].yalign = 0.5f;
+        label_name[PlayerID.HUMAN] = new Label(null);
+        grid2.attach(label_name[PlayerID.HUMAN], 0, 0, 1, 1);
+        label_name[PlayerID.HUMAN].xalign = 0;
+        label_name[PlayerID.HUMAN].yalign = 0.5f;
 
-        label_score[PlayerID.PLAYER1] = new Label(null);
-        grid2.attach(label_score[PlayerID.PLAYER1], 1, 0, 1, 1);
-        label_score[PlayerID.PLAYER1].xalign = 0;
-        label_score[PlayerID.PLAYER1].yalign = 0.5f;
+        label_score[PlayerID.HUMAN] = new Label(null);
+        grid2.attach(label_score[PlayerID.HUMAN], 1, 0, 1, 1);
+        label_score[PlayerID.HUMAN].xalign = 0;
+        label_score[PlayerID.HUMAN].yalign = 0.5f;
 
-        label_name[PlayerID.PLAYER2] = new Label(null);
-        grid2.attach(label_name[PlayerID.PLAYER2], 0, 1, 1, 1);
-        label_name[PlayerID.PLAYER2].xalign = 0;
-        label_name[PlayerID.PLAYER2].yalign = 0.5f;
+        label_name[PlayerID.OPPONENT] = new Label(null);
+        grid2.attach(label_name[PlayerID.OPPONENT], 0, 1, 1, 1);
+        label_name[PlayerID.OPPONENT].xalign = 0;
+        label_name[PlayerID.OPPONENT].yalign = 0.5f;
 
-        label_score[PlayerID.PLAYER2] = new Label(null);
-        grid2.attach(label_score[PlayerID.PLAYER2], 1, 1, 1, 1);
-        label_score[PlayerID.PLAYER2].set_xalign(0);
-        label_score[PlayerID.PLAYER2].set_yalign(0.5f);
+        label_score[PlayerID.OPPONENT] = new Label(null);
+        grid2.attach(label_score[PlayerID.OPPONENT], 1, 1, 1, 1);
+        label_score[PlayerID.OPPONENT].set_xalign(0);
+        label_score[PlayerID.OPPONENT].set_yalign(0.5f);
 
         /* Translators: in the Scores dialog, label of the line where is indicated the number of tie games */
         label_name[PlayerID.NOBODY] = new Label(_("Drawn:"));
@@ -95,15 +95,15 @@ private class Scorebox : Dialog {
      */
     internal void update(uint[] scores, bool one_player_game) {
         if (one_player_game) {
-            if (scores[PlayerID.PLAYER1] >= scores[PlayerID.PLAYER2]) {
+            if (scores[PlayerID.HUMAN] >= scores[PlayerID.OPPONENT]) {
                 /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player */
                 label_name[0].set_text(_("You:"));
 
                 /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player */
                 label_name[1].set_text(_("Me:"));
 
-                label_score[0].label = scores[PlayerID.PLAYER1].to_string();
-                label_score[1].label = scores[PlayerID.PLAYER2].to_string();
+                label_score[0].label = scores[PlayerID.HUMAN].to_string();
+                label_score[1].label = scores[PlayerID.OPPONENT].to_string();
             } else {
                 /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player */
                 label_name[0].set_text(_("Me:"));
@@ -115,11 +115,11 @@ private class Scorebox : Dialog {
                 label_score[1].label = scores[0].to_string();
             }
         } else {
-            label_name[0].label = theme_get_player(PlayerID.PLAYER1, (uint8) theme_id);    // FIXME missing ":" at end
-            label_name[1].label = theme_get_player(PlayerID.PLAYER2, (uint8) theme_id);    // idem
+            label_name[0].label = theme_get_player(PlayerID.HUMAN, (uint8) theme_id);    // FIXME missing ":" at end
+            label_name[1].label = theme_get_player(PlayerID.OPPONENT, (uint8) theme_id);    // idem
 
-            label_score[PlayerID.PLAYER1].label = scores[PlayerID.PLAYER1].to_string();
-            label_score[PlayerID.PLAYER2].label = scores[PlayerID.PLAYER2].to_string();
+            label_score[PlayerID.HUMAN].label = scores[PlayerID.HUMAN].to_string();
+            label_score[PlayerID.OPPONENT].label = scores[PlayerID.OPPONENT].to_string();
         }
         label_score[PlayerID.NOBODY].label  = scores[PlayerID.NOBODY].to_string();
 
