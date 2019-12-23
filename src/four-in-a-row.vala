@@ -541,7 +541,7 @@ private class FourInARow : Gtk.Application
                 play_sound (SoundID.PLAYER_WIN);
             window.allow_hint (false);
         }
-        else if (moves == 42)
+        else if (moves == BOARD_ROWS * BOARD_COLUMNS)
         {
             set_gameover (true);
             winner = NOBODY;
@@ -1034,9 +1034,12 @@ private class FourInARow : Gtk.Application
 
     private inline void on_help_contents (/* SimpleAction action, Variant? parameter */)
     {
-        try {
+        try
+        {
             show_uri_on_window (window, "help:four-in-a-row", get_current_event_time ());
-        } catch (Error error) {
+        }
+        catch (Error error)
+        {
             warning ("Failed to show help: %s", error.message);
         }
     }
@@ -1065,10 +1068,13 @@ private class FourInARow : Gtk.Application
 
     private inline void init_sound ()
     {
-        try {
+        try
+        {
             sound_context = new GSound.Context ();
             sound_context_state = SoundContextState.WORKING;
-        } catch (Error e) {
+        }
+        catch (Error e)
+        {
             warning (e.message);
             sound_context_state = SoundContextState.ERRORED;
         }
@@ -1089,27 +1095,15 @@ private class FourInARow : Gtk.Application
     {
         string name;
 
-        switch (id) {
-        case SoundID.DROP:
-            name = "slide";
-            break;
-        case SoundID.I_WIN:
-            name = "reverse";
-            break;
-        case SoundID.YOU_WIN:
-            name = "bonus";
-            break;
-        case SoundID.PLAYER_WIN:
-            name = "bonus";
-            break;
-        case SoundID.DRAWN_GAME:
-            name = "reverse";
-            break;
-        case SoundID.COLUMN_FULL:
-            name = "bad";
-            break;
-        default:
-            return;
+        switch (id)
+        {
+            case SoundID.DROP:          name = "slide";     break;
+            case SoundID.I_WIN:         name = "reverse";   break;
+            case SoundID.YOU_WIN:       name = "bonus";     break;
+            case SoundID.PLAYER_WIN:    name = "bonus";     break;
+            case SoundID.DRAWN_GAME:    name = "reverse";   break;
+            case SoundID.COLUMN_FULL:   name = "bad";       break;
+            default: assert_not_reached ();
         }
 
         name += ".ogg";
@@ -1119,7 +1113,7 @@ private class FourInARow : Gtk.Application
             sound_context.play_simple (null, GSound.Attribute.MEDIA_NAME, name,
                                              GSound.Attribute.MEDIA_FILENAME, path);
         } catch (Error e) {
-            warning(e.message);
+            warning (e.message);
         }
     }
 

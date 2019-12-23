@@ -23,22 +23,27 @@ private const uint8 NUMBER_GAMES = 5;
 private const uint8 MAXIMUM_GAMES = 100;
 private const uint8 THRESHOLD_DENOMINATOR = 4;
 
-private int main (string[] args)
+private int main (string [] args)
 {
     Test.init (ref args);
-    Test.add_func ("/AI/Take Win/Horizontal Win", test_horizontal_win);
-    Test.add_func ("/AI/Take Win/Vertical Win", test_vertical_win);
-    Test.add_func ("/AI/Take Win/Forward Diagonal Win", test_forward_diagonal_win);
-    Test.add_func ("/AI/Take Win/Backward Diagonal Win", test_backward_diagonal_win);
-    Test.add_func ("/AI/Avoid Loss/Horizontal Loss", test_avoid_horizontal_loss);
-    Test.add_func ("/AI/Avoid Loss/Vertical Loss", test_avoid_vertical_loss);
-    Test.add_func ("/AI/Avoid Loss/Forward Diagonal Loss", test_avoid_forward_diagonal_loss);
+    // test winning
+    Test.add_func ("/AI/Take Win/Horizontal Win",           test_horizontal_win);
+    Test.add_func ("/AI/Take Win/Vertical Win",             test_vertical_win);
+    Test.add_func ("/AI/Take Win/Forward Diagonal Win",     test_forward_diagonal_win);
+    Test.add_func ("/AI/Take Win/Backward Diagonal Win",    test_backward_diagonal_win);
+    // test avoiding loss
+    Test.add_func ("/AI/Avoid Loss/Horizontal Loss",        test_avoid_horizontal_loss);
+    Test.add_func ("/AI/Avoid Loss/Vertical Loss",          test_avoid_vertical_loss);
+    Test.add_func ("/AI/Avoid Loss/Forward Diagonal Loss",  test_avoid_forward_diagonal_loss);
     Test.add_func ("/AI/Avoid Loss/Backward Diagonal Loss", test_avoid_backward_diagonal_loss);
-    Test.add_func ("/AI/AI vs AI/Easy vs Medium", test_easy_vs_medium);
-    Test.add_func ("/AI/AI vs AI/Easy vs Hard", test_easy_vs_hard);
-    Test.add_func ("/AI/AI vs AI/Medium vs Hard", test_medium_vs_hard);
-    Test.add_func ("/AI/Draw", test_draw);
-    Test.add_func ("/AI/Random", test_random);
+    // test AI relative ranking
+    Test.add_func ("/AI/AI vs AI/Easy vs Medium",           test_easy_vs_medium);
+    Test.add_func ("/AI/AI vs AI/Easy vs Hard",             test_easy_vs_hard);
+    Test.add_func ("/AI/AI vs AI/Medium vs Hard",           test_medium_vs_hard);
+    // various
+    Test.add_func ("/AI/Draw", /* "draw" as in tie game! */ test_draw);
+    Test.add_func ("/AI/Random",                            test_random);
+    // run
     return Test.run ();
 }
 
@@ -118,7 +123,7 @@ private static inline void test_avoid_horizontal_loss ()
     assert_true (playgame ("a24147356465355111336631615240") == 3);
 }
 
-/* Tests if AI can detect full boards, and thus draw games.*/
+/* Tests if AI can detect full boards, and thus draw games. */
 private static inline void test_draw ()
 {
     assert_true (playgame ("a1311313113652226667224247766737374455445550") == uint8.MAX);
@@ -127,7 +132,7 @@ private static inline void test_draw ()
     assert_true (playgame ("a4212116575717754775221133434432366655342660") == uint8.MAX);
 }
 
-/* Tests if AI makes valid moves, i.e., between column 1 and column 7*/
+/* Tests if AI makes valid moves, i.e., between column 1 and column 7. */
 private static inline void test_random ()
 {
     uint8 x = playgame ("a443256214350");
@@ -205,7 +210,7 @@ private static inline void repeat_contests (string easier, string harder, out ui
     easy_wins = test_ai_vs_ai (easier, harder);
     games_contested = NUMBER_GAMES;
 
-    while (games_contested <= MAXIMUM_GAMES && easy_wins > games_contested/THRESHOLD_DENOMINATOR)
+    while (games_contested <= MAXIMUM_GAMES && easy_wins > games_contested / THRESHOLD_DENOMINATOR)
     {
         easy_wins += test_ai_vs_ai (easier, harder);
         games_contested += NUMBER_GAMES;
@@ -218,7 +223,7 @@ private static inline void test_easy_vs_medium ()
     uint8 games_contested;
     repeat_contests ("a0", "b0", out games_contested, out easy_wins);
 
-    assert_true (easy_wins <= games_contested/THRESHOLD_DENOMINATOR);
+    assert_true (easy_wins <= games_contested / THRESHOLD_DENOMINATOR);
 }
 
 private static inline void test_easy_vs_hard ()
@@ -227,7 +232,7 @@ private static inline void test_easy_vs_hard ()
     uint8 games_contested;
     repeat_contests ("a0", "c0", out games_contested, out easy_wins);
 
-    assert_true (easy_wins <= games_contested/THRESHOLD_DENOMINATOR);
+    assert_true (easy_wins <= games_contested / THRESHOLD_DENOMINATOR);
 }
 
 private static inline void test_medium_vs_hard ()
@@ -236,5 +241,5 @@ private static inline void test_medium_vs_hard ()
     uint8 games_contested;
     repeat_contests ("b0", "c0", out games_contested, out medium_wins);
 
-    assert_true (medium_wins <= games_contested/THRESHOLD_DENOMINATOR);
+    assert_true (medium_wins <= games_contested / THRESHOLD_DENOMINATOR);
 }
