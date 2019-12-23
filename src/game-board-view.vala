@@ -20,6 +20,15 @@
 
 private class GameBoardView : Gtk.DrawingArea
 {
+    private enum Tile {
+        PLAYER1,
+        PLAYER2,
+        CLEAR,
+        CLEAR_CURSOR,
+        PLAYER1_CURSOR,
+        PLAYER2_CURSOR;
+    }
+
     [CCode (notify = false)] public Board game_board { private get; protected construct; }
 
     private int _theme_id = 0;
@@ -115,24 +124,24 @@ private class GameBoardView : Gtk.DrawingArea
 
     private inline void paint_tile (Cairo.Context cr, uint8 row, uint8 col)
     {
-        int tile = game_board [row, col];
-        if (tile == Tile.CLEAR && row != 0)
+        PlayerID tile = game_board [row, col];
+        if (tile == PlayerID.NOBODY && row != 0)
             return;
 
         int os = 0;
         if (row == 0)
             switch (tile)
             {
-                case Tile.PLAYER1 : os = offset [Tile.PLAYER1_CURSOR]; break;
-                case Tile.PLAYER2 : os = offset [Tile.PLAYER2_CURSOR]; break;
-                case Tile.CLEAR   : os = offset [Tile.CLEAR_CURSOR];   break;
+                case PlayerID.PLAYER1 : os = offset [Tile.PLAYER1_CURSOR]; break;
+                case PlayerID.PLAYER2 : os = offset [Tile.PLAYER2_CURSOR]; break;
+                case PlayerID.NOBODY  : os = offset [Tile.CLEAR_CURSOR];   break;
             }
         else
             switch (tile)
             {
-                case Tile.PLAYER1 : os = offset [Tile.PLAYER1]; break;
-                case Tile.PLAYER2 : os = offset [Tile.PLAYER2]; break;
-                case Tile.CLEAR   : assert_not_reached ();
+                case PlayerID.PLAYER1 : os = offset [Tile.PLAYER1]; break;
+                case PlayerID.PLAYER2 : os = offset [Tile.PLAYER2]; break;
+                case PlayerID.NOBODY  : assert_not_reached ();
             }
 
         cr.save ();

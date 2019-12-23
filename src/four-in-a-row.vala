@@ -86,7 +86,7 @@ private class FourInARow : Gtk.Application
     private static AnimID anim = AnimID.NONE;
     private uint8 [,] blink_lines = {{}};
     private uint8 blink_line = 0;   // index of currenly blinking line in blink_lines
-    private Tile blink_t = Tile.PLAYER1;    // garbage
+    private PlayerID blink_t = PlayerID.NOBODY;    // garbage
     private uint8 blink_n = 0;
     private bool blink_on = false;
     private uint timeout = 0;
@@ -365,12 +365,12 @@ private class FourInARow : Gtk.Application
     private void blink_winner (uint8 n)   /* blink the winner's line(s) n times */
      // requires (n < 128)
     {
-        if (winner == NOBODY)
+        if (winner == PlayerID.NOBODY)
             return;
 
-        blink_t = (Tile) winner;    // FIXME converting a PlayerID in Tile, bad
+        blink_t = winner;
 
-        if (game_board.is_line_at ((Tile) winner, row, column, out blink_lines))
+        if (game_board.is_line_at (winner, row, column, out blink_lines))
         {
             anim = AnimID.BLINK;
             blink_on = false;
@@ -383,7 +383,7 @@ private class FourInARow : Gtk.Application
         }
     }
 
-    private inline void draw_line (uint8 _r1, uint8 _c1, uint8 _r2, uint8 _c2, int tile)
+    private inline void draw_line (uint8 _r1, uint8 _c1, uint8 _r2, uint8 _c2, PlayerID owner)
     {
         /* draw a line of 'tile' from r1,c1 to r2,c2 */
 
@@ -407,7 +407,7 @@ private class FourInARow : Gtk.Application
         do
         {
             done = (r1 == r2 && c1 == c2);
-            game_board [r1, c1] = (Tile) tile;
+            game_board [r1, c1] = owner;
             game_board_view.draw_tile (r1, c1);
             if (r1 != r2)
                 r1 += d_row;
@@ -519,7 +519,7 @@ private class FourInARow : Gtk.Application
     }
     private inline void check_game_state ()
     {
-        if (game_board.is_line_at ((Tile) player, row, column))
+        if (game_board.is_line_at (player, row, column))
         {
             gameover = true;
             winner = player;
@@ -577,9 +577,9 @@ private class FourInARow : Gtk.Application
 
     private inline void drop ()
     {
-        Tile tile = player == PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
+        PlayerID tile = player == PlayerID.PLAYER1 ? PlayerID.PLAYER1 : PlayerID.PLAYER2;
 
-        game_board [row, column] = Tile.CLEAR;
+        game_board [row, column] = PlayerID.NOBODY;
         game_board_view.draw_tile (row, column);
 
         row++;
@@ -589,11 +589,11 @@ private class FourInARow : Gtk.Application
 
     private inline void move (uint8 c)
     {
-        game_board [0, column] = Tile.CLEAR;
+        game_board [0, column] = PlayerID.NOBODY;
         game_board_view.draw_tile (0, column);
 
         column = c;
-        game_board [0, c] = player == PlayerID.PLAYER1 ? Tile.PLAYER1 : Tile.PLAYER2;
+        game_board [0, c] = player == PlayerID.PLAYER1 ? PlayerID.PLAYER1 : PlayerID.PLAYER2;
 
         game_board_view.draw_tile (0, c);
     }
@@ -649,7 +649,7 @@ private class FourInARow : Gtk.Application
         moves = 0;
     }
 
-    private inline void blink_tile (uint8 row, uint8 col, Tile tile, uint8 n)
+    private inline void blink_tile (uint8 row, uint8 col, PlayerID tile, uint8 n)
     {
         if (timeout != 0)
             return;
@@ -720,7 +720,7 @@ private class FourInARow : Gtk.Application
                                            /* col 1 */ application.blink_lines [application.blink_line, 1],
                                            /* row 2 */ application.blink_lines [application.blink_line, 2],
                                            /* col 2 */ application.blink_lines [application.blink_line, 3],
-                                           /* tile */  application.blink_on ? application.blink_t : Tile.CLEAR);
+                                           /* tile */  application.blink_on ? application.blink_t : PlayerID.NOBODY);
                     application.blink_n--;
                     if (application.blink_n == 0 && application.blink_on)
                     {
@@ -817,7 +817,7 @@ private class FourInARow : Gtk.Application
             swap_player ();
         move_cursor (c);
 
-        game_board [r, c] = Tile.CLEAR;
+        game_board [r, c] = PlayerID.NOBODY;
         game_board_view.draw_tile (r, c);
 
         if (one_player_game
@@ -831,7 +831,7 @@ private class FourInARow : Gtk.Application
             moves--;
             swap_player ();
             move_cursor (c);
-            game_board [r, c] = Tile.CLEAR;
+            game_board [r, c] = PlayerID.NOBODY;
             game_board_view.draw_tile (r, c);
         }
     }
@@ -1110,19 +1110,8 @@ private class FourInARow : Gtk.Application
     }
 }
 
-// WARNING PlayerID and Tile should be synced
 private enum PlayerID {
-    PLAYER1 = 0,
+    PLAYER1,
     PLAYER2,
     NOBODY;
-}
-
-// WARNING PlayerID and Tile should be synced
-private enum Tile {
-    PLAYER1 = 0,
-    PLAYER2,
-    CLEAR,
-    CLEAR_CURSOR,
-    PLAYER1_CURSOR,
-    PLAYER2_CURSOR;
 }
