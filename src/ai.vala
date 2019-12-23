@@ -20,7 +20,7 @@
 
 private enum Difficulty { EASY, MEDIUM, HARD; }
 
-private int playgame(string moves_until_now)
+private uint8 playgame(string moves_until_now)
 {
     DecisionTree t = new DecisionTree();
     return t.playgame(moves_until_now);
@@ -34,34 +34,32 @@ private class DecisionTree
     MAX_HEURIST_VALUE < NEG_INF/plies */
     private const int NEG_INF = -100000;
     private const int MAX_HEURIST_VALUE = 10000;
-    private const int BOARD_ROWS = 6;
-    private const int BOARD_COLUMNS = 7;
 
     /* to mantain the status of the board, to be used by the heuristic function, the top left cell is [0, 0] */
     private Player[,] board = new Player [BOARD_ROWS, BOARD_COLUMNS];
     /* plies - depth of the DecisionTree */
-    private int plies = 8;
+    private uint8 plies = 8;
     /* last_moving_player - The player who made the last move, set to Player.NOBODY if no one has made a move yet */
     private Player last_moving_player = Player.NOBODY;
     /* next_move_in_column - stores the column number in which next move is to be made */
-    private int next_move_in_column = -1;
+    private uint8 next_move_in_column = uint8.MAX;
     /* stores the difficulty level of the game */
     private Difficulty level;
 
     /* Initializes an empty board */
     internal DecisionTree()
     {
-        for (int i = 0; i < BOARD_ROWS; i++)
-            for (int j = 0; j < BOARD_COLUMNS; j++)
+        for (uint8 i = 0; i < BOARD_ROWS; i++)
+            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
                 board [i, j] = Player.NOBODY;
     }
 
     /* utility function for debugging purposes, prints a snapshot of current status of the board */
     internal void print_board()
     {
-        for (int i = 0; i< BOARD_ROWS; i++)
+        for (uint8 i = 0; i < BOARD_ROWS; i++)
         {
-            for (int j = 0; j < BOARD_COLUMNS; j++)
+            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
                 stdout.printf("%d\t", board [i, j]);
             stdout.printf("\n");
         }
@@ -70,7 +68,7 @@ private class DecisionTree
 
     /* Recursively implements a negamax tree in memory with alpha-beta pruning. The function is first called for the root node.
        It returns the value of the current node. For nodes at height == 0, the value is determined by a heuristic function. */
-    private int negamax(int height, int alpha, int beta)
+    private int negamax(uint8 height, int alpha, int beta)
     {
         /* base case of recursive function, returns if we have reached the lowest depth of DecisionTree or the board if full */
         if (height == 0 || board_full())
@@ -89,9 +87,9 @@ private class DecisionTree
 
         /* Local variable that stores the column number in which next move is to be made.
            Initialized with -1 because we do not know the column number yet. */
-        int next = -1;
+        uint8 next = uint8.MAX;
 
-        for (int column = 0; column < BOARD_COLUMNS; column++)
+        for (uint8 column = 0; column < BOARD_COLUMNS; column++)
         {
             /* make a move into the i'th column */
             if (!move(column))
@@ -125,10 +123,10 @@ private class DecisionTree
     }
 
     /* all these functions return true if last_moving_player wins, or false */
-    private bool victory(int column)
+    private bool victory(uint8 column)
     {
         /* find the cell on which the last move was made */
-        int row;
+        uint8 row;
         for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NOBODY; row++);
 
         return vertical_win(row, column) ||
@@ -137,41 +135,50 @@ private class DecisionTree
                backward_diagonal_win(row, column);
     }
 
-    private inline bool forward_diagonal_win(int i, int j)
+    private inline bool forward_diagonal_win(uint8 _i, uint8 _j)
     {
-        int count = 0;
+        int8 i = (int8) _i;
+        int8 j = (int8) _j;
 
-        for (int k = i, l = j; k >= 0 && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k--, l++, count++);
-        for (int k = i + 1, l = j - 1; k < BOARD_ROWS && l >= 0 && board [k, l] == last_moving_player; k++, l--, count++);
+        uint8 count = 0;
+
+        for (int8 k = i, l = j; k >= 0 && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k--, l++, count++);
+        for (int8 k = i + 1, l = j - 1; k < BOARD_ROWS && l >= 0 && board [k, l] == last_moving_player; k++, l--, count++);
 
         return count >= 4;
     }
 
-    private inline bool backward_diagonal_win(int i, int j)
+    private inline bool backward_diagonal_win(uint8 _i, uint8 _j)
     {
-        int count = 0;
+        int8 i = (int8) _i;
+        int8 j = (int8) _j;
 
-        for (int k = i, l = j; k >= 0 && l >= 0 && board [k, l] == last_moving_player; k--, l--, count++);
-        for (int k = i + 1, l = j + 1; k < BOARD_ROWS && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k++, l++, count++);
+        uint8 count = 0;
+
+        for (int8 k = i, l = j; k >= 0 && l >= 0 && board [k, l] == last_moving_player; k--, l--, count++);
+        for (int8 k = i + 1, l = j + 1; k < BOARD_ROWS && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k++, l++, count++);
 
         return count >= 4;
     }
 
-    private inline bool horizontal_win(int i, int j)
+    private inline bool horizontal_win(uint8 _i, uint8 _j)
     {
-        int count = 0;
+        int8 i = (int8) _i;
+        int8 j = (int8) _j;
 
-        for (int k = j; k >= 0 && board [i, k] == last_moving_player; k--, count++);
-        for (int k = j + 1; k < BOARD_COLUMNS && board [i, k] == last_moving_player; k++, count++);
+        uint8 count = 0;
+
+        for (int8 k = j; k >= 0 && board [i, k] == last_moving_player; k--, count++);
+        for (int8 k = j + 1; k < BOARD_COLUMNS && board [i, k] == last_moving_player; k++, count++);
 
         return count >= 4;
     }
 
-    private inline bool vertical_win(int i, int j)
+    private inline bool vertical_win(uint8 i, uint8 j)
     {
-        int count = 0;
+        uint8 count = 0;
 
-        for (int k = i; k < BOARD_ROWS && board [k, j] == last_moving_player; k++, count++);
+        for (uint8 k = i; k < BOARD_ROWS && board [k, j] == last_moving_player; k++, count++);
 
         return count >= 4;
     }
@@ -179,17 +186,17 @@ private class DecisionTree
     /* returns true if the board is full, false if not */
     private bool board_full()
     {
-        for (int i = 0 ; i < BOARD_COLUMNS ; i++)
+        for (uint8 i = 0 ; i < BOARD_COLUMNS ; i++)
             if (board [0, i] == Player.NOBODY)
                 return false;
         return true;
     }
 
     /* makes a move into the column'th column. Returns true if the move was succesful, false if it wasn't */
-    private bool move(int column)
+    private bool move(uint8 column)
     {
         /* find the cell on which to move */
-        int row;
+        int8 row;
         for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
 
         if (row < 0)
@@ -204,11 +211,11 @@ private class DecisionTree
     }
 
     /* unmove the last move made in the column'th column */
-    private void unmove(int column)
+    private void unmove(uint8 column)
         requires(last_moving_player != Player.NOBODY)
     {
         /* find the cell on which the last move was made */
-        int row;
+        uint8 row;
         for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NOBODY; row++);
 
         board [row, column] = Player.NOBODY;
@@ -219,19 +226,19 @@ private class DecisionTree
     /* vstr is the sequence of moves made until now. We update DecisionTree::board to reflect these sequence of moves. */
     private void update_board(string vstr)
     {
-        next_move_in_column = -1;
+        next_move_in_column = uint8.MAX;
 
         /* AI will make the first move, nothing to add to the board */
         if (vstr.length == 2) return;
 
         Player move = vstr.length % 2 == 0 ? Player.OPPONENT : Player.HUMAN;
 
-        for (int i = 1; i < vstr.length - 1; i++)
+        for (uint8 i = 1; i < vstr.length - 1; i++)
         {
-            int column = int.parse(vstr [i].to_string()) - 1;
+            uint8 column = (uint8) int.parse(vstr [i].to_string()) - 1;
 
             /* find the cell on which the move is made */
-            int row;
+            int8 row;
             for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
 
             board [row, column] = move;
@@ -242,16 +249,16 @@ private class DecisionTree
         last_moving_player = Player.HUMAN;
     }
 
-    /* Check for immediate win of HUMAN or OPPONENT. It checks the current state of the board. Returns -1 if no immediate win for Player P.
+    /* Check for immediate win of HUMAN or OPPONENT. It checks the current state of the board. Returns uint8.MAX if no immediate win for Player P.
        Otherwise returns the column number in which Player P should move to win. */
-    private int immediate_win(Player p)
+    private uint8 immediate_win(Player p)
     {
         Player old_last_moving_player = last_moving_player;
 
         last_moving_player = p == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT;
 
         bool player_wins = false;
-        int i;
+        uint8 i;
         for (i = 0; i < BOARD_COLUMNS; i++)
         {
             if (!move(i))
@@ -266,12 +273,12 @@ private class DecisionTree
 
         last_moving_player = old_last_moving_player;
 
-        /* returns -1 if no immediate win for Player p */
-        return player_wins ? i : -1;
+        /* returns uint8.MAX if no immediate win for Player p */
+        return player_wins ? i : uint8.MAX;
     }
 
-    /* returns the column number in which the next move has to be made. Returns -1 if the board is full. */
-    internal int playgame(string vstr)
+    /* returns the column number in which the next move has to be made. Returns uint8.MAX if the board is full. */
+    internal uint8 playgame(string vstr)
     {
         /* set the Difficulty level */
         set_level(vstr);
@@ -279,23 +286,22 @@ private class DecisionTree
         /* update DecisionTree::board to reflect the moves made until now */
         update_board(vstr);
 
-        /* if AI can win by making a move immediately, make that move;
-           main.c has indexing beginning from 1 instead of 0, hence, we add 1 */
-        int temp = immediate_win(Player.OPPONENT);
-        if (temp != -1)
-            return temp + 1;
+        /* if AI can win by making a move immediately, make that move */
+        uint8 temp = immediate_win(Player.OPPONENT);
+        if (temp < BOARD_COLUMNS)
+            return temp;
 
         /* if HUMAN can win by making a move immediately,
            we make AI move in that column so as avoid loss */
         temp = immediate_win(Player.HUMAN);
-        if (temp != -1)
-            return temp + 1;
+        if (temp < BOARD_COLUMNS)
+            return temp;
 
         /* call negamax tree on the current state of the board */
         negamax(plies, NEG_INF, -1 * NEG_INF);
 
         /* return the column number in which next move should be made */
-        return next_move_in_column + 1;
+        return next_move_in_column;
     }
 
     /* The evaluation function to be called when we have reached the maximum depth in the DecisionTree */
@@ -335,9 +341,9 @@ private class DecisionTree
 
         last_moving_player = p;
 
-        for (int j = 0; j < BOARD_COLUMNS; j++)
+        for (uint8 j = 0; j < BOARD_COLUMNS; j++)
         {
-            for (int i = 0; i < BOARD_ROWS; i++)
+            for (uint8 i = 0; i < BOARD_ROWS; i++)
             {
                 if (board [i, j] != Player.NOBODY)
                     break;
@@ -358,11 +364,14 @@ private class DecisionTree
     }
 
     /* checks if all adjacent cells to board [i, j] are empty */
-    private inline bool all_adjacent_empty(int i, int j)
+    private inline bool all_adjacent_empty(uint8 _i, uint8 _j)
     {
-        for (int k = -1 ; k <= 1; k++)
+        int8 i = (int8) _i;
+        int8 j = (int8) _j;
+
+        for (int8 k = -1 ; k <= 1; k++)
         {
-            for (int l = -1; l <= 1; l++)
+            for (int8 l = -1; l <= 1; l++)
             {
                 if (k == 0 && l == 0)
                     continue;
@@ -387,7 +396,7 @@ private class DecisionTree
             level = Difficulty.MEDIUM;
             plies = 7;
         }
-        else
+        else // TODO if (vstr [0] == 'c') / else assert_not_reached ();
         {
             level = Difficulty.HARD;
             plies = 7;
@@ -395,21 +404,21 @@ private class DecisionTree
     }
 
     /* utility function for testing purposes */
-    internal int playandcheck(string vstr)
+    internal uint8 playandcheck(string vstr)
     {
         set_level(vstr);
         update_board(vstr);
 
-        int temp = immediate_win(Player.OPPONENT);
-        if (temp != -1)
-            return 1000;
+        uint8 temp = immediate_win(Player.OPPONENT);
+        if (temp < BOARD_COLUMNS)
+            return 100;
 
         temp = immediate_win(Player.HUMAN);
-        if (temp != -1)
-            return temp + 1;
+        if (temp < BOARD_COLUMNS)
+            return temp;
 
         negamax(plies, NEG_INF, -1 * NEG_INF);
 
-        return next_move_in_column + 1;
+        return next_move_in_column;
     }
 }

@@ -21,13 +21,6 @@
 
 using Gtk;
 
-// if you want to play, update also the two const in ai.vala
-private const uint8 BOARD_COLUMNS = 7;
-private const uint8 BOARD_COLUMNS_MINUS_ONE = 6;
-private const uint8 BOARD_ROWS = 6;
-private const uint8 BOARD_ROWS_PLUS_ONE = 7;
-private const uint8 BOARD_SIZE = 7; // as long as that is needed, impossible to have n_rows != n_cols - 1
-
 private class FourInARow : Gtk.Application
 {
     private GLib.Settings settings = new GLib.Settings ("org.gnome.Four-in-a-row");
@@ -362,10 +355,8 @@ private class FourInARow : Gtk.Application
         {
             vstr [0] = vlevel [ai_level];
             playgame_timeout = Timeout.add (COMPUTER_INITIAL_DELAY, () => {
-                    int c = playgame ((string) vstr) - 1;
-                    if (c > BOARD_COLUMNS_MINUS_ONE)
-                        assert_not_reached ();
-                    if (c < 0)
+                    uint8 c = playgame ((string) vstr);
+                    if (c >= BOARD_COLUMNS) // c could be uint8.MAX if board is full
                         return Source.REMOVE;
                     process_move ((uint8) c);
                     playgame_timeout = 0;
@@ -527,11 +518,9 @@ private class FourInARow : Gtk.Application
             {
                 playgame_timeout = Timeout.add (COMPUTER_MOVE_DELAY, () => {
                         vstr [0] = vlevel [ai_level];
-                        int col = playgame ((string) vstr) - 1;
-                        if (col < 0)
+                        uint8 col = playgame ((string) vstr);
+                        if (col >= BOARD_COLUMNS)   // c could be uint8.MAX if the board is full
                             set_gameover (true);
-                        else if (col > BOARD_COLUMNS_MINUS_ONE)
-                            assert_not_reached ();
                         var nm = new NextMove ((uint8) col, this);
                         Timeout.add (SPEED_DROP, nm.exec);
                         playgame_timeout = 0;
@@ -779,9 +768,6 @@ private class FourInARow : Gtk.Application
 
     private inline void on_game_hint ()
     {
-        string s;
-        uint8 c;
-
         if (timeout != 0)
             return;
         if (gameover)
@@ -794,10 +780,9 @@ private class FourInARow : Gtk.Application
         set_status_message (_("I’m Thinking…"));
 
         vstr [0] = vlevel [/* strong */ 3];
-        int _c = playgame ((string) vstr) - 1;
-        if (_c < 0 || _c > BOARD_COLUMNS_MINUS_ONE)
-            assert_not_reached ();
-        c = (uint8) _c;
+        uint8 c = playgame ((string) vstr);
+        if (c >= BOARD_COLUMNS)
+            assert_not_reached ();  // c could be uint8.MAX if the board if full
 
         column_moveto = c;
         while (timeout != 0)
@@ -809,8 +794,7 @@ private class FourInARow : Gtk.Application
         blink_tile (0, c, game_board [0, c], /* blink n times */ 3);
 
         /* Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column */
-        s = _("Hint: Column %d").printf (c + 1);
-        set_status_message (s);
+        set_status_message (_("Hint: Column %d").printf (c + 1));
 
         if (moves <= 0 || (moves == 1 && is_player_human ()))
             window.allow_undo (false);

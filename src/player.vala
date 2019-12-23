@@ -18,6 +18,12 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+private const uint8 BOARD_COLUMNS = 7;
+private const uint8 BOARD_COLUMNS_MINUS_ONE = 6;
+private const uint8 BOARD_ROWS = 6;
+private const uint8 BOARD_ROWS_PLUS_ONE = 7;
+private const uint8 BOARD_SIZE = 7; // as long as that is needed, impossible to have n_rows != n_cols - 1
+
 private enum Player
 {
     NOBODY,
