@@ -327,15 +327,15 @@ private class DecisionTree
 
     private int heurist_hard ()
     {
-        int count = count_3_in_a_row (Player.OPPONENT) - count_3_in_a_row (Player.HUMAN);
-        return count == 0 ? (int) Random.int_range (1, 49) : count * 100;
+        int8 count = count_3_in_a_row (Player.OPPONENT) - count_3_in_a_row (Player.HUMAN);
+        return count == 0 ? (int) Random.int_range (1, 49) : (int) count * 100;
     }
 
-    /* Count the number of threes in a row for Player P. It counts all those 3 which have an empty cell in the vicinity to make it
-       four in a row. */
-    private int count_3_in_a_row (Player p)
+    /* Count the number of threes in a row for Player P. It counts all those 3
+       which have an empty cell in the vicinity to make it four in a row. */
+    private int8 count_3_in_a_row (Player p)
     {
-        int count = 0;
+        int8 count = 0;
 
         Player old_last_moving_player = last_moving_player;
 
@@ -354,7 +354,12 @@ private class DecisionTree
                 board [i, j] = p;
 
                 if (victory (j))
-                    count++;
+                {
+                    if (count < int8.MAX)
+                        count++;
+                    else
+                        warning ("Method count_3_in_a_row() exceeded its maximum count.");
+                }
 
                 board [i, j] = Player.NOBODY;
             }
