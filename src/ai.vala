@@ -41,20 +41,64 @@ private class DecisionTree
     private const uint8 [] plies = { 4, 7, 7 };
 
     /* to mantain the status of the board, to be used by the heuristic function, the top left cell is [0, 0] */
-    private Player [,] board = new Player [BOARD_ROWS, BOARD_COLUMNS];
+    private Player [,] board;
     /* last_moving_player - The player who made the last move, set to Player.NOBODY if no one has made a move yet */
-    private Player last_moving_player = Player.NOBODY;
+    private Player last_moving_player;
     /* next_move_in_column - stores the column number in which next move is to be made */
-    private uint8 next_move_in_column = uint8.MAX;
+    private uint8 next_move_in_column;
     /* stores the difficulty level of the game */
     private Difficulty level;
 
     /* Initializes an empty board */
     internal DecisionTree ()
     {
-        for (uint8 i = 0; i < BOARD_ROWS; i++)
-            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
-                board [i, j] = Player.NOBODY;
+        // sanity init from a string without any move (and with level easy)
+        init_from_string ("a", out level, out next_move_in_column, out last_moving_player, out board);
+    }
+
+    /*\
+    * * internal methods
+    \*/
+
+    /* returns the column number in which the next move has to be made. Returns uint8.MAX if the board is full. */
+    internal uint8 playgame (string vstr)
+    {
+        init_from_string (vstr, out level, out next_move_in_column, out last_moving_player, out board);
+
+        /* if AI can win by making a move immediately, make that move */
+        uint8 temp = immediate_win (Player.OPPONENT);
+        if (temp < BOARD_COLUMNS)
+            return temp;
+
+        /* if HUMAN can win by making a move immediately,
+           we make AI move in that column so as avoid loss */
+        temp = immediate_win (Player.HUMAN);
+        if (temp < BOARD_COLUMNS)
+            return temp;
+
+        /* call negamax tree on the current state of the board */
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY);
+
+        /* return the column number in which next move should be made */
+        return next_move_in_column;
+    }
+
+    /* utility function for testing purposes */
+    internal uint8 playandcheck (string vstr)
+    {
+        init_from_string (vstr, out level, out next_move_in_column, out last_moving_player, out board);
+
+        uint8 temp = immediate_win (Player.OPPONENT);
+        if (temp < BOARD_COLUMNS)
+            return 100;
+
+        temp = immediate_win (Player.HUMAN);
+        if (temp < BOARD_COLUMNS)
+            return temp;
+
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY);
+
+        return next_move_in_column;
     }
 
     /* utility function for debugging purposes, prints a snapshot of current status of the board */
@@ -68,6 +112,71 @@ private class DecisionTree
         }
         stdout.printf ("\n");
     }
+
+    /*\
+    * * setting defaults
+    \*/
+
+    /* vstr is the sequence of moves made until now;  */
+    private static void init_from_string (string        vstr,
+                                      out Difficulty    level,
+                                      out uint8         next_move_in_column,
+                                      out Player        last_moving_player,
+                                      out Player [,]    board)
+    {
+        set_level (vstr, out level);
+        next_move_in_column = uint8.MAX;
+
+        /* empty board */
+        board = new Player [BOARD_ROWS, BOARD_COLUMNS];
+        for (uint8 i = 0; i < BOARD_ROWS; i++)
+            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
+                board [i, j] = Player.NOBODY;
+
+        /* AI will make the first move, last_moving_player is NOBODY */
+        if (vstr.length == 2)
+        {
+            last_moving_player = Player.NOBODY;
+            return;
+        }
+        last_moving_player = Player.HUMAN;
+
+        /* update board from current string */
+        update_board (vstr, ref board);
+    }
+
+    private static inline void set_level (string vstr, out Difficulty level)
+    {
+        switch (vstr [0])
+        {
+            case 'a': level = Difficulty.EASY;   return;
+            case 'b': level = Difficulty.MEDIUM; return;
+            case 'c': level = Difficulty.HARD;   return;
+            default : assert_not_reached ();
+        }
+    }
+
+    private static inline void update_board (string vstr, ref Player [,] board)
+    {
+        Player move = vstr.length % 2 == 0 ? Player.OPPONENT : Player.HUMAN;
+
+        for (uint8 i = 1; i < vstr.length - 1; i++)
+        {
+            uint8 column = (uint8) int.parse (vstr [i].to_string ()) - 1;
+
+            /* find the cell on which the move is made */
+            int8 row;
+            for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
+
+            board [row, column] = move;
+
+            move = move == Player.HUMAN ? Player.OPPONENT : Player.HUMAN;
+        }
+    }
+
+    /*\
+    * * negamax
+    \*/
 
     /* Recursively implements a negamax tree in memory with alpha-beta pruning. The function is first called for the root node.
        It returns the value of the current node. For nodes at height == 0, the value is determined by a heuristic function. */
@@ -125,6 +234,10 @@ private class DecisionTree
 
         return max;
     }
+
+    /*\
+    * * checking victory
+    \*/
 
     /* all these functions return true if last_moving_player wins, or false */
     private bool victory (uint8 column)
@@ -187,6 +300,10 @@ private class DecisionTree
         return count >= 4;
     }
 
+    /*\
+    * * various
+    \*/
+
     /* returns true if the board is full, false if not */
     private static bool board_full (ref Player [,] board)
     {
@@ -227,32 +344,6 @@ private class DecisionTree
         last_moving_player = last_moving_player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT;
     }
 
-    /* vstr is the sequence of moves made until now. We update DecisionTree::board to reflect these sequence of moves. */
-    private void update_board (string vstr)
-    {
-        next_move_in_column = uint8.MAX;
-
-        /* AI will make the first move, nothing to add to the board */
-        if (vstr.length == 2) return;
-
-        Player move = vstr.length % 2 == 0 ? Player.OPPONENT : Player.HUMAN;
-
-        for (uint8 i = 1; i < vstr.length - 1; i++)
-        {
-            uint8 column = (uint8) int.parse (vstr [i].to_string ()) - 1;
-
-            /* find the cell on which the move is made */
-            int8 row;
-            for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
-
-            board [row, column] = move;
-
-            move = move == Player.HUMAN ? Player.OPPONENT : Player.HUMAN;
-        }
-
-        last_moving_player = Player.HUMAN;
-    }
-
     /* Check for immediate win of HUMAN or OPPONENT. It checks the current state of the board. Returns uint8.MAX if no immediate win for Player P.
        Otherwise returns the column number in which Player P should move to win. */
     private uint8 immediate_win (Player p)
@@ -281,32 +372,9 @@ private class DecisionTree
         return player_wins ? i : uint8.MAX;
     }
 
-    /* returns the column number in which the next move has to be made. Returns uint8.MAX if the board is full. */
-    internal uint8 playgame (string vstr)
-    {
-        /* set the Difficulty level */
-        set_level (vstr, out level);
-
-        /* update DecisionTree::board to reflect the moves made until now */
-        update_board (vstr);
-
-        /* if AI can win by making a move immediately, make that move */
-        uint8 temp = immediate_win (Player.OPPONENT);
-        if (temp < BOARD_COLUMNS)
-            return temp;
-
-        /* if HUMAN can win by making a move immediately,
-           we make AI move in that column so as avoid loss */
-        temp = immediate_win (Player.HUMAN);
-        if (temp < BOARD_COLUMNS)
-            return temp;
-
-        /* call negamax tree on the current state of the board */
-        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY);
-
-        /* return the column number in which next move should be made */
-        return next_move_in_column;
-    }
+    /*\
+    * * heuristics
+    \*/
 
     /* The evaluation function to be called when we have reached the maximum depth in the DecisionTree */
     private int16 heurist ()
@@ -320,17 +388,17 @@ private class DecisionTree
         }
     }
 
-    private int16 heurist_easy ()
+    private inline int16 heurist_easy ()
     {
         return -1 * heurist_hard ();
     }
 
-    private int16 heurist_medium ()
+    private static inline int16 heurist_medium ()
     {
         return (int16) Random.int_range (1, 49);
     }
 
-    private int16 heurist_hard ()
+    private inline int16 heurist_hard ()
     {
         int8 count = count_3_in_a_row (Player.OPPONENT) - count_3_in_a_row (Player.HUMAN);
         return count == 0 ? (int16) Random.int_range (1, 49) : (int16) count * 100;
@@ -353,7 +421,7 @@ private class DecisionTree
                 if (board [i, j] != Player.NOBODY)
                     break;
 
-                if (all_adjacent_empty (i, j))
+                if (all_adjacent_empty (i, j, ref board))
                     continue;
 
                 board [i, j] = p;
@@ -374,7 +442,7 @@ private class DecisionTree
     }
 
     /* checks if all adjacent cells to board [i, j] are empty */
-    private inline bool all_adjacent_empty (uint8 _i, uint8 _j)
+    private static inline bool all_adjacent_empty (uint8 _i, uint8 _j, ref Player [,] board)
     {
         int8 i = (int8) _i;
         int8 j = (int8) _j;
@@ -391,36 +459,5 @@ private class DecisionTree
         }
 
         return true;
-    }
-
-    /* set the difficulty level */
-    private static void set_level (string vstr, out Difficulty level)
-    {
-        switch (vstr [0])
-        {
-            case 'a': level = Difficulty.EASY;   return;
-            case 'b': level = Difficulty.MEDIUM; return;
-            case 'c': level = Difficulty.HARD;   return;
-            default : assert_not_reached ();
-        }
-    }
-
-    /* utility function for testing purposes */
-    internal uint8 playandcheck (string vstr)
-    {
-        set_level (vstr, out level);
-        update_board (vstr);
-
-        uint8 temp = immediate_win (Player.OPPONENT);
-        if (temp < BOARD_COLUMNS)
-            return 100;
-
-        temp = immediate_win (Player.HUMAN);
-        if (temp < BOARD_COLUMNS)
-            return temp;
-
-        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY);
-
-        return next_move_in_column;
     }
 }
