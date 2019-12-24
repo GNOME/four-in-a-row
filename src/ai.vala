@@ -35,13 +35,13 @@ private class DecisionTree
     private const int16 LESS_THAN_NEGATIVE_INFINITY = -32001;
     /* MAX_HEURIST_VALUE is the maximum value that the heuristic functions can return.
        It is returned when AI wins, and -1 * MAX_HEURIST_VALUE is returned when Human wins.
-       MAX_HEURIST_VALUE < NEGATIVE_INFINITY/plies, as we balance results depending on depth */
+       MAX_HEURIST_VALUE < NEGATIVE_INFINITY/plies[level], as we balance results depending on depth */
     private const int16 MAX_HEURIST_VALUE           =   3200;
+    /* Use plies [level]; EASY/MEDIUM/HARD */
+    private const uint8 [] plies = { 4, 7, 7 };
 
     /* to mantain the status of the board, to be used by the heuristic function, the top left cell is [0, 0] */
     private Player [,] board = new Player [BOARD_ROWS, BOARD_COLUMNS];
-    /* plies - depth of the DecisionTree */
-    private uint8 plies = 8;
     /* last_moving_player - The player who made the last move, set to Player.NOBODY if no one has made a move yet */
     private Player last_moving_player = Player.NOBODY;
     /* next_move_in_column - stores the column number in which next move is to be made */
@@ -74,19 +74,19 @@ private class DecisionTree
     private int16 negamax (uint8 height, int16 alpha, int16 beta)
     {
         /* base case of recursive function, returns if we have reached the lowest depth of DecisionTree or the board if full */
-        if (height == 0 || board_full ())
+        if (height == 0 || board_full (ref board))
         {
             if (last_moving_player == Player.HUMAN)
                 return heurist ();
             else if (last_moving_player == Player.OPPONENT)
                 return -1 * heurist ();
             else
-                return 0;
+                assert_not_reached ();  // do not call AI on a full board, please
         }
 
         /* Local variable that stores the maximum value returned by the node's children so far.
            None of the children have returned anything so far, so initialize with minimal "NaN" value.
-           The worst return value here is MAX_HEURIST_VALUE*plies, so never NEGATIVE_INFINITY anyway. */
+           The worst return value here is MAX_HEURIST_VALUE*plies[level], so never NEGATIVE_INFINITY anyway. */
         int16 max = LESS_THAN_NEGATIVE_INFINITY;
 
         /* Local variable that stores the column number in which next move is to be made.
@@ -120,7 +120,7 @@ private class DecisionTree
         }
 
         /* If it's the root node, asign the value of next to next_move_in_column */
-        if (height == plies)
+        if (height == plies [level])
             next_move_in_column = next;
 
         return max;
@@ -188,7 +188,7 @@ private class DecisionTree
     }
 
     /* returns true if the board is full, false if not */
-    private bool board_full ()
+    private static bool board_full (ref Player [,] board)
     {
         for (uint8 i = 0 ; i < BOARD_COLUMNS ; i++)
             if (board [0, i] == Player.NOBODY)
@@ -285,7 +285,7 @@ private class DecisionTree
     internal uint8 playgame (string vstr)
     {
         /* set the Difficulty level */
-        set_level (vstr);
+        set_level (vstr, out level);
 
         /* update DecisionTree::board to reflect the moves made until now */
         update_board (vstr);
@@ -302,7 +302,7 @@ private class DecisionTree
             return temp;
 
         /* call negamax tree on the current state of the board */
-        negamax (plies, NEGATIVE_INFINITY, POSITIVE_INFINITY);
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY);
 
         /* return the column number in which next move should be made */
         return next_move_in_column;
@@ -393,31 +393,22 @@ private class DecisionTree
         return true;
     }
 
-    /* set the number of plies and the difficulty level */
-    private void set_level (string vstr)
+    /* set the difficulty level */
+    private static void set_level (string vstr, out Difficulty level)
     {
-        if (vstr [0] == 'a')
+        switch (vstr [0])
         {
-            level = Difficulty.EASY;
-            plies = 4;
+            case 'a': level = Difficulty.EASY;   return;
+            case 'b': level = Difficulty.MEDIUM; return;
+            case 'c': level = Difficulty.HARD;   return;
+            default : assert_not_reached ();
         }
-        else if (vstr [0] == 'b')
-        {
-            level = Difficulty.MEDIUM;
-            plies = 7;
-        }
-        else if (vstr [0] == 'c')
-        {
-            level = Difficulty.HARD;
-            plies = 7;
-        }
-        else assert_not_reached ();
     }
 
     /* utility function for testing purposes */
     internal uint8 playandcheck (string vstr)
     {
-        set_level (vstr);
+        set_level (vstr, out level);
         update_board (vstr);
 
         uint8 temp = immediate_win (Player.OPPONENT);
@@ -428,7 +419,7 @@ private class DecisionTree
         if (temp < BOARD_COLUMNS)
             return temp;
 
-        negamax (plies, NEGATIVE_INFINITY, POSITIVE_INFINITY);
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY);
 
         return next_move_in_column;
     }
