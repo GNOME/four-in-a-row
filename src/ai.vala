@@ -64,13 +64,13 @@ private class DecisionTree
         init_from_string (vstr, out level, out next_move_in_column, out board);
 
         /* if AI can win by making a move immediately, make that move */
-        uint8 temp = immediate_win (Player.OPPONENT);
+        uint8 temp = immediate_win (Player.OPPONENT, ref board);
         if (temp < BOARD_COLUMNS)
             return temp;
 
         /* if HUMAN can win by making a move immediately,
            we make AI move in that column so as avoid loss */
-        temp = immediate_win (Player.HUMAN);
+        temp = immediate_win (Player.HUMAN, ref board);
         if (temp < BOARD_COLUMNS)
             return temp;
 
@@ -86,11 +86,11 @@ private class DecisionTree
     {
         init_from_string (vstr, out level, out next_move_in_column, out board);
 
-        uint8 temp = immediate_win (Player.OPPONENT);
+        uint8 temp = immediate_win (Player.OPPONENT, ref board);
         if (temp < BOARD_COLUMNS)
             return 100;
 
-        temp = immediate_win (Player.HUMAN);
+        temp = immediate_win (Player.HUMAN, ref board);
         if (temp < BOARD_COLUMNS)
             return temp;
 
@@ -179,9 +179,9 @@ private class DecisionTree
         if (height == 0 || board_full (ref board))
         {
             if (player == Player.OPPONENT)
-                return heurist ();
+                return heurist (level, ref board);
             else if (player == Player.HUMAN)
-                return -1 * heurist ();
+                return -1 * heurist (level, ref board);
             else
                 assert_not_reached ();  // do not call AI on a full board, please
         }
@@ -197,7 +197,7 @@ private class DecisionTree
 
         for (uint8 column = 0; column < BOARD_COLUMNS; column++)
         {
-            if (!move (player, column))
+            if (!move (player, column, ref board))
                 continue;
 
             /* victory() checks if making a move in the i'th column results in a victory for the given player.
@@ -206,7 +206,7 @@ private class DecisionTree
             int16 temp = victory (player, column, ref board) ? MAX_HEURIST_VALUE * height
                                                              : -1 * negamax (height - 1, -1 * beta, -1 * alpha, player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT);
 
-            unmove (column);
+            unmove (column, ref board);
 
             if (temp > max)
             {
@@ -307,7 +307,7 @@ private class DecisionTree
     }
 
     /* makes a move into the column'th column. Returns true if the move was succesful, false if it wasn't */
-    private bool move (Player player, uint8 column)
+    private static bool move (Player player, uint8 column, ref Player [,] board)
     {
         /* find the cell on which to move */
         int8 row;
@@ -321,7 +321,7 @@ private class DecisionTree
     }
 
     /* unmove the last move made in the column'th column */
-    private void unmove (uint8 column)
+    private static void unmove (uint8 column, ref Player [,] board)
     {
         /* find the cell on which the last move was made */
         uint8 row;
@@ -332,15 +332,15 @@ private class DecisionTree
 
     /* Check for immediate win of HUMAN or OPPONENT. It checks the current state of the board. Returns uint8.MAX if no immediate win for Player P.
        Otherwise returns the column number in which Player P should move to win. */
-    private uint8 immediate_win (Player player)
+    private static uint8 immediate_win (Player player, ref Player [,] board)
     {
         for (uint8 i = 0; i < BOARD_COLUMNS; i++)
         {
-            if (!move (player, i))
+            if (!move (player, i, ref board))
                 continue;
 
             bool player_wins = victory (player, i, ref board);
-            unmove (i);
+            unmove (i, ref board);
 
             if (player_wins)
                 return i;
@@ -355,20 +355,20 @@ private class DecisionTree
     \*/
 
     /* The evaluation function to be called when we have reached the maximum depth in the DecisionTree */
-    private inline int16 heurist ()
+    private static inline int16 heurist (Difficulty level, ref Player [,] board)
     {
         switch (level)
         {
-            case Difficulty.EASY  : return heurist_easy ();
+            case Difficulty.EASY  : return heurist_easy (ref board);
             case Difficulty.MEDIUM: return heurist_medium ();
-            case Difficulty.HARD  : return heurist_hard ();
+            case Difficulty.HARD  : return heurist_hard (ref board);
             default: assert_not_reached ();
         }
     }
 
-    private int16 heurist_easy ()
+    private static int16 heurist_easy (ref Player [,] board)
     {
-        return -1 * heurist_hard ();
+        return -1 * heurist_hard (ref board);
     }
 
     private static inline int16 heurist_medium ()
@@ -376,15 +376,15 @@ private class DecisionTree
         return (int16) Random.int_range (1, 49);
     }
 
-    private int16 heurist_hard ()
+    private static int16 heurist_hard (ref Player [,] board)
     {
-        int8 count = count_3_in_a_row (Player.OPPONENT) - count_3_in_a_row (Player.HUMAN);
+        int8 count = count_3_in_a_row (Player.OPPONENT, ref board) - count_3_in_a_row (Player.HUMAN, ref board);
         return count == 0 ? (int16) Random.int_range (1, 49) : (int16) count * 100;
     }
 
     /* Count the number of threes in a row for Player P. It counts all those 3
        which have an empty cell in the vicinity to make it four in a row. */
-    private int8 count_3_in_a_row (Player player)
+    private static int8 count_3_in_a_row (Player player, ref Player [,] board)
     {
         int8 count = 0;
 
