@@ -208,10 +208,10 @@ private class DecisionTree
             if (!move (column))
                 continue;
 
-            /* victory() checks if making a move in the i'th column results in a victory for last_moving_player.
+            /* victory() checks if making a move in the i'th column results in a victory for the given player.
                If so, multiply MAX_HEURIST_VALUE by a height factor to avoid closer threats first.
                Or, we need to go further down the negamax tree. */
-            int16 temp = victory (column) ? MAX_HEURIST_VALUE * height : -1 * negamax (height - 1, -1 * beta, -1 * alpha);
+            int16 temp = victory (last_moving_player, column, ref board) ? MAX_HEURIST_VALUE * height : -1 * negamax (height - 1, -1 * beta, -1 * alpha);
 
             unmove (column);
 
@@ -239,63 +239,63 @@ private class DecisionTree
     * * checking victory
     \*/
 
-    /* all these functions return true if last_moving_player wins, or false */
-    private bool victory (uint8 column)
+    /* all these functions return true if the given player wins, or false */
+    private static bool victory (Player player, uint8 column, ref Player [,] board)
     {
         /* find the cell on which the last move was made */
         uint8 row;
         for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NOBODY; row++);
 
-        return vertical_win (row, column)
-            || horizontal_win (row, column)
-            || forward_diagonal_win (row, column)
-            || backward_diagonal_win (row, column);
+        return vertical_win             (player, row, column, ref board)
+            || horizontal_win           (player, row, column, ref board)
+            || forward_diagonal_win     (player, row, column, ref board)
+            || backward_diagonal_win    (player, row, column, ref board);
     }
 
-    private inline bool forward_diagonal_win (uint8 _i, uint8 _j)
+    private static inline bool forward_diagonal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
     {
         int8 i = (int8) _i;
         int8 j = (int8) _j;
 
         uint8 count = 0;
 
-        for (int8 k = i, l = j; k >= 0 && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k--, l++, count++);
-        for (int8 k = i + 1, l = j - 1; k < BOARD_ROWS && l >= 0 && board [k, l] == last_moving_player; k++, l--, count++);
+        for (int8 k = i, l = j; k >= 0 && l < BOARD_COLUMNS && board [k, l] == player; k--, l++, count++);
+        for (int8 k = i + 1, l = j - 1; k < BOARD_ROWS && l >= 0 && board [k, l] == player; k++, l--, count++);
 
         return count >= 4;
     }
 
-    private inline bool backward_diagonal_win (uint8 _i, uint8 _j)
+    private static inline bool backward_diagonal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
     {
         int8 i = (int8) _i;
         int8 j = (int8) _j;
 
         uint8 count = 0;
 
-        for (int8 k = i, l = j; k >= 0 && l >= 0 && board [k, l] == last_moving_player; k--, l--, count++);
-        for (int8 k = i + 1, l = j + 1; k < BOARD_ROWS && l < BOARD_COLUMNS && board [k, l] == last_moving_player; k++, l++, count++);
+        for (int8 k = i, l = j; k >= 0 && l >= 0 && board [k, l] == player; k--, l--, count++);
+        for (int8 k = i + 1, l = j + 1; k < BOARD_ROWS && l < BOARD_COLUMNS && board [k, l] == player; k++, l++, count++);
 
         return count >= 4;
     }
 
-    private inline bool horizontal_win (uint8 _i, uint8 _j)
+    private static inline bool horizontal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
     {
         int8 i = (int8) _i;
         int8 j = (int8) _j;
 
         uint8 count = 0;
 
-        for (int8 k = j; k >= 0 && board [i, k] == last_moving_player; k--, count++);
-        for (int8 k = j + 1; k < BOARD_COLUMNS && board [i, k] == last_moving_player; k++, count++);
+        for (int8 k = j; k >= 0 && board [i, k] == player; k--, count++);
+        for (int8 k = j + 1; k < BOARD_COLUMNS && board [i, k] == player; k++, count++);
 
         return count >= 4;
     }
 
-    private inline bool vertical_win (uint8 i, uint8 j)
+    private static inline bool vertical_win (Player player, uint8 i, uint8 j, ref Player [,] board)
     {
         uint8 count = 0;
 
-        for (uint8 k = i; k < BOARD_ROWS && board [k, j] == last_moving_player; k++, count++);
+        for (uint8 k = i; k < BOARD_ROWS && board [k, j] == player; k++, count++);
 
         return count >= 4;
     }
@@ -346,11 +346,11 @@ private class DecisionTree
 
     /* Check for immediate win of HUMAN or OPPONENT. It checks the current state of the board. Returns uint8.MAX if no immediate win for Player P.
        Otherwise returns the column number in which Player P should move to win. */
-    private uint8 immediate_win (Player p)
+    private uint8 immediate_win (Player player)
     {
         Player old_last_moving_player = last_moving_player;
 
-        last_moving_player = p == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT;
+        last_moving_player = player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT;
 
         bool player_wins = false;
         uint8 i;
@@ -359,7 +359,7 @@ private class DecisionTree
             if (!move (i))
                 continue;
 
-            player_wins = victory (i);
+            player_wins = victory (last_moving_player, i, ref board);
             unmove (i);
 
             if (player_wins)
@@ -377,7 +377,7 @@ private class DecisionTree
     \*/
 
     /* The evaluation function to be called when we have reached the maximum depth in the DecisionTree */
-    private int16 heurist ()
+    private inline int16 heurist ()
     {
         switch (level)
         {
@@ -388,7 +388,7 @@ private class DecisionTree
         }
     }
 
-    private inline int16 heurist_easy ()
+    private int16 heurist_easy ()
     {
         return -1 * heurist_hard ();
     }
@@ -398,7 +398,7 @@ private class DecisionTree
         return (int16) Random.int_range (1, 49);
     }
 
-    private inline int16 heurist_hard ()
+    private int16 heurist_hard ()
     {
         int8 count = count_3_in_a_row (Player.OPPONENT) - count_3_in_a_row (Player.HUMAN);
         return count == 0 ? (int16) Random.int_range (1, 49) : (int16) count * 100;
@@ -406,13 +406,9 @@ private class DecisionTree
 
     /* Count the number of threes in a row for Player P. It counts all those 3
        which have an empty cell in the vicinity to make it four in a row. */
-    private int8 count_3_in_a_row (Player p)
+    private int8 count_3_in_a_row (Player player)
     {
         int8 count = 0;
-
-        Player old_last_moving_player = last_moving_player;
-
-        last_moving_player = p;
 
         for (uint8 j = 0; j < BOARD_COLUMNS; j++)
         {
@@ -424,9 +420,9 @@ private class DecisionTree
                 if (all_adjacent_empty (i, j, ref board))
                     continue;
 
-                board [i, j] = p;
+                board [i, j] = player;
 
-                if (victory (j))
+                if (victory (player, j, ref board))
                 {
                     if (count < int8.MAX)
                         count++;
@@ -437,7 +433,6 @@ private class DecisionTree
                 board [i, j] = Player.NOBODY;
             }
         }
-        last_moving_player = old_last_moving_player;
         return count;
     }
 
