@@ -79,7 +79,7 @@ private static inline void test_forward_diagonal_win ()
 /* Tests if the AI makes moves so as to take up immediate backward diagonal wins.*/
 private static inline void test_backward_diagonal_win ()
 {
-    assert_true (playgame ("5422327343142110") == 0);    // TODO no "a"?
+    assert_true (playgame ("a5422327343142110") == 0);
     assert_true (playgame ("a1415113315143220") == 1);
     assert_true (playgame ("a547323452213345110") == 0);
     assert_true (playgame ("a4256424426621271412117175776343330") == 2);

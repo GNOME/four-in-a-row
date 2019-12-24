@@ -406,11 +406,12 @@ private class DecisionTree
             level = Difficulty.MEDIUM;
             plies = 7;
         }
-        else // TODO if (vstr [0] == 'c') / else assert_not_reached ();
+        else if (vstr [0] == 'c')
         {
             level = Difficulty.HARD;
             plies = 7;
         }
+        else assert_not_reached ();
     }
 
     /* utility function for testing purposes */
