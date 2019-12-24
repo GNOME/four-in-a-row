@@ -28,12 +28,15 @@ private uint8 playgame (string moves_until_now)
 
 private class DecisionTree
 {
-    /* Here NEG_INF is supposed to be the lowest possible int value. int.MIN
-    MAX_HEURIST_VALUE is the maximum value that the heuristic functions can return.
-    It is returned when AI wins. -1*MAX_HEURIST_VALUE is returned when Human wins
-    MAX_HEURIST_VALUE < NEG_INF/plies */
-    private const int NEG_INF = -100000;
-    private const int MAX_HEURIST_VALUE = 10000;
+    /* Here NEGATIVE_INFINITY is supposed to be the lowest possible value.
+       Do not forget int16.MIN ≠ - int16.MAX. */
+    private const int16 POSITIVE_INFINITY           =  32000;
+    private const int16 NEGATIVE_INFINITY           = -32000;
+    private const int16 LESS_THAN_NEGATIVE_INFINITY = -32001;
+    /* MAX_HEURIST_VALUE is the maximum value that the heuristic functions can return.
+       It is returned when AI wins, and -1 * MAX_HEURIST_VALUE is returned when Human wins.
+       MAX_HEURIST_VALUE < NEGATIVE_INFINITY/plies, as we balance results depending on depth */
+    private const int16 MAX_HEURIST_VALUE           =   3200;
 
     /* to mantain the status of the board, to be used by the heuristic function, the top left cell is [0, 0] */
     private Player [,] board = new Player [BOARD_ROWS, BOARD_COLUMNS];
@@ -68,7 +71,7 @@ private class DecisionTree
 
     /* Recursively implements a negamax tree in memory with alpha-beta pruning. The function is first called for the root node.
        It returns the value of the current node. For nodes at height == 0, the value is determined by a heuristic function. */
-    private int negamax (uint8 height, int alpha, int beta)
+    private int16 negamax (uint8 height, int16 alpha, int16 beta)
     {
         /* base case of recursive function, returns if we have reached the lowest depth of DecisionTree or the board if full */
         if (height == 0 || board_full ())
@@ -82,8 +85,9 @@ private class DecisionTree
         }
 
         /* Local variable that stores the maximum value returned by the node's children so far.
-           None of the children have returned anything so far. Hence, it is initialized with NEG_INF. */
-        int max = NEG_INF;
+           None of the children have returned anything so far, so initialize with minimal "NaN" value.
+           The worst return value here is MAX_HEURIST_VALUE*plies, so never NEGATIVE_INFINITY anyway. */
+        int16 max = LESS_THAN_NEGATIVE_INFINITY;
 
         /* Local variable that stores the column number in which next move is to be made.
            Initialized with -1 because we do not know the column number yet. */
@@ -98,7 +102,7 @@ private class DecisionTree
             /* victory() checks if making a move in the i'th column results in a victory for last_moving_player.
                If so, multiply MAX_HEURIST_VALUE by a height factor to avoid closer threats first.
                Or, we need to go further down the negamax tree. */
-            int temp = victory (column) ? MAX_HEURIST_VALUE * height : -1 * negamax (height - 1, -1 * beta, -1 * alpha);
+            int16 temp = victory (column) ? MAX_HEURIST_VALUE * height : -1 * negamax (height - 1, -1 * beta, -1 * alpha);
 
             unmove (column);
 
@@ -298,37 +302,38 @@ private class DecisionTree
             return temp;
 
         /* call negamax tree on the current state of the board */
-        negamax (plies, NEG_INF, -1 * NEG_INF);
+        negamax (plies, NEGATIVE_INFINITY, POSITIVE_INFINITY);
 
         /* return the column number in which next move should be made */
         return next_move_in_column;
     }
 
     /* The evaluation function to be called when we have reached the maximum depth in the DecisionTree */
-    private int heurist ()
+    private int16 heurist ()
     {
-        if (level == Difficulty.EASY)
-            return heurist_easy ();
-        else if (level == Difficulty.MEDIUM)
-            return heurist_medium ();
-        else
-            return heurist_hard ();
+        switch (level)
+        {
+            case Difficulty.EASY  : return heurist_easy ();
+            case Difficulty.MEDIUM: return heurist_medium ();
+            case Difficulty.HARD  : return heurist_hard ();
+            default: assert_not_reached ();
+        }
     }
 
-    private int heurist_easy ()
+    private int16 heurist_easy ()
     {
         return -1 * heurist_hard ();
     }
 
-    private int heurist_medium ()
+    private int16 heurist_medium ()
     {
-        return Random.int_range (1, 49);
+        return (int16) Random.int_range (1, 49);
     }
 
-    private int heurist_hard ()
+    private int16 heurist_hard ()
     {
         int8 count = count_3_in_a_row (Player.OPPONENT) - count_3_in_a_row (Player.HUMAN);
-        return count == 0 ? (int) Random.int_range (1, 49) : (int) count * 100;
+        return count == 0 ? (int16) Random.int_range (1, 49) : (int16) count * 100;
     }
 
     /* Count the number of threes in a row for Player P. It counts all those 3
@@ -422,7 +427,7 @@ private class DecisionTree
         if (temp < BOARD_COLUMNS)
             return temp;
 
-        negamax (plies, NEG_INF, -1 * NEG_INF);
+        negamax (plies, NEGATIVE_INFINITY, POSITIVE_INFINITY);
 
         return next_move_in_column;
     }
