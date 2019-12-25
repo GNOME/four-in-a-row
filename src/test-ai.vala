@@ -52,99 +52,99 @@ private int main (string [] args)
 private static inline void test_horizontal_win ()
 {
     /*In the first statement below, the AI has made moves into the 1st, 2nd and 3rd columns. To win, AI must move in the 4th column.*/
-    assert_true (playgame ("a1727370") == 3);
-    assert_true (playgame ("a7315651311324420") == 5);
-    assert_true (playgame ("a232225657223561611133440") == 3);
-    assert_true (playgame ("a242215322574255543341746677453337710") == 0);
+    assert_true (AI.playgame ("a1727370") == 3);
+    assert_true (AI.playgame ("a7315651311324420") == 5);
+    assert_true (AI.playgame ("a232225657223561611133440") == 3);
+    assert_true (AI.playgame ("a242215322574255543341746677453337710") == 0);
 }
 
 /* Tests if the AI makes moves so as to take up immediate vertical wins.*/
 private static inline void test_vertical_win ()
 {
-    assert_true (playgame ("a1213140") == 0);
-    assert_true (playgame ("a14456535526613130") == 0);
-    assert_true (playgame ("a432334277752576710") == 6);
-    assert_true (playgame ("a547477454544323321712116260") == 1);
+    assert_true (AI.playgame ("a1213140") == 0);
+    assert_true (AI.playgame ("a14456535526613130") == 0);
+    assert_true (AI.playgame ("a432334277752576710") == 6);
+    assert_true (AI.playgame ("a547477454544323321712116260") == 1);
 }
 
 /* Tests if the AI makes moves so as to take up immediate forward diagonal wins.*/
 private static inline void test_forward_diagonal_win ()
 {
-    assert_true (playgame ("a54221164712446211622157570") == 6);
-    assert_true (playgame ("a4256424426621271412117175776343330") == 2);
-    assert_true (playgame ("a132565522322662666775443351131113540") == 3);
-    assert_true (playgame ("a4571311334541225544112245262577767733360") == 5);
+    assert_true (AI.playgame ("a54221164712446211622157570") == 6);
+    assert_true (AI.playgame ("a4256424426621271412117175776343330") == 2);
+    assert_true (AI.playgame ("a132565522322662666775443351131113540") == 3);
+    assert_true (AI.playgame ("a4571311334541225544112245262577767733360") == 5);
 }
 
 /* Tests if the AI makes moves so as to take up immediate backward diagonal wins.*/
 private static inline void test_backward_diagonal_win ()
 {
-    assert_true (playgame ("a5422327343142110") == 0);
-    assert_true (playgame ("a1415113315143220") == 1);
-    assert_true (playgame ("a547323452213345110") == 0);
-    assert_true (playgame ("a4256424426621271412117175776343330") == 2);
+    assert_true (AI.playgame ("a5422327343142110") == 0);
+    assert_true (AI.playgame ("a1415113315143220") == 1);
+    assert_true (AI.playgame ("a547323452213345110") == 0);
+    assert_true (AI.playgame ("a4256424426621271412117175776343330") == 2);
 }
 
 /* Tests if the AI makes moves which prevents HUMAN from taking immediate vertical victories. Consider that a HUMAN has 3 balls in the
    first column. The AI's next move should be in the 1st column or else, HUMAN will claim victory on his next turn.*/
 private static inline void test_avoid_vertical_loss ()
 {
-    assert_true (playgame ("a42563117273430") == 2);
-    assert_true (playgame ("a3642571541322340") == 3);
-    assert_true (playgame ("a144566264475171137750") == 4);
-    assert_true (playgame ("a54747745454432332171210") == 0);
+    assert_true (AI.playgame ("a42563117273430") == 2);
+    assert_true (AI.playgame ("a3642571541322340") == 3);
+    assert_true (AI.playgame ("a144566264475171137750") == 4);
+    assert_true (AI.playgame ("a54747745454432332171210") == 0);
 }
 
 /* Tests if the AI makes moves which prevents HUMAN from taking immediate forward diagonal victories*/
 private static inline void test_avoid_forward_diagonal_loss ()
 {
-    assert_true (playgame ("a34256477331566570") == 6);
-    assert_true (playgame ("a1445662644751711370") == 6);
-    assert_true (playgame ("a43442235372115113340") == 3);
-    assert_true (playgame ("a4143525567766443543125411170") == 6);
+    assert_true (AI.playgame ("a34256477331566570") == 6);
+    assert_true (AI.playgame ("a1445662644751711370") == 6);
+    assert_true (AI.playgame ("a43442235372115113340") == 3);
+    assert_true (AI.playgame ("a4143525567766443543125411170") == 6);
 }
 
 /* Tests if the AI makes moves which prevents HUMAN from taking immediate backward diagonal victories*/
 private static inline void test_avoid_backward_diagonal_loss ()
 {
-    assert_true (playgame ("a47465234222530") == 2);
-    assert_true (playgame ("a4344223537211510") == 0);
-    assert_true (playgame ("a4141311525513520") == 1);
-    assert_true (playgame ("a1445662644751711377553330") == 2);
+    assert_true (AI.playgame ("a47465234222530") == 2);
+    assert_true (AI.playgame ("a4344223537211510") == 0);
+    assert_true (AI.playgame ("a4141311525513520") == 1);
+    assert_true (AI.playgame ("a1445662644751711377553330") == 2);
 
 }
 
 /* Tests if the AI makes moves which prevents HUMAN from taking immediate horizontal victories*/
 private static inline void test_avoid_horizontal_loss ()
 {
-    assert_true (playgame ("a445360") == 6);
-    assert_true (playgame ("a745534131117114777720") == 1);
-    assert_true (playgame ("a243466431217112323350") == 4);
-    assert_true (playgame ("a24147356465355111336631615240") == 3);
+    assert_true (AI.playgame ("a445360") == 6);
+    assert_true (AI.playgame ("a745534131117114777720") == 1);
+    assert_true (AI.playgame ("a243466431217112323350") == 4);
+    assert_true (AI.playgame ("a24147356465355111336631615240") == 3);
 }
 
 /* Tests if AI can detect full boards, and thus draw games. */
 private static inline void test_draw ()
 {
-    assert_true (playgame ("a1311313113652226667224247766737374455445550") == uint8.MAX);
-    assert_true (playgame ("a6121151135432322433425566474425617635677770") == uint8.MAX);
-    assert_true (playgame ("a4226111412113275256335534443264375577676670") == uint8.MAX);
-    assert_true (playgame ("a4212116575717754775221133434432366655342660") == uint8.MAX);
+    assert_true (AI.playgame ("a1311313113652226667224247766737374455445550") == uint8.MAX);
+    assert_true (AI.playgame ("a6121151135432322433425566474425617635677770") == uint8.MAX);
+    assert_true (AI.playgame ("a4226111412113275256335534443264375577676670") == uint8.MAX);
+    assert_true (AI.playgame ("a4212116575717754775221133434432366655342660") == uint8.MAX);
 }
 
 /* Tests if AI makes valid moves, i.e., between column 1 and column 7. */
 private static inline void test_random ()
 {
-    uint8 x = playgame ("a443256214350");
+    uint8 x = AI.playgame ("a443256214350");
     assert_true (x <= 6);
 
-    x = playgame ("a241473564653551113366316150");
+    x = AI.playgame ("a241473564653551113366316150");
     assert_true (x <= 6);
 
-    x = playgame ("a24357315461711177416622623350");
+    x = AI.playgame ("a24357315461711177416622623350");
     assert_true (x <= 6);
 
-    x = playgame ("a1445662644751711377553333665775446110");
+    x = AI.playgame ("a1445662644751711377553333665775446110");
     assert_true (x <= 6);
 }
 
@@ -165,8 +165,7 @@ private static inline uint8 test_ai_vs_ai (string easier, string harder)
 
         while (true)
         {
-            DecisionTree t = new DecisionTree ();
-            uint8 move = t.playandcheck (e.str);
+            uint8 move = AI.playandcheck (e.str);
             if (move == uint8.MAX)
             {
                 draw++;
@@ -182,8 +181,7 @@ private static inline uint8 test_ai_vs_ai (string easier, string harder)
             e.insert (e.str.length - 1, (move + 1).to_string ());
             m.insert (m.str.length - 1, (move + 1).to_string ());
 
-            DecisionTree d = new DecisionTree ();
-            move = d.playandcheck (m.str);
+            move = AI.playandcheck (m.str);
 
             if (move == uint8.MAX)
             {

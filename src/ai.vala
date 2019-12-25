@@ -18,16 +18,10 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-private enum Difficulty { EASY, MEDIUM, HARD; }
-
-private uint8 playgame (string moves_until_now)
+namespace AI
 {
-    DecisionTree t = new DecisionTree ();
-    return t.playgame (moves_until_now);
-}
+    private enum Difficulty { EASY, MEDIUM, HARD; }
 
-private class DecisionTree
-{
     /* Here NEGATIVE_INFINITY is supposed to be the lowest possible value.
        Do not forget int16.MIN ≠ - int16.MAX. */
     private const int16 POSITIVE_INFINITY           =  32000;
@@ -40,28 +34,16 @@ private class DecisionTree
     /* Use plies [level]; EASY/MEDIUM/HARD */
     private const uint8 [] plies = { 4, 7, 7 };
 
-    /* to mantain the status of the board, to be used by the heuristic function, the top left cell is [0, 0] */
-    private Player [,] board;
-    /* next_move_in_column - stores the column number in which next move is to be made */
-    private uint8 next_move_in_column;
-    /* stores the difficulty level of the game */
-    private Difficulty level;
-
-    /* Initializes an empty board */
-    internal DecisionTree ()
-    {
-        // sanity init from a string without any move (and with level easy)
-        init_from_string ("a", out level, out next_move_in_column, out board);
-    }
-
     /*\
     * * internal methods
     \*/
 
     /* returns the column number in which the next move has to be made. Returns uint8.MAX if the board is full. */
-    internal uint8 playgame (string vstr)
+    internal static uint8 playgame (string vstr)
     {
-        init_from_string (vstr, out level, out next_move_in_column, out board);
+        Difficulty level;
+        Player [,] board;
+        init_from_string (vstr, out level, out board);
 
         /* if AI can win by making a move immediately, make that move */
         uint8 temp = immediate_win (Player.OPPONENT, ref board);
@@ -75,16 +57,19 @@ private class DecisionTree
             return temp;
 
         /* call negamax tree on the current state of the board */
-        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT);
+        uint8 next_move_in_column = uint8.MAX;
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT, level, ref board, ref next_move_in_column);
 
         /* return the column number in which next move should be made */
         return next_move_in_column;
     }
 
     /* utility function for testing purposes */
-    internal uint8 playandcheck (string vstr)
+    internal static uint8 playandcheck (string vstr)
     {
-        init_from_string (vstr, out level, out next_move_in_column, out board);
+        Difficulty level;
+        Player [,] board;
+        init_from_string (vstr, out level, out board);
 
         uint8 temp = immediate_win (Player.OPPONENT, ref board);
         if (temp < BOARD_COLUMNS)
@@ -94,21 +79,11 @@ private class DecisionTree
         if (temp < BOARD_COLUMNS)
             return temp;
 
-        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT);
+        /* call negamax tree on the current state of the board */
+        uint8 next_move_in_column = uint8.MAX;
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT, level, ref board, ref next_move_in_column);
 
         return next_move_in_column;
-    }
-
-    /* utility function for debugging purposes, prints a snapshot of current status of the board */
-    internal void print_board ()
-    {
-        for (uint8 i = 0; i < BOARD_ROWS; i++)
-        {
-            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
-                stdout.printf ("%d\t", board [i, j]);
-            stdout.printf ("\n");
-        }
-        stdout.printf ("\n");
     }
 
     /*\
@@ -118,11 +93,9 @@ private class DecisionTree
     /* vstr is the sequence of moves made until now;  */
     private static void init_from_string (string        vstr,
                                       out Difficulty    level,
-                                      out uint8         next_move_in_column,
                                       out Player [,]    board)
     {
         set_level (vstr, out level);
-        next_move_in_column = uint8.MAX;
 
         /* empty board */
         board = new Player [BOARD_ROWS, BOARD_COLUMNS];
@@ -173,7 +146,7 @@ private class DecisionTree
 
     /* Recursively implements a negamax tree in memory with alpha-beta pruning. The function is first called for the root node.
        It returns the value of the current node. For nodes at height == 0, the value is determined by a heuristic function. */
-    private int16 negamax (uint8 height, int16 alpha, int16 beta, Player player)
+    private static int16 negamax (uint8 height, int16 alpha, int16 beta, Player player, Difficulty level, ref Player [,] board, ref uint8 next_move_in_column)
     {
         /* base case of recursive function, returns if we have reached the lowest depth of DecisionTree or the board if full */
         if (height == 0 || board_full (ref board))
@@ -192,7 +165,7 @@ private class DecisionTree
         int16 max = LESS_THAN_NEGATIVE_INFINITY;
 
         /* Local variable that stores the column number in which next move is to be made.
-           Initialized with -1 because we do not know the column number yet. */
+           Initialized with uint8.MAX because we do not know the column number yet. */
         uint8 next = uint8.MAX;
 
         for (uint8 column = 0; column < BOARD_COLUMNS; column++)
@@ -204,7 +177,7 @@ private class DecisionTree
                If so, multiply MAX_HEURIST_VALUE by a height factor to avoid closer threats first.
                Or, we need to go further down the negamax tree. */
             int16 temp = victory (player, column, ref board) ? MAX_HEURIST_VALUE * height
-                                                             : -1 * negamax (height - 1, -1 * beta, -1 * alpha, player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT);
+                                                             : -1 * negamax (height - 1, -1 * beta, -1 * alpha, player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT, level, ref board, ref next_move_in_column);
 
             unmove (column, ref board);
 
@@ -221,7 +194,7 @@ private class DecisionTree
                 break;
         }
 
-        /* If it's the root node, asign the value of next to next_move_in_column */
+        /* hackish: if it's the root node, return the value of the column where to play */
         if (height == plies [level])
             next_move_in_column = next;
 
@@ -349,6 +322,18 @@ private class DecisionTree
         /* returns uint8.MAX if no immediate win for Player p */
         return uint8.MAX;
     }
+
+    /* utility function for debugging purposes, prints a snapshot of current status of the board */
+//    private static void print_board (ref Player [,] board)
+//    {
+//        for (uint8 i = 0; i < BOARD_ROWS; i++)
+//        {
+//            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
+//                stdout.printf ("%d\t", board [i, j]);
+//            stdout.printf ("\n");
+//        }
+//        stdout.printf ("\n");
+//    }
 
     /*\
     * * heuristics
