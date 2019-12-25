@@ -20,8 +20,6 @@
 
 namespace AI
 {
-    private enum Difficulty { EASY, MEDIUM, HARD; }
-
     /* Here NEGATIVE_INFINITY is supposed to be the lowest possible value.
        Do not forget int16.MIN ≠ - int16.MAX. */
     private const int16 POSITIVE_INFINITY           =  32000;
@@ -39,11 +37,10 @@ namespace AI
     \*/
 
     /* returns the column number in which the next move has to be made. Returns uint8.MAX if the board is full. */
-    internal static uint8 playgame (string vstr)
+    internal static uint8 playgame (Difficulty level, string vstr)
     {
-        Difficulty level;
         Player [,] board;
-        init_from_string (vstr, out level, out board);
+        init_board_from_string (vstr, out board);
 
         /* if AI can win by making a move immediately, make that move */
         uint8 temp = immediate_win (Player.OPPONENT, ref board);
@@ -65,11 +62,10 @@ namespace AI
     }
 
     /* utility function for testing purposes */
-    internal static uint8 playandcheck (string vstr)
+    internal static uint8 playandcheck (Difficulty level, string vstr)
     {
-        Difficulty level;
         Player [,] board;
-        init_from_string (vstr, out level, out board);
+        init_board_from_string (vstr, out board);
 
         uint8 temp = immediate_win (Player.OPPONENT, ref board);
         if (temp < BOARD_COLUMNS)
@@ -91,12 +87,8 @@ namespace AI
     \*/
 
     /* vstr is the sequence of moves made until now;  */
-    private static void init_from_string (string        vstr,
-                                      out Difficulty    level,
-                                      out Player [,]    board)
+    private static void init_board_from_string (string vstr, out Player [,] board)
     {
-        set_level (vstr, out level);
-
         /* empty board */
         board = new Player [BOARD_ROWS, BOARD_COLUMNS];
         for (uint8 i = 0; i < BOARD_ROWS; i++)
@@ -104,29 +96,18 @@ namespace AI
                 board [i, j] = Player.NOBODY;
 
         /* AI will make the first move */
-        if (vstr.length == 2)
+        if (vstr.length == 1)
             return;
 
         /* update board from current string */
         update_board (vstr, ref board);
     }
 
-    private static inline void set_level (string vstr, out Difficulty level)
-    {
-        switch (vstr [0])
-        {
-            case 'a': level = Difficulty.EASY;   return;
-            case 'b': level = Difficulty.MEDIUM; return;
-            case 'c': level = Difficulty.HARD;   return;
-            default : assert_not_reached ();
-        }
-    }
-
     private static inline void update_board (string vstr, ref Player [,] board)
     {
-        Player move = vstr.length % 2 == 0 ? Player.OPPONENT : Player.HUMAN;
+        Player move = vstr.length % 2 == 0 ? Player.HUMAN : Player.OPPONENT;
 
-        for (uint8 i = 1; i < vstr.length - 1; i++)
+        for (uint8 i = 0; i < vstr.length - 1; i++)
         {
             uint8 column = (uint8) int.parse (vstr [i].to_string ()) - 1;
 

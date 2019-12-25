@@ -30,3 +30,10 @@ private enum Player
     HUMAN,
     OPPONENT;
 }
+
+private enum Difficulty
+{
+    EASY,
+    MEDIUM,
+    HARD;
+}

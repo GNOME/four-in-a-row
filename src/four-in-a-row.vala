@@ -27,11 +27,9 @@ private class FourInARow : Gtk.Application
 
     /* Translators: application name, as used in the window manager, the window title, the about dialog... */
     private const string PROGRAM_NAME = _("Four-in-a-row");
-    private const uint8 SIZE_VSTR = 53;
     private const uint SPEED_BLINK = 150;
     private const uint SPEED_MOVE = 35;
     private const uint SPEED_DROP = 20;
-    private const char vlevel [] = { '0','a','b','c' };
     private const uint COMPUTER_INITIAL_DELAY = 1200;
     private const uint COMPUTER_MOVE_DELAY = 600;
 
@@ -50,7 +48,7 @@ private class FourInARow : Gtk.Application
     private Player last_first_player = Player.NOBODY;
     private Board game_board = new Board ();
     private bool one_player_game;
-    private uint8 ai_level;
+    private Difficulty ai_level;
     /**
      * score:
      *
@@ -68,7 +66,7 @@ private class FourInARow : Gtk.Application
     private MenuButton history_button_2;
 
     // game state
-    private char vstr [/* SIZE_VSTR */ 53];
+    private char [] vstr;
     private uint8 moves;
     private uint8 column;
     private uint8 column_moveto;
@@ -115,11 +113,15 @@ private class FourInARow : Gtk.Application
         return new FourInARow ().run (args);
     }
 
+    construct
+    {
+        vstr = new char [BOARD_ROWS * BOARD_COLUMNS + /* last chars are '0' and '\0', for something and for casting as string */ 2];
+        clear_board ();
+    }
+
     private FourInARow ()
     {
         Object (application_id: "org.gnome.Four-in-a-row", flags: ApplicationFlags.FLAGS_NONE);
-
-        clear_board ();
     }
 
     protected override void startup ()
@@ -331,7 +333,13 @@ private class FourInARow : Gtk.Application
                 player = settings.get_string ("first-player") == "computer" ? Player.OPPONENT : Player.HUMAN;
                 // we keep inverting that, because it would be surprising that all people use the "next round" thing
                 settings.set_string ("first-player", player == Player.HUMAN ? "computer" : "human");
-                ai_level = (uint8) settings.get_int ("opponent");
+                switch (settings.get_int ("opponent"))
+                {
+                    case 1 : ai_level = Difficulty.EASY;    break;
+                    case 2 : ai_level = Difficulty.MEDIUM;  break;
+                    case 3 : ai_level = Difficulty.HARD;    break;
+                    default: assert_not_reached ();
+                }
             }
             else
                 switch_players ();
@@ -353,9 +361,8 @@ private class FourInARow : Gtk.Application
         prompt_player ();
         if (!is_player_human ())
         {
-            vstr [0] = vlevel [ai_level];
             playgame_timeout = Timeout.add (COMPUTER_INITIAL_DELAY, () => {
-                    uint8 c = AI.playgame ((string) vstr);
+                    uint8 c = AI.playgame (ai_level, (string) vstr);
                     if (c >= BOARD_COLUMNS) // c could be uint8.MAX if board is full
                         return Source.REMOVE;
                     process_move ((uint8) c);
@@ -498,8 +505,9 @@ private class FourInARow : Gtk.Application
     {
         play_sound (SoundID.DROP);
 
-        vstr [++moves] = '1' + (char) c;
-        vstr [moves + 1] = '0';
+        vstr [moves] = (char) c /* string indicates columns between 1 and BOARD_COLUMNS */ + '1';
+        moves++;
+        vstr [moves] = '0';
 
         check_game_state ();
 
@@ -517,8 +525,7 @@ private class FourInARow : Gtk.Application
             if (!is_player_human ())
             {
                 playgame_timeout = Timeout.add (COMPUTER_MOVE_DELAY, () => {
-                        vstr [0] = vlevel [ai_level];
-                        uint8 col = AI.playgame ((string) vstr);
+                        uint8 col = AI.playgame (ai_level, (string) vstr);
                         if (col >= BOARD_COLUMNS)   // c could be uint8.MAX if the board is full
                             set_gameover (true);
                         var nm = new NextMove ((uint8) col, this);
@@ -652,13 +659,11 @@ private class FourInARow : Gtk.Application
     private void clear_board ()
     {
         game_board.clear ();
-
-        for (uint8 i = 0; i < SIZE_VSTR; i++)
-            vstr [i] = '\0';
-
-        vstr [0] = vlevel [/* weak */ 1];
-        vstr [1] = '0';
         moves = 0;
+
+        vstr [0] = '0';
+        for (uint8 i = 1; i < BOARD_ROWS * BOARD_COLUMNS + 2; i++)
+            vstr [i] = '\0';
     }
 
     private inline void blink_tile (uint8 row, uint8 col, Player tile, uint8 n)
@@ -779,8 +784,7 @@ private class FourInARow : Gtk.Application
         /* Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested */
         set_status_message (_("I’m Thinking…"));
 
-        vstr [0] = vlevel [/* strong */ 3];
-        uint8 c = AI.playgame ((string) vstr);
+        uint8 c = AI.playgame (Difficulty.HARD, (string) vstr);
         if (c >= BOARD_COLUMNS)
             assert_not_reached ();  // c could be uint8.MAX if the board if full
 
@@ -807,11 +811,11 @@ private class FourInARow : Gtk.Application
         if (timeout != 0)
             return;
 
-        uint8 c = vstr [moves] - '0' - 1;
+        moves--;
+        uint8 c = vstr [moves] - '0' /* string indicates columns between 1 and BOARD_COLUMNS */ - 1;
         uint8 r = game_board.first_empty_row (c) + 1;
         vstr [moves] = '0';
         vstr [moves + 1] = '\0';
-        moves--;
 
         if (gameover)
         {
@@ -831,11 +835,11 @@ private class FourInARow : Gtk.Application
          && !is_player_human ()
          && moves > 0)
         {
-            c = vstr [moves] - '0' - 1;
+            moves--;
+            c = vstr [moves] - '0' /* string indicates columns between 1 and BOARD_COLUMNS */ - 1;
             r = game_board.first_empty_row (c) + 1;
             vstr [moves] = '0';
             vstr [moves + 1] = '\0';
-            moves--;
             swap_player ();
             move_cursor (c);
             game_board [r, c] = Player.NOBODY;
