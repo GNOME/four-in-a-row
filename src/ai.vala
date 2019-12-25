@@ -96,7 +96,7 @@ namespace AI
                 board [i, j] = Player.NOBODY;
 
         /* AI will make the first move */
-        if (vstr.length == 1)
+        if (vstr == "")
             return;
 
         /* update board from current string */
@@ -105,9 +105,9 @@ namespace AI
 
     private static inline void update_board (string vstr, ref Player [,] board)
     {
-        Player move = vstr.length % 2 == 0 ? Player.HUMAN : Player.OPPONENT;
+        Player move = vstr.length % 2 == 0 ? Player.OPPONENT : Player.HUMAN;
 
-        for (uint8 i = 0; i < vstr.length - 1; i++)
+        for (uint8 i = 0; i < vstr.length; i++)
         {
             uint8 column = (uint8) int.parse (vstr [i].to_string ()) - 1;
 
