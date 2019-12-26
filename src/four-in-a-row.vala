@@ -89,6 +89,13 @@ private class FourInARow : Gtk.Application
     [CCode (notify = false)] internal bool  sound_on        { private get; internal set; }
     private uint8 theme_id;
 
+    private const OptionEntry [] option_entries =
+    {
+        /* Translators: command-line option description, see 'four-in-a-row --help' */
+        { "version", 'v', OptionFlags.NONE, OptionArg.NONE, null, N_("Print release version and exit"), null },
+        {}
+    };
+
     private const GLib.ActionEntry app_entries [] =  // see also add_actions()
     {
         { "game-type",      null,           "s", "'dark'", change_game_type },
@@ -121,6 +128,21 @@ private class FourInARow : Gtk.Application
     private FourInARow ()
     {
         Object (application_id: "org.gnome.Four-in-a-row", flags: ApplicationFlags.FLAGS_NONE);
+
+        add_main_option_entries (option_entries);
+    }
+
+    protected override int handle_local_options (GLib.VariantDict options)
+    {
+        if (options.contains ("version"))
+        {
+            /* NOTE: Is not translated so can be easily parsed */
+            stdout.printf ("%1$s %2$s\n", "four-in-a-row", VERSION);
+            return Posix.EXIT_SUCCESS;
+        }
+
+        /* Activate */
+        return -1;
     }
 
     protected override void startup ()

@@ -41,6 +41,7 @@ executable(
         glib_dependency,
         gsound_dependency,
         gtk_dependency,
+        posix_dependency,
         rsvg_dependency
     ],
     c_args: [

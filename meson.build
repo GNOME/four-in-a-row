@@ -15,11 +15,14 @@ python3 = import('python3')
 
 application_id = 'org.gnome.Four-in-a-row'
 
-gio_dependency = dependency('gio-2.0', version: '>= 2.40.0')
-glib_dependency = dependency('glib-2.0', version: '>= 2.40.0')
-gsound_dependency = dependency('gsound', version: '>= 1.0.2')
-gtk_dependency = dependency('gtk+-3.0', version: '>= 3.13.2')
-rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.32.0')
+valac = meson.get_compiler('vala')
+
+gio_dependency      = dependency('gio-2.0',     version: '>= 2.40.0')
+glib_dependency     = dependency('glib-2.0',    version: '>= 2.40.0')
+gsound_dependency   = dependency('gsound',      version: '>= 1.0.2')
+gtk_dependency      = dependency('gtk+-3.0',    version: '>= 3.13.2')
+posix_dependency    = valac.find_library('posix')
+rsvg_dependency     = dependency('librsvg-2.0', version: '>= 2.32.0')
 
 appstream_util          = find_program('appstream-util',        required: false)
 desktop_file_validate   = find_program('desktop-file-validate', required: false)
