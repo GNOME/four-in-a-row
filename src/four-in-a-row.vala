@@ -347,8 +347,8 @@ private class FourInARow : Gtk.Application
             switch_players ();
 
         winner = NOBODY;
-        column = 3;
-        column_moveto = 3;
+        column = (BOARD_COLUMNS % 2 == 0 && get_locale_direction () == TextDirection.RTL) ? BOARD_COLUMNS / 2 - 1 : BOARD_COLUMNS / 2;
+        column_moveto = column;
         row = 0;
         row_dropto = 0;
 
