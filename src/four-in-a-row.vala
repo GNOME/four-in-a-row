@@ -364,7 +364,7 @@ private class FourInARow : Gtk.Application
                     uint8 c = AI.playgame (ai_level, vstr);
                     if (c >= BOARD_COLUMNS) // c could be uint8.MAX if board is full
                         return Source.REMOVE;
-                    process_move ((uint8) c);
+                    process_move (c);
                     playgame_timeout = 0;
                     return Source.REMOVE;
                 });
@@ -526,7 +526,7 @@ private class FourInARow : Gtk.Application
                         uint8 col = AI.playgame (ai_level, vstr);
                         if (col >= BOARD_COLUMNS)   // c could be uint8.MAX if the board is full
                             set_gameover (true);
-                        var nm = new NextMove ((uint8) col, this);
+                        var nm = new NextMove (col, this);
                         Timeout.add (SPEED_DROP, nm.exec);
                         playgame_timeout = 0;
                         return Source.REMOVE;
