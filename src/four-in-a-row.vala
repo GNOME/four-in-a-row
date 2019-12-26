@@ -89,10 +89,17 @@ private class FourInARow : Gtk.Application
     [CCode (notify = false)] internal bool  sound_on        { private get; internal set; }
     private uint8 theme_id;
 
+    private static string? level = null;
     private static bool? sound = null;
 
     private const OptionEntry [] option_entries =
     {
+        /* Translators: command-line option description, see 'four-in-a-row --help' */
+        { "level", 'l', OptionFlags.NONE, OptionArg.STRING, ref level,          N_("Set the level of the computer’s AI"),
+
+        /* Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help' */
+                                                                                N_("LEVEL") },
+
         /* Translators: command-line option description, see 'four-in-a-row --help' */
         { "mute", 0, OptionFlags.NONE, OptionArg.NONE, null,                    N_("Turn off the sound"), null },
 
@@ -162,8 +169,38 @@ private class FourInARow : Gtk.Application
     {
         base.startup ();
 
-        if (sound != null)
-            settings.set_boolean ("sound", (!) sound);
+        if ((sound != null) || (level != null))
+        {
+            settings.delay ();
+
+            if (sound != null)
+                settings.set_boolean ("sound", (!) sound);
+
+            if (level != null)
+            {
+                // TODO add a localized text option?
+                switch ((!) level)
+                {
+                    case "1":
+                    case "easy":
+                    case "one":     settings.set_int ("opponent", 1); break;
+
+                    case "2":
+                    case "medium":
+                    case "two":     settings.set_int ("opponent", 2); break;
+
+                    case "3":
+                    case "hard":
+                    case "three":   settings.set_int ("opponent", 3); break;
+
+                    default:
+                        /* Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5' */
+                        stderr.printf ("%s\n", _("Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."));
+                        break;
+                }
+            }
+            settings.apply ();
+        }
 
         if (settings.get_boolean ("sound"))
             init_sound ();
