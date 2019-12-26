@@ -89,10 +89,18 @@ private class FourInARow : Gtk.Application
     [CCode (notify = false)] internal bool  sound_on        { private get; internal set; }
     private uint8 theme_id;
 
+    private static bool? sound = null;
+
     private const OptionEntry [] option_entries =
     {
         /* Translators: command-line option description, see 'four-in-a-row --help' */
-        { "version", 'v', OptionFlags.NONE, OptionArg.NONE, null, N_("Print release version and exit"), null },
+        { "mute", 0, OptionFlags.NONE, OptionArg.NONE, null,                    N_("Turn off the sound"), null },
+
+        /* Translators: command-line option description, see 'four-in-a-row --help' */
+        { "unmute", 0, OptionFlags.NONE, OptionArg.NONE, null,                  N_("Turn on the sound"), null },
+
+        /* Translators: command-line option description, see 'four-in-a-row --help' */
+        { "version", 'v', OptionFlags.NONE, OptionArg.NONE, null,               N_("Print release version and exit"), null },
         {}
     };
 
@@ -141,6 +149,11 @@ private class FourInARow : Gtk.Application
             return Posix.EXIT_SUCCESS;
         }
 
+        if (options.contains ("mute"))
+            sound = false;
+        else if (options.contains ("unmute"))
+            sound = true;
+
         /* Activate */
         return -1;
     }
@@ -148,6 +161,12 @@ private class FourInARow : Gtk.Application
     protected override void startup ()
     {
         base.startup ();
+
+        if (sound != null)
+            settings.set_boolean ("sound", (!) sound);
+
+        if (settings.get_boolean ("sound"))
+            init_sound ();
 
         settings.bind ("key-drop",  this, "keypress-drop",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
         settings.bind ("key-right", this, "keypress-right", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
