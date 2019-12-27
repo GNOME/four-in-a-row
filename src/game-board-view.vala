@@ -78,8 +78,8 @@ private class GameBoardView : Gtk.DrawingArea
         int allocated_width  = get_allocated_width ();
         int allocated_height = get_allocated_height ();
         int size = int.min (allocated_width, allocated_height);
-        tile_size = size / BOARD_SIZE;
-        board_size = tile_size * BOARD_SIZE;
+        tile_size = size / game_board.size;
+        board_size = tile_size * game_board.size;
         board_x = (allocated_width  - board_size) / 2;
         board_y = (allocated_height - board_size) / 2;
 
@@ -109,8 +109,8 @@ private class GameBoardView : Gtk.DrawingArea
         cr.restore ();
 
         /* tiles */
-        for (uint8 row = 0; row < BOARD_ROWS_PLUS_ONE; row++)
-            for (uint8 col = 0; col < BOARD_COLUMNS; col++)
+        for (uint8 row = 0; row < /* BOARD_ROWS_PLUS_ONE */ game_board.size; row++)
+            for (uint8 col = 0; col < /* BOARD_COLUMNS */ game_board.size; col++)
                 paint_tile (cr, row, col);
 
         /* grid */
@@ -169,7 +169,7 @@ private class GameBoardView : Gtk.DrawingArea
         cr.set_dash (dashes, /* offset */ 0.0);
 
         /* draw the grid on the background pixmap */
-        for (uint8 i = 1; i < BOARD_SIZE; i++)
+        for (uint8 i = 1; i < /* BOARD_SIZE */ game_board.size; i++)
         {
             double line_offset = i * tile_size + 0.5;
             // vertical lines
@@ -253,15 +253,15 @@ private class GameBoardView : Gtk.DrawingArea
     {
         int raw_tile_size = pb_tileset_raw.get_height ();
 
-        pb_bground_raw = new Gdk.Pixbuf (Gdk.Colorspace.RGB, /* alpha */ true, /* bits per sample */ 8, raw_tile_size * BOARD_COLUMNS, raw_tile_size * BOARD_ROWS_PLUS_ONE);
-        for (int i = 0; i < BOARD_COLUMNS; i++)
+        pb_bground_raw = new Gdk.Pixbuf (Gdk.Colorspace.RGB, /* alpha */ true, /* bits per sample */ 8, raw_tile_size * /* BOARD_COLUMNS */ game_board.size, raw_tile_size * /* BOARD_ROWS_PLUS_ONE */ game_board.size);
+        for (int i = 0; i < /* BOARD_COLUMNS */ game_board.size; i++)
         {
             pb_tileset_raw.copy_area (raw_tile_size * 3, 0,
                                       raw_tile_size, raw_tile_size,
                                       pb_bground_raw,
                                       i * raw_tile_size, 0);
 
-            for (int j = 1; j < BOARD_ROWS_PLUS_ONE; j++)
+            for (int j = 1; j < /* BOARD_ROWS_PLUS_ONE */ game_board.size; j++)
                 pb_tileset_raw.copy_area (raw_tile_size * 2, 0,
                                           raw_tile_size, raw_tile_size,
                                           pb_bground_raw,
@@ -303,7 +303,7 @@ private class GameBoardView : Gtk.DrawingArea
     private inline bool get_column (int x, int y, out uint8 col)
     {
         int _col = (x - board_x) / tile_size;
-        if (x < board_x || y < board_y || _col < 0 || _col > BOARD_COLUMNS_MINUS_ONE)
+        if (x < board_x || y < board_y || _col < 0 || _col > /* BOARD_COLUMNS_MINUS_ONE */ game_board.size - 1)
         {
             col = 0;
             return false;
@@ -311,7 +311,7 @@ private class GameBoardView : Gtk.DrawingArea
         col = (uint8) _col;
 
         int row = (y - board_y) / tile_size;
-        if (row < 0 || row > BOARD_ROWS)
+        if (row < 0 || row > /* BOARD_ROWS */ game_board.size - 1)
             return false;
 
         return true;

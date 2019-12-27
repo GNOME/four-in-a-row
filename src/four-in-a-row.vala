@@ -46,7 +46,7 @@ private class FourInARow : Gtk.Application
     private Player player = Player.NOBODY;
     private Player winner = Player.NOBODY;
     private Player last_first_player = Player.NOBODY;
-    private Board game_board = new Board ();
+    private Board game_board;
     private bool one_player_game;
     private Difficulty ai_level;
     /**
@@ -90,6 +90,7 @@ private class FourInARow : Gtk.Application
     private uint8 theme_id;
 
     private static string? level = null;
+    private static int size = 7;
     private static bool? sound = null;
 
     private const OptionEntry [] option_entries =
@@ -102,6 +103,12 @@ private class FourInARow : Gtk.Application
 
         /* Translators: command-line option description, see 'four-in-a-row --help' */
         { "mute", 0, OptionFlags.NONE, OptionArg.NONE, null,                    N_("Turn off the sound"), null },
+
+        /* Translators: command-line option description, see 'four-in-a-row --help' */
+        { "size", 's', OptionFlags.NONE, OptionArg.INT, ref size,               N_("Size of the board"),
+
+        /* Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help' */
+                                                                                N_("SIZE") },
 
         /* Translators: command-line option description, see 'four-in-a-row --help' */
         { "unmute", 0, OptionFlags.NONE, OptionArg.NONE, null,                  N_("Turn on the sound"), null },
@@ -135,11 +142,6 @@ private class FourInARow : Gtk.Application
         return new FourInARow ().run (args);
     }
 
-    construct
-    {
-        clear_board ();
-    }
-
     private FourInARow ()
     {
         Object (application_id: "org.gnome.Four-in-a-row", flags: ApplicationFlags.FLAGS_NONE);
@@ -154,6 +156,19 @@ private class FourInARow : Gtk.Application
             /* NOTE: Is not translated so can be easily parsed */
             stdout.printf ("%1$s %2$s\n", "four-in-a-row", VERSION);
             return Posix.EXIT_SUCCESS;
+        }
+
+        if (size < 4)
+        {
+            /* Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2' */
+            stderr.printf ("%s\n", _("Size must be at least 4."));
+            return Posix.EXIT_FAILURE;
+        }
+        if (size > 16)
+        {
+            /* Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17' */
+            stderr.printf ("%s\n", _("Size must not be more than 16."));
+            return Posix.EXIT_FAILURE;
         }
 
         if (options.contains ("mute"))
@@ -201,6 +216,9 @@ private class FourInARow : Gtk.Application
             }
             settings.apply ();
         }
+
+        game_board = new Board ((uint8) size);
+        clear_board ();
 
         if (settings.get_boolean ("sound"))
             init_sound ();
@@ -425,7 +443,8 @@ private class FourInARow : Gtk.Application
             switch_players ();
 
         winner = NOBODY;
-        column = (BOARD_COLUMNS % 2 == 0 && get_locale_direction () == TextDirection.RTL) ? BOARD_COLUMNS / 2 - 1 : BOARD_COLUMNS / 2;
+        column = (/* BOARD_COLUMNS */ size % 2 == 0 && get_locale_direction () == TextDirection.RTL) ? /* BOARD_COLUMNS */ (uint8) size / 2 - 1
+                                                                                                     : /* BOARD_COLUMNS */ (uint8) size / 2;
         column_moveto = column;
         row = 0;
         row_dropto = 0;
@@ -439,8 +458,8 @@ private class FourInARow : Gtk.Application
         if (!is_player_human ())
         {
             playgame_timeout = Timeout.add (COMPUTER_INITIAL_DELAY, () => {
-                    uint8 c = AI.playgame (ai_level, vstr);
-                    if (c >= BOARD_COLUMNS) // c could be uint8.MAX if board is full
+                    uint8 c = AI.playgame ((uint8) size, ai_level, vstr);
+                    if (c >= /* BOARD_COLUMNS */ size) // c could be uint8.MAX if board is full
                         return Source.REMOVE;
                     process_move (c);
                     playgame_timeout = 0;
@@ -601,8 +620,8 @@ private class FourInARow : Gtk.Application
             if (!is_player_human ())
             {
                 playgame_timeout = Timeout.add (COMPUTER_MOVE_DELAY, () => {
-                        uint8 col = AI.playgame (ai_level, vstr);
-                        if (col >= BOARD_COLUMNS)   // c could be uint8.MAX if the board is full
+                        uint8 col = AI.playgame ((uint8) size, ai_level, vstr);
+                        if (col >= /* BOARD_COLUMNS */ size)   // c could be uint8.MAX if the board is full
                             set_gameover (true);
                         var nm = new NextMove (col, this);
                         Timeout.add (SPEED_DROP, nm.exec);
@@ -624,7 +643,7 @@ private class FourInARow : Gtk.Application
                 play_sound (SoundID.PLAYER_WIN);
             window.allow_hint (false);
         }
-        else if (moves == BOARD_ROWS * BOARD_COLUMNS)
+        else if (moves == /* BOARD_ROWS */ (size - 1) * /* BOARD_COLUMNS */ size)
         {
             set_gameover (true);
             winner = NOBODY;
@@ -857,8 +876,8 @@ private class FourInARow : Gtk.Application
         /* Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested */
         set_status_message (_("I’m Thinking…"));
 
-        uint8 c = AI.playgame (Difficulty.HARD, vstr);
-        if (c >= BOARD_COLUMNS)
+        uint8 c = AI.playgame ((uint8) size, Difficulty.HARD, vstr);
+        if (c >= /* BOARD_COLUMNS */ size)
             assert_not_reached ();  // c could be uint8.MAX if the board if full
 
         column_moveto = c;
@@ -1010,7 +1029,7 @@ private class FourInARow : Gtk.Application
         }
         else if (key == "Right" || event.keyval == keypress_right)
         {
-            if (column >= BOARD_COLUMNS_MINUS_ONE)
+            if (column >= /* BOARD_COLUMNS_MINUS_ONE */ size - 1)
                 return false;
             column_moveto++;
             move_cursor (column_moveto);

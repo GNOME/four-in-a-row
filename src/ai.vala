@@ -37,20 +37,20 @@ namespace AI
     \*/
 
     /* returns the column number in which the next move has to be made. Returns uint8.MAX if the board is full. */
-    internal static uint8 playgame (Difficulty level, string vstr)
+    internal static uint8 playgame (uint8 size, Difficulty level, string vstr)
     {
         Player [,] board;
-        init_board_from_string (vstr, out board);
+        init_board_from_string (size, vstr, out board);
 
         /* if AI can win by making a move immediately, make that move */
         uint8 temp = immediate_win (Player.OPPONENT, ref board);
-        if (temp < BOARD_COLUMNS)
+        if (temp < size)
             return temp;
 
         /* if HUMAN can win by making a move immediately,
            we make AI move in that column so as avoid loss */
         temp = immediate_win (Player.HUMAN, ref board);
-        if (temp < BOARD_COLUMNS)
+        if (temp < size)
             return temp;
 
         /* call negamax tree on the current state of the board */
@@ -62,17 +62,17 @@ namespace AI
     }
 
     /* utility function for testing purposes */
-    internal static uint8 playandcheck (Difficulty level, string vstr)
+    internal static uint8 playandcheck (uint8 size, Difficulty level, string vstr)
     {
         Player [,] board;
-        init_board_from_string (vstr, out board);
+        init_board_from_string (size, vstr, out board);
 
         uint8 temp = immediate_win (Player.OPPONENT, ref board);
-        if (temp < BOARD_COLUMNS)
+        if (temp < size)
             return 100;
 
         temp = immediate_win (Player.HUMAN, ref board);
-        if (temp < BOARD_COLUMNS)
+        if (temp < size)
             return temp;
 
         /* call negamax tree on the current state of the board */
@@ -87,12 +87,14 @@ namespace AI
     \*/
 
     /* vstr is the sequence of moves made until now;  */
-    private static void init_board_from_string (string vstr, out Player [,] board)
+    private static void init_board_from_string (uint8 size, string vstr, out Player [,] board)
     {
+        uint8 n_rows = size - 1;
+        uint8 n_cols = size;
         /* empty board */
-        board = new Player [BOARD_ROWS, BOARD_COLUMNS];
-        for (uint8 i = 0; i < BOARD_ROWS; i++)
-            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
+        board = new Player [n_rows, n_cols];
+        for (uint8 i = 0; i < n_rows; i++)
+            for (uint8 j = 0; j < n_cols; j++)
                 board [i, j] = Player.NOBODY;
 
         /* AI will make the first move */
@@ -105,6 +107,7 @@ namespace AI
 
     private static inline void update_board (string vstr, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
         Player move = vstr.length % 2 == 0 ? Player.OPPONENT : Player.HUMAN;
 
         for (uint8 i = 0; i < vstr.length; i++)
@@ -113,7 +116,7 @@ namespace AI
 
             /* find the cell on which the move is made */
             int8 row;
-            for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
+            for (row = n_rows - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
 
             board [row, column] = move;
 
@@ -129,6 +132,7 @@ namespace AI
        It returns the value of the current node. For nodes at height == 0, the value is determined by a heuristic function. */
     private static int16 negamax (uint8 height, int16 alpha, int16 beta, Player player, Difficulty level, ref Player [,] board, ref uint8 next_move_in_column)
     {
+        uint8 n_cols = (uint8) board.length [1];
         /* base case of recursive function, returns if we have reached the lowest depth of DecisionTree or the board if full */
         if (height == 0 || board_full (ref board))
         {
@@ -149,7 +153,7 @@ namespace AI
            Initialized with uint8.MAX because we do not know the column number yet. */
         uint8 next = uint8.MAX;
 
-        for (uint8 column = 0; column < BOARD_COLUMNS; column++)
+        for (uint8 column = 0; column < n_cols; column++)
         {
             if (!move (player, column, ref board))
                 continue;
@@ -189,9 +193,10 @@ namespace AI
     /* all these functions return true if the given player wins, or false */
     private static bool victory (Player player, uint8 column, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
         /* find the cell on which the last move was made */
         uint8 row;
-        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NOBODY; row++);
+        for (row = 0; row < n_rows && board [row, column] == Player.NOBODY; row++);
 
         return vertical_win             (player, row, column, ref board)
             || horizontal_win           (player, row, column, ref board)
@@ -201,48 +206,54 @@ namespace AI
 
     private static inline bool forward_diagonal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
+        uint8 n_cols = (uint8) board.length [1];
         int8 i = (int8) _i;
         int8 j = (int8) _j;
 
         uint8 count = 0;
 
-        for (int8 k = i, l = j; k >= 0 && l < BOARD_COLUMNS && board [k, l] == player; k--, l++, count++);
-        for (int8 k = i + 1, l = j - 1; k < BOARD_ROWS && l >= 0 && board [k, l] == player; k++, l--, count++);
+        for (int8 k = i, l = j; k >= 0 && l < n_cols && board [k, l] == player; k--, l++, count++);
+        for (int8 k = i + 1, l = j - 1; k < n_rows && l >= 0 && board [k, l] == player; k++, l--, count++);
 
         return count >= 4;
     }
 
     private static inline bool backward_diagonal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
+        uint8 n_cols = (uint8) board.length [1];
         int8 i = (int8) _i;
         int8 j = (int8) _j;
 
         uint8 count = 0;
 
         for (int8 k = i, l = j; k >= 0 && l >= 0 && board [k, l] == player; k--, l--, count++);
-        for (int8 k = i + 1, l = j + 1; k < BOARD_ROWS && l < BOARD_COLUMNS && board [k, l] == player; k++, l++, count++);
+        for (int8 k = i + 1, l = j + 1; k < n_rows && l < n_cols && board [k, l] == player; k++, l++, count++);
 
         return count >= 4;
     }
 
     private static inline bool horizontal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
     {
+        uint8 n_cols = (uint8) board.length [1];
         int8 i = (int8) _i;
         int8 j = (int8) _j;
 
         uint8 count = 0;
 
         for (int8 k = j; k >= 0 && board [i, k] == player; k--, count++);
-        for (int8 k = j + 1; k < BOARD_COLUMNS && board [i, k] == player; k++, count++);
+        for (int8 k = j + 1; k < n_cols && board [i, k] == player; k++, count++);
 
         return count >= 4;
     }
 
     private static inline bool vertical_win (Player player, uint8 i, uint8 j, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
         uint8 count = 0;
 
-        for (uint8 k = i; k < BOARD_ROWS && board [k, j] == player; k++, count++);
+        for (uint8 k = i; k < n_rows && board [k, j] == player; k++, count++);
 
         return count >= 4;
     }
@@ -254,7 +265,8 @@ namespace AI
     /* returns true if the board is full, false if not */
     private static bool board_full (ref Player [,] board)
     {
-        for (uint8 i = 0 ; i < BOARD_COLUMNS ; i++)
+        uint8 n_cols = (uint8) board.length [1];
+        for (uint8 i = 0 ; i < n_cols; i++)
             if (board [0, i] == Player.NOBODY)
                 return false;
         return true;
@@ -263,9 +275,10 @@ namespace AI
     /* makes a move into the column'th column. Returns true if the move was succesful, false if it wasn't */
     private static bool move (Player player, uint8 column, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
         /* find the cell on which to move */
         int8 row;
-        for (row = BOARD_ROWS - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
+        for (row = n_rows - 1; row >= 0 && board [row, column] != Player.NOBODY; row--);
 
         if (row < 0)
             return false;
@@ -277,9 +290,10 @@ namespace AI
     /* unmove the last move made in the column'th column */
     private static void unmove (uint8 column, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
         /* find the cell on which the last move was made */
         uint8 row;
-        for (row = 0; row < BOARD_ROWS && board [row, column] == Player.NOBODY; row++);
+        for (row = 0; row < n_rows && board [row, column] == Player.NOBODY; row++);
 
         board [row, column] = Player.NOBODY;
     }
@@ -288,7 +302,8 @@ namespace AI
        Otherwise returns the column number in which Player P should move to win. */
     private static uint8 immediate_win (Player player, ref Player [,] board)
     {
-        for (uint8 i = 0; i < BOARD_COLUMNS; i++)
+        uint8 n_cols = (uint8) board.length [1];
+        for (uint8 i = 0; i < n_cols; i++)
         {
             if (!move (player, i, ref board))
                 continue;
@@ -307,9 +322,11 @@ namespace AI
     /* utility function for debugging purposes, prints a snapshot of current status of the board */
 //    private static void print_board (ref Player [,] board)
 //    {
-//        for (uint8 i = 0; i < BOARD_ROWS; i++)
+//        uint8 n_rows = (uint8) board.length [0];
+//        uint8 n_cols = (uint8) board.length [1];
+//        for (uint8 i = 0; i < n_rows; i++)
 //        {
-//            for (uint8 j = 0; j < BOARD_COLUMNS; j++)
+//            for (uint8 j = 0; j < n_cols; j++)
 //                stdout.printf ("%d\t", board [i, j]);
 //            stdout.printf ("\n");
 //        }
@@ -352,11 +369,13 @@ namespace AI
        which have an empty cell in the vicinity to make it four in a row. */
     private static int8 count_3_in_a_row (Player player, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
+        uint8 n_cols = (uint8) board.length [1];
         int8 count = 0;
 
-        for (uint8 j = 0; j < BOARD_COLUMNS; j++)
+        for (uint8 j = 0; j < n_cols; j++)
         {
-            for (uint8 i = 0; i < BOARD_ROWS; i++)
+            for (uint8 i = 0; i < n_rows; i++)
             {
                 if (board [i, j] != Player.NOBODY)
                     break;
@@ -383,6 +402,8 @@ namespace AI
     /* checks if all adjacent cells to board [i, j] are empty */
     private static inline bool all_adjacent_empty (uint8 _i, uint8 _j, ref Player [,] board)
     {
+        uint8 n_rows = (uint8) board.length [0];
+        uint8 n_cols = (uint8) board.length [1];
         int8 i = (int8) _i;
         int8 j = (int8) _j;
 
@@ -392,7 +413,7 @@ namespace AI
             {
                 if (k == 0 && l == 0)
                     continue;
-                if (i + k >= 0 && i + k < BOARD_ROWS && j + l >= 0 && j + l < BOARD_COLUMNS && board [i + k, j + l] != Player.NOBODY)
+                if (i + k >= 0 && i + k < n_rows && j + l >= 0 && j + l < n_cols && board [i + k, j + l] != Player.NOBODY)
                     return false;
             }
         }
