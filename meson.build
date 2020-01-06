@@ -1,5 +1,5 @@
 project('four-in-a-row', 'c', 'vala',
-    version: '3.34.0'
+    version: '3.35.3'
 )
 
 project_id = 'org.gnome.Four-in-a-row'

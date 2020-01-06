@@ -1,3 +1,26 @@
+3.35.3 - January 6, 2020
+=============================
+
+More or less every thing has changed. The main window layout has been completely
+rewritten, based on the one of Reversi (Iagno, 3.34). It is now using a New Game
+screen, in which you enter using a New Game button in the headerbar. Preferences
+dialog has been removed; there is now a Sound toggle in the hamburger menu, with
+also an Appearance submenu for switching theme. The game board had various fixes
+and changes, notably a delay added before computer moves (that solves the bug on
+“down” holding), and the blinking for every winning lines. There is also a basic
+command-line support (for setting level, board size, and sound state, or getting
+release version), a new Keyboard Shortcuts dialog, and D-Bus activation support.
+
+Translations updated:
+  Catalan: Jordi Mas
+  Czech: Marek Černocký
+  French: Charles Monzat
+  Friulian: Fabio Tomat
+  Lithuanian: Aurimas Černius
+  Persian: Danial Behzadi
+  Spanish: Daniel Mustieles
+  Swedish: Anders Jonsson
+
 3.34.0 - September 10, 2019
 =============================
 
