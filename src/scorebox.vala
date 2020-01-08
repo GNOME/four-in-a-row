@@ -22,7 +22,7 @@ using Gtk;
 
 private class Scorebox : Dialog
 {
-    [CCode (notify = false)] internal int theme_id { private get; internal set; }
+    [CCode (notify = false)] public ThemeManager theme_manager { private get; protected construct; }
 
     private Label label_name_top;
     private Label label_score_top;
@@ -31,65 +31,54 @@ private class Scorebox : Dialog
     // no change to the draw name line
     private Label label_score_end;
 
-    internal Scorebox(Window parent, FourInARow application)
+    internal Scorebox (Window parent, FourInARow application, ThemeManager theme_manager)
     {
         /* Translators: title of the Scores dialog; plural noun */
         Object (title: _("Scores"),
-                use_header_bar: 1,
+                use_header_bar: /* true */ 1,
                 destroy_with_parent: true,
                 resizable: false,
-                border_width: 5,
-                application: application);
-        get_content_area ().spacing = 2;
-        set_transient_for (parent);
-        modal = true;
+                application: application,
+                transient_for: parent,
+                modal: true,
+                theme_manager: theme_manager);
+    }
 
-        Grid grid, grid2;
-
-        grid = new Grid ();
+    construct
+    {
+        Grid grid = new Grid ();
         grid.halign = Align.CENTER;
-        grid.row_spacing = 6;
-        grid.orientation = Orientation.VERTICAL;
-        grid.border_width = 5;
-
-        get_content_area ().pack_start (grid);
-
-        grid2 = new Grid ();
-        grid.add (grid2);
-        grid2.column_spacing = 6;
+        grid.row_spacing = 2;
+        grid.column_spacing = 6;
+        grid.border_width = 10;
 
         label_name_top = new Label (null);
-        grid2.attach (label_name_top, 0, 0, 1, 1);
-        label_name_top.set_xalign (0);
-        label_name_top.set_yalign (0.5f);
+        grid.attach (label_name_top, 0, 0, 1, 1);
+        label_name_top.halign = Align.START;
 
         label_score_top = new Label (null);
-        grid2.attach (label_score_top, 1, 0, 1, 1);
-        label_score_top.set_xalign (0);
-        label_score_top.set_yalign (0.5f);
+        grid.attach (label_score_top, 1, 0, 1, 1);
+        label_score_top.halign = Align.END;
 
         label_name_mid = new Label (null);
-        grid2.attach (label_name_mid, 0, 1, 1, 1);
-        label_name_mid.set_xalign (0);
-        label_name_mid.set_yalign (0.5f);
+        grid.attach (label_name_mid, 0, 1, 1, 1);
+        label_name_mid.halign = Align.START;
 
         label_score_mid = new Label (null);
-        grid2.attach (label_score_mid, 1, 1, 1, 1);
-        label_score_mid.set_xalign (0);
-        label_score_mid.set_yalign (0.5f);
+        grid.attach (label_score_mid, 1, 1, 1, 1);
+        label_score_mid.halign = Align.END;
 
         /* Translators: in the Scores dialog, label of the line where is indicated the number of tie games */
         Label label_name_end = new Label (_("Drawn:"));
-        grid2.attach (label_name_end, 0, 2, 1, 1);
-        label_name_end.set_xalign (0);
-        label_name_end.set_yalign (0.5f);
+        grid.attach (label_name_end, 0, 2, 1, 1);
+        label_name_end.halign = Align.START;
 
         label_score_end = new Label (null);
-        grid2.attach (label_score_end, 1, 2, 1, 1);
-        label_score_end.set_xalign (0);
-        label_score_end.set_yalign (0.5f);
+        grid.attach (label_score_end, 1, 2, 1, 1);
+        label_score_end.halign = Align.END;
 
         grid.show_all ();
+        get_content_area ().pack_start (grid);
     }
 
     /**
@@ -109,7 +98,7 @@ private class Scorebox : Dialog
                 /* Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player */
                 label_name_mid.set_text (_("Me:"));
 
-                label_score_top.label = scores [Player.HUMAN].to_string ();
+                label_score_top.label = scores [Player.HUMAN   ].to_string ();
                 label_score_mid.label = scores [Player.OPPONENT].to_string ();
             }
             else
@@ -121,26 +110,26 @@ private class Scorebox : Dialog
                 label_name_mid.set_text (_("You:"));
 
                 label_score_top.label = scores [Player.OPPONENT].to_string ();
-                label_score_mid.label = scores [Player.HUMAN].to_string ();
+                label_score_mid.label = scores [Player.HUMAN   ].to_string ();
             }
         }
         else
         {
             if (scores [Player.HUMAN] >= scores [Player.OPPONENT])
             {
-                label_name_top.label = theme_get_player (Player.HUMAN,    (uint8) theme_id, /* with colon */ true);
-                label_name_mid.label = theme_get_player (Player.OPPONENT, (uint8) theme_id, /* with colon */ true);
+                label_name_top.label = theme_manager.get_player (Player.HUMAN,    /* with colon */ true);
+                label_name_mid.label = theme_manager.get_player (Player.OPPONENT, /* with colon */ true);
 
-                label_score_top.label = scores [Player.HUMAN].to_string ();
+                label_score_top.label = scores [Player.HUMAN   ].to_string ();
                 label_score_mid.label = scores [Player.OPPONENT].to_string ();
             }
             else
             {
-                label_name_top.label = theme_get_player (Player.OPPONENT, (uint8) theme_id, /* with colon */ true);
-                label_name_mid.label = theme_get_player (Player.HUMAN,    (uint8) theme_id, /* with colon */ true);
+                label_name_top.label = theme_manager.get_player (Player.OPPONENT, /* with colon */ true);
+                label_name_mid.label = theme_manager.get_player (Player.HUMAN,    /* with colon */ true);
 
                 label_score_top.label = scores [Player.OPPONENT].to_string ();
-                label_score_mid.label = scores [Player.HUMAN].to_string ();
+                label_score_mid.label = scores [Player.HUMAN   ].to_string ();
             }
         }
         label_score_end.label = scores [Player.NOBODY].to_string ();

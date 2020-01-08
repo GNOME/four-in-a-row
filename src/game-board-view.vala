@@ -29,22 +29,12 @@ private class GameBoardView : Gtk.DrawingArea
         PLAYER2_CURSOR;
     }
 
-    [CCode (notify = false)] public Board game_board { private get; protected construct; }
+    [CCode (notify = false)] public Board        game_board    { private get; protected construct; }
+    [CCode (notify = false)] public ThemeManager theme_manager { private get; protected construct; }
 
-    private int _theme_id = 0;
-    [CCode (notify = false)] public int theme_id
+    internal GameBoardView (Board game_board, ThemeManager theme_manager)
     {
-        private get { return _theme_id; }
-        internal construct set
-        {
-            _theme_id = value;
-            change_theme ();
-        }
-    }
-
-    internal GameBoardView (Board game_board, int theme_id)
-    {
-        Object (game_board: game_board, theme_id: theme_id);
+        Object (game_board: game_board, theme_manager: theme_manager);
     }
 
     construct
@@ -52,7 +42,7 @@ private class GameBoardView : Gtk.DrawingArea
         events = Gdk.EventMask.EXPOSURE_MASK
                | Gdk.EventMask.BUTTON_PRESS_MASK
                | Gdk.EventMask.BUTTON_RELEASE_MASK;
-        load_pixmaps ();
+        theme_manager.theme_changed.connect (refresh_pixmaps);
     }
 
     /*\
@@ -160,7 +150,7 @@ private class GameBoardView : Gtk.DrawingArea
         const double dashes [] = { 4.0, 4.0 };
         Gdk.RGBA color = Gdk.RGBA ();
 
-        color.parse (theme [theme_id].grid_color);
+        color.parse (theme_manager.get_grid_color ());
         Gdk.cairo_set_source_rgba (cr, color);
         cr.set_operator (Cairo.Operator.SOURCE);
         cr.set_line_width (1.0);
@@ -193,19 +183,9 @@ private class GameBoardView : Gtk.DrawingArea
     * * pixmaps
     \*/
 
-    /* unscaled pixbufs */
-    private Gdk.Pixbuf pb_tileset_raw;
-    private Gdk.Pixbuf pb_bground_raw;
-
     /* scaled pixbufs */
     private Gdk.Pixbuf pb_tileset;
     private Gdk.Pixbuf pb_bground;
-
-    private inline void change_theme ()
-    {
-        load_pixmaps ();
-        refresh_pixmaps ();
-    }
 
     private void refresh_pixmaps ()
     {
@@ -214,59 +194,17 @@ private class GameBoardView : Gtk.DrawingArea
 
         Gdk.Pixbuf? tmp_pixbuf;
 
-        tmp_pixbuf = pb_tileset_raw.scale_simple (tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
+        tmp_pixbuf = theme_manager.pb_tileset_raw.scale_simple (tile_size * 6, tile_size, Gdk.InterpType.BILINEAR);
         if (tmp_pixbuf == null)
             assert_not_reached ();
         pb_tileset = (!) tmp_pixbuf;
 
-        tmp_pixbuf = pb_bground_raw.scale_simple (board_size, board_size, Gdk.InterpType.BILINEAR);
+        tmp_pixbuf = theme_manager.pb_bground_raw.scale_simple (board_size, board_size, Gdk.InterpType.BILINEAR);
         if (tmp_pixbuf == null)
             assert_not_reached ();
         pb_bground = (!) tmp_pixbuf;
 
         queue_draw ();
-    }
-
-    private void load_pixmaps ()
-    {
-        load_image (theme [theme_id].fname_tileset, out pb_tileset_raw);
-
-        if (theme [theme_id].fname_bground != null)
-            load_image ((!) theme [theme_id].fname_bground, out pb_bground_raw);
-        else
-            create_background ();
-    }
-    private static void load_image (string image_name, out Gdk.Pixbuf pixbuf)
-    {
-        string image_resource = "/org/gnome/Four-in-a-row/images/" + image_name;
-        try
-        {
-            pixbuf = new Gdk.Pixbuf.from_resource (image_resource);
-        }
-        catch (Error e)
-        {
-            critical (e.message);
-            assert_not_reached ();
-        }
-    }
-    private inline void create_background ()
-    {
-        int raw_tile_size = pb_tileset_raw.get_height ();
-
-        pb_bground_raw = new Gdk.Pixbuf (Gdk.Colorspace.RGB, /* alpha */ true, /* bits per sample */ 8, raw_tile_size * /* BOARD_COLUMNS */ game_board.size, raw_tile_size * /* BOARD_ROWS_PLUS_ONE */ game_board.size);
-        for (int i = 0; i < /* BOARD_COLUMNS */ game_board.size; i++)
-        {
-            pb_tileset_raw.copy_area (raw_tile_size * 3, 0,
-                                      raw_tile_size, raw_tile_size,
-                                      pb_bground_raw,
-                                      i * raw_tile_size, 0);
-
-            for (int j = 1; j < /* BOARD_ROWS_PLUS_ONE */ game_board.size; j++)
-                pb_tileset_raw.copy_area (raw_tile_size * 2, 0,
-                                          raw_tile_size, raw_tile_size,
-                                          pb_bground_raw,
-                                          i * raw_tile_size, j * raw_tile_size);
-        }
     }
 
     /*\

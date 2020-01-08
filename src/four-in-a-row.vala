@@ -87,7 +87,8 @@ private class FourInARow : Gtk.Application
     [CCode (notify = false)] internal int   keypress_right  { private get; internal set; }
     [CCode (notify = false)] internal int   keypress_left   { private get; internal set; }
     [CCode (notify = false)] internal bool  sound_on        { private get; internal set; }
-    private uint8 theme_id;
+
+    private ThemeManager theme_manager;
 
     private static string? level = null;
     private static int size = 7;
@@ -223,24 +224,27 @@ private class FourInARow : Gtk.Application
         if (settings.get_boolean ("sound"))
             init_sound ();
 
-        settings.bind ("key-drop",  this, "keypress-drop",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
-        settings.bind ("key-right", this, "keypress-right", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
-        settings.bind ("key-left",  this, "keypress-left",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
-        settings.bind ("sound",     this, "sound-on",       SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.bind ("key-drop",  this,   "keypress-drop",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.bind ("key-right", this,   "keypress-right", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.bind ("key-left",  this,   "keypress-left",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        settings.bind ("sound",     this,   "sound-on",       SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+
+        theme_manager = new ThemeManager ((uint8) size);
+        settings.bind ("theme-id", theme_manager, "theme-id", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
 
         /* UI parts */
         new_game_screen = new NewGameScreen ();
         new_game_screen.show ();
 
-        game_board_view = new GameBoardView (game_board, settings.get_int ("theme-id"));
-        settings.bind ("theme-id", game_board_view, "theme-id", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        game_board_view = new GameBoardView (game_board, theme_manager);
         game_board_view.show ();
 
         GLib.Menu app_menu = new GLib.Menu ();
 
         GLib.Menu appearance_menu = new GLib.Menu ();
-        for (uint8 i = 0; i < theme.length; i++)     // TODO default theme
-            appearance_menu.append (theme_get_title (i), @"app.theme-id($i)");
+        string [] themes = theme_manager.get_themes ();
+        for (uint8 i = 0; i < themes.length; i++)     // TODO default theme
+            appearance_menu.append (themes [i], @"app.theme-id($i)");
         appearance_menu.freeze ();
 
         GLib.Menu section = new GLib.Menu ();
@@ -284,14 +288,11 @@ private class FourInARow : Gtk.Application
                                  history_button_1,
                                  history_button_2);
 
-        scorebox = new Scorebox (window, this);
-        settings.bind ("theme-id", scorebox, "theme-id", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
+        scorebox = new Scorebox (window, this, theme_manager);
         settings.changed ["theme-id"].connect (() => {
                 scorebox.update (score, one_player_game);
-                theme_id = (uint8) settings.get_int ("theme-id");
                 prompt_player ();
             });
-        theme_id = (uint8) settings.get_int ("theme-id");
 
         add_actions ();
 
@@ -580,11 +581,11 @@ private class FourInARow : Gtk.Application
         {
             string who;
             if (gameover)
-                who = player == HUMAN ? theme_get_player_win  (Player.HUMAN,    theme_id)
-                                      : theme_get_player_win  (Player.OPPONENT, theme_id);
+                who = player == HUMAN ? theme_manager.get_player_win (Player.HUMAN)
+                                      : theme_manager.get_player_win (Player.OPPONENT);
             else
-                who = player == HUMAN ? theme_get_player_turn (Player.HUMAN,    theme_id)
-                                      : theme_get_player_turn (Player.OPPONENT, theme_id);
+                who = player == HUMAN ? theme_manager.get_player_turn (Player.HUMAN)
+                                      : theme_manager.get_player_turn (Player.OPPONENT);
 
             set_status_message (_(who));
         }
