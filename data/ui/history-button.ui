@@ -24,5 +24,27 @@
     <property name="valign">center</property>
     <property name="can-focus">True</property>
     <property name="focus-on-click">False</property>
+    <property name="width-request">56</property>
+    <child>
+      <object class="GtkStack" id="stack">
+        <property name="visible">True</property>
+        <property name="visible-child">drawing</property>
+        <child>
+          <object class="GtkDrawingArea" id="drawing">
+            <property name="visible">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <!-- Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters) -->
+            <property name="label" translatable="yes">End!</property>
+          </object>
+          <packing>
+            <property name="name">label</property>
+          </packing>
+        </child>
+      </object>
+    </child>
   </template>
 </interface>

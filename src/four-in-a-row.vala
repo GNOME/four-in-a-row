@@ -56,8 +56,8 @@ private class FourInARow : Gtk.Application
     private GameBoardView game_board_view;
     private GameWindow window;
     private NewGameScreen new_game_screen;
-    private MenuButton history_button_1;
-    private MenuButton history_button_2;
+    private HistoryButton history_button_1;
+    private HistoryButton history_button_2;
 
     // game state
     private string vstr;
@@ -268,8 +268,8 @@ private class FourInARow : Gtk.Application
         app_menu.freeze ();
 
         generate_game_menu ();
-        history_button_1 = new HistoryButton (ref game_menu, /* direction: down */ false);
-        history_button_2 = new HistoryButton (ref game_menu, /* direction: up  */  true);
+        history_button_1 = new HistoryButton (ref game_menu, theme_manager);
+        history_button_2 = new HistoryButton (ref game_menu, theme_manager);
 
         /* Window */
         window = new GameWindow ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
@@ -279,8 +279,8 @@ private class FourInARow : Gtk.Application
                                  (Box) new_game_screen,
                                  game_board_view,
                                  app_menu,
-                                 history_button_1,
-                                 history_button_2);
+                                 (MenuButton) history_button_1,
+                                 (MenuButton) history_button_2);
 
         scorebox = new Scorebox (window, this, theme_manager);
 
@@ -544,39 +544,59 @@ private class FourInARow : Gtk.Application
             else
                 /* Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie */
                 set_status_message (_("It’s a draw!"));
+            history_button_1.set_player (Player.NOBODY);
+            history_button_2.set_player (Player.NOBODY);
             return;
         }
 
         if (one_player_game)
         {
-            if (human)
+            if (gameover)
             {
-                if (gameover)
+                history_button_1.set_player (Player.NOBODY);
+                history_button_2.set_player (Player.NOBODY);
+                if (human)
                     /* Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won */
                     set_status_message (_("You win!"));
                 else
-                    /* Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn */
-                    set_status_message (_("Your Turn"));
+                    /* Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won */
+                    set_status_message (_("I win!"));
             }
             else
             {
-                if (gameover)
-                    /* Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won */
-                    set_status_message (_("I win!"));
+                if (human)
+                {
+                    history_button_1.set_player (Player.HUMAN);
+                    history_button_2.set_player (Player.HUMAN);
+                    /* Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn */
+                    set_status_message (_("Your Turn"));
+                }
                 else
+                {
+                    history_button_1.set_player (Player.OPPONENT);
+                    history_button_2.set_player (Player.OPPONENT);
                     /* Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn */
                     set_status_message (_("I’m Thinking…"));
+                }
             }
         }
         else
         {
             string who;
             if (gameover)
-                who = player == HUMAN ? theme_manager.get_player_win (Player.HUMAN)
-                                      : theme_manager.get_player_win (Player.OPPONENT);
+            {
+                history_button_1.set_player (Player.NOBODY);
+                history_button_2.set_player (Player.NOBODY);
+                who = theme_manager.get_player_win (player);
+            }
             else
-                who = player == HUMAN ? theme_manager.get_player_turn (Player.HUMAN)
-                                      : theme_manager.get_player_turn (Player.OPPONENT);
+            {
+                // player can be NOBODY
+                Player current_player = player == HUMAN ? Player.HUMAN : Player.OPPONENT;
+                history_button_1.set_player (current_player);
+                history_button_2.set_player (current_player);
+                who = theme_manager.get_player_turn (current_player);
+            }
 
             set_status_message (_(who));
         }
