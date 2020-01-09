@@ -996,13 +996,13 @@ private class FourInARow : Gtk.Application
 
     private inline bool on_key_press (Gdk.EventKey event)
     {
-        if (timeout != 0
-         || (!gameover && !is_player_human ()))
-            return false;
-
         string key = (!) (Gdk.keyval_name (event.keyval) ?? "");
         if (key == "" || key == "Tab" || event.is_modifier == 1)
             return false;
+
+        if (timeout != 0
+         || (!gameover && !is_player_human ()))
+            return true;
 
         if (gameover)
         {
@@ -1013,14 +1013,14 @@ private class FourInARow : Gtk.Application
         if (key == "Left" || event.keyval == keypress_left)
         {
             if (column == 0)
-                return false;
+                return true;
             column_moveto--;
             move_cursor (column_moveto);
         }
         else if (key == "Right" || event.keyval == keypress_right)
         {
             if (column >= /* BOARD_COLUMNS_MINUS_ONE */ size - 1)
-                return false;
+                return true;
             column_moveto++;
             move_cursor (column_moveto);
         }
