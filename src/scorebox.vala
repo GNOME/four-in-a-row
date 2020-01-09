@@ -79,14 +79,11 @@ private class Scorebox : Dialog
 
         grid.show_all ();
         get_content_area ().pack_start (grid);
+
+        theme_manager.theme_changed.connect (update);
     }
 
-    /**
-     * update:
-     *
-     * updates the scorebox with the latest scores
-     */
-    internal void update (uint [] scores, bool one_player_game)
+    private void update ()
     {
         if (one_player_game)
         {
@@ -139,5 +136,53 @@ private class Scorebox : Dialog
     {
         hide ();
         return true;
+    }
+
+    /*\
+    * * score management
+    \*/
+
+    private bool one_player_game = false;
+    private Player last_winner = Player.NOBODY;
+    private uint [] scores = { /* human */ 0, /* opponent */ 0, /* draw */ 0 };
+
+    internal void new_match (bool _one_player_game)
+    {
+        scores = { 0, 0, 0 };
+        last_winner = Player.NOBODY;
+        one_player_game = _one_player_game;
+        update ();
+    }
+
+    internal void give_up (Player player)
+    {
+        if (player == Player.HUMAN)
+            scores [Player.OPPONENT]++;
+        else if (player == Player.OPPONENT)
+            scores [Player.HUMAN]++;
+        else
+            assert_not_reached ();
+        update ();
+    }
+
+    internal void win (Player player)
+    {
+        scores [player]++;
+        last_winner = player;
+        update ();
+    }
+
+    internal void unwin ()
+    {
+        if (last_winner == Player.NOBODY)
+            assert_not_reached ();
+        scores [last_winner]--;
+        last_winner = Player.NOBODY;
+        update ();
+    }
+
+    internal bool is_first_game ()
+    {
+        return scores [Player.HUMAN] + scores [Player.OPPONENT] + scores [Player.NOBODY] == 0;
     }
 }

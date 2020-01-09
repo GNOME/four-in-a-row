@@ -49,12 +49,6 @@ private class FourInARow : Gtk.Application
     private Board game_board;
     private bool one_player_game;
     private Difficulty ai_level;
-    /**
-     * score:
-     *
-     * The scores for the current instance (Human, Opponent, Draw)
-     */
-    private uint [] score = { 0, 0, 0 };
     private uint playgame_timeout = 0;
 
     // widgets
@@ -289,10 +283,8 @@ private class FourInARow : Gtk.Application
                                  history_button_2);
 
         scorebox = new Scorebox (window, this, theme_manager);
-        settings.changed ["theme-id"].connect (() => {
-                scorebox.update (score, one_player_game);
-                prompt_player ();
-            });
+
+        settings.changed ["theme-id"].connect (prompt_player);
 
         add_actions ();
 
@@ -421,8 +413,7 @@ private class FourInARow : Gtk.Application
         if (reload_settings)
         {
             one_player_game = settings.get_int ("num-players") == 1;
-            score = { 0, 0, 0 };
-            scorebox.update (score, one_player_game);
+            scorebox.new_match (one_player_game);
 
             if (one_player_game)
             {
@@ -539,7 +530,7 @@ private class FourInARow : Gtk.Application
         bool human = is_player_human ();
 
         window.allow_hint (human && !gameover);
-        update_round_section ();
+        update_round_section (/* menu init */ false);
 
         if (one_player_game)
             window.allow_undo ((human && moves > 1) || (!human && gameover));
@@ -548,7 +539,7 @@ private class FourInARow : Gtk.Application
 
         if (gameover && winner == Player.NOBODY)
         {
-            if (score [Player.NOBODY] == 0)
+            if (scorebox.is_first_game ())
                 set_status_message (null);
             else
                 /* Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie */
@@ -609,8 +600,7 @@ private class FourInARow : Gtk.Application
 
         if (gameover)
         {
-            score [winner]++;
-            scorebox.update (score, one_player_game);
+            scorebox.win (winner);
             prompt_player ();
             if (winner != Player.NOBODY)
                 blink_winner (3);
@@ -911,8 +901,7 @@ private class FourInARow : Gtk.Application
 
         if (gameover)
         {
-            score [winner]--;
-            scorebox.update (score, one_player_game);
+            scorebox.unwin ();
             set_gameover (false);
             prompt_player ();
         }
@@ -1231,11 +1220,11 @@ private class FourInARow : Gtk.Application
         section.freeze ();
         game_menu.append_section (null, section);
 
-        update_round_section ();
+        update_round_section (/* menu init */ true);
         game_menu.append_section (null, round_section);
     }
 
-    private void update_round_section ()
+    private void update_round_section (bool menu_init)
     {
         round_section.remove_all ();
         if (gameover)
@@ -1243,7 +1232,7 @@ private class FourInARow : Gtk.Application
         else
             round_section.append (_("_Give Up"), "app.give-up");
 
-        if (score [Player.HUMAN] + score [Player.OPPONENT] + score [Player.NOBODY] == 0)
+        if (menu_init || scorebox.is_first_game ())
             return;
         /* Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt) */
         round_section.append (_("_Scores"), "app.scores");
@@ -1251,14 +1240,7 @@ private class FourInARow : Gtk.Application
 
     private inline void on_give_up (/* SimpleAction action, Variant? parameter */)
     {
-        if (player == Player.HUMAN)
-            score [Player.OPPONENT]++;
-        else if (player == Player.OPPONENT)
-            score [Player.HUMAN]++;
-        else
-            assert_not_reached ();
-        scorebox.update (score, one_player_game);
-
+        scorebox.give_up (player);
         game_reset (/* reload settings */ false);
     }
 
