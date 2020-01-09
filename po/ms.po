@@ -4,347 +4,322 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome-Games 2.0.x\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-01 00:38+0100\n"
-"PO-Revision-Date: 2003-11-24 01:54+0800\n"
-"Last-Translator: Hasbullah Bin Pit <sebol@ikhlas.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2019-10-07 17:58+0000\n"
+"PO-Revision-Date: 2019-12-29 01:48+0800\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Projek Gabai <gabai-penyumbang@lists.sourceforge.org>\n"
 "Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-#, fuzzy
+#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5
 msgid "Four-in-a-row"
-msgstr "Four-in-a-row"
+msgstr "Empat-dalam-sebaris"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
-#, fuzzy
+#: data/four-in-a-row.ui:22
+msgid "Undo your most recent move"
+msgstr "Buat asal gerakan terakhir anda"
+
+#: data/four-in-a-row.ui:99
+msgid "_Hint"
+msgstr "Pemba_yang"
+
+#: data/four-in-a-row.ui:105
+msgid "Receive a hint for your next move"
+msgstr "Dapatkan satu pembayang untuk gerakan berikutnya"
+
+#: data/four-in-a-row.ui:118
+msgid "_Start Over"
+msgstr "_Mula Balik"
+
+#: data/four-in-a-row.ui:124
+msgid "Start a new game"
+msgstr "Mulakan satu permainan baharu"
+
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "Bersaing supaya menjadi barisan sama warna"
+msgstr "Buat satu barisan warna yang sama untuk menang"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
+"Sebuah permainan keluarga klasik, objektif empat-dalam-sebaris ialah membina "
+"satu baris empat guli dan pada masa yang sama cuba gagalkan pihak lawan anda "
+"(komputer atau orang lain) membina satu barisannya. Baris boleh menegak, "
+"mengufuk atau condong. Pemain yang berjaya membentuk empat guli dalam satu "
+"barisan adalah pemenangnya!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
+"Empat-dalam-sebaris memfiturkan aras kesukaran berbilang. Jika anda hadapi "
+"masalah, anda boleh dapatkan satu pembayang."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
-msgstr ""
+msgstr "Projek GNOME"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
-msgstr ""
+msgstr "permainan;strategi;logik;"
 
-#: ../data/four-in-a-row.ui.h:2
-msgid "Undo your most recent move"
-msgstr ""
-
-#: ../data/four-in-a-row.ui.h:3
-#, fuzzy
-msgid "_Hint"
-msgstr "Petunjuk"
-
-#: ../data/four-in-a-row.ui.h:4
-#, fuzzy
-msgid "Receive a hint for your next move"
-msgstr "Dapatkan bayangan untuk pergerakan berikutnya"
-
-#: ../data/four-in-a-row.ui.h:5
-#, fuzzy
-msgid "_Start Over"
-msgstr "Mula semula permainan"
-
-#: ../data/four-in-a-row.ui.h:6
-msgid "Start a new game"
-msgstr "Mula permainan baru"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-#, fuzzy
+#: data/org.gnome.Four-in-a-row.gschema.xml:5
 msgid "Opponent"
-msgstr "Lawan kepada Komputer:"
+msgstr "Pihak Lawan"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#: data/org.gnome.Four-in-a-row.gschema.xml:6
 msgid ""
 "Zero is human; one through three correspond to the level of the computer "
 "player."
 msgstr ""
-"Sifar ialah manusia; satu hingga tiga merujuk kepada peringkat komputer."
+"Sifar ialah manusia; satu hingga tiga merujuk kepada aras pemain komputer."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#: data/org.gnome.Four-in-a-row.gschema.xml:10
 msgid "Theme ID"
 msgstr "ID Tema"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "A number specifying the preferred theme."
-msgstr "Nombor yang menyatakan tema digerami."
+msgstr "Nombor yang menyatakan tema dikehendaki."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#: data/org.gnome.Four-in-a-row.gschema.xml:15
 msgid "Sound"
 msgstr "Bunyi"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#: data/org.gnome.Four-in-a-row.gschema.xml:16
 msgid "Whether or not to play event sounds."
-msgstr "Samada memainkan bunyi atau tidak."
+msgstr "Sama ada mainkan bunyi peristiwa atau sebaliknya."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:108
 msgid "Move left"
-msgstr "Gerakan kekiri"
+msgstr "Gerak ke kiri"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#: data/org.gnome.Four-in-a-row.gschema.xml:21
 msgid "Key press to move left."
-msgstr "Kekunci untuk bergerak ke kiri."
+msgstr "Kekunci ditekan untuk gerak ke kiri."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:109
 msgid "Move right"
-msgstr "Gerakan ke kanan"
+msgstr "Gerak ke kanan"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Key press to move right."
-msgstr "Kekunci untuk bergerak ke kanan."
+msgstr "Kekunci ditekan untuk gerak ke kanan."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:110
 msgid "Drop marble"
 msgstr "Jatuhkan guli"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#: data/org.gnome.Four-in-a-row.gschema.xml:31
 msgid "Key press to drop a marble."
-msgstr "Kekunci untuk menjatuhkan guli."
+msgstr "Kekunci ditekan untuk jatuhkan sebiji guli."
 
-#: ../src/games-controls.c:105
-msgid "This key is already in use."
-msgstr ""
-
-#: ../src/games-controls.c:326
-#, fuzzy
-msgid "Unknown Command"
-msgstr "Warna tidak diketahui"
-
-#: ../src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-
-#: ../src/main.c:476
-#, fuzzy
+#: src/four-in-a-row.vala:248
 msgid "It’s a draw!"
 msgstr "Ianya seri!"
 
-#: ../src/main.c:484
+#: src/four-in-a-row.vala:256
 msgid "You win!"
-msgstr "Anda menang!!"
+msgstr "Anda menang!"
 
-#: ../src/main.c:486 ../src/main.c:502
+#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
 msgid "Your Turn"
-msgstr ""
+msgstr "Giliran Anda"
 
-#: ../src/main.c:489
+#: src/four-in-a-row.vala:261
 msgid "I win!"
 msgstr "Saya menang!"
 
-#: ../src/main.c:491 ../src/main.c:590
+#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:460
 msgid "I’m Thinking…"
-msgstr ""
+msgstr "Saya masih Berfikir..."
 
-#: ../src/main.c:603
+#: src/four-in-a-row.vala:474
 #, c-format
 msgid "Hint: Column %d"
-msgstr "Bayangan: Kolum %d"
+msgstr "Pembayang: Lajur %d"
 
-#: ../src/main.c:631 ../src/main.c:635
-#, fuzzy
-msgid "You:"
-msgstr "Anda"
+#: src/four-in-a-row.vala:619
+msgid "Connect four in a row to win"
+msgstr "Hubungkan empat guli dalam satu baris untuk menang"
 
-#: ../src/main.c:632 ../src/main.c:634
-#, fuzzy
-msgid "Me:"
-msgstr "Saya"
-
-#: ../src/main.c:680
-#, fuzzy
-msgid "Scores"
-msgstr "Markah."
-
-#: ../src/main.c:721
-#, fuzzy
-msgid "Drawn:"
-msgstr "Dilukis"
-
-#: ../src/main.c:762
-msgid "Connect four in a row to win."
-msgstr ""
-
-#: ../src/main.c:765
+#: src/four-in-a-row.vala:623
 msgid "translator-credits"
 msgstr ""
-"\"kenang daku semasa bermain..ahaks...'\n"
-"Noor Azurah Anuar <gbumla@yahoo.com>, Bandar Hilir."
+"abuyop\n"
+"'kenang daku semasa bermain..ahaks...'\n"
+"Noor Azurah Anuar <gbumla@yahoo.com>, Bandar Hilir"
 
-#: ../src/main.c:1130
-#, fuzzy
+#: src/four-in-a-row.vala:699
 msgid "_Scores"
-msgstr "Markah."
+msgstr "_Skor"
 
-#: ../src/main.c:1131
-#, fuzzy
+#: src/four-in-a-row.vala:702
 msgid "_Preferences"
-msgstr "Keutamaan"
+msgstr "Ke_utamaan"
 
-#: ../src/main.c:1134
-#, fuzzy
+#: src/four-in-a-row.vala:703
 msgid "_Help"
-msgstr "Bantuan"
+msgstr "_Bantuan"
 
-#: ../src/main.c:1135
-msgid "_About"
-msgstr ""
+#: src/four-in-a-row.vala:704
+msgid "_About Four-in-a-row"
+msgstr "Perih_al Empat-dalam-sebaris"
 
-#: ../src/main.c:1136
-msgid "_Quit"
-msgstr ""
+#: src/games-controls-list.vala:154
+msgid "This key is already in use."
+msgstr "Kekunci ini sudah digunakan."
 
-#: ../src/prefs.c:171
+#: src/games-controls-list.vala:175
+msgid "Unknown Command"
+msgstr "Perintah Tidak Diketahui"
+
+#: src/prefs-box.vala:36
 msgid "Preferences"
 msgstr "Keutamaan"
 
-#: ../src/prefs.c:193
-#, fuzzy
+#: src/prefs-box.vala:53
 msgid "Game"
-msgstr "_Permainan"
+msgstr "Permainan"
 
-#: ../src/prefs.c:196
+#: src/prefs-box.vala:56
 msgid "Opponent:"
-msgstr ""
+msgstr "Pihak Lawan:"
 
-#: ../src/prefs.c:207
+#: src/prefs-box.vala:69
 msgid "Human"
 msgstr "Manusia"
 
-#: ../src/prefs.c:211
+#: src/prefs-box.vala:73
 msgid "Level one"
-msgstr "Peringkat Satu"
+msgstr "Aras satu"
 
-#: ../src/prefs.c:215
+#: src/prefs-box.vala:77
 msgid "Level two"
-msgstr "Peringkat Dua"
+msgstr "Aras dua"
 
-#: ../src/prefs.c:219
+#: src/prefs-box.vala:81
 msgid "Level three"
-msgstr "Peringkat Tiga"
+msgstr "Aras tiga"
 
-#: ../src/prefs.c:225
-#, fuzzy
+#: src/prefs-box.vala:88
 msgid "_Theme:"
-msgstr "Tema"
+msgstr "_Tema:"
 
-#: ../src/prefs.c:238
-#, fuzzy
+#: src/prefs-box.vala:101
 msgid "E_nable sounds"
-msgstr "Hidupkan bunyi"
+msgstr "Be_narkan bunyi"
 
 #. keyboard tab
-#: ../src/prefs.c:243
+#: src/prefs-box.vala:105
 msgid "Keyboard Controls"
 msgstr "Kawalan Papan Kekunci"
 
-#: ../src/theme.c:40
+#: src/scorebox.vala:28
+msgid "Scores"
+msgstr "Skor"
+
+#: src/scorebox.vala:74
+msgid "Drawn:"
+msgstr "Seri:"
+
+#: src/scorebox.vala:96 src/scorebox.vala:99
+msgid "You:"
+msgstr "Anda:"
+
+#: src/scorebox.vala:97 src/scorebox.vala:100
+msgid "Me:"
+msgstr "Saya:"
+
+#: src/theme.vala:65
 msgid "High Contrast"
-msgstr ""
+msgstr "Beza Jelas Tinggi"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Circle"
-msgstr ""
+msgstr "Bulatan"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:69 src/theme.vala:78
 msgid "Cross"
-msgstr ""
+msgstr "Silang"
 
-#: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Circle wins!"
-msgstr "Pemain Gelap menang!"
+msgstr "Bulatan menang!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
+#: src/theme.vala:70 src/theme.vala:79
 msgid "Cross wins!"
-msgstr "%s menang!"
+msgstr "Silang menang!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Circle’s turn"
-msgstr ""
+msgstr "Giliran bulatan"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:71 src/theme.vala:80
 msgid "Cross’s turn"
-msgstr ""
+msgstr "Giliran silang"
 
-#: ../src/theme.c:49
+#: src/theme.vala:74
 msgid "High Contrast Inverse"
-msgstr ""
+msgstr "Songsang Beza Jelas"
 
-#: ../src/theme.c:58
+#: src/theme.vala:83
 msgid "Red and Green Marbles"
-msgstr ""
+msgstr "Guli Merah dan Hijau"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
 msgid "Red"
 msgstr "Merah"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.vala:87 src/theme.vala:105
 msgid "Green"
 msgstr "Hijau"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#, fuzzy
+#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
 msgid "Red wins!"
-msgstr "%s menang!"
+msgstr "Merah menang!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
-#, fuzzy
+#: src/theme.vala:88 src/theme.vala:106
 msgid "Green wins!"
-msgstr "%s menang!"
+msgstr "Hijau menang!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
 msgid "Red’s turn"
-msgstr ""
+msgstr "Giliran merah"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.vala:89 src/theme.vala:107
 msgid "Green’s turn"
-msgstr ""
+msgstr "Giliran hijau"
 
-#: ../src/theme.c:67
-#, fuzzy
+#: src/theme.vala:92
 msgid "Blue and Red Marbles"
-msgstr "Monte carlo"
+msgstr "Guli Biru dan Merah"
 
-#: ../src/theme.c:71
+#: src/theme.vala:96
 msgid "Blue"
 msgstr "Biru"
 
-#: ../src/theme.c:72
-#, fuzzy
+#: src/theme.vala:97
 msgid "Blue wins!"
-msgstr "%s menang!"
+msgstr "Biru menang!"
 
-#: ../src/theme.c:73
+#: src/theme.vala:98
 msgid "Blue’s turn"
-msgstr ""
+msgstr "Giliran biru"
 
-#: ../src/theme.c:76
+#: src/theme.vala:101
 msgid "Stars and Rings"
-msgstr ""
+msgstr "Bintang dan Gelang"
