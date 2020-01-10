@@ -37,47 +37,47 @@ namespace AI
     \*/
 
     /* returns the column number in which the next move has to be made. Returns uint8.MAX if the board is full. */
-    internal static uint8 playgame (uint8 size, Difficulty level, string vstr)
+    internal static uint8 playgame (uint8 size, Difficulty level, string vstr, uint8 line = 4)
     {
         Player [,] board;
         init_board_from_string (size, vstr, out board);
 
         /* if AI can win by making a move immediately, make that move */
-        uint8 temp = immediate_win (Player.OPPONENT, ref board);
+        uint8 temp = immediate_win (Player.OPPONENT, line, ref board);
         if (temp < size)
             return temp;
 
         /* if HUMAN can win by making a move immediately,
            we make AI move in that column so as avoid loss */
-        temp = immediate_win (Player.HUMAN, ref board);
+        temp = immediate_win (Player.HUMAN, line, ref board);
         if (temp < size)
             return temp;
 
         /* call negamax tree on the current state of the board */
         uint8 next_move_in_column = uint8.MAX;
-        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT, level, ref board, ref next_move_in_column);
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT, level, line, ref board, ref next_move_in_column);
 
         /* return the column number in which next move should be made */
         return next_move_in_column;
     }
 
     /* utility function for testing purposes */
-    internal static uint8 playandcheck (uint8 size, Difficulty level, string vstr)
+    internal static uint8 playandcheck (uint8 size, Difficulty level, string vstr, uint8 line = 4)
     {
         Player [,] board;
         init_board_from_string (size, vstr, out board);
 
-        uint8 temp = immediate_win (Player.OPPONENT, ref board);
+        uint8 temp = immediate_win (Player.OPPONENT, line, ref board);
         if (temp < size)
             return 100;
 
-        temp = immediate_win (Player.HUMAN, ref board);
+        temp = immediate_win (Player.HUMAN, line, ref board);
         if (temp < size)
             return temp;
 
         /* call negamax tree on the current state of the board */
         uint8 next_move_in_column = uint8.MAX;
-        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT, level, ref board, ref next_move_in_column);
+        negamax (plies [level], NEGATIVE_INFINITY, POSITIVE_INFINITY, Player.OPPONENT, level, line, ref board, ref next_move_in_column);
 
         return next_move_in_column;
     }
@@ -130,16 +130,16 @@ namespace AI
 
     /* Recursively implements a negamax tree in memory with alpha-beta pruning. The function is first called for the root node.
        It returns the value of the current node. For nodes at height == 0, the value is determined by a heuristic function. */
-    private static int16 negamax (uint8 height, int16 alpha, int16 beta, Player player, Difficulty level, ref Player [,] board, ref uint8 next_move_in_column)
+    private static int16 negamax (uint8 height, int16 alpha, int16 beta, Player player, Difficulty level, uint8 line, ref Player [,] board, ref uint8 next_move_in_column)
     {
         uint8 n_cols = (uint8) board.length [1];
         /* base case of recursive function, returns if we have reached the lowest depth of DecisionTree or the board if full */
         if (height == 0 || board_full (ref board))
         {
             if (player == Player.OPPONENT)
-                return heurist (level, ref board);
+                return heurist (level, line, ref board);
             else if (player == Player.HUMAN)
-                return -1 * heurist (level, ref board);
+                return -1 * heurist (level, line, ref board);
             else
                 assert_not_reached ();  // do not call AI on a full board, please
         }
@@ -161,8 +161,8 @@ namespace AI
             /* victory() checks if making a move in the i'th column results in a victory for the given player.
                If so, multiply MAX_HEURIST_VALUE by a height factor to avoid closer threats first.
                Or, we need to go further down the negamax tree. */
-            int16 temp = victory (player, column, ref board) ? MAX_HEURIST_VALUE * height
-                                                             : -1 * negamax (height - 1, -1 * beta, -1 * alpha, player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT, level, ref board, ref next_move_in_column);
+            int16 temp = victory (player, line, column, ref board) ? MAX_HEURIST_VALUE * height
+                                                                   : -1 * negamax (height - 1, -1 * beta, -1 * alpha, player == Player.OPPONENT ? Player.HUMAN : Player.OPPONENT, level, line, ref board, ref next_move_in_column);
 
             unmove (column, ref board);
 
@@ -191,20 +191,20 @@ namespace AI
     \*/
 
     /* all these functions return true if the given player wins, or false */
-    private static bool victory (Player player, uint8 column, ref Player [,] board)
+    private static bool victory (Player player, uint8 line, uint8 column, ref Player [,] board)
     {
         uint8 n_rows = (uint8) board.length [0];
         /* find the cell on which the last move was made */
         uint8 row;
         for (row = 0; row < n_rows && board [row, column] == Player.NOBODY; row++);
 
-        return vertical_win             (player, row, column, ref board)
-            || horizontal_win           (player, row, column, ref board)
-            || forward_diagonal_win     (player, row, column, ref board)
-            || backward_diagonal_win    (player, row, column, ref board);
+        return vertical_win             (player, line, row, column, ref board)
+            || horizontal_win           (player, line, row, column, ref board)
+            || forward_diagonal_win     (player, line, row, column, ref board)
+            || backward_diagonal_win    (player, line, row, column, ref board);
     }
 
-    private static inline bool forward_diagonal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
+    private static inline bool forward_diagonal_win (Player player, uint8 line, uint8 _i, uint8 _j, ref Player [,] board)
     {
         uint8 n_rows = (uint8) board.length [0];
         uint8 n_cols = (uint8) board.length [1];
@@ -216,10 +216,10 @@ namespace AI
         for (int8 k = i, l = j; k >= 0 && l < n_cols && board [k, l] == player; k--, l++, count++);
         for (int8 k = i + 1, l = j - 1; k < n_rows && l >= 0 && board [k, l] == player; k++, l--, count++);
 
-        return count >= 4;
+        return count >= line;
     }
 
-    private static inline bool backward_diagonal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
+    private static inline bool backward_diagonal_win (Player player, uint8 line, uint8 _i, uint8 _j, ref Player [,] board)
     {
         uint8 n_rows = (uint8) board.length [0];
         uint8 n_cols = (uint8) board.length [1];
@@ -231,10 +231,10 @@ namespace AI
         for (int8 k = i, l = j; k >= 0 && l >= 0 && board [k, l] == player; k--, l--, count++);
         for (int8 k = i + 1, l = j + 1; k < n_rows && l < n_cols && board [k, l] == player; k++, l++, count++);
 
-        return count >= 4;
+        return count >= line;
     }
 
-    private static inline bool horizontal_win (Player player, uint8 _i, uint8 _j, ref Player [,] board)
+    private static inline bool horizontal_win (Player player, uint8 line, uint8 _i, uint8 _j, ref Player [,] board)
     {
         uint8 n_cols = (uint8) board.length [1];
         int8 i = (int8) _i;
@@ -245,17 +245,17 @@ namespace AI
         for (int8 k = j; k >= 0 && board [i, k] == player; k--, count++);
         for (int8 k = j + 1; k < n_cols && board [i, k] == player; k++, count++);
 
-        return count >= 4;
+        return count >= line;
     }
 
-    private static inline bool vertical_win (Player player, uint8 i, uint8 j, ref Player [,] board)
+    private static inline bool vertical_win (Player player, uint8 line, uint8 i, uint8 j, ref Player [,] board)
     {
         uint8 n_rows = (uint8) board.length [0];
         uint8 count = 0;
 
         for (uint8 k = i; k < n_rows && board [k, j] == player; k++, count++);
 
-        return count >= 4;
+        return count >= line;
     }
 
     /*\
@@ -300,7 +300,7 @@ namespace AI
 
     /* Check for immediate win of HUMAN or OPPONENT. It checks the current state of the board. Returns uint8.MAX if no immediate win for Player P.
        Otherwise returns the column number in which Player P should move to win. */
-    private static uint8 immediate_win (Player player, ref Player [,] board)
+    private static uint8 immediate_win (Player player, uint8 line, ref Player [,] board)
     {
         uint8 n_cols = (uint8) board.length [1];
         for (uint8 i = 0; i < n_cols; i++)
@@ -308,7 +308,7 @@ namespace AI
             if (!move (player, i, ref board))
                 continue;
 
-            bool player_wins = victory (player, i, ref board);
+            bool player_wins = victory (player, line, i, ref board);
             unmove (i, ref board);
 
             if (player_wins)
@@ -338,20 +338,20 @@ namespace AI
     \*/
 
     /* The evaluation function to be called when we have reached the maximum depth in the DecisionTree */
-    private static inline int16 heurist (Difficulty level, ref Player [,] board)
+    private static inline int16 heurist (Difficulty level, uint8 line, ref Player [,] board)
     {
         switch (level)
         {
-            case Difficulty.EASY  : return heurist_easy (ref board);
+            case Difficulty.EASY  : return heurist_easy (line, ref board);
             case Difficulty.MEDIUM: return heurist_medium ();
-            case Difficulty.HARD  : return heurist_hard (ref board);
+            case Difficulty.HARD  : return heurist_hard (line, ref board);
             default: assert_not_reached ();
         }
     }
 
-    private static int16 heurist_easy (ref Player [,] board)
+    private static int16 heurist_easy (uint8 line, ref Player [,] board)
     {
-        return -1 * heurist_hard (ref board);
+        return -1 * heurist_hard (line, ref board);
     }
 
     private static inline int16 heurist_medium ()
@@ -359,15 +359,15 @@ namespace AI
         return (int16) Random.int_range (1, 49);
     }
 
-    private static int16 heurist_hard (ref Player [,] board)
+    private static int16 heurist_hard (uint8 line, ref Player [,] board)
     {
-        int8 count = count_3_in_a_row (Player.OPPONENT, ref board) - count_3_in_a_row (Player.HUMAN, ref board);
+        int8 count = count_3_in_a_row (Player.OPPONENT, line, ref board) - count_3_in_a_row (Player.HUMAN, line, ref board);
         return count == 0 ? (int16) Random.int_range (1, 49) : (int16) count * 100;
     }
 
     /* Count the number of threes in a row for Player P. It counts all those 3
        which have an empty cell in the vicinity to make it four in a row. */
-    private static int8 count_3_in_a_row (Player player, ref Player [,] board)
+    private static int8 count_3_in_a_row (Player player, uint8 line, ref Player [,] board)
     {
         uint8 n_rows = (uint8) board.length [0];
         uint8 n_cols = (uint8) board.length [1];
@@ -385,7 +385,7 @@ namespace AI
 
                 board [i, j] = player;
 
-                if (victory (player, j, ref board))
+                if (victory (player, line, j, ref board))
                 {
                     if (count < int8.MAX)
                         count++;

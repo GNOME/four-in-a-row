@@ -20,6 +20,7 @@
 
 private class Board : Object
 {
+    [CCode (notify = false)] public uint8 line { internal get; protected construct; default = 4; }
     [CCode (notify = false)] public uint8 size { internal get; protected construct; default = 7; }
 
     private static Player [,] gboard;
@@ -29,9 +30,9 @@ private class Board : Object
         gboard = new Player [/* BOARD_COLUMNS */ size, /* BOARD_ROWS_PLUS_ONE */ size];
     }
 
-    internal Board (uint8 size)
+    internal Board (uint8 size, uint8 line)
     {
-        Object (size: size);
+        Object (size: size, line: line);
     }
 
     internal new void @set (uint8 x, uint8 y, Player tile)
@@ -109,7 +110,7 @@ private class Board : Object
             col_1 = col_1 - 1;
         while (col_2 < /* BOARD_ROWS */ size - 1 && gboard [row, col_2 + 1] == tile)
             col_2 = col_2 + 1;
-        return col_2 - col_1 >= 3;
+        return col_2 - col_1 >= line - 1;
     }
 
     private inline bool is_vline_at (Player tile,     uint8 row,       uint8 col,
@@ -124,7 +125,7 @@ private class Board : Object
             row_1 = row_1 - 1;
         while (row_2 < /* BOARD_ROWS */ size - 1 && gboard [row_2 + 1, col] == tile)
             row_2 = row_2 + 1;
-        return row_2 - row_1 >= 3;
+        return row_2 - row_1 >= line - 1;
     }
 
     private inline bool is_dline1_at (Player tile,     uint8 row,       uint8 col,
@@ -146,7 +147,7 @@ private class Board : Object
             row_2 = row_2 + 1;
             col_2 = col_2 + 1;
         }
-        return row_2 - row_1 >= 3;
+        return row_2 - row_1 >= line - 1;
     }
 
     private inline bool is_dline2_at (Player tile,     uint8 row,       uint8 col,
@@ -168,6 +169,6 @@ private class Board : Object
             row_2 = row_2 + 1;
             col_2 = col_2 - 1;
         }
-        return row_2 - row_1 >= 3;
+        return row_2 - row_1 >= line - 1;
     }
 }

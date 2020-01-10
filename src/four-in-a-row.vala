@@ -86,6 +86,7 @@ private class FourInARow : Gtk.Application
 
     private static string? level = null;
     private static int size = 7;
+    private static int target = 4;
     private static bool? sound = null;
 
     private const OptionEntry [] option_entries =
@@ -104,6 +105,12 @@ private class FourInARow : Gtk.Application
 
         /* Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help' */
                                                                                 N_("SIZE") },
+
+        /* Translators: command-line option description, see 'four-in-a-row --help' */
+        { "target", 't', OptionFlags.NONE, OptionArg.INT, ref target,           N_("Length of a winning line"),
+
+        /* Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help' */
+                                                                                N_("TARGET") },
 
         /* Translators: command-line option description, see 'four-in-a-row --help' */
         { "unmute", 0, OptionFlags.NONE, OptionArg.NONE, null,                  N_("Turn on the sound"), null },
@@ -166,6 +173,19 @@ private class FourInARow : Gtk.Application
             return Posix.EXIT_FAILURE;
         }
 
+        if (target < 3)
+        {
+            /* Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2' */
+            stderr.printf ("%s\n", _("Lines must be at least 3 tiles."));
+            return Posix.EXIT_FAILURE;
+        }
+        if (target > size - 1)
+        {
+            /* Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8' */
+            stderr.printf ("%s\n", _("Lines cannot be longer than board height or width."));
+            return Posix.EXIT_FAILURE;
+        }
+
         if (options.contains ("mute"))
             sound = false;
         else if (options.contains ("unmute"))
@@ -212,7 +232,7 @@ private class FourInARow : Gtk.Application
             settings.apply ();
         }
 
-        game_board = new Board ((uint8) size);
+        game_board = new Board ((uint8) size, (uint8) target);
         clear_board ();
 
         if (settings.get_boolean ("sound"))
@@ -450,7 +470,7 @@ private class FourInARow : Gtk.Application
         if (!is_player_human ())
         {
             playgame_timeout = Timeout.add (COMPUTER_INITIAL_DELAY, () => {
-                    uint8 c = AI.playgame ((uint8) size, ai_level, vstr);
+                    uint8 c = AI.playgame ((uint8) size, ai_level, vstr, (uint8) target);
                     if (c >= /* BOARD_COLUMNS */ size) // c could be uint8.MAX if board is full
                         return Source.REMOVE;
                     process_move (c);
@@ -631,7 +651,7 @@ private class FourInARow : Gtk.Application
             if (!is_player_human ())
             {
                 playgame_timeout = Timeout.add (COMPUTER_MOVE_DELAY, () => {
-                        uint8 col = AI.playgame ((uint8) size, ai_level, vstr);
+                        uint8 col = AI.playgame ((uint8) size, ai_level, vstr, (uint8) target);
                         if (col >= /* BOARD_COLUMNS */ size)   // c could be uint8.MAX if the board is full
                             set_gameover (true);
                         var nm = new NextMove (col, this);
@@ -887,7 +907,7 @@ private class FourInARow : Gtk.Application
         /* Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested */
         set_status_message (_("I’m Thinking…"));
 
-        uint8 c = AI.playgame ((uint8) size, Difficulty.HARD, vstr);
+        uint8 c = AI.playgame ((uint8) size, Difficulty.HARD, vstr, (uint8) target);
         if (c >= /* BOARD_COLUMNS */ size)
             assert_not_reached ();  // c could be uint8.MAX if the board if full
 
