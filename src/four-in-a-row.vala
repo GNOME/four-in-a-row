@@ -435,7 +435,7 @@ private class FourInARow : Gtk.Application
             switch_players ();
 
         winner = NOBODY;
-        column = (/* BOARD_COLUMNS */ size % 2 == 0 && get_locale_direction () == TextDirection.RTL) ? /* BOARD_COLUMNS */ (uint8) size / 2 - 1
+        column = (/* BOARD_COLUMNS */ size % 2 == 0 && get_locale_direction () == TextDirection.LTR) ? /* BOARD_COLUMNS */ (uint8) size / 2 - 1
                                                                                                      : /* BOARD_COLUMNS */ (uint8) size / 2;
         column_moveto = column;
         row = 0;
