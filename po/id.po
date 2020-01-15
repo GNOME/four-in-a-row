@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-01-10 18:04+0000\n"
-"PO-Revision-Date: 2020-01-14 18:19+0700\n"
+"POT-Creation-Date: 2020-01-14 15:11+0000\n"
+"PO-Revision-Date: 2020-01-15 09:48+0700\n"
 "Last-Translator: Sucipto <sucipto@pm.me>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -20,13 +20,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural= n!=1;\n"
-"X-DamnedLies-Scope: partial\n"
 "X-Generator: Gtranslator 3.34.0\n"
+"X-DamnedLies-Scope: partial\n"
 "X-Rosetta-Export-Date: 2007-04-23 05:58:10+0000\n"
 
 #. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:40
-#| msgid "Game"
 msgid "Game type"
 msgstr "Tipe permainan"
 
@@ -89,7 +88,6 @@ msgstr "Game dimulai"
 
 #. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
 #: data/ui/four-in-a-row.ui:31
-#| msgid "Game"
 msgid "_New Game"
 msgstr "Permai_nan Baru"
 
@@ -117,7 +115,6 @@ msgstr "Permainan baru"
 
 #. Translators: in the Keyboard Shortcuts window, section "During a game"
 #: data/ui/help-overlay.ui:44
-#| msgid "Undo your most recent move"
 msgctxt "shortcut window"
 msgid "Undo last move"
 msgstr "Batalkan langkah terakhir"
@@ -160,7 +157,6 @@ msgstr "Pilihan dalam permainan"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
 #: data/ui/help-overlay.ui:98
-#| msgid "Start a new game"
 msgctxt "shortcut window"
 msgid "Start new game"
 msgstr "Mulai permainan baru"
@@ -179,28 +175,24 @@ msgstr "Umum"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:121
-#| msgid "Keyboard Controls"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Pintasan papan tik"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:129
-#| msgid "_Help"
 msgctxt "shortcut window"
 msgid "Help"
 msgstr "Bantuan"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:137
-#| msgid "_About"
 msgctxt "shortcut window"
 msgid "About"
 msgstr "Tentang"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:145
-#| msgid "_Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Keluar"
@@ -250,6 +242,18 @@ msgstr "Projek GNOME"
 #: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "permainan;strategi;logika;"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+#| msgid "Game start"
+msgid "Who starts"
+msgstr "Siapa memulai"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
+#: data/org.gnome.Four-in-a-row.gschema.xml:19
+#| msgid "_Two players"
+msgid "Number of players"
+msgstr "Banyaknya pemain"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
 #: data/org.gnome.Four-in-a-row.gschema.xml:26
@@ -384,13 +388,11 @@ msgstr "Tam_pilan"
 
 #. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:270
-#| msgid "Sound"
 msgid "_Sound"
 msgstr "_Suara"
 
 #. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:276
-#| msgid "Keyboard Controls"
 msgid "_Keyboard Shortcuts"
 msgstr "_Pintasan Papan Tik"
 
@@ -545,7 +547,6 @@ msgstr "_Nilai"
 
 #. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
 #: src/game-window.vala:113
-#| msgid "_Start Over"
 msgid "_Start Game"
 msgstr "_Mulai Game"
 
@@ -583,12 +584,10 @@ msgid "Cross"
 msgstr "Silang"
 
 #: src/theme.vala:175 src/theme.vala:186
-#| msgid "Circle"
 msgid "Circle:"
 msgstr "Lingkaran:"
 
 #: src/theme.vala:175 src/theme.vala:186
-#| msgid "Cross"
 msgid "Cross:"
 msgstr "Silang:"
 
@@ -631,7 +630,6 @@ msgid "Red:"
 msgstr "Merah"
 
 #: src/theme.vala:197 src/theme.vala:219
-#| msgid "Green"
 msgid "Green:"
 msgstr "Hijau:"
 
@@ -661,7 +659,6 @@ msgid "Blue"
 msgstr "Biru"
 
 #: src/theme.vala:208
-#| msgid "Blue"
 msgid "Blue:"
 msgstr "Biru:"
 
