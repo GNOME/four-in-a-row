@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-01-14 15:11+0000\n"
-"PO-Revision-Date: 2020-01-15 09:48+0700\n"
+"POT-Creation-Date: 2020-01-15 05:35+0000\n"
+"PO-Revision-Date: 2020-01-20 12:08+0700\n"
 "Last-Translator: Sucipto <sucipto@pm.me>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -245,13 +245,20 @@ msgstr "permainan;strategi;logika;"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
 #: data/org.gnome.Four-in-a-row.gschema.xml:11
-#| msgid "Game start"
 msgid "Who starts"
 msgstr "Siapa memulai"
 
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:13
+msgid ""
+"Specifies who will start the next one-player game. Ignored for two-player "
+"games."
+msgstr ""
+"Menentukan siapa yang akan memulai permainan satu pemain berikutnya. "
+"Diabaikan untuk permainan dua pemain."
+
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
 #: data/org.gnome.Four-in-a-row.gschema.xml:19
-#| msgid "_Two players"
 msgid "Number of players"
 msgstr "Banyaknya pemain"
 
@@ -259,6 +266,13 @@ msgstr "Banyaknya pemain"
 #: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Opponent"
 msgstr "Lawan"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:28
+msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
+msgstr ""
+"Mulai dari 1, paling mudah, sampai 3, paling sulit. Diabaikan untuk "
+"permainan dua pemain."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
 #: data/org.gnome.Four-in-a-row.gschema.xml:34
@@ -309,6 +323,36 @@ msgstr "Jatuhkan marble"
 #: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
 msgstr "Tombol yang ditekan untuk menjatuhkan marble."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:72
+msgid "The width of the window"
+msgstr "Lebar jendela"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:74
+msgid "The width of the main window in pixels."
+msgstr "Lebar jendela utama dalam piksel."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:79
+msgid "The height of the window"
+msgstr "Tinggi jendela"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:81
+msgid "The height of the main window in pixels."
+msgstr "Tinggi jendela utama dalam piksel."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:86
+msgid "A flag to enable maximized mode"
+msgstr "Tanda untuk menyalakan mode maksimal"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:88
+msgid "If “true”, the main window starts in maximized mode."
+msgstr "Jika “true”, jendela utama akan dimulai dalam mode maksimal."
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:95
