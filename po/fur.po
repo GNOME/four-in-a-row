@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-12-27 16:10+0000\n"
-"PO-Revision-Date: 2019-12-28 16:34+0100\n"
+"POT-Creation-Date: 2020-01-20 13:04+0000\n"
+"PO-Revision-Date: 2020-01-26 20:14+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -190,6 +190,11 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Jes"
 
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "Fin!"
+
 #. Translators: application name, as used in the window manager, the window title, the about dialog...
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:7
 #: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
@@ -199,7 +204,7 @@ msgstr "Fuarce 4"
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:8
 #: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "Cree des liniis dal stes colôr par vinci"
+msgstr "Cree des riis dal stes colôr par vinci"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
@@ -342,211 +347,231 @@ msgid "If “true”, the main window starts in maximized mode."
 msgstr "Se “true”, il barcon principâl al partìs in modalitât slargjade."
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:99
+#: src/four-in-a-row.vala:95
 msgid "Set the level of the computer’s AI"
 msgstr "Stabilìs il nivel de IA dal computer"
 
 #. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:102
+#: src/four-in-a-row.vala:98
 msgid "LEVEL"
 msgstr "NIVEL"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:105
+#: src/four-in-a-row.vala:101
 msgid "Turn off the sound"
 msgstr "Distude i suns"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:108
+#: src/four-in-a-row.vala:104
 msgid "Size of the board"
 msgstr "Dimension de taule"
 
 #. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:111
+#: src/four-in-a-row.vala:107
 msgid "SIZE"
 msgstr "DIMENSION"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:114
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr "Lungjece di une rie vincente"
+
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "OBIETÎF"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
 msgid "Turn on the sound"
 msgstr "Impie i suns"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:117
+#: src/four-in-a-row.vala:119
 msgid "Print release version and exit"
 msgstr "Stampe la version e jes"
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
-#: src/four-in-a-row.vala:164
+#: src/four-in-a-row.vala:166
 msgid "Size must be at least 4."
 msgstr "La dimension e scugne jessi di almancul 4."
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
-#: src/four-in-a-row.vala:170
+#: src/four-in-a-row.vala:172
 msgid "Size must not be more than 16."
 msgstr "La dimension e scugne jessi di 16 al massim."
 
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:179
+msgid "Lines must be at least 3 tiles."
+msgstr "Lis riis a scugnin sei di almancul 3 tessaris."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:185
+msgid "Lines cannot be longer than board height or width."
+msgstr "Lis riis no puedin jessi plui lungjis de largjece o lungjece de taule."
+
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
-#: src/four-in-a-row.vala:213
+#: src/four-in-a-row.vala:228
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
 "Il nivel al scugne jessi 1 (facil), 2 (medi) o 3 (dificil). Impostazions no "
 "modificadis."
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:248
+#: src/four-in-a-row.vala:266
 msgid "A_ppearance"
 msgstr "A_spiet"
 
 #. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:252
+#: src/four-in-a-row.vala:270
 msgid "_Sound"
 msgstr "_Sun"
 
 #. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:258
+#: src/four-in-a-row.vala:276
 msgid "_Keyboard Shortcuts"
 msgstr "Scurtis di _tastiere"
 
 #. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:262
+#: src/four-in-a-row.vala:280
 msgid "_Help"
 msgstr "_Jutori"
 
 #. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:266
+#: src/four-in-a-row.vala:284
 msgid "_About Four-in-a-row"
 msgstr "_Informazions su Fuarce 4"
 
 #. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
-#: src/four-in-a-row.vala:554
+#: src/four-in-a-row.vala:566
 msgid "It’s a draw!"
 msgstr "Paritât!"
 
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
-#: src/four-in-a-row.vala:564
+#: src/four-in-a-row.vala:580
 msgid "You win!"
 msgstr "Tu âs vinçût!"
 
-#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
-#: src/four-in-a-row.vala:567
-msgid "Your Turn"
-msgstr "Il to turni"
-
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
-#: src/four-in-a-row.vala:573
+#: src/four-in-a-row.vala:583
 msgid "I win!"
 msgstr "O ai vinçût jo!"
 
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:592
+msgid "Your Turn"
+msgstr "Il to turni"
+
 #. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
 #. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
-#: src/four-in-a-row.vala:576 src/four-in-a-row.vala:877
+#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
 msgid "I’m Thinking…"
 msgstr "O stoi pensant…"
 
 #. blink n times
 #. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
-#: src/four-in-a-row.vala:893
+#: src/four-in-a-row.vala:924
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Indizi: Colone %d"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1062
+#: src/four-in-a-row.vala:1092
 msgid "Tim Musson"
 msgstr "Tim Musson"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1066
+#: src/four-in-a-row.vala:1096
 msgid "David Neary"
 msgstr "David Neary"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1070
+#: src/four-in-a-row.vala:1100
 msgid "Nikhar Agrawal"
 msgstr "Nikhar Agrawal"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1074
+#: src/four-in-a-row.vala:1104
 msgid "Jacob Humphrey"
 msgstr "Jacob Humphrey"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1078
+#: src/four-in-a-row.vala:1108
 msgid "Arnaud Bonatti"
 msgstr "Arnaud Bonatti"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1083
+#: src/four-in-a-row.vala:1113
 msgid "Alan Horkan"
 msgstr "Alan Horkan"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1087
+#: src/four-in-a-row.vala:1117
 msgid "Anatol Drlicek"
 msgstr "Anatol Drlicek"
 
 #. Translators: in the About dialog, indication about some themes origin
-#: src/four-in-a-row.vala:1091
+#: src/four-in-a-row.vala:1121
 msgid "Based on the Faenza icon theme by Matthieu James"
 msgstr "Basât sul teme des iconis Faenza di Matthieu James"
 
 #. Translators: in the About dialog, name of a documenter
-#: src/four-in-a-row.vala:1095
+#: src/four-in-a-row.vala:1125
 msgid "Timothy Musson"
 msgstr "Timothy Musson"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1099
+#: src/four-in-a-row.vala:1129
 msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
 msgstr "Copyright © 1999-2008 – Tim Musson e David Neary"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1103
+#: src/four-in-a-row.vala:1133
 msgid "Copyright © 2014 – Michael Catanzaro"
 msgstr "Copyright © 2014 – Michael Catanzaro"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1107
+#: src/four-in-a-row.vala:1137
 msgid "Copyright © 2018 – Jacob Humphrey"
 msgstr "Copyright © 2018 – Jacob Humphrey"
 
 #. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
-#: src/four-in-a-row.vala:1111
+#: src/four-in-a-row.vala:1141
 #, c-format
 msgid "Copyright © %u-%u – Arnaud Bonatti"
 msgstr "Copyright © %u-%u – Arnaud Bonatti"
 
 #. Translators: about dialog text, introducing the game
-#: src/four-in-a-row.vala:1119
+#: src/four-in-a-row.vala:1149
 msgid "Connect four in a row to win"
 msgstr "Leâ cuatri suntune rie par vinci"
 
 #. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
-#: src/four-in-a-row.vala:1124
+#: src/four-in-a-row.vala:1154
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
 
 #. Translators: during a game, entry in the game menu, for undoing the last move
-#: src/four-in-a-row.vala:1225
+#: src/four-in-a-row.vala:1255
 msgid "_Undo last move"
 msgstr "_Disfe la ultime mosse"
 
 #. Translators: during a game, entry in the game menu, for suggesting where to play
-#: src/four-in-a-row.vala:1229
+#: src/four-in-a-row.vala:1259
 msgid "_Hint"
 msgstr "_Indizi"
 
-#: src/four-in-a-row.vala:1241
+#: src/four-in-a-row.vala:1271
 msgid "Next _Round"
 msgstr "Prossim _zîr"
 
-#: src/four-in-a-row.vala:1243
+#: src/four-in-a-row.vala:1273
 msgid "_Give Up"
 msgstr "_Rinditi"
 
 #. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:1248
+#: src/four-in-a-row.vala:1278
 msgid "_Scores"
 msgstr "_Risultâts"
 
@@ -561,122 +586,122 @@ msgid "Scores"
 msgstr "Risultâts"
 
 #. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
-#: src/scorebox.vala:82
+#: src/scorebox.vala:72
 msgid "Drawn:"
 msgstr "Patis:"
 
 #. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
-#: src/scorebox.vala:107 src/scorebox.vala:121
+#: src/scorebox.vala:93 src/scorebox.vala:107
 msgid "You:"
 msgstr "To:"
 
 #. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
-#: src/scorebox.vala:110 src/scorebox.vala:118
+#: src/scorebox.vala:96 src/scorebox.vala:104
 msgid "Me:"
 msgstr "Jo:"
 
 #. Translators: name of a black-on-white theme, for helping people with visual misabilities
-#: src/theme.vala:86
+#: src/theme.vala:170
 msgid "High Contrast"
 msgstr "Contrast elevât"
 
-#: src/theme.vala:90 src/theme.vala:101
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
 msgstr "Cercli"
 
-#: src/theme.vala:90 src/theme.vala:101
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
 msgstr "Crôs"
 
-#: src/theme.vala:91 src/theme.vala:102
+#: src/theme.vala:175 src/theme.vala:186
 msgid "Circle:"
 msgstr "Cercli:"
 
-#: src/theme.vala:91 src/theme.vala:102
+#: src/theme.vala:175 src/theme.vala:186
 msgid "Cross:"
 msgstr "Crôs:"
 
-#: src/theme.vala:92 src/theme.vala:103
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
 msgstr "Il cercli al vinç!"
 
-#: src/theme.vala:92 src/theme.vala:103
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
 msgstr "La crôs a vinç!"
 
-#: src/theme.vala:93 src/theme.vala:104
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
 msgstr "Turni dal cercli"
 
-#: src/theme.vala:93 src/theme.vala:104
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Cross’s turn"
 msgstr "Turni de crôs"
 
 #. Translators: name of a white-on-black theme, for helping people with visual misabilities
-#: src/theme.vala:97
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
 msgstr "Contrast elevât invertît"
 
 #. Translators: name of a red-versus-green theme
-#: src/theme.vala:108
+#: src/theme.vala:192
 msgid "Red and Green Marbles"
 msgstr "Modons ros e verts"
 
-#: src/theme.vala:112 src/theme.vala:123 src/theme.vala:134
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
 msgstr "Ros"
 
-#: src/theme.vala:112 src/theme.vala:134
+#: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
 msgstr "Vert"
 
-#: src/theme.vala:113 src/theme.vala:124 src/theme.vala:135
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
 msgid "Red:"
 msgstr "Ros:"
 
-#: src/theme.vala:113 src/theme.vala:135
+#: src/theme.vala:197 src/theme.vala:219
 msgid "Green:"
 msgstr "Vert:"
 
-#: src/theme.vala:114 src/theme.vala:125 src/theme.vala:136
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
 msgstr "Il ros al vinç!"
 
-#: src/theme.vala:114 src/theme.vala:136
+#: src/theme.vala:198 src/theme.vala:220
 msgid "Green wins!"
 msgstr "Il vert al vinç!"
 
-#: src/theme.vala:115 src/theme.vala:126 src/theme.vala:137
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
 msgstr "E je la volte dal ros"
 
-#: src/theme.vala:115 src/theme.vala:137
+#: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
 msgstr "Turni dal vert"
 
 #. Translators: name of a blue-versus-red theme
-#: src/theme.vala:119
+#: src/theme.vala:203
 msgid "Blue and Red Marbles"
 msgstr "Modons blu e ros"
 
-#: src/theme.vala:123
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "Blu"
 
-#: src/theme.vala:124
+#: src/theme.vala:208
 msgid "Blue:"
 msgstr "Blu:"
 
-#: src/theme.vala:125
+#: src/theme.vala:209
 msgid "Blue wins!"
 msgstr "Il blu al vinç!"
 
-#: src/theme.vala:126
+#: src/theme.vala:210
 msgid "Blue’s turn"
 msgstr "Turni dal blu"
 
 #. Translators: name of a red-versus-green theme with drawing on the tiles
-#: src/theme.vala:130
+#: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "Stelis e anei"
 
