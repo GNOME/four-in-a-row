@@ -4,347 +4,759 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome-Games 2.0.x\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-01 00:38+0100\n"
-"PO-Revision-Date: 2003-11-24 01:54+0800\n"
-"Last-Translator: Hasbullah Bin Pit <sebol@ikhlas.com>\n"
-"Language-Team: Projek Gabai <gabai-penyumbang@lists.sourceforge.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2020-01-26 19:15+0000\n"
+"PO-Revision-Date: 2020-01-27 14:49+0800\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
+"Language-Team: Pasukan Terjemahan GNOME Malaysia\n"
 "Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:1
-#: ../data/four-in-a-row.desktop.in.h:1 ../data/four-in-a-row.ui.h:1
-#: ../src/main.h:5
-#, fuzzy
+#. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:40
+msgid "Game type"
+msgstr "Jenis permainan"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:61 data/ui/fiar-screens.ui:244
+msgid "Play _first"
+msgstr "Mula _dulu"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:73 data/ui/fiar-screens.ui:256
+msgid "Play _second"
+msgstr "Mula _kemudian"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:85
+msgid "_Two players"
+msgstr "_Dua pemain"
+
+#. Translators: when configuring a new game, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:109
+msgid "Players"
+msgstr "Pemain"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:126
+msgid "_One"
+msgstr "_Satu"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:138
+msgid "_Two"
+msgstr "_Dua"
+
+#. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
+#: data/ui/fiar-screens.ui:162
+msgid "Difficulty"
+msgstr "Kesukaran"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:179
+msgid "_Easy"
+msgstr "_Mudah"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:191
+msgid "_Medium"
+msgstr "_Sederhana"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:203
+msgid "_Hard"
+msgstr "S_ukar"
+
+#. Translators: when configuring a new game, header of the row for choosing whether to start or not
+#: data/ui/fiar-screens.ui:227
+msgid "Game start"
+msgstr "Mula permainan"
+
+#. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
+#: data/ui/four-in-a-row.ui:31
+msgid "_New Game"
+msgstr "Permainan _Baharu"
+
+#. Translators: during a game, tooltip text of the New Game button
+#: data/ui/four-in-a-row.ui:36
+msgid "Start a new game"
+msgstr "Mulakan satu permainan baharu"
+
+#. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
+#: data/ui/four-in-a-row.ui:49
+msgid "Go back to the current game"
+msgstr "Undur ke permainan semasa"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"...
+#: data/ui/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "During a game"
+msgstr "Ketika permainan"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:36
+msgctxt "shortcut window"
+msgid "New game"
+msgstr "Permainan baharu"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:44
+msgctxt "shortcut window"
+msgid "Undo last move"
+msgstr "Buat asal tindakan terakhir"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Show a hint"
+msgstr "Tunjuk satu pembayang"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
+#: data/ui/help-overlay.ui:62
+msgctxt "shortcut window"
+msgid "Play with keyboard"
+msgstr "Main dengan papan kekunci"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
+#: data/ui/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Select where to play"
+msgstr "Pilih tempat mula bermain"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column
+#: data/ui/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Select the given column"
+msgstr "Pilih lajur yang diberi"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
+#: data/ui/help-overlay.ui:83
+msgctxt "shortcut window"
+msgid "Play in selected column"
+msgstr "Main dalam lajur terpilih"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
+#: data/ui/help-overlay.ui:93
+msgctxt "shortcut window"
+msgid "During game selection"
+msgstr "Ketika pemilihan permainan"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
+#: data/ui/help-overlay.ui:98
+#| msgid "Start a new game"
+msgctxt "shortcut window"
+msgid "Start new game"
+msgstr "Mula permainan baharu"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
+#: data/ui/help-overlay.ui:106
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Kembali"
+
+#. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
+#: data/ui/help-overlay.ui:116
+msgctxt "shortcut window"
+msgid "Generic"
+msgstr "Generik"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:121
+#| msgid "Keyboard Controls"
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Pintasan papan kekunci"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Bantuan"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "About"
+msgstr "Perihal"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:145
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Keluar"
+
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "Tamat!"
+
+#. Translators: application name, as used in the window manager, the window title, the about dialog...
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
 msgid "Four-in-a-row"
-msgstr "Four-in-a-row"
+msgstr "Empat-dalam-sebaris"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:2
-#: ../data/four-in-a-row.desktop.in.h:2
-#, fuzzy
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "Bersaing supaya menjadi barisan sama warna"
+msgstr "Buat satu barisan warna yang sama untuk menang"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:3
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
+"Sebuah permainan keluarga klasik, objektif empat-dalam-sebaris ialah membina "
+"satu baris empat guli dan pada masa yang sama cuba gagalkan pihak lawan anda "
+"(komputer atau orang lain) membina satu barisannya. Baris boleh menegak, "
+"mengufuk atau condong. Pemain yang berjaya membentuk empat guli dalam satu "
+"barisan adalah pemenangnya!"
 
-#: ../data/four-in-a-row.appdata.xml.in.h:4
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
+"Empat-dalam-sebaris memfiturkan aras kesukaran berbilang. Jika anda hadapi "
+"masalah, anda boleh dapatkan satu pembayang."
 
-#: ../data/four-in-a-row.appdata.xml.in.h:5
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
-msgstr ""
+msgstr "Projek GNOME"
 
-#: ../data/four-in-a-row.desktop.in.h:3
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
-msgstr ""
+msgstr "permainan;strategi;logik;"
 
-#: ../data/four-in-a-row.ui.h:2
-msgid "Undo your most recent move"
-msgstr ""
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+msgid "Who starts"
+msgstr "Siapa mula dahulu"
 
-#: ../data/four-in-a-row.ui.h:3
-#, fuzzy
-msgid "_Hint"
-msgstr "Petunjuk"
-
-#: ../data/four-in-a-row.ui.h:4
-#, fuzzy
-msgid "Receive a hint for your next move"
-msgstr "Dapatkan bayangan untuk pergerakan berikutnya"
-
-#: ../data/four-in-a-row.ui.h:5
-#, fuzzy
-msgid "_Start Over"
-msgstr "Mula semula permainan"
-
-#: ../data/four-in-a-row.ui.h:6
-msgid "Start a new game"
-msgstr "Mula permainan baru"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:1
-#, fuzzy
-msgid "Opponent"
-msgstr "Lawan kepada Komputer:"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:2
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:13
 msgid ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
+"Specifies who will start the next one-player game. Ignored for two-player "
+"games."
 msgstr ""
-"Sifar ialah manusia; satu hingga tiga merujuk kepada peringkat komputer."
+"Nyatakan siapa yang akan memulakan permainan seorang-pemain yang berikutnya. "
+"Abaikan untuk permainan dua-orang-pemain."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:3
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
+#: data/org.gnome.Four-in-a-row.gschema.xml:19
+msgid "Number of players"
+msgstr "Bilangan pemain"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
+msgid "Opponent"
+msgstr "Pihak Lawan"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:28
+msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
+msgstr ""
+"Dari 1, paling mudah, hingga 3, paling sukar. Abaikan permainan dua-orang-"
+"pemain."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:34
 msgid "Theme ID"
 msgstr "ID Tema"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:4
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:36
 msgid "A number specifying the preferred theme."
-msgstr "Nombor yang menyatakan tema digerami."
+msgstr "Nombor yang menyatakan tema dikehendaki."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:5
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:41
 msgid "Sound"
 msgstr "Bunyi"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:6
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
-msgstr "Samada memainkan bunyi atau tidak."
+msgstr "Sama ada mainkan bunyi peristiwa atau sebaliknya."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:7 ../src/prefs.c:247
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:48
 msgid "Move left"
-msgstr "Gerakan kekiri"
+msgstr "Gerak ke kiri"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:8
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:50
 msgid "Key press to move left."
-msgstr "Kekunci untuk bergerak ke kiri."
+msgstr "Kekunci ditekan untuk gerak ke kiri."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:9 ../src/prefs.c:248
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:55
 msgid "Move right"
-msgstr "Gerakan ke kanan"
+msgstr "Gerak ke kanan"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:10
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:57
 msgid "Key press to move right."
-msgstr "Kekunci untuk bergerak ke kanan."
+msgstr "Kekunci ditekan untuk gerak ke kanan."
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:11 ../src/prefs.c:249
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:62
 msgid "Drop marble"
 msgstr "Jatuhkan guli"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.h:12
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
-msgstr "Kekunci untuk menjatuhkan guli."
+msgstr "Kekunci ditekan untuk jatuhkan sebiji guli."
 
-#: ../src/games-controls.c:105
-msgid "This key is already in use."
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:72
+msgid "The width of the window"
+msgstr "Lebar bagi tetingkap"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:74
+msgid "The width of the main window in pixels."
+msgstr "Lebar tetingkap utama dalam piksel."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:79
+msgid "The height of the window"
+msgstr "Tinggi bagi tetingkap"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:81
+msgid "The height of the main window in pixels."
+msgstr "Tinggi tetingkap utama dalam piksel."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:86
+msgid "A flag to enable maximized mode"
+msgstr "Satu bendera untuk membenarkan mod termaksimum"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:88
+msgid "If “true”, the main window starts in maximized mode."
+msgstr "Jika \"benar\" tetingkap utama bermula dalam mod termaksimum."
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:95
+msgid "Set the level of the computer’s AI"
+msgstr "Tetapkan aras AI komputer"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:98
+msgid "LEVEL"
+msgstr "ARAS"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:101
+msgid "Turn off the sound"
+msgstr "Matikan bunyi"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:104
+msgid "Size of the board"
+msgstr "Saiz papan"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:107
+msgid "SIZE"
+msgstr "SAIZ"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr "Panjang baris menang"
+
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "SASARAN"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
+msgid "Turn on the sound"
+msgstr "Hidupkan bunyi"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:119
+msgid "Print release version and exit"
+msgstr "Cetak versi keluaran dan keluar"
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
+#: src/four-in-a-row.vala:166
+msgid "Size must be at least 4."
+msgstr "Saiz mesti sekurang-kurangnya 4."
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
+#: src/four-in-a-row.vala:172
+msgid "Size must not be more than 16."
+msgstr "Saiz tidak lebih daripada 16."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:179
+msgid "Lines must be at least 3 tiles."
+msgstr "Baris mesti sekurang-kurangnya 3 jubin."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:185
+msgid "Lines cannot be longer than board height or width."
+msgstr "Baris tidak boleh lebih panjang dari tinggi atau lebar papan."
+
+#. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
+#: src/four-in-a-row.vala:228
+msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
+"Aras sepatutnya antara 1 (mudah), 2 (sederhana) atau 3 (sukar). Tetapan "
+"tidak berubah."
 
-#: ../src/games-controls.c:326
-#, fuzzy
-msgid "Unknown Command"
-msgstr "Warna tidak diketahui"
+#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:266
+msgid "A_ppearance"
+msgstr "Pen_ampilan"
 
-#: ../src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
+#. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:270
+#| msgid "Sound"
+msgid "_Sound"
+msgstr "_Bunyi"
 
-#: ../src/main.c:476
-#, fuzzy
+#. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:276
+#| msgid "Keyboard Controls"
+msgid "_Keyboard Shortcuts"
+msgstr "Pintasan Papan _Kekunci"
+
+#. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:280
+msgid "_Help"
+msgstr "_Bantuan"
+
+#. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:284
+msgid "_About Four-in-a-row"
+msgstr "Perih_al Empat-dalam-sebaris"
+
+#. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
+#: src/four-in-a-row.vala:566
 msgid "It’s a draw!"
 msgstr "Ianya seri!"
 
-#: ../src/main.c:484
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
+#: src/four-in-a-row.vala:580
 msgid "You win!"
-msgstr "Anda menang!!"
+msgstr "Anda menang!"
 
-#: ../src/main.c:486 ../src/main.c:502
-msgid "Your Turn"
-msgstr ""
-
-#: ../src/main.c:489
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
+#: src/four-in-a-row.vala:583
 msgid "I win!"
 msgstr "Saya menang!"
 
-#: ../src/main.c:491 ../src/main.c:590
-msgid "I’m Thinking…"
-msgstr ""
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:592
+msgid "Your Turn"
+msgstr "Giliran Anda"
 
-#: ../src/main.c:603
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
+#. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
+#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
+msgid "I’m Thinking…"
+msgstr "Saya masih Berfikir..."
+
+#. blink n times
+#. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
+#: src/four-in-a-row.vala:924
 #, c-format
 msgid "Hint: Column %d"
-msgstr "Bayangan: Kolum %d"
+msgstr "Pembayang: Lajur %d"
 
-#: ../src/main.c:631 ../src/main.c:635
-#, fuzzy
-msgid "You:"
-msgstr "Anda"
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1092
+msgid "Tim Musson"
+msgstr "Tim Musson"
 
-#: ../src/main.c:632 ../src/main.c:634
-#, fuzzy
-msgid "Me:"
-msgstr "Saya"
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1096
+msgid "David Neary"
+msgstr "David Neary"
 
-#: ../src/main.c:680
-#, fuzzy
-msgid "Scores"
-msgstr "Markah."
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1100
+msgid "Nikhar Agrawal"
+msgstr "Nikhar Agrawal"
 
-#: ../src/main.c:721
-#, fuzzy
-msgid "Drawn:"
-msgstr "Dilukis"
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1104
+msgid "Jacob Humphrey"
+msgstr "Jacob Humphrey"
 
-#: ../src/main.c:762
-msgid "Connect four in a row to win."
-msgstr ""
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1108
+msgid "Arnaud Bonatti"
+msgstr "Arnaud Bonatti"
 
-#: ../src/main.c:765
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1113
+msgid "Alan Horkan"
+msgstr "Alan Horkan"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1117
+msgid "Anatol Drlicek"
+msgstr "Anatol Drlicek"
+
+#. Translators: in the About dialog, indication about some themes origin
+#: src/four-in-a-row.vala:1121
+msgid "Based on the Faenza icon theme by Matthieu James"
+msgstr "Berdasarkan tema ikon Faenza oleh Matthieu James"
+
+#. Translators: in the About dialog, name of a documenter
+#: src/four-in-a-row.vala:1125
+msgid "Timothy Musson"
+msgstr "Timothy Musson"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1129
+msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
+msgstr "Hak Cipta © 1999-2008 – Tim Musson dan David Neary"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1133
+msgid "Copyright © 2014 – Michael Catanzaro"
+msgstr "Hak Cipta © 2014 – Michael Catanzaro"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1137
+msgid "Copyright © 2018 – Jacob Humphrey"
+msgstr "Hak Cipta © 2018 – Jacob Humphrey"
+
+#. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
+#: src/four-in-a-row.vala:1141
+#, c-format
+msgid "Copyright © %u-%u – Arnaud Bonatti"
+msgstr "Hak cipta © %u-%u – Arnaud Bonatti"
+
+#. Translators: about dialog text, introducing the game
+#: src/four-in-a-row.vala:1149
+msgid "Connect four in a row to win"
+msgstr "Hubungkan empat guli dalam satu baris untuk menang"
+
+#. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
+#: src/four-in-a-row.vala:1154
 msgid "translator-credits"
 msgstr ""
-"\"kenang daku semasa bermain..ahaks...'\n"
-"Noor Azurah Anuar <gbumla@yahoo.com>, Bandar Hilir."
+"Launchpad Contributions:\n"
+"  Ahmed Noor Kader Mustajir Md Eusoff https://launchpad.net/~sir.ade\n"
+"  Mohammad Hafiz bin Ismail https://launchpad.net/~mypapit\n"
+"  Mohd Farimi Ab Rahman https://launchpad.net/~farimi\n"
+"  Shaiffulnizam Mohamad https://launchpad.net/~shaifful-md\n"
+"  Umarzuki Bin Mochlis Moktar https://launchpad.net/~umar\n"
+"  abuyop https://launchpad.net/~abuyop\n"
+"  dequan https://launchpad.net/~dequan\n"
+"  melayubuntu https://launchpad.net/~zul-malc"
 
-#: ../src/main.c:1130
-#, fuzzy
+#. Translators: during a game, entry in the game menu, for undoing the last move
+#: src/four-in-a-row.vala:1255
+msgid "_Undo last move"
+msgstr "B_uat asal tindakan terakhir"
+
+#. Translators: during a game, entry in the game menu, for suggesting where to play
+#: src/four-in-a-row.vala:1259
+msgid "_Hint"
+msgstr "Pemba_yang"
+
+#: src/four-in-a-row.vala:1271
+msgid "Next _Round"
+msgstr "_Pusingan Berikutnya"
+
+#: src/four-in-a-row.vala:1273
+msgid "_Give Up"
+msgstr "_Mengalah"
+
+#. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:1278
 msgid "_Scores"
-msgstr "Markah."
+msgstr "_Skor"
 
-#: ../src/main.c:1131
-#, fuzzy
-msgid "_Preferences"
-msgstr "Keutamaan"
+#. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
+#: src/game-window.vala:113
+msgid "_Start Game"
+msgstr "_Mula Permainan"
 
-#: ../src/main.c:1134
-#, fuzzy
-msgid "_Help"
-msgstr "Bantuan"
+#. Translators: title of the Scores dialog; plural noun
+#: src/scorebox.vala:37
+msgid "Scores"
+msgstr "Skor"
 
-#: ../src/main.c:1135
-msgid "_About"
-msgstr ""
+#. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
+#: src/scorebox.vala:72
+msgid "Drawn:"
+msgstr "Seri:"
 
-#: ../src/main.c:1136
-msgid "_Quit"
-msgstr ""
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
+#: src/scorebox.vala:93 src/scorebox.vala:107
+msgid "You:"
+msgstr "Anda:"
 
-#: ../src/prefs.c:171
-msgid "Preferences"
-msgstr "Keutamaan"
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
+#: src/scorebox.vala:96 src/scorebox.vala:104
+msgid "Me:"
+msgstr "Saya:"
 
-#: ../src/prefs.c:193
-#, fuzzy
-msgid "Game"
-msgstr "_Permainan"
-
-#: ../src/prefs.c:196
-msgid "Opponent:"
-msgstr ""
-
-#: ../src/prefs.c:207
-msgid "Human"
-msgstr "Manusia"
-
-#: ../src/prefs.c:211
-msgid "Level one"
-msgstr "Peringkat Satu"
-
-#: ../src/prefs.c:215
-msgid "Level two"
-msgstr "Peringkat Dua"
-
-#: ../src/prefs.c:219
-msgid "Level three"
-msgstr "Peringkat Tiga"
-
-#: ../src/prefs.c:225
-#, fuzzy
-msgid "_Theme:"
-msgstr "Tema"
-
-#: ../src/prefs.c:238
-#, fuzzy
-msgid "E_nable sounds"
-msgstr "Hidupkan bunyi"
-
-#. keyboard tab
-#: ../src/prefs.c:243
-msgid "Keyboard Controls"
-msgstr "Kawalan Papan Kekunci"
-
-#: ../src/theme.c:40
+#. Translators: name of a black-on-white theme, for helping people with visual misabilities
+#: src/theme.vala:170
 msgid "High Contrast"
-msgstr ""
+msgstr "Beza Jelas Tinggi"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
-msgstr ""
+msgstr "Bulatan"
 
-#: ../src/theme.c:44 ../src/theme.c:53
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
-msgstr ""
+msgstr "Silang"
 
-#: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Circle:"
+msgstr "Bulatan:"
+
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Cross:"
+msgstr "Silang:"
+
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
-msgstr "Pemain Gelap menang!"
+msgstr "Bulatan menang!"
 
-#: ../src/theme.c:45 ../src/theme.c:54
-#, fuzzy
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
-msgstr "%s menang!"
+msgstr "Silang menang!"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
-msgstr ""
+msgstr "Giliran bulatan"
 
-#: ../src/theme.c:46 ../src/theme.c:55
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Cross’s turn"
-msgstr ""
+msgstr "Giliran silang"
 
-#: ../src/theme.c:49
+#. Translators: name of a white-on-black theme, for helping people with visual misabilities
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
-msgstr ""
+msgstr "Songsang Beza Jelas"
 
-#: ../src/theme.c:58
+#. Translators: name of a red-versus-green theme
+#: src/theme.vala:192
 msgid "Red and Green Marbles"
-msgstr ""
+msgstr "Guli Merah dan Hijau"
 
-#: ../src/theme.c:62 ../src/theme.c:71 ../src/theme.c:80
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
 msgstr "Merah"
 
-#: ../src/theme.c:62 ../src/theme.c:80
+#: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
 msgstr "Hijau"
 
-#: ../src/theme.c:63 ../src/theme.c:72 ../src/theme.c:81
-#, fuzzy
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
+msgid "Red:"
+msgstr "Merah:"
+
+#: src/theme.vala:197 src/theme.vala:219
+#| msgid "Green"
+msgid "Green:"
+msgstr "Hijau:"
+
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
-msgstr "%s menang!"
+msgstr "Merah menang!"
 
-#: ../src/theme.c:63 ../src/theme.c:81
-#, fuzzy
+#: src/theme.vala:198 src/theme.vala:220
 msgid "Green wins!"
-msgstr "%s menang!"
+msgstr "Hijau menang!"
 
-#: ../src/theme.c:64 ../src/theme.c:73 ../src/theme.c:82
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
-msgstr ""
+msgstr "Giliran merah"
 
-#: ../src/theme.c:64 ../src/theme.c:82
+#: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
-msgstr ""
+msgstr "Giliran hijau"
 
-#: ../src/theme.c:67
-#, fuzzy
+#. Translators: name of a blue-versus-red theme
+#: src/theme.vala:203
 msgid "Blue and Red Marbles"
-msgstr "Monte carlo"
+msgstr "Guli Biru dan Merah"
 
-#: ../src/theme.c:71
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "Biru"
 
-#: ../src/theme.c:72
-#, fuzzy
+#: src/theme.vala:208
+#| msgid "Blue"
+msgid "Blue:"
+msgstr "Biru:"
+
+#: src/theme.vala:209
 msgid "Blue wins!"
-msgstr "%s menang!"
+msgstr "Biru menang!"
 
-#: ../src/theme.c:73
+#: src/theme.vala:210
 msgid "Blue’s turn"
-msgstr ""
+msgstr "Giliran biru"
 
-#: ../src/theme.c:76
+#. Translators: name of a red-versus-green theme with drawing on the tiles
+#: src/theme.vala:214
 msgid "Stars and Rings"
-msgstr ""
+msgstr "Bintang dan Gelang"
+
+#, fuzzy
+#~ msgid "Receive a hint for your next move"
+#~ msgstr "Dapatkan bayangan untuk pergerakan berikutnya"
+
+#~ msgid ""
+#~ "Zero is human; one through three correspond to the level of the computer "
+#~ "player."
+#~ msgstr ""
+#~ "Sifar ialah manusia; satu hingga tiga merujuk kepada peringkat komputer."
+
+#, fuzzy
+#~ msgid "Unknown Command"
+#~ msgstr "Warna tidak diketahui"
+
+#, fuzzy
+#~ msgid "_Preferences"
+#~ msgstr "Keutamaan"
+
+#~ msgid "Preferences"
+#~ msgstr "Keutamaan"
+
+#~ msgid "Human"
+#~ msgstr "Manusia"
+
+#~ msgid "Level one"
+#~ msgstr "Peringkat Satu"
+
+#~ msgid "Level two"
+#~ msgstr "Peringkat Dua"
+
+#~ msgid "Level three"
+#~ msgstr "Peringkat Tiga"
+
+#, fuzzy
+#~ msgid "_Theme:"
+#~ msgstr "Tema"
+
+#, fuzzy
+#~ msgid "E_nable sounds"
+#~ msgstr "Hidupkan bunyi"
