@@ -1,5 +1,5 @@
 # gnome-games ja.po.
-# Copyright (C) 1998-2019 Free Software Foundation, Inc.
+# Copyright (C) 1998-2020 Free Software Foundation, Inc.
 # Yukihiro Nakai <Nakai@technologist.com>, 1998.
 # Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>, 1999.
 # Yuusuke Tahara <tahara@gnome.gr.jp>, 2000.
@@ -9,14 +9,14 @@
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
 # Shushi KUROSE <md81bird@hitaki.net>, 2012.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2016.
-# sicklylife <translation@sicklylife.jp>, 2019.
+# sicklylife <translation@sicklylife.jp>, 2019-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
 "POT-Creation-Date: 2020-01-10 18:04+0000\n"
-"PO-Revision-Date: 2019-09-08 18:00+0900\n"
+"PO-Revision-Date: 2020-01-29 21:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -27,74 +27,70 @@ msgstr ""
 
 #. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:40
-#, fuzzy
-#| msgid "Game"
 msgid "Game type"
-msgstr "ゲーム"
+msgstr "ゲーム形式"
 
 #. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt)
 #. Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:61 data/ui/fiar-screens.ui:244
 msgid "Play _first"
-msgstr ""
+msgstr "先手(_F)"
 
 #. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt)
 #. Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:73 data/ui/fiar-screens.ui:256
 msgid "Play _second"
-msgstr ""
+msgstr "後手(_S)"
 
 #. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:85
 msgid "_Two players"
-msgstr ""
+msgstr "二人プレイ(_T)"
 
 #. Translators: when configuring a new game, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:109
 msgid "Players"
-msgstr ""
+msgstr "プレイヤー"
 
 #. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:126
 msgid "_One"
-msgstr ""
+msgstr "1(_O)"
 
 #. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:138
 msgid "_Two"
-msgstr ""
+msgstr "2(_T)"
 
 #. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
 #: data/ui/fiar-screens.ui:162
 msgid "Difficulty"
-msgstr ""
+msgstr "難易度"
 
 #. Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:179
 msgid "_Easy"
-msgstr ""
+msgstr "簡単(_E)"
 
 #. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:191
 msgid "_Medium"
-msgstr ""
+msgstr "普通(_M)"
 
 #. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:203
 msgid "_Hard"
-msgstr ""
+msgstr "難しい(_H)"
 
 #. Translators: when configuring a new game, header of the row for choosing whether to start or not
 #: data/ui/fiar-screens.ui:227
 msgid "Game start"
-msgstr ""
+msgstr "ゲーム開始"
 
 #. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
 #: data/ui/four-in-a-row.ui:31
-#, fuzzy
-#| msgid "Game"
 msgid "_New Game"
-msgstr "ゲーム"
+msgstr "新しいゲーム(_N)"
 
 #. Translators: during a game, tooltip text of the New Game button
 #: data/ui/four-in-a-row.ui:36
@@ -104,24 +100,22 @@ msgstr "新しいゲームを開始します"
 #. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
 #: data/ui/four-in-a-row.ui:49
 msgid "Go back to the current game"
-msgstr ""
+msgstr "現在のゲームに戻ります"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"...
 #: data/ui/help-overlay.ui:31
 msgctxt "shortcut window"
 msgid "During a game"
-msgstr ""
+msgstr "ゲーム中"
 
 #. Translators: in the Keyboard Shortcuts window, section "During a game"
 #: data/ui/help-overlay.ui:36
 msgctxt "shortcut window"
 msgid "New game"
-msgstr ""
+msgstr "新しいゲーム"
 
 #. Translators: in the Keyboard Shortcuts window, section "During a game"
 #: data/ui/help-overlay.ui:44
-#, fuzzy
-#| msgid "Undo your most recent move"
 msgctxt "shortcut window"
 msgid "Undo last move"
 msgstr "直前の手を戻す"
@@ -130,94 +124,84 @@ msgstr "直前の手を戻す"
 #: data/ui/help-overlay.ui:52
 msgctxt "shortcut window"
 msgid "Show a hint"
-msgstr ""
+msgstr "ヒントを表示する"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
 #: data/ui/help-overlay.ui:62
 msgctxt "shortcut window"
 msgid "Play with keyboard"
-msgstr ""
+msgstr "キーボード操作"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
 #: data/ui/help-overlay.ui:67
 msgctxt "shortcut window"
 msgid "Select where to play"
-msgstr ""
+msgstr "選択する"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column
 #: data/ui/help-overlay.ui:75
 msgctxt "shortcut window"
 msgid "Select the given column"
-msgstr ""
+msgstr "指定列を選択する"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
 #: data/ui/help-overlay.ui:83
 msgctxt "shortcut window"
 msgid "Play in selected column"
-msgstr ""
+msgstr "選択した列にビー玉を落とす"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
 #: data/ui/help-overlay.ui:93
 msgctxt "shortcut window"
 msgid "During game selection"
-msgstr ""
+msgstr "ゲーム選択中"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
 #: data/ui/help-overlay.ui:98
-#, fuzzy
-#| msgid "Start a new game"
 msgctxt "shortcut window"
 msgid "Start new game"
-msgstr "新しいゲームを開始します"
+msgstr "新しいゲームを開始する"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
 #: data/ui/help-overlay.ui:106
 msgctxt "shortcut window"
 msgid "Go back"
-msgstr ""
+msgstr "前に戻る"
 
 #. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
 #: data/ui/help-overlay.ui:116
 msgctxt "shortcut window"
 msgid "Generic"
-msgstr ""
+msgstr "全般"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:121
-#, fuzzy
-#| msgid "Keyboard Controls"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
-msgstr "キーボード操作"
+msgstr "キーボードショートカット"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:129
-#, fuzzy
-#| msgid "_Help"
 msgctxt "shortcut window"
 msgid "Help"
-msgstr "ヘルプ(_H)"
+msgstr "ヘルプ"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:137
-#, fuzzy
-#| msgid "_About"
 msgctxt "shortcut window"
 msgid "About"
-msgstr "このアプリケーションについて(_A)"
+msgstr "このアプリケーションについて"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:145
-#, fuzzy
-#| msgid "_Quit"
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "終了(_Q)"
+msgstr "終了する"
 
 #. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
 #: data/ui/history-button.ui:41
 msgid "End!"
-msgstr ""
+msgstr "終了!"
 
 #. Translators: application name, as used in the window manager, the window title, the about dialog...
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:7
@@ -237,18 +221,18 @@ msgid ""
 "building a line of his or her own. A line can be horizontal, vertical or "
 "diagonal. The first player to connect four in a row is the winner!"
 msgstr ""
-"四目並べは家族でも楽しめる古典的なゲームです。あなたと対戦相手（人間またはコ"
-"ンピューター）で交互に石を落とし、どちらが先に石を四つ一列に並べるかを競いま"
-"す。並べる方向は縦、横、斜めのどれでもかまいません。相手を邪魔しながら先に四"
-"つ並べた方が勝ちです。"
+"四目並べは家族でも楽しめる古典的なゲームです。あなたと対戦相手 (人間またはコ"
+"ンピューター) で交互にビー玉を落とし、どちらが先に玉を四つ一列に並べるかを競"
+"います。並べる方向は縦、横、斜めのどれでもかまいません。相手を邪魔しながら先"
+"に四つ並べた方が勝ちです。"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr ""
-"自分のレベルに合わせてコンピューターの強さを選べます。次の一手に悩んだとき"
-"は、ヒントをもらうこともできます。"
+"自分のレベルに合わせてコンピューターの強さを選択できます。次の一手に悩んだ"
+"ときは、ヒントをもらうこともできます。"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
@@ -264,19 +248,19 @@ msgstr ""
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
 #: data/org.gnome.Four-in-a-row.gschema.xml:11
 msgid "Who starts"
-msgstr ""
+msgstr "誰から始めるか"
 
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
 #: data/org.gnome.Four-in-a-row.gschema.xml:13
 msgid ""
 "Specifies who will start the next one-player game. Ignored for two-player "
 "games."
-msgstr ""
+msgstr "次のゲームを誰から開始するか指定します。二人プレイでは無視されます。"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
 #: data/org.gnome.Four-in-a-row.gschema.xml:19
 msgid "Number of players"
-msgstr ""
+msgstr "プレイヤー数"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
 #: data/org.gnome.Four-in-a-row.gschema.xml:26
@@ -286,7 +270,7 @@ msgstr "相手"
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
 #: data/org.gnome.Four-in-a-row.gschema.xml:28
 msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
-msgstr ""
+msgstr "1 (簡単) から 3 (難しい) までです。二人プレイでは無視されます。"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
 #: data/org.gnome.Four-in-a-row.gschema.xml:34
@@ -306,7 +290,7 @@ msgstr "サウンド"
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
 #: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
-msgstr "イベント時のサウンドを演奏するかどうかです。"
+msgstr "イベント時のサウンドを再生するかどうかです。"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
 #: data/org.gnome.Four-in-a-row.gschema.xml:48
@@ -331,131 +315,129 @@ msgstr "右に移動するキーです。"
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
 #: data/org.gnome.Four-in-a-row.gschema.xml:62
 msgid "Drop marble"
-msgstr "石を落とす"
+msgstr "ビー玉を落とす"
 
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
 #: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
-msgstr "石を落とすキーです"
+msgstr "ビー玉を落とすキーです。"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
 #: data/org.gnome.Four-in-a-row.gschema.xml:72
 msgid "The width of the window"
-msgstr ""
+msgstr "ウィンドウの幅"
 
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
 #: data/org.gnome.Four-in-a-row.gschema.xml:74
 msgid "The width of the main window in pixels."
-msgstr ""
+msgstr "メインウィンドウの幅 (ピクセル単位) です。"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
 #: data/org.gnome.Four-in-a-row.gschema.xml:79
 msgid "The height of the window"
-msgstr ""
+msgstr "メインウィンドウの高さ"
 
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
 #: data/org.gnome.Four-in-a-row.gschema.xml:81
 msgid "The height of the main window in pixels."
-msgstr ""
+msgstr "メインウィンドウの高さ (ピクセル単位) です。"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
 #: data/org.gnome.Four-in-a-row.gschema.xml:86
 msgid "A flag to enable maximized mode"
-msgstr ""
+msgstr "最大化モード有効フラグ"
 
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
 #: data/org.gnome.Four-in-a-row.gschema.xml:88
 msgid "If “true”, the main window starts in maximized mode."
 msgstr ""
+"“true”にすると、メインウィンドウを最大化した状態で開きます。"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:95
 msgid "Set the level of the computer’s AI"
-msgstr ""
+msgstr "コンピューターの AI レベルを設定する"
 
 #. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:98
 msgid "LEVEL"
-msgstr ""
+msgstr "レベル"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:101
 msgid "Turn off the sound"
-msgstr ""
+msgstr "サウンドを無効にする"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:104
 msgid "Size of the board"
-msgstr ""
+msgstr "ゲームボードのサイズを設定する"
 
 #. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:107
 msgid "SIZE"
-msgstr ""
+msgstr "サイズ"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:110
 msgid "Length of a winning line"
-msgstr ""
+msgstr "勝利となる直線の長さを設定する"
 
 #. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:113
 msgid "TARGET"
-msgstr ""
+msgstr "対象"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:116
 msgid "Turn on the sound"
-msgstr ""
+msgstr "サウンドを有効にする"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:119
 msgid "Print release version and exit"
-msgstr ""
+msgstr "リリースバージョンを表示して終了する"
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
 #: src/four-in-a-row.vala:166
 msgid "Size must be at least 4."
-msgstr ""
+msgstr "サイズは 4 以上である必要があります。"
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
 #: src/four-in-a-row.vala:172
 msgid "Size must not be more than 16."
-msgstr ""
+msgstr "サイズは 16 以下である必要があります。"
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
 #: src/four-in-a-row.vala:179
 msgid "Lines must be at least 3 tiles."
-msgstr ""
+msgstr "直線の長さは 3 以上である必要があります。"
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
 #: src/four-in-a-row.vala:185
 msgid "Lines cannot be longer than board height or width."
-msgstr ""
+msgstr "ボードの高さや幅を超える直線の長さは設定できません。"
 
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
 #: src/four-in-a-row.vala:228
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
+"レベルは 1 (簡単)、2 (普通)、3 (難しい) のいずれかです。設定を変更しません。"
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:266
 msgid "A_ppearance"
-msgstr ""
+msgstr "外観(_P)"
 
 #. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:270
-#, fuzzy
-#| msgid "Sound"
 msgid "_Sound"
-msgstr "サウンド"
+msgstr "サウンド(_S)"
 
 #. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:276
-#, fuzzy
-#| msgid "Keyboard Controls"
 msgid "_Keyboard Shortcuts"
-msgstr "キーボード操作"
+msgstr "キーボードショートカット(_K)"
 
 #. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:280
@@ -498,78 +480,78 @@ msgstr "考え中…"
 #: src/four-in-a-row.vala:924
 #, c-format
 msgid "Hint: Column %d"
-msgstr "ヒント: %d列目"
+msgstr "ヒント: %d 列目"
 
 #. Translators: in the About dialog, name of an author of the game
 #: src/four-in-a-row.vala:1092
 msgid "Tim Musson"
-msgstr ""
+msgstr "Tim Musson"
 
 #. Translators: in the About dialog, name of an author of the game
 #: src/four-in-a-row.vala:1096
 msgid "David Neary"
-msgstr ""
+msgstr "David Neary"
 
 #. Translators: in the About dialog, name of an author of the game
 #: src/four-in-a-row.vala:1100
 msgid "Nikhar Agrawal"
-msgstr ""
+msgstr "Nikhar Agrawal"
 
 #. Translators: in the About dialog, name of an author of the game
 #: src/four-in-a-row.vala:1104
 msgid "Jacob Humphrey"
-msgstr ""
+msgstr "Jacob Humphrey"
 
 #. Translators: in the About dialog, name of an author of the game
 #: src/four-in-a-row.vala:1108
 msgid "Arnaud Bonatti"
-msgstr ""
+msgstr "Arnaud Bonatti"
 
 #. Translators: in the About dialog, name of a theme designer
 #: src/four-in-a-row.vala:1113
 msgid "Alan Horkan"
-msgstr ""
+msgstr "Alan Horkan"
 
 #. Translators: in the About dialog, name of a theme designer
 #: src/four-in-a-row.vala:1117
 msgid "Anatol Drlicek"
-msgstr ""
+msgstr "Anatol Drlicek"
 
 #. Translators: in the About dialog, indication about some themes origin
 #: src/four-in-a-row.vala:1121
 msgid "Based on the Faenza icon theme by Matthieu James"
-msgstr ""
+msgstr "Matthieu James の Faenza アイコンテーマがベース"
 
 #. Translators: in the About dialog, name of a documenter
 #: src/four-in-a-row.vala:1125
 msgid "Timothy Musson"
-msgstr ""
+msgstr "Timothy Musson"
 
 #. Translators: text crediting a maintainer, in the about dialog text
 #: src/four-in-a-row.vala:1129
 msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
-msgstr ""
+msgstr "Copyright © 1999-2008 – Tim Musson and David Neary"
 
 #. Translators: text crediting a maintainer, in the about dialog text
 #: src/four-in-a-row.vala:1133
 msgid "Copyright © 2014 – Michael Catanzaro"
-msgstr ""
+msgstr "Copyright © 2014 – Michael Catanzaro"
 
 #. Translators: text crediting a maintainer, in the about dialog text
 #: src/four-in-a-row.vala:1137
 msgid "Copyright © 2018 – Jacob Humphrey"
-msgstr ""
+msgstr "Copyright © 2018 – Jacob Humphrey"
 
 #. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
 #: src/four-in-a-row.vala:1141
 #, c-format
 msgid "Copyright © %u-%u – Arnaud Bonatti"
-msgstr ""
+msgstr "Copyright © %u-%u – Arnaud Bonatti"
 
 #. Translators: about dialog text, introducing the game
 #: src/four-in-a-row.vala:1149
 msgid "Connect four in a row to win"
-msgstr "石を4つ並べると勝ちです"
+msgstr "ビー玉を四つ並べると勝ちです"
 
 #. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
 #: src/four-in-a-row.vala:1154
@@ -590,7 +572,7 @@ msgstr ""
 #. Translators: during a game, entry in the game menu, for undoing the last move
 #: src/four-in-a-row.vala:1255
 msgid "_Undo last move"
-msgstr ""
+msgstr "直前の手を戻す(_U)"
 
 #. Translators: during a game, entry in the game menu, for suggesting where to play
 #: src/four-in-a-row.vala:1259
@@ -599,11 +581,11 @@ msgstr "ヒント(_H)"
 
 #: src/four-in-a-row.vala:1271
 msgid "Next _Round"
-msgstr ""
+msgstr "次のラウンド(_R)"
 
 #: src/four-in-a-row.vala:1273
 msgid "_Give Up"
-msgstr ""
+msgstr "降参(_G)"
 
 #. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:1278
@@ -612,10 +594,8 @@ msgstr "得点(_S)"
 
 #. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
 #: src/game-window.vala:113
-#, fuzzy
-#| msgid "_Start Over"
 msgid "_Start Game"
-msgstr "やり直す(_S)"
+msgstr "ゲーム開始(_S)"
 
 #. Translators: title of the Scores dialog; plural noun
 #: src/scorebox.vala:37
@@ -652,16 +632,12 @@ msgid "Cross"
 msgstr "クロス"
 
 #: src/theme.vala:175 src/theme.vala:186
-#, fuzzy
-#| msgid "Circle"
 msgid "Circle:"
-msgstr "サークル"
+msgstr "サークル:"
 
 #: src/theme.vala:175 src/theme.vala:186
-#, fuzzy
-#| msgid "Cross"
 msgid "Cross:"
-msgstr "クロス"
+msgstr "クロス:"
 
 #: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
@@ -691,7 +667,7 @@ msgstr "赤と緑のビー玉"
 
 #: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
-msgstr "赤色"
+msgstr "赤"
 
 #: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
@@ -699,13 +675,11 @@ msgstr "緑"
 
 #: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
 msgid "Red:"
-msgstr ""
+msgstr "赤:"
 
 #: src/theme.vala:197 src/theme.vala:219
-#, fuzzy
-#| msgid "Green"
 msgid "Green:"
-msgstr "緑"
+msgstr "緑:"
 
 #: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
@@ -733,10 +707,8 @@ msgid "Blue"
 msgstr "青"
 
 #: src/theme.vala:208
-#, fuzzy
-#| msgid "Blue"
 msgid "Blue:"
-msgstr "青"
+msgstr "青:"
 
 #: src/theme.vala:209
 msgid "Blue wins!"
