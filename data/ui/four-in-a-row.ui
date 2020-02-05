@@ -95,6 +95,18 @@
             <property name="visible">True</property>
             <property name="homogeneous">True</property>
             <child>
+              <object class="GtkBox" id="game_box">
+                <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+                <style>
+                  <class name="game-box"/>
+                </style>
+              </object>
+              <packing>
+                <property name="name">game-box</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkScrolledWindow">
                 <property name="visible">True</property>
                 <child>
@@ -108,18 +120,6 @@
               </object>
               <packing>
                 <property name="name">start-box</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkBox" id="game_box">
-                <property name="visible">True</property>
-                <property name="orientation">vertical</property>
-                <style>
-                  <class name="game-box"/>
-                </style>
-              </object>
-              <packing>
-                <property name="name">game-box</property>
               </packing>
             </child>
           </object>

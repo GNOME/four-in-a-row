@@ -253,8 +253,11 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     \*/
 
     private bool is_extra_thin = false;
+    private bool is_quite_thin = false;
     protected override void set_window_size (AdaptativeWidget.WindowSize new_size)
     {
+        is_quite_thin = AdaptativeWidget.WindowSize.is_quite_thin (new_size);
+
         bool _is_extra_thin = AdaptativeWidget.WindowSize.is_extra_thin (new_size);
         if (_is_extra_thin == is_extra_thin)
             return;
@@ -354,7 +357,10 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
         play ();        // FIXME lag (see in Taquin…)
 
-        stack.set_transition_type (StackTransitionType.SLIDE_DOWN);
+        if (is_quite_thin)
+            stack.set_transition_type (StackTransitionType.SLIDE_DOWN);
+        else
+            stack.set_transition_type (StackTransitionType.OVER_DOWN_UP);
         stack.set_transition_duration (1000);
         show_view ();
     }
