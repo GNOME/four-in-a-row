@@ -5,15 +5,15 @@
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005, 2006.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005.
 # Farzaneh Sarafraz <farzaneh@farsiweb.info>, 2006.
-# Danial Behzadi <dani.behzi@gmail.com>, 2012., 2018, 2019.
+# Danial Behzadi <dani.behzi@gmail.com>, 2012, 2018, 2019, 2020.
 # Arash Mousavi <mousavi.arash@gmail.com>, 2012, 2013, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-10-17 13:11+0000\n"
-"PO-Revision-Date: 2019-10-19 16:45+0000\n"
+"POT-Creation-Date: 2020-01-20 13:04+0000\n"
+"PO-Revision-Date: 2020-02-07 14:55+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -24,31 +24,189 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: data/ui/four-in-a-row.ui:23 data/ui/four-in-a-row.ui:28
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
-#: data/org.gnome.Four-in-a-row.desktop.in:5
-msgid "Four-in-a-row"
-msgstr "چهارتا در یک ردیف"
+#. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:40
+msgid "Game type"
+msgstr "گونهٔ بازی"
 
-#: data/ui/four-in-a-row.ui:37
-msgid "Undo your most recent move"
-msgstr "برگردان آخرین حرکتان"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:61 data/ui/fiar-screens.ui:244
+msgid "Play _first"
+msgstr "بازی _نخست"
 
-#: data/ui/four-in-a-row.ui:114
-msgid "_Hint"
-msgstr "_راهنمایی"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:73 data/ui/fiar-screens.ui:256
+msgid "Play _second"
+msgstr "بازی _دوم"
 
-#: data/ui/four-in-a-row.ui:120
-msgid "Receive a hint for your next move"
-msgstr "گرفتن راهنمایی برای حرکت بعدی‌تان"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:85
+msgid "_Two players"
+msgstr "دو_نفره"
 
-#: data/ui/four-in-a-row.ui:133
-msgid "_Start Over"
-msgstr "_شروع از اول"
+#. Translators: when configuring a new game, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:109
+msgid "Players"
+msgstr "بازیکنان"
 
-#: data/ui/four-in-a-row.ui:139
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:126
+msgid "_One"
+msgstr "_یک"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:138
+msgid "_Two"
+msgstr "_دو"
+
+#. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
+#: data/ui/fiar-screens.ui:162
+msgid "Difficulty"
+msgstr "دشواری"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:179
+msgid "_Easy"
+msgstr "_آسان"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:191
+msgid "_Medium"
+msgstr "_متوسط"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:203
+msgid "_Hard"
+msgstr "_سخت"
+
+#. Translators: when configuring a new game, header of the row for choosing whether to start or not
+#: data/ui/fiar-screens.ui:227
+msgid "Game start"
+msgstr "شروع بازی"
+
+#. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
+#: data/ui/four-in-a-row.ui:31
+msgid "_New Game"
+msgstr "بازی _جدید"
+
+#. Translators: during a game, tooltip text of the New Game button
+#: data/ui/four-in-a-row.ui:36
 msgid "Start a new game"
 msgstr "شروع یک بازی جدید"
+
+#. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
+#: data/ui/four-in-a-row.ui:49
+msgid "Go back to the current game"
+msgstr "برگشت به بازی فعلی"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"...
+#: data/ui/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "During a game"
+msgstr "در طول بازی"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:36
+msgctxt "shortcut window"
+msgid "New game"
+msgstr "بازی جدید"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:44
+msgctxt "shortcut window"
+msgid "Undo last move"
+msgstr "برگرداندن آخرین حرکت"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Show a hint"
+msgstr "نمایش یک راهنمایی"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
+#: data/ui/help-overlay.ui:62
+msgctxt "shortcut window"
+msgid "Play with keyboard"
+msgstr "بازی با صفحه‌کلید"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
+#: data/ui/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Select where to play"
+msgstr "گزینش جای بازی"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column
+#: data/ui/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Select the given column"
+msgstr "گزینش ستون داده‌شده"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
+#: data/ui/help-overlay.ui:83
+msgctxt "shortcut window"
+msgid "Play in selected column"
+msgstr "بازی در ستون گزیده"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
+#: data/ui/help-overlay.ui:93
+msgctxt "shortcut window"
+msgid "During game selection"
+msgstr "در طول گزینش بازی"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
+#: data/ui/help-overlay.ui:98
+msgctxt "shortcut window"
+msgid "Start new game"
+msgstr "شروع بازی جدید"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
+#: data/ui/help-overlay.ui:106
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "برگشتن"
+
+#. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
+#: data/ui/help-overlay.ui:116
+msgctxt "shortcut window"
+msgid "Generic"
+msgstr "عمومی"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:121
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "میان‌برهای صفحه‌کلید"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "راهنما"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "About"
+msgstr "درباره"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:145
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "خروج"
+
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "پایان!"
+
+#. Translators: application name, as used in the window manager, the window title, the about dialog...
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
+msgid "Four-in-a-row"
+msgstr "چهارتا در یک ردیف"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:8
 #: data/org.gnome.Four-in-a-row.desktop.in:6
@@ -84,249 +242,508 @@ msgstr "پروژهٔ گنوم"
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;بازی;استراتژی;منطق;"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:5
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+msgid "Who starts"
+msgstr "آغازگر"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:13
+msgid ""
+"Specifies who will start the next one-player game. Ignored for two-player "
+"games."
+msgstr ""
+"مشخّص می‌کند چه کسی بازی یک‌‌نفرهٔ بعدی را آغاز می‌کند. برای بازی‌های دونفره، "
+"نادیده گرفته می‌شود."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
+#: data/org.gnome.Four-in-a-row.gschema.xml:19
+msgid "Number of players"
+msgstr "تعداد بازیکنان"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Opponent"
 msgstr "حریف"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:6
-msgid ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
-msgstr "صفر انسان است؛ یک تا سه برابر با سطح بازیکن کامپیوتری است."
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:28
+msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
+msgstr "از ۱، آسان‌ترین تا ۳، سخت‌ترین. برای بازی‌های دونفره نادیده گرفته می‌شود."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:11
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:34
 msgid "Theme ID"
 msgstr "شناسهٔ زمینه"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:12
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:36
 msgid "A number specifying the preferred theme."
 msgstr "عدد مشخص کنندهٔ زمینه ترجیح داده شده."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:16 src/four-in-a-row.vala:772
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:41
 msgid "Sound"
 msgstr "صدا"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:17
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
 msgstr "این که صدای رویدادهای پخش شود یا نه."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:21 src/prefs-box.vala:96
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:48
 msgid "Move left"
 msgstr "جابه‌جایی به چپ"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:22
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:50
 msgid "Key press to move left."
 msgstr "فشردن کلید برای جابه‌جایی به چپ."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:26 src/prefs-box.vala:97
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:55
 msgid "Move right"
 msgstr "جابه‌جایی به راست"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:27
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:57
 msgid "Key press to move right."
 msgstr "فشردن کلید برای جابه‌جایی به راست."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:31 src/prefs-box.vala:98
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:62
 msgid "Drop marble"
 msgstr "انداختن تیله"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:32
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
 msgstr "فشردن کلید برای انداختن تیله."
 
-#: src/four-in-a-row.vala:285
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:72
+msgid "The width of the window"
+msgstr "پهنای پنجره"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:74
+msgid "The width of the main window in pixels."
+msgstr "پهنای پنجرهٔ اصلی به پیکسل."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:79
+msgid "The height of the window"
+msgstr "بلندای پنجره"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:81
+msgid "The height of the main window in pixels."
+msgstr "بلندای پنجرهٔ اصلی به پیکسل."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:86
+msgid "A flag to enable maximized mode"
+msgstr "پرچمی برای فعال کردن حالت بیشینه"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:88
+msgid "If “true”, the main window starts in maximized mode."
+msgstr "اگر درست باشد، پنجرهٔ اصلی در حال بیشینه شروع خواهد شد."
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:95
+msgid "Set the level of the computer’s AI"
+msgstr "تنظیم سطح هوش مصنوعی رایانه"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:98
+msgid "LEVEL"
+msgstr "LEVEL"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:101
+msgid "Turn off the sound"
+msgstr "خاموش کردن صدا"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:104
+msgid "Size of the board"
+msgstr "اندازهٔ تخته"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:107
+msgid "SIZE"
+msgstr "SIZE"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr "طول خط برد"
+
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "TARGET"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
+msgid "Turn on the sound"
+msgstr "روشن کردن صدا"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:119
+msgid "Print release version and exit"
+msgstr "نمایش نگارش انتشار و خروج"
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
+#: src/four-in-a-row.vala:166
+msgid "Size must be at least 4."
+msgstr "اندازه باید حداقل ۴ باشد."
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
+#: src/four-in-a-row.vala:172
+msgid "Size must not be more than 16."
+msgstr "اندازه نباید بیش از ۱۶ باشد."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:179
+msgid "Lines must be at least 3 tiles."
+msgstr "خط‌ها باید لااقل ۳ مهره باشند."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:185
+msgid "Lines cannot be longer than board height or width."
+msgstr "خط‌ها نمی‌توانند بلندتر از پهنا یا ارتفاع صفحه باشند."
+
+#. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
+#: src/four-in-a-row.vala:228
+msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
+msgstr "سطح باید ۱ (ساده)، ۲ (متوسّط) یا ۳ (سخت) باشد.تنظیمات تغییر نکرده‌اند."
+
+#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:266
+msgid "A_ppearance"
+msgstr "_ظاهر"
+
+#. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:270
+msgid "_Sound"
+msgstr "_صدا"
+
+#. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:276
+msgid "_Keyboard Shortcuts"
+msgstr "_میان‌برهای صفحه‌کلید"
+
+#. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:280
+msgid "_Help"
+msgstr "_راهنما"
+
+#. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:284
+msgid "_About Four-in-a-row"
+msgstr "دربارهٔ چهارتا در یک ردیف"
+
+#. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
+#: src/four-in-a-row.vala:566
 msgid "It’s a draw!"
 msgstr "مساوی شد!"
 
-#: src/four-in-a-row.vala:295
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
+#: src/four-in-a-row.vala:580
 msgid "You win!"
 msgstr "شما بردید!"
 
-#: src/four-in-a-row.vala:297 src/four-in-a-row.vala:318
-msgid "Your Turn"
-msgstr "نوبت شما"
-
-#: src/four-in-a-row.vala:302
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
+#: src/four-in-a-row.vala:583
 msgid "I win!"
 msgstr "من بُردم!"
 
-#: src/four-in-a-row.vala:304 src/four-in-a-row.vala:515
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:592
+msgid "Your Turn"
+msgstr "نوبت شما"
+
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
+#. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
+#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
 msgid "I’m Thinking…"
 msgstr "دارم فکر میکنم…"
 
-#: src/four-in-a-row.vala:529
+#. blink n times
+#. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
+#: src/four-in-a-row.vala:924
 #, c-format
 msgid "Hint: Column %d"
 msgstr "راهنمایی: ستون %Id"
 
-#: src/four-in-a-row.vala:688
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1092
+msgid "Tim Musson"
+msgstr "تیم موسون"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1096
+msgid "David Neary"
+msgstr "دیوید نیری"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1100
+msgid "Nikhar Agrawal"
+msgstr "نیخار آگاراول"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1104
+msgid "Jacob Humphrey"
+msgstr "جیکوب هامپفری"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1108
+msgid "Arnaud Bonatti"
+msgstr "آرناد بوناتی"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1113
+msgid "Alan Horkan"
+msgstr "آلن هورکان"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1117
+msgid "Anatol Drlicek"
+msgstr "آناتول درلیکل"
+
+#. Translators: in the About dialog, indication about some themes origin
+#: src/four-in-a-row.vala:1121
+msgid "Based on the Faenza icon theme by Matthieu James"
+msgstr "برمنبتای زمینهٔ نقشک فائنزا اثر متیو جیمز"
+
+#. Translators: in the About dialog, name of a documenter
+#: src/four-in-a-row.vala:1125
+msgid "Timothy Musson"
+msgstr "تیموتی موسون"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1129
+msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
+msgstr "حق رونوشت © ۱۹۹۹-۲۰۰۸ – تیم موسون و دیوید نیری"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1133
+msgid "Copyright © 2014 – Michael Catanzaro"
+msgstr "حق رونوشت © ۲۰۱۴ – مایکل کاتانزارو"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1137
+msgid "Copyright © 2018 – Jacob Humphrey"
+msgstr "حق رونوشت © ۲۰۱۸ – جیکوب هامپفری"
+
+#. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
+#: src/four-in-a-row.vala:1141
+#, c-format
+msgid "Copyright © %u-%u – Arnaud Bonatti"
+msgstr "حق رونوشت © %Iu-%Iu – آرناد بوناتی"
+
+#. Translators: about dialog text, introducing the game
+#: src/four-in-a-row.vala:1149
 msgid "Connect four in a row to win"
 msgstr "چهار مورد را ردیف کنید تا برنده شوید"
 
-#: src/four-in-a-row.vala:692
+#. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
+#: src/four-in-a-row.vala:1154
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>\n"
 "دانیال بهزادی <dani.behzi@gmail.com>"
 
-#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:770
-msgid "A_ppearance"
-msgstr "_ظاهر"
+#. Translators: during a game, entry in the game menu, for undoing the last move
+#: src/four-in-a-row.vala:1255
+msgid "_Undo last move"
+msgstr "_برگردان آخرین حرکت"
 
-#: src/four-in-a-row.vala:777
+#. Translators: during a game, entry in the game menu, for suggesting where to play
+#: src/four-in-a-row.vala:1259
+msgid "_Hint"
+msgstr "_راهنمایی"
+
+#: src/four-in-a-row.vala:1271
+msgid "Next _Round"
+msgstr "_دور بعدی"
+
+#: src/four-in-a-row.vala:1273
+msgid "_Give Up"
+msgstr "_وا دادن"
+
+#. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:1278
 msgid "_Scores"
 msgstr "امتیا_زها"
 
-#: src/four-in-a-row.vala:782
-msgid "_Preferences"
-msgstr "_ترجیحات"
+#. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
+#: src/game-window.vala:113
+msgid "_Start Game"
+msgstr "_شروع بازی"
 
-#: src/four-in-a-row.vala:783
-msgid "_Help"
-msgstr "_راهنما"
-
-#: src/four-in-a-row.vala:784
-msgid "_About Four-in-a-row"
-msgstr "دربارهٔ چهارتا در یک ردیف"
-
-#: src/games-controls-list.vala:155
-msgid "This key is already in use."
-msgstr "این کلید از قبل در استفاده است."
-
-#: src/games-controls-list.vala:176
-msgid "Unknown Command"
-msgstr "فرمان نامعلوم"
-
-#: src/prefs-box.vala:40
-msgid "Preferences"
-msgstr "ترجیحات"
-
-#: src/prefs-box.vala:57
-msgid "Game"
-msgstr "بازی"
-
-#: src/prefs-box.vala:60
-msgid "Opponent:"
-msgstr "حریف:"
-
-#: src/prefs-box.vala:73
-msgid "Human"
-msgstr "انسان"
-
-#: src/prefs-box.vala:77
-msgid "Level one"
-msgstr "سطح یک"
-
-#: src/prefs-box.vala:81
-msgid "Level two"
-msgstr "سطح دو"
-
-#: src/prefs-box.vala:85
-msgid "Level three"
-msgstr "سطح سه"
-
-#. keyboard tab
-#: src/prefs-box.vala:93
-msgid "Keyboard Controls"
-msgstr "کنترل‌های صفحه‌کلید"
-
-#: src/scorebox.vala:28
+#. Translators: title of the Scores dialog; plural noun
+#: src/scorebox.vala:37
 msgid "Scores"
 msgstr "امتیازها"
 
-#: src/scorebox.vala:75
+#. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
+#: src/scorebox.vala:72
 msgid "Drawn:"
 msgstr "مساوی:"
 
-#. FIXME shouldn't it be Player1&Player2?
-#: src/scorebox.vala:98 src/scorebox.vala:101
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
+#: src/scorebox.vala:93 src/scorebox.vala:107
 msgid "You:"
 msgstr "شما:"
 
-#: src/scorebox.vala:99 src/scorebox.vala:102
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
+#: src/scorebox.vala:96 src/scorebox.vala:104
 msgid "Me:"
 msgstr "من:"
 
-#: src/theme.vala:65
+#. Translators: name of a black-on-white theme, for helping people with visual misabilities
+#: src/theme.vala:170
 msgid "High Contrast"
 msgstr "سایه‌روشن بالا"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
 msgstr "دایره"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
 msgstr "به‌علاوه"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Circle:"
+msgstr "دایره:"
+
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Cross:"
+msgstr "مثبت:"
+
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
 msgstr "دایره برنده است!"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
 msgstr "ضربدر برنده شد!"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
 msgstr "نوبت دایره"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Cross’s turn"
 msgstr "نوبت ضربدر"
 
-#: src/theme.vala:74
+#. Translators: name of a white-on-black theme, for helping people with visual misabilities
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
 msgstr "سایه‌روشن بالا معکوس"
 
-#: src/theme.vala:83
+#. Translators: name of a red-versus-green theme
+#: src/theme.vala:192
 msgid "Red and Green Marbles"
 msgstr "تیله‌های قرمز و سبز"
 
-#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
 msgstr "قرمز"
 
-#: src/theme.vala:87 src/theme.vala:105
+#: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
 msgstr "سبز"
 
-#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
+msgid "Red:"
+msgstr "قرمز:"
+
+#: src/theme.vala:197 src/theme.vala:219
+msgid "Green:"
+msgstr "سبز:"
+
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
 msgstr "قرمز برنده شد!"
 
-#: src/theme.vala:88 src/theme.vala:106
+#: src/theme.vala:198 src/theme.vala:220
 msgid "Green wins!"
 msgstr "سبز برنده شد!"
 
-#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
 msgstr "نوبت قرمز"
 
-#: src/theme.vala:89 src/theme.vala:107
+#: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
 msgstr "نوبت سبز"
 
-#: src/theme.vala:92
+#. Translators: name of a blue-versus-red theme
+#: src/theme.vala:203
 msgid "Blue and Red Marbles"
 msgstr "تیله‌های آبی و قرمز"
 
-#: src/theme.vala:96
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "آبی"
 
-#: src/theme.vala:97
+#: src/theme.vala:208
+msgid "Blue:"
+msgstr "آبی:"
+
+#: src/theme.vala:209
 msgid "Blue wins!"
 msgstr "آبی برنده است!"
 
-#: src/theme.vala:98
+#: src/theme.vala:210
 msgid "Blue’s turn"
 msgstr "نوبت آبی"
 
-#: src/theme.vala:101
+#. Translators: name of a red-versus-green theme with drawing on the tiles
+#: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "ستاره‌ها و حلقه‌ها"
+
+#~ msgid "Receive a hint for your next move"
+#~ msgstr "گرفتن راهنمایی برای حرکت بعدی‌تان"
+
+#~ msgid ""
+#~ "Zero is human; one through three correspond to the level of the computer "
+#~ "player."
+#~ msgstr "صفر انسان است؛ یک تا سه برابر با سطح بازیکن کامپیوتری است."
+
+#~ msgid "_Preferences"
+#~ msgstr "_ترجیحات"
+
+#~ msgid "This key is already in use."
+#~ msgstr "این کلید از قبل در استفاده است."
+
+#~ msgid "Unknown Command"
+#~ msgstr "فرمان نامعلوم"
+
+#~ msgid "Preferences"
+#~ msgstr "ترجیحات"
+
+#~ msgid "Opponent:"
+#~ msgstr "حریف:"
+
+#~ msgid "Human"
+#~ msgstr "انسان"
+
+#~ msgid "Level one"
+#~ msgstr "سطح یک"
+
+#~ msgid "Level two"
+#~ msgstr "سطح دو"
+
+#~ msgid "Level three"
+#~ msgstr "سطح سه"
 
 #~ msgid "_Theme:"
 #~ msgstr "_زمینه:"
@@ -340,9 +757,3 @@ msgstr "ستاره‌ها و حلقه‌ها"
 #~ msgstr ""
 #~ "بار کردن تصویر ممکن نیست:\n"
 #~ "%s"
-
-#~ msgid "_About"
-#~ msgstr "_درباره"
-
-#~ msgid "_Quit"
-#~ msgstr "_خروج"
