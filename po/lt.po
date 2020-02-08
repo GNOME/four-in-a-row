@@ -8,14 +8,14 @@
 # Vytautas Povilaitis <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008, 2010.
 # Algimantas Margevičius <gymka@mail.ru>, 2011.
-# Aurimas Černius <aurisc4@gmail.com>, 2010-2019.
+# Aurimas Černius <aurisc4@gmail.com>, 2010-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-12-27 16:10+0000\n"
-"PO-Revision-Date: 2019-12-29 17:11+0200\n"
+"POT-Creation-Date: 2020-01-20 13:04+0000\n"
+"PO-Revision-Date: 2020-02-08 14:36+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -28,7 +28,6 @@ msgstr ""
 
 #. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:40
-#| msgid "Game"
 msgid "Game type"
 msgstr "Žaidimo tipas"
 
@@ -91,7 +90,6 @@ msgstr "Žaidimo pradžia"
 
 #. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
 #: data/ui/four-in-a-row.ui:31
-#| msgid "Game"
 msgid "_New Game"
 msgstr "_Naujas žaidimas"
 
@@ -119,7 +117,6 @@ msgstr "Naujas žaidimas"
 
 #. Translators: in the Keyboard Shortcuts window, section "During a game"
 #: data/ui/help-overlay.ui:44
-#| msgid "Undo your most recent move"
 msgctxt "shortcut window"
 msgid "Undo last move"
 msgstr "Atšaukti paskutinį ėjimą"
@@ -162,7 +159,6 @@ msgstr "Žaidimo pasirinkimo metu"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
 #: data/ui/help-overlay.ui:98
-#| msgid "Start a new game"
 msgctxt "shortcut window"
 msgid "Start new game"
 msgstr "Pradėti naują žaidimą"
@@ -181,31 +177,32 @@ msgstr "Bendra"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:121
-#| msgid "Keyboard Controls"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Klaviatūros trumpiniai"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:129
-#| msgid "_Help"
 msgctxt "shortcut window"
 msgid "Help"
 msgstr "Žinynas"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:137
-#| msgid "_About"
 msgctxt "shortcut window"
 msgid "About"
 msgstr "Apie"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:145
-#| msgid "_Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Išeiti"
+
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "Pabaiga!"
 
 #. Translators: application name, as used in the window manager, the window title, the about dialog...
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:7
@@ -358,190 +355,209 @@ msgid "If “true”, the main window starts in maximized mode."
 msgstr "Jei teigiama, pagrindinis langas paleidžiamas išdidintas."
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:99
+#: src/four-in-a-row.vala:95
 msgid "Set the level of the computer’s AI"
 msgstr "Nustatyti kompiuterio intelekto lygį"
 
 #. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:102
+#: src/four-in-a-row.vala:98
 msgid "LEVEL"
 msgstr "LYGIS"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:105
+#: src/four-in-a-row.vala:101
 msgid "Turn off the sound"
 msgstr "Išjungti garsą"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:108
+#: src/four-in-a-row.vala:104
 msgid "Size of the board"
 msgstr "Lentos dydis"
 
 #. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:111
+#: src/four-in-a-row.vala:107
 msgid "SIZE"
 msgstr "DYDIS"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:114
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr "Laiminčios eilutės ilgis"
+
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "TIKSLAS"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
 msgid "Turn on the sound"
 msgstr "Įjungti garsą"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
-#: src/four-in-a-row.vala:117
+#: src/four-in-a-row.vala:119
 msgid "Print release version and exit"
 msgstr "Atspausdinti leidimo versiją ir išeiti"
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
-#: src/four-in-a-row.vala:164
+#: src/four-in-a-row.vala:166
 msgid "Size must be at least 4."
 msgstr "Dydis turi būti bent 4."
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
-#: src/four-in-a-row.vala:170
+#: src/four-in-a-row.vala:172
 msgid "Size must not be more than 16."
 msgstr "Dydis negali būti daugiau nei 16."
 
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:179
+#| msgid "Size must be at least 4."
+msgid "Lines must be at least 3 tiles."
+msgstr "Eilutės turi būti bent 3 plytelių."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:185
+msgid "Lines cannot be longer than board height or width."
+msgstr "Eilutės negali būti ilgesnės nei lentos aukštis arba plotis."
+
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
-#: src/four-in-a-row.vala:213
+#: src/four-in-a-row.vala:228
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
 "Lygis turi būti 1 (lengvas), 2 (vidutinis) arba 3 (sunkus). Nustatymai "
 "nepakeisti."
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:248
+#: src/four-in-a-row.vala:266
 msgid "A_ppearance"
 msgstr "_Išvaizda"
 
 #. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:252
-#| msgid "Sound"
+#: src/four-in-a-row.vala:270
 msgid "_Sound"
 msgstr "_Garsai"
 
 #. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:258
-#| msgid "Keyboard Controls"
+#: src/four-in-a-row.vala:276
 msgid "_Keyboard Shortcuts"
 msgstr "_Klaviatūros trumpiniai"
 
 #. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:262
+#: src/four-in-a-row.vala:280
 msgid "_Help"
 msgstr "_Žinynas"
 
 #. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:266
+#: src/four-in-a-row.vala:284
 msgid "_About Four-in-a-row"
 msgstr "_Apie keturis eilėje"
 
 #. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
-#: src/four-in-a-row.vala:554
+#: src/four-in-a-row.vala:566
 msgid "It’s a draw!"
 msgstr "Lygiosios!"
 
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
-#: src/four-in-a-row.vala:564
+#: src/four-in-a-row.vala:580
 msgid "You win!"
 msgstr "Jūs laimėjote!"
 
-#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
-#: src/four-in-a-row.vala:567
-msgid "Your Turn"
-msgstr "Jūsų ėjimas"
-
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
-#: src/four-in-a-row.vala:573
+#: src/four-in-a-row.vala:583
 msgid "I win!"
 msgstr "Programa laimėjo!"
 
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:592
+msgid "Your Turn"
+msgstr "Jūsų ėjimas"
+
 #. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
 #. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
-#: src/four-in-a-row.vala:576 src/four-in-a-row.vala:877
+#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
 msgid "I’m Thinking…"
 msgstr "Galvoju…"
 
 #. blink n times
 #. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
-#: src/four-in-a-row.vala:893
+#: src/four-in-a-row.vala:924
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Patarimas: stulpelis %d"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1062
+#: src/four-in-a-row.vala:1092
 msgid "Tim Musson"
 msgstr "Tim Musson"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1066
+#: src/four-in-a-row.vala:1096
 msgid "David Neary"
 msgstr "David Neary"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1070
+#: src/four-in-a-row.vala:1100
 msgid "Nikhar Agrawal"
 msgstr "Nikhar Agrawal"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1074
+#: src/four-in-a-row.vala:1104
 msgid "Jacob Humphrey"
 msgstr "Jacob Humphrey"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1078
+#: src/four-in-a-row.vala:1108
 msgid "Arnaud Bonatti"
 msgstr "Arnaud Bonatti"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1083
+#: src/four-in-a-row.vala:1113
 msgid "Alan Horkan"
 msgstr "Alan Horkan"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1087
+#: src/four-in-a-row.vala:1117
 msgid "Anatol Drlicek"
 msgstr "Anatol Drlicek"
 
 #. Translators: in the About dialog, indication about some themes origin
-#: src/four-in-a-row.vala:1091
+#: src/four-in-a-row.vala:1121
 msgid "Based on the Faenza icon theme by Matthieu James"
 msgstr "Sukurta Matthieu James sukurtos Faenza piktogramų temos pagrindu"
 
 #. Translators: in the About dialog, name of a documenter
-#: src/four-in-a-row.vala:1095
+#: src/four-in-a-row.vala:1125
 msgid "Timothy Musson"
 msgstr "Timothy Musson"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1099
+#: src/four-in-a-row.vala:1129
 msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
 msgstr "Autorių teisės © 1999-2008 – Tim Musson ir David Neary"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1103
+#: src/four-in-a-row.vala:1133
 msgid "Copyright © 2014 – Michael Catanzaro"
 msgstr "Autorių teisės © 2014 – Michael Catanzaro"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1107
+#: src/four-in-a-row.vala:1137
 msgid "Copyright © 2018 – Jacob Humphrey"
 msgstr "Autorių teisės © 2018 – Jacob Humphrey"
 
 #. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
-#: src/four-in-a-row.vala:1111
+#: src/four-in-a-row.vala:1141
 #, c-format
 msgid "Copyright © %u-%u – Arnaud Bonatti"
 msgstr "Autorių teisės © %u-%u – Arnaud Bonatti"
 
 #. Translators: about dialog text, introducing the game
-#: src/four-in-a-row.vala:1119
+#: src/four-in-a-row.vala:1149
 msgid "Connect four in a row to win"
 msgstr "Sujunkite keturis į eilę ir laimėkite."
 
 #. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
-#: src/four-in-a-row.vala:1124
+#: src/four-in-a-row.vala:1154
 msgid "translator-credits"
 msgstr ""
 "Paskutinis vertėjas:\n"
@@ -554,31 +570,30 @@ msgstr ""
 "Gediminas Paulauskas <menesis@chatsubo.lt>"
 
 #. Translators: during a game, entry in the game menu, for undoing the last move
-#: src/four-in-a-row.vala:1225
+#: src/four-in-a-row.vala:1255
 msgid "_Undo last move"
 msgstr "_Atšaukti paskutinį ėjimą"
 
 #. Translators: during a game, entry in the game menu, for suggesting where to play
-#: src/four-in-a-row.vala:1229
+#: src/four-in-a-row.vala:1259
 msgid "_Hint"
 msgstr "_Užuomina"
 
-#: src/four-in-a-row.vala:1241
+#: src/four-in-a-row.vala:1271
 msgid "Next _Round"
 msgstr "Kitas _raundas"
 
-#: src/four-in-a-row.vala:1243
+#: src/four-in-a-row.vala:1273
 msgid "_Give Up"
 msgstr "_Pasiduoti"
 
 #. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:1248
+#: src/four-in-a-row.vala:1278
 msgid "_Scores"
 msgstr "_Taškai"
 
 #. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
 #: src/game-window.vala:113
-#| msgid "_Start Over"
 msgid "_Start Game"
 msgstr "_Pradėti žaidimą"
 
@@ -588,126 +603,122 @@ msgid "Scores"
 msgstr "Taškai"
 
 #. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
-#: src/scorebox.vala:82
+#: src/scorebox.vala:72
 msgid "Drawn:"
 msgstr "Lygiosios:"
 
 #. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
-#: src/scorebox.vala:107 src/scorebox.vala:121
+#: src/scorebox.vala:93 src/scorebox.vala:107
 msgid "You:"
 msgstr "Jūs:"
 
 #. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
-#: src/scorebox.vala:110 src/scorebox.vala:118
+#: src/scorebox.vala:96 src/scorebox.vala:104
 msgid "Me:"
 msgstr "Aš:"
 
 #. Translators: name of a black-on-white theme, for helping people with visual misabilities
-#: src/theme.vala:86
+#: src/theme.vala:170
 msgid "High Contrast"
 msgstr "Didelio kontrasto"
 
-#: src/theme.vala:90 src/theme.vala:101
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
 msgstr "Apskritimas"
 
-#: src/theme.vala:90 src/theme.vala:101
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
 msgstr "Kryžius"
 
-#: src/theme.vala:91 src/theme.vala:102
-#| msgid "Circle"
+#: src/theme.vala:175 src/theme.vala:186
 msgid "Circle:"
 msgstr "Apskritimas:"
 
-#: src/theme.vala:91 src/theme.vala:102
-#| msgid "Cross"
+#: src/theme.vala:175 src/theme.vala:186
 msgid "Cross:"
 msgstr "Kryžius:"
 
-#: src/theme.vala:92 src/theme.vala:103
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
 msgstr "Apskritimas laimi!"
 
-#: src/theme.vala:92 src/theme.vala:103
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
 msgstr "Kryžius laimi!"
 
-#: src/theme.vala:93 src/theme.vala:104
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
 msgstr "Apskritimo ėjimas"
 
-#: src/theme.vala:93 src/theme.vala:104
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Cross’s turn"
 msgstr "Kryžiaus ėjimas"
 
 #. Translators: name of a white-on-black theme, for helping people with visual misabilities
-#: src/theme.vala:97
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
 msgstr "Didelio kontrasto inversija"
 
 #. Translators: name of a red-versus-green theme
-#: src/theme.vala:108
+#: src/theme.vala:192
 msgid "Red and Green Marbles"
 msgstr "Raudoni ir žali kamuoliukai"
 
-#: src/theme.vala:112 src/theme.vala:123 src/theme.vala:134
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
 msgstr "Raudona"
 
-#: src/theme.vala:112 src/theme.vala:134
+#: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
 msgstr "Žalia"
 
-#: src/theme.vala:113 src/theme.vala:124 src/theme.vala:135
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
 msgid "Red:"
 msgstr "Raudona:"
 
-#: src/theme.vala:113 src/theme.vala:135
-#| msgid "Green"
+#: src/theme.vala:197 src/theme.vala:219
 msgid "Green:"
 msgstr "Žalia:"
 
-#: src/theme.vala:114 src/theme.vala:125 src/theme.vala:136
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
 msgstr "Raudonas laimi!"
 
-#: src/theme.vala:114 src/theme.vala:136
+#: src/theme.vala:198 src/theme.vala:220
 msgid "Green wins!"
 msgstr "Žalias laimi!"
 
-#: src/theme.vala:115 src/theme.vala:126 src/theme.vala:137
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
 msgstr "Raudono ėjimas"
 
-#: src/theme.vala:115 src/theme.vala:137
+#: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
 msgstr "Žalio ėjimas"
 
 #. Translators: name of a blue-versus-red theme
-#: src/theme.vala:119
+#: src/theme.vala:203
 msgid "Blue and Red Marbles"
 msgstr "Mėlyni ir raudoni kamuoliukai"
 
-#: src/theme.vala:123
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "Mėlyna"
 
-#: src/theme.vala:124
-#| msgid "Blue"
+#: src/theme.vala:208
 msgid "Blue:"
 msgstr "Mėlyna:"
 
-#: src/theme.vala:125
+#: src/theme.vala:209
 msgid "Blue wins!"
 msgstr "Mėlynas laimi!"
 
-#: src/theme.vala:126
+#: src/theme.vala:210
 msgid "Blue’s turn"
 msgstr "Mėlyno ėjimas"
 
 #. Translators: name of a red-versus-green theme with drawing on the tiles
-#: src/theme.vala:130
+#: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "Žvaigždės ir žiedai"
 
