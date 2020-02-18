@@ -36,8 +36,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.el\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-02-06 19:28+0000\n"
-"PO-Revision-Date: 2019-02-17 20:00+0200\n"
+"POT-Creation-Date: 2020-01-10 18:04+0000\n"
+"PO-Revision-Date: 2020-02-18 12:06+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
@@ -45,34 +45,192 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.3\n"
 "X-Project-Style: gnome\n"
 
-#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
-#: data/org.gnome.Four-in-a-row.desktop.in:5
-msgid "Four-in-a-row"
-msgstr "Τέσσερα στη σειρά"
+#. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:40
+msgid "Game type"
+msgstr "Τύπος παιχνιδιού"
 
-#: data/four-in-a-row.ui:22
-msgid "Undo your most recent move"
-msgstr "Αναίρεση της πιο προσφατής σας κίνησης"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:61 data/ui/fiar-screens.ui:244
+msgid "Play _first"
+msgstr "Παίξτε _πρώτος"
 
-#: data/four-in-a-row.ui:99
-msgid "_Hint"
-msgstr "_Υπόδειξη"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:73 data/ui/fiar-screens.ui:256
+msgid "Play _second"
+msgstr "Αναπαραγωγή ή_χου"
 
-#: data/four-in-a-row.ui:105
-msgid "Receive a hint for your next move"
-msgstr "Λήψη υπόδειξης για την επόμενή σας κίνηση"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:85
+msgid "_Two players"
+msgstr "_Δύο παίκτες"
 
-#: data/four-in-a-row.ui:118
-msgid "_Start Over"
-msgstr "Εκκίνη_ση"
+#. Translators: when configuring a new game, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:109
+msgid "Players"
+msgstr "Παίκτες"
 
-#: data/four-in-a-row.ui:124
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:126
+msgid "_One"
+msgstr "Έ_να"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:138
+msgid "_Two"
+msgstr "_Δύο"
+
+#. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
+#: data/ui/fiar-screens.ui:162
+msgid "Difficulty"
+msgstr "Δυσκολία"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:179
+msgid "_Easy"
+msgstr "_Εύκολο"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:191
+msgid "_Medium"
+msgstr "_Μέσο"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:203
+msgid "_Hard"
+msgstr "_Δύσκολο"
+
+#. Translators: when configuring a new game, header of the row for choosing whether to start or not
+#: data/ui/fiar-screens.ui:227
+msgid "Game start"
+msgstr "Εκκίνηση παιχνιδιού"
+
+#. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
+#: data/ui/four-in-a-row.ui:31
+msgid "_New Game"
+msgstr "_Νέο παιχνίδι"
+
+#. Translators: during a game, tooltip text of the New Game button
+#: data/ui/four-in-a-row.ui:36
 msgid "Start a new game"
 msgstr "Εκκίνηση νέου παιχνιδιού"
+
+#. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
+#: data/ui/four-in-a-row.ui:49
+msgid "Go back to the current game"
+msgstr "Μετάβαση πίσω στο τρέχον παιχνίδι"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"...
+#: data/ui/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "During a game"
+msgstr "Κατά τη διάρκεια του παιχνιδιού"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:36
+msgctxt "shortcut window"
+msgid "New game"
+msgstr "Νέο παιχνίδι"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:44
+msgctxt "shortcut window"
+msgid "Undo last move"
+msgstr "Αναίρεση τελευταίας κίνησης"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Show a hint"
+msgstr "Εμφάνιση υπόδειξης"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
+#: data/ui/help-overlay.ui:62
+msgctxt "shortcut window"
+msgid "Play with keyboard"
+msgstr "Παίξτε με το πληκτρολόγιο"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
+#: data/ui/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Select where to play"
+msgstr "Επιλέξτε που θα παίξετε"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column
+#: data/ui/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Select the given column"
+msgstr "Επιλέξτε την δεδομένη στήλη"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
+#: data/ui/help-overlay.ui:83
+msgctxt "shortcut window"
+msgid "Play in selected column"
+msgstr "Παίξτε στην επιλεγμένη στήλη"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
+#: data/ui/help-overlay.ui:93
+msgctxt "shortcut window"
+msgid "During game selection"
+msgstr "Κατά τη διάρκεια της επιλογή παιχνιδιού"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
+#: data/ui/help-overlay.ui:98
+msgctxt "shortcut window"
+msgid "Start new game"
+msgstr "Εκκίνηση νέου παιχνιδιού"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
+#: data/ui/help-overlay.ui:106
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Μετάβαση πίσω"
+
+#. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
+#: data/ui/help-overlay.ui:116
+msgctxt "shortcut window"
+msgid "Generic"
+msgstr "Γενικά"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:121
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Συντομεύσεις πληκτρολογίου"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Βοήθεια"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "About"
+msgstr "Περί"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:145
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Έξοδος"
+
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "Τέλος!"
+
+#. Translators: application name, as used in the window manager, the window title, the about dialog...
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
+msgid "Four-in-a-row"
+msgstr "Τέσσερα στη σειρά"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:8
 #: data/org.gnome.Four-in-a-row.desktop.in:6
@@ -93,9 +251,6 @@ msgstr ""
 "τέσσερα κομμάτια μαζί στη γραμμή, είναι ο νικητής!"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:16
-#| msgid ""
-#| "Four-in-a-row features multiple difficulty levels. If you're having "
-#| "trouble, you can always ask for a hint."
 msgid ""
 "Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
@@ -107,100 +262,327 @@ msgstr ""
 msgid "The GNOME Project"
 msgstr "Το έργο GNOME"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
-msgid "org.gnome.Four-in-a-row"
-msgstr "org.gnome.Four-in-a-row"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "παιχνίδι;στρατηγική;λογική;game;strategy;logic;"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:5
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+msgid "Who starts"
+msgstr "Ποιος ξεκινάει"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:13
+msgid ""
+"Specifies who will start the next one-player game. Ignored for two-player "
+"games."
+msgstr ""
+"Ορίζει ποιος θα ξεκινήσει το επόμενο παιχνίδι ενός παίκτη. Αγνοείται για "
+"παιχνίδια δύο παικτών."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
+#: data/org.gnome.Four-in-a-row.gschema.xml:19
+msgid "Number of players"
+msgstr "Αριθμός παικτών"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Opponent"
 msgstr "Αντίπαλος"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:6
-msgid ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:28
+msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
 msgstr ""
-"Το μηδέν είναι για τον άνθρωπο. Οι αριθμοί από το ένα ως το τρία "
-"αντιστοιχούν στον υπολογιστή."
+"Από 1, το ευκολότερο έως 3, το δυσκολότερο. Αγνοείται για παιχνίδι δυο "
+"παικτών."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:10
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:34
 msgid "Theme ID"
 msgstr "Αναγνωριστικό θέματος"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:11
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:36
 msgid "A number specifying the preferred theme."
 msgstr "Ένας αριθμός που καθορίζει το προτιμώμενο θέμα."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:15
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:41
 msgid "Sound"
 msgstr "Ήχος"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:16
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
 msgstr "Αν θα αναπαράγονται ή όχι οι ήχοι συμβάντων."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:48
 msgid "Move left"
 msgstr "Μετακίνηση προς τα αριστερά"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:21
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:50
 msgid "Key press to move left."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα αριστερά."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:55
 msgid "Move right"
 msgstr "Μετακίνηση προς τα δεξιά"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:26
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:57
 msgid "Key press to move right."
 msgstr "Πάτημα πλήκτρου για μετακίνηση προς τα δεξιά."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:62
 msgid "Drop marble"
 msgstr "Ρίψη βώλων"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:31
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
 msgstr "Πάτημα πλήκτρου για να πέσει ένας βώλος."
 
-#: src/four-in-a-row.vala:248
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:72
+msgid "The width of the window"
+msgstr "Το μήκος του παραθύρου"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:74
+msgid "The width of the main window in pixels."
+msgstr "Το μήκος του κυρίως παραθύρου σε εικονοστοιχεία."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:79
+msgid "The height of the window"
+msgstr "Το ύψος του παραθύρου"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:81
+msgid "The height of the main window in pixels."
+msgstr "Το ύψος του κυρίως παραθύρου σε εικονοστοιχεία."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:86
+msgid "A flag to enable maximized mode"
+msgstr "Μια σημαία για την ενεργοποίηση μεγιστοποιημένης λειτουργίας"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:88
+msgid "If “true”, the main window starts in maximized mode."
+msgstr ""
+"Εάν είναι «αληθής», το κυρίως παράθυρο εκκινεί σε μεγιστοποιημένη λειτουργία."
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:95
+msgid "Set the level of the computer’s AI"
+msgstr "Ορισμός του επιπέδου του ΑΙ του υπολογιστή"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:98
+msgid "LEVEL"
+msgstr "ΕΠΙΠΕΔΟ"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:101
+msgid "Turn off the sound"
+msgstr "Απενεργοποίηση ήχου"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:104
+msgid "Size of the board"
+msgstr "Μέγεθος του πίνακα"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:107
+msgid "SIZE"
+msgstr "ΜΕΓΕΘΟΣ"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr ""
+
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "ΠΡΟΟΡΙΣΜΟΣ"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
+msgid "Turn on the sound"
+msgstr "Ενεργοποίηση ήχου"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:119
+msgid "Print release version and exit"
+msgstr "Εμφάνιση της έκδοσης και έξοδος"
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
+#: src/four-in-a-row.vala:166
+msgid "Size must be at least 4."
+msgstr "Το μέγεθος πρέπει να είναι τουλάχιστον 4."
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
+#: src/four-in-a-row.vala:172
+msgid "Size must not be more than 16."
+msgstr "Το μέγεθος δεν πρέπει να είναι πάνω από 16."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:179
+msgid "Lines must be at least 3 tiles."
+msgstr "Οι γραμμές πρέπει να είναι τουλάχιστον 3 πλακίδια."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:185
+msgid "Lines cannot be longer than board height or width."
+msgstr ""
+"Οι γραμμές δεν πρέπει να είναι μεγαλύτερες του μήκους και ύψους του πίνακα."
+
+#. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
+#: src/four-in-a-row.vala:228
+msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
+msgstr ""
+"Το επίπεδο πρέπει να είναι 1 (εύκολο), 2 (μέσο) ή 3 (δύσκολο). Οι ρυθμίσεις "
+"παραμένουν αμετάβλητες."
+
+#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:266
+msgid "A_ppearance"
+msgstr "_Εμφάνιση"
+
+#. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:270
+msgid "_Sound"
+msgstr "Ή_χος"
+
+#. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:276
+msgid "_Keyboard Shortcuts"
+msgstr "Συντομεύσεις _πληκτρολογίου"
+
+#. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:280
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:284
+msgid "_About Four-in-a-row"
+msgstr "_Περί Τέσσερα στη σειρά"
+
+#. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
+#: src/four-in-a-row.vala:566
 msgid "It’s a draw!"
 msgstr "Ισοπαλία!"
 
-#: src/four-in-a-row.vala:256
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
+#: src/four-in-a-row.vala:580
 msgid "You win!"
 msgstr "Κέρδισες!"
 
-#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
-msgid "Your Turn"
-msgstr "Η σειρά σας"
-
-#: src/four-in-a-row.vala:261
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
+#: src/four-in-a-row.vala:583
 msgid "I win!"
 msgstr "Κέρδισα!"
 
-#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:592
+msgid "Your Turn"
+msgstr "Η σειρά σας"
+
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
+#. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
+#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
 msgid "I’m Thinking…"
 msgstr "Σκέφτομαι…"
 
-#: src/four-in-a-row.vala:515
+#. blink n times
+#. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
+#: src/four-in-a-row.vala:924
 #, c-format
-#| msgid "Hint: Column "
 msgid "Hint: Column %d"
 msgstr "Υπόδειξη: Στήλη %d"
 
-#: src/four-in-a-row.vala:660
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1092
+msgid "Tim Musson"
+msgstr "Tim Musson"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1096
+msgid "David Neary"
+msgstr "David Neary"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1100
+msgid "Nikhar Agrawal"
+msgstr "Nikhar Agrawal"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1104
+msgid "Jacob Humphrey"
+msgstr "Jacob Humphrey"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1108
+msgid "Arnaud Bonatti"
+msgstr "Arnaud Bonatti"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1113
+msgid "Alan Horkan"
+msgstr "Alan Horkan"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1117
+msgid "Anatol Drlicek"
+msgstr "Anatol Drlicek"
+
+#. Translators: in the About dialog, indication about some themes origin
+#: src/four-in-a-row.vala:1121
+msgid "Based on the Faenza icon theme by Matthieu James"
+msgstr "Βασισμένο στο θέμα εικονιδίων Faenza από τον Matthieu James"
+
+#. Translators: in the About dialog, name of a documenter
+#: src/four-in-a-row.vala:1125
+msgid "Timothy Musson"
+msgstr "Timothy Musson"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1129
+msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
+msgstr "Πνευματικά δικαιώματα © 1999-2008 – Tim Musson και David Neary"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1133
+msgid "Copyright © 2014 – Michael Catanzaro"
+msgstr "Πνευματικά δικαιώματα © 2014 – Michael Catanzaro"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1137
+msgid "Copyright © 2018 – Jacob Humphrey"
+msgstr "Πνευματικά δικαιώματα © 2018 – Jacob Humphrey"
+
+#. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
+#: src/four-in-a-row.vala:1141
+#, c-format
+msgid "Copyright © %u-%u – Arnaud Bonatti"
+msgstr "Πνευματικά δικαιώματα © %u-%u – Arnaud Bonatti"
+
+#. Translators: about dialog text, introducing the game
+#: src/four-in-a-row.vala:1149
 msgid "Connect four in a row to win"
 msgstr "Συνδέστε τέσσερα στη σειρά για να κερδίσετε"
 
-#: src/four-in-a-row.vala:664
+#. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
+#: src/four-in-a-row.vala:1154
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -214,166 +596,205 @@ msgstr ""
 "Για περισστερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/four-in-a-row.vala:740
+#. Translators: during a game, entry in the game menu, for undoing the last move
+#: src/four-in-a-row.vala:1255
+msgid "_Undo last move"
+msgstr "_Αναίρεση τελευταίας κίνησης"
+
+#. Translators: during a game, entry in the game menu, for suggesting where to play
+#: src/four-in-a-row.vala:1259
+msgid "_Hint"
+msgstr "_Υπόδειξη"
+
+#: src/four-in-a-row.vala:1271
+msgid "Next _Round"
+msgstr "Επόμενος _γύρος"
+
+#: src/four-in-a-row.vala:1273
+msgid "_Give Up"
+msgstr "_Παραίτηση"
+
+#. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:1278
 msgid "_Scores"
 msgstr "_Βαθμολογίες"
 
-#: src/four-in-a-row.vala:743
-msgid "_Preferences"
-msgstr "Π_ροτιμήσεις"
+#. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
+#: src/game-window.vala:113
+msgid "_Start Game"
+msgstr "_Εκκίνηση παιχνιδιού"
 
-#: src/four-in-a-row.vala:744
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: src/four-in-a-row.vala:745
-msgid "_About Four-in-a-row"
-msgstr "_Περί Τέσσερα στη σειρά"
-
-#: src/games-controls-list.vala:154
-msgid "This key is already in use."
-msgstr "Αυτό το κλειδί χρησιμοποιείται ήδη."
-
-#: src/games-controls-list.vala:175
-msgid "Unknown Command"
-msgstr "Άγνωστη εντολή"
-
-#: src/prefs-box.vala:36
-msgid "Preferences"
-msgstr "Προτιμήσεις"
-
-#: src/prefs-box.vala:53
-msgid "Game"
-msgstr "Παιχνίδι"
-
-#: src/prefs-box.vala:56
-msgid "Opponent:"
-msgstr "Αντίπαλος:"
-
-#: src/prefs-box.vala:67
-msgid "Human"
-msgstr "Άνθρωπος"
-
-#: src/prefs-box.vala:71
-msgid "Level one"
-msgstr "Πρώτο επίπεδο"
-
-#: src/prefs-box.vala:75
-msgid "Level two"
-msgstr "Δεύτερο επίπεδο"
-
-#: src/prefs-box.vala:79
-msgid "Level three"
-msgstr "Τρίτο επίπεδο"
-
-#: src/prefs-box.vala:86
-msgid "_Theme:"
-msgstr "_Θέμα:"
-
-#: src/prefs-box.vala:98
-msgid "E_nable sounds"
-msgstr "Ενε_ργοποίηση ήχων"
-
-#. keyboard tab
-#: src/prefs-box.vala:102
-msgid "Keyboard Controls"
-msgstr "Συντομεύσεις πληκτρολογίου"
-
-#: src/scorebox.vala:28
+#. Translators: title of the Scores dialog; plural noun
+#: src/scorebox.vala:37
 msgid "Scores"
 msgstr "Βαθμολογία"
 
-#: src/scorebox.vala:74
+#. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
+#: src/scorebox.vala:72
 msgid "Drawn:"
 msgstr "Ισοπαλία:"
 
-#: src/scorebox.vala:96 src/scorebox.vala:99
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
+#: src/scorebox.vala:93 src/scorebox.vala:107
 msgid "You:"
 msgstr "Εσύ:"
 
-#: src/scorebox.vala:97 src/scorebox.vala:100
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
+#: src/scorebox.vala:96 src/scorebox.vala:104
 msgid "Me:"
 msgstr "Εγώ:"
 
-#: src/theme.vala:65
+#. Translators: name of a black-on-white theme, for helping people with visual misabilities
+#: src/theme.vala:170
 msgid "High Contrast"
 msgstr "Υψηλή Αντίθεση"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
 msgstr "Κύκλος"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
 msgstr "Σταυρός"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Circle:"
+msgstr "Κύκλος:"
+
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Cross:"
+msgstr "Σταυρός:"
+
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
 msgstr "Ο κύκλος κερδίζει!"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
 msgstr "Ο σταυρός κερδίζει!"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
 msgstr "Η σειρά του κύκλου"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Cross’s turn"
 msgstr "Η σειρά του σταυρού"
 
-#: src/theme.vala:74
+#. Translators: name of a white-on-black theme, for helping people with visual misabilities
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
 msgstr "Αντιστροφή υψηλής αντίθεσης"
 
-#: src/theme.vala:83
+#. Translators: name of a red-versus-green theme
+#: src/theme.vala:192
 msgid "Red and Green Marbles"
 msgstr "Κόκκινοι και πράσινοι βώλοι"
 
-#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
 msgstr "Κόκκινο"
 
-#: src/theme.vala:87 src/theme.vala:105
+#: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
 msgstr "Πράσινο"
 
-#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
+msgid "Red:"
+msgstr "Κόκκινα:"
+
+#: src/theme.vala:197 src/theme.vala:219
+msgid "Green:"
+msgstr "Πράσινο:"
+
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
 msgstr "Ο κόκκινος κερδίζει!"
 
-#: src/theme.vala:88 src/theme.vala:106
+#: src/theme.vala:198 src/theme.vala:220
 msgid "Green wins!"
 msgstr "Ο πράσινος κερδίζει!"
 
-#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
 msgstr "Η σειρά του κόκκινου"
 
-#: src/theme.vala:89 src/theme.vala:107
+#: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
 msgstr "Η σειρά του πράσινου"
 
-#: src/theme.vala:92
+#. Translators: name of a blue-versus-red theme
+#: src/theme.vala:203
 msgid "Blue and Red Marbles"
 msgstr "Γαλάζιοι και κόκκινοι βώλοι"
 
-#: src/theme.vala:96
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "Γαλάζιο"
 
-#: src/theme.vala:97
+#: src/theme.vala:208
+msgid "Blue:"
+msgstr "Μπλε:"
+
+#: src/theme.vala:209
 msgid "Blue wins!"
 msgstr "Ο μπλε κερδίζει!"
 
-#: src/theme.vala:98
+#: src/theme.vala:210
 msgid "Blue’s turn"
 msgstr "Η σειρά του μπλε"
 
-#: src/theme.vala:101
+#. Translators: name of a red-versus-green theme with drawing on the tiles
+#: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "Αστέρια και δακτύλιοι"
+
+#~ msgid "Receive a hint for your next move"
+#~ msgstr "Λήψη υπόδειξης για την επόμενή σας κίνηση"
+
+#~| msgid "Four-in-a-row"
+#~ msgid "org.gnome.Four-in-a-row"
+#~ msgstr "org.gnome.Four-in-a-row"
+
+#~ msgid ""
+#~ "Zero is human; one through three correspond to the level of the computer "
+#~ "player."
+#~ msgstr ""
+#~ "Το μηδέν είναι για τον άνθρωπο. Οι αριθμοί από το ένα ως το τρία "
+#~ "αντιστοιχούν στον υπολογιστή."
+
+#~ msgid "_Preferences"
+#~ msgstr "Π_ροτιμήσεις"
+
+#~ msgid "This key is already in use."
+#~ msgstr "Αυτό το κλειδί χρησιμοποιείται ήδη."
+
+#~ msgid "Unknown Command"
+#~ msgstr "Άγνωστη εντολή"
+
+#~ msgid "Preferences"
+#~ msgstr "Προτιμήσεις"
+
+#~ msgid "Opponent:"
+#~ msgstr "Αντίπαλος:"
+
+#~ msgid "Human"
+#~ msgstr "Άνθρωπος"
+
+#~ msgid "Level one"
+#~ msgstr "Πρώτο επίπεδο"
+
+#~ msgid "Level two"
+#~ msgstr "Δεύτερο επίπεδο"
+
+#~ msgid "Level three"
+#~ msgstr "Τρίτο επίπεδο"
+
+#~ msgid "_Theme:"
+#~ msgstr "_Θέμα:"
+
+#~ msgid "E_nable sounds"
+#~ msgstr "Ενε_ργοποίηση ήχων"
 
 #~ msgid "four-in-a-row"
 #~ msgstr "four-in-a-row"
@@ -384,9 +805,3 @@ msgstr "Αστέρια και δακτύλιοι"
 #~ msgstr ""
 #~ "Αδυναμία φόρτωσης εικόνας:\n"
 #~ "%s"
-
-#~ msgid "_About"
-#~ msgstr "_Περί"
-
-#~ msgid "_Quit"
-#~ msgstr "Έ_ξοδος"
