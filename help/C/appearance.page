@@ -6,6 +6,7 @@
     <link type="guide" xref="index#preferences"/>
 
     <revision pkgversion="3.31.90" version="0.2" date="2019-03-02" status="final"/>
+    <revision pkgversion="3.35.91" version="0.3" date="2020-02-23" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -26,13 +27,14 @@
     <title>To use a different theme:</title>
     <item>
       <p>Press the menu button in the top-right corner of the window and select
-      <guiseq><gui style="menu">Preferences</gui>
-      <gui style="menuitem">Game</gui></guiseq>.</p>
+      <gui style="menuitem">Appearance</gui>.</p>
     </item>
     <item>
-      <p>Pick the theme of your choice from
-      the drop down menu to the right of <gui style="group">Theme</gui>. The
+      <p>Select the theme of your choice. The
       change will be reflected immediately in the game window.</p>
+    </item>
+    <item>
+      <p>Close the menu by clicking outside of the menu.</p>
     </item>
   </steps>
 
