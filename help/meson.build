@@ -6,7 +6,6 @@ help_pages = [
     'appearance.page',
     'basics.page',
     'choose-opponent.page',
-    'controls-change.page',
     'controls-default.page',
     'index.page',
     'legal.xml',
