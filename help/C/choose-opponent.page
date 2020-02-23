@@ -8,6 +8,7 @@
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
     <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
     <revision pkgversion="3.31.90" version="0.3" date="2019-03-02" status="final"/>
+    <revision pkgversion="3.35.91" version="0.4" date="2020-02-23" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -26,25 +27,23 @@
 
   <title>Choose a different opponent </title>
   <p>By default, your opponent in <app>Four-in-a-row</app> is the computer,
-  playing at level one.</p>
+  playing at an easy level.</p>
 
   <steps>
     <title>To change the level, or to play with a friend:</title>
     <item>
-      <p>Press the menu button in the top-right corner of the window and select
-      <guiseq><gui style="menuitem">Preferences</gui>
-      <gui style="menuitem">Game</gui></guiseq>.</p>
+      <p>Press the <gui style="button">New Game</gui> button in the header
+      bar.</p>
     </item>
     <item>
-      <p>Under <gui>Opponent</gui>, choose <gui style="radiobutton">Human</gui>
+      <p>Under <gui>Players</gui>, choose <gui style="button">Two</gui>
       for both players if want to play with a friend or family member.</p>
-      <p>Alternatively, choose the level at which the computer plays. Choose
-      between <gui style="radiobutton">Level one</gui>,
-      <gui style="radiobutton">Level two</gui> or
-      <gui style="radiobutton">Level three</gui>, where
-      <gui style="radiobutton">Level one</gui> is the
-      easiest level and <gui style="radiobutton">Level three</gui> is the most
-      difficult level.</p>
+      <p>Alternatively, choose the <gui>Difficulty</gui> level at which the
+      computer plays. Choose between <gui style="button">Easy</gui>,
+      <gui style="button">Medium</gui> or
+      <gui style="button">Hard</gui>.</p>
+      <p>You can also choose if you play first or second under <gui>Game
+      start</gui>.</p>
       <note style="tip">
 	<p>If you are playing with a friend or family member,
 	Player One gets to play first in the first game of
