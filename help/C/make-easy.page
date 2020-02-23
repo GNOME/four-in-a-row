@@ -26,8 +26,9 @@
 
   <p>When the computer makes a winning move because of your last move or when
   you accidentally make the wrong move, you can undo your last move and change
-  it. To undo your last move, press the <gui style="button">Undo your most recent
-  move</gui> button in the header bar or press
+  it. To undo your last move, press the button in the header bar which either
+  shows an arrow and the color to play or says <gui style="button">Ends</gui>,
+  and select <gui style="menuitem">Undo last move</gui>, or press
   <keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble at
   a different row in the game area to change your move.</p>
 
