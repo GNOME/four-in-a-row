@@ -8,6 +8,7 @@
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
     <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
     <revision pkgversion="3.31.90" version="0.3" date="2019-03-02" status="final"/>
+    <revision pkgversion="3.35.91" version="0.4" date="2020-02-23" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -31,13 +32,11 @@
   <steps>
     <title>To disable sounds:</title>
     <item>
-      <p>Press the menu button in the top-right corner of the window and select
-      <guiseq><gui style="menuitem">Preferences</gui>
-      <gui style="menuitem">Game</gui></guiseq>.</p>
+      <p>Press the menu button in the top-right corner of the window and uncheck
+      <gui style="menuitem">Sound</gui>.</p>
     </item>
     <item>
-      <p>Uncheck <gui style="checkbox">Enable sounds</gui>. You can check the
-      option again to enable the feature.</p>
+      <p>Close the menu by clicking outside of the menu.</p>
     </item>
   </steps>
 
