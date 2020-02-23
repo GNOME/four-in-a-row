@@ -8,6 +8,7 @@
     <revision pkgversion="3.8" version="0.1" date="2013-03-29" status="final"/>
     <revision pkgversion="3.28" version="0.2" date="2018-09-01" status="final"/>
     <revision pkgversion="3.31" version="0.3" date="2019-01-20" status="final"/>
+    <revision pkgversion="3.35.91" version="0.4" date="2020-02-23" status="final"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -46,7 +47,10 @@
   <p>If you are not sure of your next move, you can use a hint. When you use a
   hint, your marble moves to the top of the column that is the best choice,
   strategy-wise, and blinks. You can then drop your marble into that column. To
-  use a hint, press <gui style="button">Hint</gui> or <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+  use a hint, press the button in the header bar which either shows an arrow and
+  the color to play or says <gui style="button">Ends</gui> and select
+  <gui style="menuitem">Hint</gui>, or press
+  <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
 
   <note style="info">
   <p>There is no limit on the number of hints you can use in a game.</p>
