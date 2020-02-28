@@ -34,7 +34,7 @@ msgstr "Utilitzeu diferents temes per millorar la vostra experiència de joc."
 #. (itstool) path: page/title
 #: C/appearance.page:20
 msgid "Change the appearance of your gaming area"
-msgstr "Canvia l'aparença de la vostra àrea de joc"
+msgstr "Canviar l'aparença de la vostra àrea de joc"
 
 #. (itstool) path: page/p
 #: C/appearance.page:22
@@ -93,7 +93,7 @@ msgid ""
 "Press <gui style=\"button\">Start Over</gui> or press "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Premeu <gui style=\"button\">Reiniciar</gui> o premeu "
+"Premeu <gui style=\"button\">Torna a començar</gui> o premeu "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> per començar una partida nova."
 
 #. (itstool) path: section/title
@@ -118,7 +118,7 @@ msgstr "Michael Hill"
 #. (itstool) path: info/desc
 #: C/choose-opponent.page:23
 msgid "Change the level at which the computer plays or play with a friend."
-msgstr "Canviar el nivell amb el que l'ordinador juga o juga amb un amic."
+msgstr "Canviar el nivell amb el qual l'ordinador juga o juga amb un amic."
 
 #. (itstool) path: page/title
 #: C/choose-opponent.page:27
@@ -278,7 +278,7 @@ msgstr ""
 #. (itstool) path: item/p
 #: C/controls-default.page:31
 msgid "<key>←</key> to move the marble to your left."
-msgstr "<key>←</key> per moure una bala cap a l'esquerra"
+msgstr "<key>←</key> per moure una bala cap a l'esquerra."
 
 #. (itstool) path: item/p
 #: C/controls-default.page:34
@@ -345,7 +345,7 @@ msgstr "Fer el joc una mica més fàcil"
 #. (itstool) path: section/title
 #: C/make-easy.page:25
 msgid "Change your last move"
-msgstr "Canvieu el vostra darrer moviment"
+msgstr "Canviar el vostre darrer moviment"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:27
@@ -359,8 +359,8 @@ msgid ""
 msgstr ""
 "Quan l'ordinador fa un moviment guanyador a causa del vostre darrer moviment"
 " o quan accidentalment feu un moviment equivocat, pot desfer-lo i canviar-"
-"lo. Per desfer l'última jugada, premi el </gui> botó a la capçalera o premi "
-"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Ara pot moure la seva bola a "
+"lo. Per desfer l'última jugada, premeu el botó <gui style=\"button\">Desfeu el vostre canvi més recent</gui> a la capçalera o premeu "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Ara podeu moure la bola a "
 "una fila diferent de l'àrea de joc per tal de canviar el seu moviment."
 
 #. (itstool) path: note/p
@@ -437,7 +437,7 @@ msgstr "<gui>Vermell</gui> mostra el nombre de jocs que heu guanyat."
 #. (itstool) path: item/p
 #: C/scores.page:38
 msgid "<gui>Green</gui> displays the number of games won by the opponent."
-msgstr "<gui>Verd</gui> mostra el nombre de jocs que heu perdut. "
+msgstr "<gui>Verd</gui> mostra el nombre de jocs que heu perdut."
 
 #. (itstool) path: item/p
 #: C/scores.page:41
@@ -477,7 +477,7 @@ msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
 msgstr ""
-"Quan els sons estan activats, sentireu alguna cosa cada cop que es caigui "
+"Quan els sons estan activats, sentireu alguna cosa cada cop que caigui "
 "una bola o quan s'acabi un joc."
 
 #. (itstool) path: steps/title
