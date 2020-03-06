@@ -1,5 +1,5 @@
 # Polish translation for four-in-a-row.
-# Copyright © 1998-2019 the four-in-a-row authors.
+# Copyright © 1998-2020 the four-in-a-row authors.
 # This file is distributed under the same license as the four-in-a-row package.
 # Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002.
 # Marcin Gorycki <mgo@olicom.dk>, 1999.
@@ -12,15 +12,15 @@
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008.
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010.
 # Wojciech Kapusta <wkapusta@aviary.pl>, 2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2019.
-# Aviary.pl <community-poland@mozilla.org>, 2007-2019.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2020.
+# Aviary.pl <community-poland@mozilla.org>, 2007-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2019-02-06 19:28+0000\n"
-"PO-Revision-Date: 2019-02-06 22:01+0100\n"
+"POT-Creation-Date: 2020-01-10 18:04+0000\n"
+"PO-Revision-Date: 2020-03-06 17:05+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -30,36 +30,194 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: data/four-in-a-row.ui:8 data/four-in-a-row.ui:13
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
-#: data/org.gnome.Four-in-a-row.desktop.in:5
-msgid "Four-in-a-row"
-msgstr "Czwórki"
+#. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:40
+msgid "Game type"
+msgstr "Typ gry"
 
-#: data/four-in-a-row.ui:22
-msgid "Undo your most recent move"
-msgstr "Cofa ostatni ruch"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:61 data/ui/fiar-screens.ui:244
+msgid "Play _first"
+msgstr "Za_cznij pierwszy"
 
-#: data/four-in-a-row.ui:99
-msgid "_Hint"
-msgstr "P_odpowiedź"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:73 data/ui/fiar-screens.ui:256
+msgid "Play _second"
+msgstr "Zacz_nij drugi"
 
-#: data/four-in-a-row.ui:105
-msgid "Receive a hint for your next move"
-msgstr "Wyświetla podpowiedź kolejnego ruchu"
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:85
+msgid "_Two players"
+msgstr "_Dwóch graczy"
 
-#: data/four-in-a-row.ui:118
-msgid "_Start Over"
+#. Translators: when configuring a new game, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:109
+msgid "Players"
+msgstr "Gracze"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:126
+msgid "_One"
+msgstr "_Jeden"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:138
+msgid "_Two"
+msgstr "_Dwóch"
+
+#. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
+#: data/ui/fiar-screens.ui:162
+msgid "Difficulty"
+msgstr "Trudność"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:179
+msgid "_Easy"
+msgstr "_Niska"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:191
+msgid "_Medium"
+msgstr "Śr_ednia"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:203
+msgid "_Hard"
+msgstr "_Wysoka"
+
+#. Translators: when configuring a new game, header of the row for choosing whether to start or not
+#: data/ui/fiar-screens.ui:227
+msgid "Game start"
+msgstr "Początek gry"
+
+#. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
+#: data/ui/four-in-a-row.ui:31
+msgid "_New Game"
 msgstr "_Nowa gra"
 
-#: data/four-in-a-row.ui:124
+#. Translators: during a game, tooltip text of the New Game button
+#: data/ui/four-in-a-row.ui:36
 msgid "Start a new game"
 msgstr "Rozpoczyna nową grę"
+
+#. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
+#: data/ui/four-in-a-row.ui:49
+msgid "Go back to the current game"
+msgstr "Wraca do bieżącej gry"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"...
+#: data/ui/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "During a game"
+msgstr "Podczas gry"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:36
+msgctxt "shortcut window"
+msgid "New game"
+msgstr "Nowa gra"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:44
+msgctxt "shortcut window"
+msgid "Undo last move"
+msgstr "Cofnięcie ostatniego ruchu"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Show a hint"
+msgstr "Wyświetlenie podpowiedzi"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
+#: data/ui/help-overlay.ui:62
+msgctxt "shortcut window"
+msgid "Play with keyboard"
+msgstr "Gra za pomocą klawiatury"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
+#: data/ui/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Select where to play"
+msgstr "Wybór, gdzie zagrać"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column
+#: data/ui/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Select the given column"
+msgstr "Wybór danej kolumny"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
+#: data/ui/help-overlay.ui:83
+msgctxt "shortcut window"
+msgid "Play in selected column"
+msgstr "Zagranie w wybranej kolumnie"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
+#: data/ui/help-overlay.ui:93
+msgctxt "shortcut window"
+msgid "During game selection"
+msgstr "Podczas wyboru gry"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
+#: data/ui/help-overlay.ui:98
+msgctxt "shortcut window"
+msgid "Start new game"
+msgstr "Rozpoczęcie nowej gry"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
+#: data/ui/help-overlay.ui:106
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Przejście wstecz"
+
+#. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
+#: data/ui/help-overlay.ui:116
+msgctxt "shortcut window"
+msgid "Generic"
+msgstr "Ogólne"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:121
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Skróty klawiszowe"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Pomoc"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "About"
+msgstr "O grze"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:145
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Zakończenie działania"
+
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "Koniec!"
+
+#. Translators: application name, as used in the window manager, the window title, the about dialog...
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
+msgid "Four-in-a-row"
+msgstr "Czwórki"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:8
 #: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "Tworzenie linii tego samego koloru, aby wygrać"
+msgstr "Utwórz linie tego samego koloru, aby wygrać"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
@@ -85,98 +243,325 @@ msgstr ""
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Four-in-a-row.desktop.in:4
-msgid "org.gnome.Four-in-a-row"
-msgstr "org.gnome.Four-in-a-row"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "gra;gierka;strategiczna;strategia;logiczna;logika;"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:5
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+msgid "Who starts"
+msgstr "Kto zaczyna"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:13
+msgid ""
+"Specifies who will start the next one-player game. Ignored for two-player "
+"games."
+msgstr ""
+"Określa, kto rozpocznie następną grę jednoosobową. Ignorowane w grach "
+"dwuosobowych."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
+#: data/org.gnome.Four-in-a-row.gschema.xml:19
+msgid "Number of players"
+msgstr "Liczba graczy"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Opponent"
 msgstr "Przeciwnik"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:6
-msgid ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
-msgstr ""
-"Zero oznacza gracza; wartości od jeden do trzech ustawiają poziom gry "
-"komputera."
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:28
+msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
+msgstr "Od 1, najniższego, do 3, najwyższego. Ignorowane w grach dwuosobowych."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:10
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:34
 msgid "Theme ID"
 msgstr "Identyfikator motywu"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:11
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:36
 msgid "A number specifying the preferred theme."
 msgstr "Liczba określająca preferowany motyw."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:15
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:41
 msgid "Sound"
 msgstr "Dźwięk"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:16
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
-msgstr "Określa, czy odtwarzać dźwięki zdarzeń."
+msgstr "Czy odtwarzać dźwięki zdarzeń."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:20 src/prefs-box.vala:105
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:48
 msgid "Move left"
 msgstr "Przesunięcie w lewo"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:21
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:50
 msgid "Key press to move left."
 msgstr "Klawisz przesunięcia w lewo."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:25 src/prefs-box.vala:106
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:55
 msgid "Move right"
 msgstr "Przesunięcie w prawo"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:26
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:57
 msgid "Key press to move right."
 msgstr "Klawisz przesunięcia w prawo."
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:30 src/prefs-box.vala:107
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:62
 msgid "Drop marble"
 msgstr "Upuszczenie kulki"
 
-#: data/org.gnome.Four-in-a-row.gschema.xml:31
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
 msgstr "Klawisz upuszczenia kulki."
 
-#: src/four-in-a-row.vala:248
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:72
+msgid "The width of the window"
+msgstr "Szerokość okna"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:74
+msgid "The width of the main window in pixels."
+msgstr "Szerokość głównego okna w pikselach."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:79
+msgid "The height of the window"
+msgstr "Wysokość okna"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:81
+msgid "The height of the main window in pixels."
+msgstr "Wysokość głównego okna w pikselach."
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:86
+msgid "A flag to enable maximized mode"
+msgstr "Włączenie trybu zmaksymalizowanego"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:88
+msgid "If “true”, the main window starts in maximized mode."
+msgstr ""
+"Jeśli wynosi „true”, to główne okno jest uruchamiane w trybie "
+"zmaksymalizowanym."
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:95
+msgid "Set the level of the computer’s AI"
+msgstr "Ustawia poziom sztucznej inteligencji komputera"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:98
+msgid "LEVEL"
+msgstr "POZIOM"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:101
+msgid "Turn off the sound"
+msgstr "Wyłącza dźwięk"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:104
+msgid "Size of the board"
+msgstr "Rozmiar planszy"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:107
+msgid "SIZE"
+msgstr "ROZMIAR"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr "Długość wygrywającej linii"
+
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "CEL"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
+msgid "Turn on the sound"
+msgstr "Włącza dźwięk"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:119
+msgid "Print release version and exit"
+msgstr "Wyświetla wersję wydania i kończy działanie"
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
+#: src/four-in-a-row.vala:166
+msgid "Size must be at least 4."
+msgstr "Rozmiar musi wynosić co najmniej 4."
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
+#: src/four-in-a-row.vala:172
+msgid "Size must not be more than 16."
+msgstr "Rozmiar nie może być większy niż 16."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:179
+msgid "Lines must be at least 3 tiles."
+msgstr "Linie muszą wynosić co najmniej 3 kulki."
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:185
+msgid "Lines cannot be longer than board height or width."
+msgstr "Linie nie mogą być dłuższe od wysokości lub szerokości planszy."
+
+#. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
+#: src/four-in-a-row.vala:228
+msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
+msgstr ""
+"Poziom musi wynosić 1 (niski), 2 (średni) lub 3 (wysoki). Ustawienia nie "
+"zostały zmienione."
+
+#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:266
+msgid "A_ppearance"
+msgstr "_Wygląd"
+
+#. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:270
+msgid "_Sound"
+msgstr "_Dźwięk"
+
+#. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:276
+msgid "_Keyboard Shortcuts"
+msgstr "_Skróty klawiszowe"
+
+#. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:280
+msgid "_Help"
+msgstr "Pomo_c"
+
+#. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:284
+msgid "_About Four-in-a-row"
+msgstr "_O grze"
+
+#. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
+#: src/four-in-a-row.vala:566
 msgid "It’s a draw!"
 msgstr "Remis!"
 
-#: src/four-in-a-row.vala:256
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
+#: src/four-in-a-row.vala:580
 msgid "You win!"
 msgstr "Zwycięstwo!"
 
-#: src/four-in-a-row.vala:258 src/four-in-a-row.vala:274
-msgid "Your Turn"
-msgstr "Proszę wykonać ruch"
-
-#: src/four-in-a-row.vala:261
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
+#: src/four-in-a-row.vala:583
 msgid "I win!"
 msgstr "Zwycięstwo komputera!"
 
-#: src/four-in-a-row.vala:263 src/four-in-a-row.vala:501
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:592
+msgid "Your Turn"
+msgstr "Proszę wykonać ruch"
+
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
+#. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
+#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
 msgid "I’m Thinking…"
 msgstr "Myślę…"
 
-#: src/four-in-a-row.vala:515
+#. blink n times
+#. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
+#: src/four-in-a-row.vala:924
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Podpowiedź: %d. kolumna"
 
-#: src/four-in-a-row.vala:660
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1092
+msgid "Tim Musson"
+msgstr "Tim Musson"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1096
+msgid "David Neary"
+msgstr "David Neary"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1100
+msgid "Nikhar Agrawal"
+msgstr "Nikhar Agrawal"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1104
+msgid "Jacob Humphrey"
+msgstr "Jacob Humphrey"
+
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1108
+msgid "Arnaud Bonatti"
+msgstr "Arnaud Bonatti"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1113
+msgid "Alan Horkan"
+msgstr "Alan Horkan"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1117
+msgid "Anatol Drlicek"
+msgstr "Anatol Drlicek"
+
+#. Translators: in the About dialog, indication about some themes origin
+#: src/four-in-a-row.vala:1121
+msgid "Based on the Faenza icon theme by Matthieu James"
+msgstr "Na podstawie motywu ikon Faenza autorstwa Matthieu Jamesa"
+
+#. Translators: in the About dialog, name of a documenter
+#: src/four-in-a-row.vala:1125
+msgid "Timothy Musson"
+msgstr "Timothy Musson"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1129
+msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
+msgstr "Copyright © 1999-2008 Tim Musson i David Neary"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1133
+msgid "Copyright © 2014 – Michael Catanzaro"
+msgstr "Copyright © 2014 Michael Catanzaro"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1137
+msgid "Copyright © 2018 – Jacob Humphrey"
+msgstr "Copyright © 2018 Jacob Humphrey"
+
+#. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
+#: src/four-in-a-row.vala:1141
+#, c-format
+msgid "Copyright © %u-%u – Arnaud Bonatti"
+msgstr "Copyright © %u-%u Arnaud Bonatti"
+
+#. Translators: about dialog text, introducing the game
+#: src/four-in-a-row.vala:1149
 msgid "Connect four in a row to win"
 msgstr "Tworzenie linii tego samego koloru, aby wygrać"
 
-#: src/four-in-a-row.vala:664
+#. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
+#: src/four-in-a-row.vala:1154
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002\n"
@@ -190,166 +575,158 @@ msgstr ""
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2008\n"
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010\n"
 "Wojciech Kapusta <wkapusta@aviary.pl>, 2009\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2019\n"
-"Aviary.pl <community-poland@mozilla.org>, 2007-2019"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2020\n"
+"Aviary.pl <community-poland@mozilla.org>, 2007-2020"
 
-#: src/four-in-a-row.vala:740
+#. Translators: during a game, entry in the game menu, for undoing the last move
+#: src/four-in-a-row.vala:1255
+msgid "_Undo last move"
+msgstr "_Cofnij ostatni ruch"
+
+#. Translators: during a game, entry in the game menu, for suggesting where to play
+#: src/four-in-a-row.vala:1259
+msgid "_Hint"
+msgstr "P_odpowiedź"
+
+#: src/four-in-a-row.vala:1271
+msgid "Next _Round"
+msgstr "_Następna runda"
+
+#: src/four-in-a-row.vala:1273
+msgid "_Give Up"
+msgstr "_Poddaj się"
+
+#. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:1278
 msgid "_Scores"
 msgstr "_Wyniki"
 
-#: src/four-in-a-row.vala:743
-msgid "_Preferences"
-msgstr "_Preferencje"
+#. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
+#: src/game-window.vala:113
+msgid "_Start Game"
+msgstr "_Rozpocznij grę"
 
-#: src/four-in-a-row.vala:744
-msgid "_Help"
-msgstr "Pomo_c"
-
-#: src/four-in-a-row.vala:745
-msgid "_About Four-in-a-row"
-msgstr "_O grze"
-
-#: src/games-controls-list.vala:154
-msgid "This key is already in use."
-msgstr "Ten klawisz jest już używany."
-
-#: src/games-controls-list.vala:175
-msgid "Unknown Command"
-msgstr "Nieznane polecenie"
-
-#: src/prefs-box.vala:36
-msgid "Preferences"
-msgstr "Preferencje"
-
-#: src/prefs-box.vala:53
-msgid "Game"
-msgstr "Gra"
-
-#: src/prefs-box.vala:56
-msgid "Opponent:"
-msgstr "Przeciwnik:"
-
-#: src/prefs-box.vala:67
-msgid "Human"
-msgstr "Gracz"
-
-#: src/prefs-box.vala:71
-msgid "Level one"
-msgstr "Poziom pierwszy"
-
-#: src/prefs-box.vala:75
-msgid "Level two"
-msgstr "Poziom drugi"
-
-#: src/prefs-box.vala:79
-msgid "Level three"
-msgstr "Poziom trzeci"
-
-#: src/prefs-box.vala:86
-msgid "_Theme:"
-msgstr "_Motyw:"
-
-#: src/prefs-box.vala:98
-msgid "E_nable sounds"
-msgstr "_Dźwięki"
-
-#. keyboard tab
-#: src/prefs-box.vala:102
-msgid "Keyboard Controls"
-msgstr "Klawisze sterujące"
-
-#: src/scorebox.vala:28
+#. Translators: title of the Scores dialog; plural noun
+#: src/scorebox.vala:37
 msgid "Scores"
 msgstr "Wyniki"
 
-#: src/scorebox.vala:74
+#. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
+#: src/scorebox.vala:72
 msgid "Drawn:"
 msgstr "Remisy:"
 
-#: src/scorebox.vala:96 src/scorebox.vala:99
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
+#: src/scorebox.vala:93 src/scorebox.vala:107
 msgid "You:"
 msgstr "Gracz:"
 
-#: src/scorebox.vala:97 src/scorebox.vala:100
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
+#: src/scorebox.vala:96 src/scorebox.vala:104
 msgid "Me:"
 msgstr "Komputer:"
 
-#: src/theme.vala:65
+#. Translators: name of a black-on-white theme, for helping people with visual misabilities
+#: src/theme.vala:170
 msgid "High Contrast"
 msgstr "Wysoki kontrast"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
 msgstr "Kółko"
 
-#: src/theme.vala:69 src/theme.vala:78
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
 msgstr "Krzyżyk"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Circle:"
+msgstr "Kółko:"
+
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Cross:"
+msgstr "Krzyżyk:"
+
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
 msgstr "Kółka wygrywają!"
 
-#: src/theme.vala:70 src/theme.vala:79
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
 msgstr "Krzyżyki wygrywają!"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
 msgstr "Tura kółek"
 
-#: src/theme.vala:71 src/theme.vala:80
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Cross’s turn"
 msgstr "Tura krzyżyków"
 
-#: src/theme.vala:74
+#. Translators: name of a white-on-black theme, for helping people with visual misabilities
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
 msgstr "Odwrócony wysoki kontrast"
 
-#: src/theme.vala:83
+#. Translators: name of a red-versus-green theme
+#: src/theme.vala:192
 msgid "Red and Green Marbles"
 msgstr "Czerwone i zielone kulki"
 
-#: src/theme.vala:87 src/theme.vala:96 src/theme.vala:105
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
 msgstr "Czerwony"
 
-#: src/theme.vala:87 src/theme.vala:105
+#: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
 msgstr "Zielony"
 
-#: src/theme.vala:88 src/theme.vala:97 src/theme.vala:106
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
+msgid "Red:"
+msgstr "Czerwony:"
+
+#: src/theme.vala:197 src/theme.vala:219
+msgid "Green:"
+msgstr "Zielony:"
+
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
 msgstr "Czerwone wygrywają!"
 
-#: src/theme.vala:88 src/theme.vala:106
+#: src/theme.vala:198 src/theme.vala:220
 msgid "Green wins!"
 msgstr "Zielone wygrywają!"
 
-#: src/theme.vala:89 src/theme.vala:98 src/theme.vala:107
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
 msgstr "Tura czerwonych"
 
-#: src/theme.vala:89 src/theme.vala:107
+#: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
 msgstr "Tura zielonych"
 
-#: src/theme.vala:92
+#. Translators: name of a blue-versus-red theme
+#: src/theme.vala:203
 msgid "Blue and Red Marbles"
 msgstr "Niebieskie i czerwone kulki"
 
-#: src/theme.vala:96
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "Niebieski"
 
-#: src/theme.vala:97
+#: src/theme.vala:208
+msgid "Blue:"
+msgstr "Niebieski:"
+
+#: src/theme.vala:209
 msgid "Blue wins!"
 msgstr "Niebieskie wygrywają!"
 
-#: src/theme.vala:98
+#: src/theme.vala:210
 msgid "Blue’s turn"
 msgstr "Tura niebieskich"
 
-#: src/theme.vala:101
+#. Translators: name of a red-versus-green theme with drawing on the tiles
+#: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "Gwiazdy i kręgi"
