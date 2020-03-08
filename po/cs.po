@@ -621,7 +621,7 @@ msgstr "Nerozhodně:"
 #. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
 #: src/scorebox.vala:93 src/scorebox.vala:107
 msgid "You:"
-msgstr "Vy:"
+msgstr "Ty:"
 
 #. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
 #: src/scorebox.vala:96 src/scorebox.vala:104
