@@ -1,3 +1,20 @@
+3.36.0 - March 10, 2020
+=============================
+
+Here is a new stable release! This cycle has seen the
+complete update of the application, including the new
+start-game screen, the removing of Preferences dialog
+replaced by options in the main menu, the small delay
+before computer moves, and other. Good play everyone!
+
+Translations updated (since 3.35.92):
+  Catalan: Jordi Mas
+  Czech: Marek Černocký (help)
+  Dutch: Nathan Follens
+  German: Tim Sabsch
+  Italian: Milo Casagrande
+  Polish: Piotr Drąg
+
 3.35.92 - March 2, 2020
 =============================
 
