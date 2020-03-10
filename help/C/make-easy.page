@@ -28,7 +28,7 @@
   <p>When the computer makes a winning move because of your last move or when
   you accidentally make the wrong move, you can undo your last move and change
   it. To undo your last move, press the button in the header bar which either
-  shows an arrow and the color to play or says <gui style="button">Ends</gui>,
+  shows an arrow and the color to play or says <gui style="button">End!</gui>,
   and select <gui style="menuitem">Undo last move</gui>, or press
   <keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble at
   a different row in the game area to change your move.</p>
@@ -48,7 +48,7 @@
   hint, your marble moves to the top of the column that is the best choice,
   strategy-wise, and blinks. You can then drop your marble into that column. To
   use a hint, press the button in the header bar which either shows an arrow and
-  the color to play or says <gui style="button">Ends</gui> and select
+  the color to play or says <gui style="button">End!</gui> and select
   <gui style="menuitem">Hint</gui>, or press
   <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
 

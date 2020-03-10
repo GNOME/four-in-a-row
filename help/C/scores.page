@@ -29,7 +29,7 @@
   <p>The score in <app>Four-in-a-row</app> is recorded in terms of your wins,
   your opponent's wins and games that ended in a draw. To check the scores,
   press the button in the header bar which either shows an arrow and the color
-  to play or says <gui style="button">Ends</gui>, and select
+  to play or says <gui style="button">End!</gui>, and select
   <gui style="menuitem">Scores</gui>. In the default theme:</p>
 
   <list>
@@ -52,7 +52,7 @@
   <note style="tip">
   <p>Do not press the <gui style="button">New Game</gui> button, but press the
   button in the header bar which either shows an arrow and the color to play or
-  says <gui style="button">Ends</gui>, and select <gui style="menuitem">Next
+  says <gui style="button">End!</gui>, and select <gui style="menuitem">Next
   Round</gui> to not reset the scores counter.</p>
   </note>
 
