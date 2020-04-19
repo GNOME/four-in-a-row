@@ -45,6 +45,7 @@ private class GameBoardView : Gtk.DrawingArea
         theme_manager.theme_changed.connect (refresh_pixmaps);
 
         init_mouse ();
+        size_allocate.connect (on_size_allocate);
     }
 
     /*\
@@ -65,7 +66,7 @@ private class GameBoardView : Gtk.DrawingArea
                                      tile_size);
     }
 
-    protected override bool configure_event (Gdk.EventConfigure e)
+    private inline void on_size_allocate ()
     {
         int allocated_width  = get_allocated_width ();
         int allocated_height = get_allocated_height ();
@@ -83,7 +84,6 @@ private class GameBoardView : Gtk.DrawingArea
         offset [Tile.PLAYER2_CURSOR] = tile_size * 5;
 
         refresh_pixmaps ();
-        return true;
     }
 
     /*\

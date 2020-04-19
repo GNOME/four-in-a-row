@@ -35,7 +35,7 @@ private class HistoryButton : MenuButton, AdaptativeWidget
 
     construct
     {
-        drawing.configure_event.connect (configure_drawing);
+        drawing.size_allocate.connect (configure_drawing);
         drawing.draw.connect (update_drawing);
         theme_manager.theme_changed.connect (() => {
                 if (!drawing_configured)
@@ -77,7 +77,7 @@ private class HistoryButton : MenuButton, AdaptativeWidget
 
     private Gdk.Pixbuf tileset_pixbuf;
 
-    private bool configure_drawing ()
+    private inline void configure_drawing ()
     {
         int height          = drawing.get_allocated_height ();
         int width           = drawing.get_allocated_width ();
@@ -96,7 +96,6 @@ private class HistoryButton : MenuButton, AdaptativeWidget
         board_y             = !vertical_fill ? (int) ((height - drawing_height) / 2.0) : 0;
 
         drawing_configured  = true;
-        return true;
     }
     private void init_pixbuf ()
     {
