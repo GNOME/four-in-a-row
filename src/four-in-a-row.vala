@@ -311,8 +311,7 @@ private class FourInARow : Gtk.Application
 
         /* various */
         game_board_view.column_clicked.connect (column_clicked_cb);
-        window.key_press_event.connect (on_key_press_event);
-        game_board_view.key_press_event.connect (on_key_press);
+        init_keyboard ();
 
         window.play.connect (on_game_new);
         window.undo.connect (on_game_undo);
@@ -1013,42 +1012,62 @@ private class FourInARow : Gtk.Application
     * * game interaction
     \*/
 
-    private inline bool on_key_press_event (Gdk.EventKey event)
+    // for keeping in memory
+    private EventControllerKey window_key_controller;
+    private EventControllerKey board_key_controller;
+
+    private inline void init_keyboard ()
     {
-        string name = (!) (Gdk.keyval_name (event.keyval) ?? "");
+        window_key_controller = new EventControllerKey (window);
+        window_key_controller.set_propagation_phase (PropagationPhase.CAPTURE);
+        window_key_controller.key_pressed.connect (on_window_key_pressed);
+
+        board_key_controller = new EventControllerKey (game_board_view);
+        board_key_controller.key_pressed.connect (on_board_key_pressed);
+    }
+
+    private inline bool on_window_key_pressed (EventControllerKey _window_key_controller, uint keyval, uint keycode, Gdk.ModifierType state)
+    {
+        string name = (!) (Gdk.keyval_name (keyval) ?? "");
 
         if (name == "F1") // TODO fix dance done with the F1 & <Primary>F1 shortcuts that show help overlay
         {
             window.close_hamburger ();
             history_button_1.active = false;
             history_button_2.active = false;
-            if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0)
+            if ((state & Gdk.ModifierType.CONTROL_MASK) != 0)
                 return false;                           // help overlay
-            if ((event.state & Gdk.ModifierType.SHIFT_MASK) == 0)
+            if ((state & Gdk.ModifierType.SHIFT_MASK) != 0)
             {
-                on_help_contents ();
-                return false;
+                on_help_about ();
+                return true;
             }
-            on_help_about ();
+            on_help_contents ();
             return true;
         }
         if (name == "F10") // TODO fix this dance also
         {
-            if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0)
+            if ((state & Gdk.ModifierType.CONTROL_MASK) != 0)
             {
                 toggle_game_menu ();
                 return true;
             }
             return false;   // ui.toggle-hamburger
         }
-
         return false;
     }
 
-    private inline bool on_key_press (Gdk.EventKey event)
+    private inline bool on_board_key_pressed (EventControllerKey _board_key_controller, uint keyval, uint keycode, Gdk.ModifierType state)
     {
-        string key = (!) (Gdk.keyval_name (event.keyval) ?? "");
-        if (key == "" || key == "Tab" || event.is_modifier == 1)
+        Gdk.Event? event = Gtk.get_current_event ();
+        bool is_modifier;
+        if (event != null && ((!) event).type == Gdk.EventType.KEY_PRESS)
+            is_modifier = ((Gdk.EventKey) (!) event).is_modifier == 1;
+        else    // ?
+            is_modifier = false;
+
+        string key = (!) (Gdk.keyval_name (keyval) ?? "");
+        if (key == "" || key == "Tab" || is_modifier)
             return false;
 
         if (timeout != 0
@@ -1061,21 +1080,21 @@ private class FourInARow : Gtk.Application
             return true;
         }
 
-        if (key == "Left" || event.keyval == keypress_left)
+        if (key == "Left" || keyval == keypress_left)
         {
             if (column == 0)
                 return true;
             column_moveto--;
             move_cursor (column_moveto);
         }
-        else if (key == "Right" || event.keyval == keypress_right)
+        else if (key == "Right" || keyval == keypress_right)
         {
             if (column >= /* BOARD_COLUMNS_MINUS_ONE */ size - 1)
                 return true;
             column_moveto++;
             move_cursor (column_moveto);
         }
-        else if (key == "space" || key == "Return" || key == "KP_Enter" || key == "Down" || event.keyval == keypress_drop)
+        else if (key == "space" || key == "Return" || key == "KP_Enter" || key == "Down" || keyval == keypress_drop)
             process_move (column);
         else if (key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6" || key == "7")
             process_move ((uint8) int.parse (key) - 1);
