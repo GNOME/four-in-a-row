@@ -505,7 +505,7 @@ private class FourInARow : Gtk.Application
             var temp = new Animate (0, this, 2 * n);
             timeout = Timeout.add (SPEED_BLINK, temp.exec);
             while (timeout != 0)
-                main_iteration ();
+                window.queue_draw ();
         }
     }
 
@@ -911,7 +911,7 @@ private class FourInARow : Gtk.Application
 
         column_moveto = c;
         while (timeout != 0)
-            main_iteration ();
+            window.queue_draw ();
         anim = AnimID.HINT;
         var temp = new Animate (0, this);
         timeout = Timeout.add (SPEED_MOVE, temp.exec);
