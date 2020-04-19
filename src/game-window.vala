@@ -441,11 +441,11 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
     private inline void toggle_hamburger (/* SimpleAction action, Variant? variant */)
     {
-        info_button.active = !info_button.active;
+//        info_button.active = !info_button.active;     // FIXME
     }
 
     internal inline void close_hamburger () // TODO manage also the HistoryButton here?
     {
-        info_button.active = false;
+        info_button.popdown ();
     }
 }
