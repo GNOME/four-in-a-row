@@ -20,7 +20,7 @@ valac = meson.get_compiler('vala')
 gio_dependency      = dependency('gio-2.0',     version: '>= 2.40.0')
 glib_dependency     = dependency('glib-2.0',    version: '>= 2.40.0')
 gsound_dependency   = dependency('gsound',      version: '>= 1.0.2')
-gtk_dependency      = dependency('gtk+-3.0',    version: '>= 3.24.0')
+gtk_dependency      = dependency('gtk4',        version: '>= 3.99.1')
 posix_dependency    = valac.find_library('posix')
 rsvg_dependency     = dependency('librsvg-2.0', version: '>= 2.32.0')
 
