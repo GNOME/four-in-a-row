@@ -39,9 +39,6 @@ private class GameBoardView : Gtk.DrawingArea
 
     construct
     {
-        events = Gdk.EventMask.EXPOSURE_MASK
-               | Gdk.EventMask.BUTTON_PRESS_MASK
-               | Gdk.EventMask.BUTTON_RELEASE_MASK;
         theme_manager.theme_changed.connect (refresh_pixmaps);
 
         init_mouse ();
