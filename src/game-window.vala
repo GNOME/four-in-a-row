@@ -98,9 +98,11 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         overlay.add_overlay (actionbar);
 
         GameActionBarPlaceHolder actionbar_placeholder = new GameActionBarPlaceHolder (actionbar);
-        game_box.pack_end (actionbar_placeholder, /* expand */ false, /* fill */ true, /* padding */ 0);
+        actionbar_placeholder.insert_after (game_box, /* insert first */ null);
 
-        new_game_box.pack_start (new_game_screen, true, true, 0);
+        new_game_screen.hexpand = true;
+        new_game_screen.vexpand = true;
+        new_game_screen.insert_after (new_game_box, /* insert first */ null);
         add_adaptative_child ((AdaptativeWidget) new_game_screen);
         add_adaptative_child ((AdaptativeWidget) actionbar);
         add_adaptative_child ((AdaptativeWidget) actionbar_placeholder);
@@ -117,11 +119,13 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
             /* Translators: when configuring a new game, tooltip text of the blue Start button */
             // _start_game_button.set_tooltip_text (_("Start a new game as configured"));
             ((StyleContext) _start_game_button.get_style_context ()).add_class ("suggested-action");
-            new_game_box.pack_end (_start_game_button, false, false, 0);
+            _start_game_button.insert_after (new_game_box, new_game_screen);
             start_game_button = _start_game_button;
         }
 
-        game_box.pack_start (view, true, true, 0);
+        view.hexpand = true;
+        view.vexpand = true;
+        view.insert_before (game_box, actionbar_placeholder);
         game_box.set_focus_child (view);            // TODO test if necessary; note: view could grab focus from application
         view.halign = Align.FILL;
         view.can_focus = true;
