@@ -51,7 +51,10 @@ private class Scorebox : Dialog
         grid.halign = Align.CENTER;
         grid.row_spacing = 2;
         grid.column_spacing = 6;
-        grid.border_width = 10;
+        grid.margin_start = 10;
+        grid.margin_end = 10;
+        grid.margin_top = 10;
+        grid.margin_bottom = 10;
 
         label_name_top = new Label (null);
         grid.attach (label_name_top, 0, 0, 1, 1);
