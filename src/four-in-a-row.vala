@@ -1018,12 +1018,14 @@ private class FourInARow : Gtk.Application
 
     private inline void init_keyboard ()
     {
-        window_key_controller = new EventControllerKey (window);
+        window_key_controller = new EventControllerKey ();
         window_key_controller.set_propagation_phase (PropagationPhase.CAPTURE);
         window_key_controller.key_pressed.connect (on_window_key_pressed);
+        ((Widget) window).add_controller (window_key_controller);
 
-        board_key_controller = new EventControllerKey (game_board_view);
+        board_key_controller = new EventControllerKey ();
         board_key_controller.key_pressed.connect (on_board_key_pressed);
+        game_board_view.add_controller (board_key_controller);
     }
 
     private inline bool on_window_key_pressed (EventControllerKey _window_key_controller, uint keyval, uint keycode, Gdk.ModifierType state)
@@ -1059,10 +1061,10 @@ private class FourInARow : Gtk.Application
 
     private inline bool on_board_key_pressed (EventControllerKey _board_key_controller, uint keyval, uint keycode, Gdk.ModifierType state)
     {
-        Gdk.Event? event = Gtk.get_current_event ();
+        Gdk.Event? event = _board_key_controller.get_current_event ();
         bool is_modifier;
-        if (event != null && ((!) event).type == Gdk.EventType.KEY_PRESS)
-            is_modifier = ((Gdk.EventKey) (!) event).is_modifier == 1;
+        if (event != null && ((!) event) is Gdk.KeyEvent)
+            is_modifier = ((Gdk.KeyEvent) (!) event).is_modifier ();
         else    // ?
             is_modifier = false;
 

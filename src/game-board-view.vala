@@ -213,13 +213,14 @@ private class GameBoardView : Gtk.DrawingArea
     * * mouse play
     \*/
 
-    private Gtk.GestureMultiPress click_controller;     // for keeping in memory
+    private Gtk.GestureClick click_controller;          // for keeping in memory
 
     private inline void init_mouse ()
     {
-        click_controller = new Gtk.GestureMultiPress (this);
+        click_controller = new Gtk.GestureClick ();
         click_controller.set_button (/* all buttons */ 0);
         click_controller.pressed.connect (on_click);
+        add_controller (click_controller);
     }
 
     /**
@@ -233,25 +234,31 @@ private class GameBoardView : Gtk.DrawingArea
      */
     internal signal bool column_clicked (uint8 column);
 
-    private inline void on_click (Gtk.GestureMultiPress _click_controller, int n_press, double event_x, double event_y)
+    private inline void on_click (Gtk.GestureClick _click_controller, int n_press, double event_x, double event_y)
     {
         uint button = _click_controller.get_current_button ();
         if (button != Gdk.BUTTON_PRIMARY && button != Gdk.BUTTON_SECONDARY)
             return;
 
-        Gdk.Event? event = Gtk.get_current_event ();
-        if (event == null && ((!) event).type != Gdk.EventType.BUTTON_PRESS)
+        Gdk.Event? event = _click_controller.get_current_event ();
+        if (event == null)
             assert_not_reached ();
 
-        int x;
-        int y;
-        Gdk.Window? window = get_window ();
-        if (window == null)
+        double x;
+        double y;
+        Gtk.Native? native = get_native ();
+        if (native == null)
             assert_not_reached ();
-        ((!) window).get_device_position (((Gdk.EventButton) (!) event).device, out x, out y, null);
+        Gdk.Surface? surface = ((!) native).get_surface ();
+        if (surface == null)
+            assert_not_reached ();
+        Gdk.Device? device = ((!) event).get_device ();
+        if (device == null)
+            assert_not_reached ();
+        ((!) surface).get_device_position ((!) device, out x, out y, null);
 
         uint8 col;
-        if (get_column (x, y, out col))
+        if (get_column ((int) x, (int) y, out col))
             column_clicked (col);
     }
 
