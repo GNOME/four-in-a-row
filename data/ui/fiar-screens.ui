@@ -18,10 +18,9 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <interface>
-  <requires lib="gtk+" version="3.12"/>
+  <requires lib="gtk+" version="3.99"/>
   <template class="NewGameScreen" parent="GtkBox">
     <property name="orientation">vertical</property>
-    <property name="visible">True</property>
     <property name="homogeneous">True</property>
     <property name="valign">fill</property>
     <property name="spacing">18</property>
@@ -30,11 +29,9 @@
     <child>
       <object class="GtkBox" id="infos_section">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players -->
             <property name="label" translatable="yes">Game type</property>
@@ -45,7 +42,6 @@
         </child>
         <child>
           <object class="GtkBox">
-            <property name="visible">True</property>
             <property name="vexpand">True</property>
             <property name="homogeneous">True</property>
             <property name="spacing">0</property>
@@ -55,7 +51,6 @@
             </style>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">Play _first</property>
@@ -67,7 +62,6 @@
             </child>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">Play _second</property>
@@ -79,7 +73,6 @@
             </child>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">_Two players</property>
@@ -99,11 +92,9 @@
     <child>
       <object class="GtkBox" id="users_section">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, header of the row for choosing the number of players -->
             <property name="label" translatable="yes">Players</property>
@@ -114,13 +105,11 @@
         </child>
         <child>
           <object class="GtkBox" id="users_box">
-            <property name="visible">True</property>
             <property name="vexpand">True</property>
             <property name="homogeneous">True</property>
             <property name="spacing">12</property>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">_One</property>
@@ -132,7 +121,6 @@
             </child>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">_Two</property>
@@ -152,11 +140,9 @@
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence -->
             <property name="label" translatable="yes">Difficulty</property>
@@ -167,13 +153,11 @@
         </child>
         <child>
           <object class="GtkBox" id="level_box">
-            <property name="visible">True</property>
             <property name="vexpand">True</property>
             <property name="homogeneous">True</property>
             <property name="spacing">12</property>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">_Easy</property>
@@ -185,7 +169,6 @@
             </child>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">_Medium</property>
@@ -197,7 +180,6 @@
             </child>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">_Hard</property>
@@ -217,11 +199,9 @@
     <child>
       <object class="GtkBox" id="start_section">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, header of the row for choosing whether to start or not -->
             <property name="label" translatable="yes">Game start</property>
@@ -232,13 +212,11 @@
         </child>
         <child>
           <object class="GtkBox" id="start_box">
-            <property name="visible">True</property>
             <property name="vexpand">True</property>
             <property name="homogeneous">True</property>
             <property name="spacing">12</property>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">Play _first</property>
@@ -250,7 +228,6 @@
             </child>
             <child>
               <object class="GtkModelButton">
-                <property name="visible">True</property>
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt) -->
                 <property name="text" translatable="yes">Play _second</property>
