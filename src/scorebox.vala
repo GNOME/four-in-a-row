@@ -41,7 +41,8 @@ private class Scorebox : Dialog
                 application: application,
                 transient_for: parent,
                 modal: true,
-                theme_manager: theme_manager);
+                theme_manager: theme_manager,
+                hide_on_close: true);
     }
 
     construct
@@ -130,12 +131,6 @@ private class Scorebox : Dialog
             }
         }
         label_score_end.label = scores [Player.NOBODY].to_string ();
-    }
-
-    protected override bool delete_event (Gdk.EventAny event)   // TODO use hide_on_delete (Gtk3) or hide-on-close (Gtk4)
-    {
-        hide ();
-        return true;
     }
 
     /*\
