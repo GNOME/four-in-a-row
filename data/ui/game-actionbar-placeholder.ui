@@ -18,12 +18,13 @@
    with this application.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <interface>
-  <requires lib="gtk+" version="3.12"/>
-  <template class="GameActionBarPlaceHolder" parent="GtkRevealer">
-    <property name="visible">True</property>
+  <requires lib="gtk+" version="3.96"/>
+  <template class="GameActionBarPlaceHolder" parent="GtkWidget">
     <child>
-      <object class="GtkDrawingArea" id="placeholder_child">
-        <property name="visible">True</property>
+      <object class="GtkRevealer" id="revealer">
+        <child>
+          <object class="GtkDrawingArea" id="placeholder_child"/>
+        </child>
       </object>
     </child>
   </template>
