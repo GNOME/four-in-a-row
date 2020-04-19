@@ -60,10 +60,11 @@ private class GameBoardView : Gtk.DrawingArea
 
     internal inline void draw_tile (int row, int col)
     {
-        queue_draw_area (/* start */ col * tile_size + board_x,
-                                     row * tile_size + board_y,
-                         /* size  */ tile_size,
-                                     tile_size);
+        queue_draw ();
+//        queue_draw_area (/* start */ col * tile_size + board_x,
+//                                     row * tile_size + board_y,
+//                         /* size  */ tile_size,
+//                                     tile_size);
     }
 
     private inline void on_size_allocate ()
