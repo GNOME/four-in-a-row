@@ -249,10 +249,7 @@ private class FourInARow : Gtk.Application
 
         /* UI parts */
         new_game_screen = new NewGameScreen ();
-        new_game_screen.show ();
-
         game_board_view = new GameBoardView (game_board, theme_manager);
-        game_board_view.show ();
 
         GLib.Menu app_menu = new GLib.Menu ();
 

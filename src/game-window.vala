@@ -94,12 +94,10 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
             add_adaptative_child ((AdaptativeWidget) (!) game_widget_1);
         }
         actionbar = new GameActionBar (name, game_widget_2, /* show actionbar */ start_now);
-        actionbar.show ();
         actionbar.valign = Align.END;
         overlay.add_overlay (actionbar);
 
         GameActionBarPlaceHolder actionbar_placeholder = new GameActionBarPlaceHolder (actionbar);
-        actionbar_placeholder.show ();
         game_box.pack_end (actionbar_placeholder, /* expand */ false, /* fill */ true, /* padding */ 0);
 
         new_game_box.pack_start (new_game_screen, true, true, 0);
@@ -119,7 +117,6 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
             /* Translators: when configuring a new game, tooltip text of the blue Start button */
             // _start_game_button.set_tooltip_text (_("Start a new game as configured"));
             ((StyleContext) _start_game_button.get_style_context ()).add_class ("suggested-action");
-            _start_game_button.show ();
             new_game_box.pack_end (_start_game_button, false, false, 0);
             start_game_button = _start_game_button;
         }
@@ -128,7 +125,6 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         game_box.set_focus_child (view);            // TODO test if necessary; note: view could grab focus from application
         view.halign = Align.FILL;
         view.can_focus = true;
-        view.show ();
 
         /* start or not */
         if (start_now)

@@ -81,7 +81,6 @@ private class Scorebox : Dialog
         grid.attach (label_score_end, 1, 2, 1, 1);
         label_score_end.halign = Align.END;
 
-        grid.show_all ();
         get_content_area ().pack_start (grid);
 
         theme_manager.theme_changed.connect (update);
