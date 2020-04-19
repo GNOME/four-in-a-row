@@ -43,6 +43,8 @@ private class GameBoardView : Gtk.DrawingArea
                | Gdk.EventMask.BUTTON_PRESS_MASK
                | Gdk.EventMask.BUTTON_RELEASE_MASK;
         theme_manager.theme_changed.connect (refresh_pixmaps);
+
+        init_mouse ();
     }
 
     /*\
@@ -211,6 +213,15 @@ private class GameBoardView : Gtk.DrawingArea
     * * mouse play
     \*/
 
+    private Gtk.GestureMultiPress click_controller;     // for keeping in memory
+
+    private inline void init_mouse ()
+    {
+        click_controller = new Gtk.GestureMultiPress (this);
+        click_controller.set_button (/* all buttons */ 0);
+        click_controller.pressed.connect (on_click);
+    }
+
     /**
      * column_clicked:
      *
@@ -222,20 +233,26 @@ private class GameBoardView : Gtk.DrawingArea
      */
     internal signal bool column_clicked (uint8 column);
 
-    protected override bool button_press_event (Gdk.EventButton e)
+    private inline void on_click (Gtk.GestureMultiPress _click_controller, int n_press, double event_x, double event_y)
     {
+        uint button = _click_controller.get_current_button ();
+        if (button != Gdk.BUTTON_PRIMARY && button != Gdk.BUTTON_SECONDARY)
+            return;
+
+        Gdk.Event? event = Gtk.get_current_event ();
+        if (event == null && ((!) event).type != Gdk.EventType.BUTTON_PRESS)
+            assert_not_reached ();
+
         int x;
         int y;
         Gdk.Window? window = get_window ();
         if (window == null)
             assert_not_reached ();
-        ((!) window).get_device_position (e.device, out x, out y, null);
+        ((!) window).get_device_position (((Gdk.EventButton) (!) event).device, out x, out y, null);
 
         uint8 col;
         if (get_column (x, y, out col))
-            return column_clicked (col);
-        else
-            return false;
+            column_clicked (col);
     }
 
     private inline bool get_column (int x, int y, out uint8 col)
