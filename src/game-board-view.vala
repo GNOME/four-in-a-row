@@ -42,6 +42,7 @@ private class GameBoardView : Gtk.DrawingArea
         theme_manager.theme_changed.connect (refresh_pixmaps);
 
         init_mouse ();
+        set_draw_func (draw);
         size_allocate.connect (on_size_allocate);
     }
 
@@ -88,7 +89,7 @@ private class GameBoardView : Gtk.DrawingArea
     * * drawing
     \*/
 
-    protected override bool draw (Cairo.Context cr)
+    private inline void draw (Gtk.DrawingArea _this, Cairo.Context cr, int new_width, int new_height)
     {
         /* background */
         cr.save ();
@@ -108,8 +109,6 @@ private class GameBoardView : Gtk.DrawingArea
         cr.translate (board_x, board_y);
         draw_grid (cr);
         cr.restore ();
-
-        return false;
     }
 
     private inline void paint_tile (Cairo.Context cr, uint8 row, uint8 col)
