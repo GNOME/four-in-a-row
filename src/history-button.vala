@@ -21,12 +21,21 @@
 using Gtk;
 
 [GtkTemplate (ui = "/org/gnome/Four-in-a-row/ui/history-button.ui")]
-private class HistoryButton : MenuButton, AdaptativeWidget
+private class HistoryButton : ToggleButton, AdaptativeWidget
 {
     [CCode (notify = false)] public ThemeManager theme_manager { private get; protected construct; }
 
     [GtkChild] private Stack stack;
     [GtkChild] private DrawingArea drawing;
+
+    public GLib.Menu menu_model { protected construct {
+            PopoverMenu popover = new PopoverMenu.from_model (value);
+            popover.set_parent (this);
+            popover.set_autohide (false);
+            toggled.connect (() => { if (get_active ()) popover.popup (); else popover.popdown (); }); // toggled is run-first
+            popover.closed.connect (() => set_active (false));
+        }
+    }
 
     internal HistoryButton (ref GLib.Menu menu, ThemeManager theme_manager)
     {
@@ -35,6 +44,9 @@ private class HistoryButton : MenuButton, AdaptativeWidget
 
     construct
     {
+        BinLayout layout = new BinLayout ();
+        set_layout_manager (layout);
+
         drawing.size_allocate.connect (configure_drawing);
         drawing.set_draw_func (update_drawing);
         theme_manager.theme_changed.connect (() => {
