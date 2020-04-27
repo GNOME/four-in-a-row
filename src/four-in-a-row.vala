@@ -297,8 +297,8 @@ private class FourInARow : Gtk.Application
                                  (Box) new_game_screen,
                                  game_board_view,
                                  app_menu,
-                                 (MenuButton) history_button_1,
-                                 (MenuButton) history_button_2);
+                                 (ToggleButton) history_button_1,
+                                 (ToggleButton) history_button_2);
 
         scorebox = new Scorebox (window, this, theme_manager);
 
