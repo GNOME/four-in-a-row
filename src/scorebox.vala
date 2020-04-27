@@ -49,6 +49,7 @@ private class Scorebox : Dialog
     {
         Grid grid = new Grid ();
         grid.halign = Align.CENTER;
+        grid.hexpand = true;
         grid.row_spacing = 2;
         grid.column_spacing = 6;
         grid.margin_start = 10;
