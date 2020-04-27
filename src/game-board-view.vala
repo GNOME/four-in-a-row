@@ -46,6 +46,25 @@ private class GameBoardView : Gtk.DrawingArea
         size_allocate.connect (on_size_allocate);
     }
 
+    protected override bool focus (Gtk.DirectionType direction)
+    {
+        if (!is_focus ())
+        {
+            grab_focus ();
+            return true;
+        }
+        return false;
+    }
+
+    protected override bool grab_focus ()
+    {
+        Gtk.Root? root = get_root ();
+        if (root == null)
+            assert_not_reached ();
+        ((!) root).set_focus (this);
+        return true;
+    }
+
     /*\
     * * drawing variables
     \*/
