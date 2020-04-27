@@ -50,7 +50,7 @@
               <class name="linked"/>
             </style>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">Play _first</property>
@@ -59,7 +59,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">Play _second</property>
@@ -68,7 +68,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">_Two players</property>
@@ -100,7 +100,7 @@
             <property name="homogeneous">True</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">_One</property>
@@ -109,7 +109,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">_Two</property>
@@ -141,7 +141,7 @@
             <property name="homogeneous">True</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">_Easy</property>
@@ -150,7 +150,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">_Medium</property>
@@ -159,7 +159,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">_Hard</property>
@@ -191,7 +191,7 @@
             <property name="homogeneous">True</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">Play _first</property>
@@ -200,7 +200,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkToggleButton">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt) -->
                 <property name="label" translatable="yes">Play _second</property>
