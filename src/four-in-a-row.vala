@@ -1187,14 +1187,7 @@ private class FourInARow : Gtk.Application
 
     private inline void on_help_contents (/* SimpleAction action, Variant? parameter */)
     {
-        try
-        {
-            show_uri_on_window (window, "help:four-in-a-row", get_current_event_time ());
-        }
-        catch (Error error)
-        {
-            warning ("Failed to show help: %s", error.message);
-        }
+        show_uri (window, "help:four-in-a-row", Gdk.CURRENT_TIME);
     }
 
     /*\
