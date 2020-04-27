@@ -923,6 +923,8 @@ private class FourInARow : Gtk.Application
             window.allow_undo (false);
         else
             window.allow_undo (true);
+
+        game_board_view.grab_focus ();
     }
 
     private inline void on_game_undo ()
