@@ -503,9 +503,7 @@ private class FourInARow : Gtk.Application
             blink_n = 2 * n;
             blink_line = 0;
             var temp = new Animate (0, this, 2 * n);
-            timeout = Timeout.add (SPEED_BLINK, temp.exec);
-            while (timeout != 0)
-                window.queue_draw ();
+            timeout = Timeout.add (SPEED_BLINK, () => { bool return_value = temp.exec (); window.queue_draw (); return return_value; });
         }
     }
 
