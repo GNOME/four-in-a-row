@@ -476,6 +476,7 @@ private class FourInARow : Gtk.Application
                     return Source.REMOVE;
                 });
         }
+        game_board_view.grab_focus ();
     }
     private void switch_players ()
     {
