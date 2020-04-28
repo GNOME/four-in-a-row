@@ -68,11 +68,15 @@
               <object class="GtkStackPage">
                 <property name="name">game-box</property>
                 <property name="child">
-                  <object class="GtkBox" id="game_box">
+                  <object class="GtkBox" id="game_box_1">
                     <property name="orientation">vertical</property>
-                    <style>
-                      <class name="game-box"/>
-                    </style>
+                    <child>
+                      <object class="GtkBox" id="game_box_2">
+                        <style>
+                          <class name="game-box"/>
+                        </style>
+                      </object>
+                    </child>
                   </object>
                 </property>
               </object>

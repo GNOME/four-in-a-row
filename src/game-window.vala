@@ -45,7 +45,8 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     [GtkChild] private Button back_button;
     [GtkChild] private Button unfullscreen_button;
 
-    [GtkChild] private Box game_box;
+    [GtkChild] private Box game_box_1;
+    [GtkChild] private Box game_box_2;
     [GtkChild] private Box new_game_box;
 
     private Widget view;
@@ -98,7 +99,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         overlay.add_overlay (actionbar);
 
         GameActionBarPlaceHolder actionbar_placeholder = new GameActionBarPlaceHolder (actionbar);
-        actionbar_placeholder.insert_after (game_box, /* insert first */ null);
+        actionbar_placeholder.insert_after (game_box_1, game_box_2);
 
         new_game_screen.hexpand = true;
         new_game_screen.vexpand = true;
@@ -125,8 +126,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
         view.hexpand = true;
         view.vexpand = true;
-        view.insert_before (game_box, actionbar_placeholder);
-        game_box.set_focus_child (view);            // TODO test if necessary; note: view could grab focus from application
+        view.insert_after (game_box_2, /* insert first */ null);
         view.halign = Align.FILL;
         view.can_focus = true;
 
