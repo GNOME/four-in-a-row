@@ -39,7 +39,6 @@ executable(
     sources + resources,
     dependencies: [
         glib_dependency,
-        gsound_dependency,
         gtk_dependency,
         posix_dependency,
         rsvg_dependency

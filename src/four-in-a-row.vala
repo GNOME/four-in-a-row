@@ -236,9 +236,6 @@ private class FourInARow : Gtk.Application
         game_board = new Board ((uint8) size, (uint8) target);
         clear_board ();
 
-        if (settings.get_boolean ("sound"))
-            init_sound ();
-
         settings.bind ("key-drop",  this,   "keypress-drop",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
         settings.bind ("key-right", this,   "keypress-right", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
         settings.bind ("key-left",  this,   "keypress-left",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
@@ -628,7 +625,7 @@ private class FourInARow : Gtk.Application
 
     private void process_move3 (uint8 c)
     {
-        play_sound (SoundID.DROP);
+        play_sound (Sound.DROP);
 
         vstr += (c + 1).to_string ();
         moves++;
@@ -666,16 +663,16 @@ private class FourInARow : Gtk.Application
             set_gameover (true);
             winner = player;
             if (one_player_game)
-                play_sound (is_player_human () ? SoundID.YOU_WIN : SoundID.I_WIN);
+                play_sound (is_player_human () ? Sound.YOU_WIN : Sound.I_WIN);
             else
-                play_sound (SoundID.PLAYER_WIN);
+                play_sound (Sound.PLAYER_WIN);
             window.allow_hint (false);
         }
         else if (moves == /* BOARD_ROWS */ (size - 1) * /* BOARD_COLUMNS */ size)
         {
             set_gameover (true);
             winner = NOBODY;
-            play_sound (SoundID.DRAWN_GAME);
+            play_sound (Sound.DRAWN_GAME);
         }
     }
 
@@ -699,7 +696,7 @@ private class FourInARow : Gtk.Application
             timeout = Timeout.add (SPEED_DROP, temp.exec);
         }
         else
-            play_sound (SoundID.COLUMN_FULL);
+            play_sound (Sound.COLUMN_FULL);
     }
 
     private void process_move (uint8 c)
@@ -1195,10 +1192,8 @@ private class FourInARow : Gtk.Application
     * * sound
     \*/
 
-    private GSound.Context sound_context;
-    private SoundContextState sound_context_state = SoundContextState.INITIAL;
-
-    private enum SoundID {
+    private enum Sound
+    {
         DROP,
         I_WIN,
         YOU_WIN,
@@ -1207,61 +1202,29 @@ private class FourInARow : Gtk.Application
         COLUMN_FULL;
     }
 
-    private enum SoundContextState {
-        INITIAL,
-        WORKING,
-        ERRORED;
-    }
-
-    private inline void init_sound ()
-    {
-        try
-        {
-            sound_context = new GSound.Context ();
-            sound_context_state = SoundContextState.WORKING;
-        }
-        catch (Error e)
-        {
-            warning (e.message);
-            sound_context_state = SoundContextState.ERRORED;
-        }
-    }
-
-    private void play_sound (SoundID id)
+    private void play_sound (Sound sound)
     {
         if (sound_on)
-        {
-            if (sound_context_state == SoundContextState.INITIAL)
-                init_sound ();
-            if (sound_context_state == SoundContextState.WORKING)
-                do_play_sound (id, sound_context);
-        }
+            _play_sound (sound);
     }
 
-    private static void do_play_sound (SoundID id, GSound.Context sound_context)
+    private MediaStream stream;     // for keeping in memory
+    private void _play_sound (Sound sound)
     {
         string name;
-
-        switch (id)
+        switch (sound)
         {
-            case SoundID.DROP:          name = "slide";     break;
-            case SoundID.I_WIN:         name = "reverse";   break;
-            case SoundID.YOU_WIN:       name = "bonus";     break;
-            case SoundID.PLAYER_WIN:    name = "bonus";     break;
-            case SoundID.DRAWN_GAME:    name = "reverse";   break;
-            case SoundID.COLUMN_FULL:   name = "bad";       break;
+            case Sound.DROP:        name = "slide";     break;
+            case Sound.I_WIN:       name = "reverse";   break;
+            case Sound.YOU_WIN:     name = "bonus";     break;
+            case Sound.PLAYER_WIN:  name = "bonus";     break;
+            case Sound.DRAWN_GAME:  name = "reverse";   break;
+            case Sound.COLUMN_FULL: name = "bad";       break;
             default: assert_not_reached ();
         }
-
-        name += ".ogg";
-        string path = Path.build_filename (SOUND_DIRECTORY, name);
-
-        try {
-            sound_context.play_simple (null, GSound.Attribute.MEDIA_NAME, name,
-                                             GSound.Attribute.MEDIA_FILENAME, path);
-        } catch (Error e) {
-            warning (e.message);
-        }
+        stream = MediaFile.for_resource (@"/org/gnome/Four-in-a-row/sounds/$name.ogg");
+        stream.set_volume (1.0);
+        stream.play ();
     }
 
     /*\

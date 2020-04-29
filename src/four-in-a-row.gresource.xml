@@ -8,6 +8,12 @@
     <file preprocess="xml-stripblanks" compressed="true" alias="tileset_50x50_hcontrast.svg">../data/themes/tileset_50x50_hcontrast.svg</file>
     <file alias="bg_toplight.png">../data/bg_toplight.png</file>
   </gresource>
+  <gresource prefix="/org/gnome/Four-in-a-row/sounds">
+    <file alias="bad.ogg"       >../data/sounds/bad.ogg</file>
+    <file alias="bonus.ogg"     >../data/sounds/bonus.ogg</file>
+    <file alias="reverse.ogg"   >../data/sounds/reverse.ogg</file>
+    <file alias="slide.ogg"     >../data/sounds/slide.ogg</file>
+  </gresource>
   <gresource prefix="/org/gnome/Four-in-a-row/ui">
     <file alias="four-in-a-row.css">../data/four-in-a-row.css</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="adaptative-window.ui">../data/ui/adaptative-window.ui</file>

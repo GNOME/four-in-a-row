@@ -61,13 +61,4 @@ install_data(
   install_dir : join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
-install_data(
-    [
-        'sounds/bad.ogg',
-        'sounds/bonus.ogg',
-        'sounds/reverse.ogg',
-        'sounds/slide.ogg'
-    ],
-    install_dir: soundsdir
-)
 subdir('icons')
