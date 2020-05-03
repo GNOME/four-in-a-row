@@ -79,17 +79,17 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">True</property>
-                <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column -->
-                <property name="title" translatable="yes" context="shortcut window">Select the given column</property>
-                <property name="accelerator">1...7</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile -->
+                <property name="title" translatable="yes" context="shortcut window">Play in selected column</property>
+                <property name="accelerator">Down Return space</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">True</property>
-                <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile -->
-                <property name="title" translatable="yes" context="shortcut window">Play in selected column</property>
-                <property name="accelerator">Down Return space</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number plays directly to the nth column -->
+                <property name="title" translatable="yes" context="shortcut window">Play in given column</property>
+                <property name="accelerator">1...7</property>
               </object>
             </child>
           </object>
