@@ -53,6 +53,14 @@
                 <property name="accelerator">&lt;Primary&gt;h</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "During a game" -->
+                <property name="title" translatable="yes" context="shortcut window">Toggle game menu</property>
+                <property name="accelerator">&lt;Primary&gt;F10</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>
@@ -118,6 +126,14 @@
               <object class="GtkShortcutsShortcut">
                 <property name="visible">True</property>
                 <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
+                <property name="title" translatable="yes" context="shortcut window">Toggle main menu</property>
+                <property name="accelerator">F10</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">True</property>
+                <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
                 <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
                 <property name="accelerator">&lt;Primary&gt;question &lt;Primary&gt;F1</property>
               </object>
@@ -144,14 +160,6 @@
                 <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
                 <property name="title" translatable="yes" context="shortcut window">Quit</property>
                 <property name="accelerator">&lt;Primary&gt;q</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="visible">True</property>
-                <!-- Translators: in the Keyboard Shortcuts window, section "Generic" -->
-                <property name="title" translatable="yes" context="shortcut window">Toggle menu</property>
-                <property name="accelerator">F10</property>
               </object>
             </child>
           </object>

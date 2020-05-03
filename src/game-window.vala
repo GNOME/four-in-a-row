@@ -252,7 +252,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     * * adaptative stuff
     \*/
 
-    private bool is_extra_thin = false;
+    internal bool is_extra_thin { internal get; private set; default = false; }
     private bool is_quite_thin = false;
     protected override void set_window_size (AdaptativeWidget.WindowSize new_size)
     {
@@ -428,12 +428,12 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
     [GtkChild] private MenuButton info_button;
 
-    private void toggle_hamburger (/* SimpleAction action, Variant? variant */)
+    private inline void toggle_hamburger (/* SimpleAction action, Variant? variant */)
     {
         info_button.active = !info_button.active;
     }
 
-    internal void close_hamburger () // TODO manage also the HistoryButton here?
+    internal inline void close_hamburger () // TODO manage also the HistoryButton here?
     {
         info_button.active = false;
     }
