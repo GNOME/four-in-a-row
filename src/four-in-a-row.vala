@@ -123,7 +123,7 @@ private class FourInARow : Gtk.Application
     private const GLib.ActionEntry app_entries [] =  // see also add_actions()
     {
         { "game-type",          null,       "s", "'dark'", change_game_type },
-        { "toggle-game-menu",   toggle_game_menu        },
+     // { "toggle-game-menu",   toggle_game_menu        },
         { "next-round",         on_next_round           },
         { "give-up",            on_give_up              },
         { "scores",             on_game_scores          },
@@ -1300,7 +1300,7 @@ private class FourInARow : Gtk.Application
         game_reset (/* reload settings */ false);
     }
 
-    private inline void toggle_game_menu (/* SimpleAction action, Variant? variant */)
+    private inline void toggle_game_menu ()
     {
         window.close_hamburger ();
         if (window.is_extra_thin)
