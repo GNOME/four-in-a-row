@@ -1302,6 +1302,8 @@ private class FourInARow : Gtk.Application
 
     private inline void toggle_game_menu ()
     {
+        if (window.new_game_screen_visible ())
+            return;
         window.close_hamburger ();
         if (window.is_extra_thin)
             history_button_2.active = !history_button_2.active;

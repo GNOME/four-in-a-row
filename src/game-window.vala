@@ -378,6 +378,17 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         back ();
     }
 
+    internal bool new_game_screen_visible ()
+    {
+        string? stack_child = stack.get_visible_child_name ();
+        if (stack_child == null)
+            assert_not_reached ();
+        if ((!) stack_child == "game-box")
+            return false;
+        else
+            return true;
+    }
+
     /*\
     * * Game menu actions
     \*/
