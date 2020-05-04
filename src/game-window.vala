@@ -83,9 +83,8 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         /* window config */
         install_ui_action_entries ();
         program_name = name;
-        set_title (name);
         if (!is_extra_thin)
-            headerbar.set_title (name);
+            set_title (name);
         info_button.set_menu_model (app_menu);
 
         /* add widgets */
@@ -207,12 +206,12 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 //        headerbar.set_subtitle (null);
 //    }
 
-    internal void set_subtitle (string? subtitle)
+    internal void set_subtitle (string subtitle)
     {
         if (!is_extra_thin)
-            headerbar.set_title (subtitle);
+            set_title (subtitle);
         last_subtitle = subtitle;
-        if (subtitle == null)
+        if (subtitle == "")
             actionbar.set_visibility (false);
         else
         {
@@ -265,7 +264,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
         if (is_extra_thin)
         {
-            headerbar.set_title (null);
+            set_title ("");
             if (game_widget_1 != null)
                 ((!) game_widget_1).hide ();
         }
@@ -275,9 +274,9 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
                 ((!) game_widget_1).show ();
             string? panel_name = stack.get_visible_child_name ();
             if (panel_name != null && (!) panel_name == "start-box")
-                headerbar.set_title (program_name);
+                set_title (program_name);
             else
-                headerbar.set_title (last_subtitle);
+                set_title (last_subtitle);
         }
     }
 
@@ -285,11 +284,11 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     * * Showing the Stack
     \*/
 
-    private string? last_subtitle = null;
+    private string last_subtitle = "";
     private void show_new_game_screen ()
     {
         if (!is_extra_thin)
-            headerbar.set_title (program_name);
+            set_title (program_name);
         actionbar.set_visibility (false);
 
         stack.set_visible_child_name ("start-box");
@@ -306,7 +305,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     private void show_view ()
     {
         if (!is_extra_thin)
-            headerbar.set_title (last_subtitle);
+            set_title (last_subtitle);
         actionbar.set_visibility (true);
 
         stack.set_visible_child_name ("game-box");
@@ -348,7 +347,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         if (stack_child == null || (!) stack_child != "start-box")
             return;
 
-        last_subtitle = null;
+        last_subtitle = "";
         game_finished = false;
 
         undo_action.set_enabled (false);

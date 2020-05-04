@@ -746,7 +746,10 @@ private class FourInARow : Gtk.Application
 
     private void set_status_message (string? message)
     {
-        window.set_subtitle (message);
+        if (message == null)
+            window.set_subtitle ("");
+        else
+            window.set_subtitle ((!) message);
     }
 
     private class NextMove
