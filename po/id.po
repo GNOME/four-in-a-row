@@ -5,22 +5,23 @@
 # Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2014, 2016.
 # Vincent Sebastian The <vincent.s.the@gmail.com>, 2011, 2012.
 # Dirgita <dirgitadevina@yahoo.co.id>, 2012.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2018-2020.
 # Sucipto <sucipto@pm.me>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-01-15 05:35+0000\n"
-"PO-Revision-Date: 2020-01-20 12:08+0700\n"
-"Last-Translator: Sucipto <sucipto@pm.me>\n"
+"POT-Creation-Date: 2020-05-30 11:03+0000\n"
+"PO-Revision-Date: 2020-05-31 13:40+0700\n"
+"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural= n!=1;\n"
-"X-Generator: Gtranslator 3.34.0\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-DamnedLies-Scope: partial\n"
 "X-Rosetta-Export-Date: 2007-04-23 05:58:10+0000\n"
 
@@ -125,23 +126,23 @@ msgctxt "shortcut window"
 msgid "Show a hint"
 msgstr "Tampilkan petunjuk"
 
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:60
+msgctxt "shortcut window"
+msgid "Toggle game menu"
+msgstr "Jungkitkan menu permainan"
+
 #. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
-#: data/ui/help-overlay.ui:62
+#: data/ui/help-overlay.ui:70
 msgctxt "shortcut window"
 msgid "Play with keyboard"
 msgstr "Bermain dengan papan tik"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
-#: data/ui/help-overlay.ui:67
+#: data/ui/help-overlay.ui:75
 msgctxt "shortcut window"
 msgid "Select where to play"
 msgstr "Pilih dimana untuk bermain"
-
-#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column
-#: data/ui/help-overlay.ui:75
-msgctxt "shortcut window"
-msgid "Select the given column"
-msgstr "Pilih kolom yang diberikan"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
 #: data/ui/help-overlay.ui:83
@@ -149,50 +150,62 @@ msgctxt "shortcut window"
 msgid "Play in selected column"
 msgstr "Bermain di kolom terpilih"
 
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number plays directly to the nth column
+#: data/ui/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Play in given column"
+msgstr "Bermain di kolom yang diberikan"
+
 #. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
-#: data/ui/help-overlay.ui:93
+#: data/ui/help-overlay.ui:101
 msgctxt "shortcut window"
 msgid "During game selection"
 msgstr "Pilihan dalam permainan"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
-#: data/ui/help-overlay.ui:98
+#: data/ui/help-overlay.ui:106
 msgctxt "shortcut window"
 msgid "Start new game"
 msgstr "Mulai permainan baru"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
-#: data/ui/help-overlay.ui:106
+#: data/ui/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Go back"
 msgstr "Kembali"
 
 #. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
-#: data/ui/help-overlay.ui:116
+#: data/ui/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Generic"
 msgstr "Umum"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:121
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Toggle main menu"
+msgstr "Jungkitkan menu utama"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Pintasan papan tik"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:129
+#: data/ui/help-overlay.ui:145
 msgctxt "shortcut window"
 msgid "Help"
 msgstr "Bantuan"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:137
+#: data/ui/help-overlay.ui:153
 msgctxt "shortcut window"
 msgid "About"
 msgstr "Tentang"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:145
+#: data/ui/help-overlay.ui:161
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Keluar"
@@ -200,7 +213,7 @@ msgstr "Keluar"
 #. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
 #: data/ui/history-button.ui:41
 msgid "End!"
-msgstr "Akhiri"
+msgstr "Akhiri!"
 
 #. Translators: application name, as used in the window manager, the window title, the about dialog...
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:7
@@ -400,162 +413,162 @@ msgid "Print release version and exit"
 msgstr "Cetak versi rilis dan keluar"
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
-#: src/four-in-a-row.vala:166
+#: src/four-in-a-row.vala:167
 msgid "Size must be at least 4."
-msgstr "Ukuran paling tidak 4"
+msgstr "Ukuran paling tidak 4."
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
-#: src/four-in-a-row.vala:172
+#: src/four-in-a-row.vala:173
 msgid "Size must not be more than 16."
-msgstr "Ukuran tidak lebih dari 16"
+msgstr "Ukuran tidak lebih dari 16."
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
-#: src/four-in-a-row.vala:179
+#: src/four-in-a-row.vala:180
 msgid "Lines must be at least 3 tiles."
 msgstr "Baris paling tidak 3 kotak."
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
-#: src/four-in-a-row.vala:185
+#: src/four-in-a-row.vala:186
 msgid "Lines cannot be longer than board height or width."
 msgstr "Baris tidak lebih panjang daripada panjang atau lebar papan."
 
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
-#: src/four-in-a-row.vala:228
+#: src/four-in-a-row.vala:229
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
 "Level harus 1 (mudah), 2 (sedang) atau 3 (sulit). Pengaturan tidak berubah."
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:266
+#: src/four-in-a-row.vala:267
 msgid "A_ppearance"
 msgstr "Tam_pilan"
 
 #. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:270
+#: src/four-in-a-row.vala:271
 msgid "_Sound"
 msgstr "_Suara"
 
 #. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:276
+#: src/four-in-a-row.vala:277
 msgid "_Keyboard Shortcuts"
 msgstr "_Pintasan Papan Tik"
 
 #. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:280
+#: src/four-in-a-row.vala:281
 msgid "_Help"
 msgstr "_Bantuan"
 
 #. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:284
+#: src/four-in-a-row.vala:285
 msgid "_About Four-in-a-row"
 msgstr "Tent_ang Four-in-a-row"
 
 #. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
-#: src/four-in-a-row.vala:566
+#: src/four-in-a-row.vala:567
 msgid "It’s a draw!"
 msgstr "Seri!"
 
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
-#: src/four-in-a-row.vala:580
+#: src/four-in-a-row.vala:581
 msgid "You win!"
 msgstr "Anda menang!"
 
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
-#: src/four-in-a-row.vala:583
+#: src/four-in-a-row.vala:584
 msgid "I win!"
 msgstr "Saya menang!"
 
 #. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
-#: src/four-in-a-row.vala:592
+#: src/four-in-a-row.vala:593
 msgid "Your Turn"
 msgstr "Giliran Anda"
 
 #. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
 #. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
-#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
+#: src/four-in-a-row.vala:600 src/four-in-a-row.vala:909
 msgid "I’m Thinking…"
 msgstr "Saya Sedang Berpikir…"
 
 #. blink n times
 #. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
-#: src/four-in-a-row.vala:924
+#: src/four-in-a-row.vala:925
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Petunjuk: Kolom %d"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1092
+#: src/four-in-a-row.vala:1122
 msgid "Tim Musson"
 msgstr "Tim Musson"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1096
+#: src/four-in-a-row.vala:1126
 msgid "David Neary"
 msgstr "David Neary"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1100
+#: src/four-in-a-row.vala:1130
 msgid "Nikhar Agrawal"
 msgstr "Nikhar Agrawal"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1104
+#: src/four-in-a-row.vala:1134
 msgid "Jacob Humphrey"
 msgstr "Jacob Humphrey"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1108
+#: src/four-in-a-row.vala:1138
 msgid "Arnaud Bonatti"
 msgstr "Arnaud Bonatti"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1113
+#: src/four-in-a-row.vala:1143
 msgid "Alan Horkan"
 msgstr "Alan Horkan"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1117
+#: src/four-in-a-row.vala:1147
 msgid "Anatol Drlicek"
 msgstr "Anatol Drlicek"
 
 #. Translators: in the About dialog, indication about some themes origin
-#: src/four-in-a-row.vala:1121
+#: src/four-in-a-row.vala:1151
 msgid "Based on the Faenza icon theme by Matthieu James"
 msgstr "Berdasarkan tema ikon Faenza oleh Matthieu James"
 
 #. Translators: in the About dialog, name of a documenter
-#: src/four-in-a-row.vala:1125
+#: src/four-in-a-row.vala:1155
 msgid "Timothy Musson"
 msgstr "Timothy Musson"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1129
+#: src/four-in-a-row.vala:1159
 msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
 msgstr "Hak Cipta © 1999-2008 – Tim Musson dan David Neary"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1133
+#: src/four-in-a-row.vala:1163
 msgid "Copyright © 2014 – Michael Catanzaro"
 msgstr "Hak Cipta © 2014 – Michael Catanzaro"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1137
+#: src/four-in-a-row.vala:1167
 msgid "Copyright © 2018 – Jacob Humphrey"
 msgstr "Hak Cipta © 2018 – Jacob Humphrey"
 
 #. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
-#: src/four-in-a-row.vala:1141
+#: src/four-in-a-row.vala:1171
 #, c-format
 msgid "Copyright © %u-%u – Arnaud Bonatti"
 msgstr "Hak Cipta © %u-%u – Arnaud Bonatti"
 
 #. Translators: about dialog text, introducing the game
-#: src/four-in-a-row.vala:1149
+#: src/four-in-a-row.vala:1179
 msgid "Connect four in a row to win"
 msgstr "Sambungkan empat sebaris untuk menang"
 
 #. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
-#: src/four-in-a-row.vala:1154
+#: src/four-in-a-row.vala:1184
 msgid "translator-credits"
 msgstr ""
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
@@ -563,29 +576,29 @@ msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2014, 2016.\n"
 "Vincent Sebastian The <vincent.s.the@gmail.com>, 2011, 2012.\n"
 "Dirgita <dirgitadevina@yahoo.co.id>, 2012.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2018, 2019.\n"
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2018-2020.\n"
 "Sucipto <sucipto@pm.me>, 2020."
 
 #. Translators: during a game, entry in the game menu, for undoing the last move
-#: src/four-in-a-row.vala:1255
+#: src/four-in-a-row.vala:1285
 msgid "_Undo last move"
 msgstr "_Batalkan langkah terakhir"
 
 #. Translators: during a game, entry in the game menu, for suggesting where to play
-#: src/four-in-a-row.vala:1259
+#: src/four-in-a-row.vala:1289
 msgid "_Hint"
 msgstr "_Petunjuk"
 
-#: src/four-in-a-row.vala:1271
+#: src/four-in-a-row.vala:1301
 msgid "Next _Round"
 msgstr "_Ronde Selanjutnya"
 
-#: src/four-in-a-row.vala:1273
+#: src/four-in-a-row.vala:1303
 msgid "_Give Up"
 msgstr "_Menyerah"
 
 #. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:1278
+#: src/four-in-a-row.vala:1308
 msgid "_Scores"
 msgstr "_Nilai"
 
@@ -671,7 +684,7 @@ msgstr "Hijau"
 
 #: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
 msgid "Red:"
-msgstr "Merah"
+msgstr "Merah:"
 
 #: src/theme.vala:197 src/theme.vala:219
 msgid "Green:"
@@ -718,6 +731,10 @@ msgstr "Giliran biru"
 #: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "Bintang dan Cincin"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Select the given column"
+#~ msgstr "Pilih kolom yang diberikan"
 
 #~ msgid "Receive a hint for your next move"
 #~ msgstr "Dapatkan petunjuk untuk langkah berikutnya"
