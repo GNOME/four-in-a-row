@@ -70,7 +70,7 @@ private class FourInARow : Gtk.Application
     // animation
     private static AnimID anim = AnimID.NONE;
     private uint8 [,] blink_lines = {{}};
-    private uint8 blink_line = 0;   // index of currenly blinking line in blink_lines
+    private uint8 blink_line = 0;   // index of currently blinking line in blink_lines
     private Player blink_t = Player.NOBODY;    // garbage
     private uint8 blink_n = 0;
     private bool blink_on = false;

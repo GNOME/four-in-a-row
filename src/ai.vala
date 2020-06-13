@@ -272,7 +272,7 @@ namespace AI
         return true;
     }
 
-    /* makes a move into the column'th column. Returns true if the move was succesful, false if it wasn't */
+    /* makes a move into the column'th column. Returns true if the move was successful, false if it wasn't */
     private static bool move (Player player, uint8 column, ref Player [,] board)
     {
         uint8 n_rows = (uint8) board.length [0];

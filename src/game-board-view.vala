@@ -225,7 +225,7 @@ private class GameBoardView : Gtk.DrawingArea
     /**
      * column_clicked:
      *
-     * emited when a column on the game board is clicked
+     * emitted when a column on the game board is clicked
      *
      * @column:
      *
