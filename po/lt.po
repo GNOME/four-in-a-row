@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-01-20 13:04+0000\n"
-"PO-Revision-Date: 2020-02-08 14:36+0200\n"
+"POT-Creation-Date: 2020-07-05 10:51+0000\n"
+"PO-Revision-Date: 2020-07-13 16:18+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 3.34.0\n"
+"X-Generator: Gtranslator 3.36.0\n"
 
 #. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:40
@@ -127,23 +127,23 @@ msgctxt "shortcut window"
 msgid "Show a hint"
 msgstr "Rodyti patarimą"
 
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:60
+msgctxt "shortcut window"
+msgid "Toggle game menu"
+msgstr "Perjungti žaidimo meniu"
+
 #. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
-#: data/ui/help-overlay.ui:62
+#: data/ui/help-overlay.ui:70
 msgctxt "shortcut window"
 msgid "Play with keyboard"
 msgstr "Žaisti klaviatūra"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
-#: data/ui/help-overlay.ui:67
+#: data/ui/help-overlay.ui:75
 msgctxt "shortcut window"
 msgid "Select where to play"
 msgstr "Pasirinkite, kur žaisti"
-
-#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number moves directly to the nth column
-#: data/ui/help-overlay.ui:75
-msgctxt "shortcut window"
-msgid "Select the given column"
-msgstr "Pasirinkite stulpelį"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
 #: data/ui/help-overlay.ui:83
@@ -151,50 +151,64 @@ msgctxt "shortcut window"
 msgid "Play in selected column"
 msgstr "Žaisti pasirinktame stulpelyje"
 
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number plays directly to the nth column
+#: data/ui/help-overlay.ui:91
+#| msgctxt "shortcut window"
+#| msgid "Play in selected column"
+msgctxt "shortcut window"
+msgid "Play in given column"
+msgstr "Žaisti pasirinktame stulpelyje"
+
 #. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
-#: data/ui/help-overlay.ui:93
+#: data/ui/help-overlay.ui:101
 msgctxt "shortcut window"
 msgid "During game selection"
 msgstr "Žaidimo pasirinkimo metu"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
-#: data/ui/help-overlay.ui:98
+#: data/ui/help-overlay.ui:106
 msgctxt "shortcut window"
 msgid "Start new game"
 msgstr "Pradėti naują žaidimą"
 
 #. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
-#: data/ui/help-overlay.ui:106
+#: data/ui/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Go back"
 msgstr "Grįžti atgal"
 
 #. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
-#: data/ui/help-overlay.ui:116
+#: data/ui/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Generic"
 msgstr "Bendra"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:121
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Toggle main menu"
+msgstr "Perjungti pagrindinį meniu"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Klaviatūros trumpiniai"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:129
+#: data/ui/help-overlay.ui:145
 msgctxt "shortcut window"
 msgid "Help"
 msgstr "Žinynas"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:137
+#: data/ui/help-overlay.ui:153
 msgctxt "shortcut window"
 msgid "About"
 msgstr "Apie"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
-#: data/ui/help-overlay.ui:145
+#: data/ui/help-overlay.ui:161
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Išeiti"
@@ -400,164 +414,163 @@ msgid "Print release version and exit"
 msgstr "Atspausdinti leidimo versiją ir išeiti"
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
-#: src/four-in-a-row.vala:166
+#: src/four-in-a-row.vala:167
 msgid "Size must be at least 4."
 msgstr "Dydis turi būti bent 4."
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
-#: src/four-in-a-row.vala:172
+#: src/four-in-a-row.vala:173
 msgid "Size must not be more than 16."
 msgstr "Dydis negali būti daugiau nei 16."
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
-#: src/four-in-a-row.vala:179
-#| msgid "Size must be at least 4."
+#: src/four-in-a-row.vala:180
 msgid "Lines must be at least 3 tiles."
 msgstr "Eilutės turi būti bent 3 plytelių."
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
-#: src/four-in-a-row.vala:185
+#: src/four-in-a-row.vala:186
 msgid "Lines cannot be longer than board height or width."
 msgstr "Eilutės negali būti ilgesnės nei lentos aukštis arba plotis."
 
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
-#: src/four-in-a-row.vala:228
+#: src/four-in-a-row.vala:229
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
 "Lygis turi būti 1 (lengvas), 2 (vidutinis) arba 3 (sunkus). Nustatymai "
 "nepakeisti."
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:266
+#: src/four-in-a-row.vala:267
 msgid "A_ppearance"
 msgstr "_Išvaizda"
 
 #. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:270
+#: src/four-in-a-row.vala:271
 msgid "_Sound"
 msgstr "_Garsai"
 
 #. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:276
+#: src/four-in-a-row.vala:277
 msgid "_Keyboard Shortcuts"
 msgstr "_Klaviatūros trumpiniai"
 
 #. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:280
+#: src/four-in-a-row.vala:281
 msgid "_Help"
 msgstr "_Žinynas"
 
 #. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:284
+#: src/four-in-a-row.vala:285
 msgid "_About Four-in-a-row"
 msgstr "_Apie keturis eilėje"
 
 #. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
-#: src/four-in-a-row.vala:566
+#: src/four-in-a-row.vala:567
 msgid "It’s a draw!"
 msgstr "Lygiosios!"
 
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
-#: src/four-in-a-row.vala:580
+#: src/four-in-a-row.vala:581
 msgid "You win!"
 msgstr "Jūs laimėjote!"
 
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
-#: src/four-in-a-row.vala:583
+#: src/four-in-a-row.vala:584
 msgid "I win!"
 msgstr "Programa laimėjo!"
 
 #. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
-#: src/four-in-a-row.vala:592
+#: src/four-in-a-row.vala:593
 msgid "Your Turn"
 msgstr "Jūsų ėjimas"
 
 #. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
 #. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
-#: src/four-in-a-row.vala:599 src/four-in-a-row.vala:908
+#: src/four-in-a-row.vala:600 src/four-in-a-row.vala:909
 msgid "I’m Thinking…"
 msgstr "Galvoju…"
 
 #. blink n times
 #. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
-#: src/four-in-a-row.vala:924
+#: src/four-in-a-row.vala:925
 #, c-format
 msgid "Hint: Column %d"
 msgstr "Patarimas: stulpelis %d"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1092
+#: src/four-in-a-row.vala:1122
 msgid "Tim Musson"
 msgstr "Tim Musson"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1096
+#: src/four-in-a-row.vala:1126
 msgid "David Neary"
 msgstr "David Neary"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1100
+#: src/four-in-a-row.vala:1130
 msgid "Nikhar Agrawal"
 msgstr "Nikhar Agrawal"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1104
+#: src/four-in-a-row.vala:1134
 msgid "Jacob Humphrey"
 msgstr "Jacob Humphrey"
 
 #. Translators: in the About dialog, name of an author of the game
-#: src/four-in-a-row.vala:1108
+#: src/four-in-a-row.vala:1138
 msgid "Arnaud Bonatti"
 msgstr "Arnaud Bonatti"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1113
+#: src/four-in-a-row.vala:1143
 msgid "Alan Horkan"
 msgstr "Alan Horkan"
 
 #. Translators: in the About dialog, name of a theme designer
-#: src/four-in-a-row.vala:1117
+#: src/four-in-a-row.vala:1147
 msgid "Anatol Drlicek"
 msgstr "Anatol Drlicek"
 
 #. Translators: in the About dialog, indication about some themes origin
-#: src/four-in-a-row.vala:1121
+#: src/four-in-a-row.vala:1151
 msgid "Based on the Faenza icon theme by Matthieu James"
 msgstr "Sukurta Matthieu James sukurtos Faenza piktogramų temos pagrindu"
 
 #. Translators: in the About dialog, name of a documenter
-#: src/four-in-a-row.vala:1125
+#: src/four-in-a-row.vala:1155
 msgid "Timothy Musson"
 msgstr "Timothy Musson"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1129
+#: src/four-in-a-row.vala:1159
 msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
 msgstr "Autorių teisės © 1999-2008 – Tim Musson ir David Neary"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1133
+#: src/four-in-a-row.vala:1163
 msgid "Copyright © 2014 – Michael Catanzaro"
 msgstr "Autorių teisės © 2014 – Michael Catanzaro"
 
 #. Translators: text crediting a maintainer, in the about dialog text
-#: src/four-in-a-row.vala:1137
+#: src/four-in-a-row.vala:1167
 msgid "Copyright © 2018 – Jacob Humphrey"
 msgstr "Autorių teisės © 2018 – Jacob Humphrey"
 
 #. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
-#: src/four-in-a-row.vala:1141
+#: src/four-in-a-row.vala:1171
 #, c-format
 msgid "Copyright © %u-%u – Arnaud Bonatti"
 msgstr "Autorių teisės © %u-%u – Arnaud Bonatti"
 
 #. Translators: about dialog text, introducing the game
-#: src/four-in-a-row.vala:1149
+#: src/four-in-a-row.vala:1179
 msgid "Connect four in a row to win"
 msgstr "Sujunkite keturis į eilę ir laimėkite."
 
 #. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
-#: src/four-in-a-row.vala:1154
+#: src/four-in-a-row.vala:1184
 msgid "translator-credits"
 msgstr ""
 "Paskutinis vertėjas:\n"
@@ -570,25 +583,25 @@ msgstr ""
 "Gediminas Paulauskas <menesis@chatsubo.lt>"
 
 #. Translators: during a game, entry in the game menu, for undoing the last move
-#: src/four-in-a-row.vala:1255
+#: src/four-in-a-row.vala:1285
 msgid "_Undo last move"
 msgstr "_Atšaukti paskutinį ėjimą"
 
 #. Translators: during a game, entry in the game menu, for suggesting where to play
-#: src/four-in-a-row.vala:1259
+#: src/four-in-a-row.vala:1289
 msgid "_Hint"
 msgstr "_Užuomina"
 
-#: src/four-in-a-row.vala:1271
+#: src/four-in-a-row.vala:1301
 msgid "Next _Round"
 msgstr "Kitas _raundas"
 
-#: src/four-in-a-row.vala:1273
+#: src/four-in-a-row.vala:1303
 msgid "_Give Up"
 msgstr "_Pasiduoti"
 
 #. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
-#: src/four-in-a-row.vala:1278
+#: src/four-in-a-row.vala:1308
 msgid "_Scores"
 msgstr "_Taškai"
 
@@ -721,6 +734,10 @@ msgstr "Mėlyno ėjimas"
 #: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "Žvaigždės ir žiedai"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Select the given column"
+#~ msgstr "Pasirinkite stulpelį"
 
 #~ msgid "Receive a hint for your next move"
 #~ msgstr "Gauti kito ėjimo patarimą"
