@@ -11,3 +11,8 @@ flatpak:
         RUNTIME_REPO: "https://sdk.gnome.org/gnome-nightly.flatpakrepo"
         APP_ID: "org.gnome.Four-in-a-row"
     extends: .flatpak
+
+nightly:
+    extends: '.publish_nightly'
+    dependencies: ['flatpak']
+    needs: ['flatpak']
