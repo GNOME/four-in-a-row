@@ -1,5 +1,5 @@
 # gnome-games ja.po.
-# Copyright (C) 1998-2020 Free Software Foundation, Inc.
+# Copyright (C) 1998-2010, 2012-2013, 2016, 2019-2020 Free Software Foundation, Inc.
 # Yukihiro Nakai <Nakai@technologist.com>, 1998.
 # Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>, 1999.
 # Yuusuke Tahara <tahara@gnome.gr.jp>, 2000.
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
 "POT-Creation-Date: 2020-07-05 10:51+0000\n"
-"PO-Revision-Date: 2020-01-29 21:00+0900\n"
+"PO-Revision-Date: 2020-08-23 00:16+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -50,7 +50,7 @@ msgstr "二人プレイ(_T)"
 #. Translators: when configuring a new game, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:109
 msgid "Players"
-msgstr "プレイヤー"
+msgstr "プレーヤー"
 
 #. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:126
@@ -95,7 +95,7 @@ msgstr "新しいゲーム(_N)"
 #. Translators: during a game, tooltip text of the New Game button
 #: data/ui/four-in-a-row.ui:36
 msgid "Start a new game"
-msgstr "新しいゲームを開始します"
+msgstr "ゲームを始めます"
 
 #. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
 #: data/ui/four-in-a-row.ui:49
@@ -118,7 +118,7 @@ msgstr "新しいゲーム"
 #: data/ui/help-overlay.ui:44
 msgctxt "shortcut window"
 msgid "Undo last move"
-msgstr "直前の手を戻す"
+msgstr "直前の一手を元に戻す"
 
 #. Translators: in the Keyboard Shortcuts window, section "During a game"
 #: data/ui/help-overlay.ui:52
@@ -130,7 +130,7 @@ msgstr "ヒントを表示する"
 #: data/ui/help-overlay.ui:60
 msgctxt "shortcut window"
 msgid "Toggle game menu"
-msgstr ""
+msgstr "ゲームメニューの表示を切り替える"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
 #: data/ui/help-overlay.ui:70
@@ -152,12 +152,9 @@ msgstr "選択した列にビー玉を落とす"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number plays directly to the nth column
 #: data/ui/help-overlay.ui:91
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Play in selected column"
 msgctxt "shortcut window"
 msgid "Play in given column"
-msgstr "選択した列にビー玉を落とす"
+msgstr "指定した列にビー玉を落とす"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
 #: data/ui/help-overlay.ui:101
@@ -187,25 +184,25 @@ msgstr "全般"
 #: data/ui/help-overlay.ui:129
 msgctxt "shortcut window"
 msgid "Toggle main menu"
-msgstr ""
+msgstr "メインメニューの表示を切り替える"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:137
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
-msgstr "キーボードショートカット"
+msgstr "キーボードショートカットを表示する"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:145
 msgctxt "shortcut window"
 msgid "Help"
-msgstr "ヘルプ"
+msgstr "ヘルプを表示する"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:153
 msgctxt "shortcut window"
 msgid "About"
-msgstr "このアプリケーションについて"
+msgstr "“四目並べについて”を表示する"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:161
@@ -385,17 +382,17 @@ msgstr "サウンドを無効にする"
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:104
 msgid "Size of the board"
-msgstr "ゲームボードのサイズを設定する"
+msgstr "盤の大きさを設定する"
 
 #. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:107
 msgid "SIZE"
-msgstr "サイズ"
+msgstr "大きさ"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:110
 msgid "Length of a winning line"
-msgstr "勝利となる直線の長さを設定する"
+msgstr "勝利となる一列の長さを設定する"
 
 #. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:113
@@ -415,22 +412,22 @@ msgstr "リリースバージョンを表示して終了する"
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
 #: src/four-in-a-row.vala:167
 msgid "Size must be at least 4."
-msgstr "サイズは 4 以上である必要があります。"
+msgstr "大きさは 4 以上である必要があります。"
 
 #. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
 #: src/four-in-a-row.vala:173
 msgid "Size must not be more than 16."
-msgstr "サイズは 16 以下である必要があります。"
+msgstr "大きさは 16 以下である必要があります。"
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
 #: src/four-in-a-row.vala:180
 msgid "Lines must be at least 3 tiles."
-msgstr "直線の長さは 3 以上である必要があります。"
+msgstr "列の長さは 3 以上である必要があります。"
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
 #: src/four-in-a-row.vala:186
 msgid "Lines cannot be longer than board height or width."
-msgstr "ボードの高さや幅を超える直線の長さは設定できません。"
+msgstr "盤の高さや幅を超える列の長さは設定できません。"
 
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
 #: src/four-in-a-row.vala:229
@@ -586,7 +583,7 @@ msgstr ""
 #. Translators: during a game, entry in the game menu, for undoing the last move
 #: src/four-in-a-row.vala:1285
 msgid "_Undo last move"
-msgstr "直前の手を戻す(_U)"
+msgstr "直前の一手を元に戻す(_U)"
 
 #. Translators: during a game, entry in the game menu, for suggesting where to play
 #: src/four-in-a-row.vala:1289
@@ -753,7 +750,7 @@ msgstr "星とリング"
 #~ msgstr "設定(_P)"
 
 #~ msgid "This key is already in use."
-#~ msgstr "このキーは既に割り当て済みです。"
+#~ msgstr "このキーはすでに割り当て済みです。"
 
 #~ msgid "Unknown Command"
 #~ msgstr "不明なコマンド"
@@ -768,13 +765,13 @@ msgstr "星とリング"
 #~ msgstr "人間"
 
 #~ msgid "Level one"
-#~ msgstr "レベル1"
+#~ msgstr "レベル 1"
 
 #~ msgid "Level two"
-#~ msgstr "レベル2"
+#~ msgstr "レベル 2"
 
 #~ msgid "Level three"
-#~ msgstr "レベル3"
+#~ msgstr "レベル 3"
 
 #~ msgid "_Theme:"
 #~ msgstr "テーマ(_T):"
