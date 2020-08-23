@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-07-05 10:51+0000\n"
-"PO-Revision-Date: 2020-08-23 00:16+0900\n"
+"POT-Creation-Date: 2020-08-22 15:40+0000\n"
+"PO-Revision-Date: 2020-08-23 23:30+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -95,7 +95,7 @@ msgstr "新しいゲーム(_N)"
 #. Translators: during a game, tooltip text of the New Game button
 #: data/ui/four-in-a-row.ui:36
 msgid "Start a new game"
-msgstr "ゲームを始めます"
+msgstr "新しいゲームを開始します"
 
 #. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
 #: data/ui/four-in-a-row.ui:49
