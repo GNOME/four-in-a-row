@@ -29,8 +29,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-07-05 10:51+0000\n"
-"PO-Revision-Date: 2020-08-25 20:16-0300\n"
+"POT-Creation-Date: 2020-08-26 12:00+0000\n"
+"PO-Revision-Date: 2020-08-26 10:48-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -146,7 +146,7 @@ msgstr "Mostra uma dica"
 #: data/ui/help-overlay.ui:60
 msgctxt "shortcut window"
 msgid "Toggle game menu"
-msgstr "Mudar menu"
+msgstr "Acessa o menu do jogo"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
 #: data/ui/help-overlay.ui:70
@@ -168,11 +168,9 @@ msgstr "Joga na coluna selecionada"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number plays directly to the nth column
 #: data/ui/help-overlay.ui:91
-#| msgctxt "shortcut window"
-#| msgid "Play in selected column"
 msgctxt "shortcut window"
 msgid "Play in given column"
-msgstr "Jogar na coluna especificada"
+msgstr "Joga na coluna especificada"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
 #: data/ui/help-overlay.ui:101
@@ -202,7 +200,7 @@ msgstr "Genéricos"
 #: data/ui/help-overlay.ui:129
 msgctxt "shortcut window"
 msgid "Toggle main menu"
-msgstr "Mudar o menu principal"
+msgstr "Acessa o menu principal"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:137
