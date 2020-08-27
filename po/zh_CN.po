@@ -7,10 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-26 22:43+0000\n"
-"PO-Revision-Date: 2018-05-10 11:57-0500\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2020-08-13 18:02+0000\n"
+"PO-Revision-Date: 2020-08-27 11:15-0400\n"
 "Last-Translator: Mingcong Bai <jeffbai@aosc.xyz>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -18,18 +17,210 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.1\n"
 
-#: data/four-in-a-row.appdata.xml.in:7 data/four-in-a-row.desktop.in:5
-#: data/four-in-a-row.ui:6 data/four-in-a-row.ui:13 src/main.h:5
+#. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:40
+msgid "Game type"
+msgstr "游戏类型"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:61 data/ui/fiar-screens.ui:244
+msgid "Play _first"
+msgstr "先手(_F)"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:73 data/ui/fiar-screens.ui:256
+msgid "Play _second"
+msgstr "后手(_S)"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:85
+msgid "_Two players"
+msgstr "两个玩家(_T)"
+
+#. Translators: when configuring a new game, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:109
+msgid "Players"
+msgstr "玩家"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:126
+msgid "_One"
+msgstr "1(_O)"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:138
+msgid "_Two"
+msgstr "2(_T)"
+
+#. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
+#: data/ui/fiar-screens.ui:162
+msgid "Difficulty"
+msgstr "难度"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:179
+msgid "_Easy"
+msgstr "简单(_E)"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:191
+msgid "_Medium"
+msgstr "中等(_M)"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:203
+msgid "_Hard"
+msgstr "困难(_H)"
+
+#. Translators: when configuring a new game, header of the row for choosing whether to start or not
+#: data/ui/fiar-screens.ui:227
+msgid "Game start"
+msgstr "游戏开始"
+
+#. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
+#: data/ui/four-in-a-row.ui:31
+msgid "_New Game"
+msgstr "新游戏(_N)"
+
+#. Translators: during a game, tooltip text of the New Game button
+#: data/ui/four-in-a-row.ui:36
+msgid "Start a new game"
+msgstr "开始新游戏"
+
+#. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
+#: data/ui/four-in-a-row.ui:49
+msgid "Go back to the current game"
+msgstr "返回到当前游戏中"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"...
+#: data/ui/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "During a game"
+msgstr "在游戏中"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:36
+msgctxt "shortcut window"
+msgid "New game"
+msgstr "新游戏"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:44
+msgctxt "shortcut window"
+msgid "Undo last move"
+msgstr "撤销上一步"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Show a hint"
+msgstr "显示提示"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:60
+msgctxt "shortcut window"
+msgid "Toggle game menu"
+msgstr "切换游戏菜单"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
+#: data/ui/help-overlay.ui:70
+msgctxt "shortcut window"
+msgid "Play with keyboard"
+msgstr "使用键盘开始游戏"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
+#: data/ui/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Select where to play"
+msgstr "选择在哪里玩游戏"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
+#: data/ui/help-overlay.ui:83
+msgctxt "shortcut window"
+msgid "Play in selected column"
+msgstr "在选定列中玩游戏"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number plays directly to the nth column
+#: data/ui/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Play in given column"
+msgstr "在给定列中玩游戏"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
+#: data/ui/help-overlay.ui:101
+msgctxt "shortcut window"
+msgid "During game selection"
+msgstr "在游戏选项中"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
+#: data/ui/help-overlay.ui:106
+msgctxt "shortcut window"
+msgid "Start new game"
+msgstr "开始新游戏"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
+#: data/ui/help-overlay.ui:114
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "后退"
+
+#. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
+#: data/ui/help-overlay.ui:124
+msgctxt "shortcut window"
+msgid "Generic"
+msgstr "通用"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Toggle main menu"
+msgstr "切换主菜单"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "键盘快捷键"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:145
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "帮助"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:153
+msgctxt "shortcut window"
+msgid "About"
+msgstr "关于"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:161
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
+
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "结束！"
+
+#. Translators: application name, as used in the window manager, the window title, the about dialog...
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
 msgid "Four-in-a-row"
 msgstr "四子连线"
 
-#: data/four-in-a-row.appdata.xml.in:8 data/four-in-a-row.desktop.in:6
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
 msgstr "将四粒棋子排成一线以取胜"
 
-#: data/four-in-a-row.appdata.xml.in:10
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
 "A family classic, the objective of Four-in-a-row is to build a line of four "
 "of your marbles while trying to stop your opponent (human or computer) from "
@@ -38,306 +229,540 @@ msgid ""
 msgstr ""
 "一个家庭经典游戏，四字连线的目的是将你自己的四个弹珠连成一线同时阻止你的对手"
 "(人或者计算机)连线成功。连线可以是横的，竖的或斜的。第一个将四个弹珠连成一条"
-"线的选手获胜。"
+"线的选手将获胜！"
 
-#: data/four-in-a-row.appdata.xml.in:16
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you're having trouble, "
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
 "you can always ask for a hint."
 msgstr "四子连线有多个难度级别。如果您玩不下去，也可以获取提示。"
 
-#: data/four-in-a-row.appdata.xml.in:32
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/four-in-a-row.desktop.in:4
-#| msgid "Four-in-a-row"
-msgid "four-in-a-row"
-msgstr "four-in-a-row"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/four-in-a-row.desktop.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:8
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;游戏;策略;逻辑;"
 
-#: data/four-in-a-row.ui:19
-msgid "Undo your most recent move"
-msgstr "撤销上一步。"
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+msgid "Who starts"
+msgstr "谁先开始"
 
-#: data/four-in-a-row.ui:79
-msgid "_Hint"
-msgstr "提示(_H)"
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:13
+msgid ""
+"Specifies who will start the next one-player game. Ignored for two-player "
+"games."
+msgstr "指定谁将开始下一个单人游戏。在双人游戏下该项被忽略。"
 
-#: data/four-in-a-row.ui:83
-msgid "Receive a hint for your next move"
-msgstr "获取您下一步走法的提示"
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
+#: data/org.gnome.Four-in-a-row.gschema.xml:19
+msgid "Number of players"
+msgstr "玩家数量"
 
-#: data/four-in-a-row.ui:98
-msgid "_Start Over"
-msgstr "重新开始(_S)"
-
-#: data/four-in-a-row.ui:102
-msgid "Start a new game"
-msgstr "开始新游戏"
-
-#: data/org.gnome.four-in-a-row.gschema.xml:5
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
 msgid "Opponent"
 msgstr "对手"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:6
-msgid ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
-msgstr "0 代表玩家；1 至 3 代表相应的计算机玩家。"
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:28
+msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
+msgstr "游戏难度从 1 开始，最容易，到 3，最难。在双人游戏下该项被忽略。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:10
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:34
 msgid "Theme ID"
 msgstr "主题编号"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:11
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:36
 msgid "A number specifying the preferred theme."
 msgstr "指定首选主题的数字。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:15
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:41
 msgid "Sound"
 msgstr "音效"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:16
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
 msgstr "是否播放事件声音。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:20 src/prefs.c:247
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:48
 msgid "Move left"
 msgstr "向左移动"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:21
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:50
 msgid "Key press to move left."
 msgstr "左移的按键。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:25 src/prefs.c:248
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:55
 msgid "Move right"
 msgstr "向右移动"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:26
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:57
 msgid "Key press to move right."
 msgstr "右移的按键。"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:30 src/prefs.c:249
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:62
 msgid "Drop marble"
 msgstr "落下小球"
 
-#: data/org.gnome.four-in-a-row.gschema.xml:31
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
 msgstr "落下小球的按键。"
 
-#: src/games-controls.c:105
-msgid "This key is already in use."
-msgstr "按键已被占用。"
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:72
+msgid "The width of the window"
+msgstr "窗口宽度"
 
-#: src/games-controls.c:326
-msgid "Unknown Command"
-msgstr "未知命令"
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:74
+msgid "The width of the main window in pixels."
+msgstr "主窗口宽度像素数。"
 
-#: src/gfx.c:247
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"无法载入图像：\n"
-"%s"
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:79
+msgid "The height of the window"
+msgstr "窗口高度"
 
-#: src/main.c:476
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:81
+msgid "The height of the main window in pixels."
+msgstr "主窗口高度像素数。"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:86
+msgid "A flag to enable maximized mode"
+msgstr "启用最大化模式的标志"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:88
+msgid "If “true”, the main window starts in maximized mode."
+msgstr "如果设为“真”，主窗口将以最大化模式启动。"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:95
+msgid "Set the level of the computer’s AI"
+msgstr "设定计算机 AI 级别"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:98
+msgid "LEVEL"
+msgstr "级别"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:101
+msgid "Turn off the sound"
+msgstr "关闭声音"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:104
+msgid "Size of the board"
+msgstr "棋盘尺寸"
+
+#. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:107
+msgid "SIZE"
+msgstr "尺寸"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr "获胜线的长度"
+
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "目标"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
+msgid "Turn on the sound"
+msgstr "打开声音"
+
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:119
+msgid "Print release version and exit"
+msgstr "打印发布版本并退出"
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
+#: src/four-in-a-row.vala:167
+msgid "Size must be at least 4."
+msgstr "尺寸至少为 4。"
+
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
+#: src/four-in-a-row.vala:173
+msgid "Size must not be more than 16."
+msgstr "尺寸不能超过 16。"
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:180
+msgid "Lines must be at least 3 tiles."
+msgstr "每条线至少 3 个方格。"
+
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:186
+msgid "Lines cannot be longer than board height or width."
+msgstr "线条不能超过棋盘的高度或宽度。"
+
+#. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
+#: src/four-in-a-row.vala:229
+msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
+msgstr "级别应为 1（简单）、2（中等）或 3（困难）。未更改设置。"
+
+#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:267
+msgid "A_ppearance"
+msgstr "外观(_P)"
+
+#. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:271
+msgid "_Sound"
+msgstr "声音(_S)"
+
+#. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:277
+msgid "_Keyboard Shortcuts"
+msgstr "键盘快捷键(_K)"
+
+#. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:281
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:285
+msgid "_About Four-in-a-row"
+msgstr "关于四子连线(_A)"
+
+#. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
+#: src/four-in-a-row.vala:567
 msgid "It’s a draw!"
 msgstr "平局！"
 
-#: src/main.c:484
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
+#: src/four-in-a-row.vala:581
 msgid "You win!"
 msgstr "您赢了！"
 
-#: src/main.c:486 src/main.c:502
-msgid "Your Turn"
-msgstr "轮到你走"
-
-#: src/main.c:489
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
+#: src/four-in-a-row.vala:584
 msgid "I win!"
 msgstr "我赢了！"
 
-#: src/main.c:491 src/main.c:590
-msgid "I’m Thinking…"
-msgstr "我想想..."
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:593
+msgid "Your Turn"
+msgstr "轮到你走"
 
-#: src/main.c:603
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
+#. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
+#: src/four-in-a-row.vala:600 src/four-in-a-row.vala:909
+msgid "I’m Thinking…"
+msgstr "我想想……"
+
+#. blink n times
+#. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
+#: src/four-in-a-row.vala:925
 #, c-format
 msgid "Hint: Column %d"
 msgstr "提示：列 %d"
 
-#: src/main.c:631 src/main.c:635
-msgid "You:"
-msgstr "您："
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1122
+msgid "Tim Musson"
+msgstr "Tim Musson"
 
-#: src/main.c:632 src/main.c:634
-msgid "Me:"
-msgstr "我："
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1126
+msgid "David Neary"
+msgstr "David Neary"
 
-#: src/main.c:680
-msgid "Scores"
-msgstr "得分"
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1130
+msgid "Nikhar Agrawal"
+msgstr "Nikhar Agrawal"
 
-#: src/main.c:721
-msgid "Drawn:"
-msgstr "平局："
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1134
+msgid "Jacob Humphrey"
+msgstr "Jacob Humphrey"
 
-#: src/main.c:762
-msgid "Connect four in a row to win."
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1138
+msgid "Arnaud Bonatti"
+msgstr "Arnaud Bonatti"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1143
+msgid "Alan Horkan"
+msgstr "Alan Horkan"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1147
+msgid "Anatol Drlicek"
+msgstr "Anatol Drlicek"
+
+#. Translators: in the About dialog, indication about some themes origin
+#: src/four-in-a-row.vala:1151
+msgid "Based on the Faenza icon theme by Matthieu James"
+msgstr "由 Matthieu James 完成基于 Faenza 的图标主题"
+
+#. Translators: in the About dialog, name of a documenter
+#: src/four-in-a-row.vala:1155
+msgid "Timothy Musson"
+msgstr "Timothy Musson"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1159
+msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
+msgstr "Copyright © 1999-2008 – Tim Musson 和 David Neary"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1163
+msgid "Copyright © 2014 – Michael Catanzaro"
+msgstr "Copyright © 2014 – Michael Catanzaro"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1167
+msgid "Copyright © 2018 – Jacob Humphrey"
+msgstr "Copyright © 2018 – Jacob Humphrey"
+
+#. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
+#: src/four-in-a-row.vala:1171
+#, c-format
+msgid "Copyright © %u-%u – Arnaud Bonatti"
+msgstr "Copyright © %u-%u – Arnaud Bonatti"
+
+#. Translators: about dialog text, introducing the game
+#: src/four-in-a-row.vala:1179
+msgid "Connect four in a row to win"
 msgstr "连接四砖成一线即可取胜"
 
-#: src/main.c:765
+#. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
+#: src/four-in-a-row.vala:1184
 msgid "translator-credits"
 msgstr ""
 "Yang Zhang <zyangmath@gmail.com>, 2007\n"
 "Ping Z <zpsigma@gmail.com>, 2007\n"
 "Xhacker Liu <liu.dongyuan@gmail.com>, 2010\n"
-"Mingcong Bai <jeffbai@aosc.xyz>, 2018"
+"Mingcong Bai <jeffbai@aosc.xyz>, 2018\n"
+"Weiyi Xu <xuweiyi0923@gmail.com>, 2020"
 
-#: src/main.c:1130
+#. Translators: during a game, entry in the game menu, for undoing the last move
+#: src/four-in-a-row.vala:1285
+msgid "_Undo last move"
+msgstr "撤销上一步(_U)"
+
+#. Translators: during a game, entry in the game menu, for suggesting where to play
+#: src/four-in-a-row.vala:1289
+msgid "_Hint"
+msgstr "提示(_H)"
+
+#: src/four-in-a-row.vala:1301
+msgid "Next _Round"
+msgstr "下一回合(_R)"
+
+#: src/four-in-a-row.vala:1303
+msgid "_Give Up"
+msgstr "放弃游戏(_G)"
+
+#. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:1308
 msgid "_Scores"
 msgstr "得分(_S)"
 
-#: src/main.c:1131
-msgid "_Preferences"
-msgstr "首选项(_P)"
+#. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
+#: src/game-window.vala:113
+msgid "_Start Game"
+msgstr "开始游戏(_S)"
 
-#: src/main.c:1134
-msgid "_Help"
-msgstr "帮助(_H)"
+#. Translators: title of the Scores dialog; plural noun
+#: src/scorebox.vala:37
+msgid "Scores"
+msgstr "得分"
 
-#: src/main.c:1135
-msgid "_About"
-msgstr "关于(_A)"
+#. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
+#: src/scorebox.vala:72
+msgid "Drawn:"
+msgstr "平局："
 
-#: src/main.c:1136
-msgid "_Quit"
-msgstr "退出(_Q)"
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
+#: src/scorebox.vala:93 src/scorebox.vala:107
+msgid "You:"
+msgstr "您："
 
-#: src/prefs.c:171
-msgid "Preferences"
-msgstr "首选项"
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
+#: src/scorebox.vala:96 src/scorebox.vala:104
+msgid "Me:"
+msgstr "我："
 
-#: src/prefs.c:193
-msgid "Game"
-msgstr "游戏"
-
-#: src/prefs.c:196
-msgid "Opponent:"
-msgstr "对手："
-
-#: src/prefs.c:207
-msgid "Human"
-msgstr "人"
-
-#: src/prefs.c:211
-msgid "Level one"
-msgstr "一级"
-
-#: src/prefs.c:215
-msgid "Level two"
-msgstr "二级"
-
-#: src/prefs.c:219
-msgid "Level three"
-msgstr "三级"
-
-#: src/prefs.c:225
-msgid "_Theme:"
-msgstr "主题(_T)："
-
-#: src/prefs.c:238
-msgid "E_nable sounds"
-msgstr "启用声音(_N)"
-
-#. keyboard tab
-#: src/prefs.c:243
-msgid "Keyboard Controls"
-msgstr "键盘控制"
-
-#: src/theme.c:40
+#. Translators: name of a black-on-white theme, for helping people with visual misabilities
+#: src/theme.vala:170
 msgid "High Contrast"
 msgstr "黑白"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
 msgstr "圈"
 
-#: src/theme.c:44 src/theme.c:53
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
 msgstr "叉"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Circle:"
+msgstr "圈："
+
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Cross:"
+msgstr "叉："
+
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Circle wins!"
-msgstr "画圈那方获胜"
+msgstr "画圈那方获胜！"
 
-#: src/theme.c:45 src/theme.c:54
+#: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
-msgstr "画叉那方获胜"
+msgstr "画叉那方获胜！"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
 msgstr "轮到画圈那方"
 
-#: src/theme.c:46 src/theme.c:55
+#: src/theme.vala:177 src/theme.vala:188
 msgid "Cross’s turn"
 msgstr "轮到画叉那方"
 
-#: src/theme.c:49
+#. Translators: name of a white-on-black theme, for helping people with visual misabilities
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
 msgstr "白黑"
 
-#: src/theme.c:58
+#. Translators: name of a red-versus-green theme
+#: src/theme.vala:192
 msgid "Red and Green Marbles"
 msgstr "红色和蓝色弹球"
 
-#: src/theme.c:62 src/theme.c:71 src/theme.c:80
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
 msgid "Red"
 msgstr "红色"
 
-#: src/theme.c:62 src/theme.c:80
+#: src/theme.vala:196 src/theme.vala:218
 msgid "Green"
 msgstr "绿"
 
-#: src/theme.c:63 src/theme.c:72 src/theme.c:81
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
+msgid "Red:"
+msgstr "红色："
+
+#: src/theme.vala:197 src/theme.vala:219
+msgid "Green:"
+msgstr "绿色："
+
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
 msgid "Red wins!"
 msgstr "红方获胜！"
 
-#: src/theme.c:63 src/theme.c:81
+#: src/theme.vala:198 src/theme.vala:220
 msgid "Green wins!"
 msgstr "绿方获胜！"
 
-#: src/theme.c:64 src/theme.c:73 src/theme.c:82
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
 msgstr "轮到红方"
 
-#: src/theme.c:64 src/theme.c:82
+#: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
 msgstr "轮到绿方"
 
-#: src/theme.c:67
+#. Translators: name of a blue-versus-red theme
+#: src/theme.vala:203
 msgid "Blue and Red Marbles"
 msgstr "蓝色和红色弹球"
 
-#: src/theme.c:71
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "蓝色"
 
-#: src/theme.c:72
+#: src/theme.vala:208
+msgid "Blue:"
+msgstr "蓝色："
+
+#: src/theme.vala:209
 msgid "Blue wins!"
 msgstr "黑方获胜！"
 
-#: src/theme.c:73
+#: src/theme.vala:210
 msgid "Blue’s turn"
 msgstr "轮到蓝方"
 
-#: src/theme.c:76
+#. Translators: name of a red-versus-green theme with drawing on the tiles
+#: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "星和圈"
+
+#~| msgid "Four-in-a-row"
+#~ msgid "four-in-a-row"
+#~ msgstr "four-in-a-row"
+
+#~ msgid "Receive a hint for your next move"
+#~ msgstr "获取您下一步走法的提示"
+
+#~ msgid ""
+#~ "Zero is human; one through three correspond to the level of the computer "
+#~ "player."
+#~ msgstr "0 代表玩家；1 至 3 代表相应的计算机玩家。"
+
+#~ msgid "This key is already in use."
+#~ msgstr "按键已被占用。"
+
+#~ msgid "Unknown Command"
+#~ msgstr "未知命令"
+
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "无法载入图像：\n"
+#~ "%s"
+
+#~ msgid "_Preferences"
+#~ msgstr "首选项(_P)"
+
+#~ msgid "Preferences"
+#~ msgstr "首选项"
+
+#~ msgid "Opponent:"
+#~ msgstr "对手："
+
+#~ msgid "Human"
+#~ msgstr "人"
+
+#~ msgid "Level one"
+#~ msgstr "一级"
+
+#~ msgid "Level two"
+#~ msgstr "二级"
+
+#~ msgid "Level three"
+#~ msgstr "三级"
+
+#~ msgid "_Theme:"
+#~ msgstr "主题(_T)："
+
+#~ msgid "E_nable sounds"
+#~ msgstr "启用声音(_N)"
