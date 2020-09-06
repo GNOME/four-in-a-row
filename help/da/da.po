@@ -1,17 +1,25 @@
-# Danish translation for gnome-games.
+# Danish translation for four-in-a-row.
 # Copyright (C) 2011 gnome-games.
-# This file is distributed under the same license as the gnome-games package.
-# Joe Hansen (joedalton2@yahoo.dk), 2009, 2010, 2011, 2017.
+# This file is distributed under the same license as the four-in-a-row package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2009, 2010, 2011, 2017.
 # Korrekturlæst Torben Grøn Helligsø, 2010.
+# scootergrisen, 2020.
 #
 # marble -> kugle
 #
+# scootergrisen: angående marble:
+# scootergrisen: måske der i en ældre version af programmet som standard blev brugt et tema med kugler
+# scootergrisen: men lader til "Stjerner og ringe" er standard nu som ikke ligner kugler
+# scootergrisen: spillet spilles vel traditionelt med flade poletbrikker
+# scootergrisen: så måske bedre at kalde det brik end kugle
+# scootergrisen: jeg har oprettet et issue om det så kan det være det bliver rettet i kilden
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-games master\n"
-"POT-Creation-Date: 2014-03-30 21:36+0000\n"
-"PO-Revision-Date: 2017-03-15 22:31+0200\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Project-Id-Version: four-in-a-row master\n"
+"POT-Creation-Date: 2019-09-24 14:44+0000\n"
+"PO-Revision-Date: 2020-03-03 05:13+0200\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -23,15 +31,17 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Joe Hansen, 2009, 2010, 2017.\n"
+"Joe Hansen, 2009, 2010, 2017\n"
+"scootergrisen <>, 2020\n"
 "\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+"Dansk-gruppen\n"
+"Websted http://dansk-gruppen.dk\n"
+"E-mail <dansk@dansk-gruppen.dk>"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:13 C/choose-opponent.page:13
-#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:12
-#: C/make-easy.page:13 C/scores.page:12 C/sound-animation.page:13
+#: C/appearance.page:13 C/basics.page:15 C/choose-opponent.page:15
+#: C/controls-change.page:17 C/controls-default.page:16 C/index.page:12
+#: C/make-easy.page:15 C/scores.page:15 C/sound-animation.page:15
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
@@ -43,7 +53,7 @@ msgstr "Brug forskellige temaer til at forbedre din spiloplevelse."
 #. (itstool) path: page/title
 #: C/appearance.page:20
 msgid "Change the appearance of your gaming area"
-msgstr "Ændr fremtoningen af dit spilområde"
+msgstr "Ændr udseendet på dit spilområde"
 
 #. (itstool) path: page/p
 #: C/appearance.page:22
@@ -51,147 +61,148 @@ msgid ""
 "By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
 "a black grid when you start a new game."
 msgstr ""
-"Som standard bruger <app>Fire på stribe</app> røde og blå kugler mod "
-"et sort gitter, når du starter et nyt spil."
+"Som standard bruger <app>Fire på stribe</app> ensfarvede røde og blå kugler "
+"mod et sort gitter, når du starter et nyt spil."
 
 #. (itstool) path: steps/title
 #: C/appearance.page:26
 msgid "To use a different theme:"
-msgstr "Hvis du ønsker at bruge et andet tema:"
+msgstr "Sådan bruges et andet tema:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28 C/sound-animation.page:35 C/sound-animation.page:54
+#: C/appearance.page:28
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#| "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem\">Game</"
+"gui></guiseq>."
 msgstr ""
-"Vælg <guiseq><gui style=\"menu\">Indstillinger</gui> <gui style=\"menuitem"
-"\">Præferencer</gui> <gui style=\"menuitem\">Spil</gui></guiseq>."
+"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <guiseq><gui "
+"style=\"menu\">Indstillinger</gui> <gui style=\"menuitem\">Spil</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
+#| msgid ""
+#| "Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
+#| "down menu to the right of <gui style=\"group\">Theme</gui>. The change "
+#| "will be reflected immediately in the game window."
 msgid ""
-"Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
-"down menu to the right of <gui style=\"group\">Theme</gui>. The change will "
-"be reflected immediately in the game window."
+"Pick the theme of your choice from the drop down menu to the right of <gui "
+"style=\"group\">Theme</gui>. The change will be reflected immediately in the "
+"game window."
 msgstr ""
-"Under <gui>Fremtoning</gui>, vælg et tema fra rullegardinet til højre "
-"for <gui style=\"group\">Tema</gui>. Ændringen vil slå igennem med det "
-"samme i spilvinduet."
+"Vælg det ønskede tema fra rullegardinsmenuen til højre for <gui "
+"style=\"group\">Tema</gui>. Ændringen sker straks i spilvinduet."
 
 #. (itstool) path: info/desc
-#: C/basics.page:17
-msgid ""
-"Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
-msgstr ""
-"Start, spil i tilstanden fuldskærm og afslut et spil <app>Fire på stribe</app>."
+#: C/basics.page:19
+#| msgid ""
+#| "Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</"
+#| "app>."
+msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
+msgstr "Start, spil og afslut <app>Fire på stribe</app>."
 
 #. (itstool) path: page/title
-#: C/basics.page:21
+#: C/basics.page:23
 msgid "Basic instructions"
-msgstr "Grundlæggende introduktion"
+msgstr "Grundlæggende instruktioner"
 
 #. (itstool) path: section/title
-#: C/basics.page:24
+#: C/basics.page:26
 msgid "Start a new game"
 msgstr "Start et nyt spil"
 
 #. (itstool) path: section/p
-#: C/basics.page:26
+#: C/basics.page:28
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+#| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
+#| "keyseq> to start a new game."
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
-"a new game."
+"Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Vælg <guiseq><gui style=\"menu\">Spil</gui> <gui style=\"menuitem\">Nyt</"
-"gui></guiseq> eller tryk <keyseq><key>Ctrl</key><key>N</key></keyseq> for at "
-"starte et nyt spil."
+"Tryk på <gui style=\"button\">Start forfra</gui> eller tryk på "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> for at starte et nyt spil."
 
 #. (itstool) path: section/title
-#: C/basics.page:34
-msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
-msgstr "Spil <app>Fire på stribe</app> i tilstanden fuldskærm"
-
-#. (itstool) path: section/p
-#: C/basics.page:36
-msgid ""
-"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-"fullscreen mode. You can return to the default screen size by pressing "
-"<key>F11</key> again."
-msgstr ""
-"Vælg <guiseq> <gui style=\"menu\">Vis</gui> <gui style=\"menuitem"
-"\">Fuldskærm</gui></guiseq> eller tryk på <key>F11</key> for at spille "
-"i tilstanden fuldskærm. Du kan returnere til skærmens standardstørrelse "
-"ved at trykke på <key>F11</key> igen."
-
-#. (itstool) path: section/title
-#: C/basics.page:44
+#: C/basics.page:35
 msgid "Quit <app>Four-in-a-row</app>"
 msgstr "Afslut <app>Fire på stribe</app>"
 
 #. (itstool) path: section/p
-#: C/basics.page:46
+#: C/basics.page:37
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+#| "\">Quit</gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></"
+#| "keyseq> to quit <app>Four-in-a-row</app> at any time."
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
-"<app>Four-in-a-row</app> at any time."
+"Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-in-a-"
+"row</app> at any time."
 msgstr ""
-"Vælg <guiseq><gui style=\"menu\">Spil</gui> <gui style=\"menuitem\">Afslut</"
-"gui></guiseq> eller tryk på <keyseq><key>Ctrl</key><key>Q</key></keyseq> for "
-"at afslutte <app>Fire på stribe</app> på ethvert tidspunkt."
+"Tryk på <keyseq><key>Ctrl</key><key>Q</key></keyseq> for, når som helst, at "
+"afslutte <app>Fire på stribe</app>."
 
 #. (itstool) path: credit/name
-#: C/choose-opponent.page:17 C/sound-animation.page:17
+#: C/choose-opponent.page:19 C/sound-animation.page:19
 msgid "Michael Hill"
 msgstr "Michael Hill"
 
 #. (itstool) path: info/desc
-#: C/choose-opponent.page:21
+#: C/choose-opponent.page:23
 msgid "Change the level at which the computer plays or play with a friend."
 msgstr "Ændr niveauet som computeren spiller med eller spil med en ven."
 
 #. (itstool) path: page/title
-#: C/choose-opponent.page:25
+#: C/choose-opponent.page:27
 msgid "Choose a different opponent"
 msgstr "Vælg en anden modstander"
 
 #. (itstool) path: page/p
-#: C/choose-opponent.page:26
+#: C/choose-opponent.page:28
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at level one."
 msgstr ""
-"Som standard er din modstander i <app>Fire på stribe</app> computeren, "
-"som spiller på niveau et."
+"Som standard er din modstander i <app>Fire på stribe</app> computeren, som "
+"spiller på niveau et."
 
 #. (itstool) path: steps/title
-#: C/choose-opponent.page:30
-msgid "To change the level, or to play with a friend:"
-msgstr "For at ændre niveauet eller spille med en ven:"
-
-#. (itstool) path: item/p
 #: C/choose-opponent.page:32
-msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You will "
-"see <gui>Player One</gui> and <gui>Player Two</gui>."
-msgstr ""
-"Vælg <guiseq><gui style=\"menu\">Indstillinger</gui> <gui style=\"menuitem"
-"\">Præferencer</gui> <gui style=\"menuitem\">Spil</gui></guiseq>. Du vil "
-"se <gui>Spiller et</gui> og <gui>Spiller to</gui>."
+msgid "To change the level, or to play with a friend:"
+msgstr "Sådan ændres niveauet eller spilles med en ven:"
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:38
+#: C/choose-opponent.page:34 C/sound-animation.page:34
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#| "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
 msgid ""
-"Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
-"play with a friend or family member."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
+"\">Game</gui></guiseq>."
 msgstr ""
-"Vælg <gui style=\"radiobutton\">Menneske</gui> for begge spillere hvis du "
-"ønsker at spille med en ven eller et familiemedlem."
+"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <guiseq><gui "
+"style=\"menuitem\">Indstillinger</gui> <gui "
+"style=\"menuitem\">Spil</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:40
+#: C/choose-opponent.page:39
+#| msgid ""
+#| "Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
+#| "play with a friend or family member."
+msgid ""
+"Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for "
+"both players if want to play with a friend or family member."
+msgstr ""
+"Under <gui>Modstander</gui> vælges <gui style=\"radiobutton\">Menneske</gui> "
+"for begge spillere hvis du vil spille med en ven eller et "
+"familiemedlem."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the level at which the computer plays. Choose between "
 "<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
@@ -199,128 +210,142 @@ msgid ""
 "\"radiobutton\">Level one</gui> is the easiest level and <gui style="
 "\"radiobutton\">Level three</gui> is the most difficult level."
 msgstr ""
-"Alternativt, vælg niveauet som computeren spiller med. Vælg mellem "
+"Ellers kan du vælge det niveau som computeren spiller med. Vælg mellem "
 "<gui style=\"radiobutton\">Niveau et</gui>, <gui style=\"radiobutton\">Niveau "
-"to</gui> eller <gui style=\"radiobutton\">Niveau tre</gui>, hvor <gui style="
-"\"radiobutton\">Niveau et</gui> er det nemmeste niveau og <gui style="
-"\"radiobutton\">Niveau tre</gui> er det sværeste niveau."
+"to</gui> eller <gui style=\"radiobutton\">Niveau tre</gui>, hvor <gui "
+"style=\"radiobutton\">Niveau et</gui> er det nemmeste niveau og <gui "
+"style=\"radiobutton\">Niveau tre</gui> er det sværeste niveau."
 
 #. (itstool) path: note/p
-#: C/choose-opponent.page:48
+#: C/choose-opponent.page:49
+#| msgid ""
+#| "If you are playing with a friend or family member, <gui>Player One</gui> "
+#| "gets to play first in the first game of <app>Four-in-a-row</app>. In "
+#| "subsequent games, the chance to play first is given alternately to each "
+#| "player. So, <gui>Player Two</gui> will get to play first in the second "
+#| "game, <gui>Player One</gui> can play first in the third game and so on."
 msgid ""
-"If you are playing with a friend or family member, <gui>Player One</gui> "
-"gets to play first in the first game of <app>Four-in-a-row</app>. In "
-"subsequent games, the chance to play first is given alternately to each "
-"player. So, <gui>Player Two</gui> will get to play first in the second game, "
-"<gui>Player One</gui> can play first in the third game and so on."
+"If you are playing with a friend or family member, Player One gets to play "
+"first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
+"the chance to play first is given alternately to each player. So, Player Two "
+"will get to play first in the second game, Player One can play first in the "
+"third game and so on."
 msgstr ""
-"Hvis du spiller med en ven eller et familiemedlem, får <gui>Spiller et</gui> "
-"lov til at starte i det første spil <app>Fire på stribe</app>. I "
-"efterfølgende spil skifter retten til at spille først. Så <gui>Spiller "
-"to</gui> starter i det andet spil og <gui>Spiller et</gui> kan spille "
-"først i det tredje spil og så videre."
+"Hvis du spiller med en ven eller et familiemedlem, får spiller et lov til at "
+"starte i det første spil <app>Fire på stribe</app>. I efterfølgende spil "
+"skiftes man til at spille først, så spiller to starter i det andet spil "
+"og spiller et kan spille først i det tredje spil osv."
 
 #. (itstool) path: info/desc
-#: C/controls-change.page:19
+#: C/controls-change.page:21
 msgid "Set custom control keys."
-msgstr "Angiv tilpassede taster til styring."
+msgstr "Indstil tilpassede styringstaster."
 
 #. (itstool) path: page/title
-#: C/controls-change.page:22
+#: C/controls-change.page:24
 msgid "Change the default controls"
 msgstr "Ændr standardstyringen"
 
 #. (itstool) path: page/p
-#: C/controls-change.page:24
+#: C/controls-change.page:26
 msgid ""
 "To change the <link xref=\"controls-default\">default controls</link> in "
 "<app>Four-in-a-row</app>:"
 msgstr ""
-"For at ændre <link xref=\"controls-default\">Standardstyringen</link> i "
+"Sådan ændres <link xref=\"controls-default\">standardstyringen</link> i "
 "<app>Fire på stribe</app>:"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:29
+#: C/controls-change.page:31
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#| "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+#| "guiseq>."
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-"guiseq>."
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
+"\">Keyboard Controls</gui></guiseq>."
 msgstr ""
-"Vælg <guiseq><gui style=\"menu\">Indstillinger</gui> <gui style=\"menuitem"
-"\">Præferencer</gui> <gui style=\"menuitem\">Tastaturstyring</gui></"
-"guiseq>."
+"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <guiseq><gui "
+"style=\"menu\">Indstillinger</gui> <gui "
+"style=\"menuitem\">Tastaturstyring</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:34
+#: C/controls-change.page:36
 msgid ""
 "In the list, select the line you want to change, then click on the control. "
 "The line is highlighted and the label of the control changes to <gui>New "
 "accelerator…</gui>"
 msgstr ""
-"I listen, vælg linjen du ønsker at ændre, klik så på styringen. Linjen "
-"er fremhævet og etiketten for styringen ændres til <gui>Ny "
-"accelerator…</gui>"
+"I listen vælges den linje du vil ændre og så klikkes på styringen. Linjen "
+"fremhæves og styringens etiket ændres til <gui>Ny genvejstast …</gui>"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:39
+#: C/controls-change.page:41
 msgid "Press the key you want to use instead of the default key."
-msgstr "Tryk på tasten du ønsker at bruge i stedet for standardtasten."
+msgstr "Tryk på den tast du vil bruge i stedet for standardtasten."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:41
+#: C/controls-change.page:43
+#| msgid ""
+#| "To keep the old setting, click again or right click on <gui>New "
+#| "accelerator…</gui>, press <key>Esc</key> or click anywhere else inside "
+#| "the <gui>Keyboard Controls</gui> box."
 msgid ""
 "To keep the old setting, click again or right click on <gui>New accelerator…"
-"</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
-"Controls</gui> box."
+"</gui>, press <key>Esc</key>."
 msgstr ""
 "Klik igen for at bevare den gamle indstilling eller højreklik på "
-"<gui>Ny accelerator…</gui>. Tryk <key>Esc</key> eller klik et sted inden i "
-"boksen for <gui>Tastaturstyringen</gui>."
+"<gui>Ny genvejstast …</gui> og tryk på <key>Esc</key>."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:49
+#: C/controls-change.page:50
 msgid ""
 "When you are playing with a friend or a family member, both players will use "
 "the same controls."
 msgstr ""
-"Når du spiller med en ven eller et familiemedlem, så vil begge spillere "
-"bruge den samme styring."
+"Når du spiller med en ven eller et familiemedlem, så bruger begge spillere "
+"den samme styring."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:19
+#: C/controls-default.page:20
 msgid "Default controls for <app>Four-in-a-row</app>."
-msgstr "Standardstyring for <app>Fire på stribe</app>."
+msgstr "Standardstyring til <app>Fire på stribe</app>."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:22
+#: C/controls-default.page:23
 msgid "Controls"
 msgstr "Styring"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:24
+#: C/controls-default.page:25
+#| msgid ""
+#| "You can use your mouse and click on a particular square in the game area "
+#| "to drop your marble into that square. If you want to use the keyboard "
+#| "instead, the default keys for <app>Four-in-a-row</app> are:"
 msgid ""
-"You can use your mouse and click on a particular square in the game area to "
-"drop your marble into that square. If you want to use the keyboard instead, "
-"the default keys for <app>Four-in-a-row</app> are:"
+"You can use your mouse and click on a particular row in the game area to "
+"drop your marble into that row. If you want to use the keyboard instead, the "
+"default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
-"Du kan bruge din mus og klikke på en bestemt firkant i spilområdet for at "
-"placere din kugle i den firkant. Hvis du ønsker at bruge tastaturet i "
-"stedet for, så er standardtasterne for <app>Fire på stribe</app>:"
+"Du kan bruge din mus og klikke på en bestemt række i spilområdet for at "
+"slippe din kugle i rækken. Hvis du vil bruge tastaturet i stedet, så "
+"er standardtasterne til <app>Fire på stribe</app>:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:30
+#: C/controls-default.page:31
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key> for at flytte kuglen mod venstre."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:33
+#: C/controls-default.page:34
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key> for at flytte kuglen mod højre."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:36
+#: C/controls-default.page:37
 msgid "<key>↓</key> to drop the marble."
-msgstr "<key>↓</key> for at placere kuglen."
+msgstr "<key>↓</key> for at slippe kuglen."
 
 #. (itstool) path: info/desc
 #: C/index.page:16
@@ -339,139 +364,165 @@ msgid ""
 "is to stack four of your marbles in a horizontal, vertical or diagonal line "
 "while stopping your opponent from doing the same with their marbles."
 msgstr ""
-"<app>Fire på stribe</app> er et strategispil til GNOME. Formålet med spillet "
-"er at placere fire af dine kugler på en vandret, lodret eller diagonal "
-"linje, mens du samtidig forhindrer din modstander i at gøre det samme med "
-"sine kugler."
+"<app>Fire på stribe</app> er et strategispil til GNOME. Spillets mål er at "
+"placere fire af dine kugler på en vandret, lodret eller diagonal "
+"linje, mens du forhindrer din modstander i at gøre det samme med sine "
+"kugler."
 
 #. (itstool) path: section/title
 #: C/index.page:27
 msgid "Game play"
-msgstr "Selve spillet"
+msgstr "Gameplay"
 
 #. (itstool) path: section/title
 #: C/index.page:31
 msgid "Preferences"
-msgstr "Præferencer"
+msgstr "Indstillinger"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr ""
+"Creative Commons Kreditering-Deling på samme vilkår 3.0 Ikke porteret-licens"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Værket er licenseret under en <_:link-1/>."
 
 #. (itstool) path: info/desc
-#: C/make-easy.page:17
+#: C/make-easy.page:19
 msgid "Use hints or undo your wrong moves."
-msgstr "Brug tip eller fortryd dine forkerte træk."
+msgstr "Brug tips eller fortryd dine forkerte træk."
 
 #. (itstool) path: page/title
-#: C/make-easy.page:20
+#: C/make-easy.page:22
 msgid "Make your game a little easier"
 msgstr "Gør spillet lidt nemmere"
 
 #. (itstool) path: section/title
-#: C/make-easy.page:23
+#: C/make-easy.page:25
 msgid "Change your last move"
 msgstr "Fortryd dit sidste træk"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:25
+#: C/make-easy.page:27
+#| msgid ""
+#| "When the computer makes a winning move because of your last move or when "
+#| "you accidentally make the wrong move, you can undo your last move and "
+#| "change it. To undo your last move, select <guiseq><gui style=\"menu"
+#| "\">Game</gui> <gui style=\"menuitem\">Undo Move</gui></guiseq> or press "
+#| "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your "
+#| "marble at a different square in the game area to change your move."
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
-"To undo your last move, select <guiseq><gui style=\"menu\">Game</gui> <gui "
-"style=\"menuitem\">Undo Move</gui></guiseq> or press <keyseq><key>Ctrl</"
-"key><key>Z</key></keyseq>. You can now drop your marble at a different "
-"square in the game area to change your move."
+"To undo your last move, press the <gui style=\"button\">Undo your most "
+"recent move</gui> button in the header bar or press <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. You can now drop your marble at a different row "
+"in the game area to change your move."
 msgstr ""
-"Når computeren foretager et sejrstræk på grundlag af dit sidste træk, eller "
-"når du ved en fejl foretager et forkert træk, så kan du fortryde dit "
-"sidste træk og ændre det. For at fortryde det sidste træk vælges "
-"<guiseq><gui style=\"menu\">Spil</gui> <gui style=\"menuitem\">"
-"Fortryd træk</gui></guiseq> eller tryk på <keyseq><key>Ctrl</"
-"key><key>Z</key></keyseq>. Du kan nu placere en kugle på en anden "
-"firkant i spilområdet for at ændre dit træk."
+"Når computeren foretager et sejrstræk på grundlag af dit sidste træk, "
+"eller når du ved en fejl foretager et forkert træk, så kan du fortryde dit "
+"sidste træk og ændre det. For at fortryde dit sidste træk trykkes på <gui "
+"style=\"button\">Fortryd dit seneste træk</gui> eller tryk på "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Du kan nu slippe din "
+"kugle i en anden række i spilområdet for at ændre dit træk."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:33
+#: C/make-easy.page:35
 msgid ""
 "You can undo all your moves starting from your current move until you reach "
 "a favourable state of the game, or until the beginning of your current game, "
 "by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
 msgstr ""
-"Du kan fortryde alle dine træk startende fra dit nuværende træk, indtil du "
-"når et gunstigt sted i spillet eller indtil begyndelsen af det nuværende "
-"spil, ved at trykke på <keyseq><key>Ctrl</key><key>Z</key></keyseq> "
-"gentagende gange."
+"Du kan fortryde alle dine træk startende fra dit nuværende træk, "
+"indtil du når et godt sted i spillet eller indtil begyndelsen af "
+"dit nuværende spil, ved gentagende gange at trykke på "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>."
 
 #. (itstool) path: section/title
-#: C/make-easy.page:41
+#: C/make-easy.page:43
 msgid "Use hints"
-msgstr "Brug tip"
+msgstr "Brug tips"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:43
+#: C/make-easy.page:45
+#| msgid ""
+#| "If you are not sure of your next move, you can use a hint. When you use a "
+#| "hint, your marble moves to the top of the column that is the best choice, "
+#| "strategy-wise, and blinks. You can then drop your marble into that "
+#| "column. To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui "
+#| "style=\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</"
+#| "key><key>H</key></keyseq>."
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
-"To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui style="
-"\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</key><key>H</"
-"key></keyseq>."
+"To use a hint, press <gui style=\"button\">Hint</gui> or <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
 msgstr ""
-"Hvis du ikke er sikker på dit næste træk, så kan du bruge tip. Når du "
-"bruger et tip, så bevæger din kugle sig til toppen af kolonnen, som "
-"strategisk set er det bedste valg, og blinker. Du kan så placere din "
-"kugle i den kolonne. For at bruge tip vælges "
-"<guiseq><gui style=\"menu\">Spil</gui> <gui style="
-"\"menuitem\">Tip</gui></guiseq> eller tryk på <keyseq><key>Ctrl"
-"</key><key>H</key></keyseq>."
+"Hvis du er i tvivl om dit næste træk, så kan du bruge et tip. Når "
+"du bruger et tip, så flyttes din kugle til toppen af den kolonne, som "
+"strategisk set er det bedste valg, og blinker. Du kan så slippe din "
+"kugle i den kolonne. For at bruge et tip trykkes der på <gui "
+"style=\"button\">Tip</gui> eller <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:51
 msgid "There is no limit on the number of hints you can use in a game."
-msgstr "Der er ingen begrænsning på antallet af tip, du kan bruge i et spil."
+msgstr "Der er ingen grænse på antallet af tips, du kan bruge i et spil."
 
 #. (itstool) path: credit/name
-#: C/scores.page:17
+#: C/scores.page:20
 msgid "Anna Philips"
 msgstr "Anna Philips"
 
 #. (itstool) path: info/desc
-#: C/scores.page:21
+#: C/scores.page:24
 msgid "Keep track of your wins and losses."
-msgstr "Hold styr på dine sejre og nederlag."
+msgstr "Hold styr på hvor mange gange du har vundet og tabt."
 
 #. (itstool) path: page/title
-#: C/scores.page:24
+#: C/scores.page:27
 msgid "Scores"
 msgstr "Resultater"
 
 #. (itstool) path: page/p
-#: C/scores.page:25
+#: C/scores.page:28
+#| msgid ""
+#| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
+#| "your opponent's wins and games that ended in a draw. To check the scores, "
+#| "select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+#| "\">Scores</gui></guiseq>. In the default theme:"
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
-"select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-"\">Scores</gui></guiseq>. In the default theme:"
+"press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
-"Resultater i <app>Fire på stribe</app> registreres i form af sejre, din "
-"modstanders sejre og spil som endte uafgjort. For at se resultater "
-"vælges <guiseq><gui style=\"menu\">Spil</gui> <gui style=\"menuitem"
-"\">Resultater</gui></guiseq>. I standardtemaet:"
-
-#. (itstool) path: item/p
-#: C/scores.page:32
-msgid "<gui>Red</gui> displays the number of games you have won."
-msgstr "<gui>Rød</gui> viser antallet af spil du har vundet."
+"Resultatet i <app>Fire på stribe</app> gemmes i form af dine sejre, din "
+"modstanders sejre og spil som endte uafgjort. Tjek resultaterne "
+"ved at trykke på menuknappen i øverste højre hjørne af vinduet og vælg <gui "
+"style=\"menuitem\">Resultater</gui>. I standardtemaet:"
 
 #. (itstool) path: item/p
 #: C/scores.page:35
-msgid "<gui>Green</gui> displays the number of games won by the opponent."
-msgstr "<gui>Grøn</gui> viser antallet af spil vundet af modstanderen."
+msgid "<gui>Red</gui> displays the number of games you have won."
+msgstr "<gui>Rød</gui> viser antallet af spil som du har vundet."
 
 #. (itstool) path: item/p
 #: C/scores.page:38
+msgid "<gui>Green</gui> displays the number of games won by the opponent."
+msgstr "<gui>Grøn</gui> viser antallet af spil som modstanderen har vundet."
+
+#. (itstool) path: item/p
+#: C/scores.page:41
 msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
 msgstr "<gui>Uafgjort</gui> viser antallet af spil som endte uafgjort."
 
 #. (itstool) path: note/p
-#: C/scores.page:43
+#: C/scores.page:46
 msgid ""
 "The labels to represent players shown in <app>Scores</app> change based on "
 "opponent and theme selected. If you have selected the varying levels of "
@@ -480,82 +531,44 @@ msgid ""
 "represent you and the person will be the color of the marbles in the "
 "currently set theme."
 msgstr ""
-"Etiketterne til at repræsentere spillere vist i <app>Resultater</app> "
-"ændrer sig baseret på modstander og valgt tema. Hvis du har valgt "
-"varierende niveauer for computeren og din modstander, så vil du se "
-"etiketterne <gui>Dig</gui> og <gui>Mig</gui>. Hvis du spiller mod "
-"en anden person, så vil etiketterne til at repræsentere dig og personen "
-"være farven for kuglerne i det nuværende sættema."
+"De etiketter som repræsentere spillere der vises i <app>Resultater</app> "
+"ændres baseret på modstander og valg af tema. Hvis du har valgt de "
+"forskellige computerniveauer som din modstander, så vil du se "
+"etiketterne <gui>Dig</gui> og <gui>Mig</gui>. Hvis du spiller mod en anden "
+"person, så vil etiketterne som repræsentere dig og personen være "
+"farven på kuglerne i det valgte tema."
 
 #. (itstool) path: info/desc
-#: C/sound-animation.page:21
-msgid "Play <app>Four-in-a-row</app> without sounds or animation."
-msgstr "Spil <app>Fire på stribe</app> uden lyd eller animation."
+#: C/sound-animation.page:23
+#| msgid "Play <app>Four-in-a-row</app> without sounds or animation."
+msgid "Play <app>Four-in-a-row</app> without sounds."
+msgstr "Spil <app>Fire på stribe</app> uden lyde."
 
 #. (itstool) path: page/title
-#: C/sound-animation.page:24
-msgid "Disable sounds or animation"
-msgstr "Deaktiver lyde eller animation"
+#: C/sound-animation.page:26
+#| msgid "To disable sounds:"
+msgid "Disable sounds"
+msgstr "Deaktivér lyde"
 
-#. (itstool) path: section/title
-#: C/sound-animation.page:27
-msgid "Sounds"
-msgstr "Lyde"
-
-#. (itstool) path: section/p
-#: C/sound-animation.page:29
+#. (itstool) path: page/p
+#: C/sound-animation.page:28
 msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
 msgstr ""
 "Når lyde er aktiveret, så vil du høre en lyd hver gang en kugle "
-"placeres, eller når spillet slutter."
+"slippes, eller når et spil slutter."
 
 #. (itstool) path: steps/title
-#: C/sound-animation.page:33
+#: C/sound-animation.page:32
 msgid "To disable sounds:"
-msgstr "For at deaktivere lyde:"
+msgstr "Sådan deaktiveres lyde:"
 
 #. (itstool) path: item/p
-#: C/sound-animation.page:40
+#: C/sound-animation.page:39
 msgid ""
 "Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
 "option again to enable the feature."
 msgstr ""
-"Fjern afkrydsning for <gui style=\"checkbox\">Aktiver lyde</gui>. Du kan "
-"afkrydse indstillingen igen for at aktivere funktionen."
-
-#. (itstool) path: section/title
-#: C/sound-animation.page:47
-msgid "Animation"
-msgstr "Animation"
-
-#. (itstool) path: section/p
-#: C/sound-animation.page:49
-msgid "Animation results in a more fluid movement of the marbles."
-msgstr "Animation giver en mere flydende bevægelse af kuglerne."
-
-#. (itstool) path: steps/title
-#: C/sound-animation.page:52
-msgid "To disable animation:"
-msgstr "For at deaktivere animation:"
-
-#. (itstool) path: item/p
-#: C/sound-animation.page:59
-msgid ""
-"Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
-"option again to enable the feature."
-msgstr ""
-"Fjern afkrydsning for <gui style=\"checkbox\">Aktiver animation</gui>. Du kan "
-"kontrollere indstillingen igen for at aktivere funktionen."
-
-#. (itstool) path: p/link
-#: C/legal.xml:4
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Dette arbejde er licenseret under en <_:link-1/>."
-
+"Fravælg <gui style=\"checkbox\">Aktivér lyde</gui>. Du kan tilvælge "
+"indstillingen igen for at aktivere funktionen."
