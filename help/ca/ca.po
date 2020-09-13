@@ -149,7 +149,7 @@ msgstr "Per canviar el nivell, o per jugar amb un amic:"
 msgid ""
 "Press the <gui style=\"button\">New Game</gui> button in the header bar."
 msgstr ""
-"Premeu el botó <gui style=\"button\">Preferències</gui> de la barra de "
+"Premeu el botó <gui style=\"button\">Partida nova</gui> de la barra de "
 "capçalera."
 
 #. (itstool) path: item/p
@@ -158,7 +158,7 @@ msgid ""
 "Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
 "players if want to play with a friend or family member."
 msgstr ""
-"A <gui>Oponent:</gui>, trieu <gui style=\"button\">Humà</gui> si voleu jugar "
+"A <gui>Jugadors</gui>, trieu <gui style=\"button\">Humà</gui> si voleu jugar "
 "amb un amic o un familiar."
 
 #. (itstool) path: item/p
@@ -358,7 +358,7 @@ msgstr "Feu un seguiment de les vostres victòries i derrotes."
 #. (itstool) path: page/title
 #: C/scores.page:28
 msgid "Scores"
-msgstr "Marcadors"
+msgstr "Puntuacions"
 
 #. (itstool) path: page/p
 #: C/scores.page:29
