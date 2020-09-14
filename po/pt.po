@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
 "POT-Creation-Date: 2020-09-14 01:18+0000\n"
-"PO-Revision-Date: 2020-09-13 22:52-0300\n"
+"PO-Revision-Date: 2020-09-14 00:24-0300\n"
 "Last-Translator: Juliano de Souza Camargo <julianosc@protonmail.com>\n"
 "Language-Team: Portuguese <>\n"
 "Language: pt\n"
@@ -73,12 +73,12 @@ msgstr "_Fácil"
 #. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:191
 msgid "_Medium"
-msgstr "Mé_Dio"
+msgstr "Méd_io"
 
 #. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:203
 msgid "_Hard"
-msgstr "_Difícil"
+msgstr "Difíc_il"
 
 #. Translators: when configuring a new game, header of the row for choosing whether to start or not
 #: data/ui/fiar-screens.ui:227
@@ -128,7 +128,7 @@ msgstr "Ver uma dica"
 #: data/ui/help-overlay.ui:60
 msgctxt "shortcut window"
 msgid "Toggle game menu"
-msgstr "Alternar menu de jogo"
+msgstr "Abrir menu de jogo"
 
 #. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
 #: data/ui/help-overlay.ui:70
@@ -140,7 +140,7 @@ msgstr "Jogar com o teclado"
 #: data/ui/help-overlay.ui:75
 msgctxt "shortcut window"
 msgid "Select where to play"
-msgstr "Selecione onde jogar"
+msgstr "Selecionar onde jogar"
 
 #. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
 #: data/ui/help-overlay.ui:83
@@ -178,13 +178,13 @@ msgstr "Recuar"
 #: data/ui/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Generic"
-msgstr "Genérico"
+msgstr "Geral"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:129
 msgctxt "shortcut window"
 msgid "Toggle main menu"
-msgstr "Alternar menu principal"
+msgstr "Abrir menu principal"
 
 #. Translators: in the Keyboard Shortcuts window, section "Generic"
 #: data/ui/help-overlay.ui:137
@@ -248,7 +248,7 @@ msgstr ""
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
-msgstr "O Projeto GNOME"
+msgstr "Projeto GNOME"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Four-in-a-row.desktop.in:8
@@ -304,7 +304,7 @@ msgstr "Som"
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
 #: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
-msgstr "Se reproduzir ou não sons de eventos."
+msgstr "Se deve reproduzir sons de eventos."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
 #: data/org.gnome.Four-in-a-row.gschema.xml:48
@@ -451,7 +451,7 @@ msgstr "_Som"
 #. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:277
 msgid "_Keyboard Shortcuts"
-msgstr "Atalhos de _Teclado"
+msgstr "Atalhos de _teclado"
 
 #. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:281
@@ -461,7 +461,7 @@ msgstr "A_juda"
 #. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:285
 msgid "_About Four-in-a-row"
-msgstr "Sobre o Quatro-em-linha"
+msgstr "_Sobre o Quatro-em-linha"
 
 #. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
 #: src/four-in-a-row.vala:567
@@ -534,7 +534,7 @@ msgstr "Anatol Drlicek"
 #. Translators: in the About dialog, indication about some themes origin
 #: src/four-in-a-row.vala:1151
 msgid "Based on the Faenza icon theme by Matthieu James"
-msgstr "Inspirado no tema de ícones Faenza por Matthieu James"
+msgstr "Inspirado no tema de ícones Faenza de Matthieu James"
 
 #. Translators: in the About dialog, name of a documenter
 #: src/four-in-a-row.vala:1155
