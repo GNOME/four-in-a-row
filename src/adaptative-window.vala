@@ -164,13 +164,13 @@ private abstract class AdaptativeWindow : ApplicationWindow
         update_window_state ();
     }
 
-    [GtkCallback]
-    private void on_destroy ()
-    {
-        before_destroy ();
-        save_window_state ();
-        base.destroy ();
-    }
+//    [GtkCallback]
+//    private void on_destroy ()
+//    {
+//        before_destroy ();
+//        save_window_state ();
+//        base.destroy ();
+//    }
 
     protected virtual void before_destroy () {}
 
