@@ -47,7 +47,7 @@ private class HistoryButton : ToggleButton, AdaptativeWidget
         BinLayout layout = new BinLayout ();
         set_layout_manager (layout);
 
-        drawing.size_allocate.connect (configure_drawing);
+        drawing.map.connect (init_state_watcher);
         drawing.set_draw_func (update_drawing);
         theme_manager.theme_changed.connect (() => {
                 if (!drawing_configured)
@@ -89,10 +89,18 @@ private class HistoryButton : ToggleButton, AdaptativeWidget
 
     private Gdk.Pixbuf tileset_pixbuf;
 
-    private inline void configure_drawing ()
+    private Gdk.Toplevel surface;
+    private inline void init_state_watcher ()
     {
-        int height          = drawing.get_allocated_height ();
-        int width           = drawing.get_allocated_width ();
+        Gdk.Surface? nullable_surface = ((Gtk.Native) drawing).get_surface ();
+        if (nullable_surface == null || !((!) nullable_surface is Gdk.Toplevel))
+            assert_not_reached ();
+        surface = (Gdk.Toplevel) (!) nullable_surface;
+        surface.size_changed.connect (on_size_changed);
+    }
+
+    private inline void on_size_changed (Gdk.Surface _surface, int width, int height)
+    {
         int new_height      = (int) double.min (height, width / 2.0);
 
         bool refresh_pixbuf = drawing_height != new_height;

@@ -110,12 +110,22 @@ private class GameActionBarPlaceHolder : Widget, AdaptativeWidget
     internal GameActionBarPlaceHolder (GameActionBar _actionbar)
     {
         actionbar = _actionbar;
-        actionbar.size_allocate.connect (set_height);
-        set_height ();
+        actionbar.map.connect (init_state_watcher);
+     // set_height ();
         revealer.set_reveal_child (true);    // seems like setting it in the UI file does not work, while it is OK for GameActionBar...
     }
 
-    private void set_height ()
+    private Gdk.Toplevel surface;
+    private inline void init_state_watcher ()
+    {
+        Gdk.Surface? nullable_surface = ((Gtk.Native) actionbar).get_surface ();
+        if (nullable_surface == null || !((!) nullable_surface is Gdk.Toplevel))
+            assert_not_reached ();
+        surface = (Gdk.Toplevel) (!) nullable_surface;
+        surface.size_changed.connect (on_size_changed);
+    }
+
+    private inline void on_size_changed (Gdk.Surface _surface, int width, int height)
     {
         Requisition natural_size;
         Widget? widget = actionbar.get_first_child ();

@@ -43,7 +43,7 @@ private class GameBoardView : Gtk.DrawingArea
 
         init_mouse ();
         set_draw_func (draw);
-        size_allocate.connect (on_size_allocate);
+        map.connect (init_state_watcher);
     }
 
     protected override bool focus (Gtk.DirectionType direction)
@@ -84,15 +84,23 @@ private class GameBoardView : Gtk.DrawingArea
 //                                     tile_size);
     }
 
-    private inline void on_size_allocate ()
+    private Gdk.Toplevel surface;
+    private inline void init_state_watcher ()
     {
-        int allocated_width  = get_allocated_width ();
-        int allocated_height = get_allocated_height ();
-        int size = int.min (allocated_width, allocated_height);
+        Gdk.Surface? nullable_surface = ((Gtk.Native) this).get_surface ();
+        if (nullable_surface == null || !((!) nullable_surface is Gdk.Toplevel))
+            assert_not_reached ();
+        surface = (Gdk.Toplevel) (!) nullable_surface;
+        surface.size_changed.connect (on_size_changed);
+    }
+
+    private inline void on_size_changed (Gdk.Surface _surface, int width, int height)
+    {
+        int size = int.min (width, height);
         tile_size = size / game_board.size;
         board_size = tile_size * game_board.size;
-        board_x = (allocated_width  - board_size) / 2;
-        board_y = (allocated_height - board_size) / 2;
+        board_x = (width  - board_size) / 2;
+        board_y = (height - board_size) / 2;
 
         offset [Tile.PLAYER1]        = 0;
         offset [Tile.PLAYER2]        = tile_size;
