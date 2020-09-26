@@ -327,15 +327,15 @@ private class FourInARow : Gtk.Application
         add_action (settings.create_action ("first-player"));
         add_action (settings.create_action ("opponent"));
 
-        set_accels_for_action ("ui.new-game",           {        "<Primary>n"       });
-        set_accels_for_action ("ui.start-game",         { "<Shift><Primary>n"       });
-        set_accels_for_action ("app.quit",              {        "<Primary>q"       });
-        set_accels_for_action ("ui.hint",               {        "<Primary>h"       });
-        set_accels_for_action ("ui.undo",               {        "<Primary>z"       });
-     // set_accels_for_action ("ui.redo",               { "<Shift><Primary>z"       });
+        set_accels_for_action ("ui.new-game",           {        "<Control>n"       });
+        set_accels_for_action ("ui.start-game",         { "<Shift><Control>n"       });
+        set_accels_for_action ("app.quit",              {        "<Control>q"       });
+        set_accels_for_action ("ui.hint",               {        "<Control>h"       });
+        set_accels_for_action ("ui.undo",               {        "<Control>z"       });
+     // set_accels_for_action ("ui.redo",               { "<Shift><Control>z"       });
         set_accels_for_action ("ui.back",               {                 "Escape"  });
         set_accels_for_action ("ui.toggle-hamburger",   {                 "F10"     });
-     // set_accels_for_action ("app.toggle-game-menu",  {        "<Primary>F10"     });
+     // set_accels_for_action ("app.toggle-game-menu",  {        "<Control>F10"     });
      // set_accels_for_action ("app.help",              {                 "F1"      });
      // set_accels_for_action ("app.about",             {          "<Shift>F1"      });
 
@@ -1030,7 +1030,7 @@ private class FourInARow : Gtk.Application
     {
         string name = (!) (Gdk.keyval_name (keyval) ?? "");
 
-        if (name == "F1") // TODO fix dance done with the F1 & <Primary>F1 shortcuts that show help overlay
+        if (name == "F1") // TODO fix dance done with the F1 & <Control>F1 shortcuts that show help overlay
         {
             window.close_hamburger ();
             history_button_1.active = false;
