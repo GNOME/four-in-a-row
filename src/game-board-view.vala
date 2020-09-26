@@ -43,7 +43,6 @@ private class GameBoardView : Gtk.DrawingArea
 
         init_mouse ();
         set_draw_func (draw);
-        map.connect (init_state_watcher);
     }
 
     protected override bool focus (Gtk.DirectionType direction)
@@ -84,17 +83,7 @@ private class GameBoardView : Gtk.DrawingArea
 //                                     tile_size);
     }
 
-    private Gdk.Toplevel surface;
-    private inline void init_state_watcher ()
-    {
-        Gdk.Surface? nullable_surface = ((Gtk.Native) this).get_surface ();
-        if (nullable_surface == null || !((!) nullable_surface is Gdk.Toplevel))
-            assert_not_reached ();
-        surface = (Gdk.Toplevel) (!) nullable_surface;
-        surface.size_changed.connect (on_size_changed);
-    }
-
-    private inline void on_size_changed (Gdk.Surface _surface, int width, int height)
+    private inline void configure_view (int width, int height)
     {
         int size = int.min (width, height);
         tile_size = size / game_board.size;
@@ -118,6 +107,8 @@ private class GameBoardView : Gtk.DrawingArea
 
     private inline void draw (Gtk.DrawingArea _this, Cairo.Context cr, int new_width, int new_height)
     {
+        configure_view (new_width, new_height);
+
         /* background */
         cr.save ();
         cr.translate (board_x, board_y);
