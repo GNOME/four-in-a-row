@@ -29,14 +29,14 @@ appdata_file = i18n.merge_file(
 )
 
 # Validate AppData file
-if appstream_util.found()
-  test(
-    'validate-appdata', appstream_util,
-    args: [
-      'validate', '--nonet', appdata_file.full_path()
-    ]
-  )
-endif
+#if appstream_util.found()
+#  test(
+#    'validate-appdata', appstream_util,
+#    args: [
+#      'validate', '--nonet', appdata_file.full_path()
+#    ]
+#  )
+#endif
 
 # Install man page
 install_man('@0@.6'.format(meson.project_name()))
