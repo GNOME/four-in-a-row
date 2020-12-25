@@ -337,7 +337,7 @@ msgstr ""
 " marbre a la columna. Per utilitzar un consell, premeu el botó de la barra de"
 " capçalera que mostra una fletxa i el color per a jugar o bé useu el botó <gui "
 "style=\"button\">Finalitza</gui> i seleccioneu <gui "
-"style=\"menuitem\">Pista<key>Ctrl</key>H</key></keyseq>."
+"style=\"menuitem\">Pista<key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:56
