@@ -261,7 +261,7 @@ msgstr "Quatre en ratlla"
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:8
 #: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "Per guanyar feu línies del mateix color"
+msgstr "Per a guanyar feu línies del mateix color"
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
@@ -278,11 +278,11 @@ msgstr ""
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:16
 msgid ""
-"Four-in-a-row features multiple difficulty levels. If you’re having trouble,"
-" you can always ask for a hint."
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
+"you can always ask for a hint."
 msgstr ""
-"El Quatre en ratlla té múltiples nivells de dificultat. Si no sabeu on tirar"
-" la bola, sempre podeu demanar una pista."
+"El Quatre en ratlla té múltiples nivells de dificultat. Si no sabeu on tirar "
+"la bola, sempre podeu demanar una pista."
 
 #: data/org.gnome.Four-in-a-row.appdata.xml.in:37
 msgid "The GNOME Project"
@@ -364,7 +364,7 @@ msgstr "Mou a l'esquerra"
 #. /org/gnome/Four-in-a-row/key-left'
 #: data/org.gnome.Four-in-a-row.gschema.xml:50
 msgid "Key press to move left."
-msgstr "Tecla per moure a l'esquerra."
+msgstr "Tecla per a moure a l'esquerra."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-
 #. in-a-row/key-right'
@@ -376,7 +376,7 @@ msgstr "Mou a la dreta"
 #. /org/gnome/Four-in-a-row/key-right'
 #: data/org.gnome.Four-in-a-row.gschema.xml:57
 msgid "Key press to move right."
-msgstr "Tecla per moure a la dreta."
+msgstr "Tecla per a moure a la dreta."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-
 #. in-a-row/key-drop'
@@ -388,7 +388,7 @@ msgstr "Deixa caure una bola"
 #. /org/gnome/Four-in-a-row/key-drop'
 #: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
-msgstr "Tecla per deixar caure una bola."
+msgstr "Tecla per a deixar caure una bola."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-
 #. in-a-row/window-width'
@@ -418,7 +418,7 @@ msgstr "L'alçada de la finestra principal en píxels."
 #. in-a-row/window-is-maximized'
 #: data/org.gnome.Four-in-a-row.gschema.xml:86
 msgid "A flag to enable maximized mode"
-msgstr "Un senyalador per habilitar el mode a pantalla completa"
+msgstr "Un senyalador per a habilitar el mode a pantalla completa"
 
 #. Translators: description of a settings key, see 'dconf-editor
 #. /org/gnome/Four-in-a-row/window-is-maximized'
@@ -496,16 +496,15 @@ msgstr "Les línies han de ser com a mínim de 3 fitxes."
 #. length request; try 'four-in-a-row -t 8'
 #: src/four-in-a-row.vala:186
 msgid "Lines cannot be longer than board height or width."
-msgstr ""
-"Les línies no poden ser més grans que l'alçada o l'amplada del tauler."
+msgstr "Les línies no poden ser més grans que l'alçada o l'amplada del tauler."
 
 #. Translators: command-line error message, displayed for an incorrect level
 #. request; try 'four-in-a-row -l 5'
 #: src/four-in-a-row.vala:229
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
-"El nivell ha de ser 1 (fàcil), 2 (mitjà) o 3 (difícil). No s'han canviat els"
-" paràmetres."
+"El nivell ha de ser 1 (fàcil), 2 (mitjà) o 3 (difícil). No s'han canviat els "
+"paràmetres."
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic
 #. that appears pressing Alt)
@@ -647,7 +646,7 @@ msgstr "Copyright © %u-%u – Arnaud Bonatti"
 #. Translators: about dialog text, introducing the game
 #: src/four-in-a-row.vala:1179
 msgid "Connect four in a row to win"
-msgstr "Connecteu quatre boles en línia per guanyar"
+msgstr "Connecteu quatre boles en línia per a guanyar"
 
 #. Translators: about dialog text; this string should be replaced by a text
 #. crediting yourselves and your translation team, or should be left empty. Do
