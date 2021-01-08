@@ -34,7 +34,7 @@ msgstr "Aruna Sankaranarayanan"
 #. (itstool) path: info/desc
 #: C/appearance.page:18
 msgid "Use different themes to improve your gaming experience."
-msgstr "Utilitzeu diferents temes per millorar la vostra experiència de joc."
+msgstr "Utilitzeu diferents temes per a millorar la vostra experiència de joc."
 
 #. (itstool) path: page/title
 #: C/appearance.page:21
@@ -229,7 +229,7 @@ msgstr "<key>→</key> per a moure una bala cap a la dreta."
 #. (itstool) path: item/p
 #: C/controls-default.page:35
 msgid "<key>↓</key> to drop the marble."
-msgstr "<key>↓</key> per arrossegar una bala."
+msgstr "<key>↓</key> per a arrossegar una bala."
 
 #. (itstool) path: info/desc
 #: C/index.page:16
@@ -324,7 +324,6 @@ msgstr "Utilitza suggeriments"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:47
-#, fuzzy
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
@@ -339,8 +338,8 @@ msgstr ""
 "que és la millor opció en termes d'estratègia i parpelleiga. Podeu deixar el "
 "marbre a la columna. Per a utilitzar un consell, premeu el botó de la barra "
 "de capçalera que mostra una fletxa i el color per a jugar o bé useu el botó "
-"<gui style=\"button\">Finalitza</gui> i seleccioneu <gui style=\"menuitem"
-"\">Pista<key>Ctrl</key><key>H</key></keyseq>."
+"<gui style=\"button\">Finalitza</gui>, o premeu <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:56
@@ -437,7 +436,7 @@ msgstr ""
 #. (itstool) path: steps/title
 #: C/sound-animation.page:33
 msgid "To disable sounds:"
-msgstr "Per desactivar el so:"
+msgstr "Per a desactivar el so:"
 
 #. (itstool) path: item/p
 #: C/sound-animation.page:35
