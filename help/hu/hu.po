@@ -1,22 +1,22 @@
 # Hungarian translation for four-in-a-row-help.
-# Copyright (C) 2013, 2014, 2018, 2019 Free Software Foundation, Inc.
+# Copyright (C) 2013, 2014, 2018, 2019, 2021 Free Software Foundation, Inc.
 # This file is distributed under the same license as the four-in-a-row help.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2013, 2014, 2019.
-# Balázs Úr <urbalazs at gmail dot com>, 2014, 2018, 2019.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2014, 2018, 2019, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
-"POT-Creation-Date: 2019-03-03 11:55+0000\n"
-"PO-Revision-Date: 2019-03-10 20:05+0100\n"
-"Last-Translator: Gabor Kelemen <kelemeng at ubuntu dot com>\n"
+"POT-Creation-Date: 2020-05-30 09:49+0000\n"
+"PO-Revision-Date: 2021-02-20 00:42+0100\n"
+"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -24,24 +24,24 @@ msgid "translator-credits"
 msgstr "Kelemen Gábor <kelemeng at gnome dot hu>, 2013."
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:15 C/choose-opponent.page:15
-#: C/controls-change.page:17 C/controls-default.page:16 C/index.page:12
-#: C/make-easy.page:15 C/scores.page:15 C/sound-animation.page:15
+#: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
+#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: info/desc
-#: C/appearance.page:17
+#: C/appearance.page:18
 msgid "Use different themes to improve your gaming experience."
 msgstr "Különböző témákkal javítható a játékélmény."
 
 #. (itstool) path: page/title
-#: C/appearance.page:20
+#: C/appearance.page:21
 msgid "Change the appearance of your gaming area"
 msgstr "A játékterület megjelenésének módosítása"
 
 #. (itstool) path: page/p
-#: C/appearance.page:22
+#: C/appearance.page:23
 msgid ""
 "By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
 "a black grid when you start a new game."
@@ -50,39 +50,39 @@ msgstr ""
 "használ fekete háttéren amikor új játékot indít."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:26
+#: C/appearance.page:27
 msgid "To use a different theme:"
 msgstr "Másik téma használata:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28
+#: C/appearance.page:29
 #| msgid ""
-#| "Open the application menu in the top bar and select <guiseq><gui style="
-#| "\"menu\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+#| "Press the menu button in the top-right corner of the window and select "
+#| "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
+#| "\">Game</gui></guiseq>."
 msgid ""
-"Press the menu button in the top-right corner of the window and select "
-"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem\">Game</"
-"gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Appearance</gui>."
 msgstr ""
-"Nyomja meg a menü gombot az ablak jobb felső sarkában, és válassza a <guiseq"
-"><gui "
-"style=\"menu\">Beállítások</gui> <gui style=\"menuitem\">Játék</gui></guiseq> "
-"menüpontot."
+"Nyomja meg az ablak jobb felső sarkában lévő menügombot, és válassza a <gui"
+" style=\"menuitem\">Megjelenés</gui> menüpontot."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
 #| msgid ""
-#| "Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
-#| "down menu to the right of <gui style=\"group\">Theme</gui>. The change "
-#| "will be reflected immediately in the game window."
+#| "Pick the theme of your choice from the drop down menu to the right of "
+#| "<gui style=\"group\">Theme</gui>. The change will be reflected "
+#| "immediately in the game window."
 msgid ""
-"Pick the theme of your choice from the drop down menu to the right of <gui "
-"style=\"group\">Theme</gui>. The change will be reflected immediately in the "
-"game window."
+"Select the theme of your choice. The change will be reflected immediately in "
+"the game window."
 msgstr ""
-"Válassza ki a kívánt témát a <gui style=\"group\">Téma</gui> melletti"
-" legördülő menüből. A változtatás azonnal életbe lép a "
-"játékablakban."
+"Válassza ki a kívánt témát. A változtatás azonnal életbe lép a játékablakban."
+
+#. (itstool) path: item/p
+#: C/appearance.page:37 C/sound-animation.page:39
+msgid "Close the menu by clicking outside of the menu."
+msgstr "Zárja be a menüt a menün kívülre kattintással."
 
 #. (itstool) path: info/desc
 #: C/basics.page:19
@@ -116,93 +116,95 @@ msgstr "Kilépés a <app>Négyet egy sorba</app> játékból"
 
 #. (itstool) path: section/p
 #: C/basics.page:37
-#| msgid ""
-#| "Open the application menu in the top bar and select <gui style=\"menuitem"
-#| "\">Quit</gui> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to "
-#| "quit <app>Four-in-a-row</app> at any time."
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-in-a-"
 "row</app> at any time."
 msgstr ""
-"Nyomja meg a <keyseq><key>Ctrl</key><key>Q</key></keyseq> kombinációt"
-" bármikor a <app>Négyet egy sorba</app> "
-"játékból való kilépéshez."
+"Nyomja meg a <keyseq><key>Ctrl</key><key>Q</key></keyseq> kombinációt "
+"bármikor a <app>Négyet egy sorba</app> játékból való kilépéshez."
 
 #. (itstool) path: credit/name
-#: C/choose-opponent.page:19 C/sound-animation.page:19
+#: C/choose-opponent.page:20 C/sound-animation.page:20
 msgid "Michael Hill"
 msgstr "Michael Hill"
 
 #. (itstool) path: info/desc
-#: C/choose-opponent.page:23
+#: C/choose-opponent.page:24
 msgid "Change the level at which the computer plays or play with a friend."
 msgstr ""
 "A számítógép erősségi szintjének módosítása vagy játék emberi ellenféllel"
 
 #. (itstool) path: page/title
-#: C/choose-opponent.page:27
+#: C/choose-opponent.page:28
 msgid "Choose a different opponent"
 msgstr "Másik ellenfél kiválasztása"
 
 #. (itstool) path: page/p
-#: C/choose-opponent.page:28
+#: C/choose-opponent.page:29
+#| msgid ""
+#| "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
+#| "playing at level one."
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
-"playing at level one."
+"playing at an easy level."
 msgstr ""
-"Alapesetben a <app>Négyet egy sorba</app> játékban az ellenfél a számítógép, "
-"az első nehézségi szinten."
+"Alapesetben a <app>Négyet egy sorba</app> játékban az ellenfél a számítógép,"
+" a könnyű nehézségi szinten."
 
 #. (itstool) path: steps/title
-#: C/choose-opponent.page:32
+#: C/choose-opponent.page:33
 msgid "To change the level, or to play with a friend:"
 msgstr "A szint módosítása vagy egy barátja elleni játék:"
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:34 C/sound-animation.page:34
-#| msgid ""
-#| "Open the application menu in the top bar and select <guiseq><gui style="
-#| "\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
-#| "guiseq>."
+#: C/choose-opponent.page:35
 msgid ""
-"Press the menu button in the top-right corner of the window and select "
-"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
-"\">Game</gui></guiseq>."
+"Press the <gui style=\"button\">New Game</gui> button in the header bar."
 msgstr ""
-"Nyomja meg a menü gombot az ablak jobb felső sarkában, és válassza a <guiseq"
-"><gui "
-"style=\"menuitem\">Beállítások</gui> <gui style=\"menuitem\">Játék</gui><"
-"/guiseq> "
-"menüpontot."
+"Nyomja meg az <gui style=\"button\">Új játék</gui> gombot a fejlécsávban."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:39
+#| msgid ""
+#| "Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> "
+#| "for both players if want to play with a friend or family member."
 msgid ""
-"Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> for "
-"both players if want to play with a friend or family member."
+"Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
+"players if want to play with a friend or family member."
 msgstr ""
-"Az <gui>Ellenfél</gui> alatt válassza mindkét játékos esetén az <gui style="
-"\"radiobutton\">Ember</gui> lehetőséget, ha egy barátjával vagy "
-"családtagjával szeretne játszani."
+"A <gui>Játékosok</gui> alatt válasszon <gui style=\"button\">Kettőt</gui>"
+" mindkét játékos esetén, ha egy barátjával vagy családtagjával szeretne"
+" játszani."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:41
+#| msgid ""
+#| "Alternatively, choose the level at which the computer plays. Choose "
+#| "between <gui style=\"radiobutton\">Level one</gui>, <gui style="
+#| "\"radiobutton\">Level two</gui> or <gui style=\"radiobutton\">Level "
+#| "three</gui>, where <gui style=\"radiobutton\">Level one</gui> is the "
+#| "easiest level and <gui style=\"radiobutton\">Level three</gui> is the "
+#| "most difficult level."
 msgid ""
-"Alternatively, choose the level at which the computer plays. Choose between "
-"<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
-"two</gui> or <gui style=\"radiobutton\">Level three</gui>, where <gui style="
-"\"radiobutton\">Level one</gui> is the easiest level and <gui style="
-"\"radiobutton\">Level three</gui> is the most difficult level."
+"Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
+"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
-"Ezen kívül kiválaszthatja azt a nehézségi szintet is, amelyen a számítógép "
-"játszik. Az <gui style=\"radiobutton\">Első szint</gui>, <gui style="
-"\"radiobutton\">Második szint</gui> vagy <gui style=\"radiobutton\">Harmadik "
-"szint</gui> között választhat, ahol az <gui style=\"radiobutton\">Első "
-"szint</gui> a legegyszerűbb és a <gui style=\"radiobutton\">Harmadik szint</"
-"gui> a legnehezebb."
+"Ezenkívül kiválaszthatja azt a <gui>Nehézségi</gui> szintet is, amelyen a"
+" számítógép játszik. Válasszon a <gui style=\"button\">Könnyű</gui>, <gui"
+" style=\"button\">Közepes</gui> vagy <gui style=\"button\">Nehéz</gui>"
+" szintek közül."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:45
+msgid ""
+"You can also choose if you play first or second under <gui>Game start</gui>."
+msgstr ""
+"Azt is kiválaszthatja a <gui>Játék indítása</gui> alatt, hogy elsőként vagy"
+" másodikként játszik."
 
 #. (itstool) path: note/p
-#: C/choose-opponent.page:49
+#: C/choose-opponent.page:48
 msgid ""
 "If you are playing with a friend or family member, Player One gets to play "
 "first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
@@ -214,80 +216,6 @@ msgstr ""
 "először az első <app>Négyet egy sorba</app> partiban. A következő partikban "
 "az első lépés joga felváltva illeti meg a két játékost. Így a második "
 "játékos kezd a második partiban, az első játékos a harmadikban és így tovább."
-
-#. (itstool) path: info/desc
-#: C/controls-change.page:21
-msgid "Set custom control keys."
-msgstr "Egyéni vezérlőbillentyűk beállítása."
-
-#. (itstool) path: page/title
-#: C/controls-change.page:24
-msgid "Change the default controls"
-msgstr "Az alapértelmezett vezérlés módosítása"
-
-#. (itstool) path: page/p
-#: C/controls-change.page:26
-msgid ""
-"To change the <link xref=\"controls-default\">default controls</link> in "
-"<app>Four-in-a-row</app>:"
-msgstr ""
-"Az <link xref=\"controls-default\">alapértelmezett vezérlés</link> "
-"módosítása a <app>Négyet egy sorba</app> játékban:"
-
-#. (itstool) path: item/p
-#: C/controls-change.page:31
-#| msgid ""
-#| "Open the application menu in the top bar and select <guiseq><gui style="
-#| "\"menu\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</"
-#| "gui></guiseq>."
-msgid ""
-"Press the menu button in the top-right corner of the window and select "
-"<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-"\">Keyboard Controls</gui></guiseq>."
-msgstr ""
-"Nyomja meg a menü gombot az ablak jobb felső sarkában, és válassza a <guiseq"
-"><gui "
-"style=\"menu\">Beállítások</gui> <gui style=\"menuitem\">Vezérlőbillentyűk</"
-"gui></guiseq> menüpontot."
-
-#. (itstool) path: item/p
-#: C/controls-change.page:36
-msgid ""
-"In the list, select the line you want to change, then click on the control. "
-"The line is highlighted and the label of the control changes to <gui>New "
-"accelerator…</gui>"
-msgstr ""
-"A listában válassza ki a megváltoztatni kívánt billentyű sorát, és "
-"kattintson az aktuális billentyű nevére. A sor kiemelésre kerül, és a "
-"billentyű neve helyén az <gui>Új gyorsbillentyű</gui> szöveg jelenik meg."
-
-#. (itstool) path: item/p
-#: C/controls-change.page:41
-msgid "Press the key you want to use instead of the default key."
-msgstr "Nyomja meg az alapértelmezett helyett használni kívánt billentyűt."
-
-#. (itstool) path: note/p
-#: C/controls-change.page:43
-#| msgid ""
-#| "To keep the old setting, click again or right click on <gui>New "
-#| "accelerator…</gui>, press <key>Esc</key> or click anywhere else inside "
-#| "the <gui>Keyboard Controls</gui> box."
-msgid ""
-"To keep the old setting, click again or right click on <gui>New accelerator…"
-"</gui>, press <key>Esc</key>."
-msgstr ""
-"A régi beállítás megtartásához kattintson újra vagy a jobb egérgombbal az "
-"<gui>Új gyorsbillentyű</gui> feliratra, és nyomja meg az <key>Esc</key> "
-"billentyűt."
-
-#. (itstool) path: note/p
-#: C/controls-change.page:50
-msgid ""
-"When you are playing with a friend or a family member, both players will use "
-"the same controls."
-msgstr ""
-"Amikor egy barátjával vagy családtagjával játszik, mindkét játékos "
-"ugyanazokat a vezérlőbillentyűket használja."
 
 #. (itstool) path: info/desc
 #: C/controls-default.page:20
@@ -368,40 +296,50 @@ msgid "This work is licensed under a <_:link-1/>."
 msgstr "Ez a munka a <_:link-1/> feltételei szerint használható."
 
 #. (itstool) path: info/desc
-#: C/make-easy.page:19
+#: C/make-easy.page:20
 msgid "Use hints or undo your wrong moves."
 msgstr "Tippek használata vagy téves lépések visszavonása."
 
 #. (itstool) path: page/title
-#: C/make-easy.page:22
+#: C/make-easy.page:23
 msgid "Make your game a little easier"
 msgstr "A játék megkönnyítése"
 
 #. (itstool) path: section/title
-#: C/make-easy.page:25
+#: C/make-easy.page:26
 msgid "Change your last move"
 msgstr "Az utolsó lépés megváltoztatása"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:27
+#: C/make-easy.page:28
+#| msgid ""
+#| "When the computer makes a winning move because of your last move or when "
+#| "you accidentally make the wrong move, you can undo your last move and "
+#| "change it. To undo your last move, press the <gui style=\"button\">Undo "
+#| "your most recent move</gui> button in the header bar or press "
+#| "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your "
+#| "marble at a different row in the game area to change your move."
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
-"To undo your last move, press the <gui style=\"button\">Undo your most "
-"recent move</gui> button in the header bar or press <keyseq><key>Ctrl</"
-"key><key>Z</key></keyseq>. You can now drop your marble at a different row "
-"in the game area to change your move."
+"To undo your last move, press the button in the header bar which either "
+"shows an arrow and the color to play or says <gui style=\"button\">Ends</"
+"gui>, and select <gui style=\"menuitem\">Undo last move</gui>, or press "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble "
+"at a different row in the game area to change your move."
 msgstr ""
-"Ha a számítógép nyertes lépést tesz az utolsó lépése miatt vagy mert "
-"véletlenül rossz lépést tesz, akkor visszavonhatja az utolsó lépését és "
-"megváltoztathatja. Az utolsó lépés visszavonásához nyomja meg az <gui style="
-"\"button\">A legutóbbi lépés visszavonása</gui> gombot a fejlécsávban, vagy "
-"nyomja meg a <keyseq><key>Ctrl</key><key>Z</key></keyseq> kombinációt. Most "
-"bedobhatja az üveggolyóját egy másik sorba a játékterületen a lépése "
-"megváltoztatásához."
+"Ha a számítógép nyertes lépést tesz az utolsó lépése miatt vagy mert"
+" véletlenül rossz lépést tesz, akkor visszavonhatja az utolsó lépését és"
+" megváltoztathatja azt. Az utolsó lépés visszavonásához nyomja meg a gombot a"
+" fejlécsávon, amely vagy egy nyilat és a színt jeleníti meg a játékhoz, vagy"
+" azt mondja, hogy <gui style=\"button\">Vége</gui>, és válassza az <gui"
+" style=\"menuitem\">Utolsó lépés visszavonása</gui> menüpontot, vagy nyomja"
+" meg a <keyseq><key>Ctrl</key><key>Z</key></keyseq> billentyűkombinációt."
+" Most bedobhatja az üveggolyóját egy másik sorba a játékterületen a lépése"
+" megváltoztatásához."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:35
+#: C/make-easy.page:37
 msgid ""
 "You can undo all your moves starting from your current move until you reach "
 "a favourable state of the game, or until the beginning of your current game, "
@@ -412,107 +350,129 @@ msgstr ""
 "<keyseq><key>Ctrl</key><key>Z</key></keyseq> kombináció megnyomásával."
 
 #. (itstool) path: section/title
-#: C/make-easy.page:43
+#: C/make-easy.page:45
 msgid "Use hints"
 msgstr "Tippek használata"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:45
+#: C/make-easy.page:47
+#| msgid ""
+#| "If you are not sure of your next move, you can use a hint. When you use a "
+#| "hint, your marble moves to the top of the column that is the best choice, "
+#| "strategy-wise, and blinks. You can then drop your marble into that "
+#| "column. To use a hint, press <gui style=\"button\">Hint</gui> or "
+#| "<keyseq><key>Ctrl</key><key>H</key></keyseq>."
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
-"To use a hint, press <gui style=\"button\">Hint</gui> or <keyseq><key>Ctrl</"
+"To use a hint, press the button in the header bar which either shows an "
+"arrow and the color to play or says <gui style=\"button\">Ends</gui> and "
+"select <gui style=\"menuitem\">Hint</gui>, or press <keyseq><key>Ctrl</"
 "key><key>H</key></keyseq>."
 msgstr ""
-"Ha nem biztos a következő lépésében, akkor kérhet tippet. Ha tippet kér, "
-"akkor az üveggolyó a legjobb választást jelentő oszlop tetejére lesz "
-"mozgatva, és villog. Ekkor abba az oszlopba ejtheti az üveggolyót. A tipp "
-"kéréséhez nyomja meg a <gui style=\"button\">Tipp</gui> gombot vagy a "
-"<keyseq><key>Ctrl</key><key>H</key></keyseq> kombinációt."
+"Ha nem biztos a következő lépésében, akkor kérhet tippet. Ha tippet kér,"
+" akkor az üveggolyó a legjobb választást jelentő oszlop tetejére lesz"
+" mozgatva, és villog. Ekkor abba az oszlopba ejtheti az üveggolyót. A tipp"
+" kéréséhez nyomja meg a gombot a fejlécsávon, amely vagy egy nyilat és a"
+" színt jeleníti meg a játékhoz, vagy azt mondja, hogy <gui style=\"button\""
+">Vége</gui>, és válassza a <gui style=\"menuitem\">Tipp</gui> menüpontot,"
+" vagy nyomja meg a <keyseq><key>Ctrl</key><key>H</key></keyseq>"
+" billentyűkombinációt."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:51
+#: C/make-easy.page:56
 msgid "There is no limit on the number of hints you can use in a game."
 msgstr "Egy játékban tetszőleges számú tippet használhat."
 
 #. (itstool) path: credit/name
-#: C/scores.page:20
+#: C/scores.page:21
 msgid "Anna Philips"
 msgstr "Anna Philips"
 
 #. (itstool) path: info/desc
-#: C/scores.page:24
+#: C/scores.page:25
 msgid "Keep track of your wins and losses."
 msgstr "Tartsa nyilván győzelmeit és vereségeit."
 
 #. (itstool) path: page/title
-#: C/scores.page:27
+#: C/scores.page:28
 msgid "Scores"
 msgstr "Pontszámok"
 
 #. (itstool) path: page/p
-#: C/scores.page:28
+#: C/scores.page:29
 #| msgid ""
 #| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 #| "your opponent's wins and games that ended in a draw. To check the scores, "
-#| "open the application menu in the top bar and select <gui style=\"menuitem"
-#| "\">Scores</gui>. In the default theme:"
+#| "press the menu button in the top-right corner of the window and select "
+#| "<gui style=\"menuitem\">Scores</gui>. In the default theme:"
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
-"press the menu button in the top-right corner of the window and select <gui "
-"style=\"menuitem\">Scores</gui>. In the default theme:"
+"press the button in the header bar which either shows an arrow and the color "
+"to play or says <gui style=\"button\">Ends</gui>, and select <gui style="
+"\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
-"A <app>Négyet egy sorba</app> a pontszámokat a győzelmei, ellenfele "
-"győzelmei és a döntetlenek alapján tartja nyilván. A pontszámok megnézéséhez "
-"nyomja meg a menü gombot az ablak jobb felső sarkában, és válassza a <gui"
-" style="
-"\"menuitem\">Pontszámok</gui> menüpontot. Az alapértelmezett témában:"
+"A <app>Négyet egy sorba</app> a pontszámokat a győzelmei, ellenfele győzelmei"
+" és a döntetlenek alapján tartja nyilván. A pontszámok megnézéséhez nyomja"
+" meg a gombot a fejlécsávon, amely vagy egy nyilat és a színt jeleníti meg a"
+" játékhoz, vagy azt mondja, hogy <gui style=\"button\">Vége</gui>, és"
+" válassza a <gui style=\"menuitem\">Pontszámok</gui> menüpontot. Az"
+" alapértelmezett témában:"
 
 #. (itstool) path: item/p
-#: C/scores.page:35
+#: C/scores.page:37
 msgid "<gui>Red</gui> displays the number of games you have won."
 msgstr "<gui>Vörös</gui>: az Ön által megnyert játékok száma."
 
 #. (itstool) path: item/p
-#: C/scores.page:38
+#: C/scores.page:40
 msgid "<gui>Green</gui> displays the number of games won by the opponent."
 msgstr "<gui>Zöld</gui>: az ellenfél által megnyert játékok száma."
 
 #. (itstool) path: item/p
-#: C/scores.page:41
+#: C/scores.page:43
 msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
 msgstr "<gui>Döntetlen</gui>: a döntetlenül végződött játékok száma."
 
-#. (itstool) path: note/p
+#. (itstool) path: item/p
 #: C/scores.page:46
 msgid ""
-"The labels to represent players shown in <app>Scores</app> change based on "
-"opponent and theme selected. If you have selected the varying levels of "
-"computer as your opponent, then you will see the labels <gui>You</gui> and "
-"<gui>Me</gui>. If you are playing against another person, then the labels to "
-"represent you and the person will be the color of the marbles in the "
-"currently set theme."
+"If you <link xref=\"choose-opponent\">selected the computer as your "
+"opponent</link>, then you will see the labels <gui>You</gui> and <gui>Me</"
+"gui> instead."
 msgstr ""
-"A játékosokat képviselő feliratok a <app>Pontszámok</app> ablakban az "
-"ellenféltől és a kiválasztott témától függően változnak. Ha ellenfélként a "
-"számítógépet választotta, akkor az <gui>Ön</gui> és <gui>Én</gui> "
-"feliratokat látja. Ha ember ellen játszik, akkor az Önt és ellenfelét "
-"jelképező feliratok az aktuális téma golyóinak megfelelő színűek lesznek."
+"Ha a <link xref=\"choose-opponent\">számítógépet választotta ellenfélként<"
+"/link>, akkor az <gui>Ön</gui> és az <gui>Én</gui> címkéket fogja látni"
+" helyette."
+
+#. (itstool) path: note/p
+#: C/scores.page:53
+msgid ""
+"Do not press the <gui style=\"button\">New Game</gui> button, but press the "
+"button in the header bar which either shows an arrow and the color to play "
+"or says <gui style=\"button\">Ends</gui>, and select <gui style=\"menuitem"
+"\">Next Round</gui> to not reset the scores counter."
+msgstr ""
+"Ne nyomja meg az <gui style=\"button\">Új játék</gui> gombot, hanem nyomja"
+" meg a gombot a fejlécsávon, amely vagy egy nyilat és a színt jeleníti meg a"
+" játékhoz, vagy azt mondja, hogy <gui style=\"button\">Vége</gui>, és"
+" válassza a <gui style=\"menuitem\">Következő kör</gui> menüpontot, hogy ne"
+" állítsa vissza a pontszámlálót."
 
 #. (itstool) path: info/desc
-#: C/sound-animation.page:23
+#: C/sound-animation.page:24
 msgid "Play <app>Four-in-a-row</app> without sounds."
 msgstr "A <app>Négyet egy sorba</app> játszása hang nélkül."
 
 #. (itstool) path: page/title
-#: C/sound-animation.page:26
+#: C/sound-animation.page:27
 msgid "Disable sounds"
 msgstr "Hangok tiltása"
 
 #. (itstool) path: page/p
-#: C/sound-animation.page:28
+#: C/sound-animation.page:29
 msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
@@ -521,16 +481,19 @@ msgstr ""
 "befejeződésekor egy hang hallható."
 
 #. (itstool) path: steps/title
-#: C/sound-animation.page:32
+#: C/sound-animation.page:33
 msgid "To disable sounds:"
 msgstr "A hangok kikapcsolása:"
 
 #. (itstool) path: item/p
-#: C/sound-animation.page:39
+#: C/sound-animation.page:35
+#| msgid ""
+#| "Press the menu button in the top-right corner of the window and select "
+#| "<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
+#| "\">Game</gui></guiseq>."
 msgid ""
-"Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
-"option again to enable the feature."
+"Press the menu button in the top-right corner of the window and uncheck <gui "
+"style=\"menuitem\">Sound</gui>."
 msgstr ""
-"Törölje a <gui style=\"checkbox\">Hangok bekapcsolása</gui> négyzetet. A "
-"funkció bekapcsolásához jelölje be újra a négyzetet."
-
+"Nyomja meg az ablak jobb felső sarkában lévő menügombot, és szüntesse meg a <"
+"gui style=\"menuitem\">Hang</gui> kijelölését."
