@@ -2,32 +2,32 @@
 # spanish translation for gnect manual
 # traducción al español del manual de gnect
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012-2020.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2020-02-23 18:14+0000\n"
-"PO-Revision-Date: 2020-03-02 16:47+0100\n"
+"POT-Creation-Date: 2021-02-19 23:45+0000\n"
+"PO-Revision-Date: 2021-05-10 11:52+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 3.34.0\n"
+"X-Generator: Gtranslator 40.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2020\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2021\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
-#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/controls-default.page:14 C/index.page:12 C/make-easy.page:16
 #: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -58,10 +58,6 @@ msgstr "Para usar un tema diferente:"
 
 #. (itstool) path: item/p
 #: C/appearance.page:29
-#| msgid ""
-#| "Press the menu button in the top-right corner of the window and select "
-#| "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
-#| "\">Game</gui></guiseq>."
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
@@ -71,7 +67,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
-#, fuzzy
 #| msgid ""
 #| "Pick the theme of your choice from the drop down menu to the right of "
 #| "<gui style=\"group\">Theme</gui>. The change will be reflected "
@@ -80,8 +75,7 @@ msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
 msgstr ""
-"Seleccione el tema que quiere en el menú desplegable a la derecha de <gui "
-"style=\"group\">Tema</gui>. El cambio se reflejará inmediatamente en la "
+"Seleccione el tema que quiere. El cambio se reflejará inmediatamente en la "
 "ventana del juego."
 
 #. (itstool) path: item/p
@@ -144,7 +138,6 @@ msgstr "Elegir otro distinto"
 
 #. (itstool) path: page/p
 #: C/choose-opponent.page:29
-#, fuzzy
 #| msgid ""
 #| "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 #| "playing at level one."
@@ -153,7 +146,7 @@ msgid ""
 "playing at an easy level."
 msgstr ""
 "De manera predeterminada, su oponente en <app>Cuatro en raya</app> es el "
-"propio equipo, jugando en el nivel uno."
+"propio equipo, jugando en un nivel fácil."
 
 #. (itstool) path: steps/title
 #: C/choose-opponent.page:33
@@ -170,9 +163,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:39
-#| msgid ""
-#| "Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> "
-#| "for both players if want to play with a friend or family member."
 msgid ""
 "Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
 "players if want to play with a friend or family member."
@@ -223,17 +213,17 @@ msgstr ""
 "jugará primero en la tercera partida, y así sucesivamente."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:20
+#: C/controls-default.page:18
 msgid "Default controls for <app>Four-in-a-row</app>."
 msgstr "Controles predeterminados para <app>Cuatro en raya</app>."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:23
+#: C/controls-default.page:21
 msgid "Controls"
 msgstr "Controles"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:25
+#: C/controls-default.page:23
 msgid ""
 "You can use your mouse and click on a particular row in the game area to "
 "drop your marble into that row. If you want to use the keyboard instead, the "
@@ -244,17 +234,17 @@ msgstr ""
 "lugar, las teclas predeterminadas de <app>Cuatro en raya</app> son:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:31
+#: C/controls-default.page:29
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key> para mover la canica a su izquierda."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:34
+#: C/controls-default.page:32
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>←</key> para mover la canica a su derecha."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:37
+#: C/controls-default.page:35
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>←</key> para soltar la canica."
 
@@ -328,7 +318,7 @@ msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
 "To undo your last move, press the button in the header bar which either "
-"shows an arrow and the color to play or says <gui style=\"button\">Ends</"
+"shows an arrow and the color to play or says <gui style=\"button\">End!</"
 "gui>, and select <gui style=\"menuitem\">Undo last move</gui>, or press "
 "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble "
 "at a different row in the game area to change your move."
@@ -370,7 +360,7 @@ msgid ""
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
 "To use a hint, press the button in the header bar which either shows an "
-"arrow and the color to play or says <gui style=\"button\">Ends</gui> and "
+"arrow and the color to play or says <gui style=\"button\">End!</gui> and "
 "select <gui style=\"menuitem\">Hint</gui>, or press <keyseq><key>Ctrl</"
 "key><key>H</key></keyseq>."
 msgstr ""
@@ -412,7 +402,7 @@ msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "press the button in the header bar which either shows an arrow and the color "
-"to play or says <gui style=\"button\">Ends</gui>, and select <gui style="
+"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
 "\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "La puntuación en <app>Cuatro en raya</app> se guarda el términos de sus "
@@ -447,12 +437,22 @@ msgstr ""
 
 #. (itstool) path: note/p
 #: C/scores.page:53
+#, fuzzy
+#| msgid ""
+#| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
+#| "your opponent's wins and games that ended in a draw. To check the scores, "
+#| "press the menu button in the top-right corner of the window and select "
+#| "<gui style=\"menuitem\">Scores</gui>. In the default theme:"
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
-"or says <gui style=\"button\">Ends</gui>, and select <gui style=\"menuitem"
+"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
 "\">Next Round</gui> to not reset the scores counter."
 msgstr ""
+"La puntuación en <app>Cuatro en raya</app> se guarda el términos de sus "
+"victorias, las victorias de su oponente y las partidas empatadas. Para ver "
+"la puntuación, pulse en el botón del menú en la esquina superior derecha y "
+"elija <gui style=\"menuitem\">Puntuación</gui>. En el tema predeterminado:"
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:24
@@ -480,10 +480,6 @@ msgstr "Para desactivar los sonidos:"
 
 #. (itstool) path: item/p
 #: C/sound-animation.page:35
-#| msgid ""
-#| "Press the menu button in the top-right corner of the window and select "
-#| "<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-#| "\">Game</gui></guiseq>."
 msgid ""
 "Press the menu button in the top-right corner of the window and uncheck <gui "
 "style=\"menuitem\">Sound</gui>."
