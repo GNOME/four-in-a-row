@@ -1,308 +1,232 @@
+# Korean translation for four-in-a-row-help.
+# Copyright (C) 2021 gnome-taquin's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-taquin package.
+# Minseok Jeon <cheon7886Wnaver.com>, 2016.
+# Seong-ho Cho <shcho@gnome.org>, 2021.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2016-09-05 06:23+0000\n"
-"PO-Revision-Date: 2016-09-07 20:39+0900\n"
-"Last-Translator: Minseok Jeon <cheon7886@naver.com>\n"
+"Project-Id-Version: four-in-a-row main\n"
+"POT-Creation-Date: 2020-05-30 11:03+0000\n"
+"PO-Revision-Date: 2021-09-09 10:58+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.3.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "전민석 <cheon7886@naver.com>, 2016"
+msgstr ""
+"전민석 <cheon7886@naver.com>, 2016\n"
+"조성호 <shcho@gnome.org>, 2021"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:13 C/choose-opponent.page:13
-#: C/controls-change.page:15 C/controls-default.page:15 C/index.page:12
-#: C/make-easy.page:13 C/scores.page:12 C/sound-animation.page:13
+#: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
+#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: info/desc
-#: C/appearance.page:17
+#: C/appearance.page:18
 msgid "Use different themes to improve your gaming experience."
-msgstr "게임 경험을 향상시키기 위해 다른 테마를 사용하세요."
+msgstr "게임 경험을 개선을 목적으로 다른 테마를 사용합니다."
 
 #. (itstool) path: page/title
-#: C/appearance.page:20
+#: C/appearance.page:21
 msgid "Change the appearance of your gaming area"
 msgstr "게임 화면의 테마 바꾸기"
 
 #. (itstool) path: page/p
-#: C/appearance.page:22
+#: C/appearance.page:23
 msgid ""
 "By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
 "a black grid when you start a new game."
 msgstr ""
-"기본적으로 <app>Four-in-a-row</app>는 새 게임을 시작하면 검은 격자무늬 위에"
-"서 빨간색과 파란색 구슬을 사용합니다."
+"<app>사목</app>은 기본적으로 새 게임을 시작할 때 검은 격자무늬 위에서 빨간색"
+"과 파란색 구슬을 사용합니다."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:26
+#: C/appearance.page:27
 msgid "To use a different theme:"
 msgstr "다른 테마 사용 방법:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28 C/sound-animation.page:35 C/sound-animation.page:54
+#: C/appearance.page:29
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Appearance</gui>."
 msgstr ""
-"<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>를 선택하세"
-"요."
+"창 우측 상단의 메뉴 단추를 누른 후 <gui style=\"menuitem\">모양새</gui>를 선"
+"택합니다."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
 msgid ""
-"Under <gui>Appearance</gui>, pick the theme of your choice from the drop "
-"down menu to the right of <gui style=\"group\">Theme</gui>. The change will "
-"be reflected immediately in the game window."
-msgstr ""
-"<gui>Appearance</gui>에서, <gui style=\"group\">Theme</gui> 우측의 드롭 다운 "
-"메뉴에서 테마를 선택하십시오. 테마 변경은 게임 창에서 즉시 적용됩니다."
+"Select the theme of your choice. The change will be reflected immediately in "
+"the game window."
+msgstr "원하는 테마를 선택합니다. 바뀐 값은 게임 창에 바로 반영합니다."
+
+#. (itstool) path: item/p
+#: C/appearance.page:37 C/sound-animation.page:39
+msgid "Close the menu by clicking outside of the menu."
+msgstr "메뉴 바깥을 눌러 메뉴를 닫습니다."
 
 #. (itstool) path: info/desc
-#: C/basics.page:17
-msgid ""
-"Start, play in fullscreen mode and quit a game of <app>Four-in-a-row</app>."
-msgstr ""
-"전제 화면 모드로 플레이하고 <app>Four-in-a-row</app> 게임을 종료하세요."
+#: C/basics.page:19
+msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
+msgstr "<app>사목</app> 게임을 시작, 플레이하거나 끝냅니다."
 
 #. (itstool) path: page/title
-#: C/basics.page:21
+#: C/basics.page:23
 msgid "Basic instructions"
 msgstr "기초 안내"
 
 #. (itstool) path: section/title
-#: C/basics.page:24
+#: C/basics.page:26
 msgid "Start a new game"
 msgstr "새 게임 시작"
 
 #. (itstool) path: section/p
-#: C/basics.page:26
+#: C/basics.page:28
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+#| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
+#| "keyseq> to start a new game."
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
-"a new game."
+"Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"<guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</gui></"
-"guiseq>를 선택하거나  <keyseq><key>Ctrl</key><key>N</key></keyseq>를 눌러 게"
-"임을 시작하세요."
+"새 게임을 시작하려면 <gui style=\"button\">시작하기</gui>를 누르거나 "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> 키를 누릅니다."
 
 #. (itstool) path: section/title
-#: C/basics.page:34
-msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
-msgstr "<app>Four-in-a-row</app> 전체화면으로 플레이"
-
-#. (itstool) path: section/p
-#: C/basics.page:36
-msgid ""
-"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-"fullscreen mode. You can return to the default screen size by pressing "
-"<key>F11</key> again."
-msgstr ""
-"<guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem\">Fullscreen</"
-"gui></guiseq>를 선택하거나 <key>F11</key>를 눌러 전체 화면으로 플레이하세요. "
-"<key>F11</key>을 눌러서 다시 원래 화면 크기로 돌아올 수 있습니다."
-
-#. (itstool) path: section/title
-#: C/basics.page:44
+#: C/basics.page:35
 msgid "Quit <app>Four-in-a-row</app>"
-msgstr "<app>Four-in-a-row</app> 종료"
+msgstr "<app>사목</app> 끝내기"
 
 #. (itstool) path: section/p
-#: C/basics.page:46
+#: C/basics.page:37
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
-"<app>Four-in-a-row</app> at any time."
+"Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-in-a-"
+"row</app> at any time."
 msgstr ""
-"<guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</gui></"
-"guiseq>를 선택하거나 <keyseq><key>Ctrl</key><key>Q</key></keyseq>를 눌러 "
-"<app>Four-in-a-row</app>를 언제든지 종료할 수 있습니다."
+"<app>사목</app>을 언제든 빠져나가려면 <keyseq><key>Ctrl</key><key>Q</key></"
+"keyseq>를 누릅니다."
 
 #. (itstool) path: credit/name
-#: C/choose-opponent.page:17 C/sound-animation.page:17
+#: C/choose-opponent.page:20 C/sound-animation.page:20
 msgid "Michael Hill"
 msgstr "마이클 힐"
 
 #. (itstool) path: info/desc
-#: C/choose-opponent.page:21
+#: C/choose-opponent.page:24
 msgid "Change the level at which the computer plays or play with a friend."
-msgstr "플레이할 컴퓨터의 레벨을 바꾸거나 친구와 플레이하세요."
+msgstr "플레이할 컴퓨터의 레벨을 바꾸거나 친구와 플레이합니다."
 
 #. (itstool) path: page/title
-#: C/choose-opponent.page:25
+#: C/choose-opponent.page:28
 msgid "Choose a different opponent"
 msgstr "다른 상대방 선택"
 
 #. (itstool) path: page/p
-#: C/choose-opponent.page:26
+#: C/choose-opponent.page:29
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
-"playing at level one."
+"playing at an easy level."
 msgstr ""
-"기본적으로, <app>Four-in-a-row</app>의 상대방은 컴퓨터로 설정되어 있습니다."
+"기본적으로, <app>사목</app>의 상대방은 쉬운 레벨의 컴퓨터로 설정해두었습니다."
 
 #. (itstool) path: steps/title
-#: C/choose-opponent.page:30
+#: C/choose-opponent.page:33
 msgid "To change the level, or to play with a friend:"
-msgstr "컴퓨터 레벨 변경이나 친구와 플레이하기:"
+msgstr "레벨을 바꾸거나 친구와 플레이하려면:"
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:32
+#: C/choose-opponent.page:35
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You will "
-"see <gui>Player One</gui> and <gui>Player Two</gui>."
-msgstr ""
-"<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq> 을 선택하세"
-"요. <gui>Player One</gui> 과 <gui>Player Two</gui>가 보일 것입니다."
+"Press the <gui style=\"button\">New Game</gui> button in the header bar."
+msgstr "헤더 표시줄의 <gui style=\"button\">새 게임</gui> 단추를 누릅니다."
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:38
+#: C/choose-opponent.page:39
 msgid ""
-"Choose <gui style=\"radiobutton\">Human</gui> for both players if want to "
-"play with a friend or family member."
+"Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
+"players if want to play with a friend or family member."
 msgstr ""
-"가족이나 친구와 플레이할 경우에는 각각의 플레이어를 <gui style=\"radiobutton"
-"\">Human</gui>으로 설정하세요."
+"가족이나 친구와 플레이할 경우에는 <gui>플레이어</gui>에서 <gui style=\"button"
+"\">2인</gui>으로 선택합니다."
 
 #. (itstool) path: item/p
-#: C/choose-opponent.page:40
+#: C/choose-opponent.page:41
 msgid ""
-"Alternatively, choose the level at which the computer plays. Choose between "
-"<gui style=\"radiobutton\">Level one</gui>, <gui style=\"radiobutton\">Level "
-"two</gui> or <gui style=\"radiobutton\">Level three</gui>, where <gui style="
-"\"radiobutton\">Level one</gui> is the easiest level and <gui style="
-"\"radiobutton\">Level three</gui> is the most difficult level."
+"Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
+"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
-"아니면 플레이할 컴퓨터의 레벨을 선택하세요. <gui style=\"radiobutton\">Level "
-"one</gui>, <gui style=\"radiobutton\">Level two</gui> 혹은 <gui style="
-"\"radiobutton\">Level three</gui> 사이에서 선택할 수 있습니다. <gui style="
-"\"radiobutton\">Level one</gui> 은 가장 쉬운 레벨이고 <gui style="
-"\"radiobutton\">Level three</gui> 이 제일 어려운 레벨입니다."
+"대신, 컴퓨터와 플레이할 <gui>난이도</gui> 레벨을 선택합니다. <gui style="
+"\"button\">쉬움</gui>, <gui style=\"button\">보통</gui>, <gui style=\"button"
+"\">어려움</gui> 중 하나를 선택합니다."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:45
+msgid ""
+"You can also choose if you play first or second under <gui>Game start</gui>."
+msgstr ""
+"<gui>게임 시작</gui>에서 먼저 또는 나중 순번 플레이 여부를 선택할 수 있습니"
+"다."
 
 #. (itstool) path: note/p
 #: C/choose-opponent.page:48
 msgid ""
-"If you are playing with a friend or family member, <gui>Player One</gui> "
-"gets to play first in the first game of <app>Four-in-a-row</app>. In "
-"subsequent games, the chance to play first is given alternately to each "
-"player. So, <gui>Player Two</gui> will get to play first in the second game, "
-"<gui>Player One</gui> can play first in the third game and so on."
+"If you are playing with a friend or family member, Player One gets to play "
+"first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
+"the chance to play first is given alternately to each player. So, Player Two "
+"will get to play first in the second game, Player One can play first in the "
+"third game and so on."
 msgstr ""
-"가족이나 친구와 플레이할 경우, <app>Four-in-a-row</app>에서는 <gui>Player "
-"One</gui>이 먼저 시작하게 됩니다. 뒤이은 게임들에서는 교대로 먼저 시작하게 됩"
-"니다. 따라서 <gui>Player Two</gui>는 두번째 게임에서 먼저 시작하고, "
-"<gui>Player One</gui>은 세번째 게임에서 먼저 시작하게 되는 식입니다."
+"가족이나 친구와 플레이할 경우, <app>사목</app>에서는 첫 플레이어가 먼저 시작"
+"합니다. 뒤이어서는, 교대로 진행합니다. 따라서 두번째 플레이어는 두번째 게임에"
+"서 먼저 시작하고, 첫번째 플레이어는 세번째 게임에서 먼저 시작하는 그런식으로 "
+"진행합니다."
 
 #. (itstool) path: info/desc
-#: C/controls-change.page:19
-msgid "Set custom control keys."
-msgstr "사용자 지정 조작 키를 설정하세요."
-
-#. (itstool) path: page/title
-#: C/controls-change.page:22
-msgid "Change the default controls"
-msgstr "기본 조작키 바꾸기"
-
-#. (itstool) path: page/p
-#: C/controls-change.page:24
-msgid ""
-"To change the <link xref=\"controls-default\">default controls</link> in "
-"<app>Four-in-a-row</app>:"
-msgstr ""
-"<app>Four-in-a-row</app>의 <link xref=\"controls-default\">default controls</"
-"link>에서 변경할 수 있습니다:"
-
-#. (itstool) path: item/p
-#: C/controls-change.page:29
-msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-"guiseq>."
-msgstr ""
-"<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></guiseq>"
-"을 선택하세요."
-
-#. (itstool) path: item/p
-#: C/controls-change.page:34
-msgid ""
-"In the list, select the line you want to change, then click on the control. "
-"The line is highlighted and the label of the control changes to <gui>New "
-"accelerator…</gui>"
-msgstr ""
-"목록에서 바꾸고 싶은 줄을 선택하고, 해당 컨트롤을 클릭하세요. 그 줄은 강조 표"
-"시되고, 컨트롤의 꼬리표는 <gui>New accelerator…</gui>로 바뀝니다."
-
-#. (itstool) path: item/p
-#: C/controls-change.page:39
-msgid "Press the key you want to use instead of the default key."
-msgstr "기본 키 대신 사용자 지정 키를 사용해 보세요."
-
-#. (itstool) path: note/p
-#: C/controls-change.page:41
-msgid ""
-"To keep the old setting, click again or right click on <gui>New accelerator…"
-"</gui>, press <key>Esc</key> or click anywhere else inside the <gui>Keyboard "
-"Controls</gui> box."
-msgstr ""
-"원래 설정을 유지하려면, 다시 클릭하거나 <gui>New accelerator…</gui>을 우클릭"
-"하고, <key>Esc</key>을 누르거나 <gui>Keyboard Controls</gui> 상자 안쪽을 제외"
-"한 어디든 누르세요."
-
-#. (itstool) path: note/p
-#: C/controls-change.page:49
-msgid ""
-"When you are playing with a friend or a family member, both players will use "
-"the same controls."
-msgstr ""
-"가족이나 친구와 플레이한다면, 두 플레이어는 같은 조작키를 이용하게 됩니다."
-
-#. (itstool) path: info/desc
-#: C/controls-default.page:19
+#: C/controls-default.page:20
 msgid "Default controls for <app>Four-in-a-row</app>."
-msgstr "<app>Four-in-a-row</app>의 기본적인 조작법."
+msgstr "<app>사목</app>의 기본적인 조작법입니다."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:22
+#: C/controls-default.page:23
 msgid "Controls"
 msgstr "조작"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:24
+#: C/controls-default.page:25
 msgid ""
-"You can use your mouse and click on a particular square in the game area to "
-"drop your marble into that square. If you want to use the keyboard instead, "
-"the default keys for <app>Four-in-a-row</app> are:"
+"You can use your mouse and click on a particular row in the game area to "
+"drop your marble into that row. If you want to use the keyboard instead, the "
+"default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
-"마우스를 이용해서 게임 화면의 특정 사각형을 클릭해 구슬을 놓을 수 있습니다. "
-"키보드를 사용하고 싶다면, <app>Four-in-a-row</app>의 기본 조작키는 아래와 같"
-"습니다:"
+"마우스로 게임 화면의 각 사각형을 눌러 구슬을 놓을 수 있습니다. 키보드를 사용"
+"하려 한다면, <app>사목</app>의 기본 키는 아래와 같습니다:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:30
+#: C/controls-default.page:31
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key>로 구슬을 왼쪽으로 옮길 수 있습니다."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:33
+#: C/controls-default.page:34
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key>로 구슬을 오른쪽으로 옮길 수 있습니다."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:36
+#: C/controls-default.page:37
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key>로 구슬을 넣을 수 있습니다."
 
@@ -314,7 +238,7 @@ msgstr "색인"
 #. (itstool) path: page/title
 #: C/index.page:19
 msgid "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
-msgstr "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
+msgstr "<_:media-1/><span its:translate=\"yes\"> 사목</span>"
 
 #. (itstool) path: page/p
 #: C/index.page:22
@@ -323,9 +247,9 @@ msgid ""
 "is to stack four of your marbles in a horizontal, vertical or diagonal line "
 "while stopping your opponent from doing the same with their marbles."
 msgstr ""
-"<app>Four-in-a-row</app>는 GNOME의 전략 게임입니다. 이 게임의 목표는 4개의 구"
-"슬을 수평, 수직 혹은 대각선 방향으로 쌓아 올리면서 상대방이 구슬을 쌓아 올리"
-"지 못하도록 방해하는 것입니다."
+"<app>사목</app>은 그놈의 전략 게임입니다. 이 게임의 목표는 4개의 구슬을 수"
+"평, 수직, 대각선 방향으로 쌓아 올리면서 상대방이 구슬을 쌓아 올리지 못하도록 "
+"방해하는 것입니다."
 
 #. (itstool) path: section/title
 #: C/index.page:27
@@ -337,39 +261,51 @@ msgstr "게임 플레이"
 msgid "Preferences"
 msgstr "기본 설정"
 
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0 Unported 라이선스"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "이 문서는 <_:link-1/>에 따른 활용을 허가합니다."
+
 #. (itstool) path: info/desc
-#: C/make-easy.page:17
+#: C/make-easy.page:20
 msgid "Use hints or undo your wrong moves."
-msgstr "힌트를 사용하거나 잘못 움직인 것을 되돌리세요."
+msgstr "힌트를 사용하거나 실수를 되돌립니다."
 
 #. (itstool) path: page/title
-#: C/make-easy.page:20
+#: C/make-easy.page:23
 msgid "Make your game a little easier"
 msgstr "좀 더 쉽게 플레이하기"
 
 #. (itstool) path: section/title
-#: C/make-easy.page:23
+#: C/make-easy.page:26
 msgid "Change your last move"
 msgstr "최근 이동 바꾸기"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:25
+#: C/make-easy.page:28
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
-"To undo your last move, select <guiseq><gui style=\"menu\">Game</gui> <gui "
-"style=\"menuitem\">Undo Move</gui></guiseq> or press <keyseq><key>Ctrl</"
-"key><key>Z</key></keyseq>. You can now drop your marble at a different "
-"square in the game area to change your move."
+"To undo your last move, press the button in the header bar which either "
+"shows an arrow and the color to play or says <gui style=\"button\">End!</"
+"gui>, and select <gui style=\"menuitem\">Undo last move</gui>, or press "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble "
+"at a different row in the game area to change your move."
 msgstr ""
 "수를 잘못 둬서 컴퓨터가 이길 것 같으면, 마지막 둔 수를 되돌려서 바꿀 수 있습"
-"니다. <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Undo "
-"Move</gui></guiseq>을 선택하거나 <keyseq><key>Ctrl</key><key>Z</key></keyseq>"
-"를 눌러 수를 되돌릴 수 있습니다. 그 다음 구슬을 새로 둠으로써 둔 수를 바꿀 "
-"수 있습니다."
+"니다. 마지막 둔 수를 되돌리려면 화살표와 플레이 색상을 나타내거나 <gui style="
+"\"button\">끝났습니다!</gui>라고 나타낸 헤더 표시줄의 단추를 누르고 <gui "
+"style=\"menuitem\">마지막 움직임 되돌리기</gui>를 선택하거나 "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq> 키를 누릅니다. 그 다음 게임판의 "
+"다른 곳에 구슬을 두어 판을 바꿀 수 있습니다."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:33
+#: C/make-easy.page:37
 msgid ""
 "You can undo all your moves starting from your current move until you reach "
 "a favourable state of the game, or until the beginning of your current game, "
@@ -380,158 +316,249 @@ msgstr ""
 "key><key>Z</key></keyseq>를 반복적으로 누르십시오."
 
 #. (itstool) path: section/title
-#: C/make-easy.page:41
+#: C/make-easy.page:45
 msgid "Use hints"
-msgstr "힌트 사요"
+msgstr "힌트 사용"
 
 #. (itstool) path: section/p
-#: C/make-easy.page:43
+#: C/make-easy.page:47
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
 "strategy-wise, and blinks. You can then drop your marble into that column. "
-"To use a hint, select <guiseq><gui style=\"menu\">Game</gui> <gui style="
-"\"menuitem\">Hint</gui></guiseq> or press <keyseq><key>Ctrl</key><key>H</"
-"key></keyseq>."
+"To use a hint, press the button in the header bar which either shows an "
+"arrow and the color to play or says <gui style=\"button\">End!</gui> and "
+"select <gui style=\"menuitem\">Hint</gui>, or press <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
 msgstr ""
 "다음 수를 결정하기 고민된다면, 힌트를 사용할 수 있습니다. 힌트를 사용하면 여"
 "러분의 구슬이 전략적이고, 최적의 자리인 맨 위 열로 이동하여 깜박입니다. 구슬"
-"을 그 열로 넣을 수 있습니다. 힌트를 사용하려면, <guiseq><gui style=\"menu"
-"\">Game</gui> <gui style=\"menuitem\">Hint</gui></guiseq>를 선택하거나 "
-"<keyseq><key>Ctrl</key><key>H</key></keyseq>를 누르세요."
+"을 그 열로 넣을 수 있습니다. 힌트를 사용하려면, <gui style=\"menuitem\">힌트"
+"</gui>를 선택하거나 <keyseq><key>Ctrl</key><key>H</key></keyseq>를 누릅니다."
 
 #. (itstool) path: note/p
-#: C/make-easy.page:51
+#: C/make-easy.page:56
 msgid "There is no limit on the number of hints you can use in a game."
 msgstr "사용할 수 있는 힌트의 제한은 없습니다."
 
 #. (itstool) path: credit/name
-#: C/scores.page:17
+#: C/scores.page:21
 msgid "Anna Philips"
-msgstr "안나 필립스"
+msgstr "Anna Philips"
 
 #. (itstool) path: info/desc
-#: C/scores.page:21
+#: C/scores.page:25
 msgid "Keep track of your wins and losses."
-msgstr "여려분의 승패를 계속 확인하세요."
+msgstr "여려분의 승패 기록을 유지합니다."
 
 #. (itstool) path: page/title
-#: C/scores.page:24
+#: C/scores.page:28
 msgid "Scores"
 msgstr "점수"
 
 #. (itstool) path: page/p
-#: C/scores.page:25
+#: C/scores.page:29
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
-"select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-"\">Scores</gui></guiseq>. In the default theme:"
+"press the button in the header bar which either shows an arrow and the color "
+"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
+"\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
-"<app>Four-in-a-row</app>의 점수 부분은 여러분과 상대방의 이기거나 비긴 게임"
-"에 대하여 기록되어 있습니다. 점수를 확인하려면, <guiseq><gui style=\"menu"
-"\">Game</gui> <gui style=\"menuitem\">Scores</gui></guiseq>를 선택하세요. 기"
-"본 테마에서:"
+"<app>사목</app>의 점수는 여러분과 상대방의 이기거나 비긴 게임의 우승 여부를 "
+"기록합니다. 점수를 확인하려면, 화살표와 플레이 색상을 나타내거나 <gui style="
+"\"button\">끝났습니다!</gui>라고 나타낸 헤더 표시줄의 단추를 누르고 <gui "
+"style=\"menuitem\">점수</gui>를 선택합니다. 기본 테마에서:"
 
 #. (itstool) path: item/p
-#: C/scores.page:32
+#: C/scores.page:37
 msgid "<gui>Red</gui> displays the number of games you have won."
 msgstr "<gui>Red</gui>는 이긴 게임의 횟수를 표시합니다."
 
 #. (itstool) path: item/p
-#: C/scores.page:35
+#: C/scores.page:40
 msgid "<gui>Green</gui> displays the number of games won by the opponent."
 msgstr "<gui>Green</gui>는 상대방이 이긴 게임의 횟수를 표시합니다."
 
 #. (itstool) path: item/p
-#: C/scores.page:38
+#: C/scores.page:43
 msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
 msgstr "<gui>Drawn</gui>는 비긴 게임의 횟수를 표시합니다."
 
-#. (itstool) path: note/p
-#: C/scores.page:43
+#. (itstool) path: item/p
+#: C/scores.page:46
 msgid ""
-"The labels to represent players shown in <app>Scores</app> change based on "
-"opponent and theme selected. If you have selected the varying levels of "
-"computer as your opponent, then you will see the labels <gui>You</gui> and "
-"<gui>Me</gui>. If you are playing against another person, then the labels to "
-"represent you and the person will be the color of the marbles in the "
-"currently set theme."
+"If you <link xref=\"choose-opponent\">selected the computer as your "
+"opponent</link>, then you will see the labels <gui>You</gui> and <gui>Me</"
+"gui> instead."
 msgstr ""
-"<app>Scores</app>에서 플레이어를 나타내는 꼬리표는 상대방이나 선택된 테마에 "
-"따라 바뀝니다. 여러 가지 레벨의 컴퓨터를 상대방으로 선택했다면,  <gui>You</"
-"gui>와<gui>Me</gui> 같은 꼬리표를 볼 수 있습니다. 다른 사람과 플레이할 경우, "
-"여러분과 상대편을 나타내는 꼬리표는 현재 설정된 테마의 구슬이 나타내는 색상"
-"을 가집니다."
+"<link xref=\"choose-opponent\">컴퓨터를 상대로 선택</link>했다면, <gui>당신</"
+"gui>과 <gui>나</gui>가 레이블에 대신 나타납니다."
+
+#. (itstool) path: note/p
+#: C/scores.page:53
+msgid ""
+"Do not press the <gui style=\"button\">New Game</gui> button, but press the "
+"button in the header bar which either shows an arrow and the color to play "
+"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
+"\">Next Round</gui> to not reset the scores counter."
+msgstr ""
+"<gui style=\"button\">새 게임</gui> 단추를 누르지 마시고, 대신, 화살표와 플레"
+"이 색상을 나타내거나 <gui style=\"button\">끝났습니다!</gui>라고 나타낸 헤더 "
+"표시줄의 단추를 누르고 점수 집계를 초기화 하지 않도록 <gui style=\"menuitem"
+"\">다음 판</gui>을 선택합니다."
 
 #. (itstool) path: info/desc
-#: C/sound-animation.page:21
-msgid "Play <app>Four-in-a-row</app> without sounds or animation."
-msgstr "<app>Four-in-a-row</app>를 사운드나 애니메이션 없이 플레이하세요."
+#: C/sound-animation.page:24
+msgid "Play <app>Four-in-a-row</app> without sounds."
+msgstr "<app>사목</app>을 소리 없이 플레이합니다."
 
 #. (itstool) path: page/title
-#: C/sound-animation.page:24
-msgid "Disable sounds or animation"
-msgstr "사운드나 애니메이션 비활성화하기"
-
-#. (itstool) path: section/title
 #: C/sound-animation.page:27
-msgid "Sounds"
-msgstr "사운드"
+msgid "Disable sounds"
+msgstr "사운드 비활성"
 
-#. (itstool) path: section/p
+#. (itstool) path: page/p
 #: C/sound-animation.page:29
 msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
 msgstr ""
-"사운드가 활성화되면 구슬이 떨어지거나 게임이 종료될 때마다 효과음을 들을 수 "
-"있습니다."
+"소리를 켜면 구슬을 떨어뜨릴 때마다 또는 게임을 끝낼 때 효과음을 들을 수 있습"
+"니다."
 
 #. (itstool) path: steps/title
 #: C/sound-animation.page:33
 msgid "To disable sounds:"
-msgstr "사운드 비활성화:"
+msgstr "소리를 끄려면:"
 
 #. (itstool) path: item/p
-#: C/sound-animation.page:40
+#: C/sound-animation.page:35
 msgid ""
-"Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
-"option again to enable the feature."
+"Press the menu button in the top-right corner of the window and uncheck <gui "
+"style=\"menuitem\">Sound</gui>."
 msgstr ""
-"<gui style=\"checkbox\">Enable sounds</gui> 체크를 해제하세요. 옵션에서 다시 "
-"이 기능을 활성화할 수 있습니다."
+"창 우측 상단에 있는 메뉴 단추를 누른 후 <gui style=\"menuitem\">소리</gui> 표"
+"시를 지웁니다."
 
-#. (itstool) path: section/title
-#: C/sound-animation.page:47
-msgid "Animation"
-msgstr "애니메이션"
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+#~ msgstr ""
+#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>를 선택하"
+#~ "세요."
 
-#. (itstool) path: section/p
-#: C/sound-animation.page:49
-msgid "Animation results in a more fluid movement of the marbles."
-msgstr "애니메이션은 구슬의 움직임을 부드럽게 보여줍니다."
+#~ msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
+#~ msgstr "<app>Four-in-a-row</app> 전체화면으로 플레이"
 
-#. (itstool) path: steps/title
-#: C/sound-animation.page:52
-msgid "To disable animation:"
-msgstr "애니메이션 비활성화:"
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+#~ "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+#~ "fullscreen mode. You can return to the default screen size by pressing "
+#~ "<key>F11</key> again."
+#~ msgstr ""
+#~ "<guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+#~ "\">Fullscreen</gui></guiseq>를 선택하거나 <key>F11</key>를 눌러 전체 화면"
+#~ "으로 플레이하세요. <key>F11</key>을 눌러서 다시 원래 화면 크기로 돌아올 "
+#~ "수 있습니다."
 
-#. (itstool) path: item/p
-#: C/sound-animation.page:59
-msgid ""
-"Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
-"option again to enable the feature."
-msgstr ""
-"<gui style=\"checkbox\">Enable animation</gui>의 체크를 해제하세요. 옵션에서 "
-"다시 이 기능을 활성화할 수 있습니다."
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You "
+#~ "will see <gui>Player One</gui> and <gui>Player Two</gui>."
+#~ msgstr ""
+#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq> 을 선택하"
+#~ "세요. <gui>Player One</gui> 과 <gui>Player Two</gui>가 보일 것입니다."
 
-#. (itstool) path: p/link
-#: C/legal.xml:4
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0 Unported 라이선스"
+#~ msgid "Set custom control keys."
+#~ msgstr "사용자 지정 조작 키를 설정하세요."
 
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "This work is licensed under a <_:link-1/>."
+#~ msgid "Change the default controls"
+#~ msgstr "기본 조작키 바꾸기"
+
+#~ msgid ""
+#~ "To change the <link xref=\"controls-default\">default controls</link> in "
+#~ "<app>Four-in-a-row</app>:"
+#~ msgstr ""
+#~ "<app>Four-in-a-row</app>의 <link xref=\"controls-default\">default "
+#~ "controls</link>에서 변경할 수 있습니다:"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+#~ "guiseq>."
+#~ msgstr ""
+#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
+#~ "guiseq>을 선택하세요."
+
+#~ msgid ""
+#~ "In the list, select the line you want to change, then click on the "
+#~ "control. The line is highlighted and the label of the control changes to "
+#~ "<gui>New accelerator…</gui>"
+#~ msgstr ""
+#~ "목록에서 바꾸고 싶은 줄을 선택하고, 해당 컨트롤을 클릭하세요. 그 줄은 강"
+#~ "조 표시되고, 컨트롤의 꼬리표는 <gui>New accelerator…</gui>로 바뀝니다."
+
+#~ msgid "Press the key you want to use instead of the default key."
+#~ msgstr "기본 키 대신 사용자 지정 키를 사용해 보세요."
+
+#~ msgid ""
+#~ "To keep the old setting, click again or right click on <gui>New "
+#~ "accelerator…</gui>, press <key>Esc</key> or click anywhere else inside "
+#~ "the <gui>Keyboard Controls</gui> box."
+#~ msgstr ""
+#~ "원래 설정을 유지하려면, 다시 클릭하거나 <gui>New accelerator…</gui>을 우클"
+#~ "릭하고, <key>Esc</key>을 누르거나 <gui>Keyboard Controls</gui> 상자 안쪽"
+#~ "을 제외한 어디든 누르세요."
+
+#~ msgid ""
+#~ "When you are playing with a friend or a family member, both players will "
+#~ "use the same controls."
+#~ msgstr ""
+#~ "가족이나 친구와 플레이한다면, 두 플레이어는 같은 조작키를 이용하게 됩니다."
+
+#~ msgid ""
+#~ "The labels to represent players shown in <app>Scores</app> change based "
+#~ "on opponent and theme selected. If you have selected the varying levels "
+#~ "of computer as your opponent, then you will see the labels <gui>You</gui> "
+#~ "and <gui>Me</gui>. If you are playing against another person, then the "
+#~ "labels to represent you and the person will be the color of the marbles "
+#~ "in the currently set theme."
+#~ msgstr ""
+#~ "<app>Scores</app>에서 플레이어를 나타내는 꼬리표는 상대방이나 선택된 테마"
+#~ "에 따라 바뀝니다. 여러 가지 레벨의 컴퓨터를 상대방으로 선택했다면,  "
+#~ "<gui>You</gui>와<gui>Me</gui> 같은 꼬리표를 볼 수 있습니다. 다른 사람과 플"
+#~ "레이할 경우, 여러분과 상대편을 나타내는 꼬리표는 현재 설정된 테마의 구슬"
+#~ "이 나타내는 색상을 가집니다."
+
+#~ msgid "Disable sounds or animation"
+#~ msgstr "사운드나 애니메이션 비활성화하기"
+
+#~ msgid "Sounds"
+#~ msgstr "사운드"
+
+#~ msgid ""
+#~ "Uncheck <gui style=\"checkbox\">Enable sounds</gui>. You can check the "
+#~ "option again to enable the feature."
+#~ msgstr ""
+#~ "<gui style=\"checkbox\">Enable sounds</gui> 체크를 해제하세요. 옵션에서 다"
+#~ "시 이 기능을 활성화할 수 있습니다."
+
+#~ msgid "Animation"
+#~ msgstr "애니메이션"
+
+#~ msgid "Animation results in a more fluid movement of the marbles."
+#~ msgstr "애니메이션은 구슬의 움직임을 부드럽게 보여줍니다."
+
+#~ msgid "To disable animation:"
+#~ msgstr "애니메이션 비활성화:"
+
+#~ msgid ""
+#~ "Uncheck <gui style=\"checkbox\">Enable animation</gui>. You can check the "
+#~ "option again to enable the feature."
+#~ msgstr ""
+#~ "<gui style=\"checkbox\">Enable animation</gui>의 체크를 해제하세요. 옵션에"
+#~ "서 다시 이 기능을 활성화할 수 있습니다."
