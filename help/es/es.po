@@ -3,20 +3,21 @@
 # traducción al español del manual de gnect
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2012-2021.
+# Daniel Mustieles García <daniel.mustieles@gmail.com>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect.HEAD\n"
-"POT-Creation-Date: 2021-02-19 23:45+0000\n"
-"PO-Revision-Date: 2021-05-10 11:52+0200\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"POT-Creation-Date: 2021-09-09 12:37+0000\n"
+"PO-Revision-Date: 2021-09-10 18:00+0200\n"
+"Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Gtranslator 40.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -67,10 +68,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
-#| msgid ""
-#| "Pick the theme of your choice from the drop down menu to the right of "
-#| "<gui style=\"group\">Theme</gui>. The change will be reflected "
-#| "immediately in the game window."
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
@@ -81,7 +78,7 @@ msgstr ""
 #. (itstool) path: item/p
 #: C/appearance.page:37 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
-msgstr "cierre el menú pulsando fuera de él."
+msgstr "Cierre el menú pulsando fuera de él."
 
 #. (itstool) path: info/desc
 #: C/basics.page:19
@@ -138,9 +135,6 @@ msgstr "Elegir otro distinto"
 
 #. (itstool) path: page/p
 #: C/choose-opponent.page:29
-#| msgid ""
-#| "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
-#| "playing at level one."
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at an easy level."
@@ -172,30 +166,22 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:41
-#, fuzzy
-#| msgid ""
-#| "Alternatively, choose the level at which the computer plays. Choose "
-#| "between <gui style=\"radiobutton\">Level one</gui>, <gui style="
-#| "\"radiobutton\">Level two</gui> or <gui style=\"radiobutton\">Level "
-#| "three</gui>, where <gui style=\"radiobutton\">Level one</gui> is the "
-#| "easiest level and <gui style=\"radiobutton\">Level three</gui> is the "
-#| "most difficult level."
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
 "plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
 "\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
-"Alternativamente, elija el nivel en el que juega el equipo. Elija entre <gui "
-"style=\"radiobutton\">Nivel uno</gui>, <gui style=\"radiobutton\">Nivel dos</"
-"gui> o <gui style=\"radiobutton\">Nivel tres</gui>, donde el <gui style="
-"\"radiobutton\">Nivel uno</gui> es el nivel más fácil y el <gui style="
-"\"radiobutton\">Nivel tres</gui> es el más difícil."
+"Alternativamente, elija el nivel de <gui>Dificultad</gui> en el que juega el "
+"equipo. Elija entre <gui style=\"button\">Fácil</gui>, <gui style=\"button"
+"\">Medio</gui> o <gui style=\"button\">Difícil</gui>."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:45
 msgid ""
 "You can also choose if you play first or second under <gui>Game start</gui>."
 msgstr ""
+"También puede elegir si juega primero o segundo en <gui>Empezar partida</"
+"gui>."
 
 #. (itstool) path: note/p
 #: C/choose-opponent.page:48
@@ -282,7 +268,7 @@ msgstr "Preferencias"
 #. (itstool) path: p/link
 #: C/legal.xml:4
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "licencia Creative Commons Atribución-CompartirIgual 3.0 Unported"
+msgstr "Licencia Creative Commons Atribución-CompartirIgual 3.0 No portada"
 
 #. (itstool) path: license/p
 #: C/legal.xml:3
@@ -306,14 +292,6 @@ msgstr "Cambiar su último movimiento"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:28
-#, fuzzy
-#| msgid ""
-#| "When the computer makes a winning move because of your last move or when "
-#| "you accidentally make the wrong move, you can undo your last move and "
-#| "change it. To undo your last move, press the <gui style=\"button\">Undo "
-#| "your most recent move</gui> button in the header bar or press "
-#| "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your "
-#| "marble at a different row in the game area to change your move."
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
@@ -326,9 +304,11 @@ msgstr ""
 "Cuando el equipo hace un movimiento ganador debido a su último movimiento o "
 "cuando hace un movimiento incorrecto por error, puede deshacer el último "
 "movimiento y cambiarlo. Para deshacer su último movimiento, pulse el botón "
-"<gui style=\"button\">Deshacer el último movimiento</gui> o pulse "
-"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. Ahora puede soltar la canica "
-"en otra casilla del área de juego para cambiar su movimiento."
+"en la barra de cabecera que o bien muestra una flecha y el color que jugar o "
+"dice <gui style=\"button\">Fin</gui>, y seleccione <gui style=\"menuitem"
+"\">Deshacer el último movimiento</gui> o pulse <keyseq><key>Ctrl</"
+"key><key>Z</key></keyseq>. Ahora puede soltar la canica en otra casilla del "
+"área de juego para cambiar su movimiento."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:37
@@ -348,13 +328,6 @@ msgstr "Usar pistas"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:47
-#, fuzzy
-#| msgid ""
-#| "If you are not sure of your next move, you can use a hint. When you use a "
-#| "hint, your marble moves to the top of the column that is the best choice, "
-#| "strategy-wise, and blinks. You can then drop your marble into that "
-#| "column. To use a hint, press <gui style=\"button\">Hint</gui> or "
-#| "<keyseq><key>Ctrl</key><key>H</key></keyseq>."
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
@@ -367,8 +340,10 @@ msgstr ""
 "Si no está seguro de su próximo movimiento, puede usar una pista. Cuando usa "
 "una pista, su canica se mueve a la parte superior de la columna que es su "
 "mejor opción a nivel de estrategia y parpadea. Entonces puede soltar la "
-"canica en esa columna. Para usar una pista, pulse <gui style=\"button"
-"\">Pista</gui> o pulse <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+"canica en esa columna. Para usar una pista, pulse el botón en la barra de "
+"cabecera que muestra una flecha y el color que jugar o dice <gui style="
+"\"button\">Fin</gui> y seleccione <gui style=\"button\">Pista</gui> o pulse "
+"<keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:56
@@ -392,12 +367,6 @@ msgstr "Puntuación"
 
 #. (itstool) path: page/p
 #: C/scores.page:29
-#, fuzzy
-#| msgid ""
-#| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
-#| "your opponent's wins and games that ended in a draw. To check the scores, "
-#| "press the menu button in the top-right corner of the window and select "
-#| "<gui style=\"menuitem\">Scores</gui>. In the default theme:"
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
@@ -405,9 +374,10 @@ msgid ""
 "to play or says <gui style=\"button\">End!</gui>, and select <gui style="
 "\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
-"La puntuación en <app>Cuatro en raya</app> se guarda el términos de sus "
+"La puntuación de <app>Cuatro en raya</app> se guarda de acuerdo a sus "
 "victorias, las victorias de su oponente y las partidas empatadas. Para ver "
-"la puntuación, pulse en el botón del menú en la esquina superior derecha y "
+"la puntuación, pulse en el botón de la barra de cabecera que o bien muestra "
+"una flecha y el color que jugar o dice <gui style=\"button\">Fin</gui> y "
 "elija <gui style=\"menuitem\">Puntuación</gui>. En el tema predeterminado:"
 
 #. (itstool) path: item/p
@@ -434,25 +404,22 @@ msgid ""
 "opponent</link>, then you will see the labels <gui>You</gui> and <gui>Me</"
 "gui> instead."
 msgstr ""
+"Si <link xref=\"choose-opponent\">seleccionó el equipo como su oponente</"
+"link>, verá las etiquetas <gui>Usted</gui> y <gui>Yo</gui> en su lugar."
 
 #. (itstool) path: note/p
 #: C/scores.page:53
-#, fuzzy
-#| msgid ""
-#| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
-#| "your opponent's wins and games that ended in a draw. To check the scores, "
-#| "press the menu button in the top-right corner of the window and select "
-#| "<gui style=\"menuitem\">Scores</gui>. In the default theme:"
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
 "or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
 "\">Next Round</gui> to not reset the scores counter."
 msgstr ""
-"La puntuación en <app>Cuatro en raya</app> se guarda el términos de sus "
-"victorias, las victorias de su oponente y las partidas empatadas. Para ver "
-"la puntuación, pulse en el botón del menú en la esquina superior derecha y "
-"elija <gui style=\"menuitem\">Puntuación</gui>. En el tema predeterminado:"
+"No pulse el botón <gui style=\"button\">Juego nuevo</gui>. En su lugar, "
+"pulse el botón en la barra de cabecera que muestra una flecha y el color que "
+"jugar o dice <gui style=\"button\">Fin</gui> y seleccione <gui style="
+"\"menuitem\">Siguiente ronda</gui> para no restablecer el contador de "
+"puntuaciones."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:24
