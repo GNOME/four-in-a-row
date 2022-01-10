@@ -1,0 +1,454 @@
+# Russian translation for four-in-a-row.
+# Copyright (C) 2022 four-in-a-row's COPYRIGHT HOLDER
+# This file is distributed under the same license as the four-in-a-row package.
+# Ser82-png <sw@atrus.ru>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: four-in-a-row master\n"
+"POT-Creation-Date: 2021-12-22 08:53+0000\n"
+"PO-Revision-Date: 2022-01-09 17:55+1000\n"
+"Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Last-Translator: Ser82-png\n"
+"X-Generator: Poedit 2.3\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Ser82-png"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
+#: C/controls-default.page:14 C/index.page:12 C/make-easy.page:16
+#: C/scores.page:16 C/sound-animation.page:16
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#. (itstool) path: info/desc
+#: C/appearance.page:18
+msgid "Use different themes to improve your gaming experience."
+msgstr "Используйте разные темы, чтобы улучшить игровой процесс."
+
+#. (itstool) path: page/title
+#: C/appearance.page:21
+msgid "Change the appearance of your gaming area"
+msgstr "Измените внешний вид вашей игровой области"
+
+#. (itstool) path: page/p
+#: C/appearance.page:23
+msgid ""
+"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
+"a black grid when you start a new game."
+msgstr ""
+"По умолчанию, в начале новой игры в <app>Четыре в ряд </app> используются "
+"красные и синие шарики на чёрном разлинованном поле."
+
+#. (itstool) path: steps/title
+#: C/appearance.page:27
+msgid "To use a different theme:"
+msgstr "Чтобы использовать другую тему:"
+
+#. (itstool) path: item/p
+#: C/appearance.page:29
+msgid ""
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Appearance</gui>."
+msgstr ""
+"Нажмите кнопку меню в правом верхнем углу окна и выберите <gui style="
+"\"menuitem\">Вид</gui>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:33
+msgid ""
+"Select the theme of your choice. The change will be reflected immediately in "
+"the game window."
+msgstr ""
+"Выберите подходящую вам тему. Изменение будет немедленно отражено в окне "
+"игры."
+
+#. (itstool) path: item/p
+#: C/appearance.page:37 C/sound-animation.page:39
+msgid "Close the menu by clicking outside of the menu."
+msgstr "Закройте меню, щёлкнув за его пределами."
+
+#. (itstool) path: info/desc
+#: C/basics.page:19
+msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
+msgstr "Запуск, игра и выход в игре <app>Четыре в ряд</app>."
+
+#. (itstool) path: page/title
+#: C/basics.page:23
+msgid "Basic instructions"
+msgstr "Базовые инструкции"
+
+#. (itstool) path: section/title
+#: C/basics.page:26
+msgid "Start a new game"
+msgstr "Начать новую игру"
+
+#. (itstool) path: section/p
+#: C/basics.page:28
+msgid ""
+"Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq> to start a new game."
+msgstr ""
+"Нажмите <gui style=\"button\">Начать</gui> или <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq>, чтобы начать новую игру."
+
+#. (itstool) path: section/title
+#: C/basics.page:35
+msgid "Quit <app>Four-in-a-row</app>"
+msgstr "Выйти из игры <app>Четыре в ряд</app>"
+
+#. (itstool) path: section/p
+#: C/basics.page:37
+msgid ""
+"Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-in-a-"
+"row</app> at any time."
+msgstr ""
+"Нажмите <keyseq><key>Ctrl</key><key>Q</key></keyseq>, чтобы покинуть игру "
+"<app>Четыре в ряд</app> в любой момент."
+
+#. (itstool) path: credit/name
+#: C/choose-opponent.page:20 C/sound-animation.page:20
+msgid "Michael Hill"
+msgstr "Michael Hill"
+
+#. (itstool) path: info/desc
+#: C/choose-opponent.page:24
+msgid "Change the level at which the computer plays or play with a friend."
+msgstr "Измените уровень, на котором играет компьютер, или играйте с другом."
+
+#. (itstool) path: page/title
+#: C/choose-opponent.page:28
+msgid "Choose a different opponent"
+msgstr "Выбор другого противника"
+
+#. (itstool) path: page/p
+#: C/choose-opponent.page:29
+msgid ""
+"By default, your opponent in <app>Four-in-a-row</app> is the computer, "
+"playing at an easy level."
+msgstr ""
+"По умолчанию вашим противником в игре <app>Четыре в ряд</app> является "
+"компьютер, играющий на лёгком уровне."
+
+#. (itstool) path: steps/title
+#: C/choose-opponent.page:33
+msgid "To change the level, or to play with a friend:"
+msgstr "Для того, чтобы изменить уровень или поиграть с другом:"
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:35
+msgid ""
+"Press the <gui style=\"button\">New Game</gui> button in the header bar."
+msgstr ""
+"Нажмите кнопку <gui style=\"button\">Новая игра</gui> на панели заголовка."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:39
+msgid ""
+"Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
+"players if want to play with a friend or family member."
+msgstr ""
+"В разделе <gui>Игроки</gui> выберите <gui style=\"button\">Два</gui> для "
+"обоих игроков, если хотите играть с другом или членом семьи."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:41
+msgid ""
+"Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
+"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
+msgstr ""
+"Либо измените <gui>Сложность</gui> для уровня, на котором играет компьютер. "
+"Выберите между <gui style=\"button\">Низкая</gui>, <gui style=\"button"
+"\">Средняя</gui> или <gui style=\"button\">Высокая</gui>."
+
+#. (itstool) path: item/p
+#: C/choose-opponent.page:45
+msgid ""
+"You can also choose if you play first or second under <gui>Game start</gui>."
+msgstr ""
+"Вы также можете выбрать в разделе <gui>Начало игры</gui>, первым или вторым "
+"игроком будете играть."
+
+#. (itstool) path: note/p
+#: C/choose-opponent.page:48
+msgid ""
+"If you are playing with a friend or family member, Player One gets to play "
+"first in the first game of <app>Four-in-a-row</app>. In subsequent games, "
+"the chance to play first is given alternately to each player. So, Player Two "
+"will get to play first in the second game, Player One can play first in the "
+"third game and so on."
+msgstr ""
+"Если вы играете с другом или членом семьи, первый игрок получает право "
+"первого хода в первой игре <app>Четыре в ряд</app>. В последующих играх шанс "
+"ходить первым предоставляется поочередно каждому игроку. Таким образом, "
+"второй игрок будет играть первым во второй игре, а первый игрок может "
+"сыграть первым в третьей игре и так далее."
+
+#. (itstool) path: info/desc
+#: C/controls-default.page:18
+msgid "Default controls for <app>Four-in-a-row</app>."
+msgstr "Стандартные элементы управления в игре <app>Четыре в ряд</app>."
+
+#. (itstool) path: page/title
+#: C/controls-default.page:21
+msgid "Controls"
+msgstr "Элементы управления"
+
+#. (itstool) path: page/p
+#: C/controls-default.page:23
+msgid ""
+"You can use your mouse and click on a particular row in the game area to "
+"drop your marble into that row. If you want to use the keyboard instead, the "
+"default keys for <app>Four-in-a-row</app> are:"
+msgstr ""
+"Вы можете использовать мышь и щёлкнуть по определенному ряду в игровой "
+"области, чтобы поместить шарик в этот ряд. Если вместо этого вы хотите "
+"использовать клавиатуру, то стандартные клавиши в игре <app>Четыре в ряд</"
+"app>:"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:29
+msgid "<key>←</key> to move the marble to your left."
+msgstr "<key>←</key>, чтобы переместить шарик влево."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:32
+msgid "<key>→</key> to move the marble to your right."
+msgstr "<key>→</key>, чтобы переместить шарик вправо."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:35
+msgid "<key>↓</key> to drop the marble."
+msgstr "<key>↓</key>, чтобы бросить шарик."
+
+#. (itstool) path: info/desc
+#: C/index.page:16
+msgid "Index"
+msgstr "Индекс"
+
+#. (itstool) path: page/title
+#: C/index.page:19
+msgid "<_:media-1/><span its:translate=\"yes\"> Four-in-a-row</span>"
+msgstr "<_:media-1/><span its:translate=\"yes\"> Четыре в ряд</span>"
+
+#. (itstool) path: page/p
+#: C/index.page:22
+msgid ""
+"<app>Four-in-a-row</app> is a strategy game for GNOME. The aim of the game "
+"is to stack four of your marbles in a horizontal, vertical or diagonal line "
+"while stopping your opponent from doing the same with their marbles."
+msgstr ""
+"<app>Четыре в ряд</app> – это стратегическая игра для GNOME. Цель игры "
+"состоит в том, чтобы сложить четыре ваших шарика в линию по горизонтали, "
+"вертикали или диагонали, не давая противнику сделать то же самое со своими "
+"шариками."
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "Game play"
+msgstr "Игровой процесс"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Preferences"
+msgstr "Параметры"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Эта работа находится под лицензией <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/make-easy.page:20
+msgid "Use hints or undo your wrong moves."
+msgstr "Используйте подсказки или отменяйте ваши неправильные ходы."
+
+#. (itstool) path: page/title
+#: C/make-easy.page:23
+msgid "Make your game a little easier"
+msgstr "Сделайте свою игру немного проще"
+
+#. (itstool) path: section/title
+#: C/make-easy.page:26
+msgid "Change your last move"
+msgstr "Изменить свой последний ход"
+
+#. (itstool) path: section/p
+#: C/make-easy.page:28
+msgid ""
+"When the computer makes a winning move because of your last move or when you "
+"accidentally make the wrong move, you can undo your last move and change it. "
+"To undo your last move, press the button in the header bar which either "
+"shows an arrow and the color to play or says <gui style=\"button\">End!</"
+"gui>, and select <gui style=\"menuitem\">Undo last move</gui>, or press "
+"<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your marble "
+"at a different row in the game area to change your move."
+msgstr ""
+"Когда компьютер делает выигрышный ход благодаря вашему последнему ходу или "
+"когда вы случайно делаете неверный ход, то можете отменить свой последний "
+"ход и переходить. Чтобы отменить последний ход, нажмите кнопку в панели "
+"заголовка, которая либо показывает стрелку и цвет шарика игрока, либо "
+"надпись <gui style=\"button\">Конец!</gui>, и выберите <gui style=\"menuitem"
+"\"> Отменить последний ход</gui> или нажать <keyseq><key>Ctrl</key><key>Z</"
+"key></keyseq>. Теперь вы можете бросить свой шарик в другой ряд игровой "
+"зоны, чтобы переиграть."
+
+#. (itstool) path: note/p
+#: C/make-easy.page:37
+msgid ""
+"You can undo all your moves starting from your current move until you reach "
+"a favourable state of the game, or until the beginning of your current game, "
+"by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq> repeatedly."
+msgstr ""
+"Вы можете отменить все свои ходы, начиная с текущего, пока не достигнете "
+"благоприятного состояния игры или до начала текущей игры, нажав "
+"<keyseq><key>Ctrl</key><key>Z</key ></keyseq> несколько раз."
+
+#. (itstool) path: section/title
+#: C/make-easy.page:45
+msgid "Use hints"
+msgstr "Используйте подсказки"
+
+#. (itstool) path: section/p
+#: C/make-easy.page:47
+msgid ""
+"If you are not sure of your next move, you can use a hint. When you use a "
+"hint, your marble moves to the top of the column that is the best choice, "
+"strategy-wise, and blinks. You can then drop your marble into that column. "
+"To use a hint, press the button in the header bar which either shows an "
+"arrow and the color to play or says <gui style=\"button\">End!</gui> and "
+"select <gui style=\"menuitem\">Hint</gui>, or press <keyseq><key>Ctrl</"
+"key><key>H</key></keyseq>."
+msgstr ""
+"Если вы не уверены в своем следующем шаге, то можете воспользоваться "
+"подсказкой. Когда вы используете подсказку, ваш шарик перемещается в верхнюю "
+"часть столбца, который является лучшим выбором с точки зрения стратегии, и "
+"начинает мигать. После этого вы можете сбросить свой шарик в этом столбце. "
+"Чтобы использовать подсказку, нажмите кнопку на панели заголовка, которая "
+"показывает либо стрелку и цвет шарика игрока, либо надпись <gui style="
+"\"button\">Конец!</gui>, и выберите <gui style=\"menuitem\">Подсказка</gui> "
+"или нажмите <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+
+#. (itstool) path: note/p
+#: C/make-easy.page:56
+msgid "There is no limit on the number of hints you can use in a game."
+msgstr ""
+"Количество подсказок, которые вы можете использовать в игре, не ограничено."
+
+#. (itstool) path: credit/name
+#: C/scores.page:21
+msgid "Anna Philips"
+msgstr "Anna Philips"
+
+#. (itstool) path: info/desc
+#: C/scores.page:25
+msgid "Keep track of your wins and losses."
+msgstr "Следите за своими победами и поражениями."
+
+#. (itstool) path: page/title
+#: C/scores.page:28
+msgid "Scores"
+msgstr "Результаты"
+
+#. (itstool) path: page/p
+#: C/scores.page:29
+msgid ""
+"The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
+"your opponent's wins and games that ended in a draw. To check the scores, "
+"press the button in the header bar which either shows an arrow and the color "
+"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
+"\"menuitem\">Scores</gui>. In the default theme:"
+msgstr ""
+"Результаты в игре <app>Четыре в ряд</app> записывается с учётом ваших побед, "
+"побед вашего противника и игр, закончившихся вничью. Чтобы проверить "
+"результаты, нажмите кнопку в панели заголовка, который показывает стрелку и "
+"цвет ходящего игрока, либо надпись <gui style=\"button\">Конец!</gui>, и "
+"выберите <gui style=\"menuitem\">Результаты</gui>. В стандартной теме:"
+
+#. (itstool) path: item/p
+#: C/scores.page:37
+msgid "<gui>Red</gui> displays the number of games you have won."
+msgstr "<gui>Красный</gui> - показывает количество выигранных вами игр."
+
+#. (itstool) path: item/p
+#: C/scores.page:40
+msgid "<gui>Green</gui> displays the number of games won by the opponent."
+msgstr ""
+"<gui>Зелёный</gui> - отображает количество игр, выигранных противником."
+
+#. (itstool) path: item/p
+#: C/scores.page:43
+msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
+msgstr "<gui>Ничья</gui> - отображает количество игр, завершившихся ничьей."
+
+#. (itstool) path: item/p
+#: C/scores.page:46
+msgid ""
+"If you <link xref=\"choose-opponent\">selected the computer as your "
+"opponent</link>, then you will see the labels <gui>You</gui> and <gui>Me</"
+"gui> instead."
+msgstr ""
+"Если вы <link xref=\"choose-opponent\">выбрали компьютер в качестве "
+"оппонента</link>, то вместо этих надписей, вы увидите другие - <gui>Вы</gui> "
+"и <gui>Я</gui>."
+
+#. (itstool) path: note/p
+#: C/scores.page:53
+msgid ""
+"Do not press the <gui style=\"button\">New Game</gui> button, but press the "
+"button in the header bar which either shows an arrow and the color to play "
+"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
+"\">Next Round</gui> to not reset the scores counter."
+msgstr ""
+"Не нажимайте кнопку <gui style=\"button\">Новая игра</gui>, а нажмите кнопку "
+"в панели заголовка, которая либо показывает стрелку и цвет шарика игрока, "
+"либо говорит <gui style=\"button\">Конец! </gui> и выберите <gui style="
+"\"menuitem\">Следующий раунд</gui>, чтобы не сбросить счётчик очков."
+
+#. (itstool) path: info/desc
+#: C/sound-animation.page:24
+msgid "Play <app>Four-in-a-row</app> without sounds."
+msgstr "Играть в игру <app>Четыре в ряд</app> без звука."
+
+#. (itstool) path: page/title
+#: C/sound-animation.page:27
+msgid "Disable sounds"
+msgstr "Отключить звуки"
+
+#. (itstool) path: page/p
+#: C/sound-animation.page:29
+msgid ""
+"When sounds are enabled, you will hear something every time a marble is "
+"dropped, or when a game ends."
+msgstr ""
+"Если звуки включены, вы будете слышать, когда падает шарик или заканчивается "
+"игра."
+
+#. (itstool) path: steps/title
+#: C/sound-animation.page:33
+msgid "To disable sounds:"
+msgstr "Чтобы отключить звуки:"
+
+#. (itstool) path: item/p
+#: C/sound-animation.page:35
+msgid ""
+"Press the menu button in the top-right corner of the window and uncheck <gui "
+"style=\"menuitem\">Sound</gui>."
+msgstr ""
+"Нажмите кнопку меню в правом верхнем углу окна и снимите флажок <gui style="
+"\"menuitem\">Звук</gui>."
