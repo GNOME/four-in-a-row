@@ -1,18 +1,18 @@
 # Basque translation for four-in-a-row.
 # Copyright (C) 2021 four-in-a-row's COPYRIGHT HOLDER
 # This file is distributed under the same license as the four-in-a-row package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021, 2022.
 #
 msgid ""
 msgstr "Project-Id-Version: four-in-a-row master\n"
-"POT-Creation-Date: 2020-12-31 14:31+0000\n"
-"PO-Revision-Date: 2021-01-03 20:06+0000\n"
+"POT-Creation-Date: 2021-02-19 23:45+0000\n"
+"PO-Revision-Date: 2022-02-26 20:06+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: eu\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -41,7 +41,7 @@ msgstr "Aldatu zure joko-gunearen itxura"
 msgid ""
 "By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
 "a black grid when you start a new game."
-msgstr ""
+msgstr "Modu lehenetsian, <app>Lauko artzain-jokoak</app> puxtarri gorri eta urdin solidoak eta sareta beltza erabiltzen ditu joko berria abiarazten denean."
 
 #. (itstool) path: steps/title
 #: C/appearance.page:27
@@ -53,53 +53,53 @@ msgstr "Beste gai bat erabiltzeko:"
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
-msgstr ""
+msgstr "Sakatu goiko eskuineko izkinako menu-botoia eta hautatu <gui style=\"menuitem\">Itxura</gui>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:33
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
-msgstr ""
+msgstr "Hautatu erabiliko den gaia. Aldaketa berehala gertatuko da jokoaren leihoan."
 
 #. (itstool) path: item/p
 #: C/appearance.page:37 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
-msgstr ""
+msgstr "Menua ixteko, egin klik menutik kanpo."
 
 #. (itstool) path: info/desc
 #: C/basics.page:19
 msgid "Start, play and quit a game of <app>Four-in-a-row</app>."
-msgstr ""
+msgstr "<app>Lauko artzain-jokoa</app> abiaraztea, jokatzea eta uztea."
 
 #. (itstool) path: page/title
 #: C/basics.page:23
 msgid "Basic instructions"
-msgstr ""
+msgstr "Oinarrizko argibideak"
 
 #. (itstool) path: section/title
 #: C/basics.page:26
 msgid "Start a new game"
-msgstr ""
+msgstr "Hasi joko berria"
 
 #. (itstool) path: section/p
 #: C/basics.page:28
 msgid ""
 "Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
 "key><key>N</key></keyseq> to start a new game."
-msgstr ""
+msgstr "Sakatu <gui style=\"button\">Hasi hasieratik</gui> edo <keyseq><key>Ctrl</key><key>N</key></keyseq> teklak joko berria hasteko."
 
 #. (itstool) path: section/title
 #: C/basics.page:35
 msgid "Quit <app>Four-in-a-row</app>"
-msgstr ""
+msgstr "<app>Lauko artzain-jokotik</app> irtetea"
 
 #. (itstool) path: section/p
 #: C/basics.page:37
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Four-in-a-"
 "row</app> at any time."
-msgstr ""
+msgstr "Sakatu <keyseq><key>Ctrl</key><key>Q</key></keyseq> <app>Lauko artzain-jokotik</app> edozein unetan irteteko."
 
 #. (itstool) path: credit/name
 #: C/choose-opponent.page:20 C/sound-animation.page:20
@@ -109,7 +109,7 @@ msgstr "Michael Hill"
 #. (itstool) path: info/desc
 #: C/choose-opponent.page:24
 msgid "Change the level at which the computer plays or play with a friend."
-msgstr ""
+msgstr "Aldatu ordenagailuak zein mailatan jokatzen duen edo jokatu lagun batekin."
 
 #. (itstool) path: page/title
 #: C/choose-opponent.page:28
@@ -121,7 +121,7 @@ msgstr "Aukeratu beste aurkari bat"
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at an easy level."
-msgstr ""
+msgstr "Modu lehenetsian, <app>Lauko artzain-jokoan</app> ordenagailua izango da arerioa, eta maila errrazean egingo du kontra"
 
 #. (itstool) path: steps/title
 #: C/choose-opponent.page:33
@@ -132,14 +132,14 @@ msgstr "Mailaz aldatzeko edo lagun batekin jokatzeko:"
 #: C/choose-opponent.page:35
 msgid ""
 "Press the <gui style=\"button\">New Game</gui> button in the header bar."
-msgstr ""
+msgstr "Egin klik goiburu-barrako <gui style=\"button\">Joko berria</gui> botoian."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:39
 msgid ""
 "Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
 "players if want to play with a friend or family member."
-msgstr ""
+msgstr "<gui>Jokalariak</gui> atalean, aukeratu <gui style=\"button\">Bi</gui> bikoteka jokatzeko, lagun edo senide batekin jokatu nahi izanez gero."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:41
@@ -168,7 +168,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/controls-default.page:18
 msgid "Default controls for <app>Four-in-a-row</app>."
-msgstr ""
+msgstr "<app>Lauko artzain-jokoaren</app> tekla lehenetsiak"
 
 #. (itstool) path: page/title
 #: C/controls-default.page:21
@@ -219,7 +219,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/index.page:27
 msgid "Game play"
-msgstr ""
+msgstr "Jokoa"
 
 #. (itstool) path: section/title
 #: C/index.page:31
@@ -244,7 +244,7 @@ msgstr "Erabili iradokizunak edo desegin mugimendu okerrak."
 #. (itstool) path: page/title
 #: C/make-easy.page:23
 msgid "Make your game a little easier"
-msgstr ""
+msgstr "Erraztu jokoa"
 
 #. (itstool) path: section/title
 #: C/make-easy.page:26
@@ -274,7 +274,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/make-easy.page:45
 msgid "Use hints"
-msgstr ""
+msgstr "Erabili iradokizunak"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:47
@@ -291,22 +291,22 @@ msgstr ""
 #. (itstool) path: note/p
 #: C/make-easy.page:56
 msgid "There is no limit on the number of hints you can use in a game."
-msgstr ""
+msgstr "Ez dago mugarik erabili daitekeen iradokizun kopuruan."
 
 #. (itstool) path: credit/name
 #: C/scores.page:21
 msgid "Anna Philips"
-msgstr ""
+msgstr "Anna Philips"
 
 #. (itstool) path: info/desc
 #: C/scores.page:25
 msgid "Keep track of your wins and losses."
-msgstr ""
+msgstr "Gogoratu irabaziak eta galerak."
 
 #. (itstool) path: page/title
 #: C/scores.page:28
 msgid "Scores"
-msgstr ""
+msgstr "Puntuazioak"
 
 #. (itstool) path: page/p
 #: C/scores.page:29
