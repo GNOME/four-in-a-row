@@ -213,8 +213,8 @@ msgid ""
 "default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
 "Podeu fer servir el ratolí i fer clic sobre una fila en concret a l'àrea de "
-"joc per a deixar la bola en la fila. Si voleu utilitzar el teclat en canvi, "
-"les tecles predeterminades són <app>Quatre en ratlla</app>:"
+"joc per a deixar la bola en la fila. Si en comptes voleu utilitzar el teclat, "
+"les tecles predeterminades per al <app>Quatre en ratlla</app> són:"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:29
