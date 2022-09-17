@@ -7,21 +7,21 @@
 # Serge Gariépy <sergeg66@gmail.com>, 2013.
 # Alain Lojewski <allomervan@gmail.com>, 2013.
 # Guillaume Bernard <associations@guillaume-bernard.fr>, 2019
-# Charles Monzat <charles.monzat@free.fr>, 2018 -2020.
+# Charles Monzat <charles.monzat@free.fr>, 2018 -2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect documentation\n"
-"POT-Creation-Date: 2020-07-05 10:51+0000\n"
-"PO-Revision-Date: 2020-09-13 11:25+0200\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2021-02-19 23:45+0000\n"
+"PO-Revision-Date: 2022-04-10 22:16+0200\n"
+"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 3.34.0\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -37,7 +37,7 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
-#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/controls-default.page:14 C/index.page:12 C/make-easy.page:16
 #: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -211,17 +211,17 @@ msgstr ""
 "Joueur 1 peut jouer le premier dans la troisième partie et ainsi de suite."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:20
+#: C/controls-default.page:18
 msgid "Default controls for <app>Four-in-a-row</app>."
 msgstr "Commandes par défaut pour <app>Quatre-à-la-suite</app>."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:23
+#: C/controls-default.page:21
 msgid "Controls"
 msgstr "Commandes"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:25
+#: C/controls-default.page:23
 msgid ""
 "You can use your mouse and click on a particular row in the game area to "
 "drop your marble into that row. If you want to use the keyboard instead, the "
@@ -232,17 +232,17 @@ msgstr ""
 "<app>Quatre-à-la-suite</app> sont :"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:31
+#: C/controls-default.page:29
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key> pour déplacer la bille vers la gauche."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:34
+#: C/controls-default.page:32
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key> pour déplacer la bille vers la droite."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:37
+#: C/controls-default.page:35
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> pour déposer la bille."
 
@@ -282,8 +282,8 @@ msgstr "Préférences"
 #: C/legal.xml:4
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 msgstr ""
-"Creative Commons Paternité-Partage des Conditions Initiales à l’Identique "
-"3.0 non transposé"
+"Creative Commons Attribution - Partage dans les Mêmes Conditions 3.0 non "
+"transposé"
 
 #. (itstool) path: license/p
 #: C/legal.xml:3
@@ -320,8 +320,8 @@ msgstr ""
 "ou lorsque vous avez malencontreusement fait un mauvais choix, vous pouvez "
 "annuler votre dernière action et la modifier. Pour annuler votre dernier "
 "coup, appuyez sur le bouton situé dans la barre d’en-tête affichant : soit "
-"une flèche et la couleur à jouer, soit le terme <gui style=\"button\">Fini !</"
-"gui>. Sélectionnez ensuite <gui style=\"menuitem\">Annuler la dernière "
+"une flèche et la couleur à jouer, soit le terme <gui style=\"button\">Fini !"
+"</gui>. Sélectionnez ensuite <gui style=\"menuitem\">Annuler la dernière "
 "action</gui>, ou appuyez sur <keyseq><key>Ctrl</key><key>Z</key></keyseq>. "
 "Déposez ensuite votre bille dans un autre carré de la grille."
 
@@ -396,8 +396,8 @@ msgstr ""
 "victoires, les victoires de votre adversaire et les parties nulles. Pour "
 "afficher les scores, appuyez sur le bouton situé dans la barre d’en-tête "
 "affichant : soit une flèche et la couleur à jouer, soit le terme <gui style="
-"\"button\">Fini !</gui>, et sélectionnez <gui style=\"menuitem\">Scores</gui>. "
-"Dans le thème par défaut :"
+"\"button\">Fini !</gui>, et sélectionnez <gui style=\"menuitem\">Scores</"
+"gui>. Dans le thème par défaut :"
 
 #. (itstool) path: item/p
 #: C/scores.page:37
@@ -435,8 +435,8 @@ msgid ""
 msgstr ""
 "N’appuyez pas sur le bouton <gui style=\"button\">Nouvelle partie</gui>, "
 "mais appuyez sur le bouton situé dans la barre d’en-tête affichant : soit "
-"une flèche et la couleur à jouer, soit le terme <gui style=\"button\">Fini !</"
-"gui>, puis sélectionnez <gui style=\"menuitem\">Tour suivant</gui> pour ne "
+"une flèche et la couleur à jouer, soit le terme <gui style=\"button\">Fini !"
+"</gui>, puis sélectionnez <gui style=\"menuitem\">Tour suivant</gui> pour ne "
 "pas réinitialiser le compteur des scores."
 
 #. (itstool) path: info/desc
