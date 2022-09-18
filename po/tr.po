@@ -1,5 +1,5 @@
 # Turkish translation of four-in-a-row.
-# Copyright (C) 2020 GNOME four-in-a-row's COPYRIGHT HOLDER
+# Copyright (C) 2020-2022 GNOME four-in-a-row's COPYRIGHT HOLDER
 # This file is distributed under the same license as the four-in-a-row package.
 #
 # Onur Kucuk, <okucuk@yahoo.com>, 2000.
@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-07-05 10:51+0000\n"
+"POT-Creation-Date: 2022-07-25 13:42+0000\n"
 "PO-Revision-Date: 2020-08-19 13:05+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
@@ -730,67 +730,3 @@ msgstr "Mavinin sırası"
 #: src/theme.vala:214
 msgid "Stars and Rings"
 msgstr "Yıldızlar ve Halkalar"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Select the given column"
-#~ msgstr "Verilen sütunu seç"
-
-#~ msgid "Undo your most recent move"
-#~ msgstr "En son hamlenizi geri alın"
-
-#~ msgid "Receive a hint for your next move"
-#~ msgstr "Sonraki hamleniz için bir ipucu alın"
-
-#~| msgid "Four-in-a-row"
-#~ msgid "org.gnome.Four-in-a-row"
-#~ msgstr "org.gnome.Four-in-a-row"
-
-#~ msgid ""
-#~ "Zero is human; one through three correspond to the level of the computer "
-#~ "player."
-#~ msgstr ""
-#~ "Sıfır insan; birden üçe kadar olan sayılarda bilgisayarın düzeyini "
-#~ "belirtir."
-
-#~ msgid "_Preferences"
-#~ msgstr "_Tercihler"
-
-#~ msgid "This key is already in use."
-#~ msgstr "Bu tuş zaten kullanımda."
-
-#~ msgid "Unknown Command"
-#~ msgstr "Bilinmeyen Komut"
-
-#~ msgid "Preferences"
-#~ msgstr "Tercihler"
-
-#~ msgid "Opponent:"
-#~ msgstr "Rakip:"
-
-#~ msgid "Human"
-#~ msgstr "İnsan"
-
-#~ msgid "Level one"
-#~ msgstr "Birinci düzey"
-
-#~ msgid "Level two"
-#~ msgstr "İkinci düzey"
-
-#~ msgid "Level three"
-#~ msgstr "Üçüncü düzey"
-
-#~ msgid "_Theme:"
-#~ msgstr "_Gövde:"
-
-#~ msgid "E_nable sounds"
-#~ msgstr "_Sesleri etkinleştir"
-
-#~ msgid "four-in-a-row"
-#~ msgstr "four-in-a-row"
-
-#~ msgid ""
-#~ "Unable to load image:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Resim yüklenemedi:\n"
-#~ "%s"
