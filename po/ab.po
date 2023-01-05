@@ -31,22 +31,22 @@ msgstr ""
 #. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:85
 msgid "_Two players"
-msgstr ""
+msgstr "Ҩыџьа ахәмарҩцәа"
 
 #. Translators: when configuring a new game, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:109
 msgid "Players"
-msgstr ""
+msgstr "Ахәмарҩцәа"
 
 #. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:126
 msgid "_One"
-msgstr ""
+msgstr "_Акы"
 
 #. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
 #: data/ui/fiar-screens.ui:138
 msgid "_Two"
-msgstr ""
+msgstr "_Ҩба"
 
 #. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
 #: data/ui/fiar-screens.ui:162
@@ -71,7 +71,7 @@ msgstr "_Иуадаҩу"
 #. Translators: when configuring a new game, header of the row for choosing whether to start or not
 #: data/ui/fiar-screens.ui:227
 msgid "Game start"
-msgstr ""
+msgstr "Ахәмарра алагамҭа"
 
 #. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
 #: data/ui/four-in-a-row.ui:31
