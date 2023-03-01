@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-05-30 11:03+0000\n"
-"PO-Revision-Date: 2021-08-02 18:20+0200\n"
+"POT-Creation-Date: 2023-01-25 17:20+0000\n"
+"PO-Revision-Date: 2023-03-01 19:32+0100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Tot En Òc\n"
 "Language: oc\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
 #. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
@@ -262,6 +262,8 @@ msgid ""
 "Specifies who will start the next one-player game. Ignored for two-player "
 "games."
 msgstr ""
+"Indica qual comença la partida a un jogaire venenta. Ignorat per las "
+"partidas a dos jogaires."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
 #: data/org.gnome.Four-in-a-row.gschema.xml:19
@@ -277,6 +279,8 @@ msgstr "Adversari"
 #: data/org.gnome.Four-in-a-row.gschema.xml:28
 msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
 msgstr ""
+"A partir de 1, lo mai facil, cap a 3, lo mai dificil. Ignorat per las "
+"partidas a dos jogaires."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
 #: data/org.gnome.Four-in-a-row.gschema.xml:34
@@ -386,7 +390,7 @@ msgstr "TALHA"
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:110
 msgid "Length of a winning line"
-msgstr ""
+msgstr "Longor d’una linha ganhanta"
 
 #. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:113
@@ -416,17 +420,20 @@ msgstr "La talha deu pas èsser superiora a 16."
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
 #: src/four-in-a-row.vala:180
 msgid "Lines must be at least 3 tiles."
-msgstr ""
+msgstr "Las linhas devon aver almens 3 casas."
 
 #. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
 #: src/four-in-a-row.vala:186
 msgid "Lines cannot be longer than board height or width."
 msgstr ""
+"Las linhas pòdon pas èsser mai longas que la nautor o la largor del platèu."
 
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
 #: src/four-in-a-row.vala:229
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
 msgstr ""
+"Lo nivèl deu èsser una valor : 1 (facil), 2 (mejan) o 3 (dificil). "
+"Paramètres pas cambiat."
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:267
