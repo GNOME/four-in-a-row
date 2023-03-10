@@ -20,16 +20,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2022-07-25 13:42+0000\n"
-"PO-Revision-Date: 2020-08-19 13:05+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2023-01-25 17:20+0000\n"
+"PO-Revision-Date: 2023-03-10 02:04+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
 #: data/ui/fiar-screens.ui:40
@@ -478,7 +478,7 @@ msgstr "Sen kazandın!"
 #. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
 #: src/four-in-a-row.vala:584
 msgid "I win!"
-msgstr "Ben Yendim!"
+msgstr "Ben kazandım!"
 
 #. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
 #: src/four-in-a-row.vala:593
@@ -496,7 +496,7 @@ msgstr "Düşünüyorum…"
 #: src/four-in-a-row.vala:925
 #, c-format
 msgid "Hint: Column %d"
-msgstr "İpucu: Sütun %d"
+msgstr "İpucu: %d. Sütun "
 
 #. Translators: in the About dialog, name of an author of the game
 #: src/four-in-a-row.vala:1122
@@ -578,10 +578,11 @@ msgstr ""
 "Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Sabri Ünal <libreajans@gmail.com>"
 
+# Menü değeri olduğundan Başlık Düzeni tercih edildi.
 #. Translators: during a game, entry in the game menu, for undoing the last move
 #: src/four-in-a-row.vala:1285
 msgid "_Undo last move"
-msgstr "_Son hamleyi geri al"
+msgstr "_Son Hamleyi Geri Al"
 
 #. Translators: during a game, entry in the game menu, for suggesting where to play
 #: src/four-in-a-row.vala:1289
@@ -653,7 +654,7 @@ msgstr "Daire kazandı!"
 
 #: src/theme.vala:176 src/theme.vala:187
 msgid "Cross wins!"
-msgstr "Çarpı kazadı!"
+msgstr "Çarpı kazandı!"
 
 #: src/theme.vala:177 src/theme.vala:188
 msgid "Circle’s turn"
@@ -699,7 +700,7 @@ msgstr "Yeşil kazandı!"
 
 #: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
 msgid "Red’s turn"
-msgstr "Sıra Kırmızıda"
+msgstr "Kırmızının sırası"
 
 #: src/theme.vala:199 src/theme.vala:221
 msgid "Green’s turn"
