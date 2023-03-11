@@ -1,12 +1,12 @@
 # Daniel Nylander <po@danielnylander.se>, 2007, 2009.
 # Erik Sköldås <erik.skoldas@tele2.se>, 2015.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2018, 2019, 2020.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2018, 2019, 2020, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row doc\n"
-"POT-Creation-Date: 2020-03-17 20:24+0000\n"
-"PO-Revision-Date: 2020-03-17 21:35+0100\n"
+"POT-Creation-Date: 2023-03-10 08:35+0000\n"
+"PO-Revision-Date: 2023-03-11 16:45+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -25,7 +25,7 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
-#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/controls-default.page:14 C/index.page:12 C/make-easy.page:16
 #: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -38,33 +38,31 @@ msgstr "Använd olika teman för att förbättra din spelupplevelse."
 #. (itstool) path: page/title
 #: C/appearance.page:21
 msgid "Change the appearance of your gaming area"
-msgstr "Ändra utseendet på spelplan"
+msgstr "Ändra utseendet på spelplanen"
 
 #. (itstool) path: page/p
 #: C/appearance.page:23
 msgid ""
-"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
-"a black grid when you start a new game."
+"You can change the style and colors of the marbles when you start a new game."
 msgstr ""
-"Som standard använder <app>Fyra-i-rad</app> enfärgade röda och blå kulor mot "
-"ett svart rutnät när du startar ett nytt spel."
+"Du kan ändra stilarna och färgerna på kulorna när du startar ett nytt spel."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:27
+#: C/appearance.page:26
 msgid "To use a different theme:"
 msgstr "Om du vill använda ett annat tema:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:29
+#: C/appearance.page:28
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
 msgstr ""
-"Tryck på menyknappen i fönstrets övre högra hörn och välj <gui style="
-"\"menuitem\">Utseende</gui>."
+"Tryck på menyknappen i fönstrets övre högra hörn och välj <gui "
+"style=\"menuitem\">Utseende</gui>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:32
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
@@ -73,7 +71,7 @@ msgstr ""
 "spelfönstret."
 
 #. (itstool) path: item/p
-#: C/appearance.page:37 C/sound-animation.page:39
+#: C/appearance.page:36 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
 msgstr "Stäng menyn genom att klicka utanför menyn."
 
@@ -163,8 +161,8 @@ msgstr ""
 #: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
-"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
-"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui "
+"style=\"button\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
 "Välj alternativt den <gui>Svårighetsgrad</gui> som datorn spelar på. Välj "
 "mellan <gui style=\"button\">Enkel</gui>, <gui style=\"button\">Medel</gui> "
@@ -187,44 +185,44 @@ msgid ""
 "will get to play first in the second game, Player One can play first in the "
 "third game and so on."
 msgstr ""
-"Om du spelar med en vän eller familjemedlem, får spelare ett börja i första "
-"omgången av <app>Fyra-i-rad</app>. I efterföljande spel, ges möjligheten att "
+"Om du spelar med en vän eller familjemedlem får spelare ett börja i första "
+"omgången av <app>Fyra-i-rad</app>. I efterföljande spel ges möjligheten att "
 "börja växelvis till varje spelare. Så spelare två börjar i det andra spelet, "
 "spelare ett börjar i det tredje spelet och så vidare."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:20
+#: C/controls-default.page:18
 msgid "Default controls for <app>Four-in-a-row</app>."
-msgstr "Standard styrtangenter i <app>Fyra-i-rad</app>."
+msgstr "Standardtangenter för styrning i <app>Fyra-i-rad</app>."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:23
+#: C/controls-default.page:21
 msgid "Controls"
 msgstr "Styrning"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:25
+#: C/controls-default.page:23
 msgid ""
 "You can use your mouse and click on a particular row in the game area to "
 "drop your marble into that row. If you want to use the keyboard instead, the "
 "default keys for <app>Four-in-a-row</app> are:"
 msgstr ""
 "Du kan använda musen och klicka på en viss rad i spelområdet för att släppa "
-"din kula i den raden. Om du vill använda tangentbordet istället, så är "
+"din kula i den raden. Om du vill använda tangentbordet i stället, så är "
 "standardknapparna för <app>Fyra-i-rad</app>:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:31
+#: C/controls-default.page:29
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key> för att flytta kulan till vänster."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:34
+#: C/controls-default.page:32
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key> för att flytta kulan till höger."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:37
+#: C/controls-default.page:35
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> för att släppa kulan."
 
@@ -298,10 +296,10 @@ msgstr ""
 "När datorn gör ett vinnande drag på grund av ditt senaste drag eller när du "
 "av misstag gör ett felaktigt drag, kan du ångra ditt senaste drag och ändra "
 "det. För att ångra ditt senaste drag, tryck på knappen i rubrikraden som "
-"antingen visar en pil och färgen att spela eller säger <gui style=\"button"
-"\">Slut!</gui>, och välj <gui style=\"menuitem\">Ångra senaste drag</gui> "
-"eller tryck <keyseq><key>Ctrl</key><key>Z</key></keyseq>. Du kan nu släppa "
-"din kula på en annan ruta i spelområdet för att ändra ditt drag."
+"antingen visar en pil och färgen att spela eller säger <gui "
+"style=\"button\">Slut!</gui>, och välj <gui style=\"menuitem\">Ångra senaste "
+"drag</gui> eller tryck <keyseq><key>Ctrl</key><key>Z</key></keyseq>. Du kan "
+"nu släppa din kula på en annan ruta i spelområdet för att ändra ditt drag."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:37
@@ -334,9 +332,9 @@ msgstr ""
 "ett tips, flyttar sig din kula till toppen av den kolumn som är det "
 "strategiskt bästa valet och blinkar. Du kan sedan släppa din kula i den "
 "kolumnen. För att använda ett tips, tryck på knappen i rubrikraden som "
-"antingen visar en pil och färgen att spela eller säger <gui style=\"button"
-"\">Slut!</gui>, och välj <gui style=\"menuitem\">Tips</gui> eller tryck "
-"<keyseq><key>Ctrl</key><key>H</key></keyseq>."
+"antingen visar en pil och färgen att spela eller säger <gui "
+"style=\"button\">Slut!</gui>, och välj <gui style=\"menuitem\">Tips</gui> "
+"eller tryck <keyseq><key>Ctrl</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:56
@@ -365,14 +363,14 @@ msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "press the button in the header bar which either shows an arrow and the color "
-"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
-"\"menuitem\">Scores</gui>. In the default theme:"
+"to play or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "Poängräkningen i <app>Fyra-i-rad</app> registreras i termer av dina vinster, "
 "din motståndares vinster och spel som slutade oavgjort. För att kontrollera "
 "poängen, tryck på knappen i rubrikraden som antingen visar en pil och färgen "
-"att spela eller säger <gui style=\"button\">Slut!</gui>, och välj <gui style="
-"\"menuitem\">Poänglista</gui>. I standardtemat:"
+"att spela eller säger <gui style=\"button\">Slut!</gui>, och välj <gui "
+"style=\"menuitem\">Poänglista</gui>. I standardtemat:"
 
 #. (itstool) path: item/p
 #: C/scores.page:37
@@ -397,20 +395,20 @@ msgid ""
 "gui> instead."
 msgstr ""
 "Om du <link xref=\"choose-opponent\">valde datorn som din motståndare</link> "
-"kommer du att se etiketterna <gui>Du</gui> och <gui>Jag</gui> istället."
+"kommer du att se etiketterna <gui>Du</gui> och <gui>Jag</gui> i stället."
 
 #. (itstool) path: note/p
 #: C/scores.page:53
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
-"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
-"\">Next Round</gui> to not reset the scores counter."
+"or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Next Round</gui> to not reset the scores counter."
 msgstr ""
 "Tryck inte på knappen <gui style=\"button\">Nytt spel</gui>, utan tryck på "
 "knappen i rubrikraden som antingen visar en pil och färgen att spela eller "
-"säger <gui style=\"button\">Slut!</gui>, och välj <gui style=\"menuitem"
-"\">Nästa runda</gui> för att inte nollställa poängräkningen."
+"säger <gui style=\"button\">Slut!</gui>, och välj <gui "
+"style=\"menuitem\">Nästa runda</gui> för att inte nollställa poängräkningen."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:24
@@ -442,8 +440,15 @@ msgid ""
 "Press the menu button in the top-right corner of the window and uncheck <gui "
 "style=\"menuitem\">Sound</gui>."
 msgstr ""
-"Tryck på menyknappen i fönstrets övre högra hörn och avmarkera <gui style="
-"\"menuitem\">Ljud</gui>."
+"Tryck på menyknappen i fönstrets övre högra hörn och avmarkera <gui "
+"style=\"menuitem\">Ljud</gui>."
+
+#~ msgid ""
+#~ "By default, <app>Four-in-a-row</app> uses solid red and blue marbles "
+#~ "against a black grid when you start a new game."
+#~ msgstr ""
+#~ "Som standard använder <app>Fyra-i-rad</app> enfärgade röda och blå kulor "
+#~ "mot ett svart rutnät när du startar ett nytt spel."
 
 #~ msgid "Set custom control keys."
 #~ msgstr "Välj anpassade styrtangenter."
@@ -460,12 +465,12 @@ msgstr ""
 
 #~ msgid ""
 #~ "Press the menu button in the top-right corner of the window and select "
-#~ "<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-#~ "\">Keyboard Controls</gui></guiseq>."
+#~ "<guiseq><gui style=\"menu\">Preferences</gui> <gui "
+#~ "style=\"menuitem\">Keyboard Controls</gui></guiseq>."
 #~ msgstr ""
 #~ "Tryck på menyknappen i fönstrets övre högra hörn och välj <guiseq><gui "
-#~ "style=\"menu\">Inställningar</gui> <gui style=\"menuitem"
-#~ "\">Tangentbordsstyrning</gui></guiseq>."
+#~ "style=\"menu\">Inställningar</gui> <gui "
+#~ "style=\"menuitem\">Tangentbordsstyrning</gui></guiseq>."
 
 #~ msgid ""
 #~ "In the list, select the line you want to change, then click on the "
@@ -517,43 +522,46 @@ msgstr ""
 #~ "alternativet igen för att aktivera funktionen."
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
+#~ "guiseq>."
 #~ msgstr ""
-#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui> <gui style=\"menuitem"
-#~ "\">Inställningar</gui> <gui style=\"menuitem\">Spel</gui></guiseq>."
+#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui> <gui "
+#~ "style=\"menuitem\">Inställningar</gui> <gui style=\"menuitem\">Spel</"
+#~ "gui></guiseq>."
 
 #~ msgid ""
-#~ "Open the application menu in the top bar and select <guiseq><gui style="
-#~ "\"menu\">Settings</gui> <gui style=\"menuitem\">Preferences</gui> <gui "
-#~ "style=\"menuitem\">Keyboard Controls</gui></guiseq>."
+#~ "Open the application menu in the top bar and select <guiseq><gui "
+#~ "style=\"menu\">Settings</gui> <gui style=\"menuitem\">Preferences</gui> "
+#~ "<gui style=\"menuitem\">Keyboard Controls</gui></guiseq>."
 #~ msgstr ""
-#~ "Öppna programmenyn i systemraden och välj <guiseq><gui style=\"menu"
-#~ "\">Inställningar</gui> <gui style=\"menuitem\">Inställningar</gui> <gui "
-#~ "style=\"menuitem\">Tangentbordsstyrning</gui></guiseq>."
+#~ "Öppna programmenyn i systemraden och välj <guiseq><gui "
+#~ "style=\"menu\">Inställningar</gui> <gui style=\"menuitem\">Inställningar</"
+#~ "gui> <gui style=\"menuitem\">Tangentbordsstyrning</gui></guiseq>."
 
 #~ msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
 #~ msgstr "Spela <app>Fyra-i-rad</app> i helskärmsläge"
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-#~ "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-#~ "fullscreen mode. You can return to the default screen size by pressing "
-#~ "<key>F11</key> again."
+#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui "
+#~ "style=\"menuitem\">Fullscreen</gui></guiseq> or press <key>F11</key> to "
+#~ "play your game in fullscreen mode. You can return to the default screen "
+#~ "size by pressing <key>F11</key> again."
 #~ msgstr ""
-#~ "Välj <guiseq><gui style=\"menu\">Visa</gui> <gui style=\"menuitem"
-#~ "\">Helskärm</gui></guiseq> eller tryck på <key>F11</key> för att spela "
-#~ "ditt spel i helskärmsläge. Du kan återgå till standard bildstorlek genom "
-#~ "att trycka  <key>F11</key> igen."
+#~ "Välj <guiseq><gui style=\"menu\">Visa</gui> <gui "
+#~ "style=\"menuitem\">Helskärm</gui></guiseq> eller tryck på <key>F11</key> "
+#~ "för att spela ditt spel i helskärmsläge. Du kan återgå till standard "
+#~ "bildstorlek genom att trycka  <key>F11</key> igen."
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You "
-#~ "will see <gui>Player One</gui> and <gui>Player Two</gui>."
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
+#~ "guiseq>. You will see <gui>Player One</gui> and <gui>Player Two</gui>."
 #~ msgstr ""
-#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui> <gui style=\"menuitem"
-#~ "\">Inställningar</gui> <gui style=\"menuitem\">Spel</gui></guiseq>. Du "
-#~ "kommer att se <gui>Spelare ett</gui> och <gui>Spelare två</gui>."
+#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui> <gui "
+#~ "style=\"menuitem\">Inställningar</gui> <gui style=\"menuitem\">Spel</"
+#~ "gui></guiseq>. Du kommer att se <gui>Spelare ett</gui> och <gui>Spelare "
+#~ "två</gui>."
 
 #~ msgid "Disable sounds or animation"
 #~ msgstr "Avaktivera ljud eller animering"
