@@ -1,14 +1,14 @@
 # Polish translation for four-in-a-row help.
-# Copyright © 2017-2020 the four-in-a-row authors.
+# Copyright © 2017-2023 the four-in-a-row authors.
 # This file is distributed under the same license as the four-in-a-row help.
-# Piotr Drąg <piotrdrag@gmail.com>, 2017-2020.
-# Aviary.pl <community-poland@mozilla.org>, 2017-2020.
+# Piotr Drąg <piotrdrag@gmail.com>, 2017-2023.
+# Aviary.pl <community-poland@mozilla.org>, 2017-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row-help\n"
-"POT-Creation-Date: 2020-07-05 10:51+0000\n"
-"PO-Revision-Date: 2020-08-30 14:18+0200\n"
+"POT-Creation-Date: 2023-03-10 08:35+0000\n"
+"PO-Revision-Date: 2023-03-11 15:24+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -22,12 +22,12 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2017-2020\n"
-"Aviary.pl <community-poland@mozilla.org>, 2017-2020"
+"Piotr Drąg <piotrdrag@gmail.com>, 2017-2023\n"
+"Aviary.pl <community-poland@mozilla.org>, 2017-2023"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
-#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/controls-default.page:14 C/index.page:12 C/make-easy.page:16
 #: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -45,35 +45,32 @@ msgstr "Zmiana wyglądu gry"
 #. (itstool) path: page/p
 #: C/appearance.page:23
 msgid ""
-"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
-"a black grid when you start a new game."
-msgstr ""
-"Domyślnie gra <app>Czwórki</app> używa czerwonych i niebieskich kulek na "
-"czarnej siatce."
+"You can change the style and colors of the marbles when you start a new game."
+msgstr "Można zmienić styl i kolory kulek podczas rozpoczynania nowej gry."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:27
+#: C/appearance.page:26
 msgid "To use a different theme:"
 msgstr "Aby użyć innego motywu:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:29
+#: C/appearance.page:28
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
 msgstr ""
-"Kliknij przycisk menu w górnym prawym rogu okna i wybierz <gui style="
-"\"menuitem\">Wygląd</gui>."
+"Kliknij przycisk menu w górnym prawym rogu okna i wybierz <gui "
+"style=\"menuitem\">Wygląd</gui>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:32
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
 msgstr "Wybierz motyw. Zmiana zostanie uwzględniona natychmiast."
 
 #. (itstool) path: item/p
-#: C/appearance.page:37 C/sound-animation.page:39
+#: C/appearance.page:36 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
 msgstr "Zamknij menu klikając obszar poza nim."
 
@@ -164,8 +161,8 @@ msgstr ""
 #: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
-"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
-"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui "
+"style=\"button\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
 "Można także wybrać poziom <gui>Trudności</gui> komputera. Wybierz spośród "
 "<gui style=\"button\">Niski</gui>, <gui style=\"button\">Średni</gui> lub "
@@ -194,17 +191,17 @@ msgstr ""
 "w trzeciej itd."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:20
+#: C/controls-default.page:18
 msgid "Default controls for <app>Four-in-a-row</app>."
 msgstr "Domyślne klawisze w grze <app>Czwórki</app>."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:23
+#: C/controls-default.page:21
 msgid "Controls"
 msgstr "Sterowanie"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:25
+#: C/controls-default.page:23
 msgid ""
 "You can use your mouse and click on a particular row in the game area to "
 "drop your marble into that row. If you want to use the keyboard instead, the "
@@ -214,17 +211,17 @@ msgstr ""
 "tego używać klawiatury, można skorzystać z tych domyślnych klawiszy:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:31
+#: C/controls-default.page:29
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key> do przesunięcia kulki na lewo."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:34
+#: C/controls-default.page:32
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key> do przesunięcia kulki na prawo."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:37
+#: C/controls-default.page:35
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key> do upuszczenia kulki."
 
@@ -297,10 +294,10 @@ msgid ""
 msgstr ""
 "Kiedy komputer wygrywa dzięki ostatniemu ruchowi gracza, lub przypadkowo "
 "wykonano zły ruch, można cofnąć ostatni ruch i go zmienić. Aby to zrobić, "
-"kliknij przycisk na pasku nagłówka ze strzałką lub napisem <gui style="
-"\"button\">Koniec!</gui> i wybierz <gui style=\"menuitem\">Cofnij ostatni "
-"ruch</gui> albo naciśnij klawisze <keyseq><key>Ctrl</key><key>Z</key></"
-"keyseq>. Teraz można upuścić kulkę w innym rzędzie."
+"kliknij przycisk na pasku nagłówka ze strzałką lub napisem <gui "
+"style=\"button\">Koniec!</gui> i wybierz <gui style=\"menuitem\">Cofnij "
+"ostatni ruch</gui> albo naciśnij klawisze <keyseq><key>Ctrl</key><key>Z</"
+"key></keyseq>. Teraz można upuścić kulkę w innym rzędzie."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:37
@@ -362,8 +359,8 @@ msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "press the button in the header bar which either shows an arrow and the color "
-"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
-"\"menuitem\">Scores</gui>. In the default theme:"
+"to play or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "Wyniki gry <app>Czwórki</app> są zapisywane jako liczba zwycięstw gracza, "
 "zwycięstw przeciwnika i remisów. Aby zobaczyć wyniki, kliknij przycisk na "
@@ -401,13 +398,13 @@ msgstr ""
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
-"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
-"\">Next Round</gui> to not reset the scores counter."
+"or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Next Round</gui> to not reset the scores counter."
 msgstr ""
 "Nie należy klikać przycisku <gui style=\"button\">Nowa gra</gui>, tylko "
-"przycisk na pasku nagłówka ze strzałką lub napisem <gui style=\"button"
-"\">Koniec!</gui> i wybrać <gui style=\"menuitem\">Następna runda</gui>, aby "
-"nie wyzerować licznika wyników."
+"przycisk na pasku nagłówka ze strzałką lub napisem <gui "
+"style=\"button\">Koniec!</gui> i wybrać <gui style=\"menuitem\">Następna "
+"runda</gui>, aby nie wyzerować licznika wyników."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:24
@@ -439,5 +436,5 @@ msgid ""
 "Press the menu button in the top-right corner of the window and uncheck <gui "
 "style=\"menuitem\">Sound</gui>."
 msgstr ""
-"Kliknij przycisk menu w górnym prawym rogu okna i odznacz opcję <gui style="
-"\"menuitem\">Dźwięk</gui>."
+"Kliknij przycisk menu w górnym prawym rogu okna i odznacz opcję <gui "
+"style=\"menuitem\">Dźwięk</gui>."
