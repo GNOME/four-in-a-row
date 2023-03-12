@@ -3,30 +3,32 @@
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2011-2012, 2018-2019, 2020.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2011-2013, 2015.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2015.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-05-30 11:03+0000\n"
-"PO-Revision-Date: 2020-09-02 20:24+0200\n"
-"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"POT-Creation-Date: 2023-03-10 08:35+0000\n"
+"PO-Revision-Date: 2023-03-10 16:05+0100\n"
+"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2012, 2018, 2020\n"
-"Christian Kirbach <christian.kirbach@gmail.com>, 2011, 2012, 2013, 2015"
+"Christian Kirbach <christian.kirbach@gmail.com>, 2011, 2012, 2013, 2015\n"
+"Jürgen Benvenuti <gastornis@posteo.org>, 2023"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
-#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/controls-default.page:14 C/index.page:12 C/make-easy.page:16
 #: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -44,46 +46,36 @@ msgstr "Das Erscheinungsbild des Spielbereichs ändern"
 #. (itstool) path: page/p
 #: C/appearance.page:23
 msgid ""
-"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
-"a black grid when you start a new game."
+"You can change the style and colors of the marbles when you start a new game."
 msgstr ""
-"Die Voreinstellung von <app>Vier gewinnt</app> verwendet rote und blaue "
-"Murmeln und ein schwarzes Gitter."
+"Sie können den Stil und die Farben der Murmeln ändern, wenn Sie ein neues "
+"Spiel starten."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:27
+#: C/appearance.page:26
 msgid "To use a different theme:"
 msgstr "So verwenden Sie ein anderes Thema:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:29
-#| msgid ""
-#| "Press the menu button in the top-right corner of the window and select "
-#| "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"menuitem"
-#| "\">Game</gui></guiseq>."
+#: C/appearance.page:28
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
 msgstr ""
 "Klicken Sie auf den Menüknopf in der oberen rechten Ecke des Fensters und "
-"wählen Sie <gui "
-"style=\"menuitem\">Erscheinungsbild</gui>."
+"wählen Sie <gui style=\"menuitem\">Erscheinungsbild</gui>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
-#| msgid ""
-#| "Pick the theme of your choice from the drop down menu to the right of "
-#| "<gui style=\"group\">Theme</gui>. The change will be reflected "
-#| "immediately in the game window."
+#: C/appearance.page:32
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
 msgstr ""
-"Wählen Sie das gewünschte Thema aus. Die "
-"Änderung wirkt sich sofort im Spielfenster aus."
+"Wählen Sie das gewünschte Thema aus. Die Änderung wirkt sich sofort im "
+"Spielfenster aus."
 
 #. (itstool) path: item/p
-#: C/appearance.page:37 C/sound-animation.page:39
+#: C/appearance.page:36 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
 msgstr "Schließen Sie das Menü, indem Sie außerhalb des Menüs klicken."
 
@@ -144,9 +136,6 @@ msgstr "Einen anderen Gegner wählen"
 
 #. (itstool) path: page/p
 #: C/choose-opponent.page:29
-#| msgid ""
-#| "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
-#| "playing at level one."
 msgid ""
 "By default, your opponent in <app>Four-in-a-row</app> is the computer, "
 "playing at an easy level."
@@ -164,49 +153,37 @@ msgstr "So ändern Sie die Spielstufe oder spielen mit einem Freund:"
 msgid ""
 "Press the <gui style=\"button\">New Game</gui> button in the header bar."
 msgstr ""
-"Klicken Sie auf den Knopf <gui style=\"button\">Neues Spiel</gui> in der"
-" Kopfleiste."
+"Klicken Sie auf den Knopf <gui style=\"button\">Neues Spiel</gui> in der "
+"Kopfleiste."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:39
-#| msgid ""
-#| "Under <gui>Opponent</gui>, choose <gui style=\"radiobutton\">Human</gui> "
-#| "for both players if want to play with a friend or family member."
 msgid ""
 "Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
 "players if want to play with a friend or family member."
 msgstr ""
-"Unter <gui>Spieler</gui> wählen Sie <gui style=\"button\">Zwei</gui> "
-"für beide Spieler, wenn Sie gegen einen Freund oder ein Familienmitglied "
-"spielen wollen."
+"Unter <gui>Spieler</gui> wählen Sie <gui style=\"button\">Zwei</gui> für "
+"beide Spieler, wenn Sie gegen einen Freund oder ein Familienmitglied spielen "
+"wollen."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:41
-#| msgid ""
-#| "Alternatively, choose the level at which the computer plays. Choose "
-#| "between <gui style=\"radiobutton\">Level one</gui>, <gui style="
-#| "\"radiobutton\">Level two</gui> or <gui style=\"radiobutton\">Level "
-#| "three</gui>, where <gui style=\"radiobutton\">Level one</gui> is the "
-#| "easiest level and <gui style=\"radiobutton\">Level three</gui> is the "
-#| "most difficult level."
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
 "plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
 "\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
-"Alternativ wählen Sie den <gui>Schwierigkeitsgrad</gui>, mit welchem der"
-" Rechner spielt. "
-"Wählen Sie zwischen <gui style=\"button\">Leicht</gui>, <gui style="
-"\"button\">Mittel</gui> oder <gui style=\"radiobutton\">Schwer</"
-"gui>."
+"Alternativ wählen Sie den <gui>Schwierigkeitsgrad</gui>, mit welchem der "
+"Rechner spielt. Wählen Sie zwischen <gui style=\"button\">Leicht</gui>, <gui "
+"style=\"button\">Mittel</gui> oder <gui style=\"button\">Schwer</gui>."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:45
 msgid ""
 "You can also choose if you play first or second under <gui>Game start</gui>."
 msgstr ""
-"Sie können auch unter <gui>Spielanfang</gui> wählen, ob Sie als erster oder"
-" zweiter spielen wollen."
+"Sie können auch unter <gui>Spielanfang</gui> wählen, ob Sie als erster oder "
+"zweiter spielen wollen."
 
 #. (itstool) path: note/p
 #: C/choose-opponent.page:48
@@ -218,24 +195,23 @@ msgid ""
 "third game and so on."
 msgstr ""
 "Wenn Sie mit einem Freund oder einem Familienmitglied spielen, so wird "
-"<app>Spieler eins</app> im ersten Spiel den ersten Zug von <app>Vier "
-"gewinnt</app> haben. In folgenden Spielen wird der Startspieler abwechselnd "
-"jeder der Spieler sein. Demnach wird <app>Spieler zwei</app> den ersten Zug "
-"im zweiten Spiel haben und <app>Spieler eins</app> den ersten Zug im dritten "
-"Spiel usw."
+"»Spieler eins« im ersten Spiel den ersten Zug von <app>Vier gewinnt</app> "
+"haben. In folgenden Spielen wird der Startspieler abwechselnd jeder der "
+"Spieler sein. Demnach wird »Spieler zwei« den ersten Zug im zweiten Spiel "
+"haben und »Spieler eins« den ersten Zug im dritten Spiel usw."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:20
+#: C/controls-default.page:18
 msgid "Default controls for <app>Four-in-a-row</app>."
-msgstr "Voreingestellte Steuerung für <app>Vier gewinnt</app>:"
+msgstr "Voreingestellte Steuerung für <app>Vier gewinnt</app>."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:23
+#: C/controls-default.page:21
 msgid "Controls"
 msgstr "Steuerung"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:25
+#: C/controls-default.page:23
 msgid ""
 "You can use your mouse and click on a particular row in the game area to "
 "drop your marble into that row. If you want to use the keyboard instead, the "
@@ -243,23 +219,23 @@ msgid ""
 msgstr ""
 "Nutzen Sie Ihre Maus und klicken Sie auf ein bestimmtes Quadrat im "
 "Spielbereich, um Ihre Murmel in das Quadrat zu platzieren. Mit der Tastatur "
-"können Sie auch spielen. Die voreingestellten Tasten für <app>Vier gewinnt</"
-"app> sind:"
+"können Sie ebenfalls spielen. Die voreingestellten Tasten für <app>Vier "
+"gewinnt</app> sind:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:31
+#: C/controls-default.page:29
 msgid "<key>←</key> to move the marble to your left."
-msgstr "<key>←</key> um die Murmel nach links zu verschieben."
+msgstr "<key>←</key> zum Verschieben der Murmel nach links."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:34
+#: C/controls-default.page:32
 msgid "<key>→</key> to move the marble to your right."
-msgstr "<key>→</key> um die Murmel nach rechts zu verschieben."
+msgstr "<key>→</key> zum Verschieben der Murmel nach rechts."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:37
+#: C/controls-default.page:35
 msgid "<key>↓</key> to drop the marble."
-msgstr "<key>↓</key> um die Murmel nach unten zu verschieben."
+msgstr "<key>↓</key> zum Verschieben der Murmel nach unten."
 
 #. (itstool) path: info/desc
 #: C/index.page:16
@@ -279,9 +255,9 @@ msgid ""
 "while stopping your opponent from doing the same with their marbles."
 msgstr ""
 "<app>Vier gewinnt</app> ist ein Strategiespiel für GNOME. Ziel des Spiels "
-"ist es, vier Ihrerr Murmeln in eine horizontalen, vertikalen oder diagonalen "
-"Reihe zu bringen und gleichzeitig den Spielgegner daran zu hindern, das "
-"gleiche mit seinen Murmeln zu tun."
+"ist es, vier Ihrer Murmeln in eine horizontale, vertikale oder diagonale "
+"Reihe zu bringen und gleichzeitig den Gegner daran zu hindern, das gleiche "
+"mit seinen Murmeln zu tun."
 
 #. (itstool) path: section/title
 #: C/index.page:27
@@ -297,7 +273,7 @@ msgstr "Einstellungen"
 #: C/legal.xml:4
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 msgstr ""
-"Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 "
+"Creative Commons Namensnennung – Weitergabe unter gleichen Bedingungen 3.0 "
 "nicht angepasst"
 
 #. (itstool) path: license/p
@@ -322,13 +298,6 @@ msgstr "Ihren letzten Spielzug ändern"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:28
-#| msgid ""
-#| "When the computer makes a winning move because of your last move or when "
-#| "you accidentally make the wrong move, you can undo your last move and "
-#| "change it. To undo your last move, press the <gui style=\"button\">Undo "
-#| "your most recent move</gui> button in the header bar or press "
-#| "<keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now drop your "
-#| "marble at a different row in the game area to change your move."
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
@@ -340,12 +309,12 @@ msgid ""
 msgstr ""
 "Wenn der Rechner einen Gewinnzug aufgrund Ihres letzten Spielzugs tätigt "
 "oder wenn Sie versehentlich einen Zug ausgelöst haben, so können Sie Ihren "
-"letzten Spielzug zurücknehmen und ändern. Klicken Sie auf den Knopf in der"
-" Kopfleiste, der entweder einen Pfeil, die zu spielende Farbe oder <gui"
-" style=\"button\">Ende!</gui> anzeigt, und wählen Sie <gui style=\"menuitem\""
-">Letzten Zug rückgängig machen</gui> oder drücken Sie "
-"<keyseq><key>Strg</key><key>Z</key></keyseq>. Sie dürfen nun die Murmel in "
-"ein anderes Quadrat im Spielbereich legen und so den Zug ändern."
+"letzten Spielzug zurücknehmen und ändern. Klicken Sie auf den Knopf in der "
+"Kopfleiste, der entweder einen Pfeil, die zu spielende Farbe oder <gui style="
+"\"button\">Ende!</gui> anzeigt, und wählen Sie <gui style=\"menuitem"
+"\">Letzten Zug rückgängig machen</gui> oder drücken Sie <keyseq><key>Strg</"
+"key><key>Z</key></keyseq>. Sie dürfen nun die Murmel in ein anderes Quadrat "
+"im Spielbereich legen und so den Zug ändern."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:37
@@ -365,12 +334,6 @@ msgstr "Tipps verwenden"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:47
-#| msgid ""
-#| "If you are not sure of your next move, you can use a hint. When you use a "
-#| "hint, your marble moves to the top of the column that is the best choice, "
-#| "strategy-wise, and blinks. You can then drop your marble into that "
-#| "column. To use a hint, press <gui style=\"button\">Hint</gui> or "
-#| "<keyseq><key>Ctrl</key><key>H</key></keyseq>."
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
@@ -383,10 +346,10 @@ msgstr ""
 "Wenn Sie sich unsicher über Ihren nächsten Zug sind, können Sie Tipps "
 "einholen. Bei einem Tipp bewegt sich die Murmel über die strategisch beste "
 "Spalte und blinkt. Werfen Sie die Murmel anschließend in diese Spalte. "
-"Klicken Sie für einen Tipp auf den Knopf in der Kopfleiste, der entweder"
-" einen Pfeil, die zu spielende Farbe oder <gui style=\"button\">Ende!</gui>"
-" anzeigt, und wählen Sie <gui style=\"button\">Tipp</gui> oder drücken "
-"Sie <keyseq><key>Strg</key><key>H</key></keyseq>."
+"Klicken Sie für einen Tipp auf den Knopf in der Kopfleiste, der entweder "
+"einen Pfeil, die zu spielende Farbe oder <gui style=\"button\">Ende!</gui> "
+"anzeigt, und wählen Sie <gui style=\"menuitem\">Tipp</gui> oder drücken Sie "
+"<keyseq><key>Strg</key><key>H</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:56
@@ -401,7 +364,7 @@ msgstr "Anna Philips"
 #. (itstool) path: info/desc
 #: C/scores.page:25
 msgid "Keep track of your wins and losses."
-msgstr "Siege und Niederlagen im Blick behalten"
+msgstr "Siege und Niederlagen im Blick behalten."
 
 #. (itstool) path: page/title
 #: C/scores.page:28
@@ -410,11 +373,6 @@ msgstr "Punkte"
 
 #. (itstool) path: page/p
 #: C/scores.page:29
-#| msgid ""
-#| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
-#| "your opponent's wins and games that ended in a draw. To check the scores, "
-#| "press the menu button in the top-right corner of the window and select "
-#| "<gui style=\"menuitem\">Scores</gui>. In the default theme:"
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
@@ -424,9 +382,9 @@ msgid ""
 msgstr ""
 "Die Siegpunkte werden in <app>Vier gewinnt</app> im Sinne von Siegen, "
 "Niederlagen und Unentschieden gespeichert. Klicken Sie zum Nachlesen der "
-"Punkte auf den Knopf in der Kopfleiste, der entweder einen Pfeil, die zu"
-" spielende Farbe oder <gui style=\"button\">Ende!</gui> anzeigt, und wählen"
-" Sie <gui style=\"menuitem\">Punkte</gui>. Im Vorgabe-Thema:"
+"Punkte auf den Knopf in der Kopfleiste, der entweder einen Pfeil, die zu "
+"spielende Farbe oder <gui style=\"button\">Ende!</gui> anzeigt, und wählen "
+"Sie <gui style=\"menuitem\">Punkte</gui>. Im Vorgabe-Thema:"
 
 #. (itstool) path: item/p
 #: C/scores.page:37
@@ -451,9 +409,9 @@ msgid ""
 "opponent</link>, then you will see the labels <gui>You</gui> and <gui>Me</"
 "gui> instead."
 msgstr ""
-"Falls Sie <link xref=\"choose-opponent\">den Rechner als Ihren Gegner"
-" ausgewählt haben</link>, werden stattdessen die Bezeichnungen <gui>Sie</gui>"
-" und <gui>Ich</gui> angezeigt."
+"Falls Sie <link xref=\"choose-opponent\">den Rechner als Ihren Gegner "
+"ausgewählt haben</link>, werden stattdessen die Bezeichnungen <gui>Sie</gui> "
+"und <gui>Ich</gui> angezeigt."
 
 #. (itstool) path: note/p
 #: C/scores.page:53
@@ -463,11 +421,11 @@ msgid ""
 "or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
 "\">Next Round</gui> to not reset the scores counter."
 msgstr ""
-"Klicken Sie nicht auf den Knopf <gui style=\"button\">Neues Spiel</gui>,"
-" sondern auf den Knopf in der Kopfleiste, der entweder einen Pfeil, die zu"
-" spielende Farbe oder <gui style=\"button\">Ende!</gui> anzeigt, und wählen"
-" Sie <gui style=\"menuitem\">Nächste Runde</gui>, um den Punktezähler nicht"
-" zurückzusetzen."
+"Klicken Sie nicht auf den Knopf <gui style=\"button\">Neues Spiel</gui>, "
+"sondern auf den Knopf in der Kopfleiste, der entweder einen Pfeil, die zu "
+"spielende Farbe oder <gui style=\"button\">Ende!</gui> anzeigt, und wählen "
+"Sie <gui style=\"menuitem\">Nächste Runde</gui>, um den Punktezähler nicht "
+"zurückzusetzen."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:24
@@ -485,7 +443,7 @@ msgid ""
 "When sounds are enabled, you will hear something every time a marble is "
 "dropped, or when a game ends."
 msgstr ""
-"Wenn Klänge eingeschaltet sind hören Sie eine akustische Rückmeldung jedes "
+"Wenn Klänge eingeschaltet sind, hören Sie eine akustische Rückmeldung jedes "
 "Mal, wenn eine Murmel fällt oder das Spiel endet."
 
 #. (itstool) path: steps/title
@@ -495,16 +453,19 @@ msgstr "So schalten Sie den Ton aus:"
 
 #. (itstool) path: item/p
 #: C/sound-animation.page:35
-#| msgid ""
-#| "Press the menu button in the top-right corner of the window and select "
-#| "<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-#| "\">Game</gui></guiseq>."
 msgid ""
 "Press the menu button in the top-right corner of the window and uncheck <gui "
 "style=\"menuitem\">Sound</gui>."
 msgstr ""
 "Klicken Sie auf den Menüknopf in der oberen rechten Ecke des Fensters und "
 "deaktivieren Sie <gui style=\"menuitem\">Ton</gui>."
+
+#~ msgid ""
+#~ "By default, <app>Four-in-a-row</app> uses solid red and blue marbles "
+#~ "against a black grid when you start a new game."
+#~ msgstr ""
+#~ "Die Voreinstellung von <app>Vier gewinnt</app> verwendet rote und blaue "
+#~ "Murmeln und ein schwarzes Gitter."
 
 #~ msgid "Set custom control keys."
 #~ msgstr "Eigene Steuerungstasten festlegen."
