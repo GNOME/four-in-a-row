@@ -17,8 +17,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
-"POT-Creation-Date: 2021-02-19 23:45+0000\n"
-"PO-Revision-Date: 2022-01-25 18:58+0100\n"
+"POT-Creation-Date: 2023-03-10 08:35+0000\n"
+"PO-Revision-Date: 2023-03-12 09:53+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -59,35 +59,32 @@ msgstr "Ændr udseendet på dit spilområde"
 #. (itstool) path: page/p
 #: C/appearance.page:23
 msgid ""
-"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
-"a black grid when you start a new game."
-msgstr ""
-"Som standard bruger <app>Fire på stribe</app> ensfarvede røde og blå kugler "
-"mod et sort gitter, når du starter et nyt spil."
+"You can change the style and colors of the marbles when you start a new game."
+msgstr "Du kan ændre kuglernes farve og stil, når du starter et nyt spil."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:27
+#: C/appearance.page:26
 msgid "To use a different theme:"
 msgstr "Sådan bruges et andet tema:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:29
+#: C/appearance.page:28
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
 msgstr ""
-"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui style="
-"\"menuitem\">Udseende</gui>."
+"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui "
+"style=\"menuitem\">Udseende</gui>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:32
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
 msgstr "Vælg det ønskede tema. Ændringen sker straks i spilvinduet."
 
 #. (itstool) path: item/p
-#: C/appearance.page:37 C/sound-animation.page:39
+#: C/appearance.page:36 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
 msgstr "Luk menuen ved at at klikke uden for menuen."
 
@@ -177,8 +174,8 @@ msgstr ""
 #: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
-"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
-"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui "
+"style=\"button\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
 "Ellers kan du vælge den <gui>Sværhedsgrad</gui>, som computeren spiller med. "
 "Vælg mellem <gui style=\"button\">Let</gui>, <gui style=\"button\">Middel</"
@@ -381,14 +378,14 @@ msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "press the button in the header bar which either shows an arrow and the color "
-"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
-"\"menuitem\">Scores</gui>. In the default theme:"
+"to play or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "Resultatet i <app>Fire på stribe</app> gemmes i form af dine sejre, din "
 "modstanders sejre og spil som endte uafgjort. Tjek resultaterne ved at "
 "trykke på knappen i hovedlinjen, som enten viser en pil og farven på "
-"spilleren eller viser <gui style=\"button\">Slut!</gui>, og vælg <gui style="
-"\"menuitem\">Resultater</gui>. I standardtemaet:"
+"spilleren eller viser <gui style=\"button\">Slut!</gui>, og vælg <gui "
+"style=\"menuitem\">Resultater</gui>. I standardtemaet:"
 
 #. (itstool) path: item/p
 #: C/scores.page:37
@@ -420,13 +417,13 @@ msgstr ""
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
-"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
-"\">Next Round</gui> to not reset the scores counter."
+"or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Next Round</gui> to not reset the scores counter."
 msgstr ""
 "Tryk ikke på knappen <gui style=\"button\">Nyt spil</gui>, men tryk på "
 "knappen i hovedlinjen, som enten viser en pil og farven på spilleren eller "
-"viser <gui style=\"button\">Slut!</gui>, og vælg <gui style=\"menuitem"
-"\">Næste runde</gui> for ikke at nulstille resultattælleren."
+"viser <gui style=\"button\">Slut!</gui>, og vælg <gui "
+"style=\"menuitem\">Næste runde</gui> for ikke at nulstille resultattælleren."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:24
@@ -461,6 +458,13 @@ msgstr ""
 "Tryk på menuknappen i øverste højre hjørne af vinduet og fjern markeringen "
 "ud for <gui style=\"menuitem\">Lyd</gui>."
 
+#~ msgid ""
+#~ "By default, <app>Four-in-a-row</app> uses solid red and blue marbles "
+#~ "against a black grid when you start a new game."
+#~ msgstr ""
+#~ "Som standard bruger <app>Fire på stribe</app> ensfarvede røde og blå "
+#~ "kugler mod et sort gitter, når du starter et nyt spil."
+
 #~ msgid "Set custom control keys."
 #~ msgstr "Indstil tilpassede styringstaster."
 
@@ -475,17 +479,17 @@ msgstr ""
 #~ "<app>Fire på stribe</app>:"
 
 #~| msgid ""
-#~| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~| "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-#~| "guiseq>."
+#~| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~| "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Keyboard "
+#~| "Controls</gui></guiseq>."
 #~ msgid ""
 #~ "Press the menu button in the top-right corner of the window and select "
-#~ "<guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-#~ "\">Keyboard Controls</gui></guiseq>."
+#~ "<guiseq><gui style=\"menu\">Preferences</gui> <gui "
+#~ "style=\"menuitem\">Keyboard Controls</gui></guiseq>."
 #~ msgstr ""
 #~ "Tryk på menuknappen i øverste højre hjørne af vinduet og vælg "
-#~ "<guiseq><gui style=\"menu\">Indstillinger</gui> <gui style=\"menuitem"
-#~ "\">Tastaturstyring</gui></guiseq>."
+#~ "<guiseq><gui style=\"menu\">Indstillinger</gui> <gui "
+#~ "style=\"menuitem\">Tastaturstyring</gui></guiseq>."
 
 #~ msgid ""
 #~ "In the list, select the line you want to change, then click on the "
