@@ -1,14 +1,14 @@
 # Hungarian translation for four-in-a-row-help.
-# Copyright (C) 2013, 2014, 2018, 2019, 2021 Free Software Foundation, Inc.
+# Copyright (C) 2013, 2014, 2018, 2019, 2021, 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the four-in-a-row help.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2013, 2014, 2019.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2014, 2018, 2019, 2021.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2014, 2018, 2019, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row master\n"
-"POT-Creation-Date: 2021-02-19 23:45+0000\n"
-"PO-Revision-Date: 2021-02-26 00:46+0100\n"
+"POT-Creation-Date: 2023-03-10 08:35+0000\n"
+"PO-Revision-Date: 2023-03-14 02:49+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -16,12 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Kelemen Gábor <kelemeng at gnome dot hu>, 2013."
+msgstr ""
+"Kelemen Gábor <kelemeng at gnome dot hu>, 2013, 2014, 2019.\n"
+"Úr Balázs <ur dot balazs at fsf dot hu>, 2014, 2018, 2019, 2021, 2023."
 
 #. (itstool) path: credit/name
 #: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
@@ -43,19 +45,17 @@ msgstr "A játékterület megjelenésének módosítása"
 #. (itstool) path: page/p
 #: C/appearance.page:23
 msgid ""
-"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
-"a black grid when you start a new game."
+"You can change the style and colors of the marbles when you start a new game."
 msgstr ""
-"Alapesetben a <app>Négyet egy sorba</app> egyszínű piros és kék üveggolyókat "
-"használ fekete háttéren amikor új játékot indít."
+"Az üveggolyók stílusát és színét megváltoztathatja, amikor új játékot kezd."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:27
+#: C/appearance.page:26
 msgid "To use a different theme:"
 msgstr "Másik téma használata:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:29
+#: C/appearance.page:28
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
@@ -64,7 +64,7 @@ msgstr ""
 "style=\"menuitem\">Megjelenés</gui> menüpontot."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:32
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
@@ -72,7 +72,7 @@ msgstr ""
 "Válassza ki a kívánt témát. A változtatás azonnal életbe lép a játékablakban."
 
 #. (itstool) path: item/p
-#: C/appearance.page:37 C/sound-animation.page:39
+#: C/appearance.page:36 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
 msgstr "Zárja be a menüt a menün kívülre kattintással."
 
@@ -166,8 +166,8 @@ msgstr ""
 #: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
-"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
-"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui "
+"style=\"button\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
 "Ezenkívül kiválaszthatja azt a <gui>Nehézségi</gui> szintet is, amelyen a "
 "számítógép játszik. Válasszon a <gui style=\"button\">Könnyű</gui>, <gui "
@@ -291,14 +291,6 @@ msgstr "Az utolsó lépés megváltoztatása"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:28
-#| msgid ""
-#| "When the computer makes a winning move because of your last move or when "
-#| "you accidentally make the wrong move, you can undo your last move and "
-#| "change it. To undo your last move, press the button in the header bar "
-#| "which either shows an arrow and the color to play or says <gui style="
-#| "\"button\">Ends</gui>, and select <gui style=\"menuitem\">Undo last move</"
-#| "gui>, or press <keyseq><key>Ctrl</key><key>Z</key></keyseq>. You can now "
-#| "drop your marble at a different row in the game area to change your move."
 msgid ""
 "When the computer makes a winning move because of your last move or when you "
 "accidentally make the wrong move, you can undo your last move and change it. "
@@ -312,10 +304,10 @@ msgstr ""
 "véletlenül rossz lépést tesz, akkor visszavonhatja az utolsó lépését és "
 "megváltoztathatja azt. Az utolsó lépés visszavonásához nyomja meg a gombot a "
 "fejlécsávon, amely vagy egy nyilat és a színt jeleníti meg a játékhoz, vagy "
-"azt mondja, hogy <gui style=\"button\">Vége!</gui>, és válassza az <gui style="
-"\"menuitem\">Utolsó lépés visszavonása</gui> menüpontot, vagy nyomja meg a "
-"<keyseq><key>Ctrl</key><key>Z</key></keyseq> billentyűkombinációt. Most "
-"bedobhatja az üveggolyóját egy másik sorba a játékterületen a lépése "
+"azt mondja, hogy <gui style=\"button\">Vége!</gui>, és válassza az <gui "
+"style=\"menuitem\">Utolsó lépés visszavonása</gui> menüpontot, vagy nyomja "
+"meg a <keyseq><key>Ctrl</key><key>Z</key></keyseq> billentyűkombinációt. "
+"Most bedobhatja az üveggolyóját egy másik sorba a játékterületen a lépése "
 "megváltoztatásához."
 
 #. (itstool) path: note/p
@@ -336,14 +328,6 @@ msgstr "Tippek használata"
 
 #. (itstool) path: section/p
 #: C/make-easy.page:47
-#| msgid ""
-#| "If you are not sure of your next move, you can use a hint. When you use a "
-#| "hint, your marble moves to the top of the column that is the best choice, "
-#| "strategy-wise, and blinks. You can then drop your marble into that "
-#| "column. To use a hint, press the button in the header bar which either "
-#| "shows an arrow and the color to play or says <gui style=\"button\">Ends</"
-#| "gui> and select <gui style=\"menuitem\">Hint</gui>, or press "
-#| "<keyseq><key>Ctrl</key><key>H</key></keyseq>."
 msgid ""
 "If you are not sure of your next move, you can use a hint. When you use a "
 "hint, your marble moves to the top of the column that is the best choice, "
@@ -357,10 +341,10 @@ msgstr ""
 "akkor az üveggolyó a legjobb választást jelentő oszlop tetejére lesz "
 "mozgatva, és villog. Ekkor abba az oszlopba ejtheti az üveggolyót. A tipp "
 "kéréséhez nyomja meg a gombot a fejlécsávon, amely vagy egy nyilat és a "
-"színt jeleníti meg a játékhoz, vagy azt mondja, hogy <gui style=\"button"
-"\">Vége!</gui>, és válassza a <gui style=\"menuitem\">Tipp</gui> menüpontot, "
-"vagy nyomja meg a <keyseq><key>Ctrl</key><key>H</key></keyseq> "
-"billentyűkombinációt."
+"színt jeleníti meg a játékhoz, vagy azt mondja, hogy <gui "
+"style=\"button\">Vége!</gui>, és válassza a <gui style=\"menuitem\">Tipp</"
+"gui> menüpontot, vagy nyomja meg a <keyseq><key>Ctrl</key><key>H</key></"
+"keyseq> billentyűkombinációt."
 
 #. (itstool) path: note/p
 #: C/make-easy.page:56
@@ -384,18 +368,12 @@ msgstr "Pontszámok"
 
 #. (itstool) path: page/p
 #: C/scores.page:29
-#| msgid ""
-#| "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
-#| "your opponent's wins and games that ended in a draw. To check the scores, "
-#| "press the button in the header bar which either shows an arrow and the "
-#| "color to play or says <gui style=\"button\">Ends</gui>, and select <gui "
-#| "style=\"menuitem\">Scores</gui>. In the default theme:"
 msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "press the button in the header bar which either shows an arrow and the color "
-"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
-"\"menuitem\">Scores</gui>. In the default theme:"
+"to play or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "A <app>Négyet egy sorba</app> a pontszámokat a győzelmei, ellenfele "
 "győzelmei és a döntetlenek alapján tartja nyilván. A pontszámok megnézéséhez "
@@ -432,16 +410,11 @@ msgstr ""
 
 #. (itstool) path: note/p
 #: C/scores.page:53
-#| msgid ""
-#| "Do not press the <gui style=\"button\">New Game</gui> button, but press "
-#| "the button in the header bar which either shows an arrow and the color to "
-#| "play or says <gui style=\"button\">Ends</gui>, and select <gui style="
-#| "\"menuitem\">Next Round</gui> to not reset the scores counter."
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
-"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
-"\">Next Round</gui> to not reset the scores counter."
+"or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Next Round</gui> to not reset the scores counter."
 msgstr ""
 "Ne nyomja meg az <gui style=\"button\">Új játék</gui> gombot, hanem nyomja "
 "meg a gombot a fejlécsávon, amely vagy egy nyilat és a színt jeleníti meg a "
