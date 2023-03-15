@@ -2,32 +2,32 @@
 # Copyright (C) 2021 gnome-taquin's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-taquin package.
 # Minseok Jeon <cheon7886Wnaver.com>, 2016.
-# Seong-ho Cho <shcho@gnome.org>, 2021.
+# Seong-ho Cho <shcho@gnome.org>, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row main\n"
-"POT-Creation-Date: 2020-05-30 11:03+0000\n"
-"PO-Revision-Date: 2021-09-09 10:58+0900\n"
+"POT-Creation-Date: 2023-03-10 08:35+0000\n"
+"PO-Revision-Date: 2023-03-15 12:08+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "전민석 <cheon7886@naver.com>, 2016\n"
-"조성호 <shcho@gnome.org>, 2021"
+"조성호 <shcho@gnome.org>, 2021, 2023"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:14 C/basics.page:15 C/choose-opponent.page:16
-#: C/controls-default.page:16 C/index.page:12 C/make-easy.page:16
+#: C/controls-default.page:14 C/index.page:12 C/make-easy.page:16
 #: C/scores.page:16 C/sound-animation.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -45,19 +45,16 @@ msgstr "게임 화면의 테마 바꾸기"
 #. (itstool) path: page/p
 #: C/appearance.page:23
 msgid ""
-"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
-"a black grid when you start a new game."
-msgstr ""
-"<app>사목</app>은 기본적으로 새 게임을 시작할 때 검은 격자무늬 위에서 빨간색"
-"과 파란색 구슬을 사용합니다."
+"You can change the style and colors of the marbles when you start a new game."
+msgstr "게임을 시작할 때 구슬의 모양새와 색상을 바꿀 수 있습니다."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:27
+#: C/appearance.page:26
 msgid "To use a different theme:"
 msgstr "다른 테마 사용 방법:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:29
+#: C/appearance.page:28
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
@@ -66,14 +63,14 @@ msgstr ""
 "택합니다."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:32
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
 msgstr "원하는 테마를 선택합니다. 바뀐 값은 게임 창에 바로 반영합니다."
 
 #. (itstool) path: item/p
-#: C/appearance.page:37 C/sound-animation.page:39
+#: C/appearance.page:36 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
 msgstr "메뉴 바깥을 눌러 메뉴를 닫습니다."
 
@@ -94,10 +91,6 @@ msgstr "새 게임 시작"
 
 #. (itstool) path: section/p
 #: C/basics.page:28
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
-#| "keyseq> to start a new game."
 msgid ""
 "Press <gui style=\"button\">Start Over</gui> or press <keyseq><key>Ctrl</"
 "key><key>N</key></keyseq> to start a new game."
@@ -151,7 +144,7 @@ msgstr "레벨을 바꾸거나 친구와 플레이하려면:"
 #: C/choose-opponent.page:35
 msgid ""
 "Press the <gui style=\"button\">New Game</gui> button in the header bar."
-msgstr "헤더 표시줄의 <gui style=\"button\">새 게임</gui> 단추를 누릅니다."
+msgstr "헤더바의 <gui style=\"button\">새 게임</gui> 단추를 누릅니다."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:39
@@ -159,19 +152,19 @@ msgid ""
 "Under <gui>Players</gui>, choose <gui style=\"button\">Two</gui> for both "
 "players if want to play with a friend or family member."
 msgstr ""
-"가족이나 친구와 플레이할 경우에는 <gui>플레이어</gui>에서 <gui style=\"button"
-"\">2인</gui>으로 선택합니다."
+"가족이나 친구와 플레이할 경우에는 <gui>플레이어</gui>에서 <gui "
+"style=\"button\">2인</gui>으로 선택합니다."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
-"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
-"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui "
+"style=\"button\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
-"대신, 컴퓨터와 플레이할 <gui>난이도</gui> 레벨을 선택합니다. <gui style="
-"\"button\">쉬움</gui>, <gui style=\"button\">보통</gui>, <gui style=\"button"
-"\">어려움</gui> 중 하나를 선택합니다."
+"대신, 컴퓨터와 플레이할 <gui>난이도</gui> 레벨을 선택합니다. <gui "
+"style=\"button\">쉬움</gui>, <gui style=\"button\">보통</gui>, <gui "
+"style=\"button\">어려움</gui> 중 하나를 선택합니다."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:45
@@ -196,17 +189,17 @@ msgstr ""
 "진행합니다."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:20
+#: C/controls-default.page:18
 msgid "Default controls for <app>Four-in-a-row</app>."
 msgstr "<app>사목</app>의 기본적인 조작법입니다."
 
 #. (itstool) path: page/title
-#: C/controls-default.page:23
+#: C/controls-default.page:21
 msgid "Controls"
 msgstr "조작"
 
 #. (itstool) path: page/p
-#: C/controls-default.page:25
+#: C/controls-default.page:23
 msgid ""
 "You can use your mouse and click on a particular row in the game area to "
 "drop your marble into that row. If you want to use the keyboard instead, the "
@@ -216,17 +209,17 @@ msgstr ""
 "하려 한다면, <app>사목</app>의 기본 키는 아래와 같습니다:"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:31
+#: C/controls-default.page:29
 msgid "<key>←</key> to move the marble to your left."
 msgstr "<key>←</key>로 구슬을 왼쪽으로 옮길 수 있습니다."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:34
+#: C/controls-default.page:32
 msgid "<key>→</key> to move the marble to your right."
 msgstr "<key>→</key>로 구슬을 오른쪽으로 옮길 수 있습니다."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:37
+#: C/controls-default.page:35
 msgid "<key>↓</key> to drop the marble."
 msgstr "<key>↓</key>로 구슬을 넣을 수 있습니다."
 
@@ -298,8 +291,8 @@ msgid ""
 "at a different row in the game area to change your move."
 msgstr ""
 "수를 잘못 둬서 컴퓨터가 이길 것 같으면, 마지막 둔 수를 되돌려서 바꿀 수 있습"
-"니다. 마지막 둔 수를 되돌리려면 화살표와 플레이 색상을 나타내거나 <gui style="
-"\"button\">끝났습니다!</gui>라고 나타낸 헤더 표시줄의 단추를 누르고 <gui "
+"니다. 마지막 둔 수를 되돌리려면 화살표와 플레이 색상을 나타내거나 <gui "
+"style=\"button\">끝났습니다!</gui>라고 나타낸 헤더바의 단추를 누르고 <gui "
 "style=\"menuitem\">마지막 움직임 되돌리기</gui>를 선택하거나 "
 "<keyseq><key>Ctrl</key><key>Z</key></keyseq> 키를 누릅니다. 그 다음 게임판의 "
 "다른 곳에 구슬을 두어 판을 바꿀 수 있습니다."
@@ -362,28 +355,28 @@ msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "press the button in the header bar which either shows an arrow and the color "
-"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
-"\"menuitem\">Scores</gui>. In the default theme:"
+"to play or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "<app>사목</app>의 점수는 여러분과 상대방의 이기거나 비긴 게임의 우승 여부를 "
-"기록합니다. 점수를 확인하려면, 화살표와 플레이 색상을 나타내거나 <gui style="
-"\"button\">끝났습니다!</gui>라고 나타낸 헤더 표시줄의 단추를 누르고 <gui "
+"기록합니다. 점수를 확인하려면, 화살표와 플레이 색상을 나타내거나 <gui "
+"style=\"button\">끝났습니다!</gui>라고 나타낸 헤더바의 단추를 누르고 <gui "
 "style=\"menuitem\">점수</gui>를 선택합니다. 기본 테마에서:"
 
 #. (itstool) path: item/p
 #: C/scores.page:37
 msgid "<gui>Red</gui> displays the number of games you have won."
-msgstr "<gui>Red</gui>는 이긴 게임의 횟수를 표시합니다."
+msgstr "<gui>빨강</gui>은 이긴 게임의 횟수를 표시합니다."
 
 #. (itstool) path: item/p
 #: C/scores.page:40
 msgid "<gui>Green</gui> displays the number of games won by the opponent."
-msgstr "<gui>Green</gui>는 상대방이 이긴 게임의 횟수를 표시합니다."
+msgstr "<gui>녹색</gui>은 상대방이 이긴 게임의 횟수를 표시합니다."
 
 #. (itstool) path: item/p
 #: C/scores.page:43
 msgid "<gui>Drawn</gui> displays the number of games that ended in a draw."
-msgstr "<gui>Drawn</gui>는 비긴 게임의 횟수를 표시합니다."
+msgstr "<gui>무승부</gui>는 비긴 게임의 횟수를 표시합니다."
 
 #. (itstool) path: item/p
 #: C/scores.page:46
@@ -400,13 +393,13 @@ msgstr ""
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
-"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
-"\">Next Round</gui> to not reset the scores counter."
+"or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Next Round</gui> to not reset the scores counter."
 msgstr ""
 "<gui style=\"button\">새 게임</gui> 단추를 누르지 마시고, 대신, 화살표와 플레"
-"이 색상을 나타내거나 <gui style=\"button\">끝났습니다!</gui>라고 나타낸 헤더 "
-"표시줄의 단추를 누르고 점수 집계를 초기화 하지 않도록 <gui style=\"menuitem"
-"\">다음 판</gui>을 선택합니다."
+"이 색상을 나타내거나 <gui style=\"button\">끝났습니다!</gui>라고 나타낸 헤더"
+"바의 단추를 누르고 점수 집계를 초기화 하지 않도록 <gui style=\"menuitem\">다"
+"음 판</gui>을 선택합니다."
 
 #. (itstool) path: info/desc
 #: C/sound-animation.page:24
@@ -442,35 +435,44 @@ msgstr ""
 "시를 지웁니다."
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>."
+#~ "By default, <app>Four-in-a-row</app> uses solid red and blue marbles "
+#~ "against a black grid when you start a new game."
 #~ msgstr ""
-#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>를 선택하"
-#~ "세요."
+#~ "<app>사목</app>은 기본적으로 새 게임을 시작할 때 검은 격자무늬 위에서 빨간"
+#~ "색과 파란색 구슬을 사용합니다."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
+#~ "guiseq>."
+#~ msgstr ""
+#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
+#~ "guiseq>를 선택하세요."
 
 #~ msgid "Play <app>Four-in-a-row</app> in fullscreen mode"
 #~ msgstr "<app>Four-in-a-row</app> 전체화면으로 플레이"
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-#~ "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-#~ "fullscreen mode. You can return to the default screen size by pressing "
-#~ "<key>F11</key> again."
+#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui "
+#~ "style=\"menuitem\">Fullscreen</gui></guiseq> or press <key>F11</key> to "
+#~ "play your game in fullscreen mode. You can return to the default screen "
+#~ "size by pressing <key>F11</key> again."
 #~ msgstr ""
-#~ "<guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-#~ "\">Fullscreen</gui></guiseq>를 선택하거나 <key>F11</key>를 눌러 전체 화면"
-#~ "으로 플레이하세요. <key>F11</key>을 눌러서 다시 원래 화면 크기로 돌아올 "
-#~ "수 있습니다."
+#~ "<guiseq><gui style=\"menu\">View</gui> <gui "
+#~ "style=\"menuitem\">Fullscreen</gui></guiseq>를 선택하거나 <key>F11</key>"
+#~ "를 눌러 전체 화면으로 플레이하세요. <key>F11</key>을 눌러서 다시 원래 화"
+#~ "면 크기로 돌아올 수 있습니다."
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq>. You "
-#~ "will see <gui>Player One</gui> and <gui>Player Two</gui>."
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
+#~ "guiseq>. You will see <gui>Player One</gui> and <gui>Player Two</gui>."
 #~ msgstr ""
-#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Game</gui></guiseq> 을 선택하"
-#~ "세요. <gui>Player One</gui> 과 <gui>Player Two</gui>가 보일 것입니다."
+#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Game</gui></"
+#~ "guiseq> 을 선택하세요. <gui>Player One</gui> 과 <gui>Player Two</gui>가 보"
+#~ "일 것입니다."
 
 #~ msgid "Set custom control keys."
 #~ msgstr "사용자 지정 조작 키를 설정하세요."
@@ -486,13 +488,13 @@ msgstr ""
 #~ "controls</link>에서 변경할 수 있습니다:"
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-#~ "guiseq>."
+#~ "Select <guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Keyboard "
+#~ "Controls</gui></guiseq>."
 #~ msgstr ""
-#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#~ "\">Preferences</gui> <gui style=\"menuitem\">Keyboard Controls</gui></"
-#~ "guiseq>을 선택하세요."
+#~ "<guiseq><gui style=\"menu\">Settings</gui> <gui "
+#~ "style=\"menuitem\">Preferences</gui> <gui style=\"menuitem\">Keyboard "
+#~ "Controls</gui></guiseq>을 선택하세요."
 
 #~ msgid ""
 #~ "In the list, select the line you want to change, then click on the "
