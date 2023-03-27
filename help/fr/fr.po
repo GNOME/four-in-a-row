@@ -12,16 +12,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnect documentation\n"
-"POT-Creation-Date: 2021-02-19 23:45+0000\n"
-"PO-Revision-Date: 2022-04-10 22:16+0200\n"
-"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
+"POT-Creation-Date: 2023-03-10 08:35+0000\n"
+"PO-Revision-Date: 2023-03-11 10:18+0100\n"
+"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -55,19 +55,18 @@ msgstr "Changer l’apparence de votre grille"
 #. (itstool) path: page/p
 #: C/appearance.page:23
 msgid ""
-"By default, <app>Four-in-a-row</app> uses solid red and blue marbles against "
-"a black grid when you start a new game."
+"You can change the style and colors of the marbles when you start a new game."
 msgstr ""
-"Par défaut, <app>Quatre-à-la-suite</app> met en jeu des billes rouges et "
-"bleues sur une grille noire au début d’une nouvelle partie."
+"Vous pouvez également modifier le style et les couleurs des billes lorsque "
+"vous commencez une nouvelle partie."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:27
+#: C/appearance.page:26
 msgid "To use a different theme:"
 msgstr "Pour changer de thème :"
 
 #. (itstool) path: item/p
-#: C/appearance.page:29
+#: C/appearance.page:28
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Appearance</gui>."
@@ -76,7 +75,7 @@ msgstr ""
 "sélectionnez <gui style=\"menuitem\">Apparence</gui>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:32
 msgid ""
 "Select the theme of your choice. The change will be reflected immediately in "
 "the game window."
@@ -85,7 +84,7 @@ msgstr ""
 "dans la fenêtre du jeu."
 
 #. (itstool) path: item/p
-#: C/appearance.page:37 C/sound-animation.page:39
+#: C/appearance.page:36 C/sound-animation.page:39
 msgid "Close the menu by clicking outside of the menu."
 msgstr "Fermez le menu en cliquant en dehors de celui-ci."
 
@@ -179,13 +178,13 @@ msgstr ""
 #: C/choose-opponent.page:41
 msgid ""
 "Alternatively, choose the <gui>Difficulty</gui> level at which the computer "
-"plays. Choose between <gui style=\"button\">Easy</gui>, <gui style=\"button"
-"\">Medium</gui> or <gui style=\"button\">Hard</gui>."
+"plays. Choose between <gui style=\"button\">Easy</gui>, <gui "
+"style=\"button\">Medium</gui> or <gui style=\"button\">Hard</gui>."
 msgstr ""
 "Vous pouvez aussi choisir le niveau de <gui>Difficulté</gui> auquel "
-"l’ordinateur joue. Vous avez le choix entre les options <gui style=\"button"
-"\">Facile</gui>, <gui style=\"button\">Moyenne</gui> ou <gui style=\"button"
-"\">Difficile</gui>."
+"l’ordinateur joue. Vous avez le choix entre les options <gui "
+"style=\"button\">Facile</gui>, <gui style=\"button\">Moyenne</gui> ou <gui "
+"style=\"button\">Difficile</gui>."
 
 #. (itstool) path: item/p
 #: C/choose-opponent.page:45
@@ -389,15 +388,15 @@ msgid ""
 "The score in <app>Four-in-a-row</app> is recorded in terms of your wins, "
 "your opponent's wins and games that ended in a draw. To check the scores, "
 "press the button in the header bar which either shows an arrow and the color "
-"to play or says <gui style=\"button\">End!</gui>, and select <gui style="
-"\"menuitem\">Scores</gui>. In the default theme:"
+"to play or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Scores</gui>. In the default theme:"
 msgstr ""
 "Le tableau des scores dans <app>Quatre-à-la-suite</app> enregistre vos "
 "victoires, les victoires de votre adversaire et les parties nulles. Pour "
 "afficher les scores, appuyez sur le bouton situé dans la barre d’en-tête "
-"affichant : soit une flèche et la couleur à jouer, soit le terme <gui style="
-"\"button\">Fini !</gui>, et sélectionnez <gui style=\"menuitem\">Scores</"
-"gui>. Dans le thème par défaut :"
+"affichant : soit une flèche et la couleur à jouer, soit le terme <gui "
+"style=\"button\">Fini !</gui>, et sélectionnez <gui "
+"style=\"menuitem\">Scores</gui>. Dans le thème par défaut :"
 
 #. (itstool) path: item/p
 #: C/scores.page:37
@@ -430,8 +429,8 @@ msgstr ""
 msgid ""
 "Do not press the <gui style=\"button\">New Game</gui> button, but press the "
 "button in the header bar which either shows an arrow and the color to play "
-"or says <gui style=\"button\">End!</gui>, and select <gui style=\"menuitem"
-"\">Next Round</gui> to not reset the scores counter."
+"or says <gui style=\"button\">End!</gui>, and select <gui "
+"style=\"menuitem\">Next Round</gui> to not reset the scores counter."
 msgstr ""
 "N’appuyez pas sur le bouton <gui style=\"button\">Nouvelle partie</gui>, "
 "mais appuyez sur le bouton situé dans la barre d’en-tête affichant : soit "
@@ -471,3 +470,10 @@ msgid ""
 msgstr ""
 "Appuyez sur le bouton du menu dans le coin supérieur droit de la fenêtre et "
 "décochez la case <gui style=\"menuitem\">Son</gui>."
+
+#~ msgid ""
+#~ "By default, <app>Four-in-a-row</app> uses solid red and blue marbles "
+#~ "against a black grid when you start a new game."
+#~ msgstr ""
+#~ "Par défaut, <app>Quatre-à-la-suite</app> met en jeu des billes rouges et "
+#~ "bleues sur une grille noire au début d’une nouvelle partie."
