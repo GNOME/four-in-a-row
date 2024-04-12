@@ -8,526 +8,933 @@
 # Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006, 2007.
 # Ravishankar Shrivastava <raviratlami@aol.in>, 2009.
 # Rajesh Ranjan <rajesh672@gmail.com>, 2009, 2013.
+# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.master.hi\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=four-"
-"in-a-row&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:19+0000\n"
-"PO-Revision-Date: 2013-03-25 15:54+0530\n"
-"Last-Translator: raj <raj>\n"
-"Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
+"POT-Creation-Date: 2023-01-25 17:20+0000\n"
+"PO-Revision-Date: 2024-04-02 11:44+0530\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
+"Language-Team: Hindi\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-DamnedLies-Scope: partial\n"
+"X-Generator: Gtranslator 46.0\n"
 
-#: ../data/four-in-a-row.desktop.in.in.h:1
-msgid "Four-in-a-Row"
+# #-#-#-#-#  libgnomeui.gnome-2-2.hi.po (libgnomeui HEAD)  #-#-#-#-#
+# libgnomeui/gnome-app-helper.c:95 libgnomeui/gnome-app-helper.h:534
+#. Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:40
+msgid "Game type"
+msgstr "खेल प्रकार"
+
+#  Players tab
+#  FIXME mnemonic doesn't seem to work
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:61 data/ui/fiar-screens.ui:244
+msgid "Play _first"
+msgstr "पहले खेलें (_f)"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt)
+#. Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:73 data/ui/fiar-screens.ui:256
+msgid "Play _second"
+msgstr "दूसरा खेलें (_s)"
+
+#. Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:85
+msgid "_Two players"
+msgstr "दो खिलाड़ी (_T)"
+
+#  Players tab
+#  FIXME mnemonic doesn't seem to work
+#. Translators: when configuring a new game, header of the row for choosing the number of players
+#: data/ui/fiar-screens.ui:109
+msgid "Players"
+msgstr "खिलाड़ी"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:126
+msgid "_One"
+msgstr "एक (_O)"
+
+#. Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:138
+msgid "_Two"
+msgstr "दो (_T)"
+
+#. Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence
+#: data/ui/fiar-screens.ui:162
+msgid "Difficulty"
+msgstr "कठिनाई"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:179
+msgid "_Easy"
+msgstr "आसान (_E)"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:191
+msgid "_Medium"
+msgstr "मध्यम (_M)"
+
+#. Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt)
+#: data/ui/fiar-screens.ui:203
+msgid "_Hard"
+msgstr "कठिन (_H)"
+
+#. Translators: when configuring a new game, header of the row for choosing whether to start or not
+#: data/ui/fiar-screens.ui:227
+msgid "Game start"
+msgstr "खेल प्रारंभ"
+
+#. Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt)
+#: data/ui/four-in-a-row.ui:31
+msgid "_New Game"
+msgstr "नया खेल (_N)"
+
+#. Translators: during a game, tooltip text of the New Game button
+#: data/ui/four-in-a-row.ui:36
+msgid "Start a new game"
+msgstr "एक नया खेल प्रारंभ करें"
+
+#. Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button
+#: data/ui/four-in-a-row.ui:49
+msgid "Go back to the current game"
+msgstr "वर्तमान खेल पर वापस जाएँ"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available during a game: "New game", "Undo last move"...
+#: data/ui/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "During a game"
+msgstr "खेल के दौरान"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:36
+msgctxt "shortcut window"
+msgid "New game"
+msgstr "नया खेल"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:44
+msgctxt "shortcut window"
+msgid "Undo last move"
+msgstr "पिछली चाल पूर्ववत करें"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:52
+msgctxt "shortcut window"
+msgid "Show a hint"
+msgstr "संकेत दिखायें"
+
+#. Translators: in the Keyboard Shortcuts window, section "During a game"
+#: data/ui/help-overlay.ui:60
+msgctxt "shortcut window"
+msgid "Toggle game menu"
+msgstr "खेल मेनू टॉगल करें"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortucts for playing: Left/Right/Down
+#: data/ui/help-overlay.ui:70
+msgctxt "shortcut window"
+msgid "Play with keyboard"
+msgstr "कीबोर्ड से खेलें"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; using arrows is the usual way select where to play
+#: data/ui/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Select where to play"
+msgstr "चुनें कि कहां खेलना है"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; shortcut for dropping the tile
+#: data/ui/help-overlay.ui:83
+msgctxt "shortcut window"
+msgid "Play in selected column"
+msgstr "चयनित कॉलम में खेलें"
+
+#. Translators: in the Keyboard Shortcuts window, section "Play with keyboard"; hitting number plays directly to the nth column
+#: data/ui/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Play in given column"
+msgstr "दिए गए कॉलम में खेलें"
+
+#. Translators: section of the Keyboard Shortcuts window; contains shortcuts available when configuring a new game
+#: data/ui/help-overlay.ui:101
+msgctxt "shortcut window"
+msgid "During game selection"
+msgstr "खेल चयन के दौरान"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to launch a new game
+#: data/ui/help-overlay.ui:106
+msgctxt "shortcut window"
+msgid "Start new game"
+msgstr "नया खेल प्रारंभ करें"
+
+#. Translators: in the Keyboard Shortcuts window, section "During game selection"; how to go back to a running game, if any
+#: data/ui/help-overlay.ui:114
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "पीछे जाएँ"
+
+#. Translators: section of the Keyboard Shortcuts window; contains "Help", "About", "Quit"...
+#: data/ui/help-overlay.ui:124
+msgctxt "shortcut window"
+msgid "Generic"
+msgstr "सामान्य"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:129
+msgctxt "shortcut window"
+msgid "Toggle main menu"
+msgstr "मुख्य मेनू टॉगल करें"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "कीबोर्ड शॉर्टकट"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:145
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "सहायता"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:153
+msgctxt "shortcut window"
+msgid "About"
+msgstr "बारे में"
+
+#. Translators: in the Keyboard Shortcuts window, section "Generic"
+#: data/ui/help-overlay.ui:161
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "छोड़ें"
+
+#. Translators: label of the game status button (in the headerbar, next to the hamburger button); please keep the string as small as possible (3~5 characters)
+#: data/ui/history-button.ui:41
+msgid "End!"
+msgstr "समाप्त!"
+
+#. Translators: application name, as used in the window manager, the window title, the about dialog...
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
+#: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
+msgid "Four-in-a-row"
 msgstr "एक-पंक्ति-में-चार"
 
-#: ../data/four-in-a-row.desktop.in.in.h:2
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:6
 msgid "Make lines of the same color to win"
-msgstr "समान रंग की पंक्ति बनाने हेतु प्रतिस्पर्धा करें"
+msgstr "जीतने के लिए एक ही रंग की रेखाएँ बनाएँ"
 
-#: ../data/four-in-a-row.desktop.in.in.h:3
-msgid "game;strategy;logic;"
-msgstr "game;strategy;logic;"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:1
-msgid "Level of Player One"
-msgstr "पहले खिलाड़ी का स्तर"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:2
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
 msgid ""
-"Zero is human; one through three correspond to the level of the computer "
-"player."
-msgstr "शून्य मनुष्य का है, एक से तीन तक का लेवल कम्प्यूटर खिलाड़ी हेतु है."
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"एक पारिवारिक क्लासिक, एक-पंक्ति-में-चार का उद्देश्य अपने प्रतिद्वंद्वी (मानव या कंप्यूटर) को "
+"अपनी खुद की लाइन बनाने से रोकने की कोशिश करते हुए अपने चार मार्बल्स की एक लाइन बनाना "
+"है। एक रेखा क्षैतिज, ऊर्ध्वाधर या विकर्ण हो सकती है। एक पंक्ति में चार को जोड़ने वाला पहला "
+"खिलाड़ी विजेता होता है!"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:3
-msgid "Level of Player Two"
-msgstr "दूसरे खिलाड़ी का स्तर"
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"एक-पंक्ति-में-चार में कई कठिनाई स्तर हैं। यदि आपको परेशानी हो रही है, तो आप हमेशा संकेत "
+"मांग सकते हैं।"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:4
+#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
+msgid "The GNOME Project"
+msgstr "GNOME परियोजना"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Four-in-a-row.desktop.in:8
+msgid "game;strategy;logic;"
+msgstr "game;strategy;logic;खेल;रणनीति;तर्क;"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:34
 msgid "Theme ID"
-msgstr "प्रसंग आईडी"
+msgstr "थीम ID"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:5
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
+#: data/org.gnome.Four-in-a-row.gschema.xml:36
 msgid "A number specifying the preferred theme."
-msgstr "पसंदीदा प्रसंग निर्दिष्ट करने का एक क्रमांक."
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:6
-msgid "Animate"
-msgstr "एनिमेट"
-
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:7
-msgid "Whether or not to use animation."
-msgstr "एनीमेशन उपयोग करें या नहीं."
+msgstr "पसंदीदा थीम निर्दिष्ट करने वाली एक संख्या."
 
 # #-#-#-#-#  gnome-icon-theme.gnome-2-2.hi.po (gnome-icon theme 2.2)  #-#-#-#-#
 # 48x48/emblems/emblem-sound.icon.in.h:1
 # 48x48/emblems/emblem-sound.icon.in.h:1
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:8
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:41
 msgid "Sound"
 msgstr "ध्वनि"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:9
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/sound'
+#: data/org.gnome.Four-in-a-row.gschema.xml:43
 msgid "Whether or not to play event sounds."
-msgstr "घटनाओं हेतु ध्वनि बजाएँ या नहीं."
+msgstr "कार्यक्रम ध्वनियाँ बजानी चाहिए या नहीं।"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:10 ../src/prefs.c:316
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:48
 msgid "Move left"
 msgstr "बायाँ जाएँ"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:11
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-left'
+#: data/org.gnome.Four-in-a-row.gschema.xml:50
 msgid "Key press to move left."
-msgstr "बायेँ ले जाने हेतु कुंजी दबाएँ."
+msgstr "बायेँ ले जाने हेतु कुंजी दबाएँ।"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:12 ../src/prefs.c:317
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:55
 msgid "Move right"
 msgstr "दाँया जाएँ"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:13
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-right'
+#: data/org.gnome.Four-in-a-row.gschema.xml:57
 msgid "Key press to move right."
-msgstr "दाएँ ले जाने हेतु कुंजी दबाएँ."
+msgstr "दाएँ ले जाने हेतु कुंजी दबाएँ।"
 
 # libgnome/gnome-program.c:426
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:14 ../src/prefs.c:318
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:62
 msgid "Drop marble"
 msgstr "कंचा छोड़ें"
 
-#: ../data/org.gnome.four-in-a-row.gschema.xml.in.h:15
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/key-drop'
+#: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
-msgstr "कंचा छोड़ने हेतु कुंजी दबाएँ."
+msgstr "कंचा छोड़ने हेतु कुंजी दबाएँ।"
 
-# libgnomevfs/gnome-vfs-result.c:137
-#: ../src/games-controls.c:288
-msgid "Unknown Command"
-msgstr "अज्ञात कमांड"
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:95
+msgid "Set the level of the computer’s AI"
+msgstr "कंप्यूटर के AI का स्तर निर्धारित करें"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "इस खेल के लिये सहायता दिखायें"
+#. Translators: in the command-line options description, text to indicate the user should specify a level, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:98
+msgid "LEVEL"
+msgstr "स्तर"
 
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "वर्तमान खेल समाप्त करें"
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:101
+msgid "Turn off the sound"
+msgstr "ध्वनि बंद करें"
 
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "पूरा स्क्रीन मोड टॉगल करें"
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:104
+msgid "Size of the board"
+msgstr "बोर्ड का आकार"
 
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "अगली चाल हेतु संकेत प्राप्त करें"
+#. Translators: in the command-line options description, text to indicate the user should specify a size, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:107
+msgid "SIZE"
+msgstr "आकार"
 
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "पूर्ण स्क्रीन छोड़ें"
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:110
+msgid "Length of a winning line"
+msgstr "विजयी रेखा की लंबाई"
 
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "एक नया मल्टीप्लेयर संजाल खेल आरंभ करें"
+#. Translators: in the command-line options description, text to indicate the user should specify the line length, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:113
+msgid "TARGET"
+msgstr "लक्ष्य"
 
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "मौजूदा संजाल खेल का अंत करें और संजाल सर्वर पर लौटें"
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:116
+msgid "Turn on the sound"
+msgstr "ध्वनि चालू करें"
 
-#: ../src/games-stock.c:48
-msgid "Start a new game"
-msgstr "एक नया खेल प्रारंभ करें"
+#. Translators: command-line option description, see 'four-in-a-row --help'
+#: src/four-in-a-row.vala:119
+msgid "Print release version and exit"
+msgstr "रिलीज़ संस्करण प्रिंट करें और बाहर निकलें"
 
-# libgnomeui/gnome-app-helper.c:254
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "खेल रोकें"
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 2'
+#: src/four-in-a-row.vala:167
+msgid "Size must be at least 4."
+msgstr "आकार कम से कम 4 होना चाहिए."
 
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "संजाल खेल में खिलाड़ियों की सूची दिखाएं"
+#. Translators: command-line error message, displayed for an incorrect game size request; try 'four-in-a-row -s 17'
+#: src/four-in-a-row.vala:173
+msgid "Size must not be more than 16."
+msgstr "आकार 16 से अधिक नहीं होना चाहिए."
 
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "पिछली चाल पूर्ववत करें"
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 2'
+#: src/four-in-a-row.vala:180
+msgid "Lines must be at least 3 tiles."
+msgstr "पंक्तियाँ कम से कम 3 टाइल्स की होनी चाहिए।"
 
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "वर्तमान खेल पुनःप्रारंभ करें"
+#. Translators: command-line error message, displayed for an incorrect line length request; try 'four-in-a-row -t 8'
+#: src/four-in-a-row.vala:186
+msgid "Lines cannot be longer than board height or width."
+msgstr "पंक्तियाँ बोर्ड की ऊंचाई या चौड़ाई से अधिक लंबी नहीं हो सकतीं।"
 
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "रूका खेल पुनःप्रारंभ करें"
+#. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
+#: src/four-in-a-row.vala:229
+msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
+msgstr "स्तर 1 (आसान), 2 (मध्यम) या 3 (कठिन) होना चाहिए। सेटिंग्स अपरिवर्तित."
 
-# libgnomeui/gnome-app-helper.c:280
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "अंक देखें"
+#. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:267
+msgid "A_ppearance"
+msgstr "दिखावट (_p)"
 
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "पिछली चाल पूर्ववत करें"
+# #-#-#-#-#  gnome-icon-theme.gnome-2-2.hi.po (gnome-icon theme 2.2)  #-#-#-#-#
+# 48x48/emblems/emblem-sound.icon.in.h:1
+# 48x48/emblems/emblem-sound.icon.in.h:1
+#. Translators: hamburger menu entry with checkbox, for activating or disactivating sound (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:271
+msgid "_Sound"
+msgstr "ध्वनि (_S)"
 
-# libgnomeui/gnome-app-helper.c:259
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "इस खेल के बारे में"
+#. Translators: hamburger menu entry; opens the Keyboard Shortcuts dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:277
+msgid "_Keyboard Shortcuts"
+msgstr "कीबोर्ड शॉर्टकट (_K)"
 
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "इस विंडो को बन्द करें"
+#. Translators: hamburger menu entry; opens the application help (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:281
+msgid "_Help"
+msgstr "सहायता (_H)"
 
-# libgnomeui/gnome-app-helper.c:254
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "यह खेल विन्यस्त करें"
+#. Translators: hamburger menu entry; opens the About dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:285
+msgid "_About Four-in-a-row"
+msgstr "एक-पंक्ति-में-चार के बारे में (_A)"
 
-# libgnomeui/gnome-app-helper.c:259
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "इस खेल को छोड़ें"
+#. Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie
+#: src/four-in-a-row.vala:567
+msgid "It’s a draw!"
+msgstr "यह एक बराबरी है!"
 
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "विषय सूची (_C)"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "फुलस्क्रीन (_F)"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "संकेत (_H)"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "नया (_N)"
-
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/games-stock.c:253
-msgid "_New Game"
-msgstr "नया खेल (_N)"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "चाल फिर चलें (_R)"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "रीसेट करें (_R)"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "पुन:आरंभ करें (_R)"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "चाल वापस लें (_U)"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "डील (_D)"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "पूर्ण स्क्रीन छोड़ें (_L)"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "संजाल खेल (_G)"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "खेल छोड़ें (_e)"
-
-#  Players tab
-#  FIXME mnemonic doesn't seem to work
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "खिलाड़ी सूची (_L)"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "ठहरें (_P)"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "फिर चालू करें (_u)"
-
-# libgnomeui/gnome-scores.c:94
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "अंक (_S)"
-
-# #-#-#-#-#  libgnomeui.gnome-2-2.hi.po (libgnomeui HEAD)  #-#-#-#-#
-# libgnomeui/gnome-app-helper.c:95 libgnomeui/gnome-app-helper.h:534
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "खेल समाप्त (_E)"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s मुफ़्त सॉफ़्टवेयर है; इसे आप मुफ़्त सॉफ़्टवेयर फाउण्डेशन द्वारा प्रकाशित ग्नू जनरल पब्लिक "
-"लाइसेंस के तहत वितरित कर सकते हैं या परिवर्धित कर सकते हैं; लाइसेंस के %d संस्करण या इसके "
-"(अपने विकल्प अनुसार) बाद के संस्करण के तहत."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"इस प्रोग्राम के साथ आपको ग्नू - जनरल पब्लिक लाइसेंस की प्रतिलिपि मिलनी चाहिए. यदि नहीं "
-"तो देखें<http://www.gnu.org/licenses/>."
-
-#: ../src/gfx.c:248
-#, c-format
-msgid ""
-"Unable to load image:\n"
-"%s"
-msgstr ""
-"छवि लोड करने में अक्षम:\n"
-"%s"
-
-#: ../src/main.c:524
-msgid "It's a draw!"
-msgstr "यह तो बराबर हो गया!"
-
-#: ../src/main.c:533
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won
+#: src/four-in-a-row.vala:581
 msgid "You win!"
-msgstr "आप जीते!"
+msgstr "आप जीते गये!"
 
-#: ../src/main.c:535 ../src/main.c:554
-msgid "It is your move."
-msgstr "यह आपकी चाल है."
-
-#: ../src/main.c:538
+#. Translators: text displayed on a one-player game end in the headerbar/actionbar, if the computer player won
+#: src/four-in-a-row.vala:584
 msgid "I win!"
 msgstr "मैं जीता!"
 
-#: ../src/main.c:540 ../src/main.c:642
-msgid "Thinking..."
-msgstr "सोच में..."
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn
+#: src/four-in-a-row.vala:593
+msgid "Your Turn"
+msgstr "आपकी बारी"
 
-#: ../src/main.c:551
-#, c-format
-msgid "%s wins!"
-msgstr "%s जीता!"
+#. Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn
+#. Translators: text *briefly* displayed in the headerbar/actionbar, when a hint is requested
+#: src/four-in-a-row.vala:600 src/four-in-a-row.vala:909
+msgid "I’m Thinking…"
+msgstr "मैं सोच रहा हूँ…"
 
-#: ../src/main.c:558
-#, c-format
-msgid "Waiting for %s to move."
-msgstr "%s को चलने के लिए प्रतीक्षारत."
-
-#: ../src/main.c:659
+#. blink n times
+#. Translators: text displayed in the headerbar/actionbar, when a hint is requested; the %d is replaced by the number of the suggested column
+#: src/four-in-a-row.vala:925
 #, c-format
 msgid "Hint: Column %d"
 msgstr "संकेत: स्तम्भ %d"
 
-#: ../src/main.c:687 ../src/main.c:691
-msgid "You:"
-msgstr "आप "
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1122
+msgid "Tim Musson"
+msgstr "टिम मुसन"
 
-#: ../src/main.c:688 ../src/main.c:690
-msgid "Me:"
-msgstr "मैं"
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1126
+msgid "David Neary"
+msgstr "डेविड नेरी"
 
-# libgnomeui/gnome-scores.c:94
-#: ../src/main.c:736
-msgid "Scores"
-msgstr "अंक"
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1130
+msgid "Nikhar Agrawal"
+msgstr "निखर अग्रवाल"
 
-#: ../src/main.c:780
-msgid "Drawn:"
-msgstr "बराबरी:"
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1134
+msgid "Jacob Humphrey"
+msgstr "जैकब हम्फ्री"
 
-#: ../src/main.c:829
-msgid ""
-"\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
-"Bertoletti's Velena Engine.\n"
-"\n"
-"\"Four in a Row\" is a part of GNOME Games."
-msgstr ""
-"गनोम के लिए \"पंक्ति में चार\", Giuliano Bertoletti के वेलेना इंजन के साथ.\n"
-"\n"
-"\"पंक्ति में चार\" ग्नोम खेल का हिस्सा है."
+#. Translators: in the About dialog, name of an author of the game
+#: src/four-in-a-row.vala:1138
+msgid "Arnaud Bonatti"
+msgstr "अरनॉड बोनाटी"
 
-# libgnomeprintui/gnome-print-paper-selector.c:1453
-#: ../src/main.c:830
-msgid "GNOME Games web site"
-msgstr "ग्नोम खेल वेबसाइट"
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1143
+msgid "Alan Horkan"
+msgstr "एलन होर्कन"
+
+#. Translators: in the About dialog, name of a theme designer
+#: src/four-in-a-row.vala:1147
+msgid "Anatol Drlicek"
+msgstr "अनातोल ड्रिलिसेक"
+
+#. Translators: in the About dialog, indication about some themes origin
+#: src/four-in-a-row.vala:1151
+msgid "Based on the Faenza icon theme by Matthieu James"
+msgstr "मैथ्यू जेम्स द्वारा फ़ेंज़ा आइकन थीम पर आधारित"
+
+#. Translators: in the About dialog, name of a documenter
+#: src/four-in-a-row.vala:1155
+msgid "Timothy Musson"
+msgstr "टिमोथी मुसन"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1159
+msgid "Copyright © 1999-2008 – Tim Musson and David Neary"
+msgstr "कॉपीराइट © 1999-2008 - टिम मुसन और डेविड नेरी"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1163
+msgid "Copyright © 2014 – Michael Catanzaro"
+msgstr "कॉपीराइट © 2013-2014 माइकल कैटनज़ारो"
+
+#. Translators: text crediting a maintainer, in the about dialog text
+#: src/four-in-a-row.vala:1167
+msgid "Copyright © 2018 – Jacob Humphrey"
+msgstr "कॉपीराइट © 2018 - जैकब हम्फ्री"
+
+#. Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end
+#: src/four-in-a-row.vala:1171
+#, c-format
+msgid "Copyright © %u-%u – Arnaud Bonatti"
+msgstr "कॉपीराइट © %u-%u - अरनॉड बोनाटी"
+
+#. Translators: about dialog text, introducing the game
+#: src/four-in-a-row.vala:1179
+msgid "Connect four in a row to win"
+msgstr "जीतने के लिए चार को एक पंक्ति में जोड़ें"
 
 #  Translator credits
-#: ../src/main.c:833
+#. Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally!
+#: src/four-in-a-row.vala:1184
 msgid "translator-credits"
 msgstr ""
 "रविशंकर श्रीवास्तव (raviratlami@yahoo.com)\n"
-"राजेश रंजन (rajeshkajha@yahoo.com)"
+"राजेश रंजन (rajeshkajha@yahoo.com)\n"
+"Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024"
 
-# #-#-#-#-#  libgnomeui.gnome-2-2.hi.po (libgnomeui HEAD)  #-#-#-#-#
-# libgnomeui/gnome-app-helper.c:95 libgnomeui/gnome-app-helper.h:534
-#: ../src/main.c:1183
-msgid "_Game"
-msgstr "खेल (_G)"
+#. Translators: during a game, entry in the game menu, for undoing the last move
+#: src/four-in-a-row.vala:1285
+msgid "_Undo last move"
+msgstr "पिछली चाल पूर्ववत करें (_U)"
 
-#: ../src/main.c:1184
-msgid "_View"
-msgstr "देखें (_V)"
+#. Translators: during a game, entry in the game menu, for suggesting where to play
+#: src/four-in-a-row.vala:1289
+msgid "_Hint"
+msgstr "संकेत (_H)"
 
-#: ../src/main.c:1185
-msgid "_Settings"
-msgstr "जमावट (_S)"
+#: src/four-in-a-row.vala:1301
+msgid "Next _Round"
+msgstr "अगला दौर (_R)"
 
-#: ../src/main.c:1186
-msgid "_Help"
-msgstr "मदद (_H)"
+#: src/four-in-a-row.vala:1303
+msgid "_Give Up"
+msgstr "हार मान लें (_G)"
 
-#: ../src/main.h:5
-#| msgid "Four-in-a-Row"
-msgid "Four-in-a-row"
-msgstr "एक-पंक्ति-में-चार"
+# libgnomeui/gnome-scores.c:94
+#. Translators: hamburger menu entry; opens the Scores dialog (with a mnemonic that appears pressing Alt)
+#: src/four-in-a-row.vala:1308
+msgid "_Scores"
+msgstr "स्कोर (_S)"
 
-#: ../src/prefs.c:207
-msgid "Four-in-a-Row Preferences"
-msgstr "एक-पंक्ति-में-चार वरीयताएँ"
+#. Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt)
+#: src/game-window.vala:113
+msgid "_Start Game"
+msgstr "खेल शुरू करें (_S)"
 
-# #-#-#-#-#  libgnomeui.gnome-2-2.hi.po (libgnomeui HEAD)  #-#-#-#-#
-# libgnomeui/gnome-app-helper.c:95 libgnomeui/gnome-app-helper.h:534
-#: ../src/prefs.c:230
-msgid "Game"
-msgstr "खेल"
+# libgnomeui/gnome-scores.c:94
+#. Translators: title of the Scores dialog; plural noun
+#: src/scorebox.vala:37
+msgid "Scores"
+msgstr "स्कोर"
 
-#: ../src/prefs.c:233
-#| msgid ""
-#| "Player One:\n"
-#| "%s"
-msgid "Player One:"
-msgstr "पहला खिलाड़ी:"
+#. Translators: in the Scores dialog, label of the line where is indicated the number of tie games
+#: src/scorebox.vala:72
+msgid "Drawn:"
+msgstr "अनिर्णित:"
 
-#: ../src/prefs.c:244 ../src/prefs.c:272
-msgid "Human"
-msgstr "मनुष्य "
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the human player
+#: src/scorebox.vala:93 src/scorebox.vala:107
+msgid "You:"
+msgstr "आप:"
 
-#: ../src/prefs.c:248 ../src/prefs.c:276
-msgid "Level one"
-msgstr "स्तर एक"
+#. Translators: in the Scores dialog, label of the line where is indicated the number of games won by the computer player
+#: src/scorebox.vala:96 src/scorebox.vala:104
+msgid "Me:"
+msgstr "मैं:"
 
-#: ../src/prefs.c:252 ../src/prefs.c:280
-msgid "Level two"
-msgstr "स्तर दो"
-
-#: ../src/prefs.c:256 ../src/prefs.c:284
-msgid "Level three"
-msgstr "स्तर तीन"
-
-#: ../src/prefs.c:262
-#| msgid ""
-#| "Player Two:\n"
-#| "%s"
-msgid "Player Two:"
-msgstr "दूसरा खिलाड़ी:"
-
-#: ../src/prefs.c:290
-msgid "_Theme:"
-msgstr "प्रसंग: (_T)"
-
-# libgnome/gnome-program.c:578
-#: ../src/prefs.c:303
-msgid "Enable _animation"
-msgstr "एनीमेशन सक्षम करें (_a)"
-
-# libgnome/gnome-program.c:578
-#: ../src/prefs.c:307
-msgid "E_nable sounds"
-msgstr "ध्वनियाँ सक्षम करें (_n)"
-
-#. keyboard tab
-#: ../src/prefs.c:312
-msgid "Keyboard Controls"
-msgstr "कुंजीपटल नियंत्रण"
-
-#: ../src/theme.c:41
-msgid "Classic"
-msgstr "क्लासिक"
-
-#: ../src/theme.c:45 ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80
-msgid "Red"
-msgstr "लाल"
-
-#: ../src/theme.c:45
-msgid "Yellow"
-msgstr "पीला"
-
-#: ../src/theme.c:48
+#. Translators: name of a black-on-white theme, for helping people with visual misabilities
+#: src/theme.vala:170
 msgid "High Contrast"
-msgstr "अधिक कंट्रास्ट"
+msgstr "उच्च विषमता"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Circle"
 msgstr "वृत्त"
 
-#: ../src/theme.c:52 ../src/theme.c:59
+#: src/theme.vala:174 src/theme.vala:185
 msgid "Cross"
-msgstr "आरपार"
+msgstr "क्रॉस"
 
-#: ../src/theme.c:55
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Circle:"
+msgstr "वृत्त:"
+
+#: src/theme.vala:175 src/theme.vala:186
+msgid "Cross:"
+msgstr "क्रॉस:"
+
+#: src/theme.vala:176 src/theme.vala:187
+msgid "Circle wins!"
+msgstr "वृत्त जीता!"
+
+#: src/theme.vala:176 src/theme.vala:187
+msgid "Cross wins!"
+msgstr "क्रॉस जीता!"
+
+#: src/theme.vala:177 src/theme.vala:188
+msgid "Circle’s turn"
+msgstr "वृत्त की बारी"
+
+#: src/theme.vala:177 src/theme.vala:188
+msgid "Cross’s turn"
+msgstr "क्रॉस की बारी"
+
+#. Translators: name of a white-on-black theme, for helping people with visual misabilities
+#: src/theme.vala:181
 msgid "High Contrast Inverse"
-msgstr "अधिक विरोध प्रतिलोम"
+msgstr "उच्च विषमता व्युत्क्रम"
 
-#: ../src/theme.c:62
-msgid "Cream Marbles"
-msgstr "क्रीम संगमरमर"
+#. Translators: name of a red-versus-green theme
+#: src/theme.vala:192
+msgid "Red and Green Marbles"
+msgstr "लाल और हरे कंचे"
 
-#: ../src/theme.c:66 ../src/theme.c:73 ../src/theme.c:80 ../src/theme.c:87
+#: src/theme.vala:196 src/theme.vala:207 src/theme.vala:218
+msgid "Red"
+msgstr "लाल"
+
+#: src/theme.vala:196 src/theme.vala:218
+msgid "Green"
+msgstr "हरा"
+
+#: src/theme.vala:197 src/theme.vala:208 src/theme.vala:219
+msgid "Red:"
+msgstr "लाल:"
+
+#: src/theme.vala:197 src/theme.vala:219
+msgid "Green:"
+msgstr "हरा:"
+
+#: src/theme.vala:198 src/theme.vala:209 src/theme.vala:220
+msgid "Red wins!"
+msgstr "लाल जीता!"
+
+#: src/theme.vala:198 src/theme.vala:220
+msgid "Green wins!"
+msgstr "हरा जीता!"
+
+#: src/theme.vala:199 src/theme.vala:210 src/theme.vala:221
+msgid "Red’s turn"
+msgstr "लाल की बारी"
+
+#: src/theme.vala:199 src/theme.vala:221
+msgid "Green’s turn"
+msgstr "हरे की बारी"
+
+#. Translators: name of a blue-versus-red theme
+#: src/theme.vala:203
+msgid "Blue and Red Marbles"
+msgstr "नीला और लाल कंचे"
+
+#: src/theme.vala:207
 msgid "Blue"
 msgstr "नीला"
 
-#: ../src/theme.c:69
-msgid "Glass Marbles"
-msgstr "शीशी का संगमरमर"
+#: src/theme.vala:208
+msgid "Blue:"
+msgstr "नीला:"
 
-#: ../src/theme.c:76
-msgid "Nightfall"
-msgstr "नाइटफ़ाल"
+#: src/theme.vala:209
+msgid "Blue wins!"
+msgstr "नीला जीता!"
 
-#: ../src/theme.c:83
-msgid "Blocks"
-msgstr "ब्लॉक्स"
+#: src/theme.vala:210
+msgid "Blue’s turn"
+msgstr "नीले की बारी"
 
-#: ../src/theme.c:87
-msgid "Orange"
-msgstr "नारंगी"
+#. Translators: name of a red-versus-green theme with drawing on the tiles
+#: src/theme.vala:214
+msgid "Stars and Rings"
+msgstr "तारे और छल्ले"
+
+#~ msgid "Four-in-a-Row"
+#~ msgstr "एक-पंक्ति-में-चार"
+
+#~ msgid "Level of Player One"
+#~ msgstr "पहले खिलाड़ी का स्तर"
+
+#~ msgid ""
+#~ "Zero is human; one through three correspond to the level of the computer "
+#~ "player."
+#~ msgstr "शून्य मनुष्य का है, एक से तीन तक का लेवल कम्प्यूटर खिलाड़ी हेतु है."
+
+#~ msgid "Level of Player Two"
+#~ msgstr "दूसरे खिलाड़ी का स्तर"
+
+#~ msgid "Animate"
+#~ msgstr "एनिमेट"
+
+#~ msgid "Whether or not to use animation."
+#~ msgstr "एनीमेशन उपयोग करें या नहीं."
+
+# libgnomevfs/gnome-vfs-result.c:137
+#~ msgid "Unknown Command"
+#~ msgstr "अज्ञात कमांड"
+
+#~ msgid "View help for this game"
+#~ msgstr "इस खेल के लिये सहायता दिखायें"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "पूरा स्क्रीन मोड टॉगल करें"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "अगली चाल हेतु संकेत प्राप्त करें"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "पूर्ण स्क्रीन छोड़ें"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "एक नया मल्टीप्लेयर संजाल खेल आरंभ करें"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "मौजूदा संजाल खेल का अंत करें और संजाल सर्वर पर लौटें"
+
+# libgnomeui/gnome-app-helper.c:254
+#~ msgid "Pause the game"
+#~ msgstr "खेल रोकें"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "संजाल खेल में खिलाड़ियों की सूची दिखाएं"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "पिछली चाल पूर्ववत करें"
+
+#~ msgid "Restart the game"
+#~ msgstr "वर्तमान खेल पुनःप्रारंभ करें"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "रूका खेल पुनःप्रारंभ करें"
+
+# libgnomeui/gnome-app-helper.c:280
+#~ msgid "View the scores"
+#~ msgstr "अंक देखें"
+
+# libgnomeui/gnome-app-helper.c:259
+#~ msgid "About this game"
+#~ msgstr "इस खेल के बारे में"
+
+#~ msgid "Close this window"
+#~ msgstr "इस विंडो को बन्द करें"
+
+# libgnomeui/gnome-app-helper.c:254
+#~ msgid "Configure the game"
+#~ msgstr "यह खेल विन्यस्त करें"
+
+# libgnomeui/gnome-app-helper.c:259
+#~ msgid "Quit this game"
+#~ msgstr "इस खेल को छोड़ें"
+
+#~ msgid "_Contents"
+#~ msgstr "विषय सूची (_C)"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "फुलस्क्रीन (_F)"
+
+#~ msgid "_New"
+#~ msgstr "नया (_N)"
+
+#~ msgid "_Redo Move"
+#~ msgstr "चाल फिर चलें (_R)"
+
+#~ msgid "_Reset"
+#~ msgstr "रीसेट करें (_R)"
+
+#~ msgid "_Undo Move"
+#~ msgstr "चाल वापस लें (_U)"
+
+#~ msgid "_Deal"
+#~ msgstr "डील (_D)"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "पूर्ण स्क्रीन छोड़ें (_L)"
+
+#~ msgid "Network _Game"
+#~ msgstr "संजाल खेल (_G)"
+
+#~ msgid "L_eave Game"
+#~ msgstr "खेल छोड़ें (_e)"
+
+#~ msgid "_Pause"
+#~ msgstr "ठहरें (_P)"
+
+#~ msgid "Res_ume"
+#~ msgstr "फिर चालू करें (_u)"
+
+# #-#-#-#-#  libgnomeui.gnome-2-2.hi.po (libgnomeui HEAD)  #-#-#-#-#
+# libgnomeui/gnome-app-helper.c:95 libgnomeui/gnome-app-helper.h:534
+#~ msgid "_End Game"
+#~ msgstr "खेल समाप्त (_E)"
+
+#, c-format
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s मुफ़्त सॉफ़्टवेयर है; इसे आप मुफ़्त सॉफ़्टवेयर फाउण्डेशन द्वारा प्रकाशित ग्नू जनरल पब्लिक "
+#~ "लाइसेंस के तहत वितरित कर सकते हैं या परिवर्धित कर सकते हैं; लाइसेंस के %d संस्करण या इसके "
+#~ "(अपने विकल्प अनुसार) बाद के संस्करण के तहत."
+
+#, c-format
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+
+#, c-format
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "इस प्रोग्राम के साथ आपको ग्नू - जनरल पब्लिक लाइसेंस की प्रतिलिपि मिलनी चाहिए. यदि "
+#~ "नहीं तो देखें<http://www.gnu.org/licenses/>."
+
+#, c-format
+#~ msgid ""
+#~ "Unable to load image:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "छवि लोड करने में अक्षम:\n"
+#~ "%s"
+
+#~ msgid "It is your move."
+#~ msgstr "यह आपकी चाल है."
+
+#~ msgid "Thinking..."
+#~ msgstr "सोच में..."
+
+#, c-format
+#~ msgid "Waiting for %s to move."
+#~ msgstr "%s को चलने के लिए प्रतीक्षारत."
+
+#~ msgid ""
+#~ "\"Four in a Row\" for GNOME, with a computer player driven by Giuliano "
+#~ "Bertoletti's Velena Engine.\n"
+#~ "\n"
+#~ "\"Four in a Row\" is a part of GNOME Games."
+#~ msgstr ""
+#~ "गनोम के लिए \"पंक्ति में चार\", Giuliano Bertoletti के वेलेना इंजन के साथ.\n"
+#~ "\n"
+#~ "\"पंक्ति में चार\" ग्नोम खेल का हिस्सा है."
+
+# libgnomeprintui/gnome-print-paper-selector.c:1453
+#~ msgid "GNOME Games web site"
+#~ msgstr "ग्नोम खेल वेबसाइट"
+
+# #-#-#-#-#  libgnomeui.gnome-2-2.hi.po (libgnomeui HEAD)  #-#-#-#-#
+# libgnomeui/gnome-app-helper.c:95 libgnomeui/gnome-app-helper.h:534
+#~ msgid "_Game"
+#~ msgstr "खेल (_G)"
+
+#~ msgid "_View"
+#~ msgstr "देखें (_V)"
+
+#~ msgid "_Settings"
+#~ msgstr "जमावट (_S)"
+
+#~ msgid "Four-in-a-Row Preferences"
+#~ msgstr "एक-पंक्ति-में-चार वरीयताएँ"
+
+#~| msgid ""
+#~| "Player One:\n"
+#~| "%s"
+#~ msgid "Player One:"
+#~ msgstr "पहला खिलाड़ी:"
+
+#~ msgid "Human"
+#~ msgstr "मनुष्य "
+
+#~ msgid "Level one"
+#~ msgstr "स्तर एक"
+
+#~ msgid "Level two"
+#~ msgstr "स्तर दो"
+
+#~ msgid "Level three"
+#~ msgstr "स्तर तीन"
+
+#~| msgid ""
+#~| "Player Two:\n"
+#~| "%s"
+#~ msgid "Player Two:"
+#~ msgstr "दूसरा खिलाड़ी:"
+
+#~ msgid "_Theme:"
+#~ msgstr "प्रसंग: (_T)"
+
+# libgnome/gnome-program.c:578
+#~ msgid "Enable _animation"
+#~ msgstr "एनीमेशन सक्षम करें (_a)"
+
+# libgnome/gnome-program.c:578
+#~ msgid "E_nable sounds"
+#~ msgstr "ध्वनियाँ सक्षम करें (_n)"
+
+#~ msgid "Classic"
+#~ msgstr "क्लासिक"
+
+#~ msgid "Yellow"
+#~ msgstr "पीला"
+
+#~ msgid "Glass Marbles"
+#~ msgstr "शीशी का संगमरमर"
+
+#~ msgid "Nightfall"
+#~ msgstr "नाइटफ़ाल"
+
+#~ msgid "Blocks"
+#~ msgstr "ब्लॉक्स"
+
+#~ msgid "Orange"
+#~ msgstr "नारंगी"
