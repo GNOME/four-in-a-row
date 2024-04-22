@@ -13,9 +13,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.master.hi\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2023-01-25 17:20+0000\n"
-"PO-Revision-Date: 2024-04-02 11:44+0530\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues/\n"
+"POT-Creation-Date: 2024-04-12 08:06+0000\n"
+"PO-Revision-Date: 2024-04-12 20:54+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi\n"
 "Language: hi\n"
@@ -262,6 +262,36 @@ msgstr "GNOME परियोजना"
 msgid "game;strategy;logic;"
 msgstr "game;strategy;logic;खेल;रणनीति;तर्क;"
 
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:11
+msgid "Who starts"
+msgstr "कौन प्रारंभ करे"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/first-player'
+#: data/org.gnome.Four-in-a-row.gschema.xml:13
+msgid ""
+"Specifies who will start the next one-player game. Ignored for two-player "
+"games."
+msgstr ""
+"निर्दिष्ट करता है कि अगला एक-खिलाड़ी खेल कौन प्रारंभ करेगा। दो-खिलाड़ियों वाले खेलों के "
+"लिए अनदेखा किया गया।"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
+#: data/org.gnome.Four-in-a-row.gschema.xml:19
+msgid "Number of players"
+msgstr "खिलाड़ियों की संख्या"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:26
+msgid "Opponent"
+msgstr "प्रतिद्वंद्वी"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
+#: data/org.gnome.Four-in-a-row.gschema.xml:28
+msgid "From 1, the easiest, to 3, the hardest. Ignored for two-player games."
+msgstr ""
+"1 (सबसे आसान) से 3 (सबसे कठिन) तक। दो-खिलाड़ियों वाले खेलों के लिए अनदेखा किया गया।"
+
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/theme-id'
 #: data/org.gnome.Four-in-a-row.gschema.xml:34
 msgid "Theme ID"
@@ -315,6 +345,36 @@ msgstr "कंचा छोड़ें"
 #: data/org.gnome.Four-in-a-row.gschema.xml:64
 msgid "Key press to drop a marble."
 msgstr "कंचा छोड़ने हेतु कुंजी दबाएँ।"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:72
+msgid "The width of the window"
+msgstr "विंडो की चौड़ाई"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-width'
+#: data/org.gnome.Four-in-a-row.gschema.xml:74
+msgid "The width of the main window in pixels."
+msgstr "मुख्य विंडो की चौड़ाई, पिक्सल में।"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:79
+msgid "The height of the window"
+msgstr "विंडो की ऊंचाई"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
+#: data/org.gnome.Four-in-a-row.gschema.xml:81
+msgid "The height of the main window in pixels."
+msgstr "मुख्य विंडो की ऊंचाई, पिक्सल में।"
+
+#. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:86
+msgid "A flag to enable maximized mode"
+msgstr "अधिकतम मोड सक्षम करने के लिए एक ध्वज"
+
+#. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
+#: data/org.gnome.Four-in-a-row.gschema.xml:88
+msgid "If “true”, the main window starts in maximized mode."
+msgstr "यदि \"सही\" है तो, मुख्य विंडो अधिकतम मोड में प्रारंभ होती है।"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:95
