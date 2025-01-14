@@ -23,6 +23,7 @@ gsound_dependency   = dependency('gsound',      version: '>= 1.0.2')
 gtk_dependency      = dependency('gtk+-3.0',    version: '>= 3.24.0')
 posix_dependency    = valac.find_library('posix')
 rsvg_dependency     = dependency('librsvg-2.0', version: '>= 2.32.0')
+math_dependency     = meson.get_compiler('c').find_library('m')
 
 appstream_util          = find_program('appstream-util',        required: false)
 desktop_file_validate   = find_program('desktop-file-validate', required: false)

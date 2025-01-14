@@ -42,7 +42,8 @@ executable(
         gsound_dependency,
         gtk_dependency,
         posix_dependency,
-        rsvg_dependency
+        rsvg_dependency,
+        math_dependency,
     ],
     c_args: [
         '-include', 'config.h'

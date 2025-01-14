@@ -239,19 +239,8 @@ private class GameBoardView : Gtk.DrawingArea
         if (button != Gdk.BUTTON_PRIMARY && button != Gdk.BUTTON_SECONDARY)
             return;
 
-        Gdk.Event? event = Gtk.get_current_event ();
-        if (event == null && ((!) event).type != Gdk.EventType.BUTTON_PRESS)
-            assert_not_reached ();
-
-        int x;
-        int y;
-        Gdk.Window? window = get_window ();
-        if (window == null)
-            assert_not_reached ();
-        ((!) window).get_device_position (((Gdk.EventButton) (!) event).device, out x, out y, null);
-
         uint8 col;
-        if (get_column (x, y, out col))
+        if (get_column ((int) Math.round(event_x), (int) Math.round(event_y), out col))
             column_clicked (col);
     }
 
