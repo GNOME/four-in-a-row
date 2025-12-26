@@ -25,13 +25,13 @@ using Gtk;
 [GtkTemplate (ui = "/org/gnome/Four-in-a-row/ui/fiar-screens.ui")]
 private class NewGameScreen : Box, AdaptativeWidget
 {
-    [GtkChild] private Box infos_section;
-    [GtkChild] private Box users_section;
-    [GtkChild] private Box start_section;
+    [GtkChild] private unowned Box infos_section;
+    [GtkChild] private unowned Box users_section;
+    [GtkChild] private unowned Box start_section;
 
-    [GtkChild] private Box users_box;
-    [GtkChild] private Box level_box;
-    [GtkChild] private Box start_box;
+    [GtkChild] private unowned Box users_box;
+    [GtkChild] private unowned Box level_box;
+    [GtkChild] private unowned Box start_box;
 
     internal void update_sensitivity (bool new_sensitivity)
     {
@@ -65,9 +65,9 @@ private class NewGameScreen : Box, AdaptativeWidget
             width_request = 250;
             margin_bottom = 22;
 
-            users_section.hide ();
-            start_section.hide ();
-            infos_section.show ();
+            users_section.visible = false;
+            start_section.visible = false;
+            infos_section.visible = true;
 
             level_box.set_orientation (Orientation.VERTICAL);
 
@@ -75,9 +75,9 @@ private class NewGameScreen : Box, AdaptativeWidget
             level_box.set_spacing (0);
             start_box.set_spacing (0);
 
-            users_box.get_style_context ().add_class ("linked");
-            level_box.get_style_context ().add_class ("linked");
-            start_box.get_style_context ().add_class ("linked");
+            users_box.add_css_class ("linked");
+            level_box.add_css_class ("linked");
+            start_box.add_css_class ("linked");
         }
         else if (extra_flat)
         {
@@ -96,9 +96,9 @@ private class NewGameScreen : Box, AdaptativeWidget
                 width_request = 450;
             }
 
-            users_section.hide ();
-            start_section.hide ();
-            infos_section.show ();
+            users_section.visible = false;
+            start_section.visible = false;
+            infos_section.visible = true;
 
             level_box.set_orientation (Orientation.VERTICAL);
 
@@ -106,9 +106,9 @@ private class NewGameScreen : Box, AdaptativeWidget
             level_box.set_spacing (0);
             start_box.set_spacing (0);
 
-            users_box.get_style_context ().add_class ("linked");
-            level_box.get_style_context ().add_class ("linked");
-            start_box.get_style_context ().add_class ("linked");
+            users_box.add_css_class ("linked");
+            level_box.add_css_class ("linked");
+            start_box.add_css_class ("linked");
         }
         else
         {
@@ -128,15 +128,15 @@ private class NewGameScreen : Box, AdaptativeWidget
             }
             margin_bottom = 22;
 
-            infos_section.hide ();
-            users_section.show ();
-            start_section.show ();
+            infos_section.visible = false;
+            users_section.visible = true;
+            start_section.visible = true;
 
             level_box.set_orientation (Orientation.HORIZONTAL);
 
-            users_box.get_style_context ().remove_class ("linked");
-            level_box.get_style_context ().remove_class ("linked");
-            start_box.get_style_context ().remove_class ("linked");
+            users_box.remove_css_class ("linked");
+            level_box.remove_css_class ("linked");
+            start_box.remove_css_class ("linked");
 
             users_box.set_spacing (boxes_spacing);
             level_box.set_spacing (boxes_spacing);

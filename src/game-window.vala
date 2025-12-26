@@ -3,6 +3,7 @@
    This file is part of GNOME Four-in-a-row.
 
    Copyright © 2015, 2016, 2019 Arnaud Bonatti
+   Copyright © 2025 Andrey Kutejko
 
    GNOME Four-in-a-row is free software: you can redistribute it and/or
    modify it under the terms of the GNU General Public License as published
@@ -36,21 +37,26 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     private string program_name = "";
 
     /* private widgets */
-    [GtkChild] private HeaderBar headerbar;
-    [GtkChild] private Overlay overlay;
-    [GtkChild] private Stack stack;
+    [GtkChild] private unowned Adw.HeaderBar headerbar;
+    [GtkChild] private unowned Adw.WindowTitle window_title;
+    [GtkChild] private unowned Overlay overlay;
+    [GtkChild] private unowned Stack stack;
 
     private Button? start_game_button = null;
-    [GtkChild] private Button new_game_button;
-    [GtkChild] private Button back_button;
-    [GtkChild] private Button unfullscreen_button;
+    [GtkChild] private unowned Button new_game_button;
+    [GtkChild] private unowned Button back_button;
+    [GtkChild] private unowned Button unfullscreen_button;
 
-    [GtkChild] private Box game_box;
-    [GtkChild] private Box new_game_box;
+    [GtkChild] private unowned Box game_box;
+    [GtkChild] private unowned Box new_game_box;
 
     private Widget view;
-    private Widget? game_widget_1;
-    private GameActionBar actionbar;
+    [GtkChild] private unowned MenuButton history_button_1;
+    [GtkChild] private unowned MenuButton history_button_2;
+    [GtkChild] private unowned Label title_2;
+    [GtkChild] private unowned ActionBar actionbar;
+
+    private GLib.Settings settings;
 
     /* signals */
     internal signal void play ();
@@ -61,74 +67,77 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
  // internal signal void redo ();
     internal signal void hint ();
 
-    internal GameWindow (string? css_resource, string name, bool start_now, GameWindowFlags flags, Box new_game_screen, Widget _view, GLib.Menu app_menu, Widget? _game_widget_1, Widget? game_widget_2)
+    internal GameWindow (Adw.Application application,
+                         string? css_resource,
+                         string name,
+                         bool start_now,
+                         GameWindowFlags flags,
+                         Box new_game_screen,
+                         Widget _view,
+                         GLib.Menu app_menu,
+                         Widget game_widget_1,
+                         Widget game_widget_2,
+                         GLib.Menu game_menu)
     {
-        Object (window_title: name,
-                specific_css_class_or_empty: "",
-                schema_path: "/org/gnome/Four-in-a-row/");
+        Object (application: application);
+
+        settings = new GLib.Settings.with_path ("org.gnome.Four-in-a-row.Lib", "/org/gnome/Four-in-a-row/");
 
         if (css_resource != null)
         {
             CssProvider css_provider = new CssProvider ();
             css_provider.load_from_resource ((!) css_resource);
-            Gdk.Screen? gdk_screen = Gdk.Screen.get_default ();
-            if (gdk_screen != null) // else..?
-                StyleContext.add_provider_for_screen ((!) gdk_screen, css_provider, STYLE_PROVIDER_PRIORITY_APPLICATION);
+            StyleContext.add_provider_for_display (get_display (), css_provider, STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         view = _view;
-        game_widget_1 = _game_widget_1;
 
         /* window config */
         install_ui_action_entries ();
         program_name = name;
         set_title (name);
-        if (!is_extra_thin)
-            headerbar.set_title (name);
+        window_title.set_title (name);
         info_button.set_menu_model (app_menu);
 
         /* add widgets */
-        if (game_widget_1 != null)
-        {
-            headerbar.pack_end ((!) game_widget_1);
-            add_adaptative_child ((AdaptativeWidget) (!) game_widget_1);
-        }
-        actionbar = new GameActionBar (name, game_widget_2, /* show actionbar */ start_now);
-        actionbar.show ();
-        actionbar.valign = Align.END;
-        overlay.add_overlay (actionbar);
+        history_button_1.menu_model = game_menu;
+        history_button_1.child = game_widget_1;
 
-        GameActionBarPlaceHolder actionbar_placeholder = new GameActionBarPlaceHolder (actionbar);
-        actionbar_placeholder.show ();
-        game_box.pack_end (actionbar_placeholder, /* expand */ false, /* fill */ true, /* padding */ 0);
+        history_button_2.menu_model = game_menu;
+        history_button_2.child = game_widget_2;
 
-        new_game_box.pack_start (new_game_screen, true, true, 0);
-        add_adaptative_child ((AdaptativeWidget) new_game_screen);
-        add_adaptative_child ((AdaptativeWidget) actionbar);
-        add_adaptative_child ((AdaptativeWidget) actionbar_placeholder);
-        add_adaptative_child ((AdaptativeWidget) this);
+        new_game_box.append (new_game_screen);
+
+        game_box.prepend (view);
+        game_box.set_focus_child (view);            // TODO test if necessary; note: view could grab focus from application
+        view.vexpand = true;
+        view.halign = Align.FILL;
+        view.can_focus = true;
+
         if (GameWindowFlags.SHOW_START_BUTTON in flags)
         {
             /* Translators: when configuring a new game, label of the blue Start button (with a mnemonic that appears pressing Alt) */
             Button _start_game_button = new Button.with_mnemonic (_("_Start Game"));
 //            _start_game_button.width_request = 222;
 //            _start_game_button.height_request = 60;
-            _start_game_button.get_style_context ().add_class ("start-game-button");
+            _start_game_button.add_css_class ("start-game-button");
             _start_game_button.halign = Align.CENTER;
             _start_game_button.set_action_name ("ui.start-game");
             /* Translators: when configuring a new game, tooltip text of the blue Start button */
             // _start_game_button.set_tooltip_text (_("Start a new game as configured"));
-            ((StyleContext) _start_game_button.get_style_context ()).add_class ("suggested-action");
-            _start_game_button.show ();
-            new_game_box.pack_end (_start_game_button, false, false, 0);
+            _start_game_button.add_css_class ("suggested-action");
+            new_game_box.append (_start_game_button);
             start_game_button = _start_game_button;
         }
 
-        game_box.pack_start (view, true, true, 0);
-        game_box.set_focus_child (view);            // TODO test if necessary; note: view could grab focus from application
-        view.halign = Align.FILL;
-        view.can_focus = true;
-        view.show ();
+        add_adaptative_child ((AdaptativeWidget) new_game_screen);
+        add_adaptative_child ((AdaptativeWidget) this);
+
+        settings.bind ("window-width", this, "default-width", SettingsBindFlags.DEFAULT);
+        settings.bind ("window-height", this, "default-height", SettingsBindFlags.DEFAULT);
+        settings.bind ("window-is-maximized", this, "maximized", SettingsBindFlags.DEFAULT);
+
+        bind_property ("fullscreened", unfullscreen_button, "visible", BindingFlags.SYNC_CREATE);
 
         /* start or not */
         if (start_now)
@@ -178,20 +187,6 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     };
 
     /*\
-    * * Window events
-    \*/
-
-    protected override void on_fullscreen ()
-    {
-        unfullscreen_button.show ();
-    }
-
-    protected override void on_unfullscreen ()
-    {
-        unfullscreen_button.hide ();
-    }
-
-    /*\
     * * Some internal calls
     \*/
 
@@ -207,18 +202,24 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 //        headerbar.set_subtitle (null);
 //    }
 
-    internal void set_subtitle (string? subtitle)
+    internal void set_window_title (string? title)
     {
-        if (!is_extra_thin)
-            headerbar.set_title (subtitle);
-        last_subtitle = subtitle;
-        if (subtitle == null)
-            actionbar.set_visibility (false);
+        if (title != null)
+        {
+            window_title.set_subtitle ((!) title);
+            title_2.label = (!) title;
+        }
         else
         {
-            actionbar.update_title ((!) subtitle);
-            actionbar.set_visibility (true);
+            window_title.set_subtitle ("");
+            title_2.label = "";
         }
+    }
+
+    internal void set_subtitle (string? subtitle)
+    {
+        set_window_title (subtitle);
+        last_subtitle = subtitle;
     }
 
     internal void finish_game ()
@@ -252,33 +253,10 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     * * adaptative stuff
     \*/
 
-    internal bool is_extra_thin { internal get; private set; default = false; }
     private bool is_quite_thin = false;
     protected override void set_window_size (AdaptativeWidget.WindowSize new_size)
     {
         is_quite_thin = AdaptativeWidget.WindowSize.is_quite_thin (new_size);
-
-        bool _is_extra_thin = AdaptativeWidget.WindowSize.is_extra_thin (new_size);
-        if (_is_extra_thin == is_extra_thin)
-            return;
-        is_extra_thin = _is_extra_thin;
-
-        if (is_extra_thin)
-        {
-            headerbar.set_title (null);
-            if (game_widget_1 != null)
-                ((!) game_widget_1).hide ();
-        }
-        else
-        {
-            if (game_widget_1 != null && (!) stack.get_visible_child_name () == "game-box")
-                ((!) game_widget_1).show ();
-            string? panel_name = stack.get_visible_child_name ();
-            if (panel_name != null && (!) panel_name == "start-box")
-                headerbar.set_title (program_name);
-            else
-                headerbar.set_title (last_subtitle);
-        }
     }
 
     /*\
@@ -288,13 +266,9 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     private string? last_subtitle = null;
     private void show_new_game_screen ()
     {
-        if (!is_extra_thin)
-            headerbar.set_title (program_name);
-        actionbar.set_visibility (false);
+        set_window_title (null);
 
         stack.set_visible_child_name ("start-box");
-        if (game_widget_1 != null)
-            ((!) game_widget_1).hide ();
         new_game_button.hide ();
 
         if (!game_finished && back_button.visible)
@@ -305,14 +279,10 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
     private void show_view ()
     {
-        if (!is_extra_thin)
-            headerbar.set_title (last_subtitle);
-        actionbar.set_visibility (true);
+        set_window_title (last_subtitle);
 
         stack.set_visible_child_name ("game-box");
         back_button.hide ();        // TODO transition?
-        if (game_widget_1 != null && !is_extra_thin)
-            ((!) game_widget_1).show ();
         new_game_button.show ();
 
         if (game_finished)
@@ -378,17 +348,6 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
         back ();
     }
 
-    internal bool new_game_screen_visible ()
-    {
-        string? stack_child = stack.get_visible_child_name ();
-        if (stack_child == null)
-            assert_not_reached ();
-        if ((!) stack_child == "game-box")
-            return false;
-        else
-            return true;
-    }
-
     /*\
     * * Game menu actions
     \*/
@@ -407,7 +366,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
 
         game_finished = false;
 
-        if (!back_button.is_focus)
+        if (!back_button.has_focus)
             view.grab_focus();
      // redo_action.set_enabled (true);
         undo ();
@@ -437,7 +396,7 @@ private class GameWindow : AdaptativeWindow, AdaptativeWidget
     * * hamburger menu
     \*/
 
-    [GtkChild] private MenuButton info_button;
+    [GtkChild] private unowned MenuButton info_button;
 
     private inline void toggle_hamburger (/* SimpleAction action, Variant? variant */)
     {

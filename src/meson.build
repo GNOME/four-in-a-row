@@ -22,11 +22,12 @@ sources = files(
     'adaptative-window.vala',
     'ai.vala',
     'four-in-a-row.vala',
-    'game-actionbar.vala',
     'game-board-view.vala',
     'game-board.vala',
     'game-window.vala',
-    'history-button.vala',
+    'history-button-label.vala',
+    'arrow.vala',
+    'piece.vala',
     'new-game-screen.vala',
     'player.vala',
     'scorebox.vala',
@@ -39,8 +40,8 @@ executable(
     sources + resources,
     dependencies: [
         glib_dependency,
-        gsound_dependency,
         gtk_dependency,
+        adw_dependency,
         posix_dependency,
         rsvg_dependency
     ],
@@ -48,7 +49,7 @@ executable(
         '-include', 'config.h'
     ],
     vala_args: [
-        '--target-glib', '2.44',
+        '--target-glib', '2.80',
         '--vapidir', join_paths(meson.current_source_dir(), 'vapi'),
         '--enable-experimental-non-null'
     ],

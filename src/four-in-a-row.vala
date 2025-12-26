@@ -4,6 +4,7 @@
 
    Copyright © 2018 Jacob Humphrey
    Copyright © 2019 Arnaud Bonatti
+   Copyright © 2025 Andrey Kutejko
 
    GNOME Four-in-a-row is free software: you can redistribute it and/or
    modify it under the terms of the GNU General Public License as published
@@ -21,7 +22,7 @@
 
 using Gtk;
 
-private class FourInARow : Gtk.Application
+private class FourInARow : Adw.Application
 {
     private GLib.Settings settings = new GLib.Settings ("org.gnome.Four-in-a-row");
 
@@ -56,8 +57,8 @@ private class FourInARow : Gtk.Application
     private GameBoardView game_board_view;
     private GameWindow window;
     private NewGameScreen new_game_screen;
-    private HistoryButton history_button_1;
-    private HistoryButton history_button_2;
+    private HistoryButtonLabel history_button_label_1;
+    private HistoryButtonLabel history_button_label_2;
 
     // game state
     private string vstr;
@@ -123,7 +124,6 @@ private class FourInARow : Gtk.Application
     private const GLib.ActionEntry app_entries [] =  // see also add_actions()
     {
         { "game-type",          null,       "s", "'dark'", change_game_type },
-     // { "toggle-game-menu",   toggle_game_menu        },
         { "next-round",         on_next_round           },
         { "give-up",            on_give_up              },
         { "scores",             on_game_scores          },
@@ -140,6 +140,9 @@ private class FourInARow : Gtk.Application
         Intl.textdomain (GETTEXT_PACKAGE);
 
         Environment.set_application_name (PROGRAM_NAME);
+
+        Adw.init ();
+
         Window.set_default_icon_name ("org.gnome.Four-in-a-row");
 
         return new FourInARow ().run (args);
@@ -236,9 +239,6 @@ private class FourInARow : Gtk.Application
         game_board = new Board ((uint8) size, (uint8) target);
         clear_board ();
 
-        if (settings.get_boolean ("sound"))
-            init_sound ();
-
         settings.bind ("key-drop",  this,   "keypress-drop",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
         settings.bind ("key-right", this,   "keypress-right", SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
         settings.bind ("key-left",  this,   "keypress-left",  SettingsBindFlags.GET | SettingsBindFlags.NO_SENSITIVITY);
@@ -289,21 +289,23 @@ private class FourInARow : Gtk.Application
         app_menu.freeze ();
 
         generate_game_menu ();
-        history_button_1 = new HistoryButton (ref game_menu, theme_manager);
-        history_button_2 = new HistoryButton (ref game_menu, theme_manager);
+        history_button_label_1 = new HistoryButtonLabel (theme_manager);
+        history_button_label_2 = new HistoryButtonLabel (theme_manager);
 
         /* Window */
-        window = new GameWindow ("/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
+        window = new GameWindow (this,
+                                 "/org/gnome/Four-in-a-row/ui/four-in-a-row.css",
                                  PROGRAM_NAME,
                                  /* start_now */ true,
                                  GameWindowFlags.SHOW_START_BUTTON,
                                  (Box) new_game_screen,
                                  game_board_view,
                                  app_menu,
-                                 (MenuButton) history_button_1,
-                                 (MenuButton) history_button_2);
+                                 history_button_label_1,
+                                 history_button_label_2,
+                                 game_menu);
 
-        scorebox = new Scorebox (window, this, theme_manager);
+        scorebox = new Scorebox (theme_manager);
 
         settings.changed ["theme-id"].connect (prompt_player);
 
@@ -322,8 +324,6 @@ private class FourInARow : Gtk.Application
 
         prompt_player ();
         game_reset (/* reload settings */ true);
-
-        add_window (window);
     }
     private inline void add_actions ()
     {
@@ -342,8 +342,11 @@ private class FourInARow : Gtk.Application
         set_accels_for_action ("ui.back",               {                 "Escape"  });
         set_accels_for_action ("ui.toggle-hamburger",   {                 "F10"     });
      // set_accels_for_action ("app.toggle-game-menu",  {        "<Primary>F10"     });
-     // set_accels_for_action ("app.help",              {                 "F1"      });
-     // set_accels_for_action ("app.about",             {          "<Shift>F1"      });
+        set_accels_for_action ("app.help",              {                 "F1"      });
+        set_accels_for_action ("app.about",             {          "<Shift>F1"      });
+        set_accels_for_action ("win.show-help-overlay", {        "<Control>question",
+                                                          "<Shift><Control>question",
+                                                                 "<Control>F1"      });
 
         add_action_entries (app_entries, this);
 
@@ -507,8 +510,9 @@ private class FourInARow : Gtk.Application
             blink_line = 0;
             var temp = new Animate (0, this, 2 * n);
             timeout = Timeout.add (SPEED_BLINK, temp.exec);
-            while (timeout != 0)
-                main_iteration ();
+            // FIXME: implement
+            // while (timeout != 0)
+            //     main_iteration ();
         }
     }
 
@@ -565,8 +569,8 @@ private class FourInARow : Gtk.Application
             else
                 /* Translators: text displayed on game end in the headerbar/actionbar, if the game is a tie */
                 set_status_message (_("It’s a draw!"));
-            history_button_1.set_player (Player.NOBODY);
-            history_button_2.set_player (Player.NOBODY);
+            history_button_label_1.set_player (Player.NOBODY);
+            history_button_label_2.set_player (Player.NOBODY);
             return;
         }
 
@@ -574,8 +578,8 @@ private class FourInARow : Gtk.Application
         {
             if (gameover)
             {
-                history_button_1.set_player (Player.NOBODY);
-                history_button_2.set_player (Player.NOBODY);
+                history_button_label_1.set_player (Player.NOBODY);
+                history_button_label_2.set_player (Player.NOBODY);
                 if (human)
                     /* Translators: text displayed on a one-player game end in the headerbar/actionbar, if the human player won */
                     set_status_message (_("You win!"));
@@ -587,15 +591,15 @@ private class FourInARow : Gtk.Application
             {
                 if (human)
                 {
-                    history_button_1.set_player (Player.HUMAN);
-                    history_button_2.set_player (Player.HUMAN);
+                    history_button_label_1.set_player (Player.HUMAN);
+                    history_button_label_2.set_player (Player.HUMAN);
                     /* Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the human player's turn */
                     set_status_message (_("Your Turn"));
                 }
                 else
                 {
-                    history_button_1.set_player (Player.OPPONENT);
-                    history_button_2.set_player (Player.OPPONENT);
+                    history_button_label_1.set_player (Player.OPPONENT);
+                    history_button_label_2.set_player (Player.OPPONENT);
                     /* Translators: text displayed during a one-player game in the headerbar/actionbar, if it is the computer player's turn */
                     set_status_message (_("I’m Thinking…"));
                 }
@@ -606,16 +610,16 @@ private class FourInARow : Gtk.Application
             string who;
             if (gameover)
             {
-                history_button_1.set_player (Player.NOBODY);
-                history_button_2.set_player (Player.NOBODY);
+                history_button_label_1.set_player (Player.NOBODY);
+                history_button_label_2.set_player (Player.NOBODY);
                 who = theme_manager.get_player_win (player);
             }
             else
             {
                 // player can be NOBODY
                 Player current_player = player == HUMAN ? Player.HUMAN : Player.OPPONENT;
-                history_button_1.set_player (current_player);
-                history_button_2.set_player (current_player);
+                history_button_label_1.set_player (current_player);
+                history_button_label_2.set_player (current_player);
                 who = theme_manager.get_player_turn (current_player);
             }
 
@@ -913,8 +917,9 @@ private class FourInARow : Gtk.Application
             assert_not_reached ();  // c could be uint8.MAX if the board if full
 
         column_moveto = c;
-        while (timeout != 0)
-            main_iteration ();
+        // FIXME: implement
+        // while (timeout != 0)
+        //     main_iteration ();
         anim = AnimID.HINT;
         var temp = new Animate (0, this);
         timeout = Timeout.add (SPEED_MOVE, temp.exec);
@@ -998,7 +1003,7 @@ private class FourInARow : Gtk.Application
 
     private inline void on_game_scores (/* SimpleAction action, Variant? parameter */)
     {
-        scorebox.present ();
+        scorebox.present (window);
         return;
     }
 
@@ -1012,94 +1017,86 @@ private class FourInARow : Gtk.Application
     * * game interaction
     \*/
 
-    // for keeping in memory
-    private EventControllerKey window_key_controller;
-    private EventControllerKey board_key_controller;
-
     private inline void init_keyboard ()
     {
-        window_key_controller = new EventControllerKey (window);
-        window_key_controller.set_propagation_phase (PropagationPhase.CAPTURE);
-        window_key_controller.key_pressed.connect (on_window_key_pressed);
-
-        board_key_controller = new EventControllerKey (game_board_view);
+        var board_key_controller = new EventControllerKey ();
         board_key_controller.key_pressed.connect (on_board_key_pressed);
+        game_board_view.add_controller (board_key_controller);
     }
 
-    private inline bool on_window_key_pressed (EventControllerKey _window_key_controller, uint keyval, uint keycode, Gdk.ModifierType state)
+    private inline bool on_board_key_pressed (EventControllerKey _board_key_controller, uint keyval, uint _keycode, Gdk.ModifierType state)
     {
-        string name = (!) (Gdk.keyval_name (keyval) ?? "");
-
-        if (name == "F1") // TODO fix dance done with the F1 & <Primary>F1 shortcuts that show help overlay
+        if (timeout != 0 || (!gameover && !is_player_human ()))
         {
-            window.close_hamburger ();
-            history_button_1.active = false;
-            history_button_2.active = false;
-            if ((state & Gdk.ModifierType.CONTROL_MASK) != 0)
-                return false;                           // help overlay
-            if ((state & Gdk.ModifierType.SHIFT_MASK) != 0)
-            {
-                on_help_about ();
-                return true;
-            }
-            on_help_contents ();
             return true;
         }
-        if (name == "F10") // TODO fix this dance also
-        {
-            if ((state & Gdk.ModifierType.CONTROL_MASK) != 0)
-            {
-                toggle_game_menu ();
-                return true;
-            }
-            return false;   // ui.toggle-hamburger
-        }
-        return false;
-    }
-
-    private inline bool on_board_key_pressed (EventControllerKey _board_key_controller, uint keyval, uint keycode, Gdk.ModifierType state)
-    {
-        Gdk.Event? event = Gtk.get_current_event ();
-        bool is_modifier;
-        if (event != null && ((!) event).type == Gdk.EventType.KEY_PRESS)
-            is_modifier = ((Gdk.EventKey) (!) event).is_modifier == 1;
-        else    // ?
-            is_modifier = false;
-
-        string key = (!) (Gdk.keyval_name (keyval) ?? "");
-        if (key == "" || key == "Tab" || is_modifier)
-            return false;
-
-        if (timeout != 0
-         || (!gameover && !is_player_human ()))
-            return true;
-
-        if (gameover)
+        else if (gameover)
         {
             blink_winner (2);
             return true;
         }
-
-        if (key == "Left" || keyval == keypress_left)
+        else if (keyval == Gdk.Key.Left)
         {
-            if (column == 0)
-                return true;
-            column_moveto--;
-            move_cursor (column_moveto);
+            if (column > 0)
+            {
+                column_moveto--;
+                move_cursor (column_moveto);
+            }
+            return true;
         }
-        else if (key == "Right" || keyval == keypress_right)
+        else if (keyval == Gdk.Key.Right)
         {
-            if (column >= /* BOARD_COLUMNS_MINUS_ONE */ size - 1)
-                return true;
-            column_moveto++;
-            move_cursor (column_moveto);
+            if (column < size)
+            {
+                column_moveto++;
+                move_cursor (column_moveto);
+            }
+            return true;
         }
-        else if (key == "space" || key == "Return" || key == "KP_Enter" || key == "Down" || keyval == keypress_drop)
+        else if (keyval == Gdk.Key.space || keyval == Gdk.Key.Return || keyval == Gdk.Key.KP_Enter || keyval == Gdk.Key.Down || keyval == keypress_drop)
+        {
             process_move (column);
-        else if (key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6" || key == "7")
-            process_move ((uint8) int.parse (key) - 1);
-
-        return true;
+            return true;
+        }
+        else if (keyval == Gdk.Key.@1)
+        {
+            process_move (0);
+            return true;
+        }
+        else if (keyval == Gdk.Key.@2)
+        {
+            process_move (1);
+            return true;
+        }
+        else if (keyval == Gdk.Key.@3)
+        {
+            process_move (2);
+            return true;
+        }
+        else if (keyval == Gdk.Key.@4)
+        {
+            process_move (3);
+            return true;
+        }
+        else if (keyval == Gdk.Key.@5)
+        {
+            process_move (4);
+            return true;
+        }
+        else if (keyval == Gdk.Key.@6)
+        {
+            process_move (5);
+            return true;
+        }
+        else if (keyval == Gdk.Key.@7)
+        {
+            process_move (6);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private inline bool column_clicked_cb (uint8 column)
@@ -1170,27 +1167,28 @@ private class FourInARow : Gtk.Application
         /* Translators: text crediting a maintainer, in the about dialog text; the %u are replaced with the years of start and end */
                          + _("Copyright \xc2\xa9 %u-%u – Arnaud Bonatti").printf (2019, 2020);
 
-        show_about_dialog (window,
-            name: PROGRAM_NAME,
+        Adw.show_about_dialog (window,
+            application_name: PROGRAM_NAME,
+            application_icon: "org.gnome.Four-in-a-row",
             version: VERSION,
             copyright: copyright,
             license_type: License.GPL_3_0,
             /* Translators: about dialog text, introducing the game */
             comments: _("Connect four in a row to win"),
-            authors: authors,
+            developers: authors,
             documenters: documenters,
             artists: artists,
             /* Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally! */
             translator_credits: _("translator-credits"),
-            logo_icon_name: "org.gnome.Four-in-a-row",
-            website: "https://wiki.gnome.org/Apps/Four-in-a-row");
+            website: "https://gitlab.gnome.org/GNOME/four-in-a-row/");
     }
 
     private inline void on_help_contents (/* SimpleAction action, Variant? parameter */)
     {
         try
         {
-            show_uri_on_window (window, "help:four-in-a-row", get_current_event_time ());
+            var launcher = new Gtk.UriLauncher ("help:four-in-a-row");
+            launcher.launch (window, null, null);
         }
         catch (Error error)
         {
@@ -1202,9 +1200,6 @@ private class FourInARow : Gtk.Application
     * * sound
     \*/
 
-    private GSound.Context sound_context;
-    private SoundContextState sound_context_state = SoundContextState.INITIAL;
-
     private enum SoundID {
         DROP,
         I_WIN,
@@ -1214,39 +1209,13 @@ private class FourInARow : Gtk.Application
         COLUMN_FULL;
     }
 
-    private enum SoundContextState {
-        INITIAL,
-        WORKING,
-        ERRORED;
-    }
-
-    private inline void init_sound ()
-    {
-        try
-        {
-            sound_context = new GSound.Context ();
-            sound_context_state = SoundContextState.WORKING;
-        }
-        catch (Error e)
-        {
-            warning (e.message);
-            sound_context_state = SoundContextState.ERRORED;
-        }
-    }
+    private MediaFile? last_sound;
 
     private void play_sound (SoundID id)
     {
-        if (sound_on)
-        {
-            if (sound_context_state == SoundContextState.INITIAL)
-                init_sound ();
-            if (sound_context_state == SoundContextState.WORKING)
-                do_play_sound (id, sound_context);
-        }
-    }
+        if (!sound_on)
+            return;
 
-    private static void do_play_sound (SoundID id, GSound.Context sound_context)
-    {
         string name;
 
         switch (id)
@@ -1264,8 +1233,9 @@ private class FourInARow : Gtk.Application
         string path = Path.build_filename (SOUND_DIRECTORY, name);
 
         try {
-            sound_context.play_simple (null, GSound.Attribute.MEDIA_NAME, name,
-                                             GSound.Attribute.MEDIA_FILENAME, path);
+            var file = MediaFile.for_filename (path);
+            file.play ();
+            last_sound = file;
         } catch (Error e) {
             warning (e.message);
         }
@@ -1317,16 +1287,5 @@ private class FourInARow : Gtk.Application
     private inline void on_next_round (/* SimpleAction action, Variant? parameter */)
     {
         game_reset (/* reload settings */ false);
-    }
-
-    private inline void toggle_game_menu ()
-    {
-        if (window.new_game_screen_visible ())
-            return;
-        window.close_hamburger ();
-        if (window.is_extra_thin)
-            history_button_2.active = !history_button_2.active;
-        else
-            history_button_1.active = !history_button_1.active;
     }
 }

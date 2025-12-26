@@ -1,5 +1,5 @@
 project('four-in-a-row', 'c', 'vala',
-    version: '3.38.1'
+    version: '50.alpha'
 )
 
 project_id = 'org.gnome.Four-in-a-row'
@@ -17,12 +17,12 @@ application_id = 'org.gnome.Four-in-a-row'
 
 valac = meson.get_compiler('vala')
 
-gio_dependency      = dependency('gio-2.0',     version: '>= 2.40.0')
-glib_dependency     = dependency('glib-2.0',    version: '>= 2.40.0')
-gsound_dependency   = dependency('gsound',      version: '>= 1.0.2')
-gtk_dependency      = dependency('gtk+-3.0',    version: '>= 3.24.0')
+gio_dependency      = dependency('gio-2.0',     version: '>= 2.80.0')
+glib_dependency     = dependency('glib-2.0',    version: '>= 2.80.0')
+gtk_dependency      = dependency('gtk4',        version: '>= 4.16.0')
+adw_dependency      = dependency('libadwaita-1', version: '>= 1.7')
 posix_dependency    = valac.find_library('posix')
-rsvg_dependency     = dependency('librsvg-2.0', version: '>= 2.32.0')
+rsvg_dependency     = dependency('librsvg-2.0', version: '>= 2.52.0')
 
 appstream_cli          = find_program('appstreamcli',          required: false)
 desktop_file_validate  = find_program('desktop-file-validate', required: false)

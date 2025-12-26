@@ -16,134 +16,153 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <interface>
-  <requires lib="gtk+" version="3.12"/>
+  <requires lib="gtk4" version="4.16"/>
+  <requires lib="adwaita" version="1.7"/>
   <template class="GameWindow" parent="AdaptativeWindow">
-    <!-- <initial-focus name="view"/> -->
-    <child type="titlebar">
-      <object class="GtkHeaderBar" id="headerbar">
-        <property name="visible">True</property>
-        <property name="show-close-button">True</property>
-        <child>
-          <object class="GtkButton" id="new_game_button">
-            <property name="visible">True</property>
-            <property name="use-underline">True</property>
-            <!-- Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt) -->
-            <property name="label" translatable="yes">_New Game</property>
-            <property name="halign">fill</property>
-            <property name="valign">center</property>
-            <property name="action-name">ui.new-game</property>
-            <!-- Translators: during a game, tooltip text of the New Game button -->
-            <property name="tooltip-text" translatable="yes">Start a new game</property>
-          </object>
-          <packing>
-            <property name="pack-type">start</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="back_button">
-            <property name="visible">False</property>
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-            <!-- Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button -->
-            <property name="tooltip-text" translatable="yes">Go back to the current game</property>
-            <property name="use-underline">True</property>
-            <property name="action-name">ui.back</property>
-            <property name="focus-on-click">False</property>
-            <style>
-              <class name="image-button"/>
-            </style>
-            <child>
-              <object class="GtkImage">
-                <property name="icon-name">go-previous-symbolic</property>
-                <property name="visible">True</property>
-                <property name="icon-size">1</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="pack-type">start</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkMenuButton" id="info_button">
-            <property name="visible">True</property>
-            <property name="valign">center</property>
-            <property name="can-focus">True</property>
-            <property name="focus-on-click">False</property>
-            <child>
-              <object class="GtkImage">
-                <property name="visible">True</property>
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="icon-size">1</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="pack-type">end</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </object>
-    </child>
     <child>
-      <object class="GtkOverlay" id="overlay">
-        <property name="visible">True</property>
-        <child>
-          <object class="GtkStack" id="stack">
-            <property name="visible">True</property>
-            <property name="homogeneous">True</property>
-            <child>
-              <object class="GtkBox" id="game_box">
-                <property name="visible">True</property>
-                <property name="orientation">vertical</property>
-                <style>
-                  <class name="game-box"/>
-                </style>
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar" id="headerbar">
+            <property name="title-widget">
+              <object class="AdwWindowTitle" id="window_title" />
+            </property>
+            <child type="start">
+              <object class="GtkButton" id="new_game_button">
+                <property name="use-underline">True</property>
+                <!-- Translators: during a game, label of the New Game button (with a mnemonic that appears pressing Alt) -->
+                <property name="label" translatable="yes">_New Game</property>
+                <property name="halign">fill</property>
+                <property name="valign">center</property>
+                <property name="action-name">ui.new-game</property>
+                <!-- Translators: during a game, tooltip text of the New Game button -->
+                <property name="tooltip-text" translatable="yes">Start a new game</property>
               </object>
-              <packing>
-                <property name="name">game-box</property>
-              </packing>
             </child>
-            <child>
-              <object class="GtkScrolledWindow">
-                <property name="visible">True</property>
+            <child type="start">
+              <object class="GtkButton" id="back_button">
+                <property name="visible">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <!-- Translators: when configuring a new game, if the user has a started game, tooltip text of the Go back button -->
+                <property name="tooltip-text" translatable="yes">Go back to the current game</property>
+                <property name="use-underline">True</property>
+                <property name="action-name">ui.back</property>
+                <property name="focus-on-click">False</property>
+                <style>
+                  <class name="image-button"/>
+                </style>
                 <child>
-                  <object class="GtkBox" id="new_game_box">
-                    <property name="orientation">vertical</property>
-                    <property name="visible">True</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
+                  <object class="GtkImage">
+                    <property name="icon-name">go-previous-symbolic</property>
+                    <property name="icon-size">1</property>
                   </object>
                 </child>
               </object>
-              <packing>
-                <property name="name">start-box</property>
-              </packing>
             </child>
-          </object>
-        </child>
-        <child type="overlay">
-          <object class="GtkButton" id="unfullscreen_button">
-            <property name="visible">False</property>
-            <property name="halign">end</property>
-            <property name="valign">start</property>
-            <property name="action-name">ui.unfullscreen</property>
-            <style>
-              <class name="image-button"/>
-              <class name="unfullscreen-button"/>
-              <class name="flat"/>
-            </style>
-            <child>
-              <object class="GtkImage">
-                <property name="icon-name">view-restore-symbolic</property>
-                <property name="visible">True</property>
-                <property name="icon-size">1</property>
+            <child type="end">
+              <object class="GtkMenuButton" id="info_button">
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">open-menu-symbolic</property>
+                    <property name="icon-size">1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton" id="history_button_1">
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
               </object>
             </child>
           </object>
         </child>
+        <property name="content">
+          <object class="GtkOverlay" id="overlay">
+            <property name="vexpand">True</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkStack" id="stack">
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">game-box</property>
+                    <property name="child">
+                      <object class="GtkBox" id="game_box">
+                        <property name="orientation">vertical</property>
+                        <style>
+                          <class name="game-box"/>
+                        </style>
+                        <child>
+                          <object class="GtkActionBar" id="actionbar">
+                            <property name="visible">False</property>
+                            <child type="start">
+                              <object class="GtkLabel" id="title_2">
+                                <property name="margin-start">12</property>
+                              </object>
+                            </child>
+                            <child type="end">
+                              <object class="GtkMenuButton" id="history_button_2">
+                                <property name="can-focus">True</property>
+                                <property name="focus-on-click">False</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">start-box</property>
+                    <property name="child">
+                      <object class="GtkScrolledWindow">
+                        <child>
+                          <object class="GtkBox" id="new_game_box">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkButton" id="unfullscreen_button">
+                <property name="visible">False</property>
+                <property name="halign">end</property>
+                <property name="valign">start</property>
+                <property name="action-name">ui.unfullscreen</property>
+                <style>
+                  <class name="image-button"/>
+                  <class name="unfullscreen-button"/>
+                  <class name="flat"/>
+                </style>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">view-restore-symbolic</property>
+                    <property name="icon-size">1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 590px</condition>
+        <setter object="headerbar" property="show-start-title-buttons">False</setter>
+        <setter object="headerbar" property="show-end-title-buttons">False</setter>
+        <setter object="window_title" property="visible">False</setter>
+        <setter object="history_button_1" property="visible">False</setter>
+        <setter object="actionbar" property="visible">True</setter>
       </object>
     </child>
   </template>

@@ -47,11 +47,6 @@ private interface AdaptativeWidget : Object
         EXTRA_THIN,
         EXTRA_FLAT;
 
-        internal static inline bool is_phone_size (WindowSize window_size)
-        {
-            return (window_size == PHONE_BOTH) || (window_size == PHONE_VERT) || (window_size == PHONE_HZTL);
-        }
-
         internal static inline bool is_extra_thin (WindowSize window_size)
         {
             return (window_size == PHONE_BOTH) || (window_size == PHONE_VERT) || (window_size == EXTRA_THIN);
@@ -73,100 +68,23 @@ private interface AdaptativeWidget : Object
 
 private const int LARGE_WINDOW_SIZE = 1042;
 
-[GtkTemplate (ui = "/org/gnome/Four-in-a-row/ui/adaptative-window.ui")]
-private abstract class AdaptativeWindow : ApplicationWindow
+private abstract class AdaptativeWindow : Adw.ApplicationWindow
 {
-    [CCode (notify = false)] public string window_title
-    {
-        protected construct
-        {
-            string? _value = value;
-            if (_value == null)
-                assert_not_reached ();
-
-            title = value;
-        }
-    }
-
-    private StyleContext window_style_context;
-    [CCode (notify = false)] public string specific_css_class_or_empty
-    {
-        protected construct
-        {
-            string? _value = value;
-            if (_value == null)
-                assert_not_reached ();
-
-            window_style_context = get_style_context ();
-            if (value != "")
-                window_style_context.add_class (value);
-        }
-    }
-
     construct
     {
-        // window_style_context is created by specific_css_class_or_empty
-        window_style_context.add_class ("startup");
-
-        manage_high_contrast ();
-
-        load_window_state ();
-
-        Timeout.add (300, () => { window_style_context.remove_class ("startup"); return Source.REMOVE; });
+        height_request = 284; // 288px max for Purism Librem 5 landscape, for 720px width; update gschema also
+        width_request = 350; // 360px max for Purism Librem 5 portrait, for 648px height; update gschema also
     }
 
     /*\
     * * callbacks
     \*/
 
-    [GtkCallback]
-    private bool on_window_state_event (Widget widget, Gdk.EventWindowState event)
+    protected override void size_allocate (int width, int height, int baseline)
     {
-        if ((event.changed_mask & Gdk.WindowState.MAXIMIZED) != 0)
-            window_is_maximized = (event.new_window_state & Gdk.WindowState.MAXIMIZED) != 0;
-
-        /* fullscreen: saved as maximized */
-        bool window_was_fullscreen = window_is_fullscreen;
-        if ((event.changed_mask & Gdk.WindowState.FULLSCREEN) != 0)
-            window_is_fullscreen = (event.new_window_state & Gdk.WindowState.FULLSCREEN) != 0;
-        if (window_was_fullscreen && !window_is_fullscreen)
-            on_unfullscreen ();
-        else if (!window_was_fullscreen && window_is_fullscreen)
-            on_fullscreen ();
-
-        /* tiled: not saved, but should not change saved window size */
-        Gdk.WindowState tiled_state = Gdk.WindowState.TILED
-                                    | Gdk.WindowState.TOP_TILED
-                                    | Gdk.WindowState.BOTTOM_TILED
-                                    | Gdk.WindowState.LEFT_TILED
-                                    | Gdk.WindowState.RIGHT_TILED;
-        if ((event.changed_mask & tiled_state) != 0)
-            window_is_tiled = (event.new_window_state & tiled_state) != 0;
-
-        return false;
-    }
-    protected abstract void on_fullscreen ();
-    protected abstract void on_unfullscreen ();
-
-    [GtkCallback]
-    private void on_size_allocate (Allocation allocation)
-    {
-        int height = allocation.height;
-        int width = allocation.width;
-
+        base.size_allocate (width, height, baseline);
         update_adaptative_children (ref width, ref height);
-        update_window_state ();
     }
-
-    [GtkCallback]
-    private void on_destroy ()
-    {
-        before_destroy ();
-        save_window_state ();
-        base.destroy ();
-    }
-
-    protected virtual void before_destroy () {}
 
     /*\
     * * adaptative stuff
@@ -226,7 +144,6 @@ private abstract class AdaptativeWindow : ApplicationWindow
 
     private bool has_extra_thin_window_class = false;
     private bool has_thin_window_class = false;
-    private bool has_large_window_class = false;
     private bool has_extra_flat_window_class = false;
     private bool has_flat_window_class = false;
 
@@ -239,8 +156,6 @@ private abstract class AdaptativeWindow : ApplicationWindow
         if (has_thin_window_class && !thin_window)
             set_style_class ("thin-window", false, ref has_thin_window_class);
 
-        if (large_window != has_large_window_class)
-            set_style_class ("large-window", large_window, ref has_large_window_class);
         if (thin_window != has_thin_window_class)
             set_style_class ("thin-window", thin_window, ref has_thin_window_class);
         if (extra_thin_window != has_extra_thin_window_class)
@@ -260,97 +175,8 @@ private abstract class AdaptativeWindow : ApplicationWindow
     {
         old_state = new_state;
         if (new_state)
-            window_style_context.add_class (class_name);
+            add_css_class (class_name);
         else
-            window_style_context.remove_class (class_name);
-    }
-
-    /*\
-    * * manage window state
-    \*/
-
-    [CCode (notify = false)] public string schema_path
-    {
-        protected construct
-        {
-            string? _value = value;
-            if (_value == null)
-                assert_not_reached ();
-
-            settings = new GLib.Settings.with_path ("org.gnome.Four-in-a-row.Lib", value);
-        }
-    }
-    private GLib.Settings settings;
-
-    private int window_width = 0;
-    private int window_height = 0;
-    private bool window_is_maximized = false;
-    private bool window_is_fullscreen = false;
-    private bool window_is_tiled = false;
-
-    private void load_window_state ()   // called on construct
-    {
-        if (settings.get_boolean ("window-is-maximized"))
-            maximize ();
-        set_default_size (settings.get_int ("window-width"), settings.get_int ("window-height"));
-    }
-
-    private void update_window_state () // called on size-allocate
-    {
-        if (window_is_maximized || window_is_tiled || window_is_fullscreen)
-            return;
-        int? _window_width = null;
-        int? _window_height = null;
-        get_size (out _window_width, out _window_height);
-        if (_window_width == null || _window_height == null)
-            return;
-        window_width = (!) _window_width;
-        window_height = (!) _window_height;
-    }
-
-    private void save_window_state ()   // called on destroy
-    {
-        settings.delay ();
-        settings.set_int ("window-width", window_width);
-        settings.set_int ("window-height", window_height);
-        settings.set_boolean ("window-is-maximized", window_is_maximized || window_is_fullscreen);
-        settings.apply ();
-    }
-
-    /*\
-    * * manage high-constrast
-    \*/
-
-    internal signal void gtk_theme_changed ();
-
-    private void manage_high_contrast ()
-    {
-        Gtk.Settings? nullable_gtk_settings = Gtk.Settings.get_default ();
-        if (nullable_gtk_settings == null)
-            return;
-
-        Gtk.Settings gtk_settings = (!) nullable_gtk_settings;
-        gtk_settings.notify ["gtk-theme-name"].connect (update_highcontrast_state);
-        _update_highcontrast_state (gtk_settings.gtk_theme_name);
-    }
-
-    private void update_highcontrast_state (Object gtk_settings, ParamSpec unused)
-    {
-        _update_highcontrast_state (((Gtk.Settings) gtk_settings).gtk_theme_name);
-        gtk_theme_changed ();
-    }
-
-    private bool highcontrast_state = false;
-    private void _update_highcontrast_state (string theme_name)
-    {
-        bool highcontrast_new_state = "HighContrast" in theme_name;
-        if (highcontrast_new_state == highcontrast_state)
-            return;
-        highcontrast_state = highcontrast_new_state;
-
-        if (highcontrast_new_state)
-            window_style_context.add_class ("hc-theme");
-        else
-            window_style_context.remove_class ("hc-theme");
+            remove_css_class (class_name);
     }
 }
