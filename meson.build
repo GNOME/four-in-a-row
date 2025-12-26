@@ -10,8 +10,6 @@ add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), la
 gnome = import('gnome')
 # used for internationalization
 i18n = import('i18n')
-# used to run post install script
-python3 = import('python3')
 
 application_id = 'org.gnome.Four-in-a-row'
 
@@ -50,6 +48,8 @@ subdir('help')
 subdir('po')
 subdir('src')
 
-meson.add_install_script(python3.find_python().path(), join_paths(meson.source_root(), 
-                                                                  'build-aux', 
-                                                                  'meson_post_install.py'))
+gnome.post_install(
+    glib_compile_schemas: true,
+    gtk_update_icon_cache: true,
+    update_desktop_database: true,
+)
