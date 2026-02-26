@@ -3,13 +3,12 @@
 data/ui/fiar-screens.ui
 data/ui/four-in-a-row.ui
 data/ui/help-overlay.ui
-data/ui/history-button.ui
 data/org.gnome.Four-in-a-row.desktop.in
 data/org.gnome.Four-in-a-row.gschema.xml
 data/org.gnome.Four-in-a-row.metainfo.xml.in
 src/four-in-a-row.vala
 src/game-window.vala
-src/history-button.vala
+src/history-button-label.vala
 src/new-game-screen.vala
 src/scorebox.vala
 src/theme.vala

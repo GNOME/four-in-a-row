@@ -20,7 +20,7 @@
 
 using Gtk;
 
-private class Scorebox : Dialog
+private class Scorebox : Adw.Dialog
 {
     [CCode (notify = false)] public ThemeManager theme_manager { private get; protected construct; }
 
@@ -31,26 +31,30 @@ private class Scorebox : Dialog
     // no change to the draw name line
     private Label label_score_end;
 
-    internal Scorebox (Window parent, FourInARow application, ThemeManager theme_manager)
+    internal Scorebox (ThemeManager theme_manager)
     {
         /* Translators: title of the Scores dialog; plural noun */
         Object (title: _("Scores"),
-                use_header_bar: /* true */ 1,
-                destroy_with_parent: true,
-                resizable: false,
-                application: application,
-                transient_for: parent,
-                modal: true,
                 theme_manager: theme_manager);
     }
 
     construct
     {
+        var view = new Adw.ToolbarView ();
+        child = view;
+
+        view.add_top_bar (new Adw.HeaderBar ());
+
         Grid grid = new Grid ();
         grid.halign = Align.CENTER;
         grid.row_spacing = 2;
         grid.column_spacing = 6;
-        grid.border_width = 10;
+        grid.margin_top = 20;
+        grid.margin_bottom = 20;
+        grid.margin_start = 10;
+        grid.margin_end = 10;
+
+        view.content = grid;
 
         label_name_top = new Label (null);
         grid.attach (label_name_top, 0, 0, 1, 1);
@@ -76,9 +80,6 @@ private class Scorebox : Dialog
         label_score_end = new Label (null);
         grid.attach (label_score_end, 1, 2, 1, 1);
         label_score_end.halign = Align.END;
-
-        grid.show_all ();
-        get_content_area ().pack_start (grid);
 
         theme_manager.theme_changed.connect (update);
     }
@@ -130,12 +131,6 @@ private class Scorebox : Dialog
             }
         }
         label_score_end.label = scores [Player.NOBODY].to_string ();
-    }
-
-    protected override bool delete_event (Gdk.EventAny event)   // TODO use hide_on_delete (Gtk3) or hide-on-close (Gtk4)
-    {
-        hide ();
-        return true;
     }
 
     /*\
