@@ -18,23 +18,21 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <interface>
-  <requires lib="gtk+" version="3.12"/>
+  <requires lib="gtk4" version="4.20"/>
+  <requires lib="adwaita" version="1.8"/>
   <template class="NewGameScreen" parent="GtkBox">
     <property name="orientation">vertical</property>
-    <property name="visible">True</property>
     <property name="homogeneous">True</property>
     <property name="valign">fill</property>
     <property name="spacing">18</property>
     <property name="margin-bottom">22</property><!-- TODO better -->
     <property name="margin-top">4</property>
     <child>
-      <object class="GtkBox" id="infos_section">
+      <object class="GtkBox" id="game_type_section">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, on a thin window, header of the row for choosing the number of players -->
             <property name="label" translatable="yes">Game type</property>
@@ -44,66 +42,42 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox">
-            <property name="visible">True</property>
-            <property name="vexpand">True</property>
-            <property name="homogeneous">True</property>
-            <property name="spacing">0</property>
+          <object class="AdwToggleGroup" id="game_type_group">
             <property name="orientation">vertical</property>
-            <style>
-              <class name="linked"/>
-            </style>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play first (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">Play _first</property>
-                <property name="action-name">app.game-type</property>
-                <property name="action-target">'human'</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">Play _first</property>
+                <property name="name">human</property>
               </object>
             </child>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose to play second (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">Play _second</property>
-                <property name="action-name">app.game-type</property>
-                <property name="action-target">'computer'</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">Play _second</property>
+                <property name="name">computer</property>
               </object>
             </child>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, on a thin window, group "Game type", label of the button to choose a two-players game (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">_Two players</property>
-                <property name="action-name">app.game-type</property>
-                <property name="action-target">'two'</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">_Two players</property>
+                <property name="name">two</property>
               </object>
             </child>
           </object>
-          <packing>
-            <property name="expand">True</property>
-          </packing>
         </child>
       </object>
     </child>
     <child>
       <object class="GtkBox" id="users_section">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, header of the row for choosing the number of players -->
             <property name="label" translatable="yes">Players</property>
@@ -113,50 +87,32 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox" id="users_box">
-            <property name="visible">True</property>
-            <property name="vexpand">True</property>
-            <property name="homogeneous">True</property>
-            <property name="spacing">12</property>
+          <object class="AdwToggleGroup" id="users_group">
+            <property name="orientation">horizontal</property>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">_One</property>
-                <property name="action-name">app.num-players</property>
-                <property name="action-target">1</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">_One</property>
               </object>
             </child>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Players", label of the button to choose a one-player game (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">_Two</property>
-                <property name="action-name">app.num-players</property>
-                <property name="action-target">2</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">_Two</property>
               </object>
             </child>
           </object>
-          <packing>
-            <property name="expand">True</property>
-          </packing>
         </child>
       </object>
     </child>
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, header of the row for choosing the level of the artificial intelligence -->
             <property name="label" translatable="yes">Difficulty</property>
@@ -166,62 +122,39 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox" id="level_box">
-            <property name="visible">True</property>
-            <property name="vexpand">True</property>
-            <property name="homogeneous">True</property>
-            <property name="spacing">12</property>
+          <object class="AdwToggleGroup" id="level_group">
+            <property name="orientation">horizontal</property>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose an easy-level computer adversary (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">_Easy</property>
-                <property name="action-name">app.opponent</property>
-                <property name="action-target">1</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">_Easy</property>
               </object>
             </child>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a medium-level computer adversary (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">_Medium</property>
-                <property name="action-name">app.opponent</property>
-                <property name="action-target">2</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">_Medium</property>
               </object>
             </child>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Difficulty", label of the button to choose a hard-level computer adversary (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">_Hard</property>
-                <property name="action-name">app.opponent</property>
-                <property name="action-target">3</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">_Hard</property>
               </object>
             </child>
           </object>
-          <packing>
-            <property name="expand">True</property>
-          </packing>
         </child>
       </object>
     </child>
     <child>
       <object class="GtkBox" id="start_section">
         <property name="orientation">vertical</property>
-        <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
             <property name="halign">start</property>
             <!-- Translators: when configuring a new game, header of the row for choosing whether to start or not -->
             <property name="label" translatable="yes">Game start</property>
@@ -231,39 +164,24 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox" id="start_box">
-            <property name="visible">True</property>
-            <property name="vexpand">True</property>
-            <property name="homogeneous">True</property>
-            <property name="spacing">12</property>
+          <object class="AdwToggleGroup" id="start_group">
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Game start", label of the button to start (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">Play _first</property>
-                <property name="action-name">app.first-player</property>
-                <property name="action-target">'human'</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">Play _first</property>
+                <property name="name">human</property>
               </object>
             </child>
             <child>
-              <object class="GtkModelButton">
-                <property name="visible">True</property>
+              <object class="AdwToggle">
                 <property name="use_underline">True</property>
                 <!-- Translators: when configuring a new game, row "Game start", label of the button to play after the computer (with a mnemonic that appears pressing Alt) -->
-                <property name="text" translatable="yes">Play _second</property>
-                <property name="action-name">app.first-player</property>
-                <property name="action-target">'computer'</property>
-                <property name="iconic">True</property>
-                <property name="centered">True</property>
+                <property name="label" translatable="yes">Play _second</property>
+                <property name="name">computer</property>
               </object>
             </child>
           </object>
-          <packing>
-            <property name="expand">True</property>
-          </packing>
         </child>
       </object>
     </child>

@@ -18,7 +18,7 @@
    with GNOME Four-in-a-row.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-private class GameBoardView : Gtk.DrawingArea
+private class GameBoardView : Gtk.Widget
 {
     private enum Tile {
         PLAYER1,
@@ -39,9 +39,8 @@ private class GameBoardView : Gtk.DrawingArea
 
     construct
     {
-        events = Gdk.EventMask.EXPOSURE_MASK
-               | Gdk.EventMask.BUTTON_PRESS_MASK
-               | Gdk.EventMask.BUTTON_RELEASE_MASK;
+        focusable = true;
+
         theme_manager.theme_changed.connect (refresh_pixmaps);
 
         init_mouse ();
@@ -59,16 +58,13 @@ private class GameBoardView : Gtk.DrawingArea
 
     internal inline void draw_tile (int row, int col)
     {
-        queue_draw_area (/* start */ col * tile_size + board_x,
-                                     row * tile_size + board_y,
-                         /* size  */ tile_size,
-                                     tile_size);
+        queue_draw ();
     }
 
-    protected override bool configure_event (Gdk.EventConfigure e)
+    private void configure_board ()
     {
-        int allocated_width  = get_allocated_width ();
-        int allocated_height = get_allocated_height ();
+        int allocated_width  = get_width ();
+        int allocated_height = get_height ();
         int size = int.min (allocated_width, allocated_height);
         tile_size = size / game_board.size;
         board_size = tile_size * game_board.size;
@@ -81,17 +77,28 @@ private class GameBoardView : Gtk.DrawingArea
         offset [Tile.CLEAR_CURSOR]   = tile_size * 3;
         offset [Tile.PLAYER1_CURSOR] = tile_size * 4;
         offset [Tile.PLAYER2_CURSOR] = tile_size * 5;
+    }
 
+    protected override void size_allocate (int width, int height, int baseline)
+    {
+        configure_board ();
         refresh_pixmaps ();
-        return true;
     }
 
     /*\
     * * drawing
     \*/
 
-    protected override bool draw (Cairo.Context cr)
+    protected override void snapshot (Gtk.Snapshot snapshot)
     {
+        Graphene.Rect rect = Graphene.Rect () {
+            origin = Graphene.Point () { x = 0, y = 0 },
+            size = Graphene.Size () { width = get_width (), height = get_height () }
+        };
+        Cairo.Context cr = snapshot.append_cairo (rect);
+
+        configure_board ();
+
         /* background */
         cr.save ();
         cr.translate (board_x, board_y);
@@ -110,8 +117,6 @@ private class GameBoardView : Gtk.DrawingArea
         cr.translate (board_x, board_y);
         draw_grid (cr);
         cr.restore ();
-
-        return false;
     }
 
     private inline void paint_tile (Cairo.Context cr, uint8 row, uint8 col)
@@ -213,13 +218,12 @@ private class GameBoardView : Gtk.DrawingArea
     * * mouse play
     \*/
 
-    private Gtk.GestureMultiPress click_controller;     // for keeping in memory
-
     private inline void init_mouse ()
     {
-        click_controller = new Gtk.GestureMultiPress (this);
+        var click_controller = new Gtk.GestureClick ();
         click_controller.set_button (/* all buttons */ 0);
         click_controller.pressed.connect (on_click);
+        add_controller (click_controller);
     }
 
     /**
@@ -233,25 +237,14 @@ private class GameBoardView : Gtk.DrawingArea
      */
     internal signal bool column_clicked (uint8 column);
 
-    private inline void on_click (Gtk.GestureMultiPress _click_controller, int n_press, double event_x, double event_y)
+    private inline void on_click (Gtk.GestureClick _click_controller, int n_press, double event_x, double event_y)
     {
         uint button = _click_controller.get_current_button ();
         if (button != Gdk.BUTTON_PRIMARY && button != Gdk.BUTTON_SECONDARY)
             return;
 
-        Gdk.Event? event = Gtk.get_current_event ();
-        if (event == null && ((!) event).type != Gdk.EventType.BUTTON_PRESS)
-            assert_not_reached ();
-
-        int x;
-        int y;
-        Gdk.Window? window = get_window ();
-        if (window == null)
-            assert_not_reached ();
-        ((!) window).get_device_position (((Gdk.EventButton) (!) event).device, out x, out y, null);
-
         uint8 col;
-        if (get_column (x, y, out col))
+        if (get_column ((int) event_x, (int) event_y, out col))
             column_clicked (col);
     }
 
