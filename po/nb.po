@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of four-in-a-row.
 # Copyright © 1998-2002 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 1998-2020.
+# Kjartan Maraas <kmaraas@gnome.org>, 1998-2026.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: four-in-a-row 3.38.x\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues\n"
-"POT-Creation-Date: 2020-05-30 11:03+0000\n"
-"PO-Revision-Date: 2021-01-25 15:22+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/four-in-a-row/issues/\n"
+"POT-Creation-Date: 2025-07-14 14:42+0000\n"
+"PO-Revision-Date: 2026-06-04 18:00+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -208,42 +208,18 @@ msgid "End!"
 msgstr "Ferdig!"
 
 #. Translators: application name, as used in the window manager, the window title, the about dialog...
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:7
-#: data/org.gnome.Four-in-a-row.desktop.in:5 src/four-in-a-row.vala:29
+#: data/org.gnome.Four-in-a-row.desktop.in:4
+#: data/org.gnome.Four-in-a-row.metainfo.xml.in:7 src/four-in-a-row.vala:29
 msgid "Four-in-a-row"
 msgstr "Fire på rad"
 
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:8
-#: data/org.gnome.Four-in-a-row.desktop.in:6
+#: data/org.gnome.Four-in-a-row.desktop.in:5
+#: data/org.gnome.Four-in-a-row.metainfo.xml.in:8
 msgid "Make lines of the same color to win"
 msgstr "Lag linjer med samme farge for å vinne"
 
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:10
-msgid ""
-"A family classic, the objective of Four-in-a-row is to build a line of four "
-"of your marbles while trying to stop your opponent (human or computer) from "
-"building a line of his or her own. A line can be horizontal, vertical or "
-"diagonal. The first player to connect four in a row is the winner!"
-msgstr ""
-"Klassisk familiespill. Målet i Fire på rad er å lage en linje med fire av "
-"dine kuler mens du stopper motstanderen (menneske eller datamaskin) fra å "
-"gjøre det samme. Linjen kan være horisontal, vertikal eller diagonal. Første "
-"spiller som klarer fire på rad vinner!"
-
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:16
-msgid ""
-"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
-"you can always ask for a hint."
-msgstr ""
-"Fire på rad har flere vanskelighetsnivåer. Hvis du har problemer kan du "
-"alltid spørre om et hint."
-
-#: data/org.gnome.Four-in-a-row.appdata.xml.in:37
-msgid "The GNOME Project"
-msgstr "GNOME prosjektet"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Four-in-a-row.desktop.in:8
+#: data/org.gnome.Four-in-a-row.desktop.in:7
 msgid "game;strategy;logic;"
 msgstr "spill;strategi;logikk;"
 
@@ -262,7 +238,7 @@ msgstr ""
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/num-players'
 #: data/org.gnome.Four-in-a-row.gschema.xml:19
 msgid "Number of players"
-msgstr ""
+msgstr "Antall spillere"
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/opponent'
 #: data/org.gnome.Four-in-a-row.gschema.xml:26
@@ -337,22 +313,46 @@ msgstr ""
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
 #: data/org.gnome.Four-in-a-row.gschema.xml:79
 msgid "The height of the window"
-msgstr ""
+msgstr "Høyde på vinduet"
 
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-height'
 #: data/org.gnome.Four-in-a-row.gschema.xml:81
 msgid "The height of the main window in pixels."
-msgstr ""
+msgstr "Høyden på vinduet i piksler."
 
 #. Translators: summary of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
 #: data/org.gnome.Four-in-a-row.gschema.xml:86
 msgid "A flag to enable maximized mode"
-msgstr ""
+msgstr "Et flagg for å sette maksimert modus"
 
 #. Translators: description of a settings key, see 'dconf-editor /org/gnome/Four-in-a-row/window-is-maximized'
 #: data/org.gnome.Four-in-a-row.gschema.xml:88
 msgid "If “true”, the main window starts in maximized mode."
 msgstr ""
+
+#: data/org.gnome.Four-in-a-row.metainfo.xml.in:10
+msgid ""
+"A family classic, the objective of Four-in-a-row is to build a line of four "
+"of your marbles while trying to stop your opponent (human or computer) from "
+"building a line of his or her own. A line can be horizontal, vertical or "
+"diagonal. The first player to connect four in a row is the winner!"
+msgstr ""
+"Klassisk familiespill. Målet i Fire på rad er å lage en linje med fire av "
+"dine kuler mens du stopper motstanderen (menneske eller datamaskin) fra å "
+"gjøre det samme. Linjen kan være horisontal, vertikal eller diagonal. Første "
+"spiller som klarer fire på rad vinner!"
+
+#: data/org.gnome.Four-in-a-row.metainfo.xml.in:16
+msgid ""
+"Four-in-a-row features multiple difficulty levels. If you’re having trouble, "
+"you can always ask for a hint."
+msgstr ""
+"Fire på rad har flere vanskelighetsnivåer. Hvis du har problemer kan du "
+"alltid spørre om et hint."
+
+#: data/org.gnome.Four-in-a-row.metainfo.xml.in:37
+msgid "The GNOME Project"
+msgstr "GNOME prosjektet"
 
 #. Translators: command-line option description, see 'four-in-a-row --help'
 #: src/four-in-a-row.vala:95
@@ -422,7 +422,9 @@ msgstr "Linjer kan ikke være lengre enn høyden eller bredden på brettet."
 #. Translators: command-line error message, displayed for an incorrect level request; try 'four-in-a-row -l 5'
 #: src/four-in-a-row.vala:229
 msgid "Level should be 1 (easy), 2 (medium) or 3 (hard). Settings unchanged."
-msgstr "Nivå må være 1 (lett), 2 (middels) eller 3 (vanskelig). Innstillingene ble ikke endret."
+msgstr ""
+"Nivå må være 1 (lett), 2 (middels) eller 3 (vanskelig). Innstillingene ble "
+"ikke endret."
 
 #. Translators: hamburger menu entry; "Appearance" submenu (with a mnemonic that appears pressing Alt)
 #: src/four-in-a-row.vala:267
