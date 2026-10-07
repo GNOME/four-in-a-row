@@ -1183,7 +1183,7 @@ private class FourInARow : Gtk.Application
             /* Translators: about dialog text; this string should be replaced by a text crediting yourselves and your translation team, or should be left empty. Do not translate literally! */
             translator_credits: _("translator-credits"),
             logo_icon_name: "org.gnome.Four-in-a-row",
-            website: "https://wiki.gnome.org/Apps/Four-in-a-row");
+            website: "https://gitlab.gnome.org/GNOME/four-in-a-row/");
     }
 
     private inline void on_help_contents (/* SimpleAction action, Variant? parameter */)
